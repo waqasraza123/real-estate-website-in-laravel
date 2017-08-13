@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+#The Site Routes
+
+Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing']);
+Route::get('/account/{id}', ['as' => 'account' , 'uses' => 'HomeController@account']);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -26,3 +31,6 @@ Route::get('/callback', 'SocialAuthController@callback');
 $s = 'social.';
 Route::get('/social/redirect/{provider}',   ['as' => $s . 'redirect',   'uses' => 'SocialAuthController@googleRedirect']);
 Route::get('/social/handle/{provider}',     ['as' => $s . 'handle',     'uses' => 'SocialAuthController@googleCallback']);
+
+
+
