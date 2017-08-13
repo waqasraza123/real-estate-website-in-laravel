@@ -38,13 +38,13 @@ return [
     'facebook' => [
         'client_id' => '160520161175997',
         'client_secret' => 'f49f8e92f3867eaac869b7cf0d0526e3',
-        'redirect' => 'http://news.dev/callback',
+        'redirect' => 'http://www.2ndchanceleasing.com/callback',
     ],
 
     'google' => [
         'client_id'     => '976622990411-6puqvbt2aip6rsbcni725vpbvoqhk74n.apps.googleusercontent.com',
         'client_secret' => 'LbhJ46npMSfxEotou_JyLEID',
-        'redirect'      => 'http://news.dev/social/handle/google'
+        'redirect'      => 'http://www.2ndchanceleasing.com/social/handle/google'
     ]
 
 
