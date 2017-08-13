@@ -104,7 +104,7 @@
                             <span class="icon-bar icon-bar2"></span>
                             <span class="icon-bar icon-bar3"></span>
                         </button>
-                        <a href="index-1.html" title="" class="navbar-brand">
+                        <a href="/" title="" class="navbar-brand">
                             <img src="images\logo-dark.png" alt="Apartment - Premium Real Estate Template">
                         </a>
                     </div>
@@ -121,7 +121,7 @@
                                     <li><a href="index3-street-view.html">One Page Single Propery - panorama!</a></li>
                                 </ul>--}}
                             </li>
-                            <li class="dropdown">
+                           {{-- <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Listings</a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-submenu">
@@ -259,8 +259,8 @@
                                     <li><a href="contact1.html">Contact version 1</a></li>
                                     <li><a href="contact2.html">Contact version 2</a></li>
                                 </ul>
-                            </li>
-                            <li><a href="submit-property.html" class="special-color">Submit property</a></li>
+                            </li>--}}
+                            <li><a href="{{ route('addListing') }}" class="special-color">Submit property</a></li>
                         </ul>
                     </div>
                 </div>
