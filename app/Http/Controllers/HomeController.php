@@ -26,7 +26,7 @@ class HomeController extends Controller
     }
 
     public function  addListing(){
-        return view('pages.addLIsting');
+        return view('pages.addListing');
     }
 
     public function account($id){
