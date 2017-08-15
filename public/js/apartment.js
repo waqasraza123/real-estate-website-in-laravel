@@ -826,9 +826,10 @@ jQuery(window).load(function() {
 		if( $('#file-upload').length ) {
 			$('#file-upload').fileinput({
 			uploadUrl: '#',
+			layoutTemplates: 'main2',
 			allowedFileExtensions : ['jpg','png','gif'],
-			showUpload: false,
-			showRemove: false,
+			showUpload: true,
+			showRemove: true,
 			browseClass: "button-shadow btn",
 		});
 	}

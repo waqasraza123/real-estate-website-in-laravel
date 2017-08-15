@@ -431,8 +431,8 @@ section.thumbs-slider,
 .labelled-input-short label,
 .labelled-textarea label,
 .labelled-input label,
-.profile-list-footer,
-.dark-col {
+.profile-list-footer
+ {
 	background: #f8f8f8;	
 }
 
@@ -1595,4 +1595,69 @@ li.ap-submenu {
 	.simple-search-cont input.simple-search-input {
 		border-bottom: 1px solid #ebebeb;
 	}
+}
+
+.button-shadow{
+	position: absolute !important;
+	top: -70px;
+	left: 15px;
+	background: white !important;
+	border: 1px solid #3797dd !important;
+	color: #3797dd !important;
+}
+
+.file-caption{
+	display: none !important;
+}
+
+.fileinput-remove{
+	display: none !important;
+}
+
+.file-input-ajax-new{
+	background: transparent !important;
+}
+
+.fileinput-remove{
+	display: none !important;
+}
+
+.fileinput-upload{
+	display: none;
+}
+
+.descriptionAmenitiesWrapper{
+	position: relative;
+	width: 100%;
+	background-color: #fff;
+	min-height: 435px;
+	padding: 20px 40px;
+	margin-top: 10px;
+	border: 2px solid #e8e8e8;
+	border-bottom: 3px solid #e8e8e8;
+	display: inline-block;
+}
+
+.termswrapper{
+	position: relative;
+	width: 100%;
+	background-color: #fff;
+	min-height: 105px;
+	padding: 20px 40px;
+	margin-top: 10px;
+	border: 2px solid #e8e8e8;
+	border-bottom: 3px solid #e8e8e8;
+	display: inline-block;
+}
+
+.checkboxGroup.terms {
+	overflow: auto;
+}
+
+ .checkboxGroup.terms {
+	-webkit-flex: 1 1 auto;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	margin-top: 0;
+	padding-left: 5px;
 }

@@ -4110,7 +4110,7 @@ section.thumbs-slider {
 input.main-input {
 	height: 50px;
 	line-height: 40px;
-	padding: 0 30px 0 30px;
+	padding: 0 30px 0 10px;
 	font-size: 1.08em;
 	font-weight: bold;
 	margin-bottom: 15px;
@@ -4223,6 +4223,7 @@ input[type="checkbox"].main-checkbox + label {
 	font-weight: normal;
 	margin-top: 0px;
 	margin-bottom: 15px;
+	font-size: 1.6em;
 }
 
 .form-submit-cont a:hover {
@@ -5651,7 +5652,8 @@ section.agency {
 
 
 .dark-col {
-	padding: 30px 30px 15px 30px;
+	padding: 30px 60px 15px 60px;
+	border: 2px solid #e8e8e8		;
 }
 
 .property-textarea {
@@ -5699,7 +5701,6 @@ section.agency {
 
 .file-input .file-drop-zone {
     border-radius: 0px;
-    margin: 25px 25px 20px 25px;
 }
 
 .file-input .close {

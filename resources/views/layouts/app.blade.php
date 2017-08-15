@@ -18,6 +18,7 @@
     <!-- Custom styles -->
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,500italic,700,700italic&amp;subset=latin,latin-ext'>
     <link rel="stylesheet" type="text/css" href="css\plugins.css">
+    <link rel="stylesheet" type="text/css" href="css\style.css">
     <link rel="stylesheet" type="text/css" href="css\apartment-layout.css">
     <link id="skin" rel="stylesheet" type="text/css" href="css\apartment-colors-blue.css">
     <!--[if lt IE 9]>
@@ -260,7 +261,7 @@
                                     <li><a href="contact2.html">Contact version 2</a></li>
                                 </ul>
                             </li>--}}
-                            <li><a href="{{ route('addListing') }}" class="special-color">Submit property</a></li>
+                            <li><a href="{{ route('addListing') }}" class="special-color">Add a Listing</a></li>
                         </ul>
                     </div>
                 </div>
@@ -634,6 +635,8 @@
 
     <!-- template scripts -->
     <script type="text/javascript" src="mail\validate.js"></script>
+    <script type="text/javascript" src="{{ asset('js/date/moment.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/date/daterangepicker.js') }}"></script>
     <script type="text/javascript" src="js\apartment.js"></script>
 
     @yield('scripts')
