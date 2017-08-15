@@ -67,9 +67,15 @@
                             </div>
                             @if(Auth::user())
                                 <div class="top-social top-dark pull-right">
-                                    <a class="top-icon-circle" href="#">
+                                    <a class="top-icon-circle" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                         <i class="fa fa-lg fa-sign-out"></i>
                                     </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                                 </div>
                             @endif
                             <div class="top-social pull-right">
@@ -376,9 +382,7 @@
                                 </span>
                             @endif
                         </form>
-                        <input name="login" type="email" class="input-full main-input" placeholder="Email">
-                        <input name="password" type="password" class="input-full main-input" placeholder="Your Password">
-                        <button type="submit" form="loginForm" class="button-primary button-shadow button-full">
+                        <button type="submit" form="loginForm" class="button-primary  button-full">
                             <span>Sing In</span>
                             <div class="button-triangle"></div>
                             <div class="button-triangle2"></div>
@@ -433,7 +437,7 @@
                                 @endif
                                 <input id="password-confirm" type="password" class="input-full main-input" placeholder="Confirm Password" name="password_confirmation" required>
                         </form>
-                        <button type="submit" form="registerForm" class="button-primary button-shadow button-full">
+                        <button type="submit" form="registerForm" class="button-primary  button-full">
                             <span>Sing up</span>
                             <div class="button-triangle"></div>
                             <div class="button-triangle2"></div>
