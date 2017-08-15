@@ -168,8 +168,8 @@
                                     <div class="col-xs-12 margin-top-15">
                                         <div class="row">
                                             <div class="checkboxGroup">
-                                                <input type="checkbox" id="c1" name="cc" class="main-checkbox">
-                                                <label for="c1"><span></span>Dogs ok</label><br>
+                                                <input type="checkbox" id="c10" name="cc" class="main-checkbox">
+                                                <label for="c10"><span></span>Dogs ok</label><br>
                                             </div>
                                             <div class="checkboxGroup">
                                                 <input type="checkbox" id="c2" name="cc" class="main-checkbox">
