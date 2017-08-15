@@ -1661,3 +1661,12 @@ li.ap-submenu {
 	margin-top: 0;
 	padding-left: 5px;
 }
+
+ .peofile_left_text{
+	 text-align: left !important;
+	 text-transform: capitalize !important;
+ }
+
+ .button-fulls{
+	 width: 100%;
+ }

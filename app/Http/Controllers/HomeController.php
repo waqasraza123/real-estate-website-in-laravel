@@ -29,6 +29,12 @@ class HomeController extends Controller
         return view('pages.addListing');
     }
 
+    public function accountListing($id){
+        #Here is coing db get from listings table as user_id and return it to view
+        return view('user.listings');
+
+    }
+
     public function account($id){
        $user =  User::find($id)->first();
        return view('user.profile');

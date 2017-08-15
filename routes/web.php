@@ -18,7 +18,14 @@ Route::get('/', function () {
 #The Site Routes
 
 Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing']);
+
+
+
+ #User Routes
+
+
 Route::get('/account/{id}', ['as' => 'account' , 'uses' => 'HomeController@account']);
+Route::get('account/listings/{id}', ['as' => 'accountListing' , 'uses' => 'HomeController@accountListing']);
 
 Auth::routes();
 

@@ -1,0 +1,65 @@
+<div class="col-xs-12 col-md-3 col-md-pull-9">
+    <div class="sidebar-left">
+        <h3 class="sidebar-title">Welcome back<span class="special-color">.</span></h3>
+        <div class="title-separator-primary"></div>
+        <div class="profile-info margin-top-60">
+            <div class="profile-info-title negative-margin">{{ Auth::user()->name }}</div>
+            <img src="{{ asset('images\comment-photo2.jpg') }}" alt="" class="pull-left">
+            <div class="profile-info-text pull-left">
+                <p class="subtitle-margin">Agent</p>
+                <p class="">42 Estates</p>
+
+                <a href="#" class="logout-link margin-top-30"><i class="fa fa-lg fa-sign-out"></i>Logout</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="margin-top-30">
+            <a href="{{ route('account' , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
+                <span class="peofile_left_text">My Profile</span>
+                <div class="button-triangle"></div>
+                <div class="button-triangle2"></div>
+                <div class="button-icon"><i class="fa fa-user"></i></div>
+            </a>
+        </div>
+        <div class="margin-top-15">
+            <a href="{{ route('accountListing' , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
+                <span class="peofile_left_text">My Listings</span>
+                <div class="button-triangle"></div>
+                <div class="button-triangle2"></div>
+                <div class="button-icon"><i class="fa fa-building-o"></i></div>
+            </a>
+        </div>
+        <div class=" margin-top-15">
+            <a href="my-profile.html" class="button-primary  button-fulls">
+                <span class="peofile_left_text">Reviews Dashboard</span>
+                <div class="button-triangle"></div>
+                <div class="button-triangle2"></div>
+                <div class="button-icon"><i class="fa fa-comment"></i></div>
+            </a>
+        </div>
+        <div class=" margin-top-15">
+            <a href="submit-property.html" class="button-primary  button-fulls">
+                <span class="peofile_left_text">My Saved Searches</span>
+                <div class="button-triangle"></div>
+                <div class="button-triangle2"></div>
+                <div class="button-icon"><i class="fa fa-search-plus"></i></div>
+            </a>
+        </div>
+        <div class=" margin-top-15">
+            <a href="submit-property.html" class="button-primary  button-fulls">
+                <span class="peofile_left_text">My Favorites</span>
+                <div class="button-triangle"></div>
+                <div class="button-triangle2"></div>
+                <div class="button-icon"><i class="fa fa-heart"></i></div>
+            </a>
+        </div>
+        <div class=" margin-top-15">
+            <a href="submit-property.html" class="button-primary  button-fulls">
+                <span class="peofile_left_text">Notifications Settings</span>
+                <div class="button-triangle"></div>
+                <div class="button-triangle2"></div>
+                <div class="button-icon"><i class="fa fa-envelope"></i></div>
+            </a>
+        </div>
+    </div>
+</div>

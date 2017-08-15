@@ -8,19 +8,19 @@
     <title>Apartment - Premium Real Estate HMTL Site Template</title>
     <meta name="keywords" content="Download, Apartment, Premium, Real Estate, HMTL, Site Template, property, mortgage, CSS">
     <meta name="description" content="Download Apartment - Premium Real Estate HMTL Site Template">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="bootstrap\bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('bootstrap\bootstrap.min.css') }}">
     <!-- Font awesome styles -->
-    <link rel="stylesheet" href="apartment-font\css\font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('apartment-font\css\font-awesome.min.css') }}">
     <!-- Custom styles -->
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,500italic,700,700italic&amp;subset=latin,latin-ext'>
-    <link rel="stylesheet" type="text/css" href="css\plugins.css">
-    <link rel="stylesheet" type="text/css" href="css\style.css">
-    <link rel="stylesheet" type="text/css" href="css\apartment-layout.css">
-    <link id="skin" rel="stylesheet" type="text/css" href="css\apartment-colors-blue.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\plugins.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\apartment-layout.css') }}">
+    <link id="skin" rel="stylesheet" type="text/css" href="{{ asset('css\apartment-colors-blue.css') }}">
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -68,7 +68,7 @@
                             @if(Auth::user())
                                 <div class="top-social top-dark pull-right">
                                     <a class="top-icon-circle" href="#">
-                                        <i class="fa fa-door"></i>
+                                        <i class="fa fa-lg fa-sign-out"></i>
                                     </a>
                                 </div>
                             @endif
@@ -106,7 +106,7 @@
                             <span class="icon-bar icon-bar3"></span>
                         </button>
                         <a href="/" title="" class="navbar-brand">
-                            <img src="images\logo-dark.png" alt="Apartment - Premium Real Estate Template">
+                            <img src="{{ asset('images\logo-dark.png') }}" alt="Apartment - Premium Real Estate Template">
                         </a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
@@ -302,7 +302,7 @@
                         <div class="row">
                             <div class="col-xs-6 col-sm-12">
                                 <article>
-                                    <a href="blog-right-sidebar.html"><img src="images\footer-blog1.jpg" alt="" class="footer-blog-image"></a>
+                                    <a href="blog-right-sidebar.html"><img src="{{ asset('images\footer-blog1.jpg') }}" alt="" class="footer-blog-image"></a>
                                     <div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
                                     <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
                                     <div class="clearfix"></div>
@@ -311,7 +311,7 @@
                             </div>
                             <div class="col-xs-6 col-sm-12">
                                 <article>
-                                    <a href="blog-right-sidebar.html"><img src="images\footer-blog2.jpg" alt="" class="footer-blog-image"></a>
+                                    <a href="blog-right-sidebar.html"><img src="{{ asset('images\footer-blog2.jpg') }}" alt="" class="footer-blog-image"></a>
                                     <div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
                                     <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
                                     <div class="clearfix"></div>
@@ -335,7 +335,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-6 small-cont">
-                        <img src="images\logo-light.png" alt="" class="img-responsive footer-logo">
+                        <img src="{{ asset('images\logo-light.png') }}" alt="" class="img-responsive footer-logo">
                     </div>
                     <div class="col-xs-12 col-md-6 footer-copyrights">
                         &copy; Copyright 2015 <a href="http://themeforest.net/user/johnnychaos?ref=johnnychaos" target="blank">Jan Skwara</a>. All rights reserved. Buy on <a href="http://themeforest.net/user/johnnychaos/portfolio?ref=johnnychaos" target="blank">Themeforest</a>.
@@ -361,14 +361,29 @@
                             <h1>Login<span class="special-color">.</span></h1>
                             <div class="short-title-separator"></div>
                         </div>
+                        <form class="form-horizontal" method="POST" id="loginForm" action="{{ route('login') }}">
+                            {{ csrf_field() }}
+                            <input id="email" type="email" class="input-full main-input" name="email" value="{{ old('email') }}" required autofocus placeholder="Email">
+                            @if ($errors->has('email'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('email') }}</strong>
+                            </span>
+                            @endif
+                            <input id="password" type="password" class="input-full main-input" name="password" required placeholder="Password">
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                            @endif
+                        </form>
                         <input name="login" type="email" class="input-full main-input" placeholder="Email">
                         <input name="password" type="password" class="input-full main-input" placeholder="Your Password">
-                        <a href="my-profile.html" class="button-primary button-shadow button-full">
+                        <button type="submit" form="loginForm" class="button-primary button-shadow button-full">
                             <span>Sing In</span>
                             <div class="button-triangle"></div>
                             <div class="button-triangle2"></div>
                             <div class="button-icon"><i class="fa fa-user"></i></div>
-                        </a>
+                        </button>
                         <a href="#" class="forgot-link pull-right">Forgot your password?</a>
                         <div class="clearfix"></div>
                         <p class="login-or">OR</p>
@@ -418,7 +433,7 @@
                                 @endif
                                 <input id="password-confirm" type="password" class="input-full main-input" placeholder="Confirm Password" name="password_confirmation" required>
                         </form>
-                        <button type="submit" class="button-primary button-shadow button-full">
+                        <button type="submit" form="registerForm" class="button-primary button-shadow button-full">
                             <span>Sing up</span>
                             <div class="button-triangle"></div>
                             <div class="button-triangle2"></div>
@@ -462,7 +477,7 @@
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-        <div id="signupContainer">
+        {{--<div id="signupContainer">
             <div class="modal createAccountModal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modalContainer">
                 <div class="modalContent">
@@ -527,7 +542,7 @@
                                     </div>
                                 </div>
                             </form>
-                            {{--<div class="checkboxGroup">
+                            --}}{{--<div class="checkboxGroup">
                                 <input id="emailAlerts" type="checkbox" class="primaryCheckbox" checked="">
                                 <label for="emailAlerts"><span class="checkLabel">Receive email alerts when new rentals are available</span></label>
                             </div>
@@ -537,7 +552,7 @@
                             </div>
                             <p class="terms">
                                 By registering, I accept the Apartments.com <a class="greenLink" target="_blank" href="">Terms of Use.</a>
-                            </p>--}}
+                            </p>--}}{{--
                             <section class="loginSocial">
                                 <ul>
                                     <li>
@@ -551,7 +566,7 @@
                                     </li>
 
                                 </ul>
-                                <button type="submit" id="signupBtn" form="registerForm" class="primary">Sign Up</button>
+                                <button type="submit"  id="signupBtn" form="registerForm" class="primary">Sign Up</button>
                                 <i id="signupSpinner" class="aptsLogoMarkIcon rotate"></i>
                                 <i id="signupSpinnerFallback" class="spinner"></i>
                             </section>
@@ -618,26 +633,26 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--}}
 
     </div>
-    <script type="text/javascript" src="js\jQuery\jquery.min.js"></script>
-    <script type="text/javascript" src="js\jQuery\jquery-ui.min.js"></script>
+    <script type="text/javascript" src="{{ asset('js\jQuery\jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js\jQuery\jquery-ui.min.js') }}"></script>
 
     <!-- Bootstrap-->
-    <script type="text/javascript" src="bootstrap\bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ asset('bootstrap\bootstrap.min.js') }}"></script>
 
     <!-- Google Maps -->
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDF8NFf6d_o4NsjkrwdPgrboEDUo0SMgkE&amp;sensor=false&amp;libraries=places"></script>
 
     <!-- plugins script -->
-    <script type="text/javascript" src="js\plugins.js"></script>
+    <script type="text/javascript" src="{{ asset('js\plugins.js') }}"></script>
 
     <!-- template scripts -->
-    <script type="text/javascript" src="mail\validate.js"></script>
+    <script type="text/javascript" src="{{ asset('mail\validate.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/date/moment.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/date/daterangepicker.js') }}"></script>
-    <script type="text/javascript" src="js\apartment.js"></script>
+    <script type="text/javascript" src="{{ asset('js\apartment.js') }}"></script>
 
     @yield('scripts')
     </body>
