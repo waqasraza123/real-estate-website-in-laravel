@@ -15,7 +15,7 @@ class CreateListigsTable extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('user_id')->nullable();
+            $table->integer('user_id')->nullable();
             $table->string('address');
             $table->string('lat')->nullable();
             $table->string('lng')->nullable();
