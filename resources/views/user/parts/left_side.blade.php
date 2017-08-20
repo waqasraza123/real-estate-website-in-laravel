@@ -3,7 +3,7 @@
         <h3 class="sidebar-title">Welcome back<span class="special-color">.</span></h3>
         <div class="title-separator-primary"></div>
         <div class="profile-info margin-top-60">
-            <div class="profile-info-title negative-margin">{{ Auth::user()->name }}</div>
+            <div class="profile-info-title negative-margin">{{ Auth::user()->first_name }}</div>
             <img src="{{ asset('images\comment-photo2.jpg') }}" alt="" class="pull-left">
             <div class="profile-info-text pull-left">
                 <p class="subtitle-margin">Agent</p>

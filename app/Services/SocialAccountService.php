@@ -24,7 +24,7 @@ class SocialAccountService
             if (!$user) {
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
-                    'name' => $providerUser->getName(),
+                    'first_name' => $providerUser->getName(),
                 ]);
             }
             $account->user()->associate($user);
@@ -50,7 +50,7 @@ class SocialAccountService
             if (!$user) {
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
-                    'name' => $providerUser->getName(),
+                    'first_name' => $providerUser->getName(),
                 ]);
             }
             $account->user()->associate($user);

@@ -2,9 +2,9 @@
 @section('content')
     <section class="no-padding adv-search-section">
         <!-- Slider main container -->
-        <div id="swiper1" class="swiper-container">
+        <div id="swiper1" class="swiper-container" style="height: 487px !important;">
             <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper" >
                 <!-- Slides -->
                 <div class="swiper-slide">
                     <div class="slide-bg swiper-lazy" data-background="images/slides/1.jpg"></div>

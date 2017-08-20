@@ -181,14 +181,14 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="2" id="gender" name="status" title="">
-                                            <label  for="gender"><span  class="spanes">Married</span></label>
+                                            <input type="radio" class="primaryRadio"  value="2" id="status" name="status" title="">
+                                            <label  for="status"><span  class="spanes">Married</span></label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="2" id="gender2" name="status" title="">
-                                            <label  for="gender2"><span  class="spanes">Single</span></label>
+                                            <input type="radio" class="primaryRadio"  value="2" id="status2" name="status" title="">
+                                            <label  for="status2"><span  class="spanes">Single</span></label>
                                         </div>
                                     </div>
                                 </div>

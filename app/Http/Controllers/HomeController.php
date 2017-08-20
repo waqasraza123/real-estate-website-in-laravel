@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
+use App\Listing;
 
 class HomeController extends Controller
 {
@@ -11,8 +12,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(User $user , Listing $listing)
     {
+        $this->user = $user;
+        $this->listing = $listing;
     }
 
     /**
@@ -30,8 +33,8 @@ class HomeController extends Controller
     }
 
     public function accountListing($id){
-        #Here is coing db get from listings table as user_id and return it to view
-        return view('user.listings');
+        $listings = $this->listing->where('user_id' , $id)->get();
+        return view('user.listings' , compact('listings'));
 
     }
 
