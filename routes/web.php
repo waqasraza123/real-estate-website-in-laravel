@@ -39,6 +39,7 @@ Route::get('account/listings/{id}', ['as' => 'accountListing' , 'uses' => 'HomeC
 
 
  #Listing Routes
+
 Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing']);
 Route::post('submit_listing' , ['as' => 'submitListing' , 'uses' => 'ListingController@submitListing']);
 Route::get('edit_listing/{id}' , ['as' => 'editListing' , 'uses' => 'ListingController@editListing']);

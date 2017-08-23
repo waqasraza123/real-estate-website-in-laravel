@@ -478,13 +478,16 @@
                             <div class="short-title-separator"></div>
                         </div>
                         <p class="negative-margin forgot-info">{{ Lang::get('pages.insertadd') }}<br>{{ Lang::get('pages.send_pass') }}</p>
-                        <input name="login" type="email" class="input-full main-input" placeholder="Your email">
-                        <a href="my-profile.html" class="button-primary  button-full">
+                        <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
+                        {{ csrf_field() }}
+                        <input name="email" type="email" class="input-full main-input" placeholder="Your email">
+                        <button type="submit" href="my-profile.html" class="button-primary  button-full">
                             <span>{{ Lang::get('pages.reset_pass') }}</span>
                             <div class="button-triangle"></div>
                             <div class="button-triangle2"></div>
                             <div class="button-icon"><i class="fa fa-user"></i></div>
-                        </a>
+                        </button>
+                        </form>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
