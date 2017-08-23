@@ -15,6 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/setlang/{lang}', function($lang)
+{
+    Session::put('locale', $lang);
+    App::setLocale($lang);
+    return  redirect()->back();
+});
+
+
+
 #The Site Routes
 
 

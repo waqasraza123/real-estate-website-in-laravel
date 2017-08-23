@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-md-3 col-md-pull-9">
     <div class="sidebar-left">
-        <h3 class="sidebar-title">Welcome back<span class="special-color">.</span></h3>
+        <h3 class="sidebar-title">{{ Lang::get('profile.back') }}<span class="special-color">.</span></h3>
         <div class="title-separator-primary"></div>
         <div class="profile-info margin-top-60">
             <div class="profile-info-title negative-margin">{{ Auth::user()->first_name }}</div>
@@ -15,7 +15,7 @@
         </div>
         <div class="margin-top-30">
             <a href="{{ route('account' , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
-                <span class="peofile_left_text">My Profile</span>
+                <span class="peofile_left_text">{{ Lang::get('profile.my_profile') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>
                 <div class="button-icon"><i class="fa fa-user"></i></div>
@@ -23,7 +23,7 @@
         </div>
         <div class="margin-top-15">
             <a href="{{ route('accountListing' , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
-                <span class="peofile_left_text">My Listings</span>
+                <span class="peofile_left_text">{{ Lang::get('profile.my_listing') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>
                 <div class="button-icon"><i class="fa fa-building-o"></i></div>
@@ -31,7 +31,7 @@
         </div>
         <div class=" margin-top-15">
             <a href="my-profile.html" class="button-primary  button-fulls">
-                <span class="peofile_left_text">Reviews Dashboard</span>
+                <span class="peofile_left_text">{{ Lang::get('profile.dashboard') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>
                 <div class="button-icon"><i class="fa fa-comment"></i></div>
@@ -39,7 +39,7 @@
         </div>
         <div class=" margin-top-15">
             <a href="submit-property.html" class="button-primary  button-fulls">
-                <span class="peofile_left_text">My Saved Searches</span>
+                <span class="peofile_left_text">{{ Lang::get('profile.saved_searches') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>
                 <div class="button-icon"><i class="fa fa-search-plus"></i></div>
@@ -47,7 +47,7 @@
         </div>
         <div class=" margin-top-15">
             <a href="submit-property.html" class="button-primary  button-fulls">
-                <span class="peofile_left_text">My Favorites</span>
+                <span class="peofile_left_text">{{ Lang::get('profile.favorites') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>
                 <div class="button-icon"><i class="fa fa-heart"></i></div>
@@ -55,7 +55,7 @@
         </div>
         <div class=" margin-top-15">
             <a href="submit-property.html" class="button-primary  button-fulls">
-                <span class="peofile_left_text">Notifications Settings</span>
+                <span class="peofile_left_text">{{ Lang::get('profile.notifi_set') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>
                 <div class="button-icon"><i class="fa fa-envelope"></i></div>
