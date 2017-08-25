@@ -86,7 +86,7 @@
         </div>
     </div>
     <div class="row">
-
+        @if($listings->first())
         <div class="col-lg-7 " style="    padding-right: 0;">
             <div class="polygon">
                 Polygon
@@ -99,6 +99,7 @@
         <div class="col-lg-5 " id="offers-list" style="background: white;  overflow-y: scroll">
             <div class="row"  style="overflow: scroll">
                 <div class="col-xs-12">
+
                     @foreach($listings as $listing)
                      <div>
                          <i class="fa fa-map-marker list-offer-localization hidden-xs"></i>
@@ -153,10 +154,21 @@
                         <div class="clearfix"></div>
                     </div>
                     @endforeach
+
+
+
                 </div>
             </div>
 
         </div>
+        @else
+            <div class="error-box margin-top-30">
+                <p>Sorry nothing Match to your creterias</p>
+                <div class="small-triangle"></div>
+                <div class="small-icon"><i class="jfont"></i></div>
+            </div>
+
+        @endif
     </div>
 
 @endsection
