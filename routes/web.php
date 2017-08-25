@@ -45,6 +45,7 @@ Route::post('submit_listing' , ['as' => 'submitListing' , 'uses' => 'ListingCont
 Route::get('edit_listing/{id}' , ['as' => 'editListing' , 'uses' => 'ListingController@editListing']);
 Route::post('edit_listing' , ['as' => 'postEditListing' , 'uses' => 'ListingController@postEditListing']);
 Route::get('delete_listing/{id}' , ['as' => 'deleteListing' , 'uses' => 'ListingController@deleteListing']);
+Route::post('search_listing' , ['as' => 'searchListing' , 'uses' => 'ListingController@searchListing']);
 
 Auth::routes();
 

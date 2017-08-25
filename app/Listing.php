@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Listing extends Model
@@ -27,10 +28,18 @@ class Listing extends Model
         'loundry_type',
         'parking_type',
         'parking_fee',
-        'user_id'
+        'user_id',
+        'lat',
+        'lng'
     ];
 
     public function ListingsImages(){
         return $this->hasMany('App\ListingImage');
+    }
+
+
+    public static function GetUser($id){
+        $user = User::where('id' , $id)->first();
+        return $user;
     }
 }

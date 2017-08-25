@@ -132,4 +132,32 @@ class ListingController extends Controller
         }
         return implode($pass); //turn the array into a string
     }
+
+
+    public function searchListing(Request $request){
+        $inputs = $request->except('token');
+        $listing = $this->listing->where('listing_type' , $inputs['listing_type'])->where('address' , $inputs['address']);
+        if($inputs['rent'] != null){
+            $rent_amount = explode('-' , $inputs['rent']);
+            $listing->where('rent' > $rent_amount['0'])->where('rent' < $rent_amount['1']);
+        }if($request->has('beds_baths')){
+            if($inputs['beds_baths']['0'] == 'all_baths'){
+                $listing->where('baths_count' , '>' , $inputs['beds_baths']['1']);
+            }
+            if($inputs['beds_baths']['0'] == 'all'){
+                $listing->where('beds_count' , $inputs['beds_baths']['0']);
+            }
+           $listing->where('beds_count' , $inputs['beds_baths']['0'])->where('baths_count' , '>' , $inputs['beds_baths']['1']);
+        }
+
+        $listings = $listing->get();
+        $langLtd = [];
+        foreach ($listings as $listing){
+            $new = '['.$listing->lat.' , '.$listing->lng.', "images/pin-apartment.png"],';
+            array_push($langLtd ,$new);
+        }
+        return view('pages.searched_listing' , compact('listings' , 'langLtd'));
+
+
+    }
 }

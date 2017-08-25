@@ -987,14 +987,6 @@ html.ie9 #swiper2 .swiper2-static-cont .slide-buttons {
 /* html select */
 
 
-.tab-pane .cs-select,
-.tab-pane .bootstrap-select {
-	margin-top: 45px;
-}
-
-.tab-pane .bootstrap-select.short-margin {
-	margin-top: 30px;
-}
 
 .tab-pane select {
 	opacity: 0;

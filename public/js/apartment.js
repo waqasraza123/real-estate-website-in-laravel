@@ -141,6 +141,19 @@ jQuery(document).ready(function($) {
 			}
 			$("#offers-map").css('height', mapHeight + 'px');
 		}
+
+
+		if( ("#offers-list").length ) {
+			var mapHeight;
+			if( mobile ) {
+				mapHeight = w_height - $('header').innerHeight() - 30;
+			} else if( w_height > 650 ) {
+				mapHeight = w_height - $('header').innerHeight();
+			} else  {
+				mapHeight = 600;
+			}
+			$("#offers-list").css('height', mapHeight + 'px');
+		}
 		
 		if( (".offers-map2").length ) {
 			var mapHeight;
@@ -733,9 +746,7 @@ jQuery(window).load(function() {
 		
 		
 		
-		//$( "select[name='country1']" ).change(function() {
-			//console.log( $( "select[name='country1']" ).val() );
-		//});
+
 	
 		
 /********** GRID LAYOUT **********/		
@@ -1434,19 +1445,23 @@ function offersMapInit(id, locations) {
 		styles: mapStyle
 	};
 	var mapElement = document.getElementById(id);
-
+    var polyShape;
 	var map = new google.maps.Map(mapElement, mapOptions);
 	var LatLngList = [];
 	var i = 0;
 	var mapMarkers = [];
+	var polygon = [];
 	for (i = 0; i < locations.length; i++) {
 		var pos = new google.maps.LatLng(locations[i][0], locations[i][1]);
+		polygon.push(pos)
 		var marker = new google.maps.Marker({
 			position: pos,
 			map: map,
 			title: '',
 			icon: locations[i][2]
 		});
+
+
 				
 		mapMarkers[i] = marker;
 				
@@ -1475,8 +1490,19 @@ function offersMapInit(id, locations) {
                 })(marker, i));
 		LatLngList[i] = pos;
 	}
-			
-	var bounds = new google.maps.LatLngBounds();
+
+    var bermudaTriangle = new google.maps.Polygon({
+        paths: polygon,
+        strokeColor: '#FF0000',
+        strokeOpacity: 0.8,
+        strokeWeight: 3,
+        fillColor: '#FF0000',
+        fillOpacity: 0.35
+    });
+
+
+    bermudaTriangle.setMap(map);
+    var bounds = new google.maps.LatLngBounds();
 	for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
 		bounds.extend(LatLngList[i]);
 	}
@@ -1489,6 +1515,8 @@ function offersMapInit(id, locations) {
 		textSize: 16,
 		textColor: '#3798dd'
 	}];
+
+
 	var markerCluster = new MarkerClusterer(map, mapMarkers, {styles:markerClusterStyle});
 	minClusterZoom = 14;
 	markerCluster.setMaxZoom(minClusterZoom);

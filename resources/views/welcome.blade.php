@@ -113,8 +113,6 @@
                 </div>
             </div>
         </div>
-
-        <form class="adv-search-form" action="#">
             <div class="adv-search-cont">
                 <div class="container">
                     <div class="row">
@@ -135,155 +133,132 @@
                 <div class="container">
                     <div class="row tab-content">
                         <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade in active" id="apartments">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <select name="transaction1" class="bootstrap-select" title="Transaction:" multiple="">
-                                        <option>{{ Lang::get('home.for_sale') }}
-                                        <option>{{ Lang::get('home.for_rent') }}
-                                    </select>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <select name="country1" class="bootstrap-select" title="Country:" multiple="" data-actions-box="true">
-                                        <option>United States
-                                        <option>Canada
-                                        <option>Mexico
-                                    </select>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <select name="city1" class="bootstrap-select" title="City:" multiple="" data-actions-box="true">
-                                        <option>New York
-                                        <option>Los Angeles
-                                        <option>Chicago
-                                        <option>Houston
-                                        <option>Philadelphia
-                                        <option>Phoenix
-                                        <option>Washington
-                                        <option>Salt Lake City
-                                        <option>Detroit
-                                        <option>Boston
-                                    </select>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <select name="location1" class="bootstrap-select" title="Location:" multiple="" data-actions-box="true">
-                                        <option>Some location 1
-                                        <option>Some location 2
-                                        <option>Some location 3
-                                        <option>Some location 4
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-price1-value" class="adv-search-label">{{ Lang::get('home.price') }}</label>
-                                        <span>$</span>
-                                        <input type="text" id="slider-range-price1-value" readonly="" class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-price1" data-min="0" data-max="300000" class="slider-range"></div>
+                            <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
+                                {{ csrf_field()  }}
+                                <input type="hidden" name="listing_type" value="2">
+                                <div class="row">
+                                    <br>
+                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                        <input id="geocomplete" name="address" type="text" class="input-full main-input" required placeholder="Localization">
+                                        <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
+                                        <div class="row" style="display: none">
+                                            <div class="col-xs-12 col-sm-6 margin-top-15">
+                                                <input name="lng" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly">
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 margin-top-15">
+                                                <input name="lat" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly">
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="col-lg-3">
+                                        <select name="rent" id="rent" class="selectpicker"   title="Rent">
+                                                <option value="500-700">$500 - $700</option>
+                                                <option value="700-900">$700 - $900</option>
+                                                <option value="900-1300">$900 - $1300</option>
+                                                <option value="1300-1800">$1300 - $1800</option>
+                                                <option value="1800-2100">$1800 - $2100</option>
+                                                <option value="2100-2150">$2100 - $2150</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
+                                            <optgroup label="Beds" data-max-options="1">
+                                                <option value="all">All Beds</option>
+                                                <option value="1">1 Bed</option>
+                                                <option value="2">2 Beds</option>
+                                                <option value="3">3 Beds</option>
+                                                <option value="4">4+  Beds</option>
+                                            </optgroup>
+                                            <optgroup label="Baths" data-max-options="1">
+                                                <option value="all_baths">All Baths</option>
+                                                <option value="1">1+ Baths</option>
+                                                <option value="2">2+ Baths</option>
+                                                <option value="3">3+ Baths</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 col-lg-2  adv-search-button-cont">
+                                        <button type="submit" class="button-primary  appartament_search">
+                                            <span>{{ Lang::get('home.search_btn') }}</span>
+                                            <div class="button-triangle"></div>
+                                            <div class="button-triangle2"></div>
+                                            <div class="button-icon"><i class="fa fa-search"></i></div>
+                                        </button>
+                                    </div>
+                                </div>
+                               {{-- <div class="row">
 
                                 </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-area1-value" class="adv-search-label">{{ Lang::get('home.area') }}</label>
-                                        <span>m<sup>2</sup></span>
-                                        <input type="text" id="slider-range-area1-value" readonly="" class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-area1" data-min="0" data-max="180" class="slider-range"></div>
+                                <div class="container">
+                                    <div class="row">
+
                                     </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-bedrooms1-value" class="adv-search-label">{{ Lang::get('home.bedroom') }}</label>
-                                        <input type="text" id="slider-range-bedrooms1-value" readonly="" class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-bedrooms1" data-min="1" data-max="10" class="slider-range"></div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-bathrooms1-value" class="adv-search-label">{{ Lang::get('home.bathroom') }} </label>
-                                        <input type="text" id="slider-range-bathrooms1-value" readonly="" class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-bathrooms1" data-min="1" data-max="4" class="slider-range"></div>
-                                    </div>
-                                </div>
-                            </div>
+                                </div>--}}
+                            </form>
                         </div>
                         <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="houses">
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <select name="transaction2" class="bootstrap-select" title="Transaction:" multiple="">
-                                        <option>{{ Lang::get('home.for_sale') }}
-                                        <option>{{ Lang::get('home.for_rent') }}
-                                    </select>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <select name="country2" class="bootstrap-select" title="Country:" multiple="" data-actions-box="true">
-                                        <option>United States
-                                        <option>Canada
-                                        <option>Mexico
-                                    </select>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <select name="city2" class="bootstrap-select" title="City:" multiple="" data-actions-box="true">
-                                        <option>New York
-                                        <option>Los Angeles
-                                        <option>Chicago
-                                        <option>Houston
-                                        <option>Philadelphia
-                                        <option>Phoenix
-                                        <option>Washington
-                                        <option>Salt Lake City
-                                        <option>Detroit
-                                        <option>Boston
-                                    </select>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <select name="location2" class="bootstrap-select" title="Location:" multiple="" data-actions-box="true">
-                                        <option>Some location 1
-                                        <option>Some location 2
-                                        <option>Some location 3
-                                        <option>Some location 4
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-price2-value" class="adv-search-label">{{ Lang::get('home.price') }}</label>
-                                        <span>$</span>
-                                        <input type="text" id="slider-range-price2-value" readonly="" class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-price2" data-min="0" data-max="300000" class="slider-range"></div>
+                            <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
+                                {{ csrf_field()  }}
+                                <input type="hidden" name="listing_type" value="2">
+                                <div class="row">
+                                    <br>
+                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                        <input id="geocomplete" name="address" type="text" class="input-full main-input" required placeholder="Localization">
+                                        <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
+                                        <div class="row" style="display: none">
+                                            <div class="col-xs-12 col-sm-6 margin-top-15">
+                                                <input name="lng" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly">
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 margin-top-15">
+                                                <input name="lat" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <select name="rent" id="rent" class="selectpicker"   title="Rent">
+                                            <option value="500-700">$500 - $700</option>
+                                            <option value="700-900">$700 - $900</option>
+                                            <option value="900-1300">$900 - $1300</option>
+                                            <option value="1300-1800">$1300 - $1800</option>
+                                            <option value="1800-2100">$1800 - $2100</option>
+                                            <option value="2100-2150">$2100 - $2150</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
+                                            <optgroup label="Beds" data-max-options="1">
+                                                <option value="all">All Beds</option>
+                                                <option value="1">1 Bed</option>
+                                                <option value="2">2 Beds</option>
+                                                <option value="3">3 Beds</option>
+                                                <option value="4">4+  Beds</option>
+                                            </optgroup>
+                                            <optgroup label="Baths" data-max-options="1">
+                                                <option value="all_baths">All Baths</option>
+                                                <option value="1">1+ Baths</option>
+                                                <option value="2">2+ Baths</option>
+                                                <option value="3">3+ Baths</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 col-lg-2  adv-search-button-cont">
+                                        <button type="submit" class="button-primary  appartament_search">
+                                            <span>{{ Lang::get('home.search_btn') }}</span>
+                                            <div class="button-triangle"></div>
+                                            <div class="button-triangle2"></div>
+                                            <div class="button-icon"><i class="fa fa-search"></i></div>
+                                        </button>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-area2-value" class="adv-search-label">{{ Lang::get('home.area') }}</label>
-                                        <span>m<sup>2</sup></span>
-                                        <input type="text" id="slider-range-area2-value" readonly="" class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-area2" data-min="0" data-max="180" class="slider-range"></div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-bedrooms2-value" class="adv-search-label">{{ Lang::get('home.bedroom') }}</label>
-                                        <input type="text" id="slider-range-bedrooms2-value" readonly="" class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-bedrooms2" data-min="1" data-max="10" class="slider-range"></div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-bathrooms2-value" class="adv-search-label">{{ Lang::get('home.bathroom') }}</label>
-                                        <input type="text" id="slider-range-bathrooms2-value" readonly="" class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-bathrooms2" data-min="1" data-max="4" class="slider-range"></div>
-                                    </div>
-                                </div>
-                            </div>
+                                {{-- <div class="row">
+
+                                 </div>
+                                 <div class="container">
+                                     <div class="row">
+
+                                     </div>
+                                 </div>--}}
+                            </form>
                         </div>
                         <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="commercials">
                             <div class="row">
@@ -436,23 +411,7 @@
                         </div>
                     </div>
                 </div>
-
-
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 col-lg-3 col-md-offset-6 col-lg-offset-9 adv-search-button-cont">
-                            <a href="#" class="button-primary pull-right">
-                                <span>{{ Lang::get('home.search_btn') }}</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </form>
     </section>
     <section class="section-light bottom-padding-45 section-both-shadow">
         <div class="container">
@@ -954,6 +913,7 @@
             </div>
         </div>
     </section>
+
 @endsection
 @section('scripts')
     <script type="text/javascript">
@@ -978,6 +938,41 @@
             mapInit(40.6128,-73.9976,"grid-map6","images/pin-house.png", false);
         }
 
+    </script>
+    <script>
+        $(document).ready(function () {
+            $( "select[name='beds_baths']" ).selectpicker();
+            $( "select[name='rent']" ).selectpicker();
+
+            /*$('.appartament_search').click(function () {
+                var datas = $('.apartament_form').serialize();
+                var beds = $( "select[name='beds_baths']" ).val();
+                console.log(beds);
+                $.ajax({
+                    type:'post',
+                    url : '{{ route('searchListing') }}',
+                    data: datas,
+                    success:function (res) {
+
+                    }
+                })
+            });
+          
+*/
+
+            var defaultBounds = new google.maps.LatLngBounds(
+                new google.maps.LatLng(-33.8902, 151.1759),
+                new google.maps.LatLng(-33.8474, 151.2631));
+
+
+            var input = document.getElementById('searchTextField');
+            var options = {
+                bounds: defaultBounds,
+                types: ['establishment']
+            };
+            autocomplete = new google.maps.places.Autocomplete(input, options);
+
+        })
     </script>
 @endsection
 
