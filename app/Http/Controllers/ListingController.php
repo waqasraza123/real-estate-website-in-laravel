@@ -139,7 +139,8 @@ class ListingController extends Controller
         $listing = $this->listing->where('listing_type' , $inputs['listing_type'])->where('address' , $inputs['address']);
         if($inputs['rent'] != null){
             $rent_amount = explode('-' , $inputs['rent']);
-            $listing->where('rent' > $rent_amount['0'])->where('rent' < $rent_amount['1']);
+
+            $listing->where('rent', '>' , $rent_amount['0'])->where('rent', '<' ,$rent_amount['1']);
         }if($request->has('beds_baths')){
             if($inputs['beds_baths']['0'] == 'all_baths'){
                 $listing->where('baths_count' , '>' , $inputs['beds_baths']['1']);
