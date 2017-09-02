@@ -975,6 +975,19 @@ jQuery(window).load(function() {
 			});
 				
 				$("#geocomplete").bind("geocode:dragged", function(event, latLng){
+                    var geocoder = new google.maps.Geocoder;
+                    geocoder.geocode({'location': latLng}, function(results, status) {
+                        if (status === 'OK') {
+                            if (results[1]) {
+                                $("input[name=address]").val(results[1].formatted_address);
+                            } else {
+                                window.alert('No results found');
+                            }
+                        } else {
+                            window.alert('Geocoder failed due to: ' + status);
+                        }
+                    });
+
 					$("input[name=lat]").val(latLng.lat());
 					$("input[name=lng]").val(latLng.lng());
 				});

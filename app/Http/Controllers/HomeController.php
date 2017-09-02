@@ -25,7 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
+
         return view('home');
+    }
+
+
+    public function homePage(){
+        $listing = $this->listing->paginate(6);
+        return view('welcome'  , compact('listing'));
     }
 
     public function  addListing(){

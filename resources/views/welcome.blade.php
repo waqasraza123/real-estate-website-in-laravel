@@ -431,293 +431,56 @@
         </div>
         <div class="featured-offers-container">
             <div class="owl-carousel" id="featured-offers-owl">
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images\featured-offer1.jpg" alt="">
-                            <div class="type-container">
-                                <div class="estate-type">{{ Lang::get('home.appartament') }}</div>
-                                <div class="transaction-type">{{ Lang::get('home.sale') }}</div>
+                <span style="display: none"> {{ $count = 0 }}</span>
+                @if($listing->first())
+                    @foreach($listing as $lis)
+                        <div class="featured-offer-col">
+                            <span style="display: none">{{ $count++ }}</span>
+                            <div class="featured-offer-front">
+                                <div class="featured-offer-photo">
+                                    @if($lis->ListingsImages()->first())
+                                        <img src="{{ asset('assets/images').'/'.$lis->ListingsImages()->first()->image }}" alt="">
+                                    @else
+                                        <img src="{{ asset('images/featured-offer7.jpg') }}" alt="">
+                                    @endif
+                                    {{--<div class="type-container">
+                                        <div class="estate-type">{{ Lang::get('home.appartament') }}</div>
+                                        <div class="transaction-type">{{ Lang::get('home.sale') }}</div>
+                                    </div>--}}
+                                </div>
+                                <div class="featured-offer-text">
+                                    <h4 class="featured-offer-title"><i class=" fa fa-map-marker"></i>  {{ $lis->address }}</h4>
+                                    <p>{{ str_limit($lis->description , 150) }}</p>
+                                </div>
+                                <div class="featured-offer-params">
+                                    <div class="featured-area">
+                                        <img src="images\area-icon.png" alt="">54m<sup>2</sup>
+                                    </div>
+                                    <div class="featured-rooms">
+                                        <img src="images\rooms-icon.png" alt="">3
+                                    </div>
+                                    <div class="featured-baths">
+                                        <img src="images\bathrooms-icon.png" alt="">1
+                                    </div>
+                                </div>
+                                <div class="featured-price">
+                                    $ 320 000
+                                </div>
+                            </div>
+                            <div class="featured-offer-back">
+                                <div id="featured-map{{$count}}" class="featured-offer-map"></div>
+                                <div class="button">
+                                    <a href="estate-details-right-sidebar.html" class="button-primary">
+                                        <span>read more</span>
+                                        <div class="button-triangle"></div>
+                                        <div class="button-triangle2"></div>
+                                        <div class="button-icon"><i class="fa fa-search"></i></div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">250 South Dr, Fort Collins, Colorado 80523, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images\area-icon.png" alt="">54m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images\rooms-icon.png" alt="">3
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images\bathrooms-icon.png" alt="">1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $ 320 000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map1" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images\featured-offer2.jpg" alt="">
-                            <div class="type-container">
-                                <div class="estate-type">{{ Lang::get('home.appartament') }}</div>
-                                <div class="transaction-type">{{ Lang::get('home.sale') }}</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">West Fourth Street, New York 10003, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images\area-icon.png" alt="">70m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images\rooms-icon.png" alt="">4
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images\bathrooms-icon.png" alt="">1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $ 350 000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map2" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images\featured-offer3.jpg" alt="">
-                            <div class="type-container">
-                                <div class="estate-type">house</div>
-                                <div class="transaction-type">{{ Lang::get('home.sale') }}</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">500 E. Elwood St. Phoenix, AZ 85034, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images\area-icon.png" alt="">250m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images\rooms-icon.png" alt="">7
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images\bathrooms-icon.png" alt="">3
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $ 650 000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map3" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images\featured-offer4.jpg" alt="">
-                            <div class="type-container">
-                                <div class="estate-type">{{ Lang::get('home.appartament') }}</div>
-                                <div class="transaction-type">{{ Lang::get('home.sale') }}</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">N. Willamette Blvd., Portland, OR 97203-5798, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images\area-icon.png" alt="">40m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images\rooms-icon.png" alt="">2
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images\bathrooms-icon.png" alt="">1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $ 299 000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map4" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images\featured-offer5.jpg" alt="">
-                            <div class="type-container">
-                                <div class="estate-type">apartment</div>
-                                <div class="transaction-type">{{ Lang::get('home.sale') }}</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">One Brookings Drive St. Louis, Missouri 63130-4899, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images\area-icon.png" alt="">80m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images\rooms-icon.png" alt="">3
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images\bathrooms-icon.png" alt="">1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $ 390 000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map5" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images\featured-offer6.jpg" alt="">
-                            <div class="type-container">
-                                <div class="estate-type">apartment</div>
-                                <div class="transaction-type">{{ Lang::get('home.sale') }}</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">One Neumann Drive Aston, Philadelphia 19014-1298, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images\area-icon.png" alt="">54m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images\rooms-icon.png" alt="">3
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images\bathrooms-icon.png" alt="">1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $ 320 000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map6" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images\featured-offer7.jpg" alt="">
-                            <div class="type-container">
-                                <div class="estate-type">{{  Lang::get('home.house') }}</div>
-                                <div class="transaction-type">{{ Lang::get('home.sale') }}</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">200 South Dr, Fort Collins, Colorado 80523, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images\area-icon.png" alt="">54m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images\rooms-icon.png" alt="">3
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images\bathrooms-icon.png" alt="">1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $ 320 000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map7" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>{{ Lang::get('home.read_more') }}</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </section>
@@ -777,100 +540,7 @@
         </div>
 
     </section>
-   {{-- <section class="section-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-lg-12">
-                    <h5 class="subtitle-margin">latest from</h5>
-                    <h1 class="">our blog<span class="special-color">.</span></h1>
-                </div>
 
-                <div class="col-xs-12">
-                    <div class="title-separator-primary"></div>
-                </div>
-            </div>
-        </div>
-        <div class="container blog-grid1-container">
-            <div class="row">
-                <div class="col-md-12 col-lg-6 blog-grid1-left-col">
-                    <article class="blog-grid1-item zoom-cont">
-                        <figure class=""><a href="blog-right-sidebar.html"><img src="images\blog-grid1a.jpg" alt="" class="zoom"></a></figure>
-                        <div class="blog-grid1-post-content">
-                            <div class="blog-grid1-topline">
-                                <div class="blog-grid1-author pull-left"><i class="fa fa-user"></i>Admin</div>
-                                <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <a href="blog-right-sidebar.html" class="blog-grid1-title"><h4>It’s much cheaper to buy than to rent</h4></a>
-                            <div class="blog-grid1-separator"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet...</p>
-                            <a href="blog-right-sidebar.html" class="blog-grid1-button">
-                                <span>read more</span>
-                                <div class="blog-grid1-triangle"></div>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-12 col-lg-6 blog-grid1-right-col">
-                    <article class="blog-grid1-item zoom-cont">
-                        <figure class=""><a href="blog-right-sidebar.html"><img src="images\blog-grid1b.jpg" alt="" class="zoom"></a></figure>
-                        <div class="blog-grid1-post-content">
-                            <div class="blog-grid1-topline">
-                                <div class="blog-grid1-author pull-left"><i class="fa fa-user"></i>Admin</div>
-                                <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <a href="blog-right-sidebar.html" class="blog-grid1-title"><h4>It’s much cheaper to buy than to rent</h4></a>
-                            <div class="blog-grid1-separator"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet...</p>
-                            <a href="blog-right-sidebar.html" class="blog-grid1-button">
-                                <span>read more</span>
-                                <div class="blog-grid1-triangle"></div>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-12 col-lg-6 blog-grid1-left-col">
-                    <article class="blog-grid1-item zoom-cont">
-                        <div class="blog-grid1-post-content">
-                            <div class="blog-grid1-topline">
-                                <div class="blog-grid1-author pull-left"><i class="fa fa-user"></i>Admin</div>
-                                <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <a href="blog-right-sidebar.html" class="blog-grid1-title"><h4>It’s much cheaper to buy than to rent</h4></a>
-                            <div class="blog-grid1-separator"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet...</p>
-                            <a href="blog-right-sidebar.html" class="blog-grid1-button-right">
-                                <span>read more</span>
-                                <div class="blog-grid1-triangle"></div>
-                            </a>
-                        </div>
-                        <figure class=""><a href="blog-right-sidebar.html"><img src="images\blog-grid1e.jpg" alt="" class="zoom"></a></figure>
-                    </article>
-                </div>
-                <div class="col-md-12 col-lg-6 blog-grid1-right-col">
-                    <article class="blog-grid1-item zoom-cont">
-                        <div class="blog-grid1-post-content">
-                            <div class="blog-grid1-topline">
-                                <div class="blog-grid1-author pull-left"><i class="fa fa-user"></i>Admin</div>
-                                <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <a href="blog-right-sidebar.html" class="blog-grid1-title"><h4>It’s much cheaper to buy than to rent</h4></a>
-                            <div class="blog-grid1-separator"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet...</p>
-                            <a href="blog-right-sidebar.html" class="blog-grid1-button-right">
-                                <span>read more</span>
-                                <div class="blog-grid1-triangle"></div>
-                            </a>
-                        </div>
-                        <figure class=""><a href="blog-right-sidebar.html"><img src="images\blog-grid1d.jpg" alt="" class="zoom"></a></figure>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>--}}
     <section class="section-light top-padding-45 bottom-padding-45">
         <div class="container">
             <div class="row count-container">
@@ -913,17 +583,17 @@
             </div>
         </div>
     </section>
-
+    <div style="display: none">{{ $counts = 1 }}</div>
 @endsection
 @section('scripts')
     <script type="text/javascript">
         google.maps.event.addDomListener(window, 'load', init);
         function init() {
-
-            mapInitAddress("narodowa 18 Pruszków","featured-map1","images/pin-house.png", false);
-
+            @foreach($listing as $lis)
+                mapInitAddress("{{ $lis->address }}","featured-map{{$counts++}}","images/pin-house.png", false);
+            @endforeach
             //mapInit(40.6128,-73.7903,"featured-map1","images/pin-house.png", false);
-            mapInit(40.7222,-73.7903,"featured-map2","/images/pin-apartment.png", false);
+           /* mapInit(40.7222,-73.7903,"featured-map2","/images/pin-apartment.png", false);
             mapInit(41.0306,-73.7669,"featured-map3","/images/pin-land.png", false);
             mapInit(41.3006,-72.9440,"featured-map4","/images/pin-commercial.png", false);
             mapInit(42.2418,-74.3626,"featured-map5","/images/pin-house.png", false);
@@ -935,7 +605,7 @@
             mapInit(33.7337,-84.4443,"grid-map3","images/pin-land.png", false);
             mapInit(33.8588,-84.4858,"grid-map4","images/pin-commercial.png", false);
             mapInit(34.0254,-84.3560,"grid-map5","images/pin-apartment.png", false);
-            mapInit(40.6128,-73.9976,"grid-map6","images/pin-house.png", false);
+            mapInit(40.6128,-73.9976,"grid-map6","images/pin-house.png", false);*/
         }
 
     </script>
@@ -943,28 +613,9 @@
         $(document).ready(function () {
             $( "select[name='beds_baths']" ).selectpicker();
             $( "select[name='rent']" ).selectpicker();
-
-            /*$('.appartament_search').click(function () {
-                var datas = $('.apartament_form').serialize();
-                var beds = $( "select[name='beds_baths']" ).val();
-                console.log(beds);
-                $.ajax({
-                    type:'post',
-                    url : '{{ route('searchListing') }}',
-                    data: datas,
-                    success:function (res) {
-
-                    }
-                })
-            });
-          
-*/
-
             var defaultBounds = new google.maps.LatLngBounds(
                 new google.maps.LatLng(-33.8902, 151.1759),
                 new google.maps.LatLng(-33.8474, 151.2631));
-
-
             var input = document.getElementById('searchTextField');
             var options = {
                 bounds: defaultBounds,
