@@ -31,40 +31,36 @@
                             <div class="title-separator-primary"></div>
                         </div>
                     </div>
-                    <form name="agent-from" action="#" enctype="multipart/form-data">
+                    <form name="agent-from" action="{{ route('updateProfile') }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <input type="hidden" value="{{ Auth::user()->id }}" name="id">
                         <div class="row margin-top-60">
                             <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-3 col-md-4">
                                 <div class="agent-photos">
-                                    <img src="{{ asset('images\agent3.jpg') }}" id="agent-profile-photo"
+                                    <img src="@if(Auth::user()->avatar) {{ asset('assets\images').'/'.Auth::user()->avatar }}  @else {{ asset('images\agent3.jpg') }}@endif" id="agent-profile-photo"
                                          class="img-responsive" alt="">
                                     <div class="change-photo">
                                         <i class="fa fa-pencil fa-lg"></i>
-                                        <input type="file" name="agent-photo" id="agent-photo">
+                                        <input type="file" name="avatar" id="agent-photo">
                                     </div>
                                     <input type="text" disabled="disabled" id="agent-file-name" class="main-input">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-9 col-md-8">
                                 <div class="labelled-input">
-                                    <label for="first-name">{{ Lang::get('listing.first_name') }}</label><input id="first-name" name="first-name" type="text" class="input-full main-input" placeholder="" value="Timothy">
+                                    <label for="first-name">{{ Lang::get('listing.first_name') }}</label><input id="first_name" name="first_name" type="text" class="input-full main-input" placeholder="" value="{{ Auth::user()->first_name }}">
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="labelled-input">
-                                    <label for="last-name">{{ Lang::get('listing.last_name') }}</label><input id="last-name" name="last-name" type="text" class="input-full main-input" placeholder="" value="Johnson">
+                                    <label for="last-name">{{ Lang::get('listing.last_name') }}</label><input id="last_name" name="last_name" type="text" class="input-full main-input" placeholder="" value="{{ Auth::user()->last_name }}">
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="labelled-input">
-                                    <label for="email">{{ Lang::get('listing.email') }}</label><input id="email" name="email" type="email" class="input-full main-input" placeholder="" value="agent@somedomain.tld">
+                                    <label for="email">{{ Lang::get('listing.email') }}</label><input id="email" name="email" type="email" class="input-full main-input" placeholder="" value={{ Auth::user()->email }}>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="labelled-input">
-                                    <label for="phone">{{ Lang::get('listing.phone') }}</label><input id="phone" name="phone" type="tel" class="input-full main-input" placeholder="" value="123-456-789">
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="labelled-input last">
-                                    <label for="address">{{ Lang::get('listing.address') }}</label><input id="address" name="address" type="text"
-                                                                               class="input-full main-input"
-                                                                               placeholder="" value="Some address here">
+                                    <label for="phone">{{ Lang::get('listing.phone') }}</label><input id="phone" name="phone" type="tel" class="input-full main-input" placeholder="" value="{{ Auth::user()->phone }}">
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -72,7 +68,7 @@
                         <div class="row margin-top-30">
                             <div class="col-lg-6">
                                 <label class="labeles"  for="settingsState">{{ Lang::get('profile.state') }}</label>
-                                <select id="settingsState" class="selectpicker selectDropdown stateSelect input-full main-input" title="" >
+                                <select id="settingsState" name="state" class="selectpicker selectDropdown stateSelect input-full main-input" title="" >
                                     <option value="">Choose a State</option>
                                     <option value="AK">Alaska</option>
                                     <option value="AL">Alabama</option>
@@ -130,15 +126,15 @@
                             <div class="col-lg-6">
                                 <div class="row margin-top-60">
                                     <div class="checkboxGroup">
-                                        <input type="checkbox" id="c1" name="cc" class="main-checkbox">
+                                        <input type="checkbox" value="1" @if(Auth::user()->dogs == '1') checked @endif id="c1" name="dogs" class="main-checkbox">
                                         <label for="c1"><span></span>{{ Lang::get('profile.dogs') }}</label><br>
                                     </div>
                                     <div class="checkboxGroup">
-                                        <input type="checkbox" id="c2" name="cc" class="main-checkbox">
+                                        <input type="checkbox" value="1" id="c2" @if(Auth::user()->cats == '1') checked @endif name="cats" class="main-checkbox">
                                         <label for="c2"><span></span>{{ Lang::get('profile.cats') }}</label><br>
                                     </div>
                                     <div class="checkboxGroup">
-                                        <input type="checkbox" id="c3" name="cc" class="main-checkbox">
+                                        <input type="checkbox" value="1" id="c3" @if(Auth::user()->other == '1') checked @endif name="other" class="main-checkbox">
                                         <label for="c3"><span></span>{{ Lang::get('profile.other') }}</label><br>
                                     </div>
                                 </div>
@@ -147,11 +143,11 @@
                         <div class="row margin-top-30">
                             <div class="col-lg-6">
                                 <label  for="city">{{ Lang::get('profile.city') }}</label>
-                                <input id="city" name="city" type="text" class="input-full main-input" placeholder="" value="City">
+                                <input id="city" name="city" type="text" class="input-full main-input" placeholder="City" value="{{ Auth::user()->city }}">
                             </div>
                             <div class="col-sm-6">
                                 <label  for="birthday">{{ Lang::get('profile.bd') }}</label>
-                                <input class="input-full main-input" id="birthday" type="text" name="birthday" placeholder="Date" readonly="" required="true" title="">
+                                <input class="input-full main-input" id="birthday" type="text" name="birthday" value="@if(Auth::user()->birthday != null){{\Carbon\Carbon::parse(Auth::user()->birthday)->format('m/d/Y') }} @endif" placeholder="Date" readonly=""  title="">
                             </div>
                         </div>
                         <div class="row margin-top-30">
@@ -162,13 +158,13 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="2" id="gender" name="gender" title="">
+                                            <input type="radio" class="primaryRadio" @if(Auth::user()->gender == '1') checked @endif  value="1" id="gender" name="gender" title="">
                                             <label  for="gender"><span  class="spanes">{{ Lang::get('profile.male') }}</span></label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="2" id="gender2" name="gender" title="">
+                                            <input type="radio" class="primaryRadio" @if(Auth::user()->gender == '2') checked @endif  value="2" id="gender2" name="gender" title="">
                                             <label  for="gender2"><span  class="spanes">{{ Lang::get('profile.famele') }}</span></label>
                                         </div>
                                     </div>
@@ -181,13 +177,13 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="2" id="status" name="status" title="">
+                                            <input type="radio" class="primaryRadio" @if(Auth::user()->status == '1') checked @endif  value="1" id="status" name="status" title="">
                                             <label  for="status"><span  class="spanes">{{ Lang::get('profile.married') }}</span></label>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="2" id="status2" name="status" title="">
+                                            <input type="radio" class="primaryRadio" @if(Auth::user()->status == '2') checked @endif  value="2" id="status2" name="status" title="">
                                             <label  for="status2"><span  class="spanes">{{ Lang::get('profile.single') }}</span></label>
                                         </div>
                                     </div>
@@ -198,32 +194,32 @@
                             <div class="col-lg-6">
                                 <div class="listGroup">
                                     <label class="labeles" for="settingsIncomeRange">{{ Lang::get('profile.range') }}</label>
-                                    <select id="settingsIncomeRange" class="selectpicker selectDropdown incomeSelect"
+                                    <select id="settingsIncomeRange" name="range" class="selectpicker selectDropdown incomeSelect"
                                             title="" style="display: none;">
                                         <option value="">{{ Lang::get('profile.chose_range') }}</option>
-                                        <option value="1">$0-35K</option>
-                                        <option value="2">36K-75K</option>
-                                        <option value="3">75K-125K</option>
-                                        <option value="4">126K+</option>
+                                        <option value="1" @if(Auth::user()->range == '1') selected @endif>$0-35K</option>
+                                        <option value="2" @if(Auth::user()->range == '2') selected @endif>36K-75K</option>
+                                        <option value="3" @if(Auth::user()->range == '3') selected @endif>75K-125K</option>
+                                        <option value="4" @if(Auth::user()->range == '4') selected @endif>126K+</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="listGroup">
                                     <label class="labeles" for="settingsNumOfChildren">{{ Lang::get('profile.number_off_child') }}</label>
-                                    <select id="settingsNumOfChildren" class="selectpicker selectDropdown childrenSelect" title="" style="display: none;">
+                                    <select id="settingsNumOfChildren" name="children" class="selectpicker selectDropdown childrenSelect" title="" style="display: none;">
                                         <option value="">{{ Lang::get('profile.choose_num') }}</option>
-                                        <option value="0">{{ Lang::get('profile.none') }}</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
+                                        <option value="0" @if(Auth::user()->children == '0') selected @endif>{{ Lang::get('profile.none') }}</option>
+                                        <option value="1" @if(Auth::user()->children == '1') selected @endif>1</option>
+                                        <option value="2" @if(Auth::user()->children == '2') selected @endif>2</option>
+                                        <option value="3" @if(Auth::user()->children == '3') selected @endif>3</option>
+                                        <option value="4" @if(Auth::user()->children == '4') selected @endif>4</option>
+                                        <option value="5" @if(Auth::user()->children == '5') selected @endif>5</option>
+                                        <option value="6" @if(Auth::user()->children == '6') selected @endif>6</option>
+                                        <option value="7" @if(Auth::user()->children == '7') selected @endif>7</option>
+                                        <option value="8" @if(Auth::user()->children == '8') selected @endif>8</option>
+                                        <option value="9" @if(Auth::user()->children == '9') selected @endif>9</option>
+                                        <option value="10" @if(Auth::user()->children == '10') selected @endif>10</option>
                                     </select>
                                 </div>
                             </div>
@@ -237,8 +233,8 @@
 									</span>
                                         Facebook
                                     </label>
-                                    <input id="facebook" name="facebook" type="text" class="input-full main-input"
-                                           placeholder="" value="http://facebook.url">
+                                    <input id="facebook" name="facebook_link" type="text" class="input-full main-input"
+                                           placeholder="https://www.facebook.com/" value="{{ Auth::user()->facebook_link }}">
                                     <div class="clearfix"></div>
                                 </div>
 
@@ -251,8 +247,8 @@
 									</span>
                                         Google +
                                     </label>
-                                    <input id="gplus" name="gplus" type="text" class="input-full main-input"
-                                           placeholder="" value="http://gplus.url">
+                                    <input id="gplus" name="google_link" type="text" class="input-full main-input"
+                                           placeholder="https://www.google.com/" value="{{ Auth::user()->google_link }}">
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -287,12 +283,12 @@
                         <div class="row margin-top-15">
                             <div class="col-xs-12">
                                 <div class="center-button-cont center-button-cont-border">
-                                    <a href="#" class="button-primary ">
+                                    <button type="submit" href="#" class="button-primary ">
                                         <span>{{ Lang::get('profile.save') }}</span>
                                         <div class="button-triangle"></div>
                                         <div class="button-triangle2"></div>
                                         <div class="button-icon"><i class="fa fa-lg fa-floppy-o"></i></div>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

@@ -42,4 +42,36 @@ class HomeController extends Controller
        $user =  User::find($id)->first();
        return view('user.profile');
     }
+
+    public function updateProfile(Request $request){
+        $inputs = $request->except('_token' , 'id' , 'password' , 'repeat-password' , 'avatar');
+        $inputs['birthday'] = \Carbon\Carbon::parse($inputs['birthday'])->format('Y-m-d H:i:s');
+        if($request->file()) {
+            $images = $this->getImagesName($request->file());
+            $this->user->where('id' , $request->get('id'))->update([
+                'avatar' => $images[0]['image']
+            ]);
+        }
+        if($this->user->where('id' , $request->get('id'))->update($inputs)){
+            return redirect()->back()->with('success' , 'Sucessfully Updated');
+        }else{
+            return redirect()->back()->withErrors('error' , 'Please try again');
+        }
+
+    }
+
+
+    public function getImagesName($files)
+    {
+        $file_names = [];
+        if ($files) {
+            foreach ($files as $file) {
+                    $filename = str_random(20) . "." . $file->getClientOriginalExtension();
+                    $file_names[]['image'] = $filename;
+                    $file->move(public_path() . '/assets/images/', $filename);
+            }
+            return $file_names;
+        }
+        return '';
+    }
 }

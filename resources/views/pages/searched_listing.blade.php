@@ -186,7 +186,7 @@
         };
         autocomplete = new google.maps.places.Autocomplete(input, options);
 
-        })
+    })
 
 
     </script>
@@ -311,15 +311,10 @@
                 var array = [];
                 array.push(e.latLng.lat(), e.latLng.lng());
                 locations.push(array);
-                console.log(locations);
 
-
-
-
-                console.log(locations);
-                var lat = [];
+                window.lat = '';
                 var lng = [];
-                lat.push(e.latLng.lat());
+                lat += e.latLng.lat();
                 lng.push(e.latLng.lng());
                 poly.getPath().push(e.latLng);
 
@@ -333,7 +328,15 @@
             google.maps.event.addListenerOnce(map,'mouseup',function(e){
                 google.maps.event.removeListener(move);
                 var path=poly.getPath();
+                window.sending_data = poly.getPath().getArray();
+                sending_data = JSON.stringify(sending_data);
                 poly.setMap(null);
+                $.ajax({
+                    'type' : 'post',
+                    'url' : '{{ route('searchListingAjax') }}',
+                    'data' : {datas:sending_data},
+                });
+
 
                 poly=new google.maps.Polygon({map:map,path:path});
                 google.maps.event.clearListeners(map.getDiv(), 'mousedown');
@@ -365,6 +368,26 @@
             });
 
         });
+
+        function inside(point, vs) {
+            // ray-casting algorithm based on
+            // http://www.ecse.rpi.edu/Homepages/wrf/Research/Short_Notes/pnpoly.html
+
+            var x = point[0], y = point[1];
+
+            var inside = false;
+            for (var i = 0, j = vs.length - 1; i < vs.length; j = i++) {
+                var xi = vs[i][0], yi = vs[i][1];
+                var xj = vs[j][0], yj = vs[j][1];
+
+                var intersect = ((yi > y) != (yj > y))
+                    && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+                if (intersect) inside = !inside;
+            }
+
+            return inside;
+        };
+
 
 
     </script>

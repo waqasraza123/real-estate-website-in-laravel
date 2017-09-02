@@ -4,7 +4,7 @@
         <div class="title-separator-primary"></div>
         <div class="profile-info margin-top-60">
             <div class="profile-info-title negative-margin">{{ Auth::user()->first_name }}</div>
-            <img src="{{ asset('images\comment-photo2.jpg') }}" alt="" class="pull-left">
+            <img src="@if(Auth::user()->avatar) {{ asset('assets\images').'/'.Auth::user()->avatar }}  @else {{ asset('images\agent3.jpg') }}@endif" alt="" class="pull-left">
             <div class="profile-info-text pull-left">
                 <p class="subtitle-margin">Agent</p>
                 <p class="">42 Estates</p>

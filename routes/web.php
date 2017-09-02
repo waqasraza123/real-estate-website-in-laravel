@@ -36,6 +36,7 @@ Route::get('/setlang/{lang}', function($lang)
 
 Route::get('/account/{id}', ['as' => 'account' , 'uses' => 'HomeController@account']);
 Route::get('account/listings/{id}', ['as' => 'accountListing' , 'uses' => 'HomeController@accountListing']);
+Route::post('update_profile', ['as' => 'updateProfile' , 'uses' => 'HomeController@updateProfile']);
 
 
  #Listing Routes
@@ -46,6 +47,7 @@ Route::get('edit_listing/{id}' , ['as' => 'editListing' , 'uses' => 'ListingCont
 Route::post('edit_listing' , ['as' => 'postEditListing' , 'uses' => 'ListingController@postEditListing']);
 Route::get('delete_listing/{id}' , ['as' => 'deleteListing' , 'uses' => 'ListingController@deleteListing']);
 Route::post('search_listing' , ['as' => 'searchListing' , 'uses' => 'ListingController@searchListing']);
+Route::post('search_listing_ajax' , ['as' => 'searchListingAjax' , 'uses' => 'ListingController@searchListingAjax']);
 
 Auth::routes();
 
