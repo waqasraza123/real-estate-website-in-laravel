@@ -662,6 +662,7 @@
 
     <!-- plugins script -->
     <script type="text/javascript" src="{{ asset('js\plugins.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js\jquery.validate.js') }}"></script>
 
     <!-- template scripts -->
     <script type="text/javascript" src="{{ asset('mail\validate.js') }}"></script>

@@ -1,11 +1,5 @@
 @extends('layouts.app')
-<style>
-    .checkboxGroup{
-        float:left;
-        margin-left: 10px;
-        padding: 10px;
-    }
-</style>
+
 @section('content')
 
     <section class="short-image no-padding blog-short-title">
@@ -31,7 +25,16 @@
                             <div class="title-separator-primary"></div>
                         </div>
                     </div>
-                    <form name="agent-from" action="{{ route('updateProfile') }}" method="post" enctype="multipart/form-data">
+                    @if($errors->all())
+                        <div class="alert alert-danger fade in" style="width: 82%;margin: 0px auto;">
+                            @foreach($errors->all() as $error)
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <strong>Oh snap!</strong>  <br>{{$error}}
+                            @endforeach
+                        </div>
+                        <br>
+                    @endif
+                    <form name="agent-from" id="profile_form" action="{{ route('updateProfile') }}" method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <input type="hidden" value="{{ Auth::user()->id }}" name="id">
                         <div class="row margin-top-60">
@@ -125,15 +128,15 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="row margin-top-60">
-                                    <div class="checkboxGroup">
+                                    <div class="checkboxGroup" style="  float:left;margin-left: 10px;padding: 10px;">
                                         <input type="checkbox" value="1" @if(Auth::user()->dogs == '1') checked @endif id="c1" name="dogs" class="main-checkbox">
                                         <label for="c1"><span></span>{{ Lang::get('profile.dogs') }}</label><br>
                                     </div>
-                                    <div class="checkboxGroup">
+                                    <div class="checkboxGroup" style="  float:left;margin-left: 10px;padding: 10px;">
                                         <input type="checkbox" value="1" id="c2" @if(Auth::user()->cats == '1') checked @endif name="cats" class="main-checkbox">
                                         <label for="c2"><span></span>{{ Lang::get('profile.cats') }}</label><br>
                                     </div>
-                                    <div class="checkboxGroup">
+                                    <div class="checkboxGroup" style="  float:left;margin-left: 10px;padding: 10px;">
                                         <input type="checkbox" value="1" id="c3" @if(Auth::user()->other == '1') checked @endif name="other" class="main-checkbox">
                                         <label for="c3"><span></span>{{ Lang::get('profile.other') }}</label><br>
                                     </div>
@@ -311,6 +314,58 @@
                 function(start, end, label) {
                     var years = moment().diff(start, 'years');
                 });
+        });
+    </script>
+    <script>
+        $( document ).ready( function () {
+            $("#profile_form").validate({
+                rules: {
+                    first_name: "required",
+                    address: "required",
+                    listing_type: "required",
+                    beds_count: "required",
+                    phone: "required",
+                    last_name: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    agree: "required"
+                },
+                messages: {
+                    first_name: "Please enter your Firstname",
+                    phone: "Please enter your Phone number",
+                    last_name: "Please enter your Lastname",
+                    password: {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 5 characters long"
+                    },
+                    confirm_password: {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 5 characters long",
+                        equalTo: "Please enter the same password as above"
+                    },
+                    email: "Please enter a valid email address",
+                    agree: "Please accept our policy"
+                },
+                errorElement: "em",
+                errorPlacement: function (error, element) {
+                    // Add the `help-block` class to the error element
+                    error.addClass("help-block");
+
+                    if (element.prop("type") === "checkbox") {
+                        error.insertAfter(element.parent("label"));
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
+                }
+            });
         });
     </script>
 @endsection

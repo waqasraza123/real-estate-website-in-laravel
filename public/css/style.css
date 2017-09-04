@@ -2040,75 +2040,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
     height: 16px
 }
 
-@font-face {
-    font-family: 'CostarBrownRegular';
-    src: url("/a/48178f/content/fonts/lineto-costar-brown-regular.woff") format('woff'), url("/a/4af65d/content/fonts/lineto-costar-brown-regular.svg#CostarBrownRegular") format('svg');
-    font-weight: normal;
-    font-style: normal
-}
 
-@font-face {
-    font-family: 'CostarBrownItalic';
-    src: url("/a/083573/content/fonts/lineto-costar-brown-italic.woff") format('woff'), url("/a/e4be33/content/fonts/lineto-costar-brown-italic.svg#CostarBrownItalic") format('svg');
-    font-weight: normal;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'CostarBrownBold';
-    src: url("/a/d21ed8/content/fonts/lineto-costar-brown-bold.woff") format('woff'), url("/a/4b14a1/content/fonts/lineto-costar-brown-bold.svg#CostarBrownBold") format('svg');
-    font-weight: normal;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'CostarBrownBoldItalic';
-    src: url("/a/28e85a/content/fonts/lineto-costar-brown-bolditalic.woff") format('woff'), url("/a/0da832/content/fonts/lineto-costar-brown-bolditalic.svg#CostarBrownBoldItalic") format('svg');
-    font-weight: normal;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'CostarBrownLight';
-    src: url("/a/0b286e/content/fonts/lineto-costar-brown-light.woff") format('woff'), url("/a/d40cbd/content/fonts/lineto-costar-brown-light.svg#CostarBrownLight") format('svg');
-    font-weight: normal;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'HandelGothicBold';
-    src: url("/a/2ce7f1/content/fonts/handelgothic-bold-webfont.woff") format('woff'), url("/a/2ce7f1/content/fonts/handelgothic-bold-webfont.woff#HandelGothicBold") format('svg');
-    font-weight: normal;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'CostarBrownLightItalic';
-    src: url("/a/3ad826/content/fonts/lineto-costar-brown-lightitalic.woff") format('woff'), url("/a/53761a/content/fonts/lineto-costar-brown-lightitalic.svg#CostarBrownLightItalic") format('svg');
-    font-weight: normal;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'SbMessageLine';
-    src: url("/a/68c1b8/content/fonts/sb-message-line.woff") format('woff');
-    font-weight: normal;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'ropa_sansregular';
-    src: url("/a/832e51/content/fonts/ropasans-regular-webfont.woff") format('woff'), url("/a/185faf/content/fonts/ropasans-regular-webfont.svg") format('svg');
-    font-weight: normal;
-    font-style: normal
-}
-
-@font-face {
-    font-family: 'amatic';
-    src: url("/a/4d3a0a/content/fonts/amatic-sc.woff") format('woff');
-    font-weight: 700;
-    font-style: normal
-}
 
 html {
     font-family: 'CostarBrownLight', sans-serif;
@@ -2427,12 +2359,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 370px
 }
 
-@font-face {
-    font-family: 'apartmentIcons';
-    src: url("/a/c35e9c/content/fonts/apartmenticons.woff") format('woff'), url("/a/3fc22a/content/fonts/apartmenticons.svg#apartmentIcons") format('svg');
-    font-weight: normal;
-    font-style: normal
-}
+
 
 [class$="Icon"], [class*="Icon "] {
     font-family: 'apartmentIcons';

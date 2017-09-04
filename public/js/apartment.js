@@ -970,7 +970,7 @@ jQuery(window).load(function() {
 				},
 				markerOptions: {
 					draggable: true,
-					icon: 'images/pin-empty.png'
+					icon: '../images/pin-empty.png'
 				}
 			});
 				

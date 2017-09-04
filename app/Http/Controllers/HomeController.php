@@ -51,6 +51,13 @@ class HomeController extends Controller
     }
 
     public function updateProfile(Request $request){
+
+        $this->validate($request,[
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'phone' => 'required',
+                'email' => 'required'
+        ]);
         $inputs = $request->except('_token' , 'id' , 'password' , 'repeat-password' , 'avatar');
         $inputs['birthday'] = \Carbon\Carbon::parse($inputs['birthday'])->format('Y-m-d H:i:s');
         if($request->file()) {
