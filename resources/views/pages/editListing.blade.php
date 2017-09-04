@@ -1,12 +1,5 @@
 @extends('layouts.app')
 
-<style>
-    .checkboxGroup{
-        float:left;
-        margin-left: 10px;
-        padding: 10px;
-    }
-</style>
 @section('content')
     <section class="short-image no-padding blog-short-title">
         <div class="container">
@@ -180,27 +173,27 @@
                                     <div class="grid">
                                         <div class="col-xs-12 margin-top-15">
                                             <div class="row">
-                                                <div class="checkboxGroup">
+                                                <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" @if($listing->dogs == '1')  checked  @endif value="1" id="c10" name="dogs" class="main-checkbox">
                                                     <label for="c10"><span></span>{{ Lang::get('listing.dogs_ok') }}</label><br>
                                                 </div>
-                                                <div class="checkboxGroup">
+                                                <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox"@if($listing->cats == '1')  checked  @endif value="1" id="c2" name="cats" class="main-checkbox">
                                                     <label for="c2"><span></span>{{ Lang::get('listing.cats_ok') }}</label><br>
                                                 </div>
-                                                <div class="checkboxGroup">
+                                                <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" @if($listing->no_pets == '1')  checked  @endif id="c3" name="no_pets" value="1" class="main-checkbox">
                                                     <label for="c3"><span></span>{{ Lang::get('listing.no_pets') }}</label><br>
                                                 </div>
-                                                <div class="checkboxGroup">
+                                                <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" @if($listing->furnished == '1')  checked  @endif id="c4" name="furnished" value="1" class="main-checkbox">
                                                     <label for="c4"><span></span>{{ Lang::get('listing.furnished') }}</label><br>
                                                 </div>
-                                                <div class="checkboxGroup">
+                                                <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" @if($listing->no_smocking == '1')  checked  @endif value="1" id="c5" name="no_smocking" class="main-checkbox">
                                                     <label for="c5"><span></span>{{ Lang::get('listing.no_smo') }}</label><br>
                                                 </div>
-                                                <div class="checkboxGroup">
+                                                <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" @if($listing->wheelchair == '1')  checked  @endif  value="1" id="c6" name="wheelchair" class="main-checkbox">
                                                     <label for="c6"><span></span>{{ Lang::get('listing.wheel_access') }}</label>
                                                 </div>
@@ -231,29 +224,6 @@
                                         </div>
                                     </div>
                                 </div>
-                               {{-- <div class="termswrapper">
-                                    <div class="grid">
-                                        <div class="checkboxGroup terms col-sm-7">
-                                            <input id="agreeToTerms" type="checkbox" class="main-checkbox" data-bind="checked: Extras.IsAgreed" title="">
-                                            <label for="agreeToTerms">
-                                        <span>
-
-                                        </span>
-                                                By checking this box I agree as follows: I am the owner of this property or have authority to transact on behalf of this property; I will provide accurate and
-                                                <a href="http://www.apartments.com/advertise/disclaimers/equal-opportunity-in-housing-statement/" target="_blank">non discriminatory</a>
-                                                information; and I will comply with the
-                                                <a href="http://www.apartments.com/advertise/disclaimers/terms-of-service/" target="_blank">Apartments.com Terms of Service</a>
-                                                and the
-                                                <a href="http://www.apartments.com/advertise/disclaimers/add-a-listing-terms-of-service/" target="_blank">Add a Listing Terms of Service</a>.
-                                            </label>
-                                            <div class="errorMsg" data-bind="validationMessage: Extras.IsAgreed" style="display: none;"></div>
-                                        </div>
-                                        <div class="col-sm-4" style="margin-left: 68px">
-                                            <br>
-                                            {!! Recaptcha::render() !!}
-                                        </div>
-                                    </div>
-                                </div>--}}
                             </div>
                         </div>
                     </div>
@@ -284,6 +254,60 @@
                 function(start, end, label) {
                     var years = moment().diff(start, 'years');
                 });
+        });
+    </script>
+    <script>
+        $( document ).ready( function () {
+            $("#listing_form").validate({
+                rules: {
+                    first_name: "required",
+                    address: "required",
+                    listing_type: "required",
+                    beds_count: "required",
+                    phone: "required",
+                    last_name: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    first_name: "Please enter your Firstname",
+                    beds_count: "Please enter Beds count",
+                    listing_type: "Please choose Listing Type",
+                    address: "Please enter a address",
+                    phone: "Please enter your Phone number",
+                    last_name: "Please enter your Lastname",
+                    password: {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 5 characters long"
+                    },
+                    confirm_password: {
+                        required: "Please provide a password",
+                        minlength: "Your password must be at least 5 characters long",
+                        equalTo: "Please enter the same password as above"
+                    },
+                    email: "Please enter a valid email address",
+                    agree: "Please accept our policy"
+                },
+                errorElement: "em",
+                errorPlacement: function (error, element) {
+                    // Add the `help-block` class to the error element
+                    error.addClass("help-block");
+
+                    if (element.prop("type") === "checkbox") {
+                        error.insertAfter(element.parent("label"));
+                    } else {
+                        error.insertAfter(element);
+                    }
+                },
+                highlight: function (element, errorClass, validClass) {
+                    $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
+                }
+            });
         });
     </script>
 @endsection

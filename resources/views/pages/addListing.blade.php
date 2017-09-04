@@ -265,7 +265,7 @@
                                 <div class="grid">
                                     <div class="checkboxGroup terms col-sm-7">
                                         <input id="agree" name="agree" type="checkbox" class="main-checkbox" data-bind="checked: Extras.IsAgreed" title="">
-                                        <label for="agreeToTerms">
+                                        <label for="agree">
                                         <span>
 
                                         </span>
@@ -336,7 +336,7 @@
                     first_name: "Please enter your Firstname",
                     beds_count: "Please enter Beds count",
                     listing_type: "Please choose Listing Type",
-                    address: "Please enter a adress",
+                    address: "Please enter a address",
                     phone: "Please enter your Phone number",
                     last_name: "Please enter your Lastname",
                     password: {
