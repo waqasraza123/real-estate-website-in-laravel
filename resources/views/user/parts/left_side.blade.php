@@ -38,7 +38,7 @@
             </a>
         </div>
         <div class=" margin-top-15">
-            <a href="submit-property.html" class="button-primary  button-fulls">
+            <a href="{{ route('accountSavedSearches' , ['id' => Auth::user()->id] )  }}" class="button-primary  button-fulls">
                 <span class="peofile_left_text">{{ Lang::get('profile.saved_searches') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>
@@ -46,7 +46,7 @@
             </a>
         </div>
         <div class=" margin-top-15">
-            <a href="submit-property.html" class="button-primary  button-fulls">
+            <a href="{{ route('accountFavorites' , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
                 <span class="peofile_left_text">{{ Lang::get('profile.favorites') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>

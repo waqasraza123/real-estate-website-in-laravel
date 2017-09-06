@@ -20,70 +20,99 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="white_bg" style="background: white; padding-left: 20px">
-                <form action="{{ route('searchListing') }}" class="apartament_form" method="post" style="margin-bottom: 0px">
-                    {{ csrf_field()  }}
-                    <input type="hidden" name="listing_type" value="2">
-                    <div class="row">
-                        <br>
-                        <div class="col-xs-12 col-sm-6 col-lg-4">
-                            <input id="geocomplete" name="address" type="text" class="input-full main-input" required placeholder="Localization">
-                            <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
-                            <div class="row" style="display: none">
-                                <div class="col-xs-12 col-sm-6 margin-top-15">
-                                    <input name="lng" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly">
+                <div class="row">
+                        <div class="success-box margin-top-30" style="display: none">
+                            <p>Successfully saved</p>
+                            <div class="small-triangle"></div>
+                            <div class="small-icon"><i class="jfont"></i></div>
+                        </div>
+
+                    <div class="col-xs-8">
+                        <form action="{{ route('searchListing') }}" class="apartament_form " method="post" style="margin-bottom: 0px">
+                            {{ csrf_field()  }}
+                            <input type="hidden" name="listing_type" value="2">
+                            <div class="row">
+                                <br>
+                                <div class="col-xs-12 col-sm-6 col-lg-4">
+                                    <input id="geocomplete" name="address" type="text" class="input-full main-input" required  value="{{ old('address') }}" placeholder="Localization">
+                                    <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
+                                    <div class="row" style="display: none">
+                                        <div class="col-xs-12 col-sm-6 margin-top-15">
+                                            <input name="lng" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly">
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 margin-top-15">
+                                            <input name="lat" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-6 margin-top-15">
-                                    <input name="lat" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly">
+                                <div class="col-lg-3">
+                                    <select name="rent" id="rent" class="selectpicker"   title="Rent">
+                                        <option value="500-700">$500 - $700</option>
+                                        <option value="700-900">$700 - $900</option>
+                                        <option value="900-1300">$900 - $1300</option>
+                                        <option value="1300-1800">$1300 - $1800</option>
+                                        <option value="1800-2100">$1800 - $2100</option>
+                                        <option value="2100-2150">$2100 - $2150</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                    <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
+                                        <optgroup label="Beds" data-max-options="1">
+                                            <option value="all">All Beds</option>
+                                            <option value="1">1 Bed</option>
+                                            <option value="2">2 Beds</option>
+                                            <option value="3">3 Beds</option>
+                                            <option value="4">4+  Beds</option>
+                                        </optgroup>
+                                        <optgroup label="Baths" data-max-options="1">
+                                            <option value="all_baths">All Baths</option>
+                                            <option value="1">1+ Baths</option>
+                                            <option value="2">2+ Baths</option>
+                                            <option value="3">3+ Baths</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-2  adv-search-button-cont">
+                                    <button type="submit" class="button-primary  appartament_search">
+                                        <span>{{ Lang::get('home.search_btn') }}</span>
+                                        <div class="button-triangle"></div>
+                                        <div class="button-triangle2"></div>
+                                        <div class="button-icon"><i class="fa fa-search"></i></div>
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <select name="rent" id="rent" class="selectpicker"   title="Rent">
-                                <option value="500-700">$500 - $700</option>
-                                <option value="700-900">$700 - $900</option>
-                                <option value="900-1300">$900 - $1300</option>
-                                <option value="1300-1800">$1300 - $1800</option>
-                                <option value="1800-2100">$1800 - $2100</option>
-                                <option value="2100-2150">$2100 - $2150</option>
-                            </select>
-                        </div>
-                        <div class="col-lg-3">
-                            <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
-                                <optgroup label="Beds" data-max-options="1">
-                                    <option value="all">All Beds</option>
-                                    <option value="1">1 Bed</option>
-                                    <option value="2">2 Beds</option>
-                                    <option value="3">3 Beds</option>
-                                    <option value="4">4+  Beds</option>
-                                </optgroup>
-                                <optgroup label="Baths" data-max-options="1">
-                                    <option value="all_baths">All Baths</option>
-                                    <option value="1">1+ Baths</option>
-                                    <option value="2">2+ Baths</option>
-                                    <option value="3">3+ Baths</option>
-                                </optgroup>
-                            </select>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-2  adv-search-button-cont">
-                            <button type="submit" class="button-primary  appartament_search">
-                                <span>{{ Lang::get('home.search_btn') }}</span>
+                        </form>
+                    </div>
+                    <div class="col-xs-4">
+                        @if(Auth::user())
+                        <form action="{{ route('saveSearch') }}" class="apartament_form pull-right" id="save_search" method="post" style="margin-bottom: 0px">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="address" value="{{ old('address') }}">
+                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                            <input type="hidden" name="rent" value="{{ old('rent') }}">
+                            @if(array_key_exists('0' , old('beds_baths')))
+                            <input type="hidden" name="beds" value="{{ old('beds_baths')[0] }}">
+                            @endif
+                            @if(array_key_exists('1' , old('beds_baths')))
+                                <input type="hidden" name="baths" value="{{ old('beds_baths')[1] }}">
+                            @endif
+                                <button type="submit" class="button-primary  appartament_search" style="margin-right: 60px;margin-top: 26px;"> Save Search
                                 <div class="button-triangle"></div>
                                 <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
+                                <div class="button-icon"><i class="fa fa-search-plus"></i></div>
                             </button>
-                        </div>
+                        </form>
+                            @endif
                     </div>
-                    {{-- <div class="row">
+                </div>
 
-                     </div>
-                     <div class="container">
-                         <div class="row">
 
-                         </div>
-                     </div>--}}
-                </form>
+
             </div>
         </div>
+
+
+
     </div>
     <div class="row">
         @if($listings->first())
@@ -176,7 +205,6 @@
 @endsection
 @section('scripts')
     <script>
-
     $(document).ready(function () {
         var defaultBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(-33.8902, 151.1759),
@@ -187,10 +215,7 @@
         types: ['establishment']
         };
         autocomplete = new google.maps.places.Autocomplete(input, options);
-
     })
-
-
     </script>
 
     <script type="text/javascript">
@@ -307,30 +332,14 @@
         function drawFreeHand(){
             //the polygon
             var  poly=new google.maps.Polyline({map:map,clickable:false});
-            //move-listener
             var move=google.maps.event.addListener(map,'mousemove',function(e){
-                var locations = [];
-                var array = [];
-                array.push(e.latLng.lat(), e.latLng.lng());
-                locations.push(array);
-
-                window.lat = '';
-                var lng = [];
-                lat += e.latLng.lat();
-                lng.push(e.latLng.lng());
                 poly.getPath().push(e.latLng);
-
-               /* jQuery(document).ready(function($) {
-                    $.ajax({
-
-                    })
-                })*/
             });
             //mouseup-listener
             google.maps.event.addListenerOnce(map,'mouseup',function(e){
                 google.maps.event.removeListener(move);
                 var path=poly.getPath();
-                window.sending_data = poly.getPath().getArray();
+                var sending_data = poly.getPath().getArray();
                 sending_data = JSON.stringify(sending_data);
                 poly.setMap(null);
                 $.ajax({
@@ -345,6 +354,7 @@
                 enable()
             });
         }
+
         function disable(){
             map.setOptions({
                 draggable: false,
@@ -353,6 +363,7 @@
                 disableDoubleClickZoom: false
             });
         }
+
         function enable(){
             map.setOptions({
                 draggable: true,
@@ -361,6 +372,7 @@
                 disableDoubleClickZoom: true
             });
         }
+
         $(".polygon").click(function(e) {
             e.preventDefault();
             console.log("draws");
@@ -373,6 +385,23 @@
 
 
 
+    </script>
+
+    <script>
+        $( "#save_search" ).on( "submit", function( event ) {
+            event.preventDefault();
+            console.log(  );
+            $.ajax({
+                type:'post',
+                url: '{{ route('saveSearch') }}',
+                data: $( this ).serialize(),
+                success:function (res) {
+                    if(res.sucess == 'true'){
+                            $('.success-box').removeAttr('style').show()
+                    }
+                }
+            })
+        });
     </script>
 
 @endsection

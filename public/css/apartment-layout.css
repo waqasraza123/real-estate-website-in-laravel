@@ -8143,3 +8143,7 @@ h4.neighbourhood-title {
 	color:red;
 }
 
+.favorite_link{
+	cursor: pointer;
+}
+

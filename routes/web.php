@@ -34,16 +34,21 @@ Route::get('/setlang/{lang}', function($lang)
 
 Route::get('/account/{id}', ['as' => 'account' , 'uses' => 'HomeController@account']);
 Route::get('account/listings/{id}', ['as' => 'accountListing' , 'uses' => 'HomeController@accountListing']);
+Route::get('account/favorites/{id}', ['as' => 'accountFavorites' , 'uses' => 'HomeController@accountFavorites']);
+Route::get('account/saved_searches/{id}', ['as' => 'accountSavedSearches' , 'uses' => 'HomeController@accountSavedSearches']);
 Route::post('update_profile', ['as' => 'updateProfile' , 'uses' => 'HomeController@updateProfile']);
+Route::post('save_search', ['as' => 'saveSearch' , 'uses' => 'HomeController@saveSearch']);
 
 
  #Listing Routes
 
 Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing']);
+Route::get('listing/{id}' , ['as' => 'singleListing' , 'uses' => 'ListingController@singleListing']);
 Route::post('submit_listing' , ['as' => 'submitListing' , 'uses' => 'ListingController@submitListing']);
 Route::get('edit_listing/{id}' , ['as' => 'editListing' , 'uses' => 'ListingController@editListing']);
 Route::post('edit_listing' , ['as' => 'postEditListing' , 'uses' => 'ListingController@postEditListing']);
 Route::get('delete_listing/{id}' , ['as' => 'deleteListing' , 'uses' => 'ListingController@deleteListing']);
+Route::get('add_favorite/{user_id}/{listing_id}' , ['as' => 'addFavorite' , 'uses' => 'ListingController@addFavorite']);
 Route::post('search_listing' , ['as' => 'searchListing' , 'uses' => 'ListingController@searchListing']);
 Route::post('search_listing_ajax' , ['as' => 'searchListingAjax' , 'uses' => 'ListingController@searchListingAjax']);
 

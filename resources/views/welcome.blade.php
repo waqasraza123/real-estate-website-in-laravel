@@ -470,7 +470,7 @@
                             <div class="featured-offer-back">
                                 <div id="featured-map{{$count}}" class="featured-offer-map"></div>
                                 <div class="button">
-                                    <a href="estate-details-right-sidebar.html" class="button-primary">
+                                    <a href="{{ route('singleListing' , ['id' => $lis->id]) }}" class="button-primary">
                                         <span>read more</span>
                                         <div class="button-triangle"></div>
                                         <div class="button-triangle2"></div>

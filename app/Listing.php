@@ -42,4 +42,12 @@ class Listing extends Model
         $user = User::where('id' , $id)->first();
         return $user;
     }
+
+    public function User(){
+        return $this->belongsTo('App\User');
+    }
+
+    public function Favorites(){
+        return $this->hasMany('App\Favorit');
+    }
 }

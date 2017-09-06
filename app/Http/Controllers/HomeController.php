@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use App\Listing;
+use App\Favorit;
+use App\SavedSearch;
 
 class HomeController extends Controller
 {
@@ -12,9 +14,11 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(User $user , Listing $listing)
+    public function __construct(User $user , Listing $listing , Favorit $favorit , SavedSearch $savedSearch)
     {
         $this->user = $user;
+        $this->savedSearch = $savedSearch;
+        $this->favorits = $favorit;
         $this->listing = $listing;
     }
 
@@ -87,5 +91,26 @@ class HomeController extends Controller
             return $file_names;
         }
         return '';
+    }
+
+
+
+    public function accountFavorites($id){
+       $list =  $this->favorits->where('user_id' , $id)->get();
+       return view('user.favorites' , compact('list'));
+    }
+
+
+    public function saveSearch(Request $request){
+        $inputs =  $request->except('_token');
+        if($this->savedSearch->create($inputs)){
+            return \Response::json(['sucess' => 'true']);
+        }
+    }
+
+
+    public function accountSavedSearches($id){
+       $searches = $this->savedSearch->where('user_id' , $id)->get();
+       return view('user.savedSearch' , compact('searches'));
     }
 }
