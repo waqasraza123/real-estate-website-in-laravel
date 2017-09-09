@@ -117,34 +117,43 @@
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
+                                <div class="details-parameters-cont">
+                                    <div class="details-parameters-name">Parking Fee</div>
+                                    <div class="details-parameters-val">
+                                       {{ $listing->parking_fee }}$/mo
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="row margin-top-45">
                         <div class="col-xs-6 col-sm-4">
                             <ul class="details-ticks">
-                                <li><i class="jfont">&#xe815;</i>Air conditioning</li>
-                                <li><i class="jfont">&#xe815;</i>Internet</li>
-                                <li><i class="jfont">&#xe815;</i>Cable TV</li>
-                                <li><i class="jfont">&#xe815;</i>Balcony</li>
+                                @if($listing->dogs == '1')
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                @endif
+                                @if($listing->cats == '1')
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                @endif
+                                @if($listing->no_pets == '1')
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                @endif
+                                @if($listing->furnished == '1')
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                @endif
                             </ul>
                         </div>
                         <div class="col-xs-6 col-sm-4">
                             <ul class="details-ticks">
-                                <li><i class="jfont">&#xe815;</i>Garage</li>
-                                <li><i class="jfont">&#xe815;</i>Lift</li>
-                                <li><i class="jfont">&#xe815;</i>High standard</li>
-                                <li><i class="jfont">&#xe815;</i>City Centre</li>
+                                @if($listing->no_smocking == '1')
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                @endif
+                                @if($listing->wheelchair == '1')
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                @endif
                             </ul>
 
-                        </div>
-                        <div class="col-xs-6 col-sm-4">
-                            <ul class="details-ticks">
-                                <li><i class="jfont">&#xe815;</i>nostrud exercitation</li>
-                                <li><i class="jfont">&#xe815;</i>nostrud exercitation</li>
-                                <li><i class="jfont">&#xe815;</i>nostrud exercitation</li>
-                                <li><i class="jfont">&#xe815;</i>nostrud exercitation</li>
-                            </ul>
                         </div>
                     </div>
                     <div class="row margin-top-45">

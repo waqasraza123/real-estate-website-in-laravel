@@ -54,7 +54,7 @@
             </a>
         </div>
         <div class=" margin-top-15">
-            <a href="submit-property.html" class="button-primary  button-fulls">
+            <a href="{{ route('userNotification'  , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
                 <span class="peofile_left_text">{{ Lang::get('profile.notifi_set') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>

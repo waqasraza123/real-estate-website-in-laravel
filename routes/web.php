@@ -36,8 +36,10 @@ Route::get('/account/{id}', ['as' => 'account' , 'uses' => 'HomeController@accou
 Route::get('account/listings/{id}', ['as' => 'accountListing' , 'uses' => 'HomeController@accountListing']);
 Route::get('account/favorites/{id}', ['as' => 'accountFavorites' , 'uses' => 'HomeController@accountFavorites']);
 Route::get('account/saved_searches/{id}', ['as' => 'accountSavedSearches' , 'uses' => 'HomeController@accountSavedSearches']);
+Route::get('account/notification_settings/{id}', ['as' => 'userNotification' , 'uses' => 'HomeController@userNotification']);
 Route::post('update_profile', ['as' => 'updateProfile' , 'uses' => 'HomeController@updateProfile']);
 Route::post('save_search', ['as' => 'saveSearch' , 'uses' => 'HomeController@saveSearch']);
+Route::post('save_user_notification', ['as' => 'saveUserNotify' , 'uses' => 'HomeController@saveUserNotify']);
 
 
  #Listing Routes

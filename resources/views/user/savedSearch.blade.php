@@ -40,12 +40,44 @@
                         {{-- end notify Massage--}}
                         <div class="col-xs-12">
                             <h5 class="subtitle-margin">My</h5>
-                            <h1>Saved Searches<span class="special-color">.</span></h1>
+                            <h1>Saved Searches<span class="special-color">.</span> @if($searches->first()) ({{ count($searches) }}) @endif</h1>
                             <div class="title-separator-primary"></div>
                         </div>
                     </div>
                     @if($searches->first())
-                        
+                        <div class="row">
+
+                            @foreach($searches as $serch)
+                                <div class="col-md-4 col-lg-4 col-xs-12 margin-top-60">
+                                    <form action="">
+                                        <input type="hidden" name="address" value="{{ $serch->address }}">
+                                        <input type="hidden" name="rent" value="{{ $serch->rent }}">
+                                        <input type="hidden" name="listing_type" value="{{ $serch->listing_type }}">
+                                        <input type="hidden" name="beds" value="{{ $serch->beds }}">
+                                        <input type="hidden" name="baths" value="{{ $serch->baths }}">
+                                        <div class="neighbourhood-col">
+                                            <div class="neighbourhood-item">
+                                                <div class="neighbourhood-photo">
+                                                    <img src="{{ asset('images\featured-offer1.jpg') }}" alt="">
+                                                </div>
+                                                <div class="neighbourhood-text">
+                                                    <h4 class="neighbourhood-title">{{ $serch->name }}</h4>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                </div>
+                                            </div>
+                                            <a href="#contact" class="button-fourth center-button-cont scroll">
+                                                <span>Rename</span>
+                                                <div class="button-triangle"></div>
+                                                <div class="button-triangle2"></div>
+                                                <div class="button-icon"><i class="fa fa-calendar-check-o"></i></div>
+                                            </a>
+                                        </div>
+
+
+                                    </form>
+                                </div>
+                            @endforeach
+                        </div>
                     @else
                         <div class="row">
                             <div class="col-lg-12">

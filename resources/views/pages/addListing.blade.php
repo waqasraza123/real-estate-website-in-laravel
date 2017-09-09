@@ -257,7 +257,7 @@
                                         </select>
                                     </div>
                                     <div class="cell-sm-4">
-                                        <input id="parkingFee-clone" name="parking_fee" type="text" placeholder="{{ Lang::get('listing.parking_fee') }}" class="input-full main-input" maxlength="11" title="" style="text-align: right;" class="">
+                                        <input id="parkingFee-clone" name="parking_fee" type="text" placeholder="{{ Lang::get('listing.parking_fee') }}" class="input-full main-input" maxlength="11" title="" style="text-align: right;">
                                     </div>
                                 </div>
                             </div>

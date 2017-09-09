@@ -90,11 +90,15 @@
                             <input type="hidden" name="address" value="{{ old('address') }}">
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             <input type="hidden" name="rent" value="{{ old('rent') }}">
-                            @if(array_key_exists('0' , old('beds_baths')))
-                            <input type="hidden" name="beds" value="{{ old('beds_baths')[0] }}">
-                            @endif
-                            @if(array_key_exists('1' , old('beds_baths')))
-                                <input type="hidden" name="baths" value="{{ old('beds_baths')[1] }}">
+                            <input type="hidden" name="listing_type" value="{{ old('listing_type') }}">
+
+                            @if(array_key_exists('beds_baths' , old()))
+                                @if(array_key_exists('0' , old('beds_baths')))
+                                <input type="hidden" name="beds" value="{{ old('beds_baths')[0] }}">
+                                @endif
+                                @if(array_key_exists('1' , old('beds_baths')))
+                                    <input type="hidden" name="baths" value="{{ old('beds_baths')[1] }}">
+                                @endif
                             @endif
                                 <button type="submit" class="button-primary  appartament_search" style="margin-right: 60px;margin-top: 26px;"> Save Search
                                 <div class="button-triangle"></div>

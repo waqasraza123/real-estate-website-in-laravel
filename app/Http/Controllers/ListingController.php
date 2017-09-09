@@ -157,9 +157,11 @@ class ListingController extends Controller
             if($inputs['beds_baths']['0'] == 'all'){
                 $listing->where('beds_count' , $inputs['beds_baths']['0']);
             }
-            if(array_key_exists('0', $inputs['beds_baths']) && array_key_exists('1' , $inputs['beds_baths'])) {
-                $listing->where('beds_count', $inputs['beds_baths']['0'])->where('baths_count', '>', $inputs['beds_baths']['1']);
-            }
+
+                if (array_key_exists('0', $inputs['beds_baths']) && array_key_exists('1', $inputs['beds_baths'])) {
+                    $listing->where('beds_count', $inputs['beds_baths']['0'])->where('baths_count', '>', $inputs['beds_baths']['1']);
+                }
+
         }
 
         $listings = $listing->get();

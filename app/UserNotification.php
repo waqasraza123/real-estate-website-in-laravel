@@ -4,14 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SavedSearch extends Model
+class UserNotification extends Model
 {
     protected  $fillable = [
         'user_id',
-        'address',
-        'beds',
-        'baths',
-        'rent',
-        'listing_type'
+        'saved_searches',
+        'favorites',
+        'delivery_option'
     ];
 }
