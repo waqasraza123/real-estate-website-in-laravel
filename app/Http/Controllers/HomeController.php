@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Mail\ContactClient;
 use App\User;
 use Illuminate\Http\Request;
 use App\Listing;
@@ -144,5 +145,12 @@ class HomeController extends Controller
         }else{
                 return redirect()->back()->withErrors(['error' => 'Please try aggain']);
         }
+    }
+
+    public function mailToClient(Request $request){
+        $userinfo = $request->except('_token' , 'sending_email');
+        \Mail::to($request->sending_email)->send(new ContactClient($userinfo));
+        return redirect()->back()->with('success' , 'The massage sucessfully sendet');
+
     }
 }

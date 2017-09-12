@@ -134,23 +134,23 @@
                                     <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
                                 @endif
                                 @if($listing->cats == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.cats_ok') }}</li>
                                 @endif
                                 @if($listing->no_pets == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.no_pets') }}</li>
                                 @endif
                                 @if($listing->furnished == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.furnished') }}</li>
                                 @endif
                             </ul>
                         </div>
                         <div class="col-xs-6 col-sm-4">
                             <ul class="details-ticks">
                                 @if($listing->no_smocking == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.no_smo') }}</li>
                                 @endif
                                 @if($listing->wheelchair == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
+                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.wheel_access') }}</li>
                                 @endif
                             </ul>
 
@@ -226,18 +226,20 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                            <form name="contact-from" action="#">
-                                <input name="name" type="text" class="input-long main-input" placeholder="Your name">
-                                <input name="phone" type="text" class="input-short pull-right main-input" placeholder="Your phone">
-                                <input name="mail" type="email" class="input-full main-input" placeholder="Your email">
+                            <form name="contact-from" action="{{ route('mailToClient') }}" method="post">
+                                {{ csrf_field() }}
+                                <input type="hidden" value="{{ $listing->User()->first()->email }}" name="sending_email">
+                                <input name="name" value="@if(Auth::user()){{ Auth::user()->first_name }} @endif" type="text" class="input-long main-input" placeholder="Your name">
+                                <input name="phone" value="@if(Auth::user()){{ Auth::user()->phone }} @endif" type="text" class="input-short pull-right main-input" placeholder="Your phone">
+                                <input name="email" value="@if(Auth::user()){{ Auth::user()->email }} @endif" type="email" class="input-full main-input" placeholder="Your email">
                                 <textarea name="message" class="input-full agent-textarea main-input" placeholder="Your question"></textarea>
                                 <div class="form-submit-cont">
-                                    <a href="#" class="button-primary pull-right">
+                                    <button type="submit" href="#" class="button-primary pull-right">
                                         <span>send</span>
                                         <div class="button-triangle"></div>
                                         <div class="button-triangle2"></div>
                                         <div class="button-icon"><i class="fa fa-paper-plane"></i></div>
-                                    </a>
+                                    </button>
                                     <div class="clearfix"></div>
                                 </div>
                             </form>

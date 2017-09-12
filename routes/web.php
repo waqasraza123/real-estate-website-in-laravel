@@ -40,6 +40,7 @@ Route::get('account/notification_settings/{id}', ['as' => 'userNotification' , '
 Route::post('update_profile', ['as' => 'updateProfile' , 'uses' => 'HomeController@updateProfile']);
 Route::post('save_search', ['as' => 'saveSearch' , 'uses' => 'HomeController@saveSearch']);
 Route::post('save_user_notification', ['as' => 'saveUserNotify' , 'uses' => 'HomeController@saveUserNotify']);
+Route::post('send_mail_to_client', ['as' => 'mailToClient' , 'uses' => 'HomeController@mailToClient']);
 
 
  #Listing Routes
