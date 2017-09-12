@@ -43,6 +43,7 @@ Route::post('save_user_notification', ['as' => 'saveUserNotify' , 'uses' => 'Hom
 Route::post('send_mail_to_client', ['as' => 'mailToClient' , 'uses' => 'HomeController@mailToClient']);
 
 
+
  #Listing Routes
 
 Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing']);
@@ -54,6 +55,7 @@ Route::get('delete_listing/{id}' , ['as' => 'deleteListing' , 'uses' => 'Listing
 Route::get('add_favorite/{user_id}/{listing_id}' , ['as' => 'addFavorite' , 'uses' => 'ListingController@addFavorite']);
 Route::post('search_listing' , ['as' => 'searchListing' , 'uses' => 'ListingController@searchListing']);
 Route::post('search_listing_ajax' , ['as' => 'searchListingAjax' , 'uses' => 'ListingController@searchListingAjax']);
+Route::post('search_listing_user_profile', ['as' => 'searchSavedSeraches' , 'uses' => 'ListingController@searchSavedSeraches']);
 
 Auth::routes();
 

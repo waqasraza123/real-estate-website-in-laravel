@@ -48,8 +48,9 @@
                         <div class="row">
 
                             @foreach($searches as $serch)
-                                <div class="col-md-4 col-lg-4 col-xs-12 margin-top-60">
-                                    <form action="">
+                                <div class="col-md-6 col-lg-6 col-xs-12 margin-top-60">
+                                    <form action="{{ route('searchSavedSeraches') }}" method="post">
+                                        {{ csrf_field() }}
                                         <input type="hidden" name="address" value="{{ $serch->address }}">
                                         <input type="hidden" name="rent" value="{{ $serch->rent }}">
                                         <input type="hidden" name="listing_type" value="{{ $serch->listing_type }}">
@@ -62,15 +63,15 @@
                                                 </div>
                                                 <div class="neighbourhood-text">
                                                     <h4 class="neighbourhood-title">{{ $serch->name }}</h4>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    <p><i class="fa fa-map-marker"></i>{{ $serch->address }}</p>
                                                 </div>
                                             </div>
-                                            <a href="#contact" class="button-fourth center-button-cont scroll">
-                                                <span>Rename</span>
+                                            <button type="submit" class="button-fourth center-button-cont scroll">
+                                                <span>Open</span>
                                                 <div class="button-triangle"></div>
                                                 <div class="button-triangle2"></div>
                                                 <div class="button-icon"><i class="fa fa-calendar-check-o"></i></div>
-                                            </a>
+                                            </button>
                                         </div>
 
 

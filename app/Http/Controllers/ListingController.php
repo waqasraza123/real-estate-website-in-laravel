@@ -206,6 +206,27 @@ class ListingController extends Controller
         }
     }
 
+    public function searchSavedSeraches(Request $request){
+        $inputs = [];
+        foreach($request->except('_token') as  $key=>$value){
+            if($value !=null){
+                $inputs[$key] = $value;
+            }
+        }
+
+        $listings =  $this->listing->where($inputs)->get();
+        $langLtd = [];
+        foreach ($listings as $listing){
+            if($listing->lat != '') {
+                $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                array_push($langLtd, $new);
+            }
+        }
+
+
+        return view('pages.searched_listing' , compact('listings' , 'langLtd'));
+    }
+
 
 
 
