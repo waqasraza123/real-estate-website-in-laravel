@@ -992,6 +992,159 @@ jQuery(window).load(function() {
 					$("input[name=lng]").val(latLng.lng());
 				});
 			}
+
+
+        if($("#geocomplete1").length) {
+            $("#geocomplete1").geocomplete({
+                map: "#submit-property-map",
+                details: "form ",
+                location: new google.maps.LatLng(40.6700, -73.9400),
+                mapOptions: {
+                    zoom: 14,
+                    scrollwheel: true,
+                    mapTypeId: "roadmap",
+                    disableDefaultUI: false,
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                        position: google.maps.ControlPosition.LEFT_TOP
+                    },
+                    zoomControl: true,
+                    zoomControlOptions: {
+                        position: google.maps.ControlPosition.RIGHT_TOP
+                    },
+                    scaleControl: true,
+                    streetViewControl: true,
+                    streetViewControlOptions: {
+                        position: google.maps.ControlPosition.RIGHT_TOP
+                    },
+                    styles: mapStyle
+                },
+                markerOptions: {
+                    draggable: true,
+                    icon: '../images/pin-empty.png'
+                }
+            });
+
+            $("#geocomplete1").bind("geocode:dragged", function(event, latLng){
+                var geocoder = new google.maps.Geocoder;
+                geocoder.geocode({'location': latLng}, function(results, status) {
+                    if (status === 'OK') {
+                        if (results[1]) {
+                            $("input[name=address]").val(results[1].formatted_address);
+                        } else {
+                            window.alert('No results found');
+                        }
+                    } else {
+                        window.alert('Geocoder failed due to: ' + status);
+                    }
+                });
+
+                $("input[name=lat]").val(latLng.lat());
+                $("input[name=lng]").val(latLng.lng());
+            });
+        }
+
+
+        if($("#geocomplete2").length) {
+            $("#geocomplete2").geocomplete({
+                map: "#submit-property-map",
+                details: "form ",
+                location: new google.maps.LatLng(40.6700, -73.9400),
+                mapOptions: {
+                    zoom: 14,
+                    scrollwheel: true,
+                    mapTypeId: "roadmap",
+                    disableDefaultUI: false,
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                        position: google.maps.ControlPosition.LEFT_TOP
+                    },
+                    zoomControl: true,
+                    zoomControlOptions: {
+                        position: google.maps.ControlPosition.RIGHT_TOP
+                    },
+                    scaleControl: true,
+                    streetViewControl: true,
+                    streetViewControlOptions: {
+                        position: google.maps.ControlPosition.RIGHT_TOP
+                    },
+                    styles: mapStyle
+                },
+                markerOptions: {
+                    draggable: true,
+                    icon: '../images/pin-empty.png'
+                }
+            });
+
+            $("#geocomplete2").bind("geocode:dragged", function(event, latLng){
+                var geocoder = new google.maps.Geocoder;
+                geocoder.geocode({'location': latLng}, function(results, status) {
+                    if (status === 'OK') {
+                        if (results[1]) {
+                            $("input[name=address]").val(results[1].formatted_address);
+                        } else {
+                            window.alert('No results found');
+                        }
+                    } else {
+                        window.alert('Geocoder failed due to: ' + status);
+                    }
+                });
+
+                $("input[name=lat]").val(latLng.lat());
+                $("input[name=lng]").val(latLng.lng());
+            });
+        }
+
+
+        if($("#geocomplete3").length) {
+            $("#geocomplete3").geocomplete({
+                map: "#submit-property-map",
+                details: "form ",
+                location: new google.maps.LatLng(40.6700, -73.9400),
+                mapOptions: {
+                    zoom: 14,
+                    scrollwheel: true,
+                    mapTypeId: "roadmap",
+                    disableDefaultUI: false,
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                        position: google.maps.ControlPosition.LEFT_TOP
+                    },
+                    zoomControl: true,
+                    zoomControlOptions: {
+                        position: google.maps.ControlPosition.RIGHT_TOP
+                    },
+                    scaleControl: true,
+                    streetViewControl: true,
+                    streetViewControlOptions: {
+                        position: google.maps.ControlPosition.RIGHT_TOP
+                    },
+                    styles: mapStyle
+                },
+                markerOptions: {
+                    draggable: true,
+                    icon: '../images/pin-empty.png'
+                }
+            });
+
+            $("#geocomplete3").bind("geocode:dragged", function(event, latLng){
+                var geocoder = new google.maps.Geocoder;
+                geocoder.geocode({'location': latLng}, function(results, status) {
+                    if (status === 'OK') {
+                        if (results[1]) {
+                            $("input[name=address]").val(results[1].formatted_address);
+                        } else {
+                            window.alert('No results found');
+                        }
+                    } else {
+                        window.alert('Geocoder failed due to: ' + status);
+                    }
+                });
+
+                $("input[name=lat]").val(latLng.lat());
+                $("input[name=lng]").val(latLng.lng());
+            });
+        }
 			
 			//redraw map
 			$("a[href='#tab-map']").click( function() {

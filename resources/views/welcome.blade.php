@@ -11,46 +11,6 @@
                     <!-- Preloader image -->
                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     <div class="container">
-                        {{--<div class="row">
-                            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-2 col-md-offset-4 col-lg-offset-6 slide-desc-col animated fadeInDown slide-desc-1">
-                                <div class="slide-desc pull-right">
-                                    <div class="slide-desc-text">
-
-                                        <div class="estate-type">apartment</div>
-                                        <div class="transaction-type">sale</div>
-                                        <h4>Fort Collins, Colorado 80523, USA</h4>
-                                        <div class="clearfix"></div>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
-                                    </div>
-                                    <div class="slide-desc-params">
-                                        <div class="slide-desc-area">
-                                            <img src="images\area-icon.png" alt="">54m<sup>2</sup>
-                                        </div>
-                                        <div class="slide-desc-rooms">
-                                            <img src="images\rooms-icon.png" alt="">3
-                                        </div>
-                                        <div class="slide-desc-baths">
-                                            <img src="images\bathrooms-icon.png" alt="">1
-                                        </div>
-                                        <div class="slide-desc-parking">
-                                            <img src="images\parking-icon.png" alt="">1
-                                        </div>
-                                    </div>
-                                    <div class="slide-desc-price">
-                                        $ 320 000
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="slide-buttons slide-buttons-right">
-                                    <a href="#" class="navigation-box navigation-box-next slide-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe802;</i></div></a>
-                                    <a href="estate-details-right-sidebar.html" class="navigation-box navigation-box-more slide-more"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont fa-lg">&#xe813;</i></div></a>
-                                    <a href="#" class="navigation-box navigation-box-prev slide-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe800;</i></div></a>
-                                </div>
-                            </div>
-                        </div>--}}
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -58,45 +18,7 @@
                     <!-- Preloader image -->
                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     <div class="container">
-                       {{-- <div class="row">
-                            <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 slide-desc-col animated slide-desc-2">
-                                <div class="slide-desc pull-left">
-                                    <div class="slide-desc-text">
 
-                                        <div class="estate-type">house</div>
-                                        <div class="transaction-type">sale</div>
-                                        <h4>West Fourth Street, New York 10003, USA</h4>
-                                        <div class="clearfix"></div>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    </div>
-                                    <div class="slide-desc-params">
-                                        <div class="slide-desc-area">
-                                            <img src="images\area-icon.png" alt="">350m<sup>2</sup>
-                                        </div>
-                                        <div class="slide-desc-rooms">
-                                            <img src="images\rooms-icon.png" alt="">8
-                                        </div>
-                                        <div class="slide-desc-baths">
-                                            <img src="images\bathrooms-icon.png" alt="">3
-                                        </div>
-                                        <div class="slide-desc-parking">
-                                            <img src="images\parking-icon.png" alt="">2
-                                        </div>
-                                    </div>
-                                    <div class="slide-desc-price">
-                                        $ 650 000
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="slide-buttons slide-buttons-left">
-                                    <a href="#" class="navigation-box navigation-box-next slide-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe802;</i></div></a>
-                                    <a href="estate-details-right-sidebar.html" class="navigation-box navigation-box-more slide-more"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont fa-lg">&#xe813;</i></div></a>
-                                    <a href="#" class="navigation-box navigation-box-prev slide-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe800;</i></div></a>
-                                </div>
-                            </div>
-                        </div>--}}
                     </div>
                     <div class="video-slide">
                         <video poster="images/slides/2.jpg" preload="auto" loop="" autoplay="" muted="">
@@ -186,24 +108,17 @@
                                         </button>
                                     </div>
                                 </div>
-                               {{-- <div class="row">
 
-                                </div>
-                                <div class="container">
-                                    <div class="row">
-
-                                    </div>
-                                </div>--}}
                             </form>
                         </div>
                         <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="houses">
                             <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
                                 {{ csrf_field()  }}
-                                <input type="hidden" name="listing_type" value="2">
+                                <input type="hidden" name="listing_type" value="7">
                                 <div class="row">
                                     <br>
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                        <input id="geocomplete" name="address" type="text" class="input-full main-input" required placeholder="Address">
+                                        <input id="geocomplete1" name="address" type="text" class="input-full main-input" required placeholder="Address">
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
@@ -255,11 +170,11 @@
                         <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="commercials">
                             <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
                                 {{ csrf_field()  }}
-                                <input type="hidden" name="listing_type" value="3">
+                                <input type="hidden" name="listing_type" value="5">
                                 <div class="row">
                                     <br>
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                        <input id="geocomplete" name="address" type="text" class="input-full main-input" required placeholder="Address">
+                                        <input id="geocomplete2" name="address" type="text" class="input-full main-input" required placeholder="Address">
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
@@ -311,11 +226,11 @@
                         <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="lands">
                             <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
                                 {{ csrf_field()  }}
-                                <input type="hidden" name="listing_type" value="4">
+                                <input type="hidden" name="listing_type" value="3">
                                 <div class="row">
                                     <br>
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                        <input id="geocomplete" name="address" type="text" class="input-full main-input" required placeholder="Address">
+                                        <input id="geocomplete3" name="address" type="text" class="input-full main-input" required placeholder="Address">
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
@@ -543,20 +458,6 @@
             @foreach($listing as $lis)
                 mapInitAddress("{{ $lis->address }}","featured-map{{$counts++}}","images/pin-house.png", false);
             @endforeach
-            //mapInit(40.6128,-73.7903,"featured-map1","images/pin-house.png", false);
-           /* mapInit(40.7222,-73.7903,"featured-map2","/images/pin-apartment.png", false);
-            mapInit(41.0306,-73.7669,"featured-map3","/images/pin-land.png", false);
-            mapInit(41.3006,-72.9440,"featured-map4","/images/pin-commercial.png", false);
-            mapInit(42.2418,-74.3626,"featured-map5","/images/pin-house.png", false);
-            mapInit(38.8974,-77.0365,"featured-map6","/images/pin-apartment.png", false);
-            mapInit(38.7860,-77.0129,"featured-map7","/images/pin-house.png", false);
-
-            mapInit(41.2693,-70.0874,"grid-map1","images/pin-house.png", false);
-            mapInit(33.7544,-84.3857,"grid-map2","images/pin-apartment.png", false);
-            mapInit(33.7337,-84.4443,"grid-map3","images/pin-land.png", false);
-            mapInit(33.8588,-84.4858,"grid-map4","images/pin-commercial.png", false);
-            mapInit(34.0254,-84.3560,"grid-map5","images/pin-apartment.png", false);
-            mapInit(40.6128,-73.9976,"grid-map6","images/pin-house.png", false);*/
         }
 
     </script>
@@ -564,16 +465,6 @@
         $(document).ready(function () {
             $( "select[name='beds_baths']" ).selectpicker();
             $( "select[name='rent']" ).selectpicker();
-            var defaultBounds = new google.maps.LatLngBounds(
-                new google.maps.LatLng(-33.8902, 151.1759),
-                new google.maps.LatLng(-33.8474, 151.2631));
-            var input = document.getElementById('searchTextField');
-            var options = {
-                bounds: defaultBounds,
-                types: ['establishment']
-            };
-            autocomplete = new google.maps.places.Autocomplete(input, options);
-
         })
     </script>
 @endsection

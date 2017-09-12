@@ -168,7 +168,15 @@ class ListingController extends Controller
         $langLtd = [];
        foreach ($listings as $listing){
             if($listing->lat != '') {
-                $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                if($listing->listing_type == '2'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                }elseif($listing->listing_type == '7'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png"],';
+                }elseif($listing->listing_type == '5'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png"],';
+                }elseif($listing->listing_type == '3'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                }
                 array_push($langLtd, $new);
             }
         }
@@ -218,7 +226,15 @@ class ListingController extends Controller
         $langLtd = [];
         foreach ($listings as $listing){
             if($listing->lat != '') {
-                $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                if($listing->listing_type == '2'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                }elseif($listing->listing_type == '7'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png"],';
+                }elseif($listing->listing_type == '5'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png"],';
+                }elseif($listing->listing_type == '3'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                }
                 array_push($langLtd, $new);
             }
         }
