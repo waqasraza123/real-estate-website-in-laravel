@@ -32,14 +32,11 @@
                                     <br>
                                 @endif
                                 {{ csrf_field() }}
+
                                 <div class="grid">
                                     <div class="col-xs-12">
-                                        <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.details') }}</h4>
-                                        <br>
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="col-xs-12">
+                                        <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px; text-transform: capitalize">{{ Lang::get('listing.address') }}</h4>
+
                                         {{-- <input name="address" type="text" class="input-full main-input" placeholder="Search By Adress" style="width: 80%; float: left">
                                          <i class="fa fa-search" style="position: absolute;right: 243px;font-size: 29px;top: 8px;"></i>
                                          <input type="text" name="unit" class="input-full main-input" placeholder="Unit #" style="width: 20%; float:right;">--}}

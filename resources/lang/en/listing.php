@@ -3,7 +3,7 @@ return [
 
     'header'  => 'One step. Millions of renters',
     'details' => 'Details',
-    'address' => 'Adress',
+    'address' => 'Address',
     'listing_type' => 'LISTING TYPE',
     'appartament' => 'Apartment',
     'condo' => 'Condo',
