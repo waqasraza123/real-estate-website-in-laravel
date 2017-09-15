@@ -69,7 +69,11 @@
                            <div class="row">
                                 <div class="col-md-12 col-lg-12  margin-top-60">
                                     <article class="blog-grid1-item zoom-cont">
-                                        <figure class=""><a href="blog-right-sidebar.html"><img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt=""  style="width: 240px !important"></a></figure>
+                                        <figure class="">
+                                            @if($listing->ListingsImages()->first())
+                                                <a href="blog-right-sidebar.html"><img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt=""  style="width: 240px !important"></a>
+                                            @endif
+                                        </figure>
                                         <div class="blog-grid1-post-content" style="width: 100%">
                                             <div class="blog-grid1-topline">
                                                 <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>{{ $listing->created_at  }}</div>

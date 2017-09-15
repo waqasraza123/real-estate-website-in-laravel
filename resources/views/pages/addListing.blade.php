@@ -284,14 +284,30 @@
                     </div>
                 </div>
                 <div class="col-xs-12">
-                    <div class="center-button-cont margin-top-60">
-                        <button type="submit" class="button-primary">
-                            <span>{{ Lang::get('listing.submit') }}</span>
-                            <div class="button-triangle"></div>
-                            <div class="button-triangle2"></div>
-                            <div class="button-icon"><i class="fa fa-lg fa-home"></i></div>
-                        </button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="center-button-cont margin-top-60">
+                                <button type="submit" class="button-primary">
+                                    <span>{{ Lang::get('listing.submit') }}</span>
+                                    <div class="button-triangle"></div>
+                                    <div class="button-triangle2"></div>
+                                    <div class="button-icon"><i class="fa fa-lg fa-home"></i></div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="center-button-cont margin-top-60">
+                                <button  class="button-secondary" id="save_for_later">
+                                    <span>Save for later</span>
+                                    <div class="button-triangle"></div>
+                                    <div class="button-triangle2"></div>
+                                    <div class="button-icon"><i class="jfont fa-lg"></i></div>
+                                </button>
+                            </div>
+                        </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
@@ -314,6 +330,10 @@
     </script>
     <script>
         $( document ).ready( function () {
+            
+            $('#save_for_later').click(function () {
+                
+            })
             $("#listing_form").validate({
                 rules: {
                     first_name: "required",

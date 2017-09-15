@@ -33,7 +33,8 @@ class ListingController extends Controller
             'description' => 'required',
             'loundry_type' => 'required',
             'parking_type' => 'required',
-            'parking_fee' => 'required'
+            'parking_fee' => 'required',
+            'g-recaptcha-response' => 'required|recaptcha',
         ]);
         $pass=    $this->randomPassword();
         $inputs = $request->except('_token' , 'file');

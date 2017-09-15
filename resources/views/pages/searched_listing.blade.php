@@ -197,12 +197,27 @@
 
         </div>
         @else
-            <div class="error-box margin-top-30">
-                <p>Sorry nothing Match to your creterias</p>
-                <div class="small-triangle"></div>
-                <div class="small-icon"><i class="jfont"></i></div>
-            </div>
+            <section class="short-image no-padding blog-short-title">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-12 short-image-title">
+                            <h1 class="second-color">Nothing Found</h1>
+                            <div class="short-title-separator"></div>
+                        </div>
+                    </div>
+                </div>
 
+            </section>
+            <section class="section-light section-top-shadow">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1 class="error-subtitle text-color4">We couldn`t find any result for your search criterias </h1>
+                            <p class="margin-top-105 centered-text">Please modify your search.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         @endif
     </div>
 
