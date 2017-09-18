@@ -15,11 +15,23 @@
 </section>
 
 <section class="section-light  section-top-shadow">
+    <div class="container">
+            <div class="center-button-cont" style="text-align: right">
+                <button  type="button" class="button-secondary" id="save_for_later">
+                    <span>Save for later</span>
+                    <div class="button-triangle"></div>
+                    <div class="button-triangle2"></div>
+                    <div class="button-icon"><i class="jfont fa-lg"></i></div>
+                </button>
+            </div>
+    </div>
     <form name="offer-from" id="listing_form" action="{{ route('submitListing') }}" method="post" enctype="multipart/form-data">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-12">
+
                     <h3 class="title-negative-margin">{{ Lang::get('listing.header') }}<span class="special-color">.</span></h3>
+
                     <div class="title-separator-primary"></div>
                     <div class="dark-col margin-top-60">
                         <div class="row">
@@ -37,6 +49,7 @@
                             <div class="grid">
                                 <div class="col-xs-12">
                                     <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px; text-transform: capitalize">{{ Lang::get('listing.address') }}</h4>
+
                                    {{-- <input name="address" type="text" class="input-full main-input" placeholder="Search By Adress" style="width: 80%; float: left">
                                     <i class="fa fa-search" style="position: absolute;right: 243px;font-size: 29px;top: 8px;"></i>
                                     <input type="text" name="unit" class="input-full main-input" placeholder="Unit #" style="width: 20%; float:right;">--}}
@@ -285,7 +298,7 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="row">
-                        <div class="col-lg-6">
+
                             <div class="center-button-cont margin-top-60">
                                 <button type="submit" id="submit_button" class="button-primary">
                                     <span>{{ Lang::get('listing.submit') }}</span>
@@ -294,17 +307,8 @@
                                     <div class="button-icon"><i class="fa fa-lg fa-home"></i></div>
                                 </button>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="center-button-cont margin-top-60">
-                                <button  type="button" class="button-secondary" id="save_for_later">
-                                    <span>Save for later</span>
-                                    <div class="button-triangle"></div>
-                                    <div class="button-triangle2"></div>
-                                    <div class="button-icon"><i class="jfont fa-lg"></i></div>
-                                </button>
-                            </div>
-                        </div>
+
+
                     </div>
 
 

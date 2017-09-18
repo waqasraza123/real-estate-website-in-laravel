@@ -155,7 +155,7 @@ class ListingController extends Controller
             'parking_fee' => 'required',
             'g-recaptcha-response' => 'required|recaptcha',
         ]);
-        $inputs['listing_status'] = 'done'
+        $inputs['listing_status'] = 'done';
         $inputs = $request->except('_token' , 'id');
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
         if($this->listing->where('id' , $request->get('id'))->update($inputs)){
