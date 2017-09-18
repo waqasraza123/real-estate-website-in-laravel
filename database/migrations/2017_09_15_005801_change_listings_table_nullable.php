@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateListigsTable extends Migration
+class ChangeListingTableNullable extends Migration
 {
     /**
      * Run the migrations.
@@ -36,7 +36,7 @@ class CreateListigsTable extends Migration
      */
     public function down()
     {
-        $table->string('address')->nullable(false)->change();
+			$table->string('address')->nullable(false)->change();
             $table->string('listing_type')->nullable(false)->change();
             $table->string('beds_count')->nullable(false)->change();
             $table->string('baths_count')->nullable(false)->change();
