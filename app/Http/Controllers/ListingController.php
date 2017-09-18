@@ -36,7 +36,7 @@ class ListingController extends Controller
             'parking_fee' => 'required',
             'g-recaptcha-response' => 'required|recaptcha',
         ]);
-        $pass=    $this->randomPassword();
+        $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file');
         if(Auth::user()){
             $this->user->where('id' , Auth::user()->id)->update([
@@ -61,6 +61,7 @@ class ListingController extends Controller
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
         }
         $inputs['user_id'] = Auth::user()->id;
+        $inputs['listing_status'] = 'done';
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
         $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
@@ -73,6 +74,46 @@ class ListingController extends Controller
             return redirect()->route('accountListing' , ['id' => Auth::user()->id]);
     }
 
+    public function saveListing(Request $request){
+        $pass =    $this->randomPassword();
+        $inputs = $request->except('_token' , 'file');
+        if(Auth::user()){
+            $this->user->where('id' , Auth::user()->id)->update([
+                'first_name' => $inputs['first_name'],
+                'last_name' => $inputs['last_name'],
+                'email' => $inputs['email'],
+                'phone' => $inputs['phone'],
+                'contact_type' => $inputs['contact_type']
+
+            ]);
+        }else{
+            $this->user->create([
+                'first_name' => $inputs['first_name'],
+                'last_name' => $inputs['last_name'],
+                'email' => $inputs['email'],
+                'phone' => $inputs['phone'],
+                'contact_type' => $inputs['contact_type'],
+                'password' =>   bcrypt($pass)
+            ]);
+        }
+        if(!Auth::user()){
+            Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
+        }
+        $inputs['user_id'] = Auth::user()->id;
+        $inputs['listing_status'] = 'save';
+        $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
+        $this->listing->create($inputs);
+        $listing = $this->listing->latest()->first();
+        dd($request->file());
+        if($request->file()){
+            $images = $this->getImagesName($request->file());
+            foreach ($images as $image){
+                $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
+            }
+        }
+
+        return \Response::json(['massage' => 'true']);
+    }
 
     public function getImagesName($files)
     {
@@ -101,6 +142,20 @@ class ListingController extends Controller
 
 
     public function postEditListing(Request $request){
+        $this->validate($request, [
+            'listing_type' => 'required',
+            'square_feet' => 'required',
+            'rent' => 'required',
+            'deposit' => 'required',
+            'available_date' => 'required',
+            'lease_length' => 'required',
+            'description' => 'required',
+            'loundry_type' => 'required',
+            'parking_type' => 'required',
+            'parking_fee' => 'required',
+            'g-recaptcha-response' => 'required|recaptcha',
+        ]);
+        $inputs['listing_status'] = 'done'
         $inputs = $request->except('_token' , 'id');
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
         if($this->listing->where('id' , $request->get('id'))->update($inputs)){
@@ -145,26 +200,23 @@ class ListingController extends Controller
 
     public function searchListing(Request $request){
         $request->flash();
-        $points = $this->listing->where('lat' , '!=' ,  'null')->get();
+        $points = $this->listing->where('lat' , '!=' ,  'null')->where('listing_status' , 'done')->get();
         $inputs = $request->except('token');
-        $listing = $this->listing->where('listing_type' , $inputs['listing_type'])->where('address' , $inputs['address']);
+        $listing = $this->listing->where('listing_type' , $inputs['listing_type'])->where('listing_status' , 'done')->where('address' , $inputs['address']);
         if($inputs['rent'] != null){
             $rent_amount = explode('-' , $inputs['rent']);
-            $listing->where('rent', '>' , $rent_amount['0'])->where('rent', '<' ,$rent_amount['1']);
+            $listing->where('rent', '>' , $rent_amount['0'])->where('listing_status' , 'done')->where('rent', '<' ,$rent_amount['1']);
         }if($request->has('beds_baths')){
             if($inputs['beds_baths']['0'] == 'all_baths'){
-                $listing->where('baths_count' , '>' , $inputs['beds_baths']['1']);
+                $listing->where('listing_status' , 'done')->where('baths_count' , '>' , $inputs['beds_baths']['1']);
             }
             if($inputs['beds_baths']['0'] == 'all'){
-                $listing->where('beds_count' , $inputs['beds_baths']['0']);
+                $listing->where('listing_status' , 'done')->where('beds_count' , $inputs['beds_baths']['0']);
             }
-
-                if (array_key_exists('0', $inputs['beds_baths']) && array_key_exists('1', $inputs['beds_baths'])) {
-                    $listing->where('beds_count', $inputs['beds_baths']['0'])->where('baths_count', '>', $inputs['beds_baths']['1']);
-                }
-
+            if (array_key_exists('0', $inputs['beds_baths']) && array_key_exists('1', $inputs['beds_baths'])) {
+                $listing->where('listing_status' , 'done')->where('beds_count', $inputs['beds_baths']['0'])->where('baths_count', '>', $inputs['beds_baths']['1']);
+            }
         }
-
         $listings = $listing->get();
         $langLtd = [];
        foreach ($listings as $listing){
@@ -190,12 +242,12 @@ class ListingController extends Controller
 
 
     public function searchListingAjax(Request $request){
-       $points = $this->listing->where('lat' , '!=' ,  'null')->select('lat' , 'lng')->get();
+       $points = $this->listing->where('listing_status' , 'done')->where('lat' , '!=' ,  'null')->select('lat' , 'lng')->get();
        $array = json_decode($request->datas);
 
        $listings = [];
        foreach ($array as $ar){
-          $listing =  $this->listing->where('lat' ,'>' ,  get_object_vars($ar)['lat'])->where('lng' ,'>' ,  get_object_vars($ar)['lng'])->first();
+          $listing =  $this->listing->where('listing_status' , 'done')->where('lat' ,'>' ,  get_object_vars($ar)['lat'])->where('lng' ,'>' ,  get_object_vars($ar)['lng'])->first();
           if($listing != null) {
               array_push($listings, $listing);
           }
@@ -222,7 +274,6 @@ class ListingController extends Controller
                 $inputs[$key] = $value;
             }
         }
-
         $listings =  $this->listing->where($inputs)->get();
         $langLtd = [];
         foreach ($listings as $listing){
@@ -239,8 +290,6 @@ class ListingController extends Controller
                 array_push($langLtd, $new);
             }
         }
-
-
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
     }
 

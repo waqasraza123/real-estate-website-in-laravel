@@ -287,7 +287,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="center-button-cont margin-top-60">
-                                <button type="submit" class="button-primary">
+                                <button type="submit" id="submit_button" class="button-primary">
                                     <span>{{ Lang::get('listing.submit') }}</span>
                                     <div class="button-triangle"></div>
                                     <div class="button-triangle2"></div>
@@ -297,7 +297,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="center-button-cont margin-top-60">
-                                <button  class="button-secondary" id="save_for_later">
+                                <button  type="button" class="button-secondary" id="save_for_later">
                                     <span>Save for later</span>
                                     <div class="button-triangle"></div>
                                     <div class="button-triangle2"></div>
@@ -330,15 +330,13 @@
     </script>
     <script>
         $( document ).ready( function () {
-            
-            $('#save_for_later').click(function () {
-                
-            })
             $("#listing_form").validate({
                 rules: {
                     first_name: "required",
                     address: "required",
-                    listing_type: "required",
+                    listing_type: {
+                        required: true,
+                    },
                     beds_count: "required",
                     phone: "required",
                     last_name: "required",
@@ -372,7 +370,7 @@
                     // Add the `help-block` class to the error element
                     error.addClass("help-block");
 
-                    if (element.prop("type") === "checkbox") {
+                    if (element.prop("type") === "radio") {
                         error.insertAfter(element.parent("label"));
                     } else {
                         error.insertAfter(element);
@@ -385,6 +383,25 @@
                     $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
                 }
             });
+            $(document).delegate('#save_for_later' , 'click'  ,function () {
+            if( $("#listing_form").valid()){
+                    var datas = $("#listing_form").serialize();
+                    $.ajax({
+                        type:'post',
+                        url: '{{ route('saveListing') }}',
+                        data: datas,
+                        success:function(res){
+
+                        }
+                    });
+                }
+            });
+
+
+            $('#submit_button').click(function () {
+
+            });
+
         });
     </script>
 @endsection

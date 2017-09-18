@@ -34,6 +34,7 @@ Route::get('/setlang/{lang}', function($lang)
 
 Route::get('/account/{id}', ['as' => 'account' , 'uses' => 'HomeController@account']);
 Route::get('account/listings/{id}', ['as' => 'accountListing' , 'uses' => 'HomeController@accountListing']);
+Route::get('account/savedListings/{id}', ['as' => 'savedListings' , 'uses' => 'HomeController@savedListings']);
 Route::get('account/favorites/{id}', ['as' => 'accountFavorites' , 'uses' => 'HomeController@accountFavorites']);
 Route::get('account/saved_searches/{id}', ['as' => 'accountSavedSearches' , 'uses' => 'HomeController@accountSavedSearches']);
 Route::get('account/notification_settings/{id}', ['as' => 'userNotification' , 'uses' => 'HomeController@userNotification']);
@@ -47,6 +48,7 @@ Route::post('send_mail_to_client', ['as' => 'mailToClient' , 'uses' => 'HomeCont
  #Listing Routes
 
 Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing']);
+Route::post('/save_listing', ['as' => 'saveListing' , 'uses' => 'ListingController@saveListing']);
 Route::get('listing/{id}' , ['as' => 'singleListing' , 'uses' => 'ListingController@singleListing']);
 Route::post('submit_listing' , ['as' => 'submitListing' , 'uses' => 'ListingController@submitListing']);
 Route::get('edit_listing/{id}' , ['as' => 'editListing' , 'uses' => 'ListingController@editListing']);

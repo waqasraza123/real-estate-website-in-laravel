@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="grid noMargin">
                                     <div class="col-xs-12 ">
-                                        <input id="file-upload" name="files[]" value="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" type="file" multiple="">
+                                        <input id="file-upload" name="files[]" value="@if($listing->ListingsImages()->first()){{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }} @endif" type="file" multiple="">
                                     </div>
                                 </div>
                                 <div class="descriptionAmenitiesWrapper">

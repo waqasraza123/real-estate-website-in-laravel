@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <section class="short-image no-padding blog-short-title">
         <div class="container">
             <div class="row">
@@ -13,7 +12,6 @@
             </div>
         </div>
     </section>
-
     <section class="section-light section-top-shadow">
         <div class="container">
             <div class="row">
@@ -37,7 +35,7 @@
                             </div>
                         @endif
 
-                       {{-- end notify Massage--}}
+                        {{-- end notify Massage--}}
                         <div class="col-xs-12">
                             <h5 class="subtitle-margin">My</h5>
                             <h1>  Listings<span class="special-color">.</span></h1>
@@ -51,27 +49,30 @@
                                 <h5 class="labeles">Search By:</h5>
                                 <input type="text" name="address" id="headerSearchBarLookup" class="input-full main-input" placeholder="Address">
                             </div>
-                           <div class="col-lg-3">
-                               <h5 class="labeles">     </h5>
-                               <a href="#" class="button-primary">
-                                   <span>Search</span>
-                                   <div class="button-triangle"></div>
-                                   <div class="button-triangle2"></div>
-                                   <div class="button-icon"><i class="fa fa-search"></i></div>
-                               </a>
-                           </div>
+                            <div class="col-lg-3">
+                                <h5 class="labeles">     </h5>
+                                <a href="#" class="button-primary">
+                                    <span>Search</span>
+                                    <div class="button-triangle"></div>
+                                    <div class="button-triangle2"></div>
+                                    <div class="button-icon"><i class="fa fa-search"></i></div>
+                                </a>
+                            </div>
                         </div>
                     </form>
                     {{--Checking here the listing`s that came from db--}}
 
                     @if($listings->first())
                         @foreach($listings as $listing)
-                           <div class="row">
+                            <div class="row">
                                 <div class="col-md-12 col-lg-12  margin-top-60">
                                     <article class="blog-grid1-item zoom-cont">
                                         <figure class="">
                                             @if($listing->ListingsImages()->first())
                                                 <a href="#"><img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt=""  style="width: 240px !important"></a>
+
+                                            @else
+
                                             @endif
                                         </figure>
                                         <div class="blog-grid1-post-content" style="width: 100%">
@@ -93,16 +94,16 @@
                                         </div>
                                     </article>
                                 </div>
-                           </div>
+                            </div>
                         @endforeach
                     @else
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h5 class="labeles">
-                                0 Listings
-                            </h5>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h5 class="labeles">
+                                    0 Listings
+                                </h5>
+                            </div>
                         </div>
-                    </div>
                     @endif
                     <div class="row margin-top-60"></div>
                 </div>

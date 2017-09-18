@@ -38,7 +38,7 @@ class HomeController extends Controller
 
 
     public function homePage(){
-        $listing = $this->listing->paginate(6);
+        $listing = $this->listing->where('listing_status' , 'done')->paginate(6);
         return view('welcome'  , compact('listing'));
     }
 
@@ -47,7 +47,7 @@ class HomeController extends Controller
     }
 
     public function accountListing($id){
-        $listings = $this->listing->where('user_id' , $id)->get();
+        $listings = $this->listing->where('user_id' , $id)->where('listing_status' , 'done')->get();
         return view('user.listings' , compact('listings'));
 
     }
@@ -96,7 +96,11 @@ class HomeController extends Controller
         return '';
     }
 
+    public function savedListings($id){
+        $listings = $this->listing->where('user_id' , $id)->where('listing_status' , 'save')->get();
 
+        return view('user.savedListing' , compact('listings'));
+    }
 
     public function accountFavorites($id){
        $list =  $this->favorits->where('user_id' , $id)->get();

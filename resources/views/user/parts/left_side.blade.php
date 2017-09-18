@@ -38,6 +38,14 @@
             </a>
         </div>
         <div class=" margin-top-15">
+            <a href="{{ route('savedListings' , ['id' => Auth::user()->id] )  }}" class="button-primary  button-fulls">
+                <span class="peofile_left_text">Saved Listings </span>
+                <div class="button-triangle"></div>
+                <div class="button-triangle2"></div>
+                <div class="button-icon"><i class="fa fa-search-plus"></i></div>
+            </a>
+        </div>
+        <div class=" margin-top-15">
             <a href="{{ route('accountSavedSearches' , ['id' => Auth::user()->id] )  }}" class="button-primary  button-fulls">
                 <span class="peofile_left_text">{{ Lang::get('profile.saved_searches') }}</span>
                 <div class="button-triangle"></div>

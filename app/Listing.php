@@ -30,7 +30,8 @@ class Listing extends Model
         'parking_fee',
         'user_id',
         'lat',
-        'lng'
+        'lng',
+        'listing_status'
     ];
 
     public function ListingsImages(){
