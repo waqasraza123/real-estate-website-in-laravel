@@ -287,7 +287,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-9">
-                    <h5 class="subtitle-margin special-color">{{ Lang::get('pages.highly_recom') }}</h5>
+                    <h5 class="subtitle-margin special-color">{{ Lang::get('home.highly_recom') }}</h5>
                     <h1 class="special-color">{{ Lang::get('home.feat_offer') }}<span class="special-color">.</span></h1>
                 </div>
                 <div class="col-xs-12 col-sm-3">

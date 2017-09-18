@@ -13,7 +13,7 @@ class CreateListigsTable extends Migration
      */
     public function up()
     {
-        Schema::create('listings', function (Blueprint $table) {
+        Schema::table('listings', function (Blueprint $table) {
             $table->string('address')->nullable()->change();
             $table->string('listing_type')->nullable()->change();
             $table->string('beds_count')->nullable()->change();
