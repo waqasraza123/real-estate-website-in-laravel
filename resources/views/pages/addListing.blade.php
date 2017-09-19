@@ -422,14 +422,14 @@
 
 
             $("#listing_form").submit(function(event) {
-               /* if( $("#listing_form").valid()) {*/
-                    var recaptcha = $("#g-recaptcha-response").val();
-                    if (recaptcha === "") {
-                        event.preventDefault();
-                        $('#capcha-modal').show();
-                        $('#capcha-modal').addClass('in');
-                    }
-
+               if( $("#listing_form").valid()) {
+                   var recaptcha = $("#g-recaptcha-response").val();
+                   if (recaptcha === "") {
+                       event.preventDefault();
+                       $('#capcha-modal').show();
+                       $('#capcha-modal').addClass('in');
+                   }
+               }
             });
             $('.close').click(function () {
                 $('#capcha-modal').hide();

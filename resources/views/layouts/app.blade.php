@@ -278,11 +278,17 @@
                         </div>
                         <form class="form-horizontal" method="POST" id="registerForm" action="{{ route('register') }}">
                             {{ csrf_field() }}
-                                <input id="name" type="text" class="input-full main-input" placeholder="Name" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="first_name" type="text" class="input-full main-input" placeholder="First Name" name="first_name" value="{{ old('first_name') }}" required autofocus>
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                     <strong>{{ $errors->first('name') }}</strong>
                                 </span>
+                                @endif
+                                <input id="last_name" type="text" class="input-full main-input" placeholder="Last Name" name="name" value="{{ old('last_name') }}" required autofocus>
+                                @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
                                 @endif
                                 <input id="email" type="email" class="input-full main-input" name="email" placeholder="{{ Lang::get('pages.email') }}" value="{{ old('email') }}" required>
                                 @if ($errors->has('email'))
