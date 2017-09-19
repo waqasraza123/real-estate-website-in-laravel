@@ -50,7 +50,7 @@ return [
     'long_first' => 'By checking this box I agree as follows: I am the owner of this property or have authority to transact on behalf of this property; I will provide accurate and',
     'non' => 'non discriminatory',
     'and' => 'information; and I will comply with the',
-    'terms' => 'Apartments.com Terms of Service',
+    'terms' => 'Terms of Service',
     'listing_terms' => 'Add a Listing Terms of Service',
     'submit' => 'Submit rental',
 

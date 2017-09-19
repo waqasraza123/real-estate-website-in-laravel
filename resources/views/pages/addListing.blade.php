@@ -37,8 +37,8 @@
                         <div class="row">
                             @if($errors->all())
                                 <div class="alert alert-danger fade in" style="margin: 0px auto;">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                                     @foreach($errors->all() as $error)
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                                         <br>{{$error}}
                                     @endforeach
                                 </div>
@@ -183,7 +183,7 @@
                                 </div>
 
                                 <div class="cell-sm-4">
-                                    <input type="text" name="email" value="@if(Auth::user()) {{ Auth::user()->email }}@endif" placeholder="{{ Lang::get('listing.email') }}" class="input-full main-input" maxlength="100"  title="">
+                                    <input type="text" name="email" value="@if(Auth::user()){{ Auth::user()->email }}@endif" placeholder="{{ Lang::get('listing.email') }}" class="input-full main-input" maxlength="100"  title="">
                                 </div>
                                 <div class="cell-sm-4">
                                     <input name="phone" value="@if(Auth::user()) {{ Auth::user()->phone }}@endif" type="text" placeholder="{{ Lang::get('listing.phone') }}" class="input-full main-input">
@@ -273,18 +273,22 @@
                             <div class="termswrapper">
                                 <div class="grid">
                                     <div class="checkboxGroup terms col-sm-7">
+
                                         <input id="agree" name="agree" type="checkbox" class="main-checkbox" data-bind="checked: Extras.IsAgreed" title="">
                                         <label for="agree">
-                                        <span>
+                                        <span></span>
 
-                                        </span>
-                                            {{ Lang::get('listing.long_first') }}
-                                            <a href="http://www.apartments.com/advertise/disclaimers/equal-opportunity-in-housing-statement/" target="_blank">{{ Lang::get('listing.non') }}</a>
-                                            {{ Lang::get('listing.and') }}
-                                            <a href="http://www.apartments.com/advertise/disclaimers/terms-of-service/" target="_blank">{{ Lang::get('listing.terms') }}</a>
-                                            and the
-                                            <a href="http://www.apartments.com/advertise/disclaimers/add-a-listing-terms-of-service/" target="_blank">{{ Lang::get('listing.listing_terms') }}</a>.
+
+
                                         </label>
+                                        <div>
+                                            {{ Lang::get('listing.long_first') }}
+                                            <a href="{{ route('equalOpportunity') }}" target="_blank">{{ Lang::get('listing.non') }}</a>
+                                            {{ Lang::get('listing.and') }}
+                                            <a href="{{ route('termOfService') }}" target="_blank">{{ Lang::get('listing.terms') }}</a>
+                                            and the
+                                            <a href="{{ route('addAListingTerms') }}" target="_blank">{{ Lang::get('listing.listing_terms') }}</a>.
+                                        </div>
                                         <div class="errorMsg" data-bind="validationMessage: Extras.IsAgreed" style="display: none;"></div>
                                     </div>
                                     <div class="col-sm-4" style="margin-left: 68px">
@@ -298,26 +302,33 @@
                 </div>
                 <div class="col-xs-12">
                     <div class="row">
-
-                            <div class="center-button-cont margin-top-60">
-                                <button type="submit" id="submit_button" class="button-primary">
-                                    <span>{{ Lang::get('listing.submit') }}</span>
-                                    <div class="button-triangle"></div>
-                                    <div class="button-triangle2"></div>
-                                    <div class="button-icon"><i class="fa fa-lg fa-home"></i></div>
-                                </button>
-                            </div>
-
-
+                        <div class="center-button-cont margin-top-60">
+                            <button type="submit" id="submit_button" class="button-primary">
+                                <span>{{ Lang::get('listing.submit') }}</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-lg fa-home"></i></div>
+                            </button>
+                        </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </form>
 </section>
-
+<div class="modal fade apartment-modal" id="capcha-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-title">
+                    <h1></h1>
+                </div>
+                <p class="negative-margin forgot-info">Please ensure that you are human</p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
 
 @endsection
 @section('scripts')
@@ -390,22 +401,40 @@
             $(document).delegate('#save_for_later' , 'click'  ,function () {
             if( $("#listing_form").valid()){
                     var datas = $("#listing_form").serialize();
-                    $.ajax({
-                        type:'post',
-                        url: '{{ route('saveListing') }}',
-                        data: datas,
-                        success:function(res){
+                    var recaptcha = $("#g-recaptcha-response").val();
+                    if (recaptcha === "") {
+                        event.preventDefault();
+                        $('#capcha-modal').show();
+                        $('#capcha-modal').addClass('in');
+                    }else{
+                        $.ajax({
+                            type:'post',
+                            url: '{{ route('saveListing') }}',
+                            data: datas,
+                            success:function(res){
 
-                        }
-                    });
+                            }
+                        });
+                    }
+
                 }
             });
 
 
-            $('#submit_button').click(function () {
+            $("#listing_form").submit(function(event) {
+               /* if( $("#listing_form").valid()) {*/
+                    var recaptcha = $("#g-recaptcha-response").val();
+                    if (recaptcha === "") {
+                        event.preventDefault();
+                        $('#capcha-modal').show();
+                        $('#capcha-modal').addClass('in');
+                    }
 
             });
-
+            $('.close').click(function () {
+                $('#capcha-modal').hide();
+                $('#capcha-modal').removeClass('in');
+            })
         });
     </script>
 @endsection

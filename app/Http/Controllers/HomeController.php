@@ -157,4 +157,17 @@ class HomeController extends Controller
         return redirect()->back()->with('success' , 'The massage sucessfully sendet');
 
     }
+
+
+    public function termOfService(){
+        return view('terms.terms_of_service');
+    }
+
+    public function addAListingTerms(){
+        return view('terms.add_a_listing_terms');
+    }
+
+    public function equalOpportunity(){
+        return view('terms.equal_oprtunity');
+    }
 }

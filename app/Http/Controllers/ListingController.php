@@ -153,7 +153,6 @@ class ListingController extends Controller
             'loundry_type' => 'required',
             'parking_type' => 'required',
             'parking_fee' => 'required',
-            'g-recaptcha-response' => 'required|recaptcha',
         ]);
         $inputs['listing_status'] = 'done';
         $inputs = $request->except('_token' , 'id');

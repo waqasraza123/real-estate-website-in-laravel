@@ -44,6 +44,13 @@ Route::post('save_user_notification', ['as' => 'saveUserNotify' , 'uses' => 'Hom
 Route::post('send_mail_to_client', ['as' => 'mailToClient' , 'uses' => 'HomeController@mailToClient']);
 
 
+    #Terms and Statements routes
+
+Route::get('terms_of_service' , ['as' => 'termOfService' , 'uses' => 'HomeController@termOfService']);
+Route::get('add-a-listing-terms-of-service' , ['as' => 'addAListingTerms' , 'uses' => 'HomeController@addAListingTerms']);
+Route::get('equal_opportunity' , ['as' => 'equalOpportunity' , 'uses' => 'HomeController@equalOpportunity']);
+
+
 
  #Listing Routes
 

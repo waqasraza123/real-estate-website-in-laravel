@@ -189,12 +189,8 @@
                         <div class="clearfix"></div>
                     </div>
                     @endforeach
-
-
-
                 </div>
             </div>
-
         </div>
         @else
             <section class="short-image no-padding blog-short-title">
@@ -206,7 +202,6 @@
                         </div>
                     </div>
                 </div>
-
             </section>
             <section class="section-light section-top-shadow">
                 <div class="container">

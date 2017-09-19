@@ -9,7 +9,9 @@ Author: Jan Skwara - http://themeforest.net/user/johnnychaos
 /*********************************| FONT ICONS |*****************************/
 /****************************************************************************/
 
-
+.top-icon-circle i {
+	line-height: 21px;
+}
 
 @font-face {
     font-family: 'apartment-font';
