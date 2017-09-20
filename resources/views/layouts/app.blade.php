@@ -284,7 +284,7 @@
                                     <strong>{{ $errors->first('name') }}</strong>
                                 </span>
                                 @endif
-                                <input id="last_name" type="text" class="input-full main-input" placeholder="Last Name" name="name" value="{{ old('last_name') }}" required autofocus>
+                                <input id="last_name" type="text" class="input-full main-input" placeholder="Last Name" name="last_name" value="{{ old('last_name') }}" required autofocus>
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
