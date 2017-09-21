@@ -176,17 +176,18 @@
                                     <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.contact') }}</h4>
                                 </div>
                                 <div class="cell-sm-4">
-                                    <input name="first_name"  type="text" value="@if(Auth::user()) {{ Auth::user()->first_name }} @else {{ old('first_name') }} @endif" placeholder="{{ Lang::get('listing.first_name') }}" class="input-full main-input" maxlength="15"  title="">
+                                    <input name="first_name"  type="text" value="@if(Auth::user()){{ Auth::user()->first_name }}@else{{ old('first_name') }}@endif" placeholder="{{ Lang::get('listing.first_name') }}" class="input-full main-input" maxlength="15"  title="">
                                 </div>
                                 <div class="cell-sm-4">
-                                    <input name="last_name" type="text" value="@if(Auth::user()) {{ Auth::user()->last_name }} @else {{ old('last_name') }} @endif" placeholder="{{ Lang::get('listing.last_name') }}" class="input-full main-input" maxlength="25"  title="">
+                                    <input name="last_name" type="text" value="@if(Auth::user()){{ Auth::user()->last_name }}@else{{ old('last_name') }}@endif" placeholder="{{ Lang::get('listing.last_name') }}" class="input-full main-input" maxlength="25"  title="">
                                 </div>
 
                                 <div class="cell-sm-4">
-                                    <input type="text" name="email"  value="@if(Auth::user()){{ Auth::user()->email }} @else {{ old('email') }}  @endif" placeholder="{{ Lang::get('listing.email') }}" class="input-full main-input" maxlength="100"  title="">
+                                    <input type="text" name="email"  value="@if(Auth::user()){{ Auth::user()->email }}@else{{ old('email') }}@endif" placeholder="{{ Lang::get('listing.email') }}" class="input-full main-input" maxlength="100"  title="">
+                                    <span class="email_fails"></span>
                                 </div>
                                 <div class="cell-sm-4">
-                                    <input name="phone" value="@if(Auth::user()) {{ Auth::user()->phone }} @else  {{ old('phone') }}  @endif" type="text" placeholder="{{ Lang::get('listing.phone') }}" class="input-full main-input">
+                                    <input name="phone" value="@if(Auth::user()){{ Auth::user()->phone }}@else{{ old('phone') }}@endif" type="text" placeholder="{{ Lang::get('listing.phone') }}" class="input-full main-input">
                                 </div>
                                 <div class="cell-sm-4">
                                     <select name="contact_type" class="selectpicker contactpreference" data-bind="options: ContactPreferenceTypes, optionsText: 'Description', optionsValue: 'Id', value: Contact.ContactPreference, optionsCaption: 'Contact Preference'"  title="" style="display: none;">
@@ -216,7 +217,6 @@
                                     <textarea id="description" name="description"  rows="6" class="input-full main-input property-textarea" placeholder="{{ Lang::get('listing.tell_us') }}" title="">{{ old('description') }}</textarea>
                                 </div>
                                 <div class="grid">
-
                                     <div class="col-xs-12 margin-top-15">
                                         <div class="row">
                                             <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
@@ -342,6 +342,7 @@
     <script>
         $( document ).ready( function () {
             $("#listing_form").validate({
+                ignore:"",
                 rules: {
                     first_name: "required",
                     address: "required",
@@ -378,12 +379,11 @@
                 },
                 errorElement: "em",
                 errorPlacement: function (error, element) {
-                    console.log(element);
                     // Add the `help-block` class to the error element
                     error.addClass("help-block");
 
-                    if (element.prop("type") === "radio") {
-                        error.insertAfter(element.parent("label"));
+                    if (element.prop("type") === "radio" || element.prop("type") === "checkbox") {
+                        error.insertAfter(element.next());
                     } else {
                         error.insertAfter(element);
                     }
@@ -398,6 +398,9 @@
             $(document).delegate('#save_for_later' , 'click'  ,function () {
             if( $("#listing_form").valid()){
                     var datas = $("#listing_form").serialize();
+                    console.log($('#file-upload').val());
+                    console.log(datas);
+                    exit;
                     var recaptcha = $("#g-recaptcha-response").val();
                     if (recaptcha === "") {
                         event.preventDefault();
@@ -408,10 +411,18 @@
                             type:'post',
                             url: '{{ route('saveListing') }}',
                             data: datas,
+
                             success:function(res){
-                                console.log(res);
+                                if(res.massage == 'true'){
+                                }
+                            },
+                            error: function(data){
+                                var errors = data.responseJSON;
+                                var mailfail = '<em id="email-error" class="error help-block">'+errors.email[0]+'</em>';
+                                $('.email_fails').append(mailfail);
                             }
                         });
+
                     }
 
                 }

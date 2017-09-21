@@ -89,7 +89,7 @@ class ListingController extends Controller
 
             ]);
         }else{
-            $this->validate($request, [
+           $this->validate($request, [
                 'email' => 'required|string|email|max:255|unique:users',
             ]);
             $this->user->create([
