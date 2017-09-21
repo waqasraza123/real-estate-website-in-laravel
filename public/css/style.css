@@ -8,6 +8,16 @@ body {
     margin: 0
 }
 
+.abs_red_non_vizible{
+    position: absolute;
+    background: transparent;
+    border: 2px solid red;
+    width: 302px;
+    height: 76px;
+    top:25px;
+    display: none;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block
 }

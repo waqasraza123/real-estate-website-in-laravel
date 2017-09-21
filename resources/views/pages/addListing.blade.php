@@ -288,6 +288,9 @@
                                         <div class="errorMsg" data-bind="validationMessage: Extras.IsAgreed" style="display: none;"></div>
                                     </div>
                                     <div class="col-sm-4" style="margin-left: 68px">
+                                        <div class="abs_red_non_vizible">
+
+                                        </div>
                                         <br>
                                         {!! Recaptcha::render() !!}
                                     </div>
@@ -396,36 +399,32 @@
                 }
             });
             $(document).delegate('#save_for_later' , 'click'  ,function () {
-            if( $("#listing_form").valid()){
+                if( $("#listing_form").valid()) {
                     var datas = $("#listing_form").serialize();
-                    console.log($('#file-upload').val());
-                    console.log(datas);
-                    exit;
                     var recaptcha = $("#g-recaptcha-response").val();
                     if (recaptcha === "") {
+                        $('.abs_red_non_vizible').attr('style', 'display:block !important')
                         event.preventDefault();
-                        $('#capcha-modal').show();
-                        $('#capcha-modal').addClass('in');
-                    }else{
+                    } else {
                         $.ajax({
-                            type:'post',
+                            type: 'post',
                             url: '{{ route('saveListing') }}',
                             data: datas,
 
-                            success:function(res){
-                                if(res.massage == 'true'){
+                            success: function (res) {
+                                if (res.massage == 'true') {
                                 }
                             },
-                            error: function(data){
+                            error: function (data) {
                                 var errors = data.responseJSON;
-                                var mailfail = '<em id="email-error" class="error help-block">'+errors.email[0]+'</em>';
+                                var mailfail = '<em id="email-error" class="error help-block">' + errors.email[0] + '</em>';
                                 $('.email_fails').append(mailfail);
                             }
                         });
 
                     }
-
                 }
+
             });
 
 
@@ -434,15 +433,11 @@
                    var recaptcha = $("#g-recaptcha-response").val();
                    if (recaptcha === "") {
                        event.preventDefault();
-                       $('#capcha-modal').show();
-                       $('#capcha-modal').addClass('in');
+                       $('.abs_red_non_vizible').attr('style' , 'display:block !important')
                    }
                }
             });
-            $('.close').click(function () {
-                $('#capcha-modal').hide();
-                $('#capcha-modal').removeClass('in');
-            })
+
         });
     </script>
 @endsection
