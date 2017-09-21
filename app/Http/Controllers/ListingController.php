@@ -30,14 +30,15 @@ class ListingController extends Controller
             'deposit' => 'required',
             'available_date' => 'required',
             'lease_length' => 'required',
-            'description' => 'required',
             'loundry_type' => 'required',
             'parking_type' => 'required',
             'parking_fee' => 'required',
             'g-recaptcha-response' => 'required|recaptcha',
+            'email' => 'unique:users|email|required'
         ]);
         $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file');
+
         if(Auth::user()){
             $this->user->where('id' , Auth::user()->id)->update([
                'first_name' => $inputs['first_name'],
@@ -60,6 +61,7 @@ class ListingController extends Controller
         if(!Auth::user()){
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
         }
+
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
@@ -87,6 +89,9 @@ class ListingController extends Controller
 
             ]);
         }else{
+            $this->validate($request, [
+                'email' => 'required|string|email|max:255|unique:users',
+            ]);
             $this->user->create([
                 'first_name' => $inputs['first_name'],
                 'last_name' => $inputs['last_name'],
@@ -104,7 +109,6 @@ class ListingController extends Controller
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
         $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
-        dd($request->file());
         if($request->file()){
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){
