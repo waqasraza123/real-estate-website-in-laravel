@@ -177,9 +177,11 @@
                                 </div>
                                 <div class="cell-sm-4">
                                     <input name="first_name"  type="text" value="@if(Auth::user()){{ Auth::user()->first_name }}@else{{ old('first_name') }}@endif" placeholder="{{ Lang::get('listing.first_name') }}" class="input-full main-input" maxlength="15"  title="">
+                                    <span class="first_name_fails"></span>
                                 </div>
                                 <div class="cell-sm-4">
                                     <input name="last_name" type="text" value="@if(Auth::user()){{ Auth::user()->last_name }}@else{{ old('last_name') }}@endif" placeholder="{{ Lang::get('listing.last_name') }}" class="input-full main-input" maxlength="25"  title="">
+                                    <span class="last_name_fails"></span>
                                 </div>
 
                                 <div class="cell-sm-4">
@@ -188,6 +190,7 @@
                                 </div>
                                 <div class="cell-sm-4">
                                     <input name="phone" value="@if(Auth::user()){{ Auth::user()->phone }}@else{{ old('phone') }}@endif" type="text" placeholder="{{ Lang::get('listing.phone') }}" class="input-full main-input">
+                                    <span class="phone_fails"></span>
                                 </div>
                                 <div class="cell-sm-4">
                                     <select name="contact_type" class="selectpicker contactpreference" data-bind="options: ContactPreferenceTypes, optionsText: 'Description', optionsValue: 'Id', value: Contact.ContactPreference, optionsCaption: 'Contact Preference'"  title="" style="display: none;">
@@ -399,7 +402,6 @@
                 }
             });
             $(document).delegate('#save_for_later' , 'click'  ,function () {
-
                     var datas = $("#listing_form").serialize();
                     var recaptcha = $("#g-recaptcha-response").val();
                     if (recaptcha === "") {
@@ -419,7 +421,13 @@
                             error: function (data) {
                                 var errors = data.responseJSON;
                                 var mailfail = '<em id="email-error" class="error help-block">' + errors.email[0] + '</em>';
+                                var fistfail = '<em id="email-error" class="error help-block">' + errors.first_name[0] + '</em>';
+                                var lastfail = '<em id="email-error" class="error help-block">' + errors.last_name[0] + '</em>';
+                                var phonefail = '<em id="email-error" class="error help-block">' + errors.phone[0] + '</em>';
                                 $('.email_fails').append(mailfail);
+                                $('.first_name_fails').append(fistfail);
+                                $('.last_name_fails').append(lastfail);
+                                $('.phone_fails').append(phonefail);
                             }
                         });
 

@@ -19,6 +19,7 @@
     <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,500italic,700,700italic&amp;subset=latin,latin-ext'>
     <link rel="stylesheet" type="text/css" href="{{ asset('css\plugins.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\init.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\apartment-layout.css') }}">
     <link id="skin" rel="stylesheet" type="text/css" href="{{ asset('css\apartment-colors-blue.css') }}">
     <!--[if lt IE 9]>
@@ -29,111 +30,138 @@
     <body>
     <div class="loader-bg"></div>
     <div id="wrapper">
-        <header>
-            <div class="top-bar-wrapper">
-                <div class="container top-bar">
-                    <div class="row">
-                        <div class="col-xs-5 col-sm-8">
-                            @if(app()->getLocale() == 'en')
-                            <div class="top-mail pull-left hidden-xs">
-							<span class="top-icon-circle">
-								<i class="fa fa-globe fa-sm"></i>
-							</span>
-                                <a href="/setlang/es" class="top-bar-text">Espanol</a>
-                            </div>
-                            @else
-                            <div class="top-mail pull-left hidden-xs">
-                            <span class="top-icon-circle">
-                                <i class="fa fa-globe fa-sm"></i>
-                            </span>
-                                <a href="/setlang/en" class="top-bar-text">English</a>
-                            </div>
-                            @endif
-                            <div class="top-phone pull-left hidden-xxs">
-							<span class="top-icon-circle">
-								<i class="fa fa-phone"></i>
-							</span>
-                                <span class="top-bar-text">(0)-123-456-789</span>
-                            </div>
-                            <div class="top-localization pull-left hidden-sm hidden-md hidden-xs">
-							<span class="top-icon-circle pull-left">
-								<i class="fa fa-map-marker"></i>
-							</span>
-                                <span class="top-bar-text">{{ Lang::get('pages.top_small_text') }}</span>
-                            </div>
-                        </div>
-                        <div class="col-xs-7 col-sm-4">
-                            <div class="top-social-last top-dark pull-right" data-toggle="tooltip" data-placement="bottom" title="Login/Register">
-                                @if(!Auth::user())
-                                <a class="top-icon-circle" href="#login-modal" data-toggle="modal">
-                                    <i class="fa fa-lock"></i>
-                                </a>
-                                @else
-                                    <a class="top-icon-circle" href="{{ route('account' , ['id' => Auth::user()->id]) }}" data-toggle="modal">
-                                        <i class="fa fa-user"></i>
-                                    </a>
-                                @endif
-                            </div>
-                            @if(Auth::user())
-                                <div class="top-social top-dark pull-right">
-                                    <a class="top-icon-circle" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <i class="fa fa-lg fa-sign-out"></i>
-                                    </a>
+        <header class=" mainHeader" id="mainHeader">
+            <nav class="mainHeaderNavigation" id="mainHeaderNavigation">
+                <div class="menuSection">
+                    <button id="headerMenuLink" type="button" class="dropdownToggle primary homeBtn">
+                        <i class="fa fa-bars"></i><span>Menu</span>
+                    </button>
+                    <div id="menuNavWrapper" class="menuNavWrapper">
+                        <div id="menuNavContainer">
+                            <div class="menuOpenWrapper">
+                                <span id="menuHeader" class="menuHeader"><i class="fa fa-bars"></i><span class="menuText">Menu</span></span>
+                                <ul id="menuNavigation" class="menuNavigation">
+                                    <li><a href="#" rel="nofollow" data-requirelogin="true">Customer Tools</a></li>
+                                    <li><a id="menuNavLnkSaveSearches" href="#" rel="nofollow" data-requirelogin="true">My Saved Searches</a></li>
+                                    <li><a id="menuNavLnkFavorites" href="#" rel="nofollow">My Favorites</a></li>
+                                    <li id="menuNavLnkUserNotificationSettings"><a href="#" rel="nofollow"><span>Notification Settings</span></a></li>
+                                    <li>
+                                        <a href="index.html" class="expandable" data-requirelogin="false">Apartments For Rent <i class="mapZoomInIcon"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Austin Apartments</a></li>
+                                            <li><a href="#">Boston Apartments</a></li>
+                                            <li><a href="#">Charlotte Apartments</a></li>
+                                            <li><a href="#">Chicago Apartments</a></li>
+                                            <li><a href="#">Houston Apartments</a></li>
+                                            <li><a href="#">Las Vegas Apartments</a></li>
+                                            <li><a href="#">Los Angeles Apartments</a></li>
+                                            <li><a href="#">New York City Apartments</a></li>
+                                            <li><a href="#">San Diego Apartments</a></li>
+                                            <li><a href="#">Seattle Apartments</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="expandable" data-requirelogin="false">Homes For Rent <i class="mapZoomInIcon"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Charlotte Houses for Rent</a></li>
+                                            <li><a href="#">Dallas Houses for Rent</a></li>
+                                            <li><a href="#">Fresno Houses for Rent</a></li>
+                                            <li><a href="#">Houston Houses for Rent</a></li>
+                                            <li><a href="#">Louisville Houses for Rent</a></li>
+                                            <li><a href="#">Memphis Houses for Rent</a></li>
+                                            <li><a href="#">Nashville Houses for Rent</a></li>
+                                            <li><a href="#">Phoenix Houses for Rent</a></li>
+                                            <li><a href="#">San Antonio Houses for Rent</a></li>
+                                            <li><a href="#">Tampa Houses for Rent</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="expandable" data-requirelogin="false">Condos For Rent <i class="mapZoomInIcon"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Atlanta Condos for Rent</a></li>
+                                            <li><a href="#">Charlotte Condos for Rent</a></li>
+                                            <li><a href="#">Chicago Condos for Rent</a></li>
+                                            <li><a href="#">Houston Condos for Rent</a></li>
+                                            <li><a href="#">Jacksonville Condos for Rent</a></li>
+                                            <li><a href="#">Las Vegas Condos for Rent</a></li>
+                                            <li><a href="#">Miami Condos for Rent</a></li>
+                                            <li><a href="#">Nashville Condos for Rent</a></li>
+                                            <li><a href="#">Orlando Condos for Rent</a></li>
+                                            <li><a href="#">San Diego Condos for Rent</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="expandable" data-requirelogin="false">Townhomes for Rent <i class="mapZoomInIcon"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="#atlanta-ga/">Atlanta Townhomes for Rent</a></li>
+                                            <li><a href="#charlotte-nc/">Charlotte Townhomes for Rent</a></li>
+                                            <li><a href="#dallas-tx/">Dallas Townhomes for Rent</a></li>
+                                            <li><a href="#denver-co/">Denver Townhomes for Rent</a></li>
+                                            <li><a href="#houston-tx/">Houston Townhomes for Rent</a></li>
+                                            <li><a href="#jacksonville-fl/">Jacksonville Townhomes for Rent</a></li>
+                                            <li><a href="#nashville-tn/">Nashville Townhomes for Rent</a></li>
+                                            <li><a href="#omaha-ne/">Omaha Townhomes for Rent</a></li>
+                                            <li><a href="#raleigh-nc/">Raleigh Townhomes for Rent</a></li>
+                                            <li><a href="#san-antonio-tx/">San Antonio Townhomes for Rent</a></li>
+                                        </ul>
+                                    </li>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </div>
-                            @endif
-                            <div class="top-social pull-right">
-                                <a class="top-icon-circle" href="#">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
+
+                                    <li><a id="menuNavLnkMobileApps" target="_blank" href="https://www.apartments.com/mobile/" data-requirelogin="false">Mobile Apps</a></li>
+
+                                </ul>
                             </div>
-                            <div class="top-social pull-right">
-                                <a class="top-icon-circle" href="#">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </div>
-                            <div class="top-social pull-right">
-                                <a class="top-icon-circle" href="#">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                            </div>
-                            <div class="top-social pull-right">
-                                <a class="top-icon-circle" href="#">
-                                    <i class="fa fa-skype"></i>
-                                </a>
-                            </div>
+
                         </div>
-                    </div>
-                </div><!-- /.top-bar -->
-            </div><!-- /.Page top-bar-wrapper -->
-            <nav class="navbar main-menu-cont">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar icon-bar1"></span>
-                            <span class="icon-bar icon-bar2"></span>
-                            <span class="icon-bar icon-bar3"></span>
-                        </button>
-                        <a href="/" title="" class="navbar-brand">
-                            <img src="{{ asset('images\logo-dark.png') }}" alt="Apartment - Premium Real Estate Template">
-                        </a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li >
-                                <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign in/Sign up</a>
-                            </li>
-                            <li><a href="{{ route('addListing') }}" class="special-color">{{ Lang::get('pages.add_listing') }}</a></li>
-                        </ul>
                     </div>
                 </div>
-            </nav><!-- /.mani-menu-cont -->
+
+                <div class="headerSwitchLanguageWrapper">
+                    @if(app()->getLocale() == 'en')
+                        <a href="/setlang/es" class="headerSwitchLanguage"><i class="fa fa-globe"></i>Español</a>
+                    @else
+                        <a href="/setlang/en" class="headerSwitchLanguage"><i class="fa fa-globe"></i>English</a>
+                    @endif
+                </div>
+
+                <div class="logoSpacer"></div>
+
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="{{ asset('images\logo-dark.png') }}" alt=" Logo">
+                    </a>
+                </div>
+
+                <div class="loginPrevNextWrapper">
+                    <div id="headerLoginSection" class="loginSection">
+                        @if(!Auth::user())
+                        <a href="#register-modal" class="js-headerSignUp headerSignUp" data-toggle="modal">Sign Up</a>
+                        <span>/</span>
+                        <a href="#login-modal" class="js-headerSignin headerSignIn" data-toggle="modal">Sign In</a>
+                        @else
+                            <div class="username" data-toggle="dropdown">
+                                <span>Artyom </span>
+                                <i class="fa fa-chevron-down" data-toggle="dropdown"></i>
+                                <div class="userMenu" id="userMenu">
+                                    <ul class="userMenuDropdown">
+                                        <li> <a id="headerMyAccount" href="{{ route('account' , ['id' => Auth::user()->id]) }}">My Account</a></li>
+                                        <li><a id="headerSignOut" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Sign Out</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        @endif
+                    </div>
+
+                </div>
+
+                <a href="{{ route('addListing') }}" id="headerAddListing" title="Add a Listing">
+                    <span>Add a Listing</span>
+                </a>
+            </nav>
         </header>
         @yield('content')
         <footer class="large-cont">
@@ -370,7 +398,20 @@
     <script type="text/javascript" src="{{ asset('js/date/moment.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/date/daterangepicker.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js\apartment.js') }}"></script>
+    <script>
+        $('#headerMenuLink').click(function () {
+            $('#menuNavContainer').addClass('openik');
 
+        });
+        $('#menuHeader').click(function(){
+            $('#menuNavContainer').removeClass('openik');
+        })
+        @if(Auth::user())
+            $('#headerMyAccount').click(function(){
+                window.location.href = '{{ route('account' , ['id' => Auth::user()->id]) }}'
+            })
+        @endif
+    </script>
     @yield('scripts')
     </body>
 </html>

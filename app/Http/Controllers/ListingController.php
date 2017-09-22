@@ -91,6 +91,9 @@ class ListingController extends Controller
         }else{
            $this->validate($request, [
                 'email' => 'required|string|email|max:255|unique:users',
+                'last_name' => 'required',
+                'first_name' => 'required',
+                'phone' => 'required'
             ]);
             $this->user->create([
                 'first_name' => $inputs['first_name'],

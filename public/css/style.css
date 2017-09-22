@@ -4,6 +4,9 @@ html {
     -webkit-text-size-adjust: 100%
 }
 
+
+
+
 body {
     margin: 0
 }
@@ -790,6 +793,9 @@ td, th {
     cursor: not-allowed
 }
 
+.openik{
+    display:block !important;
+}
 .open > .dropdownMenu {
     display: block
 }
@@ -1941,7 +1947,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .daterangepicker td.day:hover {
-    background: #77b800;
+    background: #3797dd;
     color: #fff;
     cursor: pointer
 }
@@ -1960,7 +1966,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 
 .daterangepicker td.active, .daterangepicker td.active:hover {
     color: #fff;
-    background-color: #77b800
+    background-color: #3797dd
 }
 
 .daterangepicker td.range {
@@ -1989,12 +1995,12 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .daterangepicker td span:hover {
-    background: #77b800;
+    background: #3797dd;
     color: #fff
 }
 
 .daterangepicker td span.active {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -2032,7 +2038,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .daterangepicker th.close a {
-    color: #77b800
+    color: #3797dd
 }
 
 .daterangepicker thead tr:first-child th {
@@ -2120,7 +2126,7 @@ a {
 }
 
 a:hover {
-    color: #77b800
+    color: #3797dd
 }
 
 a:active {
@@ -2128,7 +2134,7 @@ a:active {
 }
 
 a.action {
-    color: #77b800
+    color: #3797dd
 }
 
 a.action:hover {
@@ -2140,7 +2146,7 @@ button:focus {
 }
 
 .primary {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     line-height: 1em;
     border: 1px solid #fff;
@@ -2169,15 +2175,15 @@ button:focus {
 
 .secondary {
     background-color: #fff;
-    color: #77b800;
+    color: #3797dd;
     line-height: 1em;
-    border: 1px solid #77b800;
+    border: 1px solid #3797dd;
     padding: 7px;
     display: inline-block
 }
 
 .secondary:hover {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     border: 1px solid #fff
 }
@@ -2266,7 +2272,7 @@ button:focus {
     position: absolute;
     left: 1px;
     top: -2px;
-    color: #77b800
+    color: #3797dd
 }
 
 .primaryRadio:checked + label:after {
@@ -2333,23 +2339,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .buildingActiveIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .filterActiveIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .myPlacesActiveIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .savedSearchesActiveIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .sortActiveIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .shareIcon, .printerIcon, .mapIcon, .directionsIcon, .flagIcon {
@@ -3143,12 +3149,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .selectDropdown .dropdownMenu.open li.selected a:focus {
     outline: none;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
 .selectDropdown .dropdownMenu.open li.selected a.hover {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -3160,7 +3166,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .selectDropdown .dropdownMenu.open a.hover {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -3172,7 +3178,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     padding: .5em .5em;
     width: 100%;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     outline: none
 }
@@ -3191,7 +3197,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .modals .modal .modalHeader h2 {
-    color: #77b800;
+    color: #3797dd;
     text-align: center;
     font-size: 1.24em;
     margin-bottom: 1.24em
@@ -3229,9 +3235,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .modals .modalButtons a {
     padding: .4375em 1.5625em;
-    border: solid 1px #77b800;
+    border: solid 1px #3797dd;
     line-height: 1em;
-    color: #77b800;
+    color: #3797dd;
     margin-right: .625em;
     display: inline-block
 }
@@ -3242,7 +3248,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .modals .modalButtons a.primary:hover {
     background-color: #fff;
-    color: #77b800
+    color: #3797dd
 }
 
 .modals .modalButtons a:last-of-type {
@@ -3544,7 +3550,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mainFooter .footerLinks .showMore {
-    color: #77b800
+    color: #3797dd
 }
 
 #mainFooter .footerLinks .showMore:hover {
@@ -3619,7 +3625,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #menuNavContainer .menuNavCategory {
-    color: #77b800;
+    color: #3797dd;
     font-weight: bold;
     padding-left: 1em
 }
@@ -3660,7 +3666,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #menuNavContainer .menuNavigation li.menuNavCategory:hover {
     background-color: #fff;
-    color: #77b800
+    color: #3797dd
 }
 
 #menuNavContainer .menuNavigation li a {
@@ -3703,7 +3709,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #menuNavContainer .menuNavigation li:hover {
     cursor: pointer;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -3713,7 +3719,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #menuNavContainer .menuNavigation li:hover .favoriteNumber, #menuNavContainer .menuNavigation li:hover .alertsNumber {
     background-color: #fff;
-    color: #77b800
+    color: #3797dd
 }
 
 #menuNavContainer .menuNavigation li.open .submenu {
@@ -3723,7 +3729,7 @@ h1, h2, h3, h4, h5, h6 {
 #menuNavContainer .favoriteNumber {
     border-radius: 6px;
     padding: .15em .75em;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     font-size: .83em;
     position: absolute;
@@ -3807,7 +3813,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-align-items: center;
     align-items: center;
     padding: 0 1em;
-    background: #77b800;
+    background: #3797dd;
     color: #fff;
     cursor: pointer;
     height: 100%
@@ -3981,7 +3987,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mainHeader .loginSection .headerSignIn:hover, #mainHeader .loginSection .headerSignUp:hover {
-    color: #77b800
+    color: #3797dd
 }
 
 #mainHeader .loginSection > span {
@@ -3999,7 +4005,7 @@ h1, h2, h3, h4, h5, h6 {
 #mainHeader .loginSection .primary:hover {
     background: transparent;
     border-color: transparent;
-    color: #77b800
+    color: #3797dd
 }
 
 #mainHeader .loginSection .username {
@@ -4023,7 +4029,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mainHeader .loginSection .username:hover {
-    color: #77b800
+    color: #3797dd
 }
 
 #mainHeader .loginSection .username:hover .userMenu {
@@ -4031,7 +4037,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mainHeader .loginSection .username .menuArrowDownIcon {
-    color: #77b800;
+    color: #3797dd;
     min-width: 14px
 }
 
@@ -4116,7 +4122,7 @@ h1, h2, h3, h4, h5, h6 {
 #mainHeader .prevNextSection .previous, #mainHeader .prevNextSection .next {
     text-align: center;
     text-decoration: none;
-    color: #77b800
+    color: #3797dd
 }
 
 #mainHeader .prevNextSection .previous .menuArrowLeftIcon, #mainHeader .prevNextSection .next .menuArrowLeftIcon, #mainHeader .prevNextSection .previous .menuArrowRightIcon, #mainHeader .prevNextSection .next .menuArrowRightIcon {
@@ -4214,7 +4220,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .typeahead .item.active {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -4236,7 +4242,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #loginModal.loginModal .aptsLogoMarkIcon, #favLoginModal.loginModal .aptsLogoMarkIcon, #savedSearchLoginModal.loginModal .aptsLogoMarkIcon, #loginSocialForm.loginModal .aptsLogoMarkIcon, .confirmModal.loginModal .aptsLogoMarkIcon, #loginModal.loginSocialModal .aptsLogoMarkIcon, #favLoginModal.loginSocialModal .aptsLogoMarkIcon, #savedSearchLoginModal.loginSocialModal .aptsLogoMarkIcon, #loginSocialForm.loginSocialModal .aptsLogoMarkIcon, .confirmModal.loginSocialModal .aptsLogoMarkIcon, #loginModal.loginSocialForm .aptsLogoMarkIcon, #favLoginModal.loginSocialForm .aptsLogoMarkIcon, #savedSearchLoginModal.loginSocialForm .aptsLogoMarkIcon, #loginSocialForm.loginSocialForm .aptsLogoMarkIcon, .confirmModal.loginSocialForm .aptsLogoMarkIcon {
-    color: #77b800;
+    color: #3797dd;
     font-size: 2.5em;
     display: none;
     position: absolute
@@ -4323,7 +4329,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #loginModal.loginModal .modalHeader.saveYourData, #createAccountModal.loginModal .modalHeader.saveYourData, #confirmEmailModal.loginModal .modalHeader.saveYourData, #loginModal.createAccountModal .modalHeader.saveYourData, #createAccountModal.createAccountModal .modalHeader.saveYourData, #confirmEmailModal.createAccountModal .modalHeader.saveYourData, #loginModal.loginSocialModal .modalHeader.saveYourData, #createAccountModal.loginSocialModal .modalHeader.saveYourData, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData {
-    background-color: #77b800;
+    background-color: #3797dd;
     padding-bottom: .125em !important
 }
 
@@ -4340,7 +4346,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #loginModal.loginModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #createAccountModal.loginModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #confirmEmailModal.loginModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #loginModal.createAccountModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #createAccountModal.createAccountModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #confirmEmailModal.createAccountModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #loginModal.loginSocialModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #createAccountModal.loginSocialModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover {
-    color: #77b800;
+    color: #3797dd;
     background-color: #fff;
     border-color: #fff
 }
@@ -4351,7 +4357,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #loginModal.loginModal .modalHeader.saveYourData .labelledHr:before, #createAccountModal.loginModal .modalHeader.saveYourData .labelledHr:before, #confirmEmailModal.loginModal .modalHeader.saveYourData .labelledHr:before, #loginModal.createAccountModal .modalHeader.saveYourData .labelledHr:before, #createAccountModal.createAccountModal .modalHeader.saveYourData .labelledHr:before, #confirmEmailModal.createAccountModal .modalHeader.saveYourData .labelledHr:before, #loginModal.loginSocialModal .modalHeader.saveYourData .labelledHr:before, #createAccountModal.loginSocialModal .modalHeader.saveYourData .labelledHr:before, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData .labelledHr:before {
     color: #fff;
-    background: #77b800
+    background: #3797dd
 }
 
 #loginModal.loginModal li, #createAccountModal.loginModal li, #confirmEmailModal.loginModal li, #loginModal.createAccountModal li, #createAccountModal.createAccountModal li, #confirmEmailModal.createAccountModal li, #loginModal.loginSocialModal li, #createAccountModal.loginSocialModal li, #confirmEmailModal.loginSocialModal li {
@@ -4403,7 +4409,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #loginModal.loginModal h2, #favLoginModal.loginModal h2, #savedSearchLoginModal.loginModal h2, #loginSocialForm.loginModal h2, .confirmModal.loginModal h2, #loginModal.loginSocialModal h2, #favLoginModal.loginSocialModal h2, #savedSearchLoginModal.loginSocialModal h2, #loginSocialForm.loginSocialModal h2, .confirmModal.loginSocialModal h2, #loginModal.loginSocialForm h2, #favLoginModal.loginSocialForm h2, #savedSearchLoginModal.loginSocialForm h2, #loginSocialForm.loginSocialForm h2, .confirmModal.loginSocialForm h2 {
     font-size: 2em;
-    color: #77b800;
+    color: #3797dd;
     text-align: center
 }
 
@@ -4553,7 +4559,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-green {
-    color: #77b800
+    color: #3797dd
 }
 
 #loginModal.loginSocialModal .modalContainer, #savedSearchLoginModal.loginSocialModal .modalContainer, #confirmEmailModal.loginSocialModal .modalContainer, #loginSocialForm.loginSocialModal .modalContainer, #loginModal.loginSocialForm .modalContainer, #savedSearchLoginModal.loginSocialForm .modalContainer, #confirmEmailModal.loginSocialForm .modalContainer, #loginSocialForm.loginSocialForm .modalContainer {
@@ -4736,11 +4742,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #signInSocial.signInSocial .formLnk, #signupSocial.signInSocial .formLnk, #signInSocial.signupSocial .formLnk, #signupSocial.signupSocial .formLnk {
     font-size: .85em;
-    color: #77b800
+    color: #3797dd
 }
 
 #signInSocial.signInSocial .formLnk, #signupSocial.signInSocial .formLnk, #signInSocial.signupSocial .formLnk, #signupSocial.signupSocial .formLnk, #signInSocial.signInSocial .greenLnk, #signupSocial.signInSocial .greenLnk, #signInSocial.signupSocial .greenLnk, #signupSocial.signupSocial .greenLnk {
-    color: #77b800
+    color: #3797dd
 }
 
 #signInSocial.signInSocial .primary, #signupSocial.signInSocial .primary, #signInSocial.signupSocial .primary, #signupSocial.signupSocial .primary {
@@ -4834,7 +4840,7 @@ h1, h2, h3, h4, h5, h6 {
 #createAccountModal.signInSocial h2, #signInSocial.signInSocial h2, #signupSocial.signInSocial h2, #createAccountModal.signupSocial h2, #signInSocial.signupSocial h2, #signupSocial.signupSocial h2, #createAccountModal.createAccountModal h2, #signInSocial.createAccountModal h2, #signupSocial.createAccountModal h2 {
     margin: 0 1em .5em;
     font-size: 2em;
-    color: #77b800;
+    color: #3797dd;
     text-align: center
 }
 
@@ -4908,7 +4914,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #createAccountModal.signInSocial .aptsLogoMarkIcon, #signInSocial.signInSocial .aptsLogoMarkIcon, #signupSocial.signInSocial .aptsLogoMarkIcon, #createAccountModal.signupSocial .aptsLogoMarkIcon, #signInSocial.signupSocial .aptsLogoMarkIcon, #signupSocial.signupSocial .aptsLogoMarkIcon, #createAccountModal.createAccountModal .aptsLogoMarkIcon, #signInSocial.createAccountModal .aptsLogoMarkIcon, #signupSocial.createAccountModal .aptsLogoMarkIcon {
-    color: #77b800;
+    color: #3797dd;
     font-size: 2.5em;
     display: none;
     float: right;
@@ -5016,7 +5022,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .greenLink {
-    color: #77b800
+    color: #3797dd
 }
 
 .hiddenForgotPassword {
@@ -5040,7 +5046,7 @@ h1, h2, h3, h4, h5, h6 {
 #changePasswordModal .modalHeader .modalSubTitle, #setPasswordModal .modalHeader .modalSubTitle {
     text-align: center;
     font-size: 2em;
-    color: #77b800;
+    color: #3797dd;
     margin: 0 1em .2em
 }
 
@@ -5102,7 +5108,7 @@ h1, h2, h3, h4, h5, h6 {
 #forgotPasswordModal .modalHeader .modalSubTitle, #forgotPasswordSentModal .modalHeader .modalSubTitle {
     text-align: center;
     font-size: 2em;
-    color: #77b800;
+    color: #3797dd;
     margin: 0 1em .2em
 }
 
@@ -5126,7 +5132,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #forgotPasswordModal .formLnk, #forgotPasswordSentModal .formLnk {
     font-size: .85em;
-    color: #77b800
+    color: #3797dd
 }
 
 #forgotPasswordModal a.formLnk:hover, #forgotPasswordSentModal a.formLnk:hover {
@@ -5140,7 +5146,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #forgotPasswordModal .signupLink, #forgotPasswordSentModal .signupLink {
-    color: #77b800;
+    color: #3797dd;
     display: none
 }
 
@@ -5385,7 +5391,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #headerSearch .go {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     border: 1px solid #b1b1b1;
     border-radius: 4px;
@@ -5404,8 +5410,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #headerSearch .go:hover {
     background-color: #fff;
-    color: #77b800;
-    border-color: #77b800
+    color: #3797dd;
+    border-color: #3797dd
 }
 
 #headerSearch .go:active {
@@ -5419,7 +5425,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     top: -3px;
     margin-left: -1em;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     margin-right: .5em
 }
@@ -5488,7 +5494,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .aptsLogoMarkIcon {
     display: none;
-    color: #77b800;
+    color: #3797dd;
     font-size: 60px;
     width: 60px;
     text-align: center;
@@ -5560,7 +5566,7 @@ h1, h2, h3, h4, h5, h6 {
 .popupModal .modalSubTitle, .errorPopupModal .modalSubTitle, .confirmPopupModal .modalSubTitle {
     margin: 0;
     font-size: 2em;
-    color: #77b800
+    color: #3797dd
 }
 
 .popupModal .modalBody button, .errorPopupModal .modalBody button, .confirmPopupModal .modalBody button {
@@ -5649,8 +5655,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .addEditWrapper#addEditWrapper .inverted {
     background-color: #fff;
-    border: 1px solid #77b800;
-    color: #77b800;
+    border: 1px solid #3797dd;
+    color: #3797dd;
     margin-right: 10px
 }
 
@@ -5671,8 +5677,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper .inverted:hover {
-    background-color: #77b800;
-    border: 1px solid #77b800;
+    background-color: #3797dd;
+    border: 1px solid #3797dd;
     color: #fff
 }
 
@@ -5732,12 +5738,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .addEditWrapper#addEditWrapper .btn-group.bootstrap-select div.dropdownMenu ul.dropdownMenu.inner.selectpicker li.selected a:focus {
     outline: none;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
 .addEditWrapper#addEditWrapper .btn-group.bootstrap-select div.dropdownMenu ul.dropdownMenu.inner.selectpicker li.selected a.hover {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -5753,7 +5759,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper .btn-group.bootstrap-select div.dropdownMenu ul.dropdownMenu.inner.selectpicker a.hover {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -5765,7 +5771,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     padding: 1em .5em;
     width: 100%;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     outline: none
 }
@@ -5806,7 +5812,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper .checkboxGroup.terms a, .addEditWrapper#addEditWrapper .radioGroup.terms a {
-    color: #77b800
+    color: #3797dd
 }
 
 .addEditWrapper#addEditWrapper .checkboxGroup.terms .primaryCheckbox, .addEditWrapper#addEditWrapper .radioGroup.terms .primaryCheckbox {
@@ -5827,7 +5833,7 @@ h1, h2, h3, h4, h5, h6 {
 .addEditWrapper#addEditWrapper .checkboxGroup.terms .primaryCheckbox:checked + label:after, .addEditWrapper#addEditWrapper .radioGroup.terms .primaryCheckbox:checked + label:after {
     width: 15px;
     height: 15px;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     top: 0;
     text-align: center;
@@ -5849,7 +5855,7 @@ h1, h2, h3, h4, h5, h6 {
 .addEditWrapper#addEditWrapper .checkboxGroup .primaryCheckbox:checked + label:after, .addEditWrapper#addEditWrapper .radioGroup .primaryCheckbox:checked + label:after {
     width: 23px;
     height: 23px;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     top: -8px;
     text-align: center;
@@ -5910,7 +5916,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .addEditWrapper#addEditWrapper .stickyHeader h1 {
     margin-top: 22px;
-    color: #77b800;
+    color: #3797dd;
     font-weight: 600;
     font-size: 24px
 }
@@ -5931,7 +5937,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper .stickyHeader .savedMessage {
-    color: #77b800;
+    color: #3797dd;
     text-align: center
 }
 
@@ -5981,7 +5987,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper h2 {
-    color: #77b800;
+    color: #3797dd;
     font-size: 28px;
     margin-top: 10px;
     margin-bottom: 20px
@@ -6080,7 +6086,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .quickSearch .circleCheckmarkIcon {
     position: absolute;
-    color: #77b800;
+    color: #3797dd;
     right: 22%;
     top: 26%;
     font-size: 25px
@@ -6257,7 +6263,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .calendarIcon:before {
-    color: #77b800
+    color: #3797dd
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .photosWrapper {
@@ -6296,9 +6302,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .noPhotos.dragOver {
-    border: 2px dashed #77b800;
+    border: 2px dashed #3797dd;
     background-color: rgba(119, 184, 0, .15);
-    color: #77b800
+    color: #3797dd
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .noPhotos .cell-sm-3 {
@@ -6348,7 +6354,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .noPhotos .dropPhotoText {
     position: relative;
-    color: #77b800;
+    color: #3797dd;
     text-align: center;
     left: -15%
 }
@@ -6392,13 +6398,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photoDropContainer .photoDropWrapper .photoDrop.dragOver {
-    border: 2px dashed #77b800;
+    border: 2px dashed #3797dd;
     background-color: rgba(119, 184, 0, .15)
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photoDropContainer .photoDropWrapper .photoDrop .dropPhotoText {
     padding-top: 40px;
-    color: #77b800;
+    color: #3797dd;
     font-weight: 600
 }
 
@@ -6484,19 +6490,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photosContainer .photoWrapper progress {
-    color: #77b800
+    color: #3797dd
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photosContainer .photoWrapper progress::-moz-progress-bar {
-    background: #77b800
+    background: #3797dd
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photosContainer .photoWrapper progress::-webkit-progress-value {
-    background: #77b800
+    background: #3797dd
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photosContainer .photoWrapper progress[aria-valuenow]:before {
-    background: #77b800
+    background: #3797dd
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photosContainer .photoWrapper .photo {
@@ -6505,7 +6511,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photosContainer .photoWrapper .photo.mainPhoto {
-    border: 2px solid #77b800
+    border: 2px solid #3797dd
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photosContainer .photoWrapper .photo.mainPhoto .imgWrapper .mainPhotoLabel {
@@ -6535,18 +6541,18 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #fff;
     height: 25px;
     width: 25px;
-    border: 1px solid #77b800;
+    border: 1px solid #3797dd;
     border-radius: 3px;
     cursor: pointer;
     text-align: center
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photosContainer .photoWrapper .photo .imgWrapper .pencilWrapper .pencilRenameIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photosContainer .photoWrapper .photo .imgWrapper .pencilWrapper:hover {
-    background-color: #77b800
+    background-color: #3797dd
 }
 
 .addEditWrapper#addEditWrapper .propertyDetailsWrapper .withPhotos .photosContainer .photoWrapper .photo .imgWrapper .pencilWrapper:hover .pencilRenameIcon {
@@ -6677,7 +6683,7 @@ h1, h2, h3, h4, h5, h6 {
 .addEditWrapper#addEditWrapper .for-rent-sign .primaryCheckbox:checked + label:after {
     width: 23px;
     height: 23px;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     top: -3px;
     text-align: center;
@@ -6689,7 +6695,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper#addEditWrapper .for-rent-sign .wsrCheckboxSection .btn-link {
-    color: #77b800;
+    color: #3797dd;
     text-decoration: none;
     font-family: 'CostarBrownLight';
     padding: 0
@@ -6871,7 +6877,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .addEditWrapper .actionFooter a {
-    color: #77b800
+    color: #3797dd
 }
 
 .addEditWrapper .emailChangeMsg {
@@ -6924,13 +6930,13 @@ footer .logoWrapper .logo .apartmentHomeLivingLogo {
 }
 
 footer .siteLinks {
-    color: #77b800;
+    color: #3797dd;
     padding-bottom: 10px
 }
 
 footer .siteLinks a {
     padding: 0 15px;
-    color: #77b800
+    color: #3797dd
 }
 
 @media (max-width: 768px) {
@@ -11052,7 +11058,7 @@ ol li .jqx-listmenu-item-label:before {
 }
 
 .jqx-listitem-state-normal.jqx-listitem-state-hover {
-    background-color: #77b800 !important;
+    background-color: #3797dd !important;
     color: #fff
 }
 
@@ -11595,7 +11601,7 @@ ol li .jqx-listmenu-item-label:before {
 
 #termConditionsModal.termConditionsModal .modalContainer .modalHeader h2 {
     font-size: 2em;
-    color: #77b800;
+    color: #3797dd;
     text-align: center;
     margin: 0 1em .25em
 }
@@ -11628,7 +11634,7 @@ ol li .jqx-listmenu-item-label:before {
     margin: 0;
     text-align: center;
     font-size: 2em;
-    color: #77b800
+    color: #3797dd
 }
 
 #modal.modal .modalBody {
@@ -11953,16 +11959,16 @@ ol li .jqx-listmenu-item-label:before {
 }
 
 .imageEditor .cropper-view-box {
-    outline: 1px solid #77b800;
-    outine-color: #77b800
+    outline: 1px solid #3797dd;
+    outine-color: #3797dd
 }
 
 .imageEditor .cropper-line {
-    background-color: #77b800
+    background-color: #3797dd
 }
 
 .imageEditor .cropper-point {
-    background-color: #77b800
+    background-color: #3797dd
 }
 
 .imageEditor .tooSmall .cropper-view-box {
@@ -12020,18 +12026,18 @@ ol li .jqx-listmenu-item-label:before {
     width: 32px;
     margin-bottom: 5px;
     line-height: 32px;
-    border: 1px solid #77b800;
+    border: 1px solid #3797dd;
     border-radius: 3px;
     cursor: pointer;
     text-align: center
 }
 
 .imageEditor#modal.modal .controls .control .controlIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .imageEditor#modal.modal .controls .control:hover {
-    background-color: #77b800
+    background-color: #3797dd
 }
 
 .imageEditor#modal.modal .controls .control:hover .controlIcon {

@@ -1969,7 +1969,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .datepicker td.day:hover {
-    background: #77b800;
+    background: #3797dd;
     color: #fff;
     cursor: pointer
 }
@@ -1988,7 +1988,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 
 .datepicker td.active, .datepicker td.active:hover {
     color: #fff;
-    background-color: #77b800
+    background-color: #3797dd
 }
 
 .datepicker td.range {
@@ -2003,7 +2003,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 
 .datepicker td.active {
     color: #fff;
-    background-color: #77b800
+    background-color: #3797dd
 }
 
 .datepicker td span {
@@ -2017,12 +2017,12 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .datepicker td span:hover {
-    background: #77b800;
+    background: #3797dd;
     color: #fff
 }
 
 .datepicker td span.active {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -2040,7 +2040,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .datepicker th.next, .datepicker th.prev {
-    color: #77b800
+    color: #3797dd
 }
 
 .datepicker th.next:before {
@@ -2060,7 +2060,7 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 .datepicker th.close a {
-    color: #77b800
+    color: #3797dd
 }
 
 .datepicker thead tr:first-child th {
@@ -2216,7 +2216,7 @@ a {
 }
 
 a:hover {
-    color: #77b800
+    color: #3797dd
 }
 
 a:active {
@@ -2224,7 +2224,7 @@ a:active {
 }
 
 a.action {
-    color: #77b800
+    color: #3797dd
 }
 
 a.action:hover {
@@ -2236,7 +2236,7 @@ button:focus {
 }
 
 .primary {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     line-height: 1em;
     border: 1px solid #fff;
@@ -2265,15 +2265,15 @@ button:focus {
 
 .secondary {
     background-color: #fff;
-    color: #77b800;
+    color: #3797dd;
     line-height: 1em;
-    border: 1px solid #77b800;
+    border: 1px solid #3797dd;
     padding: 7px;
     display: inline-block
 }
 
 .secondary:hover {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     border: 1px solid #fff
 }
@@ -2362,7 +2362,7 @@ button:focus {
     position: absolute;
     left: 1px;
     top: -2px;
-    color: #77b800
+    color: #3797dd
 }
 
 .primaryRadio:checked + label:after {
@@ -2429,23 +2429,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .buildingActiveIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .filterActiveIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .myPlacesActiveIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .savedSearchesActiveIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .sortActiveIcon {
-    color: #77b800
+    color: #3797dd
 }
 
 .shareIcon, .printerIcon, .mapIcon, .directionsIcon, .flagIcon {
@@ -3244,12 +3244,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .selectDropdown .dropdownMenu.open li.selected a:focus {
     outline: none;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
 .selectDropdown .dropdownMenu.open li.selected a.hover {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -3261,7 +3261,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .selectDropdown .dropdownMenu.open a.hover {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -3273,7 +3273,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-block;
     padding: .5em .5em;
     width: 100%;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     outline: none
 }
@@ -3292,7 +3292,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .modals .modal .modalHeader h2 {
-    color: #77b800;
+    color: #3797dd;
     text-align: center;
     font-size: 1.24em;
     margin-bottom: 1.24em
@@ -3330,9 +3330,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .modals .modalButtons a {
     padding: .4375em 1.5625em;
-    border: solid 1px #77b800;
+    border: solid 1px #3797dd;
     line-height: 1em;
-    color: #77b800;
+    color: #3797dd;
     margin-right: .625em;
     display: inline-block
 }
@@ -3343,7 +3343,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .modals .modalButtons a.primary:hover {
     background-color: #fff;
-    color: #77b800
+    color: #3797dd
 }
 
 .modals .modalButtons a:last-of-type {
@@ -3645,7 +3645,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mainFooter .footerLinks .showMore {
-    color: #77b800
+    color: #3797dd
 }
 
 #mainFooter .footerLinks .showMore:hover {
@@ -3720,7 +3720,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #menuNavContainer .menuNavCategory {
-    color: #77b800;
+    color: #3797dd;
     font-weight: bold;
     padding-left: 1em
 }
@@ -3761,7 +3761,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #menuNavContainer .menuNavigation li.menuNavCategory:hover {
     background-color: #fff;
-    color: #77b800
+    color: #3797dd
 }
 
 #menuNavContainer .menuNavigation li a {
@@ -3804,7 +3804,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #menuNavContainer .menuNavigation li:hover {
     cursor: pointer;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -3814,7 +3814,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #menuNavContainer .menuNavigation li:hover .favoriteNumber, #menuNavContainer .menuNavigation li:hover .alertsNumber {
     background-color: #fff;
-    color: #77b800
+    color: #3797dd
 }
 
 #menuNavContainer .menuNavigation li.open .submenu {
@@ -3824,7 +3824,7 @@ h1, h2, h3, h4, h5, h6 {
 #menuNavContainer .favoriteNumber {
     border-radius: 6px;
     padding: .15em .75em;
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff;
     font-size: .83em;
     position: absolute;
@@ -3908,7 +3908,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-align-items: center;
     align-items: center;
     padding: 0 1em;
-    background: #77b800;
+    background: #3797dd;
     color: #fff;
     cursor: pointer;
     height: 100%
@@ -4082,7 +4082,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mainHeader .loginSection .headerSignIn:hover, #mainHeader .loginSection .headerSignUp:hover {
-    color: #77b800
+    color: #3797dd
 }
 
 #mainHeader .loginSection > span {
@@ -4100,7 +4100,7 @@ h1, h2, h3, h4, h5, h6 {
 #mainHeader .loginSection .primary:hover {
     background: transparent;
     border-color: transparent;
-    color: #77b800
+    color: #3797dd
 }
 
 #mainHeader .loginSection .username {
@@ -4124,7 +4124,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mainHeader .loginSection .username:hover {
-    color: #77b800
+    color: #3797dd
 }
 
 #mainHeader .loginSection .username:hover .userMenu {
@@ -4132,7 +4132,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mainHeader .loginSection .username .menuArrowDownIcon {
-    color: #77b800;
+    color: #3797dd;
     min-width: 14px
 }
 
@@ -4217,7 +4217,7 @@ h1, h2, h3, h4, h5, h6 {
 #mainHeader .prevNextSection .previous, #mainHeader .prevNextSection .next {
     text-align: center;
     text-decoration: none;
-    color: #77b800
+    color: #3797dd
 }
 
 #mainHeader .prevNextSection .previous .menuArrowLeftIcon, #mainHeader .prevNextSection .next .menuArrowLeftIcon, #mainHeader .prevNextSection .previous .menuArrowRightIcon, #mainHeader .prevNextSection .next .menuArrowRightIcon {
@@ -4315,7 +4315,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .typeahead .item.active {
-    background-color: #77b800;
+    background-color: #3797dd;
     color: #fff
 }
 
@@ -4337,7 +4337,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #loginModal.loginModal .aptsLogoMarkIcon, #favLoginModal.loginModal .aptsLogoMarkIcon, #savedSearchLoginModal.loginModal .aptsLogoMarkIcon, #loginSocialForm.loginModal .aptsLogoMarkIcon, .confirmModal.loginModal .aptsLogoMarkIcon, #loginModal.loginSocialModal .aptsLogoMarkIcon, #favLoginModal.loginSocialModal .aptsLogoMarkIcon, #savedSearchLoginModal.loginSocialModal .aptsLogoMarkIcon, #loginSocialForm.loginSocialModal .aptsLogoMarkIcon, .confirmModal.loginSocialModal .aptsLogoMarkIcon, #loginModal.loginSocialForm .aptsLogoMarkIcon, #favLoginModal.loginSocialForm .aptsLogoMarkIcon, #savedSearchLoginModal.loginSocialForm .aptsLogoMarkIcon, #loginSocialForm.loginSocialForm .aptsLogoMarkIcon, .confirmModal.loginSocialForm .aptsLogoMarkIcon {
-    color: #77b800;
+    color: #3797dd;
     font-size: 2.5em;
     display: none;
     position: absolute
@@ -4424,7 +4424,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #loginModal.loginModal .modalHeader.saveYourData, #createAccountModal.loginModal .modalHeader.saveYourData, #confirmEmailModal.loginModal .modalHeader.saveYourData, #loginModal.createAccountModal .modalHeader.saveYourData, #createAccountModal.createAccountModal .modalHeader.saveYourData, #confirmEmailModal.createAccountModal .modalHeader.saveYourData, #loginModal.loginSocialModal .modalHeader.saveYourData, #createAccountModal.loginSocialModal .modalHeader.saveYourData, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData {
-    background-color: #77b800;
+    background-color: #3797dd;
     padding-bottom: .125em !important
 }
 
@@ -4441,7 +4441,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #loginModal.loginModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #createAccountModal.loginModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #confirmEmailModal.loginModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #loginModal.createAccountModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #createAccountModal.createAccountModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #confirmEmailModal.createAccountModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #loginModal.loginSocialModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #createAccountModal.loginSocialModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover {
-    color: #77b800;
+    color: #3797dd;
     background-color: #fff;
     border-color: #fff
 }
@@ -4452,7 +4452,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #loginModal.loginModal .modalHeader.saveYourData .labelledHr:before, #createAccountModal.loginModal .modalHeader.saveYourData .labelledHr:before, #confirmEmailModal.loginModal .modalHeader.saveYourData .labelledHr:before, #loginModal.createAccountModal .modalHeader.saveYourData .labelledHr:before, #createAccountModal.createAccountModal .modalHeader.saveYourData .labelledHr:before, #confirmEmailModal.createAccountModal .modalHeader.saveYourData .labelledHr:before, #loginModal.loginSocialModal .modalHeader.saveYourData .labelledHr:before, #createAccountModal.loginSocialModal .modalHeader.saveYourData .labelledHr:before, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData .labelledHr:before {
     color: #fff;
-    background: #77b800
+    background: #3797dd
 }
 
 #loginModal.loginModal li, #createAccountModal.loginModal li, #confirmEmailModal.loginModal li, #loginModal.createAccountModal li, #createAccountModal.createAccountModal li, #confirmEmailModal.createAccountModal li, #loginModal.loginSocialModal li, #createAccountModal.loginSocialModal li, #confirmEmailModal.loginSocialModal li {
@@ -4504,7 +4504,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #loginModal.loginModal h2, #favLoginModal.loginModal h2, #savedSearchLoginModal.loginModal h2, #loginSocialForm.loginModal h2, .confirmModal.loginModal h2, #loginModal.loginSocialModal h2, #favLoginModal.loginSocialModal h2, #savedSearchLoginModal.loginSocialModal h2, #loginSocialForm.loginSocialModal h2, .confirmModal.loginSocialModal h2, #loginModal.loginSocialForm h2, #favLoginModal.loginSocialForm h2, #savedSearchLoginModal.loginSocialForm h2, #loginSocialForm.loginSocialForm h2, .confirmModal.loginSocialForm h2 {
     font-size: 2em;
-    color: #77b800;
+    color: #3797dd;
     text-align: center
 }
 
@@ -4654,7 +4654,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-green {
-    color: #77b800
+    color: #3797dd
 }
 
 #loginModal.loginSocialModal .modalContainer, #savedSearchLoginModal.loginSocialModal .modalContainer, #confirmEmailModal.loginSocialModal .modalContainer, #loginSocialForm.loginSocialModal .modalContainer, #loginModal.loginSocialForm .modalContainer, #savedSearchLoginModal.loginSocialForm .modalContainer, #confirmEmailModal.loginSocialForm .modalContainer, #loginSocialForm.loginSocialForm .modalContainer {
@@ -4837,11 +4837,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #signInSocial.signInSocial .formLnk, #signupSocial.signInSocial .formLnk, #signInSocial.signupSocial .formLnk, #signupSocial.signupSocial .formLnk {
     font-size: .85em;
-    color: #77b800
+    color: #3797dd
 }
 
 #signInSocial.signInSocial .formLnk, #signupSocial.signInSocial .formLnk, #signInSocial.signupSocial .formLnk, #signupSocial.signupSocial .formLnk, #signInSocial.signInSocial .greenLnk, #signupSocial.signInSocial .greenLnk, #signInSocial.signupSocial .greenLnk, #signupSocial.signupSocial .greenLnk {
-    color: #77b800
+    color: #3797dd
 }
 
 #signInSocial.signInSocial .primary, #signupSocial.signInSocial .primary, #signInSocial.signupSocial .primary, #signupSocial.signupSocial .primary {
@@ -4935,7 +4935,7 @@ h1, h2, h3, h4, h5, h6 {
 #createAccountModal.signInSocial h2, #signInSocial.signInSocial h2, #signupSocial.signInSocial h2, #createAccountModal.signupSocial h2, #signInSocial.signupSocial h2, #signupSocial.signupSocial h2, #createAccountModal.createAccountModal h2, #signInSocial.createAccountModal h2, #signupSocial.createAccountModal h2 {
     margin: 0 1em .5em;
     font-size: 2em;
-    color: #77b800;
+    color: #3797dd;
     text-align: center
 }
 
@@ -5009,7 +5009,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #createAccountModal.signInSocial .aptsLogoMarkIcon, #signInSocial.signInSocial .aptsLogoMarkIcon, #signupSocial.signInSocial .aptsLogoMarkIcon, #createAccountModal.signupSocial .aptsLogoMarkIcon, #signInSocial.signupSocial .aptsLogoMarkIcon, #signupSocial.signupSocial .aptsLogoMarkIcon, #createAccountModal.createAccountModal .aptsLogoMarkIcon, #signInSocial.createAccountModal .aptsLogoMarkIcon, #signupSocial.createAccountModal .aptsLogoMarkIcon {
-    color: #77b800;
+    color: #3797dd;
     font-size: 2.5em;
     display: none;
     float: right;
@@ -5117,7 +5117,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .greenLink {
-    color: #77b800
+    color: #3797dd
 }
 
 .hiddenForgotPassword {
@@ -5141,7 +5141,7 @@ h1, h2, h3, h4, h5, h6 {
 #changePasswordModal .modalHeader .modalSubTitle, #setPasswordModal .modalHeader .modalSubTitle {
     text-align: center;
     font-size: 2em;
-    color: #77b800;
+    color: #3797dd;
     margin: 0 1em .2em
 }
 
@@ -5203,7 +5203,7 @@ h1, h2, h3, h4, h5, h6 {
 #forgotPasswordModal .modalHeader .modalSubTitle, #forgotPasswordSentModal .modalHeader .modalSubTitle {
     text-align: center;
     font-size: 2em;
-    color: #77b800;
+    color: #3797dd;
     margin: 0 1em .2em
 }
 
@@ -5227,7 +5227,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #forgotPasswordModal .formLnk, #forgotPasswordSentModal .formLnk {
     font-size: .85em;
-    color: #77b800
+    color: #3797dd
 }
 
 #forgotPasswordModal a.formLnk:hover, #forgotPasswordSentModal a.formLnk:hover {
@@ -5241,7 +5241,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #forgotPasswordModal .signupLink, #forgotPasswordSentModal .signupLink {
-    color: #77b800;
+    color: #3797dd;
     display: none
 }
 
