@@ -14,7 +14,7 @@
     </section>
     <section class="section-light section-top-shadow">
         <form name="offer-from" action="{{ route('postEditListing') }}" method="post" enctype="multipart/form-data">
-            <input type="hidden" value="{{ $listing->id }}" name="id">
+            <input type="hidden" value="{{ $listing->id }}" name="listingid">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-12">

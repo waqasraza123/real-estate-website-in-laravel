@@ -161,19 +161,20 @@ class ListingController extends Controller
             'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
-        $inputs = $request->except('_token' , 'id'  ,'files');
+        $inputs = $request->except('_token' , 'listingid'  ,'files');
         $inputs['listing_status'] = 'done';
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
-         $this->listing->where('id' , $request->get('id'))->update($inputs);
-        $listing = $this->listing->latest()->first();
         if($request->file()){
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){
-                $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
+                $this->listingImage->create(['listing_id' => $request->get('listingid'), 'image' => $image['image']]);
             }
         }
-        return redirect()->back()->with('success' , 'Successfully Updated');
-
+        if($this->listing->where('id' , $request->get('listingid'))->update($inputs)){
+            return redirect()->back()->with('success' , 'Successfully Updated');
+        }else{
+            return redirect()->back()->withErrors('error' , 'Please try again');
+        }
 
     }
 
