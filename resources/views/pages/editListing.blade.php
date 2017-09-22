@@ -23,10 +23,10 @@
                         <div class="dark-col margin-top-60">
                             <div class="row">
                                 @if($errors->all())
-                                    <div class="alert alert-danger fade in" style="width: 82%;margin: 0px auto;">
+                                    <div class="alert alert-danger fade in" style="margin: 0px auto;">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                                         @foreach($errors->all() as $error)
-                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                                            <strong>Oh snap!</strong>  <br>{{$error}}
+                                            <br>{{$error}}
                                         @endforeach
                                     </div>
                                     <br>
@@ -41,7 +41,7 @@
                                          <i class="fa fa-search" style="position: absolute;right: 243px;font-size: 29px;top: 8px;"></i>
                                          <input type="text" name="unit" class="input-full main-input" placeholder="Unit #" style="width: 20%; float:right;">--}}
                                         <div class="margin-top-60">
-                                            <input value="{{ $listing->address }} " id="geocomplete" name="address" type="text" class="input-full main-input" placeholder="{{ Lang::get('listing.address') }}">
+                                            <input value="{{ $listing->address }}" id="geocomplete" name="address" type="text" class="input-full main-input" placeholder="{{ Lang::get('listing.address') }}">
                                             <div id="submit-property-map" class="submit-property-map" style="height: 300px;"></div>
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-6 margin-top-15">

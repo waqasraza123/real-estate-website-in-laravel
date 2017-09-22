@@ -399,12 +399,12 @@
                 }
             });
             $(document).delegate('#save_for_later' , 'click'  ,function () {
-                if( $("#listing_form").valid()) {
+
                     var datas = $("#listing_form").serialize();
                     var recaptcha = $("#g-recaptcha-response").val();
                     if (recaptcha === "") {
-                        $('.abs_red_non_vizible').attr('style', 'display:block !important')
-                        event.preventDefault();
+                        $('.g-recaptcha').attr('style', 'border:2px solid red !important');
+                        $('.g-recaptcha').focus();
                     } else {
                         $.ajax({
                             type: 'post',
@@ -424,7 +424,7 @@
                         });
 
                     }
-                }
+
 
             });
 

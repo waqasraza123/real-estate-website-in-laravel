@@ -126,8 +126,8 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown">
-                                <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+                            <li >
+                                <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign in/Sign up</a>
                             </li>
                             <li><a href="{{ route('addListing') }}" class="special-color">{{ Lang::get('pages.add_listing') }}</a></li>
                         </ul>
