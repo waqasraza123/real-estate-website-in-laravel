@@ -15,30 +15,30 @@ Author: Jan Skwara - http://themeforest.net/user/johnnychaos
 
 
 .swiper-container  {
-	height: 41.875em !important;
+	height: 41.875em;
 }
 
 @media (max-width: 1680px) {
 	.swiper-container  {
-		height: 36.25em !important;
+		height: 36.25em
 	}
 }
 
 @media (max-width: 1366px) {
 	.swiper-container  {
-		height: 29.375em !important ;
+		height: 29.375em
 	}
 }
 
 @media (max-width: 1024px) {
 	.swiper-container  {
-		height: 21.875em !important;
+		height: 21.875em
 	}
 }
 
 @media (max-width: 768px) {
 	.swiper-container  {
-		height: 16.5625em !important;
+		height: 16.5625em
 	}
 }
 
