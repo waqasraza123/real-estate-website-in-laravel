@@ -153,9 +153,32 @@
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.photos') }}</h4>
                                     </div>
                                 </div>
+                                <div class="grid">
+                                    <div class="col-xs-10 col-xs-offset-1">
+                                        <div class="masonry-grid masonry-offers masonry-grid-short margin-top-60" style="position: relative;">
+                                        @foreach($listing->ListingsImages()->get() as $images)
+                                                <div class="masonry-grid-sizer"></div>
+                                            <div class="masonry-grid-item" style="position: absolute; left: 0px; top: 0px;">
+                                                <a href="#" class="zoom-cont2">
+                                                    <div class="grid-offer-photo">
+                                                        <img src=" {{ asset('assets/images').'/'.$images->image }}" class="zoom" alt="">
+                                                        <div class="type-container">
+
+                                                            <a href="{{ route('delListingImages' , ['id' => $images->id]) }}" class="estate-type" style="cursor: pointer;color: white">delete</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </a>
+                                            </div>
+
+                                        @endforeach
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="grid noMargin">
                                     <div class="col-xs-12 ">
-                                        <input id="file-upload" name="files[]" value="@if($listing->ListingsImages()->first()){{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }} @endif" type="file" multiple="">
+
+                                        <input id="file-upload" name="files[]"  type="file" multiple="">
                                     </div>
                                 </div>
                                 <div class="descriptionAmenitiesWrapper">

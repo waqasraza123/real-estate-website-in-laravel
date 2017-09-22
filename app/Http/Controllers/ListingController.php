@@ -116,7 +116,7 @@ class ListingController extends Controller
             }
         }
 
-        return \Response::json(['massage' => 'true']);
+        return \Response::json(['massage' => 'true' , 'id' => Auth::user()->id]);
     }
 
     public function getImagesName($files)
@@ -158,9 +158,15 @@ class ListingController extends Controller
             'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
+        $inputs = $request->except('_token' , 'id'  ,'files');
         $inputs['listing_status'] = 'done';
-        $inputs = $request->except('_token' , 'id');
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
+        if($request->file()){
+            $images = $this->getImagesName($request->file());
+            foreach ($images as $image){
+                $this->listingImage->create(['listing_id' => $request->get('id'), 'image' => $image['image']]);
+            }
+        }
         if($this->listing->where('id' , $request->get('id'))->update($inputs)){
             return redirect()->back()->with('success' , 'Successfully Updated');
         }else{
@@ -296,7 +302,11 @@ class ListingController extends Controller
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
     }
 
-
+    public function delListingImages($id){
+        if($this->listingImage->where('id' ,$id)->delete()){
+             return redirect()->back();
+        }
+    }
 
 
 }

@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-xs-12 col-lg-12 short-image-title">
                     <h5 class="subtitle-margin second-color">{{ Lang::get('profile.dashboard_profile') }}</h5>
-                    <h1 class="second-color">My Listings</h1>
+                    <h1 class="second-color">My Saved Listings</h1>
                     <div class="short-title-separator"></div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                         {{-- end notify Massage--}}
                         <div class="col-xs-12">
                             <h5 class="subtitle-margin">My</h5>
-                            <h1>  Listings<span class="special-color">.</span></h1>
+                            <h1> Saved Listings<span class="special-color">.</span></h1>
                             <div class="title-separator-primary"></div>
                         </div>
                     </div>

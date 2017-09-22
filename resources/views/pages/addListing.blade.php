@@ -413,6 +413,7 @@
 
                             success: function (res) {
                                 if (res.massage == 'true') {
+                                    window.location.href = 'account/savedListings/'+res.id+''
                                 }
                             },
                             error: function (data) {

@@ -65,6 +65,7 @@ Route::get('add_favorite/{user_id}/{listing_id}' , ['as' => 'addFavorite' , 'use
 Route::post('search_listing' , ['as' => 'searchListing' , 'uses' => 'ListingController@searchListing']);
 Route::post('search_listing_ajax' , ['as' => 'searchListingAjax' , 'uses' => 'ListingController@searchListingAjax']);
 Route::post('search_listing_user_profile', ['as' => 'searchSavedSeraches' , 'uses' => 'ListingController@searchSavedSeraches']);
+Route::get('delete_listing_images/{id}', ['as' => 'delListingImages' , 'uses' => 'ListingController@delListingImages']);
 
 Auth::routes();
 
