@@ -127,7 +127,7 @@
                 <div class="logoSpacer"></div>
 
                 <div class="logo">
-                    <a href="index.html">
+                    <a href="{{ route('homes')}}">
                         <img src="{{ asset('images\logo-dark.png') }}" alt=" Logo">
                     </a>
                 </div>

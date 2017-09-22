@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@homePage');
+Route::get('/', 'HomeController@homePage')->name('homes');
 
 
 Route::get('/setlang/{lang}', function($lang)
