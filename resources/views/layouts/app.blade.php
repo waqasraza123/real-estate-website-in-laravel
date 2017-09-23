@@ -140,7 +140,7 @@
                         <a href="#login-modal" class="js-headerSignin headerSignIn" data-toggle="modal">Sign In</a>
                         @else
                             <div class="username" data-toggle="dropdown">
-                                <span>Artyom </span>
+                                <span>{{ Auth::user()->first_name }} </span>
                                 <i class="fa fa-chevron-down" data-toggle="dropdown"></i>
                                 <div class="userMenu" id="userMenu">
                                     <ul class="userMenuDropdown">
