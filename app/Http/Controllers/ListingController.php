@@ -33,12 +33,9 @@ class ListingController extends Controller
             'loundry_type' => 'required',
             'parking_type' => 'required',
             'parking_fee' => 'required',
-            'g-recaptcha-response' => 'required|recaptcha',
-            'email' => 'unique:users|email|required'
         ]);
         $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file');
-
         if(Auth::user()){
             $this->user->where('id' , Auth::user()->id)->update([
                'first_name' => $inputs['first_name'],
@@ -204,9 +201,12 @@ class ListingController extends Controller
     }
 
 
-    public function singleListing($id){
-        $listing = $this->listing->where('id' , $id)->first();
-        return view('pages.single_listing' , compact('listing'));
+    public function singleListing($title){
+        $listing = $this->listing->where('title' , $title)->first();
+        if(Auth::user()){
+          $hasfavorite =   $this->favorit->where('user_id' , Auth::user()->id)->where('listing_id' , $listing->id)->first();
+        }
+        return view('pages.single_listing' , compact('listing' , 'hasfavorite'));
     }
 
 

@@ -3,10 +3,23 @@
 namespace App;
 
 use App\User;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 class Listing extends Model
 {
+
+    use Sluggable;
+
+    public function sluggable()
+    {
+        return [
+            'title' => [
+                'source' => 'address'
+            ]
+        ];
+    }
+
     protected $fillable = [
         'address',
         'unit',

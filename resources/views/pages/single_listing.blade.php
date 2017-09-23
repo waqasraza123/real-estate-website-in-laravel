@@ -9,6 +9,11 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                <div class="swiper-slide">
+                    <div id="featured-map" class="featured-offer-map"></div>
+                    <!-- Preloader image -->
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
                 @foreach($listing->ListingsImages()->get() as $images)
                     <div class="swiper-slide">
                         <div class="slide-bg swiper-lazy" data-background="{{ asset('assets/images').'/'.$images->image }}"></div>
@@ -39,6 +44,7 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
+
                             @foreach($listing->ListingsImages()->get() as $images)
                                 <div class="swiper-slide">
                                     <img class="slide-thumb" src="{{ asset('assets/images').'/'.$images->image }}" alt="" width="150px">
@@ -76,9 +82,15 @@
                             @if(Auth::user())
                                 <div class="details-title pull-right">
                                     <div class="details-image pull-left hidden-xs favorite_link">
+                                        @if($hasfavorite == null)
                                         <a href="{{ route('addFavorite' , ['user_id' => Auth::user()->id , 'listing_id' => $listing->id]) }}">
-                                            <i class="fa fa-heart"></i>
+                                            <i class="fa fa-heart-o"></i>
                                         </a>
+                                        @else
+                                            <a href="#">
+                                                <i class="fa fa-heart"></i>
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             @endif
@@ -259,6 +271,13 @@
             mapInit({{ $listing->lat }}, {{ $listing->lng }},"estate-map","{{ asset('images/pin-house.png') }}", true);
             streetViewInit({{ $listing->lat }}, {{ $listing->lng }},"estate-street-view");
         }
+    </script>
+    <script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', init);
+        function init() {
+                mapInitAddress("{{ $listing->address }}","featured-map","{{ asset('images/pin-house.png') }}", false);
+        }
+
     </script>
 
 @endsection

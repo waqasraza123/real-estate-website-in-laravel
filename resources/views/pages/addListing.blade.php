@@ -405,7 +405,7 @@
                     var datas = $("#listing_form").serialize();
                     var recaptcha = $("#g-recaptcha-response").val();
                     if (recaptcha === "") {
-                        $('.g-recaptcha').attr('style', 'border:2px solid red !important');
+                        $('.g-recaptcha').attr('style', 'border:2px solid red !important;width: 306px;height: 80px;');
                         $('.g-recaptcha').focus();
                     } else {
                         $.ajax({
