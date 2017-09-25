@@ -71,7 +71,7 @@
                                     <article class="blog-grid1-item zoom-cont">
                                         <figure class="">
                                             @if($listing->ListingsImages()->first())
-                                                <a href="{{ route('singleListing' , ['id' => $listing->id]) }}"><img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt=""  style="width: 240px !important"></a>
+                                                <a href="{{ route('singleListing' , ['id' => $listing->id, 'title' => $listing->title]) }}"><img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt=""  style="width: 240px !important"></a>
                                             @endif
                                         </figure>
                                         <div class="blog-grid1-post-content" style="width: 100%">
@@ -79,10 +79,10 @@
                                                 <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>{{ $listing->created_at  }}</div>
                                                 <div class="clearfix"></div>
                                             </div>
-                                            <a href="{{ route('singleListing' , ['id' => $lis->id  , 'title' => $lis->title]) }}" class="blog-grid1-title"><h4>{{ $listing->address }}</h4></a>
+                                            <a href="{{ route('singleListing' , ['id' => $listing->id  , 'title' => $listing->title]) }}" class="blog-grid1-title"><h4>{{ $listing->address }}</h4></a>
                                             <div class="blog-grid1-separator"></div>
                                             <p>{{ $listing->description }}</p>
-                                            <a href="{{ route('deleteListing' , ['id' => $listing->id]) }}" class="blog-grid1-button" style="right:10px; left: auto">
+                                            <a href="{{ route('deleteListing' , ['id' => $listing->id ]) }}" class="blog-grid1-button" style="right:10px; left: auto">
                                                 <span><i class="fa fa-trash-o"></i></span>
                                                 <div class="blog-grid1-triangle"></div>
                                             </a>
