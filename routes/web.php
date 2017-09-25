@@ -56,7 +56,7 @@ Route::get('equal_opportunity' , ['as' => 'equalOpportunity' , 'uses' => 'HomeCo
 
 Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing']);
 Route::post('/save_listing', ['as' => 'saveListing' , 'uses' => 'ListingController@saveListing']);
-Route::get('listing/{title}' , ['as' => 'singleListing' , 'uses' => 'ListingController@singleListing']);
+Route::get('listing/{id}/{title}' , ['as' => 'singleListing' , 'uses' => 'ListingController@singleListing']);
 Route::post('submit_listing' , ['as' => 'submitListing' , 'uses' => 'ListingController@submitListing']);
 Route::get('edit_listing/{id}' , ['as' => 'editListing' , 'uses' => 'ListingController@editListing']);
 Route::post('edit_listing' , ['as' => 'postEditListing' , 'uses' => 'ListingController@postEditListing']);

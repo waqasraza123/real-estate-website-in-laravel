@@ -201,8 +201,8 @@ class ListingController extends Controller
     }
 
 
-    public function singleListing($title){
-        $listing = $this->listing->where('title' , $title)->first();
+    public function singleListing($id , $title){
+        $listing = $this->listing->where('id' , $id)->first();
         if(Auth::user()){
           $hasfavorite =   $this->favorit->where('user_id' , Auth::user()->id)->where('listing_id' , $listing->id)->first();
         }

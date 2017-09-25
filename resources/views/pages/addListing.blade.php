@@ -295,7 +295,7 @@
 
                                         </div>
                                         <br>
-                                        {!! Recaptcha::render() !!}
+                                        {!! Recaptcha::render(['callback' => 'callback']) !!}
                                     </div>
                                 </div>
                             </div>
@@ -408,6 +408,7 @@
                         $('.g-recaptcha').attr('style', 'border:2px solid red !important;width: 306px;height: 80px;');
                         $('.g-recaptcha').focus();
                     } else {
+                        $('.g-recaptcha').attr('style', '');
                         $.ajax({
                             type: 'post',
                             url: '{{ route('saveListing') }}',
@@ -442,11 +443,16 @@
                    var recaptcha = $("#g-recaptcha-response").val();
                    if (recaptcha === "") {
                        event.preventDefault();
-                       $('.abs_red_non_vizible').attr('style' , 'display:block !important')
+                       $('.g-recaptcha').attr('style', 'border:2px solid red !important;width: 306px;height: 80px;')
                    }
                }
             });
 
         });
+    </script>
+    <script type="text/javascript">
+        function callback(){
+            $('.g-recaptcha').attr('style', '');
+        }
     </script>
 @endsection

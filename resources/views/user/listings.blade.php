@@ -79,7 +79,7 @@
                                                 <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>{{ $listing->created_at  }}</div>
                                                 <div class="clearfix"></div>
                                             </div>
-                                            <a href="{{ route('singleListing' , ['id' => $listing->id]) }}" class="blog-grid1-title"><h4>{{ $listing->address }}</h4></a>
+                                            <a href="{{ route('singleListing' , ['id' => $lis->id  , 'title' => $lis->title]) }}" class="blog-grid1-title"><h4>{{ $listing->address }}</h4></a>
                                             <div class="blog-grid1-separator"></div>
                                             <p>{{ $listing->description }}</p>
                                             <a href="{{ route('deleteListing' , ['id' => $listing->id]) }}" class="blog-grid1-button" style="right:10px; left: auto">
