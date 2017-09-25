@@ -375,7 +375,6 @@
                         <div class="testimonials-content">
                             <p class="lead">Smith’s Family</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
                         </div>
                         <div class="big-triangle">
                         </div>
@@ -416,7 +415,7 @@
                             <i class="fa fa-building"></i>
                         </div>
                         <span class="number-label text-color2">APARTMENTS</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="130" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status'  , 'done')->where('listing_type' , '2')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-3 number_border">
@@ -425,7 +424,7 @@
                             <i class="fa fa-home"></i>
                         </div>
                         <span class="number-label text-color2">HOUSES</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="107" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status' , 'done')->where('listing_type' , '7')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-3 number_border3">
@@ -434,7 +433,7 @@
                             <i class="fa fa-industry"></i>
                         </div>
                         <span class="number-label text-color2">COMMERCIAL</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="149" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status'  , 'done')->where('listing_type' , '5')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-3 number_border">
@@ -443,7 +442,7 @@
                             <i class="fa fa-tree"></i>
                         </div>
                         <span class="number-label text-color2">LAND</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="25" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status'  , 'done')->where('listing_type' , '3')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
             </div>
