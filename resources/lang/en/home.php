@@ -18,6 +18,8 @@ return [
     'sale'         => 'sale',
     'house'        => 'House',
     'read_more'    => 'read more',
+    'all_be'       => 'All beds',
+    'all_ba'       => 'All baths'
 
 
 

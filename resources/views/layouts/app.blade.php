@@ -135,9 +135,9 @@
                 <div class="loginPrevNextWrapper">
                     <div id="headerLoginSection" class="loginSection">
                         @if(!Auth::user())
-                        <a href="#register-modal" class="js-headerSignUp headerSignUp" data-toggle="modal">Sign Up</a>
+                        <a href="#register-modal" class="js-headerSignUp headerSignUp" data-toggle="modal">{{ Lang::get('pages.sign_up') }}</a>
                         <span>/</span>
-                        <a href="#login-modal" class="js-headerSignin headerSignIn" data-toggle="modal">Sign In</a>
+                        <a href="#login-modal" class="js-headerSignin headerSignIn" data-toggle="modal">{{ Lang::get('pages.login') }}</a>
                         @else
                             <div class="username" data-toggle="dropdown">
                                 <span>{{ Auth::user()->first_name }} </span>
@@ -272,7 +272,7 @@
                             @endif
                         </form>
                         <button type="submit" form="loginForm" class="button-primary  button-full">
-                            <span>Sing In</span>
+                            <span>{{ Lang::get('pages.login') }}</span>
                             <div class="button-triangle"></div>
                             <div class="button-triangle2"></div>
                             <div class="button-icon"><i class="fa fa-user"></i></div>
@@ -288,7 +288,7 @@
                             <i class="fa fa-google-plus"></i>
                             <span>{{ Lang::get('pages.sign_google') }}</span>
                         </a>
-                        <p class="modal-bottom">{{ Lang::get('pages.dont_account') }} <a href="#" class="register-link">{{ Lang::get('pages.register') }}</a></p>
+                        <p class="modal-bottom">{{ Lang::get('pages.dont_account') }} <a href="#" class="register-link">{{ Lang::get('pages.sign_up') }}</a></p>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -301,7 +301,7 @@
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <div class="modal-title">
-                            <h1>{{ Lang::get('pages.register') }}<span class="special-color">.</span></h1>
+                            <h1>{{ Lang::get('pages.sign_up') }}<span class="special-color">.</span></h1>
                             <div class="short-title-separator"></div>
                         </div>
                         <form class="form-horizontal" method="POST" id="registerForm" action="{{ route('register') }}">
@@ -348,7 +348,7 @@
                             <i class="fa fa-google-plus"></i>
                             <span>{{ Lang::get('pages.sign_google') }}</span>
                         </a>
-                        <p class="modal-bottom">{{ Lang::get('pages.already_reg') }}<a href="#" class="login-link">SING IN</a></p>
+                        <p class="modal-bottom">{{ Lang::get('pages.already_reg') }}<a href="#" class="login-link">{{ Lang::get('pages.login') }}</a></p>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->

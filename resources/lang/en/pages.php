@@ -32,16 +32,49 @@ return [
     'pass' => 'Password',
     'confirm_pass' => 'Confirm Password',
     'forgot_pass' => 'Forgot your password?',
-    'sign_face' => 'Sing Up with Facebook',
-    'sign_google' => 'Sing Up with Google',
+    'sign_face' => 'Sign Up with Facebook',
+    'sign_google' => 'Sign Up with Google',
     'dont_account' => 'Don\'t have an account?',
     'register' => 'REGISTER',
-    'sign_up' => 'Sing up',
+    'sign_up' => 'Sign up',
     'or' => 'OR',
     'already_reg' => 'Already registered? ',
     'forgot_pass_2' => 'Forgot your password',
     'insertadd' => 'Instert your account email address.',
     'send_pass' => 'We will send you a link to reset your password.',
     'reset_pass' => 'Reset password',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ];

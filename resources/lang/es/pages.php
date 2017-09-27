@@ -27,7 +27,7 @@ return [
     #Login
 
 
-    'login' => 'Login',
+    'login' => 'Iniciar sesión',
     'email' => 'Email',
     'pass' => 'Password',
     'confirm_pass' => 'Confirm Password',
@@ -36,7 +36,7 @@ return [
     'sign_google' => 'Sing Up with Google',
     'dont_account' => 'Don\'t have an account?',
     'register' => 'REGISTER',
-    'sign_up' => 'Sing up',
+    'sign_up' => 'Regístrate',
     'or' => 'OR',
     'already_reg' => 'Already registered? ',
     'forgot_pass_2' => 'Forgot your password',

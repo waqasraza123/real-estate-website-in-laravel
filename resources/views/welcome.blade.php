@@ -41,10 +41,10 @@
                         <div class="col-xs-12 col-lg-11 adv-search-icons">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs adv-search-tabs" role="tablist">
-                                <li role="presentation" class="active" data-toggle="tooltip" data-placement="top" title="apartments"><a href="#apartments" aria-controls="apartments" role="tab" data-toggle="tab" id="adv-search-tab1"><i class="fa fa-building"></i></a></li>
-                                <li role="presentation" data-toggle="tooltip" data-placement="top" title="houses"><a href="#houses" aria-controls="houses" role="tab" data-toggle="tab" id="adv-search-tab2"><i class="fa fa-home"></i></a></li>
-                                <li role="presentation" data-toggle="tooltip" data-placement="top" title="commercials"><a href="#commercials" aria-controls="commercials" role="tab" data-toggle="tab" id="adv-search-tab3"><i class="fa fa-industry"></i></a></li>
-                                <li role="presentation" data-toggle="tooltip" data-placement="top" title="lands"><a href="#lands" aria-controls="lands" role="tab" data-toggle="tab" id="adv-search-tab4"><i class="fa fa-tree"></i></a></li>
+                                <li role="presentation" class="active" data-toggle="tooltip" data-placement="top" title="{{ Lang::get('listing.appartament') }}"><a href="#apartments" aria-controls="apartments" role="tab" data-toggle="tab" id="adv-search-tab1"><i class="fa fa-building"></i></a></li>
+                                <li role="presentation" data-toggle="tooltip" data-placement="top" title="{{ Lang::get('listing.condo') }}"><a href="#houses" aria-controls="houses" role="tab" data-toggle="tab" id="adv-search-tab2"><i class="fa fa-home"></i></a></li>
+                                <li role="presentation" data-toggle="tooltip" data-placement="top" title="{{ Lang::get('listing.townhome') }}"><a href="#commercials" aria-controls="commercials" role="tab" data-toggle="tab" id="adv-search-tab3"><i class="fa fa-industry"></i></a></li>
+                                <li role="presentation" data-toggle="tooltip" data-placement="top" title="{{ Lang::get('listing.single_home') }}"><a href="#lands" aria-controls="lands" role="tab" data-toggle="tab" id="adv-search-tab4"><i class="fa fa-tree"></i></a></li>
                             </ul>
                         </div>
                         <div class="col-lg-1 visible-lg">
@@ -61,7 +61,7 @@
                                 <div class="row">
                                     <br>
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                        <input id="geocomplete" name="address" type="text" class="input-full main-input" required placeholder="Address">
+                                        <input id="geocomplete" name="address" type="text" class="input-full main-input" required placeholder="{{ Lang::get('listing.address') }}">
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
@@ -73,7 +73,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="rent" id="rent" class="selectpicker"   title="Rent">
+                                        <select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
                                                 <option value="500-700">$500 - $700</option>
                                                 <option value="700-900">$700 - $900</option>
                                                 <option value="900-1300">$900 - $1300</option>
@@ -83,19 +83,19 @@
                                         </select>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
-                                            <optgroup label="Beds" data-max-options="1">
-                                                <option value="all">All Beds</option>
+                                        <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
+                                            <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
+                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
                                                 <option value="1">1 Bed</option>
-                                                <option value="2">2 Beds</option>
-                                                <option value="3">3 Beds</option>
-                                                <option value="4">4+  Beds</option>
+                                                <option value="2">2 {{ Lang::get('listing.beds') }}</option>
+                                                <option value="3">3 {{ Lang::get('listing.beds') }}</option>
+                                                <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
-                                            <optgroup label="Baths" data-max-options="1">
-                                                <option value="all_baths">All Baths</option>
-                                                <option value="1">1+ Baths</option>
-                                                <option value="2">2+ Baths</option>
-                                                <option value="3">3+ Baths</option>
+                                            <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
+                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
+                                                <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
+                                                <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
                                             </optgroup>
                                         </select>
                                     </div>
@@ -130,7 +130,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="rent" id="rent" class="selectpicker"   title="Rent">
+                                        <select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
                                             <option value="500-700">$500 - $700</option>
                                             <option value="700-900">$700 - $900</option>
                                             <option value="900-1300">$900 - $1300</option>
@@ -140,19 +140,19 @@
                                         </select>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
-                                            <optgroup label="Beds" data-max-options="1">
-                                                <option value="all">All Beds</option>
+                                        <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
+                                            <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
+                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
                                                 <option value="1">1 Bed</option>
-                                                <option value="2">2 Beds</option>
-                                                <option value="3">3 Beds</option>
-                                                <option value="4">4+  Beds</option>
+                                                <option value="2">2 {{ Lang::get('listing.beds') }}</option>
+                                                <option value="3">3 {{ Lang::get('listing.beds') }}</option>
+                                                <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
-                                            <optgroup label="Baths" data-max-options="1">
-                                                <option value="all_baths">All Baths</option>
-                                                <option value="1">1+ Baths</option>
-                                                <option value="2">2+ Baths</option>
-                                                <option value="3">3+ Baths</option>
+                                            <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
+                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
+                                                <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
+                                                <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
                                             </optgroup>
                                         </select>
                                     </div>
@@ -186,7 +186,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="rent" id="rent" class="selectpicker"   title="Rent">
+                                        <select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
                                             <option value="500-700">$500 - $700</option>
                                             <option value="700-900">$700 - $900</option>
                                             <option value="900-1300">$900 - $1300</option>
@@ -196,19 +196,19 @@
                                         </select>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
-                                            <optgroup label="Beds" data-max-options="1">
-                                                <option value="all">All Beds</option>
+                                        <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
+                                            <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
+                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
                                                 <option value="1">1 Bed</option>
-                                                <option value="2">2 Beds</option>
-                                                <option value="3">3 Beds</option>
-                                                <option value="4">4+  Beds</option>
+                                                <option value="2">2 {{ Lang::get('listing.beds') }}</option>
+                                                <option value="3">3 {{ Lang::get('listing.beds') }}</option>
+                                                <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
-                                            <optgroup label="Baths" data-max-options="1">
-                                                <option value="all_baths">All Baths</option>
-                                                <option value="1">1+ Baths</option>
-                                                <option value="2">2+ Baths</option>
-                                                <option value="3">3+ Baths</option>
+                                            <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
+                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
+                                                <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
+                                                <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
                                             </optgroup>
                                         </select>
                                     </div>
@@ -242,7 +242,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="rent" id="rent" class="selectpicker"   title="Rent">
+                                        <select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
                                             <option value="500-700">$500 - $700</option>
                                             <option value="700-900">$700 - $900</option>
                                             <option value="900-1300">$900 - $1300</option>
@@ -252,19 +252,19 @@
                                         </select>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
-                                            <optgroup label="Beds" data-max-options="1">
-                                                <option value="all">All Beds</option>
+                                        <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
+                                            <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
+                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
                                                 <option value="1">1 Bed</option>
-                                                <option value="2">2 Beds</option>
-                                                <option value="3">3 Beds</option>
-                                                <option value="4">4+  Beds</option>
+                                                <option value="2">2 {{ Lang::get('listing.beds') }}</option>
+                                                <option value="3">3 {{ Lang::get('listing.beds') }}</option>
+                                                <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
-                                            <optgroup label="Baths" data-max-options="1">
-                                                <option value="all_baths">All Baths</option>
-                                                <option value="1">1+ Baths</option>
-                                                <option value="2">2+ Baths</option>
-                                                <option value="3">3+ Baths</option>
+                                            <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
+                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
+                                                <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
+                                                <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
                                             </optgroup>
                                         </select>
                                     </div>
@@ -414,7 +414,7 @@
                         <div class="number-img">
                             <i class="fa fa-building"></i>
                         </div>
-                        <span class="number-label text-color2">APARTMENTS</span>
+                        <span class="number-label text-color2">{{ Lang::get('listing.appartament') }}</span>
                         <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status'  , 'done')->where('listing_type' , '2')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
@@ -423,7 +423,7 @@
                         <div class="number-img">
                             <i class="fa fa-home"></i>
                         </div>
-                        <span class="number-label text-color2">HOUSES</span>
+                        <span class="number-label text-color2">{{ Lang::get('listing.condo') }}</span>
                         <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status' , 'done')->where('listing_type' , '7')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
@@ -432,7 +432,7 @@
                         <div class="number-img">
                             <i class="fa fa-industry"></i>
                         </div>
-                        <span class="number-label text-color2">COMMERCIAL</span>
+                        <span class="number-label text-color2">{{ Lang::get('listing.townhome') }}</span>
                         <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status'  , 'done')->where('listing_type' , '5')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
@@ -441,7 +441,7 @@
                         <div class="number-img">
                             <i class="fa fa-tree"></i>
                         </div>
-                        <span class="number-label text-color2">LAND</span>
+                        <span class="number-label text-color2">{{ Lang::get('listing.single_home') }}</span>
                         <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status'  , 'done')->where('listing_type' , '3')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>

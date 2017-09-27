@@ -11,13 +11,15 @@ return [
     'rooms'        => 'Rooms:',
     'bedroom'      => 'Bedrooms:',
     'bathroom'     => 'Bathrooms:',
-    'search_btn'   => 'search',
-    'highly_recom' => 'highly recommended',
-    'feat_offer'   => 'featured offers',
+    'search_btn'   => 'Buscar',
+    'highly_recom' => 'Muy recomendable',
+    'feat_offer'   => 'Ofertas destacadas',
     'appartament'  => 'apartment',
     'sale'         => 'sale',
     'house'        => 'House',
     'read_more'    => 'read more',
+    'all_be'       => 'Todas las camas',
+    'all_ba'       => 'Todos los baños'
 
 
 
