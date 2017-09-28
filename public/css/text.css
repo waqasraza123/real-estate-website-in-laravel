@@ -1,0 +1,5410 @@
+html {
+     font-family: sans-serif;
+     -ms-text-size-adjust: 100%;
+     -webkit-text-size-adjust: 100%
+ }
+
+body {
+    margin: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+    display: block
+}
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+[hidden], template {
+    display: none
+}
+
+a {
+    background: transparent
+}
+
+a:active, a:hover {
+    outline: 0
+}
+
+abbr[title] {
+    border-bottom: 1px dotted
+}
+
+b, strong {
+    font-weight: bold
+}
+
+dfn {
+    font-style: italic
+}
+
+h1 {
+    font-size: 2em;
+    margin: .67em 0
+}
+
+mark {
+    background: #ff0;
+    color: #000
+}
+
+small {
+    font-size: 80%
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -.5em
+}
+
+sub {
+    bottom: -.25em
+}
+
+img {
+    border: 0
+}
+
+svg:not(:root) {
+    overflow: hidden
+}
+
+figure {
+    margin: 1em 40px
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+
+pre {
+    overflow: auto
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+
+button {
+    overflow: visible
+}
+
+button, select {
+    text-transform: none
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button[disabled], html input[disabled] {
+    cursor: default
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+input {
+    line-height: normal
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    height: auto
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #999
+}
+
+fieldset {
+    border: 1px solid silver;
+    margin: 0 2px;
+    padding: .35em .625em .75em
+}
+
+legend {
+    border: 0;
+    padding: 0
+}
+
+textarea {
+    overflow: auto
+}
+
+optgroup {
+    font-weight: bold
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td, th {
+    padding: 0
+}
+
+.grid {
+    margin-left: -15px;
+    margin-right: -15px
+}
+
+.columnsMixin {
+    position: relative;
+    min-height: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-transition: ease-in-out all .25s;
+    transition: ease-in-out all .25s;
+    float: left
+}
+
+[class^="cell-xs-"] {
+    position: relative;
+    min-height: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-transition: ease-in-out all .25s;
+    transition: ease-in-out all .25s;
+    float: left
+}
+
+.cell-xs-12 {
+    width: 100%
+}
+
+.cell-xs-11 {
+    width: 91.66666667%
+}
+
+.cell-xs-10 {
+    width: 83.33333333%
+}
+
+.cell-xs-9 {
+    width: 75%
+}
+
+.cell-xs-8 {
+    width: 66.66666667%
+}
+
+.cell-xs-7 {
+    width: 58.33333333%
+}
+
+.cell-xs-6 {
+    width: 50%
+}
+
+.cell-xs-5 {
+    width: 41.66666667%
+}
+
+.cell-xs-4 {
+    width: 33.33333333%
+}
+
+.cell-xs-3 {
+    width: 25%
+}
+
+.cell-xs-2 {
+    width: 16.66666667%
+}
+
+.cell-xs-1 {
+    width: 8.33333333%
+}
+
+.cell-xs-offset-12 {
+    margin-left: 100%
+}
+
+.cell-xs-offset-11 {
+    margin-left: 91.66666667%
+}
+
+.cell-xs-offset-10 {
+    margin-left: 83.33333333%
+}
+
+.cell-xs-offset-9 {
+    margin-left: 75%
+}
+
+.cell-xs-offset-8 {
+    margin-left: 66.66666667%
+}
+
+.cell-xs-offset-7 {
+    margin-left: 58.33333333%
+}
+
+.cell-xs-offset-6 {
+    margin-left: 50%
+}
+
+.cell-xs-offset-5 {
+    margin-left: 41.66666667%
+}
+
+.cell-xs-offset-4 {
+    margin-left: 33.33333333%
+}
+
+.cell-xs-offset-3 {
+    margin-left: 25%
+}
+
+.cell-xs-offset-2 {
+    margin-left: 16.66666667%
+}
+
+.cell-xs-offset-1 {
+    margin-left: 8.33333333%
+}
+
+.cell-xs-offset-0 {
+    margin-left: 0%
+}
+
+[class^="cell-sm-"] {
+    position: relative;
+    min-height: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-transition: ease-in-out all .25s;
+    transition: ease-in-out all .25s;
+    float: left
+}
+
+@media (min-width: 768px) {
+    .cell-sm-12 {
+        width: 100%
+    }
+
+    .cell-sm-11 {
+        width: 91.66666667%
+    }
+
+    .cell-sm-10 {
+        width: 83.33333333%
+    }
+
+    .cell-sm-9 {
+        width: 75%
+    }
+
+    .cell-sm-8 {
+        width: 66.66666667%
+    }
+
+    .cell-sm-7 {
+        width: 58.33333333%
+    }
+
+    .cell-sm-6 {
+        width: 50%
+    }
+
+    .cell-sm-5 {
+        width: 41.66666667%
+    }
+
+    .cell-sm-4 {
+        width: 33.33333333%
+    }
+
+    .cell-sm-3 {
+        width: 25%
+    }
+
+    .cell-sm-2 {
+        width: 16.66666667%
+    }
+
+    .cell-sm-1 {
+        width: 8.33333333%
+    }
+
+    .cell-sm-offset-12 {
+        margin-left: 100%
+    }
+
+    .cell-sm-offset-11 {
+        margin-left: 91.66666667%
+    }
+
+    .cell-sm-offset-10 {
+        margin-left: 83.33333333%
+    }
+
+    .cell-sm-offset-9 {
+        margin-left: 75%
+    }
+
+    .cell-sm-offset-8 {
+        margin-left: 66.66666667%
+    }
+
+    .cell-sm-offset-7 {
+        margin-left: 58.33333333%
+    }
+
+    .cell-sm-offset-6 {
+        margin-left: 50%
+    }
+
+    .cell-sm-offset-5 {
+        margin-left: 41.66666667%
+    }
+
+    .cell-sm-offset-4 {
+        margin-left: 33.33333333%
+    }
+
+    .cell-sm-offset-3 {
+        margin-left: 25%
+    }
+
+    .cell-sm-offset-2 {
+        margin-left: 16.66666667%
+    }
+
+    .cell-sm-offset-1 {
+        margin-left: 8.33333333%
+    }
+
+    .cell-sm-offset-0 {
+        margin-left: 0%
+    }
+}
+
+[class^="cell-md-"] {
+    position: relative;
+    min-height: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-transition: ease-in-out all .25s;
+    transition: ease-in-out all .25s;
+    float: left
+}
+
+@media (min-width: 1024px) {
+    .cell-md-12 {
+        width: 100%
+    }
+
+    .cell-md-11 {
+        width: 91.66666667%
+    }
+
+    .cell-md-10 {
+        width: 83.33333333%
+    }
+
+    .cell-md-9 {
+        width: 75%
+    }
+
+    .cell-md-8 {
+        width: 66.66666667%
+    }
+
+    .cell-md-7 {
+        width: 58.33333333%
+    }
+
+    .cell-md-6 {
+        width: 50%
+    }
+
+    .cell-md-5 {
+        width: 41.66666667%
+    }
+
+    .cell-md-4 {
+        width: 33.33333333%
+    }
+
+    .cell-md-3 {
+        width: 25%
+    }
+
+    .cell-md-2 {
+        width: 16.66666667%
+    }
+
+    .cell-md-1 {
+        width: 8.33333333%
+    }
+
+    .cell-md-offset-12 {
+        margin-left: 100%
+    }
+
+    .cell-md-offset-11 {
+        margin-left: 91.66666667%
+    }
+
+    .cell-md-offset-10 {
+        margin-left: 83.33333333%
+    }
+
+    .cell-md-offset-9 {
+        margin-left: 75%
+    }
+
+    .cell-md-offset-8 {
+        margin-left: 66.66666667%
+    }
+
+    .cell-md-offset-7 {
+        margin-left: 58.33333333%
+    }
+
+    .cell-md-offset-6 {
+        margin-left: 50%
+    }
+
+    .cell-md-offset-5 {
+        margin-left: 41.66666667%
+    }
+
+    .cell-md-offset-4 {
+        margin-left: 33.33333333%
+    }
+
+    .cell-md-offset-3 {
+        margin-left: 25%
+    }
+
+    .cell-md-offset-2 {
+        margin-left: 16.66666667%
+    }
+
+    .cell-md-offset-1 {
+        margin-left: 8.33333333%
+    }
+
+    .cell-md-offset-0 {
+        margin-left: 0%
+    }
+}
+
+[class^="cell-lg-"] {
+    position: relative;
+    min-height: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+    -webkit-transition: ease-in-out all .25s;
+    transition: ease-in-out all .25s;
+    float: left
+}
+
+@media (min-width: 1400px) {
+    .cell-lg-12 {
+        width: 100%
+    }
+
+    .cell-lg-11 {
+        width: 91.66666667%
+    }
+
+    .cell-lg-10 {
+        width: 83.33333333%
+    }
+
+    .cell-lg-9 {
+        width: 75%
+    }
+
+    .cell-lg-8 {
+        width: 66.66666667%
+    }
+
+    .cell-lg-7 {
+        width: 58.33333333%
+    }
+
+    .cell-lg-6 {
+        width: 50%
+    }
+
+    .cell-lg-5 {
+        width: 41.66666667%
+    }
+
+    .cell-lg-4 {
+        width: 33.33333333%
+    }
+
+    .cell-lg-3 {
+        width: 25%
+    }
+
+    .cell-lg-2 {
+        width: 16.66666667%
+    }
+
+    .cell-lg-1 {
+        width: 8.33333333%
+    }
+
+    .cell-lg-offset-12 {
+        margin-left: 100%
+    }
+
+    .cell-lg-offset-11 {
+        margin-left: 91.66666667%
+    }
+
+    .cell-lg-offset-10 {
+        margin-left: 83.33333333%
+    }
+
+    .cell-lg-offset-9 {
+        margin-left: 75%
+    }
+
+    .cell-lg-offset-8 {
+        margin-left: 66.66666667%
+    }
+
+    .cell-lg-offset-7 {
+        margin-left: 58.33333333%
+    }
+
+    .cell-lg-offset-6 {
+        margin-left: 50%
+    }
+
+    .cell-lg-offset-5 {
+        margin-left: 41.66666667%
+    }
+
+    .cell-lg-offset-4 {
+        margin-left: 33.33333333%
+    }
+
+    .cell-lg-offset-3 {
+        margin-left: 25%
+    }
+
+    .cell-lg-offset-2 {
+        margin-left: 16.66666667%
+    }
+
+    .cell-lg-offset-1 {
+        margin-left: 8.33333333%
+    }
+
+    .cell-lg-offset-0 {
+        margin-left: 0%
+    }
+}
+
+@media (max-width: 767px) {
+    .hidden-xs {
+        display: none !important
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hidden-sm {
+        display: none !important
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+    .hidden-md {
+        display: none !important
+    }
+}
+
+@media (min-width: 1200px) {
+    .hidden-lg {
+        display: none !important
+    }
+}
+
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    transition: opacity .15s linear
+}
+
+.fade.in {
+    opacity: 1
+}
+
+.collapse {
+    display: none
+}
+
+.collapse.in {
+    display: block
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height .35s ease;
+    transition: height .35s ease
+}
+
+.caret {
+    display: inline-block;
+    font-family: 'apartmentIcons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: #7f7f7f;
+    font-size: .8em
+}
+
+.caret:before {
+    content: ""
+}
+
+.dropdown {
+    position: relative
+}
+
+.dropdownToggle:focus {
+    outline: 0
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    background-clip: padding-box
+}
+
+.dropdownMenu.pull-right {
+    right: 0;
+    left: auto
+}
+
+.dropdownMenu .divider {
+    height: 1px;
+    margin: 0;
+    overflow: hidden;
+    background-color: #e5e5e5
+}
+
+.dropdownMenu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    white-space: nowrap
+}
+
+.dropdownMenu > li > a:hover, .dropdownMenu > li > a:focus {
+    text-decoration: none
+}
+
+.dropdownMenu > .active > a, .dropdownMenu > .active > a:hover, .dropdownMenu > .active > a:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #428bca
+}
+
+.dropdownMenu > .disabled > a, .dropdownMenu > .disabled > a:hover, .dropdownMenu > .disabled > a:focus {
+    color: #999
+}
+
+.dropdownMenu > .disabled > a:hover, .dropdownMenu > .disabled > a:focus {
+    text-decoration: none;
+    background-color: transparent;
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    cursor: not-allowed
+}
+
+.open > .dropdownMenu {
+    display: block
+}
+
+.open > a {
+    outline: 0
+}
+
+.dropdownMenu-right {
+    left: auto;
+    right: 0
+}
+
+.dropdownMenu-left {
+    left: 0;
+    right: auto
+}
+
+.dropdown-header {
+    display: block;
+    padding: 3px 20px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #999
+}
+
+.dropdownBackdrop {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 990
+}
+
+.pull-right > .dropdownMenu {
+    right: 0;
+    left: auto
+}
+
+.dropup.open .caret, .navbar-fixed-bottom .dropdown .caret {
+    transform: rotate(180deg)
+}
+
+.dropup .dropdownMenu, .navbar-fixed-bottom .dropdown .dropdownMenu {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 1px
+}
+
+.iosScroll .dropdownMenu ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px
+}
+
+.iosScroll .dropdownMenu ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 0 1px #fff
+}
+
+@media (min-width: 768px) {
+    .navbar-right .dropdownMenu {
+        left: auto;
+        right: 0
+    }
+
+    .navbar-right .dropdownMenu-left {
+        left: 0;
+        right: auto
+    }
+}
+
+.modalOpen {
+    overflow: hidden
+}
+
+.modal {
+    display: none;
+    overflow: auto;
+    overflow-y: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1060;
+    -webkit-overflow-scrolling: touch;
+    outline: 0
+}
+
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    .modal {
+        max-height: 100vh;
+        max-width: 100vw
+    }
+}
+
+.modal.fade .modalContainer {
+    -webkit-transition: -webkit-transform .3s ease-out;
+    -moz-transition: -moz-transform .3s ease-out;
+    -o-transition: -o-transform .3s ease-out;
+    transition: transform .3s ease-out
+}
+
+.modal.in .modalContainer {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0)
+}
+
+.modalContainer {
+    width: 645px;
+    position: absolute;
+    top: 50%;
+    height: 284px;
+    margin-top: -142px;
+    left: 50%;
+    margin-left: -323px
+}
+
+.modalContent {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    background-clip: padding-box;
+    outline: none
+}
+
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    background-color: #000
+}
+
+.modalBackdrop.fade {
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+
+.modalBackdrop.in {
+    opacity: .75;
+    filter: alpha(opacity=75)
+}
+
+.modalHeader {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 16.42857143px
+}
+
+.modalHeader .close {
+    margin-top: -2px;
+    border: 0 none;
+    background-color: #fff;
+    float: right
+}
+
+.modalHeader .close:focus {
+    outline: none
+}
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143
+}
+
+.modalBody {
+    position: relative;
+    padding: 20px
+}
+
+.modalFooter {
+    margin-top: 15px;
+    padding: 19px 20px 20px;
+    text-align: right;
+    border-top: 1px solid #e5e5e5
+}
+
+.modalFooter .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0
+}
+
+.modalFooter .btn-group .btn + .btn {
+    margin-left: -1px
+}
+
+.modalFooter .btn-block + .btn-block {
+    margin-left: 0
+}
+
+@media (min-width: 768px) {
+    .modalContainer {
+        width: 645px;
+        position: absolute;
+        top: 50%;
+        height: 284px;
+        margin-top: -142px;
+        left: 50%;
+        margin-left: -323px
+    }
+
+    .modalContent {
+        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .5)
+    }
+
+    .modal-sm {
+        width: 300px
+    }
+}
+
+@media (min-width: 992px) {
+    .modal-lg {
+        width: 900px
+    }
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px
+}
+
+.btn:hover, .btn:focus {
+    color: #333;
+    text-decoration: none
+}
+
+.btn:active, .btn.active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: .65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.btn-default {
+    color: #333;
+    background-color: #fff
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdownToggle.btn-default {
+    color: #333;
+    border-color: #adadad
+}
+
+.btn-default:active, .btn-default.active, .open .dropdownToggle.btn-default {
+    background-image: none
+}
+
+.btn-default.disabled, .btn-default[disabled], fieldset[disabled] .btn-default, .btn-default.disabled:hover, .btn-default[disabled]:hover, fieldset[disabled] .btn-default:hover, .btn-default.disabled:focus, .btn-default[disabled]:focus, fieldset[disabled] .btn-default:focus, .btn-default.disabled:active, .btn-default[disabled]:active, fieldset[disabled] .btn-default:active, .btn-default.disabled.active, .btn-default[disabled].active, fieldset[disabled] .btn-default.active {
+    background-color: #fff;
+    border-color: #ccc
+}
+
+.btn-default .badge {
+    color: #fff;
+    background-color: #333
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdownToggle.btn-primary {
+    color: #fff;
+    background-color: #3276b1;
+    border-color: #285e8e
+}
+
+.btn-primary:active, .btn-primary.active, .open .dropdownToggle.btn-primary {
+    background-image: none
+}
+
+.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active {
+    background-color: #428bca;
+    border-color: #357ebd
+}
+
+.btn-primary .badge {
+    color: #428bca;
+    background-color: #fff
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdownToggle.btn-success {
+    color: #fff;
+    background-color: #47a447;
+    border-color: #398439
+}
+
+.btn-success:active, .btn-success.active, .open .dropdownToggle.btn-success {
+    background-image: none
+}
+
+.btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
+    background-color: #5cb85c;
+    border-color: #4cae4c
+}
+
+.btn-success .badge {
+    color: #5cb85c;
+    background-color: #fff
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da
+}
+
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdownToggle.btn-info {
+    color: #fff;
+    background-color: #39b3d7;
+    border-color: #269abc
+}
+
+.btn-info:active, .btn-info.active, .open .dropdownToggle.btn-info {
+    background-image: none
+}
+
+.btn-info.disabled, .btn-info[disabled], fieldset[disabled] .btn-info, .btn-info.disabled:hover, .btn-info[disabled]:hover, fieldset[disabled] .btn-info:hover, .btn-info.disabled:focus, .btn-info[disabled]:focus, fieldset[disabled] .btn-info:focus, .btn-info.disabled:active, .btn-info[disabled]:active, fieldset[disabled] .btn-info:active, .btn-info.disabled.active, .btn-info[disabled].active, fieldset[disabled] .btn-info.active {
+    background-color: #5bc0de;
+    border-color: #46b8da
+}
+
+.btn-info .badge {
+    color: #5bc0de;
+    background-color: #fff
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236
+}
+
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .open .dropdownToggle.btn-warning {
+    color: #fff;
+    background-color: #ed9c28;
+    border-color: #d58512
+}
+
+.btn-warning:active, .btn-warning.active, .open .dropdownToggle.btn-warning {
+    background-image: none
+}
+
+.btn-warning.disabled, .btn-warning[disabled], fieldset[disabled] .btn-warning, .btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn-warning:hover, .btn-warning.disabled:focus, .btn-warning[disabled]:focus, fieldset[disabled] .btn-warning:focus, .btn-warning.disabled:active, .btn-warning[disabled]:active, fieldset[disabled] .btn-warning:active, .btn-warning.disabled.active, .btn-warning[disabled].active, fieldset[disabled] .btn-warning.active {
+    background-color: #f0ad4e;
+    border-color: #eea236
+}
+
+.btn-warning .badge {
+    color: #f0ad4e;
+    background-color: #fff
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdownToggle.btn-danger {
+    color: #fff;
+    background-color: #d2322d;
+    border-color: #ac2925
+}
+
+.btn-danger:active, .btn-danger.active, .open .dropdownToggle.btn-danger {
+    background-image: none
+}
+
+.btn-danger.disabled, .btn-danger[disabled], fieldset[disabled] .btn-danger, .btn-danger.disabled:hover, .btn-danger[disabled]:hover, fieldset[disabled] .btn-danger:hover, .btn-danger.disabled:focus, .btn-danger[disabled]:focus, fieldset[disabled] .btn-danger:focus, .btn-danger.disabled:active, .btn-danger[disabled]:active, fieldset[disabled] .btn-danger:active, .btn-danger.disabled.active, .btn-danger[disabled].active, fieldset[disabled] .btn-danger.active {
+    background-color: #d9534f;
+    border-color: #d43f3a
+}
+
+.btn-danger .badge {
+    color: #d9534f;
+    background-color: #fff
+}
+
+.btn-link {
+    color: #428bca;
+    font-weight: normal;
+    cursor: pointer;
+    border-radius: 0
+}
+
+.btn-link, .btn-link:active, .btn-link[disabled], fieldset[disabled] .btn-link {
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
+    border-color: transparent
+}
+
+.btn-link:hover, .btn-link:focus {
+    color: #2a6496;
+    text-decoration: underline;
+    background-color: transparent
+}
+
+.btn-link[disabled]:hover, fieldset[disabled] .btn-link:hover, .btn-link[disabled]:focus, fieldset[disabled] .btn-link:focus {
+    color: #999;
+    text-decoration: none
+}
+
+.btn-lg, .btn-group-lg > .btn {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px
+}
+
+.btn-sm, .btn-group-sm > .btn {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px
+}
+
+.btn-xs, .btn-group-xs > .btn {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0
+}
+
+.btn-block + .btn-block {
+    margin-top: 5px
+}
+
+input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="button"].btn-block {
+    width: 100%
+}
+
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.btn-group > .btn, .btn-group-vertical > .btn {
+    position: relative;
+    float: left
+}
+
+.btn-group > .btn:hover, .btn-group-vertical > .btn:hover, .btn-group > .btn:focus, .btn-group-vertical > .btn:focus, .btn-group > .btn:active, .btn-group-vertical > .btn:active, .btn-group > .btn.active, .btn-group-vertical > .btn.active {
+    z-index: 2
+}
+
+.btn-group > .btn:focus, .btn-group-vertical > .btn:focus {
+    outline: none
+}
+
+.btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group {
+    margin-left: -1px
+}
+
+.btn-toolbar {
+    margin-left: -5px
+}
+
+.btn-toolbar .btn-group, .btn-toolbar .input-group {
+    float: left
+}
+
+.btn-toolbar > .btn, .btn-toolbar > .btn-group, .btn-toolbar > .input-group {
+    margin-left: 5px
+}
+
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdownToggle) {
+    border-radius: 0
+}
+
+.btn-group > .btn:first-child {
+    margin-left: 0
+}
+
+.btn-group > .btn:first-child:not(:last-child):not(.dropdownToggle) {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0
+}
+
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdownToggle:not(:first-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0
+}
+
+.btn-group > .btn-group {
+    float: left
+}
+
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+    border-radius: 0
+}
+
+.btn-group > .btn-group:first-child > .btn:last-child, .btn-group > .btn-group:first-child > .dropdownToggle {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0
+}
+
+.btn-group > .btn-group:last-child > .btn:first-child {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0
+}
+
+.btn-group .dropdownToggle:active, .btn-group.open .dropdownToggle {
+    outline: 0
+}
+
+.btn-group > .btn + .dropdownToggle {
+    padding-left: 8px;
+    padding-right: 8px
+}
+
+.btn-group > .btn-lg + .dropdownToggle {
+    padding-left: 12px;
+    padding-right: 12px
+}
+
+.btn-group.open .dropdownToggle.btn-link {
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.btn .caret {
+    margin-left: 0
+}
+
+.btn-lg .caret {
+    border-width: 5px 5px 0;
+    border-bottom-width: 0
+}
+
+.dropup .btn-lg .caret {
+    border-width: 0 5px 5px
+}
+
+.btn-group-vertical > .btn, .btn-group-vertical > .btn-group, .btn-group-vertical > .btn-group > .btn {
+    display: block;
+    float: none;
+    width: 100%;
+    max-width: 100%
+}
+
+.btn-group-vertical > .btn-group > .btn {
+    float: none
+}
+
+.btn-group-vertical > .btn + .btn, .btn-group-vertical > .btn + .btn-group, .btn-group-vertical > .btn-group + .btn, .btn-group-vertical > .btn-group + .btn-group {
+    margin-top: -1px;
+    margin-left: 0
+}
+
+.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+    border-radius: 0
+}
+
+.btn-group-vertical > .btn:first-child:not(:last-child) {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.btn-group-vertical > .btn:last-child:not(:first-child) {
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0
+}
+
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+    border-radius: 0
+}
+
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdownToggle {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0
+}
+
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0
+}
+
+.btn-group-justified {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate
+}
+
+.btn-group-justified > .btn, .btn-group-justified > .btn-group {
+    float: none;
+    display: table-cell;
+    width: 1%
+}
+
+.btn-group-justified > .btn-group .btn {
+    width: 100%
+}
+
+[data-toggle="buttons"] > .btn > input[type="radio"], [data-toggle="buttons"] > .btn > input[type="checkbox"] {
+    display: none
+}
+
+.img-responsive, .carouselInner > .item > img, .carouselInner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
+
+.carousel {
+    position: relative
+}
+
+.carouselInner {
+    position: relative;
+    overflow: hidden;
+    width: 100%
+}
+
+.carouselInner > .item {
+    display: none;
+    position: relative;
+    -webkit-transition: .6s ease-in-out left;
+    transition: .6s ease-in-out left
+}
+
+.carouselInner > .item > img, .carouselInner > .item > a > img {
+    line-height: 1
+}
+
+.carouselInner > .active, .carouselInner > .next, .carouselInner > .prev {
+    display: block
+}
+
+.carouselInner > .active {
+    left: 0
+}
+
+.carouselInner > .next, .carouselInner > .prev {
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+
+.carouselInner > .next {
+    left: 100%
+}
+
+.carouselInner > .prev {
+    left: -100%
+}
+
+.carouselInner > .next.left, .carouselInner > .prev.right {
+    left: 0
+}
+
+.carouselInner > .active.left {
+    left: -100%
+}
+
+.carouselInner > .active.right {
+    left: 100%
+}
+
+.carouselControl {
+    position: absolute;
+    top: 50%;
+    left: 3em;
+    bottom: 0;
+    width: 15%;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6)
+}
+
+.img-rounded {
+    border-radius: 6px
+}
+
+.img-thumbnail {
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    display: inline-block;
+    max-width: 100%;
+    height: auto
+}
+
+.img-circle {
+    border-radius: 50%
+}
+
+.carouselControl.right {
+    left: auto;
+    right: 3em
+}
+
+.carouselControl:hover, .carouselControl:focus {
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    opacity: .9;
+    filter: alpha(opacity=90)
+}
+
+.bootstrap-select.btn-group:not(.input-group-btn), .bootstrap-select.btn-group[class*="span"] {
+    float: none;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0
+}
+
+.form-search .bootstrap-select.btn-group, .form-inline .bootstrap-select.btn-group, .form-horizontal .bootstrap-select.btn-group {
+    margin-bottom: 0
+}
+
+.bootstrap-select.form-control {
+    margin-bottom: 0;
+    padding: 0;
+    border: none
+}
+
+.bootstrap-select.btn-group.pull-right, .bootstrap-select.btn-group[class*="span"].pull-right, .row-fluid .bootstrap-select.btn-group[class*="span"].pull-right {
+    float: right
+}
+
+.input-append .bootstrap-select.btn-group {
+    margin-left: -1px
+}
+
+.input-prepend .bootstrap-select.btn-group {
+    margin-right: -1px
+}
+
+.bootstrap-select.form-control:not([class*="span"]) {
+    width: 100%
+}
+
+.bootstrap-select > .btn {
+    width: 100%;
+    padding-right: 25px
+}
+
+.error .bootstrap-select .btn {
+    border: 1px solid #b94a48
+}
+
+.bootstrap-select.show-menu-arrow.open > .btn {
+    z-index: 2051
+}
+
+.bootstrap-select .btn:focus {
+    outline: thin dotted #333 !important;
+    outline: 5px auto -webkit-focus-ring-color !important;
+    outline-offset: -2px
+}
+
+.bootstrap-select.btn-group .btn .filter-option {
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+    text-align: left
+}
+
+.bootstrap-select.btn-group .btn .caret {
+    position: absolute;
+    top: .8em;
+    right: .8em
+}
+
+.bootstrap-select.btn-group > .disabled, .bootstrap-select.btn-group .dropdownMenu li.disabled > a {
+    cursor: not-allowed
+}
+
+.bootstrap-select.btn-group > .disabled:focus {
+    outline: none !important
+}
+
+.bootstrap-select.btn-group[class*="span"] .btn {
+    width: 100%
+}
+
+.bootstrap-select.btn-group .dropdownMenu {
+    min-width: 100%;
+    z-index: 2000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.bootstrap-select.btn-group .dropdownMenu.inner {
+    position: static;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none
+}
+
+.bootstrap-select.btn-group .dropdownMenu dt {
+    display: block;
+    padding: 3px 20px;
+    cursor: default
+}
+
+.bootstrap-select.btn-group .div-contain {
+    overflow: hidden
+}
+
+.bootstrap-select.btn-group .dropdownMenu li {
+    position: relative
+}
+
+.bootstrap-select.btn-group .dropdownMenu li > a.opt {
+    position: relative;
+    padding-left: 35px
+}
+
+.bootstrap-select.btn-group .dropdownMenu li > a {
+    cursor: pointer
+}
+
+.bootstrap-select.btn-group .dropdownMenu li > dt small {
+    font-weight: normal
+}
+
+.bootstrap-select.btn-group.show-tick .dropdownMenu li.selected a i.check-mark {
+    position: absolute;
+    display: inline-block;
+    right: 15px;
+    margin-top: 2.5px
+}
+
+.bootstrap-select.btn-group .dropdownMenu li a i.check-mark {
+    display: none
+}
+
+.bootstrap-select.btn-group.show-tick .dropdownMenu li a span.text {
+    margin-right: 34px
+}
+
+.bootstrap-select.btn-group .dropdownMenu li small {
+    padding-left: .5em
+}
+
+.bootstrap-select.btn-group .dropdownMenu li:not(.disabled) > a:hover small, .bootstrap-select.btn-group .dropdownMenu li:not(.disabled) > a:focus small, .bootstrap-select.btn-group .dropdownMenu li.active:not(.disabled) > a small {
+    color: #64b1d8
+}
+
+.bootstrap-select.btn-group .dropdownMenu li > dt small {
+    font-weight: normal
+}
+
+.bootstrap-select.show-menu-arrow .dropdownToggle:before {
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-bottom-color: rgba(0, 0, 0, .2);
+    position: absolute;
+    bottom: -4px;
+    left: 9px;
+    display: none
+}
+
+.bootstrap-select.show-menu-arrow .dropdownToggle:after {
+    content: '';
+    display: inline-block;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    position: absolute;
+    bottom: -4px;
+    left: 10px;
+    display: none
+}
+
+.bootstrap-select.show-menu-arrow.dropup .dropdownToggle:before {
+    bottom: auto;
+    top: -3px;
+    border-top: 7px solid #ccc;
+    border-bottom: 0;
+    border-top-color: rgba(0, 0, 0, .2)
+}
+
+.bootstrap-select.show-menu-arrow.dropup .dropdownToggle:after {
+    bottom: auto;
+    top: -3px;
+    border-top: 6px solid #fff;
+    border-bottom: 0
+}
+
+.bootstrap-select.show-menu-arrow.pull-right .dropdownToggle:before {
+    right: 12px;
+    left: auto
+}
+
+.bootstrap-select.show-menu-arrow.pull-right .dropdownToggle:after {
+    right: 13px;
+    left: auto
+}
+
+.bootstrap-select.show-menu-arrow.open > .dropdownToggle:before, .bootstrap-select.show-menu-arrow.open > .dropdownToggle:after {
+    display: block
+}
+
+.bootstrap-select.btn-group .no-results {
+    padding: 3px;
+    background: #f5f5f5;
+    margin: 0 5px
+}
+
+.bootstrap-select.btn-group .dropdownMenu .notify {
+    position: absolute;
+    bottom: 5px;
+    width: 96%;
+    margin: 0 2%;
+    min-height: 26px;
+    padding: 3px 5px;
+    background: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    pointer-events: none;
+    opacity: .9;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.mobile-device {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block !important;
+    width: 100%;
+    height: 100% !important;
+    opacity: 0
+}
+
+.bootstrap-select.fit-width {
+    width: auto !important
+}
+
+.bootstrap-select.btn-group.fit-width .btn .filter-option {
+    position: static
+}
+
+.bootstrap-select.btn-group.fit-width .btn .caret {
+    position: static;
+    top: auto;
+    margin-top: -1px
+}
+
+.control-group.error .bootstrap-select .dropdownToggle {
+    border-color: #b94a48
+}
+
+.bootstrap-select-searchbox, .bootstrap-select .bs-actionsbox {
+    padding: 4px 8px
+}
+
+.bootstrap-select .bs-actionsbox {
+    float: left;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.bootstrap-select-searchbox + .bs-actionsbox {
+    padding: 0 8px 4px
+}
+
+.bootstrap-select-searchbox input {
+    margin-bottom: 0
+}
+
+.bootstrap-select .bs-actionsbox .btn-group button {
+    width: 50%
+}
+
+.tooltip {
+    position: absolute;
+    z-index: 1070;
+    display: block;
+    font-size: 12px;
+    line-height: 1.4;
+    visibility: visible;
+    filter: alpha(opacity=0);
+    opacity: 0
+}
+
+.tooltip.in {
+    filter: alpha(opacity=90);
+    opacity: .9
+}
+
+.tooltip.top {
+    padding: 5px 0;
+    margin-top: -11px
+}
+
+.tooltip.right {
+    padding: 5px 0;
+    margin-right: -11px
+}
+
+.tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #000;
+    border-radius: 4px
+}
+
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid
+}
+
+.tooltip.top .tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000
+}
+
+.tooltip.right .tooltip-arrow {
+    bottom: 50%;
+    left: 0;
+    margin-left: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: #000
+}
+
+.toast {
+    left: 0;
+    top: auto;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    position: fixed;
+    background-color: #fff
+}
+
+.toastActive {
+    overflow: hidden;
+    position: fixed
+}
+
+.hide {
+    display: none !important
+}
+
+.show {
+    display: block !important
+}
+
+.datepicker {
+    display: none;
+    position: absolute;
+    padding: 4px;
+    margin-top: 1px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 100000
+}
+
+.datepicker.active {
+    display: block
+}
+
+.datepicker.inline {
+    position: relative
+}
+
+.datepicker > div {
+    display: none
+}
+
+.datepicker table {
+    width: 100%;
+    margin: 0
+}
+
+.datepicker td, .datepicker th {
+    text-align: center;
+    width: 40px;
+    height: 30px
+}
+
+.datepicker th.dow {
+    font-size: .875em;
+    background: #ccc;
+    border: 2px solid #fff
+}
+
+.datepicker td {
+    font-size: .875em;
+    background: #f1f1f1;
+    border: 2px solid #fff
+}
+
+.datepicker td.day:hover {
+    background: #77b800;
+    color: #fff;
+    cursor: pointer
+}
+
+.datepicker td.day.disabled {
+    color: #cacaca
+}
+
+.datepicker td.day.disabled:hover {
+    background: #f1f1f1
+}
+
+.datepicker td.old, .datepicker td.new {
+    color: #cacaca
+}
+
+.datepicker td.active, .datepicker td.active:hover {
+    color: #fff;
+    background-color: #77b800
+}
+
+.datepicker td.range {
+    background-color: #cacaca;
+    color: #fff
+}
+
+.datepicker td.selected {
+    color: #fff;
+    background-color: #feb300
+}
+
+.datepicker td.active {
+    color: #fff;
+    background-color: #77b800
+}
+
+.datepicker td span {
+    display: block;
+    width: 47px;
+    height: 54px;
+    line-height: 54px;
+    float: left;
+    margin: 2px;
+    cursor: pointer
+}
+
+.datepicker td span:hover {
+    background: #77b800;
+    color: #fff
+}
+
+.datepicker td span.active {
+    background-color: #77b800;
+    color: #fff
+}
+
+.datepicker td span.old {
+    color: #cacaca
+}
+
+.datepicker th.switch, .datepicker th.prev, .datepicker th.next, .datepicker th.done {
+    padding: 10px 0
+}
+
+.datepicker th.switch {
+    width: 120px;
+    padding-right: 10px
+}
+
+.datepicker th.next, .datepicker th.prev {
+    color: #77b800
+}
+
+.datepicker th.next:before {
+    content: "›"
+}
+
+.datepicker th.prev:before {
+    content: "‹"
+}
+
+.datepicker th.next.disabled, .datepicker th.prev.disabled {
+    color: #999
+}
+
+.datepicker th.next.disabled:hover, .datepicker th.prev.disabled:hover {
+    background: none
+}
+
+.datepicker th.close a {
+    color: #77b800
+}
+
+.datepicker thead tr:first-child th {
+    cursor: pointer
+}
+
+.datepicker thead tr:first-child th:hover {
+    background: none
+}
+
+.input-append.date .add-on i, .input-prepend.date .add-on i {
+    display: block;
+    cursor: pointer;
+    width: 16px;
+    height: 16px
+}
+
+@font-face {
+    font-family: 'CostarBrownRegular';
+    src: url("/a/48178f/content/fonts/lineto-costar-brown-regular.woff") format('woff'), url("/a/4af65d/content/fonts/lineto-costar-brown-regular.svg#CostarBrownRegular") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'CostarBrownItalic';
+    src: url("/a/083573/content/fonts/lineto-costar-brown-italic.woff") format('woff'), url("/a/e4be33/content/fonts/lineto-costar-brown-italic.svg#CostarBrownItalic") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'CostarBrownBold';
+    src: url("/a/d21ed8/content/fonts/lineto-costar-brown-bold.woff") format('woff'), url("/a/4b14a1/content/fonts/lineto-costar-brown-bold.svg#CostarBrownBold") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'CostarBrownBoldItalic';
+    src: url("/a/28e85a/content/fonts/lineto-costar-brown-bolditalic.woff") format('woff'), url("/a/0da832/content/fonts/lineto-costar-brown-bolditalic.svg#CostarBrownBoldItalic") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'CostarBrownLight';
+    src: url("/a/0b286e/content/fonts/lineto-costar-brown-light.woff") format('woff'), url("/a/d40cbd/content/fonts/lineto-costar-brown-light.svg#CostarBrownLight") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'HandelGothicBold';
+    src: url("/a/2ce7f1/content/fonts/handelgothic-bold-webfont.woff") format('woff'), url("/a/2ce7f1/content/fonts/handelgothic-bold-webfont.woff#HandelGothicBold") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'CostarBrownLightItalic';
+    src: url("/a/3ad826/content/fonts/lineto-costar-brown-lightitalic.woff") format('woff'), url("/a/53761a/content/fonts/lineto-costar-brown-lightitalic.svg#CostarBrownLightItalic") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'SbMessageLine';
+    src: url("/a/68c1b8/content/fonts/sb-message-line.woff") format('woff');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'ropa_sansregular';
+    src: url("/a/832e51/content/fonts/ropasans-regular-webfont.woff") format('woff'), url("/a/185faf/content/fonts/ropasans-regular-webfont.svg") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'amatic';
+    src: url("/a/4d3a0a/content/fonts/amatic-sc.woff") format('woff');
+    font-weight: 700;
+    font-style: normal
+}
+
+html {
+    font-family: 'CostarBrownLight', sans-serif;
+    height: 100%;
+    box-sizing: border-box
+}
+
+@media only screen and (min-width: 1920px) {
+    html {
+        background-color: #f2f2f2
+    }
+}
+
+*, *:before, *:after {
+    box-sizing: inherit
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    min-width: 768px
+}
+
+@media only screen and (min-width: 1920px) {
+    body {
+        background-color: #f2f2f2;
+        max-width: 1920px;
+        margin: 0 auto;
+        position: relative
+    }
+}
+
+@media screen and (-ms-high-contrast: none),(-ms-high-contrast: active) {
+    body .loginForm input {
+        font-family: sans-serif
+    }
+}
+
+.mainWrapper {
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff
+}
+
+@media only screen and (min-width: 1920px) {
+    .mainWrapper {
+        max-width: 1920px;
+        margin: 0 auto
+    }
+}
+
+.contentWrapper {
+    padding-bottom: 30em
+}
+
+.contentWrapper.showMoreCities, .contentWrapper.showMoreNeighborhoods {
+    padding-bottom: 10em !important
+}
+
+a {
+    text-decoration: none;
+    color: #7f7e7e
+}
+
+a:hover {
+    color: #77b800
+}
+
+a:active {
+    color: #609400
+}
+
+a.action {
+    color: #77b800
+}
+
+a.action:hover {
+    color: #7f7e7e
+}
+
+button:focus {
+    outline: none
+}
+
+.primary {
+    background-color: #77b800;
+    color: #fff;
+    line-height: 1em;
+    border: 1px solid #fff;
+    padding: 7px;
+    display: inline-block
+}
+
+.primary:hover {
+    background-color: #555;
+    color: #fff;
+    border: 1px solid #555
+}
+
+.primary:active {
+    color: #fff;
+    background-color: #679f00;
+    border-color: #609400
+}
+
+.primary.disabled {
+    color: #fff;
+    background-color: #999;
+    border-color: #fff;
+    pointer-events: none
+}
+
+.secondary {
+    background-color: #fff;
+    color: #77b800;
+    line-height: 1em;
+    border: 1px solid #77b800;
+    padding: 7px;
+    display: inline-block
+}
+
+.secondary:hover {
+    background-color: #77b800;
+    color: #fff;
+    border: 1px solid #fff
+}
+
+.secondary:active {
+    color: #fff;
+    background-color: #679f00;
+    border-color: #609400
+}
+
+.secondary.disabled {
+    color: #999;
+    background-color: #fff;
+    border-color: #999;
+    pointer-events: none
+}
+
+.facebookTreament, .googleplusTreament {
+    color: #fff;
+    line-height: 1em;
+    border: 0 none;
+    padding: 9px 7px;
+    font-size: .75em;
+    width: 20em
+}
+
+.facebookTreament {
+    background-color: #3b5998
+}
+
+.facebookTreament:hover {
+    background-color: #344e86
+}
+
+.facebookTreament:active {
+    background-color: #314a7e
+}
+
+.googleplusTreament {
+    background-color: #dd4b39
+}
+
+.googleplusTreament:hover {
+    background-color: #d73925
+}
+
+.googleplusTreament:active {
+    background-color: #cf3624
+}
+
+.primaryCheckbox, .primaryRadio {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: relative;
+    left: 1em;
+    z-index: 5;
+    top: 1px
+}
+
+.primaryCheckbox + label, .primaryRadio + label {
+    position: relative;
+    font-family: 'apartmentIcons'
+}
+
+.primaryCheckbox + label span, .primaryRadio + label span {
+    font-family: 'CostarBrownLight', sans-serif
+}
+
+.primaryCheckbox + label:before, .primaryRadio + label:before {
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    margin-right: .5em;
+    text-align: center;
+    border: 1px solid #999;
+    position: relative;
+    top: 1px;
+    background-color: #fff
+}
+
+.primaryCheckbox:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: -2px;
+    color: #77b800
+}
+
+.primaryRadio:checked + label:after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: 4px;
+    top: 8px;
+    background: #999;
+    border: 1px solid #999;
+    border-radius: 50%
+}
+
+.primaryCheckbox:focus + label:before {
+    outline: #5e9ed6 auto 5px
+}
+
+.primaryCheckbox:checked:focus + label:before {
+    outline: #5e9ed6 auto 5px
+}
+
+.primaryCheckbox:disabled + label:before {
+    border: 1px solid #cacaca;
+    background-color: #f4f4f4
+}
+
+.primaryRadio + label:before {
+    border-radius: 50%
+}
+
+.primaryRadio:focus + label:before {
+    outline: none;
+    box-shadow: 0 0 2px 1px #5e9ed6
+}
+
+.primaryRadio:checked:focus + label:before {
+    outline: none;
+    box-shadow: 0 0 2px 1px #5e9ed6
+}
+
+.primaryRadio:disabled + label:before {
+    border: 1px solid #cacaca;
+    background-color: #f4f4f4
+}
+
+.primaryRadio:disabled + label:after {
+    border: 1px solid #cacaca;
+    background-color: #f4f4f4;
+    background: #cacaca
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin: 0
+}
+
+.searchIcon {
+    color: #cacaca
+}
+
+.searchIcon:hover {
+    color: #cacaca
+}
+
+.buildingActiveIcon {
+    color: #77b800
+}
+
+.filterActiveIcon {
+    color: #77b800
+}
+
+.myPlacesActiveIcon {
+    color: #77b800
+}
+
+.savedSearchesActiveIcon {
+    color: #77b800
+}
+
+.sortActiveIcon {
+    color: #77b800
+}
+
+.shareIcon, .printerIcon, .mapIcon, .directionsIcon, .flagIcon {
+    color: #000
+}
+
+.spinner {
+    background-image: url("/a/21268b/content/images/spinner.gif");
+    width: 45px;
+    height: 45px;
+    display: none
+}
+
+.videoPlayIconLarge {
+    background: transparent url("/a/8b2ce6/content/images/videoplayiconlarge.png") no-repeat 0 0;
+    width: 369px;
+    height: 370px
+}
+
+@font-face {
+    font-family: 'apartmentIcons';
+    src: url("/a/c35e9c/content/fonts/apartmenticons.woff") format('woff'), url("/a/3fc22a/content/fonts/apartmenticons.svg#apartmentIcons") format('svg');
+    font-weight: normal;
+    font-style: normal
+}
+
+[class$="Icon"], [class*="Icon "] {
+    font-family: 'apartmentIcons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.iphoneIcon:before {
+    content: ""
+}
+
+.bankIcon:before {
+    content: ""
+}
+
+.airConditionerIcon:before {
+    content: ""
+}
+
+.coffeeIcon:before {
+    content: ""
+}
+
+.propertyIcon:before {
+    content: ""
+}
+
+.restaurantIcon:before {
+    content: ""
+}
+
+.pdfBrochureIcon:before {
+    content: ""
+}
+
+.servicesIcon:before {
+    content: ""
+}
+
+.featuresIcon:before {
+    content: ""
+}
+
+.utilitiesIcon:before {
+    content: ""
+}
+
+.shopsIcon:before {
+    content: ""
+}
+
+.groceriesIcon:before {
+    content: ""
+}
+
+.kitchenIcon:before {
+    content: ""
+}
+
+.leaseIcon:before {
+    content: ""
+}
+
+.catIcon:before {
+    content: ""
+}
+
+.menuArrowRightIcon:before {
+    content: ""
+}
+
+.menuArrowLeftIcon:before {
+    content: ""
+}
+
+.parkingIcon:before {
+    content: ""
+}
+
+.parksIcon:before {
+    content: ""
+}
+
+.dishWasherIcon:before {
+    content: ""
+}
+
+.phoneIcon:before {
+    content: ""
+}
+
+.wheelchairIcon:before {
+    content: ""
+}
+
+.emailIcon:before {
+    content: ""
+}
+
+.highSpeedInternetIcon:before {
+    content: ""
+}
+
+.listIcon:before {
+    content: ""
+}
+
+.logoutIcon:before {
+    content: ""
+}
+
+.duplicateIcon:before {
+    content: ""
+}
+
+.editIcon:before {
+    content: ""
+}
+
+.cameraIcon:before {
+    content: ""
+}
+
+.viewIcon:before {
+    content: ""
+}
+
+.sofaIcon:before {
+    content: ""
+}
+
+.aptsLogoMarkIcon:before {
+    content: ""
+}
+
+.commuteIcon:before {
+    content: ""
+}
+
+.paperclipIcon:before {
+    content: ""
+}
+
+.aerialViewIcon:before {
+    content: ""
+}
+
+.mobileDrawIcon:before {
+    content: ""
+}
+
+.interiorIcon:before {
+    content: ""
+}
+
+.gridIcon:before {
+    content: ""
+}
+
+.singleViewIcon:before {
+    content: ""
+}
+
+.attachedDocIcon:before {
+    content: ""
+}
+
+.viewLessIcon:before {
+    content: ""
+}
+
+.viewMoreIcon:before {
+    content: ""
+}
+
+.adAnalyticsIcon:before {
+    content: ""
+}
+
+.myMediaIcon:before {
+    content: ""
+}
+
+.singleBuildingIcon:before {
+    content: ""
+}
+
+.directionsIcon:before {
+    content: ""
+}
+
+.busIcon:before {
+    content: ""
+}
+
+.elevatorIcon:before {
+    content: ""
+}
+
+.upDownArrowsIcon:before {
+    content: ""
+}
+
+.starOutlineIcon:before {
+    content: ""
+}
+
+.starFullIcon:before {
+    content: ""
+}
+
+.furnishedIcon:before {
+    content: ""
+}
+
+.planeIcon:before {
+    content: ""
+}
+
+.trainIcon:before {
+    content: ""
+}
+
+.schoolsIcon:before {
+    content: ""
+}
+
+.reviewBoardIcon:before {
+    content: ""
+}
+
+.clockIcon:before {
+    content: ""
+}
+
+.questionMarkCircleIcon:before {
+    content: ""
+}
+
+.commuteBusIcon:before {
+    content: ""
+}
+
+.hdVideoIcon:before {
+    content: ""
+}
+
+.smarterSearchIcon:before {
+    content: ""
+}
+
+.circleCheckmarkIcon:before {
+    content: ""
+}
+
+.HiResImagesIcon:before {
+    content: ""
+}
+
+.pencilRenameIcon:before {
+    content: ""
+}
+
+.trashCanIcon:before {
+    content: ""
+}
+
+.ehoIcon:before {
+    content: ""
+}
+
+.virtualTourIcon:before {
+    content: ""
+}
+
+.playIcon:before {
+    content: ""
+}
+
+.flagOutlineIcon:before {
+    content: ""
+}
+
+.postCommentFilledIcon:before {
+    content: ""
+}
+
+.nearbySchoolsIcon:before {
+    content: ""
+}
+
+.attendanceZoneIcon:before {
+    content: ""
+}
+
+.schoolInfoIcon:before {
+    content: ""
+}
+
+.propertyIdentifiedIcon:before {
+    content: ""
+}
+
+.adFreshnessIcon:before {
+    content: ""
+}
+
+.addSchoolsIcon:before {
+    content: ""
+}
+
+.laundryFacilitesIcon:before {
+    content: ""
+}
+
+.hookupReadyIcon:before {
+    content: ""
+}
+
+.apartmentIcon:before {
+    content: ""
+}
+
+.descriptionIcon:before {
+    content: ""
+}
+
+.settings2Icon:before {
+    content: ""
+}
+
+.greenQuoteOpenIcon:before {
+    content: ""
+}
+
+.errorIcon:before {
+    content: ""
+}
+
+.circleNumberOneIcon:before {
+    content: ""
+}
+
+.circleNumberTwoIcon:before {
+    content: ""
+}
+
+.circleNumberThreeIcon:before {
+    content: ""
+}
+
+.circleNumberFourIcon:before {
+    content: ""
+}
+
+.circleEmailIcon:before {
+    content: ""
+}
+
+.reviewsDeleteIcon:before {
+    content: ""
+}
+
+.deleteIcon:before {
+    content: ""
+}
+
+.favoriteFilledIcon:before {
+    content: ""
+}
+
+.hamburgerIcon:before {
+    content: ""
+}
+
+.poolIcon:before {
+    content: ""
+}
+
+.fitnessIcon:before {
+    content: ""
+}
+
+.favoriteEmptyIcon:before {
+    content: ""
+}
+
+.favoriteDislikedIcon:before {
+    content: ""
+}
+
+.checkmarkIcon:before {
+    content: ""
+}
+
+.youtubeIcon:before {
+    content: ""
+}
+
+.carIcon:before {
+    content: ""
+}
+
+.twitterIcon:before {
+    content: ""
+}
+
+.nosmokingIcon:before {
+    content: ""
+}
+
+.leftArrowIcon:before {
+    content: ""
+}
+
+.imageCarouselArrowLeftIcon:before {
+    content: ""
+}
+
+.menuArrowDownIcon:before {
+    content: ""
+}
+
+.shareIcon:before {
+    content: ""
+}
+
+.googleIcon:before {
+    content: ""
+}
+
+.linkedinIcon:before {
+    content: ""
+}
+
+.myPlacesIcon:before {
+    content: ""
+}
+
+.calendarIcon:before {
+    content: ""
+}
+
+.petIcon:before {
+    content: ""
+}
+
+.facebookIcon:before {
+    content: ""
+}
+
+.filterIcon:before {
+    content: ""
+}
+
+.savedSearchesIcon:before {
+    content: ""
+}
+
+.facebookLogoIcon:before {
+    content: ""
+}
+
+.printerIcon:before {
+    content: ""
+}
+
+.menuArrowUpIcon:before {
+    content: ""
+}
+
+.flagIcon:before {
+    content: ""
+}
+
+.homepageCarouselArrowLeftIcon:before {
+    content: ""
+}
+
+.mapZoomOutIcon:before {
+    content: ""
+}
+
+.laundryIcon:before {
+    content: ""
+}
+
+.mapZoomInIcon:before {
+    content: ""
+}
+
+.ratingFilledIcon:before {
+    content: ""
+}
+
+.rightarrowIcon:before {
+    content: ""
+}
+
+.profileCarouselArrowRightIcon:before {
+    content: ""
+}
+
+.imageCarouselArrowRightIcon:before {
+    content: ""
+}
+
+.searchIcon:before {
+    content: ""
+}
+
+.pinterestIcon:before {
+    content: ""
+}
+
+.googleLogoIcon:before {
+    content: ""
+}
+
+.closeIcon:before {
+    content: ""
+}
+
+.mapIcon:before {
+    content: ""
+}
+
+.mapSatToggleIcon:before {
+    content: ""
+}
+
+.homepageCarouselArrowRightIcon:before {
+    content: ""
+}
+
+.drawIcon:before {
+    content: ""
+}
+
+.userIcon:before {
+    content: ""
+}
+
+.locationIcon:before {
+    content: ""
+}
+
+.rentSpecialsIcon:before {
+    content: ""
+}
+
+.buildingIcon:before {
+    content: ""
+}
+
+.sortIcon:before {
+    content: ""
+}
+
+.profileCarouselArrowLeftIcon:before {
+    content: ""
+}
+
+.rotateLeftIcon:before {
+    content: ""
+}
+
+.rotateRightIcon:before {
+    content: ""
+}
+
+.alertLightningBoltIcon:before {
+    content: ""
+}
+
+.customerPortalIcon:before {
+    content: ""
+}
+
+.youtubeLogoIcon:before {
+    content: ""
+}
+
+.dropPhotoIcon:before {
+    content: ""
+}
+
+.worldWideWebIcon:before {
+    content: ""
+}
+
+.blogIcon:before {
+    content: ""
+}
+
+.heartFilledIcon:before {
+    content: ""
+}
+
+.leadsIcon:before {
+    content: ""
+}
+
+.offMarketIcon:before {
+    content: ""
+}
+
+.heartOutlineIcon:before {
+    content: ""
+}
+
+.rejectedIcon:before {
+    content: ""
+}
+
+.verifiedBadgeIcon:before {
+    content: ""
+}
+
+.sortDefaultIcon:before {
+    content: ""
+}
+
+.sortAscendingIcon:before {
+    content: ""
+}
+
+.sortDescendingIcon:before {
+    content: ""
+}
+
+.bikeIcon:before {
+    content: ""
+}
+
+.neighborhoodIcon:before {
+    content: ""
+}
+
+.addListingIcon:before {
+    content: ""
+}
+
+.circleCloseIcon:before {
+    content: ""
+}
+
+.infoIcon:before {
+    content: ""
+}
+
+.unverifiedBadgeIcon:before {
+    content: ""
+}
+
+.threeDIcon:before {
+    content: ""
+}
+
+.playVideoPlacardIcon:before {
+    content: ""
+}
+
+.notVerifiedBadgeIcon:before {
+    content: ""
+}
+
+.alertBellIcon:before {
+    content: ""
+}
+
+.keyIcon:before {
+    content: ""
+}
+
+.circleIcon:before {
+    content: ""
+}
+
+.car2Icon:before {
+    content: ""
+}
+
+.train2Icon:before {
+    content: ""
+}
+
+.walkIcon:before {
+    content: ""
+}
+
+.militaryBaseIcon:before {
+    content: ""
+}
+
+.poiTransitIcon:before {
+    content: ""
+}
+
+.poiAirportIcon:before {
+    content: ""
+}
+
+.poiShoppingCenterIcon:before {
+    content: ""
+}
+
+.poiParkIcon:before {
+    content: ""
+}
+
+.poiSchoolIcon:before {
+    content: ""
+}
+
+.poiMilitaryBaseIcon:before {
+    content: ""
+}
+
+.worldIcon:before {
+    content: ""
+}
+
+.settingsIcon:before {
+    content: ""
+}
+
+.advancedFiltersIcon:before {
+    content: ""
+}
+
+.WarningCircleIcon:before {
+    content: ""
+}
+
+.selectDropdown {
+    outline: none;
+    color: #7f7e7e
+}
+
+.selectDropdown button {
+    padding-top: .5em;
+    padding-bottom: .4em;
+    border-radius: 0;
+    border: 1px solid #b1b1b1;
+    margin-top: -13px;
+    margin-left: .5em
+}
+
+.selectDropdown .dropdownMenu.open {
+    border-radius: 0;
+    margin: 0;
+    padding: 0
+}
+
+.selectDropdown .dropdownMenu.open li {
+    border-bottom: 1px solid #b1b1b1
+}
+
+.selectDropdown .dropdownMenu.open li.selected a {
+    font-weight: bold;
+    background-color: #fff;
+    color: #000
+}
+
+.selectDropdown .dropdownMenu.open li.selected a:focus {
+    outline: none;
+    background-color: #77b800;
+    color: #fff
+}
+
+.selectDropdown .dropdownMenu.open li.selected a.hover {
+    background-color: #77b800;
+    color: #fff
+}
+
+.selectDropdown .dropdownMenu.open a {
+    color: #000;
+    display: inline-block;
+    padding: .5em .5em;
+    width: 100%
+}
+
+.selectDropdown .dropdownMenu.open a.hover {
+    background-color: #77b800;
+    color: #fff
+}
+
+.selectDropdown .dropdownMenu.open a:active {
+    background-color: #609400
+}
+
+.selectDropdown .dropdownMenu.open a:focus {
+    display: inline-block;
+    padding: .5em .5em;
+    width: 100%;
+    background-color: #77b800;
+    color: #fff;
+    outline: none
+}
+
+.selectDropdown .dropdownMenu.open a:focus:active {
+    background-color: #609400
+}
+
+.modals {
+    font-size: 1.35em
+}
+
+.modals .modal .modalHeader {
+    border-bottom: medium none;
+    height: 80px
+}
+
+.modals .modal .modalHeader h2 {
+    color: #77b800;
+    text-align: center;
+    font-size: 1.24em;
+    margin-bottom: 1.24em
+}
+
+.modals .modal .modalHeader .close {
+    font-size: .5em;
+    color: #999
+}
+
+.modals .row {
+    margin-bottom: .6em
+}
+
+.modals .modalBody {
+    padding-left: 2em;
+    padding-right: 2em
+}
+
+.modals .modalButtons {
+    text-align: right
+}
+
+.modals h3 {
+    margin: -.3em 0 .7em 0
+}
+
+.modals h3, .modals label, .modals input, .modals textarea, .modals select, .modals .modalButtons {
+    font-size: .7em
+}
+
+.modals select {
+    width: 100%
+}
+
+.modals .modalButtons a {
+    padding: .4375em 1.5625em;
+    border: solid 1px #77b800;
+    line-height: 1em;
+    color: #77b800;
+    margin-right: .625em;
+    display: inline-block
+}
+
+.modals .modalButtons a.primary {
+    color: #fff
+}
+
+.modals .modalButtons a.primary:hover {
+    background-color: #fff;
+    color: #77b800
+}
+
+.modals .modalButtons a:last-of-type {
+    margin-right: 0
+}
+
+.modals input[type="text"] {
+    margin-bottom: 1em
+}
+
+.modals input[type="text"]:last-of-type {
+    margin-bottom: 0
+}
+
+.modals p {
+    font-size: .8em
+}
+
+.modals p.error {
+    color: red;
+    font-size: .7em
+}
+
+.modals .subtext {
+    font-size: .6em
+}
+
+.modals textarea, .modals input {
+    padding: 0 .3em;
+    width: 100%;
+    display: block
+}
+
+.modals textarea {
+    min-height: 6em
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    input[type="text"], input[type="email"], input[type="password"] {
+        -webkit-appearance: none;
+        border-radius: 0
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+    input[type="text"], input[type="email"], input[type="password"] {
+        -webkit-appearance: none;
+        border-radius: 0
+    }
+}
+
+.poweredByGoogle {
+    display: block;
+    margin: 1% 0 2%
+}
+
+.updateToaster {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-color: #000;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    color: #fff;
+    text-align: center;
+    z-index: 1060;
+    padding: 0 0 1.5em
+}
+
+.errorOutline {
+    border: 1px solid #d00413 !important
+}
+
+#mainFooter.mainFooter {
+    border-top: 1px solid #cacaca;
+    background-color: #f4f4f4;
+    font-size: 1.15em;
+    padding: 4em;
+    z-index: 15;
+    overflow-x: hidden;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    min-height: 28em;
+    display: table
+}
+
+@media only screen and (max-width: 1760px) {
+    #mainFooter.mainFooter {
+        font-size: 1.05em
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    #mainFooter.mainFooter {
+        font-size: 1em
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    #mainFooter.mainFooter {
+        font-size: .91em
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    #mainFooter.mainFooter {
+        font-size: .87em
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #mainFooter.mainFooter {
+        padding: 2em 2em 0 2em
+    }
+}
+
+#mainFooter.mainFooter.showMoreCities, #mainFooter.mainFooter.showMoreNeighborhoods {
+    position: relative;
+    min-height: 46.75em
+}
+
+#mainFooter.mainFooter.showMoreCities .moreCities, #mainFooter.mainFooter.showMoreNeighborhoods .moreNeighborhoods {
+    display: block
+}
+
+#mainFooter.mainFooter .copyrightInfo {
+    text-align: right;
+    color: #7f7e7e;
+    margin: 0 0 1.5em
+}
+
+@media only screen and (max-width: 1024px) {
+    #mainFooter.mainFooter .copyrightInfo {
+        margin: 0 0 .5em
+    }
+}
+
+#mainFooter .social {
+    display: inline-block;
+    float: left;
+    margin-right: 8em;
+    max-width: 22em;
+    position: relative
+}
+
+@media only screen and (max-width: 1860px) {
+    #mainFooter .social {
+        margin-right: 5em;
+        max-width: 20em
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    #mainFooter .social {
+        margin-right: 4em;
+        max-width: 20em
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    #mainFooter .social {
+        margin-right: 3em;
+        max-width: 20em
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    #mainFooter .social {
+        margin-right: 4em;
+        max-width: 19em
+    }
+}
+
+@media only screen and (max-width: 1135px) {
+    #mainFooter .social {
+        margin-right: 2em;
+        max-width: 19em
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #mainFooter .social {
+        margin-right: 1.5em;
+        max-width: 12em
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #mainFooter .social {
+        max-width: 11.8em
+    }
+}
+
+#mainFooter .socialIcons {
+    display: block;
+    margin-top: 1em;
+    font-size: 1.9em;
+    text-align: right
+}
+
+@media only screen and (max-width: 1024px) {
+    #mainFooter .socialIcons {
+        font-size: 1.35em;
+        margin-top: .15em
+    }
+}
+
+#mainFooter .socialIcons a {
+    color: #cacaca
+}
+
+#mainFooter .socialIcons a:hover {
+    color: #999
+}
+
+#mainFooter .footerLogo {
+    display: block
+}
+
+#mainFooter .footerLogo img {
+    width: 100%
+}
+
+#mainFooter .footerLinks {
+    display: inline-block;
+    margin-right: 5px;
+    float: left;
+    -ms-grid-row: 1
+}
+
+#mainFooter .footerLinks:nth-of-type(1) {
+    width: 12%
+}
+
+#mainFooter .footerLinks:nth-of-type(2) {
+    width: 16%
+}
+
+#mainFooter .footerLinks:nth-of-type(3) {
+    width: 14%
+}
+
+#mainFooter .footerLinks:nth-of-type(4) {
+    width: 14%
+}
+
+#mainFooter .footerLinks:nth-of-type(5) {
+    width: 10%;
+    margin: 0
+}
+
+@media only screen and (max-width: 1917px) {
+    #mainFooter .footerLinks {
+        font-size: 90%
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #mainFooter .footerLinks {
+        font-size: 80%
+    }
+}
+
+#mainFooter .footerLinks h5 {
+    text-transform: uppercase;
+    color: #4c4c4c;
+    margin-bottom: 1em;
+    margin-top: 0;
+    font-family: 'CostarBrownRegular';
+    font-size: .88em
+}
+
+#mainFooter .footerLinks ul {
+    list-style: none;
+    padding: 0
+}
+
+#mainFooter .footerLinks li {
+    padding-bottom: .75em;
+    white-space: pre-line;
+    word-wrap: break-word
+}
+
+#mainFooter .footerLinks li a {
+    display: block;
+    line-height: 1em;
+    white-space: pre-line;
+    word-wrap: break-word
+}
+
+#mainFooter .footerLinks .moreCities, #mainFooter .footerLinks .moreNeighborhoods {
+    display: none
+}
+
+#mainFooter .footerLinks .showMore {
+    color: #77b800
+}
+
+#mainFooter .footerLinks .showMore:hover {
+    color: #7f7e7e
+}
+
+.ehoLabel {
+    text-align: right
+}
+
+@media only screen and (max-width: 1024px) {
+    .ehoLabel {
+        margin-top: 0;
+        font-size: .8em
+    }
+}
+
+.ehoLabel a, .ehoLabel a:hover {
+    color: #3f3f3f
+}
+
+.ehoLabel i {
+    margin-right: .25em
+}
+
+#menuNavContainer {
+    height: auto;
+    background-color: transparent;
+    width: 15em;
+    position: absolute;
+    display: none;
+    z-index: 100;
+    left: 0;
+    top: -46px
+}
+
+#menuNavContainer .menuHeader {
+    width: 98px;
+    font-size: 14px;
+    border: 0 none;
+    background-color: #929292;
+    color: #fff;
+    cursor: pointer;
+    display: -ms-inline-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 46px;
+    margin-bottom: 2px;
+    font-family: "CostarBrownRegular", sans-serif
+}
+
+#menuNavContainer .menuHeader .hamburgerIcon {
+    font-size: 24px
+}
+
+#menuNavContainer .menuHeader .menuText {
+    margin-left: 7px
+}
+
+#menuNavContainer.open .menuHeader {
+    color: transparent
+}
+
+#menuNavContainer .menuNavCategory {
+    color: #77b800;
+    font-weight: bold;
+    padding-left: 1em
+}
+
+#menuNavContainer .menuDivider {
+    height: 1px;
+    width: 100%;
+    background-color: #cacaca
+}
+
+#menuNavContainer .menuNavigation {
+    position: relative;
+    top: -2px;
+    width: 100%;
+    border: 0 none;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    font-size: .87em;
+    background-color: #fff;
+    border: 1px solid #cacaca;
+    color: #4c4c4c
+}
+
+#menuNavContainer .menuNavigation li:not(.menuSubLinkItem) {
+    font-family: "CostarBrownBold", sans-serif;
+    color: #000;
+    margin: 3px 0
+}
+
+#menuNavContainer .menuNavigation li:not(.menuSubLinkItem) + .menuSubLinkItem {
+    margin-top: -6px
+}
+
+#menuNavContainer .menuNavigation li.menuSubLinkItem {
+    margin-top: -3px
+}
+
+#menuNavContainer .menuNavigation li.menuNavCategory:hover {
+    background-color: #fff;
+    color: #77b800
+}
+
+#menuNavContainer .menuNavigation li a {
+    padding: .4em 2em;
+    display: inline-block;
+    width: calc(100% + 1px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #4c4c4c
+}
+
+#menuNavContainer .menuNavigation li .mapZoomInIcon, #menuNavContainer .menuNavigation li .mapZoomOutIcon {
+    display: none
+}
+
+#menuNavContainer .menuNavigation li .submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    background-color: #fff;
+    border: 1px solid #cacaca;
+    list-style-type: none;
+    padding: 5px 0
+}
+
+#menuNavContainer .menuNavigation li .submenu li {
+    margin: 0
+}
+
+#menuNavContainer .menuNavigation li .submenu li:hover a, #menuNavContainer .menuNavigation li .submenu li:active a {
+    color: #fff !important
+}
+
+#menuNavContainer .menuNavigation li .submenu a {
+    color: #4c4c4c !important;
+    font-family: "CostarBrownLight", sans-serif
+}
+
+#menuNavContainer .menuNavigation li:hover {
+    cursor: pointer;
+    background-color: #77b800;
+    color: #fff
+}
+
+#menuNavContainer .menuNavigation li:hover a {
+    color: #fff
+}
+
+#menuNavContainer .menuNavigation li:hover .favoriteNumber, #menuNavContainer .menuNavigation li:hover .alertsNumber {
+    background-color: #fff;
+    color: #77b800
+}
+
+#menuNavContainer .menuNavigation li.open .submenu {
+    display: block
+}
+
+#menuNavContainer .favoriteNumber {
+    border-radius: 6px;
+    padding: .15em .75em;
+    background-color: #77b800;
+    color: #fff;
+    font-size: .83em;
+    position: absolute;
+    right: 16px
+}
+
+#menuNavContainer .alertsNumber {
+    border-radius: 6px;
+    padding: .15em .75em;
+    background-color: #f2672b;
+    color: #fff;
+    font-size: .83em;
+    position: absolute;
+    right: 16px
+}
+
+#menuNavContainer .menuNavCategory.hideCategoryToggle {
+    cursor: pointer
+}
+
+#menuNavContainer .open {
+    display: block
+}
+
+.collapseShow {
+    display: block
+}
+
+.collapseHide {
+    display: none
+}
+
+#mainHeader.mainHeader {
+    width: 100%;
+    border-bottom: 1px solid #cacaca;
+    background: #fff;
+    font-size: 14px;
+    font-family: "CostarBrownRegular", sans-serif
+}
+
+#mainHeader .mainHeaderNavigation {
+    position: relative;
+    width: 100%;
+    height: 46px;
+    display: -ms-inline-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+#mainHeader .mainHeaderNavigation > *:not(.logoSpacer):not(.logo) {
+    z-index: 1000
+}
+
+#mainHeader .backToResultsSection {
+    font-size: 1em;
+    height: 100%
+}
+
+#mainHeader .backToResultsSection .backToResults {
+    display: -ms-inline-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 0 1em;
+    background: #77b800;
+    color: #fff;
+    cursor: pointer;
+    height: 100%
+}
+
+#mainHeader .backToResultsSection .backToResults .leftArrowIcon {
+    margin-right: .5em
+}
+
+#mainHeader .backToResultsSection .backToResults .mapText {
+    display: inline
+}
+
+@media only screen and (max-width: 1023px) {
+    #mainHeader .backToResultsSection .backToResults .mapText {
+        display: none
+    }
+}
+
+#mainHeader .backToResultsSection .backToResults:hover {
+    background: #555;
+    border: transparent
+}
+
+#mainHeader .menuSection {
+    z-index: 10;
+    font-size: 1em;
+    height: 100%;
+    margin-right: 10px;
+    position: relative
+}
+
+#mainHeader .menuSection .primary {
+    background-color: transparent;
+    border-color: transparent;
+    padding: 0 1em;
+    height: 100%;
+    color: #4c4c4c
+}
+
+#mainHeader .menuSection .primary .hamburgerIcon {
+    vertical-align: middle;
+    font-size: 24px
+}
+
+#mainHeader .menuSection .primary .hamburgerIcon + span {
+    vertical-align: middle;
+    margin-left: .5em
+}
+
+#mainHeader .menuSection .primary:hover {
+    background-color: #555;
+    border: 1px solid #555;
+    color: #fff
+}
+
+#mainHeader .menuSection #headerMenuLink.open {
+    color: #fff;
+    background-color: #929292
+}
+
+#mainHeader .headerSwitchLanguageWrapper .headerSwitchLanguage {
+    color: #4c4c4c
+}
+
+#mainHeader .headerSwitchLanguageWrapper .headerSwitchLanguage i {
+    padding-right: 5px
+}
+
+#mainHeader .headerSwitchLanguageWrapper a.disabled {
+    pointer-events: none;
+    cursor: default;
+    background-color: transparent
+}
+
+#mainHeader .logoSpacer {
+    z-index: 0;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto
+}
+
+#mainHeader .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 46px;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+    display: -ms-inline-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+#mainHeader .logo img {
+    width: 207px
+}
+
+@media only screen and (max-width: 768px) {
+    #mainHeader .logo img {
+        width: 140px
+    }
+}
+
+#mainHeader .logo .listingProviderHeaderLogo {
+    width: 170px;
+    position: relative;
+    top: 3.5px;
+    border-left: 1px solid gray;
+    margin-left: 10px;
+    padding-left: 10px;
+    height: 21px
+}
+
+@media only screen and (max-width: 768px) {
+    #mainHeader .logo .listingProviderHeaderLogo {
+        width: 120px;
+        height: 12.34px;
+        position: relative;
+        top: 1px;
+        margin-left: 5px;
+        padding-left: 5px
+    }
+}
+
+#mainHeader .loginPrevNextWrapper {
+    display: -ms-inline-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    height: 100%
+}
+
+#mainHeader .loginSection {
+    display: -ms-inline-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    white-space: nowrap;
+    position: relative;
+    padding-right: 1em
+}
+
+#mainHeader .loginSection .headerSignIn, #mainHeader .loginSection .headerSignUp {
+    color: #4c4c4c
+}
+
+#mainHeader .loginSection .headerSignIn:hover, #mainHeader .loginSection .headerSignUp:hover {
+    color: #77b800
+}
+
+#mainHeader .loginSection > span {
+    padding: 0 .5em
+}
+
+#mainHeader .loginSection .headerSignIn {
+    padding-left: 0
+}
+
+#mainHeader .loginSection .primary {
+    background: transparent
+}
+
+#mainHeader .loginSection .primary:hover {
+    background: transparent;
+    border-color: transparent;
+    color: #77b800
+}
+
+#mainHeader .loginSection .username {
+    color: #4c4c4c;
+    cursor: pointer;
+    white-space: nowrap;
+    display: -ms-inline-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    max-width: 175px
+}
+
+#mainHeader .loginSection .username > span {
+    text-decoration: underline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: .5em
+}
+
+#mainHeader .loginSection .username:hover {
+    color: #77b800
+}
+
+#mainHeader .loginSection .username:hover .userMenu {
+    display: block
+}
+
+#mainHeader .loginSection .username .menuArrowDownIcon {
+    color: #77b800;
+    min-width: 14px
+}
+
+#mainHeader .loginSection .username .userMenu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    min-height: 6.5em;
+    top: 9px;
+    left: -2px;
+    z-index: 1100
+}
+
+#mainHeader .loginSection .username .userMenuDropdown {
+    background-color: #fff;
+    position: absolute;
+    top: 38px;
+    list-style: none;
+    padding: .5em 0;
+    min-width: 12.5em;
+    right: -10px;
+    border: 1px solid #cacaca;
+    margin-top: -1em;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    font-family: "CostarBrownLight", sans-serif
+}
+
+#mainHeader .loginSection .username .userMenuDropdown:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 13px solid #cacaca;
+    position: absolute;
+    top: -13px;
+    left: 78%
+}
+
+#mainHeader .loginSection .username .userMenuDropdown:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 13px solid #fff;
+    position: absolute;
+    top: -11px;
+    left: 78%
+}
+
+#mainHeader .loginSection .username .userMenuDropdown li {
+    margin-bottom: .5em;
+    padding: 0 .5em
+}
+
+#mainHeader .loginSection .username .userMenuDropdown li:last-child {
+    margin: 0
+}
+
+#mainHeader .loginSection .username .userMenuDropdown a {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer
+}
+
+#mainHeader .loginSection .username .userMenuDropdown #headerMyAccount, #mainHeader .loginSection .username .userMenuDropdown #headerSignOut {
+    width: 100%
+}
+
+#mainHeader .loginSection .username .userMenuDropdown #alertDashbaord {
+    width: 70%
+}
+
+#mainHeader .prevNextSection {
+    display: -ms-inline-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding-right: 1em
+}
+
+#mainHeader .prevNextSection .previous, #mainHeader .prevNextSection .next {
+    text-align: center;
+    text-decoration: none;
+    color: #77b800
+}
+
+#mainHeader .prevNextSection .previous .menuArrowLeftIcon, #mainHeader .prevNextSection .next .menuArrowLeftIcon, #mainHeader .prevNextSection .previous .menuArrowRightIcon, #mainHeader .prevNextSection .next .menuArrowRightIcon {
+    font-size: 12px
+}
+
+#mainHeader .prevNextSection .previous:hover, #mainHeader .prevNextSection .next:hover {
+    color: #4c4c4c
+}
+
+#mainHeader .prevNextSection .previous.disabledButton, #mainHeader .prevNextSection .next.disabledButton {
+    color: #d4d4d4;
+    cursor: default
+}
+
+@media only screen and (max-width: 1024px) {
+    #mainHeader .prevNextSection .previous, #mainHeader .prevNextSection .next {
+        width: auto
+    }
+
+    #mainHeader .prevNextSection .previous .previousText, #mainHeader .prevNextSection .next .previousText, #mainHeader .prevNextSection .previous .nextText, #mainHeader .prevNextSection .next .nextText {
+        display: none
+    }
+}
+
+#mainHeader .prevNextSection .previous {
+    padding-right: 1em
+}
+
+#mainHeader .prevNextSection .next {
+    padding-left: 1em
+}
+
+#mainHeader #headerAddListing {
+    padding: 0 1em;
+    color: #fff;
+    background-color: #666;
+    height: 100%;
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center
+}
+
+#mainHeader #headerAddListing:hover {
+    background-color: #555
+}
+
+#menuNavWrapper {
+    font-family: "CostarBrownLight", sans-serif;
+    font-size: 16px;
+    left: 0;
+    position: absolute;
+    z-index: 1001
+}
+
+#menuNavWrapper .open .menuHeader {
+    color: #fff
+}
+
+.placeholdersjs.hasPrefilledValue {
+    color: #000
+}
+
+.typeahead {
+    position: absolute
+}
+
+.typeahead .results {
+    list-style: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #b1b1b1;
+    margin: -11px 0 0 0;
+    padding: 0;
+    z-index: 10;
+    max-height: 15em;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    overflow: hidden
+}
+
+.typeahead .item {
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid #b1b1b1
+}
+
+.typeahead .item.active {
+    background-color: #77b800;
+    color: #fff
+}
+
+.typeahead .noresults {
+    padding: 5px
+}
+
+.typeahead .matchText {
+    font-family: "CostarBrownRegular"
+}
+
+#loginModal.loginModal h2, #favLoginModal.loginModal h2, #savedSearchLoginModal.loginModal h2, #loginSocialForm.loginModal h2, .confirmModal.loginModal h2, #loginModal.loginSocialModal h2, #favLoginModal.loginSocialModal h2, #savedSearchLoginModal.loginSocialModal h2, #loginSocialForm.loginSocialModal h2, .confirmModal.loginSocialModal h2, #loginModal.loginSocialForm h2, #favLoginModal.loginSocialForm h2, #savedSearchLoginModal.loginSocialForm h2, #loginSocialForm.loginSocialForm h2, .confirmModal.loginSocialForm h2 {
+    margin: 0 1em .25em
+}
+
+#loginModal.loginModal .modalContent, #favLoginModal.loginModal .modalContent, #savedSearchLoginModal.loginModal .modalContent, #loginSocialForm.loginModal .modalContent, .confirmModal.loginModal .modalContent, #loginModal.loginSocialModal .modalContent, #favLoginModal.loginSocialModal .modalContent, #savedSearchLoginModal.loginSocialModal .modalContent, #loginSocialForm.loginSocialModal .modalContent, .confirmModal.loginSocialModal .modalContent, #loginModal.loginSocialForm .modalContent, #favLoginModal.loginSocialForm .modalContent, #savedSearchLoginModal.loginSocialForm .modalContent, #loginSocialForm.loginSocialForm .modalContent, .confirmModal.loginSocialForm .modalContent, #loginModal.loginModal .formContent, #favLoginModal.loginModal .formContent, #savedSearchLoginModal.loginModal .formContent, #loginSocialForm.loginModal .formContent, .confirmModal.loginModal .formContent, #loginModal.loginSocialModal .formContent, #favLoginModal.loginSocialModal .formContent, #savedSearchLoginModal.loginSocialModal .formContent, #loginSocialForm.loginSocialModal .formContent, .confirmModal.loginSocialModal .formContent, #loginModal.loginSocialForm .formContent, #favLoginModal.loginSocialForm .formContent, #savedSearchLoginModal.loginSocialForm .formContent, #loginSocialForm.loginSocialForm .formContent, .confirmModal.loginSocialForm .formContent {
+    display: table;
+    padding-bottom: 30px
+}
+
+#loginModal.loginModal .aptsLogoMarkIcon, #favLoginModal.loginModal .aptsLogoMarkIcon, #savedSearchLoginModal.loginModal .aptsLogoMarkIcon, #loginSocialForm.loginModal .aptsLogoMarkIcon, .confirmModal.loginModal .aptsLogoMarkIcon, #loginModal.loginSocialModal .aptsLogoMarkIcon, #favLoginModal.loginSocialModal .aptsLogoMarkIcon, #savedSearchLoginModal.loginSocialModal .aptsLogoMarkIcon, #loginSocialForm.loginSocialModal .aptsLogoMarkIcon, .confirmModal.loginSocialModal .aptsLogoMarkIcon, #loginModal.loginSocialForm .aptsLogoMarkIcon, #favLoginModal.loginSocialForm .aptsLogoMarkIcon, #savedSearchLoginModal.loginSocialForm .aptsLogoMarkIcon, #loginSocialForm.loginSocialForm .aptsLogoMarkIcon, .confirmModal.loginSocialForm .aptsLogoMarkIcon {
+    color: #77b800;
+    font-size: 2.5em;
+    display: none;
+    position: absolute
+}
+
+#loginModal.loginModal .aptsLogoMarkIcon.rotate, #favLoginModal.loginModal .aptsLogoMarkIcon.rotate, #savedSearchLoginModal.loginModal .aptsLogoMarkIcon.rotate, #loginSocialForm.loginModal .aptsLogoMarkIcon.rotate, .confirmModal.loginModal .aptsLogoMarkIcon.rotate, #loginModal.loginSocialModal .aptsLogoMarkIcon.rotate, #favLoginModal.loginSocialModal .aptsLogoMarkIcon.rotate, #savedSearchLoginModal.loginSocialModal .aptsLogoMarkIcon.rotate, #loginSocialForm.loginSocialModal .aptsLogoMarkIcon.rotate, .confirmModal.loginSocialModal .aptsLogoMarkIcon.rotate, #loginModal.loginSocialForm .aptsLogoMarkIcon.rotate, #favLoginModal.loginSocialForm .aptsLogoMarkIcon.rotate, #savedSearchLoginModal.loginSocialForm .aptsLogoMarkIcon.rotate, #loginSocialForm.loginSocialForm .aptsLogoMarkIcon.rotate, .confirmModal.loginSocialForm .aptsLogoMarkIcon.rotate {
+    -moz-animation: rotate .75s infinite linear;
+    -webkit-animation: rotate .75s infinite linear;
+    animation: rotate .75s infinite linear
+}
+
+#loginModal.loginModal .aptsLogoMarkIcon.active, #favLoginModal.loginModal .aptsLogoMarkIcon.active, #savedSearchLoginModal.loginModal .aptsLogoMarkIcon.active, #loginSocialForm.loginModal .aptsLogoMarkIcon.active, .confirmModal.loginModal .aptsLogoMarkIcon.active, #loginModal.loginSocialModal .aptsLogoMarkIcon.active, #favLoginModal.loginSocialModal .aptsLogoMarkIcon.active, #savedSearchLoginModal.loginSocialModal .aptsLogoMarkIcon.active, #loginSocialForm.loginSocialModal .aptsLogoMarkIcon.active, .confirmModal.loginSocialModal .aptsLogoMarkIcon.active, #loginModal.loginSocialForm .aptsLogoMarkIcon.active, #favLoginModal.loginSocialForm .aptsLogoMarkIcon.active, #savedSearchLoginModal.loginSocialForm .aptsLogoMarkIcon.active, #loginSocialForm.loginSocialForm .aptsLogoMarkIcon.active, .confirmModal.loginSocialForm .aptsLogoMarkIcon.active {
+    display: block
+}
+
+#loginModal.loginModal .checkboxGroup, #favLoginModal.loginModal .checkboxGroup, #savedSearchLoginModal.loginModal .checkboxGroup, #loginSocialForm.loginModal .checkboxGroup, .confirmModal.loginModal .checkboxGroup, #loginModal.loginSocialModal .checkboxGroup, #favLoginModal.loginSocialModal .checkboxGroup, #savedSearchLoginModal.loginSocialModal .checkboxGroup, #loginSocialForm.loginSocialModal .checkboxGroup, .confirmModal.loginSocialModal .checkboxGroup, #loginModal.loginSocialForm .checkboxGroup, #favLoginModal.loginSocialForm .checkboxGroup, #savedSearchLoginModal.loginSocialForm .checkboxGroup, #loginSocialForm.loginSocialForm .checkboxGroup, .confirmModal.loginSocialForm .checkboxGroup {
+    position: relative
+}
+
+#loginModal.loginModal .checkboxGroup input[type="checkbox"], #favLoginModal.loginModal .checkboxGroup input[type="checkbox"], #savedSearchLoginModal.loginModal .checkboxGroup input[type="checkbox"], #loginSocialForm.loginModal .checkboxGroup input[type="checkbox"], .confirmModal.loginModal .checkboxGroup input[type="checkbox"], #loginModal.loginSocialModal .checkboxGroup input[type="checkbox"], #favLoginModal.loginSocialModal .checkboxGroup input[type="checkbox"], #savedSearchLoginModal.loginSocialModal .checkboxGroup input[type="checkbox"], #loginSocialForm.loginSocialModal .checkboxGroup input[type="checkbox"], .confirmModal.loginSocialModal .checkboxGroup input[type="checkbox"], #loginModal.loginSocialForm .checkboxGroup input[type="checkbox"], #favLoginModal.loginSocialForm .checkboxGroup input[type="checkbox"], #savedSearchLoginModal.loginSocialForm .checkboxGroup input[type="checkbox"], #loginSocialForm.loginSocialForm .checkboxGroup input[type="checkbox"], .confirmModal.loginSocialForm .checkboxGroup input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    height: 19px;
+    width: 19px !important
+}
+
+#loginModal.loginModal .checkboxGroup input[type="checkbox"]:checked + label:after, #favLoginModal.loginModal .checkboxGroup input[type="checkbox"]:checked + label:after, #savedSearchLoginModal.loginModal .checkboxGroup input[type="checkbox"]:checked + label:after, #loginSocialForm.loginModal .checkboxGroup input[type="checkbox"]:checked + label:after, .confirmModal.loginModal .checkboxGroup input[type="checkbox"]:checked + label:after, #loginModal.loginSocialModal .checkboxGroup input[type="checkbox"]:checked + label:after, #favLoginModal.loginSocialModal .checkboxGroup input[type="checkbox"]:checked + label:after, #savedSearchLoginModal.loginSocialModal .checkboxGroup input[type="checkbox"]:checked + label:after, #loginSocialForm.loginSocialModal .checkboxGroup input[type="checkbox"]:checked + label:after, .confirmModal.loginSocialModal .checkboxGroup input[type="checkbox"]:checked + label:after, #loginModal.loginSocialForm .checkboxGroup input[type="checkbox"]:checked + label:after, #favLoginModal.loginSocialForm .checkboxGroup input[type="checkbox"]:checked + label:after, #savedSearchLoginModal.loginSocialForm .checkboxGroup input[type="checkbox"]:checked + label:after, #loginSocialForm.loginSocialForm .checkboxGroup input[type="checkbox"]:checked + label:after, .confirmModal.loginSocialForm .checkboxGroup input[type="checkbox"]:checked + label:after {
+    font-size: 1.1em;
+    top: -3px
+}
+
+#loginModal.loginModal .checkboxGroup label:before, #favLoginModal.loginModal .checkboxGroup label:before, #savedSearchLoginModal.loginModal .checkboxGroup label:before, #loginSocialForm.loginModal .checkboxGroup label:before, .confirmModal.loginModal .checkboxGroup label:before, #loginModal.loginSocialModal .checkboxGroup label:before, #favLoginModal.loginSocialModal .checkboxGroup label:before, #savedSearchLoginModal.loginSocialModal .checkboxGroup label:before, #loginSocialForm.loginSocialModal .checkboxGroup label:before, .confirmModal.loginSocialModal .checkboxGroup label:before, #loginModal.loginSocialForm .checkboxGroup label:before, #favLoginModal.loginSocialForm .checkboxGroup label:before, #savedSearchLoginModal.loginSocialForm .checkboxGroup label:before, #loginSocialForm.loginSocialForm .checkboxGroup label:before, .confirmModal.loginSocialForm .checkboxGroup label:before {
+    height: 19px;
+    width: 19px;
+    border: 1px solid #cacaca;
+    border-radius: 3px;
+    display: inline-block
+}
+
+#loginModal.loginModal .checkboxGroup span, #favLoginModal.loginModal .checkboxGroup span, #savedSearchLoginModal.loginModal .checkboxGroup span, #loginSocialForm.loginModal .checkboxGroup span, .confirmModal.loginModal .checkboxGroup span, #loginModal.loginSocialModal .checkboxGroup span, #favLoginModal.loginSocialModal .checkboxGroup span, #savedSearchLoginModal.loginSocialModal .checkboxGroup span, #loginSocialForm.loginSocialModal .checkboxGroup span, .confirmModal.loginSocialModal .checkboxGroup span, #loginModal.loginSocialForm .checkboxGroup span, #favLoginModal.loginSocialForm .checkboxGroup span, #savedSearchLoginModal.loginSocialForm .checkboxGroup span, #loginSocialForm.loginSocialForm .checkboxGroup span, .confirmModal.loginSocialForm .checkboxGroup span {
+    display: inline-block;
+    width: 90%;
+    vertical-align: top;
+    line-height: 1em;
+    color: #999;
+    font-size: .875em
+}
+
+#savedSearchLoginModal .modalBody, #loginSocialForm .modalBody {
+    padding: 0 3em 2em 3em
+}
+
+#loginModal.loginSocialModal .modalContainer, #savedSearchLoginModal.loginSocialModal .modalContainer {
+    width: 500px
+}
+
+#loginModal.loginSocialModal .modalContainer .loginForm input, #savedSearchLoginModal.loginSocialModal .modalContainer .loginForm input {
+    width: 100%
+}
+
+#loginSocialForm.loginSocialForm .modalContainer {
+    width: 600px
+}
+
+#loginSocialForm.loginSocialForm .modalContainer .loginForm input {
+    width: 100%
+}
+
+#loginSocialForm.loginSocialForm .formContent {
+    position: relative;
+    background-color: #fff
+}
+
+#confirmEmailModal .modalBody {
+    padding: 0 1em 1em 1em
+}
+
+#confirmEmailModal .modalContainer {
+    width: 700px
+}
+
+#confirmEmailModal .modalContainer .loginForm input {
+    width: 50%
+}
+
+#loginModal.loginModal .modalHeader.saveYourData, #createAccountModal.loginModal .modalHeader.saveYourData, #confirmEmailModal.loginModal .modalHeader.saveYourData, #loginModal.createAccountModal .modalHeader.saveYourData, #createAccountModal.createAccountModal .modalHeader.saveYourData, #confirmEmailModal.createAccountModal .modalHeader.saveYourData, #loginModal.loginSocialModal .modalHeader.saveYourData, #createAccountModal.loginSocialModal .modalHeader.saveYourData, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData {
+    background-color: #77b800;
+    padding-bottom: .125em !important
+}
+
+#loginModal.loginModal .modalHeader.saveYourData h2, #createAccountModal.loginModal .modalHeader.saveYourData h2, #confirmEmailModal.loginModal .modalHeader.saveYourData h2, #loginModal.createAccountModal .modalHeader.saveYourData h2, #createAccountModal.createAccountModal .modalHeader.saveYourData h2, #confirmEmailModal.createAccountModal .modalHeader.saveYourData h2, #loginModal.loginSocialModal .modalHeader.saveYourData h2, #createAccountModal.loginSocialModal .modalHeader.saveYourData h2, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData h2, #loginModal.loginModal .modalHeader.saveYourData .close, #createAccountModal.loginModal .modalHeader.saveYourData .close, #confirmEmailModal.loginModal .modalHeader.saveYourData .close, #loginModal.createAccountModal .modalHeader.saveYourData .close, #createAccountModal.createAccountModal .modalHeader.saveYourData .close, #confirmEmailModal.createAccountModal .modalHeader.saveYourData .close, #loginModal.loginSocialModal .modalHeader.saveYourData .close, #createAccountModal.loginSocialModal .modalHeader.saveYourData .close, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData .close {
+    color: #fff
+}
+
+#loginModal.loginModal .modalHeader.saveYourData .close, #createAccountModal.loginModal .modalHeader.saveYourData .close, #confirmEmailModal.loginModal .modalHeader.saveYourData .close, #loginModal.createAccountModal .modalHeader.saveYourData .close, #createAccountModal.createAccountModal .modalHeader.saveYourData .close, #confirmEmailModal.createAccountModal .modalHeader.saveYourData .close, #loginModal.loginSocialModal .modalHeader.saveYourData .close, #createAccountModal.loginSocialModal .modalHeader.saveYourData .close, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData .close {
+    background-color: transparent
+}
+
+#loginModal.loginModal .modalHeader.saveYourData .signUpSection, #createAccountModal.loginModal .modalHeader.saveYourData .signUpSection, #confirmEmailModal.loginModal .modalHeader.saveYourData .signUpSection, #loginModal.createAccountModal .modalHeader.saveYourData .signUpSection, #createAccountModal.createAccountModal .modalHeader.saveYourData .signUpSection, #confirmEmailModal.createAccountModal .modalHeader.saveYourData .signUpSection, #loginModal.loginSocialModal .modalHeader.saveYourData .signUpSection, #createAccountModal.loginSocialModal .modalHeader.saveYourData .signUpSection, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData .signUpSection {
+    padding: 1em 2em 0
+}
+
+#loginModal.loginModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #createAccountModal.loginModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #confirmEmailModal.loginModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #loginModal.createAccountModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #createAccountModal.createAccountModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #confirmEmailModal.createAccountModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #loginModal.loginSocialModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #createAccountModal.loginSocialModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData .signUpSection .signUpBtn:hover {
+    color: #77b800;
+    background-color: #fff;
+    border-color: #fff
+}
+
+#loginModal.loginModal .modalHeader.saveYourData .labelledHr, #createAccountModal.loginModal .modalHeader.saveYourData .labelledHr, #confirmEmailModal.loginModal .modalHeader.saveYourData .labelledHr, #loginModal.createAccountModal .modalHeader.saveYourData .labelledHr, #createAccountModal.createAccountModal .modalHeader.saveYourData .labelledHr, #confirmEmailModal.createAccountModal .modalHeader.saveYourData .labelledHr, #loginModal.loginSocialModal .modalHeader.saveYourData .labelledHr, #createAccountModal.loginSocialModal .modalHeader.saveYourData .labelledHr, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData .labelledHr {
+    border-top: 1px solid #fff
+}
+
+#loginModal.loginModal .modalHeader.saveYourData .labelledHr:before, #createAccountModal.loginModal .modalHeader.saveYourData .labelledHr:before, #confirmEmailModal.loginModal .modalHeader.saveYourData .labelledHr:before, #loginModal.createAccountModal .modalHeader.saveYourData .labelledHr:before, #createAccountModal.createAccountModal .modalHeader.saveYourData .labelledHr:before, #confirmEmailModal.createAccountModal .modalHeader.saveYourData .labelledHr:before, #loginModal.loginSocialModal .modalHeader.saveYourData .labelledHr:before, #createAccountModal.loginSocialModal .modalHeader.saveYourData .labelledHr:before, #confirmEmailModal.loginSocialModal .modalHeader.saveYourData .labelledHr:before {
+    color: #fff;
+    background: #77b800
+}
+
+#loginModal.loginModal li, #createAccountModal.loginModal li, #confirmEmailModal.loginModal li, #loginModal.createAccountModal li, #createAccountModal.createAccountModal li, #confirmEmailModal.createAccountModal li, #loginModal.loginSocialModal li, #createAccountModal.loginSocialModal li, #confirmEmailModal.loginSocialModal li {
+    margin-bottom: 1em
+}
+
+#savedSearchLoginModal.loginSocialModal .modalSubTitle {
+    color: #999
+}
+
+#savedSearchLoginModal.loginSocialModal .savedSearchForm {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: .5em;
+    padding-bottom: .5em
+}
+
+#savedSearchLoginModal.loginSocialModal .savedSearchWrap {
+    margin: 1em 0
+}
+
+#savedSearchLoginModal.loginSocialModal .savedSearchWrap .bold {
+    font-family: 'CostarBrownRegular'
+}
+
+#savedSearchLoginModal.loginSocialModal .savedSearchWrap input {
+    width: 100%
+}
+
+#savedSearchLoginModal.loginSocialModal .savedSearchWrap .alertStatus {
+    width: 100%
+}
+
+#savedSearchLoginModal.loginSocialModal .savedSearchError + .checkboxGroup {
+    margin-top: .5em
+}
+
+#savedSearchLoginModal.loginSocialModal .checkboxGroup input[type="checkbox"] {
+    top: 4px
+}
+
+#savedSearchLoginModal.loginSocialModal .checkboxGroup span {
+    line-height: 1.5em
+}
+
+#loginModal.loginModal .modalHeader, #favLoginModal.loginModal .modalHeader, #savedSearchLoginModal.loginModal .modalHeader, #loginSocialForm.loginModal .modalHeader, .confirmModal.loginModal .modalHeader, #loginModal.loginSocialModal .modalHeader, #favLoginModal.loginSocialModal .modalHeader, #savedSearchLoginModal.loginSocialModal .modalHeader, #loginSocialForm.loginSocialModal .modalHeader, .confirmModal.loginSocialModal .modalHeader, #loginModal.loginSocialForm .modalHeader, #favLoginModal.loginSocialForm .modalHeader, #savedSearchLoginModal.loginSocialForm .modalHeader, #loginSocialForm.loginSocialForm .modalHeader, .confirmModal.loginSocialForm .modalHeader {
+    border-bottom: 0 none;
+    padding: 1em
+}
+
+#loginModal.loginModal h2, #favLoginModal.loginModal h2, #savedSearchLoginModal.loginModal h2, #loginSocialForm.loginModal h2, .confirmModal.loginModal h2, #loginModal.loginSocialModal h2, #favLoginModal.loginSocialModal h2, #savedSearchLoginModal.loginSocialModal h2, #loginSocialForm.loginSocialModal h2, .confirmModal.loginSocialModal h2, #loginModal.loginSocialForm h2, #favLoginModal.loginSocialForm h2, #savedSearchLoginModal.loginSocialForm h2, #loginSocialForm.loginSocialForm h2, .confirmModal.loginSocialForm h2 {
+    font-size: 2em;
+    color: #77b800;
+    text-align: center
+}
+
+#loginModal.loginModal ul, #favLoginModal.loginModal ul, #savedSearchLoginModal.loginModal ul, #loginSocialForm.loginModal ul, .confirmModal.loginModal ul, #loginModal.loginSocialModal ul, #favLoginModal.loginSocialModal ul, #savedSearchLoginModal.loginSocialModal ul, #loginSocialForm.loginSocialModal ul, .confirmModal.loginSocialModal ul, #loginModal.loginSocialForm ul, #favLoginModal.loginSocialForm ul, #savedSearchLoginModal.loginSocialForm ul, #loginSocialForm.loginSocialForm ul, .confirmModal.loginSocialForm ul {
+    list-style: none;
+    padding: 0
+}
+
+#loginModal.loginModal .closeIcon, #favLoginModal.loginModal .closeIcon, #savedSearchLoginModal.loginModal .closeIcon, #loginSocialForm.loginModal .closeIcon, .confirmModal.loginModal .closeIcon, #loginModal.loginSocialModal .closeIcon, #favLoginModal.loginSocialModal .closeIcon, #savedSearchLoginModal.loginSocialModal .closeIcon, #loginSocialForm.loginSocialModal .closeIcon, .confirmModal.loginSocialModal .closeIcon, #loginModal.loginSocialForm .closeIcon, #favLoginModal.loginSocialForm .closeIcon, #savedSearchLoginModal.loginSocialForm .closeIcon, #loginSocialForm.loginSocialForm .closeIcon, .confirmModal.loginSocialForm .closeIcon {
+    color: #999
+}
+
+#loginModal.loginModal input, #favLoginModal.loginModal input, #savedSearchLoginModal.loginModal input, #loginSocialForm.loginModal input, .confirmModal.loginModal input, #loginModal.loginSocialModal input, #favLoginModal.loginSocialModal input, #savedSearchLoginModal.loginSocialModal input, #loginSocialForm.loginSocialModal input, .confirmModal.loginSocialModal input, #loginModal.loginSocialForm input, #favLoginModal.loginSocialForm input, #savedSearchLoginModal.loginSocialForm input, #loginSocialForm.loginSocialForm input, .confirmModal.loginSocialForm input {
+    padding: .25em
+}
+
+#loginModal.loginModal li, #favLoginModal.loginModal li, #savedSearchLoginModal.loginModal li, #loginSocialForm.loginModal li, .confirmModal.loginModal li, #loginModal.loginSocialModal li, #favLoginModal.loginSocialModal li, #savedSearchLoginModal.loginSocialModal li, #loginSocialForm.loginSocialModal li, .confirmModal.loginSocialModal li, #loginModal.loginSocialForm li, #favLoginModal.loginSocialForm li, #savedSearchLoginModal.loginSocialForm li, #loginSocialForm.loginSocialForm li, .confirmModal.loginSocialForm li {
+    margin-bottom: 1em
+}
+
+#loginModal.loginModal li.forgotPassword, #favLoginModal.loginModal li.forgotPassword, #savedSearchLoginModal.loginModal li.forgotPassword, #loginSocialForm.loginModal li.forgotPassword, .confirmModal.loginModal li.forgotPassword, #loginModal.loginSocialModal li.forgotPassword, #favLoginModal.loginSocialModal li.forgotPassword, #savedSearchLoginModal.loginSocialModal li.forgotPassword, #loginSocialForm.loginSocialModal li.forgotPassword, .confirmModal.loginSocialModal li.forgotPassword, #loginModal.loginSocialForm li.forgotPassword, #favLoginModal.loginSocialForm li.forgotPassword, #savedSearchLoginModal.loginSocialForm li.forgotPassword, #loginSocialForm.loginSocialForm li.forgotPassword, .confirmModal.loginSocialForm li.forgotPassword {
+    margin-top: -.5em;
+    margin-bottom: .5em
+}
+
+#loginModal.loginModal input::-webkit-input-placeholder, #favLoginModal.loginModal input::-webkit-input-placeholder, #savedSearchLoginModal.loginModal input::-webkit-input-placeholder, #loginSocialForm.loginModal input::-webkit-input-placeholder, .confirmModal.loginModal input::-webkit-input-placeholder, #loginModal.loginSocialModal input::-webkit-input-placeholder, #favLoginModal.loginSocialModal input::-webkit-input-placeholder, #savedSearchLoginModal.loginSocialModal input::-webkit-input-placeholder, #loginSocialForm.loginSocialModal input::-webkit-input-placeholder, .confirmModal.loginSocialModal input::-webkit-input-placeholder, #loginModal.loginSocialForm input::-webkit-input-placeholder, #favLoginModal.loginSocialForm input::-webkit-input-placeholder, #savedSearchLoginModal.loginSocialForm input::-webkit-input-placeholder, #loginSocialForm.loginSocialForm input::-webkit-input-placeholder, .confirmModal.loginSocialForm input::-webkit-input-placeholder {
+    color: #999
+}
+
+#loginModal.loginModal input:-moz-placeholder, #favLoginModal.loginModal input:-moz-placeholder, #savedSearchLoginModal.loginModal input:-moz-placeholder, #loginSocialForm.loginModal input:-moz-placeholder, .confirmModal.loginModal input:-moz-placeholder, #loginModal.loginSocialModal input:-moz-placeholder, #favLoginModal.loginSocialModal input:-moz-placeholder, #savedSearchLoginModal.loginSocialModal input:-moz-placeholder, #loginSocialForm.loginSocialModal input:-moz-placeholder, .confirmModal.loginSocialModal input:-moz-placeholder, #loginModal.loginSocialForm input:-moz-placeholder, #favLoginModal.loginSocialForm input:-moz-placeholder, #savedSearchLoginModal.loginSocialForm input:-moz-placeholder, #loginSocialForm.loginSocialForm input:-moz-placeholder, .confirmModal.loginSocialForm input:-moz-placeholder {
+    color: #999
+}
+
+#loginModal.loginModal input::-moz-placeholder, #favLoginModal.loginModal input::-moz-placeholder, #savedSearchLoginModal.loginModal input::-moz-placeholder, #loginSocialForm.loginModal input::-moz-placeholder, .confirmModal.loginModal input::-moz-placeholder, #loginModal.loginSocialModal input::-moz-placeholder, #favLoginModal.loginSocialModal input::-moz-placeholder, #savedSearchLoginModal.loginSocialModal input::-moz-placeholder, #loginSocialForm.loginSocialModal input::-moz-placeholder, .confirmModal.loginSocialModal input::-moz-placeholder, #loginModal.loginSocialForm input::-moz-placeholder, #favLoginModal.loginSocialForm input::-moz-placeholder, #savedSearchLoginModal.loginSocialForm input::-moz-placeholder, #loginSocialForm.loginSocialForm input::-moz-placeholder, .confirmModal.loginSocialForm input::-moz-placeholder {
+    color: #999
+}
+
+#loginModal.loginModal input:-ms-input-placeholder, #favLoginModal.loginModal input:-ms-input-placeholder, #savedSearchLoginModal.loginModal input:-ms-input-placeholder, #loginSocialForm.loginModal input:-ms-input-placeholder, .confirmModal.loginModal input:-ms-input-placeholder, #loginModal.loginSocialModal input:-ms-input-placeholder, #favLoginModal.loginSocialModal input:-ms-input-placeholder, #savedSearchLoginModal.loginSocialModal input:-ms-input-placeholder, #loginSocialForm.loginSocialModal input:-ms-input-placeholder, .confirmModal.loginSocialModal input:-ms-input-placeholder, #loginModal.loginSocialForm input:-ms-input-placeholder, #favLoginModal.loginSocialForm input:-ms-input-placeholder, #savedSearchLoginModal.loginSocialForm input:-ms-input-placeholder, #loginSocialForm.loginSocialForm input:-ms-input-placeholder, .confirmModal.loginSocialForm input:-ms-input-placeholder {
+    color: #999
+}
+
+#loginModal.loginModal .notMember a, #favLoginModal.loginModal .notMember a, #savedSearchLoginModal.loginModal .notMember a, #loginSocialForm.loginModal .notMember a, .confirmModal.loginModal .notMember a, #loginModal.loginSocialModal .notMember a, #favLoginModal.loginSocialModal .notMember a, #savedSearchLoginModal.loginSocialModal .notMember a, #loginSocialForm.loginSocialModal .notMember a, .confirmModal.loginSocialModal .notMember a, #loginModal.loginSocialForm .notMember a, #favLoginModal.loginSocialForm .notMember a, #savedSearchLoginModal.loginSocialForm .notMember a, #loginSocialForm.loginSocialForm .notMember a, .confirmModal.loginSocialForm .notMember a {
+    font-weight: bold
+}
+
+#loginModal.loginModal .signInBtn, #favLoginModal.loginModal .signInBtn, #savedSearchLoginModal.loginModal .signInBtn, #loginSocialForm.loginModal .signInBtn, .confirmModal.loginModal .signInBtn, #loginModal.loginSocialModal .signInBtn, #favLoginModal.loginSocialModal .signInBtn, #savedSearchLoginModal.loginSocialModal .signInBtn, #loginSocialForm.loginSocialModal .signInBtn, .confirmModal.loginSocialModal .signInBtn, #loginModal.loginSocialForm .signInBtn, #favLoginModal.loginSocialForm .signInBtn, #savedSearchLoginModal.loginSocialForm .signInBtn, #loginSocialForm.loginSocialForm .signInBtn, .confirmModal.loginSocialForm .signInBtn {
+    padding: 7px 20px;
+    float: right
+}
+
+#loginModal.loginModal .signUpBtn, #favLoginModal.loginModal .signUpBtn, #savedSearchLoginModal.loginModal .signUpBtn, #loginSocialForm.loginModal .signUpBtn, .confirmModal.loginModal .signUpBtn, #loginModal.loginSocialModal .signUpBtn, #favLoginModal.loginSocialModal .signUpBtn, #savedSearchLoginModal.loginSocialModal .signUpBtn, #loginSocialForm.loginSocialModal .signUpBtn, .confirmModal.loginSocialModal .signUpBtn, #loginModal.loginSocialForm .signUpBtn, #favLoginModal.loginSocialForm .signUpBtn, #savedSearchLoginModal.loginSocialForm .signUpBtn, #loginSocialForm.loginSocialForm .signUpBtn, .confirmModal.loginSocialForm .signUpBtn {
+    font-size: 1.125em;
+    display: block;
+    width: 100%;
+    padding: .8em 1em
+}
+
+#loginModal.loginModal .secondary, #favLoginModal.loginModal .secondary, #savedSearchLoginModal.loginModal .secondary, #loginSocialForm.loginModal .secondary, .confirmModal.loginModal .secondary, #loginModal.loginSocialModal .secondary, #favLoginModal.loginSocialModal .secondary, #savedSearchLoginModal.loginSocialModal .secondary, #loginSocialForm.loginSocialModal .secondary, .confirmModal.loginSocialModal .secondary, #loginModal.loginSocialForm .secondary, #favLoginModal.loginSocialForm .secondary, #savedSearchLoginModal.loginSocialForm .secondary, #loginSocialForm.loginSocialForm .secondary, .confirmModal.loginSocialForm .secondary {
+    margin-right: .625em
+}
+
+#loginModal.loginModal .signInText, #favLoginModal.loginModal .signInText, #savedSearchLoginModal.loginModal .signInText, #loginSocialForm.loginModal .signInText, .confirmModal.loginModal .signInText, #loginModal.loginSocialModal .signInText, #favLoginModal.loginSocialModal .signInText, #savedSearchLoginModal.loginSocialModal .signInText, #loginSocialForm.loginSocialModal .signInText, .confirmModal.loginSocialModal .signInText, #loginModal.loginSocialForm .signInText, #favLoginModal.loginSocialForm .signInText, #savedSearchLoginModal.loginSocialForm .signInText, #loginSocialForm.loginSocialForm .signInText, .confirmModal.loginSocialForm .signInText {
+    text-align: center
+}
+
+#loginModal.loginModal .error, #favLoginModal.loginModal .error, #savedSearchLoginModal.loginModal .error, #loginSocialForm.loginModal .error, .confirmModal.loginModal .error, #loginModal.loginSocialModal .error, #favLoginModal.loginSocialModal .error, #savedSearchLoginModal.loginSocialModal .error, #loginSocialForm.loginSocialModal .error, .confirmModal.loginSocialModal .error, #loginModal.loginSocialForm .error, #favLoginModal.loginSocialForm .error, #savedSearchLoginModal.loginSocialForm .error, #loginSocialForm.loginSocialForm .error, .confirmModal.loginSocialForm .error {
+    display: none;
+    margin: 0;
+    color: red
+}
+
+#loginModal.loginModal .labelledHr, #favLoginModal.loginModal .labelledHr, #savedSearchLoginModal.loginModal .labelledHr, #loginSocialForm.loginModal .labelledHr, .confirmModal.loginModal .labelledHr, #loginModal.loginSocialModal .labelledHr, #favLoginModal.loginSocialModal .labelledHr, #savedSearchLoginModal.loginSocialModal .labelledHr, #loginSocialForm.loginSocialModal .labelledHr, .confirmModal.loginSocialModal .labelledHr, #loginModal.loginSocialForm .labelledHr, #favLoginModal.loginSocialForm .labelledHr, #savedSearchLoginModal.loginSocialForm .labelledHr, #loginSocialForm.loginSocialForm .labelledHr, .confirmModal.loginSocialForm .labelledHr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 2em 0 1.5em;
+    text-align: center
+}
+
+#loginModal.loginModal .labelledHr:after, #favLoginModal.loginModal .labelledHr:after, #savedSearchLoginModal.loginModal .labelledHr:after, #loginSocialForm.loginModal .labelledHr:after, .confirmModal.loginModal .labelledHr:after, #loginModal.loginSocialModal .labelledHr:after, #favLoginModal.loginSocialModal .labelledHr:after, #savedSearchLoginModal.loginSocialModal .labelledHr:after, #loginSocialForm.loginSocialModal .labelledHr:after, .confirmModal.loginSocialModal .labelledHr:after, #loginModal.loginSocialForm .labelledHr:after, #favLoginModal.loginSocialForm .labelledHr:after, #savedSearchLoginModal.loginSocialForm .labelledHr:after, #loginSocialForm.loginSocialForm .labelledHr:after, .confirmModal.loginSocialForm .labelledHr:after {
+    content: attr(data-label);
+    position: relative;
+    top: -.8em;
+    display: inline-block;
+    padding: 0 .5em;
+    background: #fff
+}
+
+#loginModal.loginModal .modalHeader .modalSubTitle, #favLoginModal.loginModal .modalHeader .modalSubTitle, #confirmEmailModal.loginModal .modalHeader .modalSubTitle, #loginSocialForm.loginModal .modalHeader .modalSubTitle, #loginModal.loginSocialModal .modalHeader .modalSubTitle, #favLoginModal.loginSocialModal .modalHeader .modalSubTitle, #confirmEmailModal.loginSocialModal .modalHeader .modalSubTitle, #loginSocialForm.loginSocialModal .modalHeader .modalSubTitle, #loginModal.loginSocialForm .modalHeader .modalSubTitle, #favLoginModal.loginSocialForm .modalHeader .modalSubTitle, #confirmEmailModal.loginSocialForm .modalHeader .modalSubTitle, #loginSocialForm.loginSocialForm .modalHeader .modalSubTitle {
+    text-align: center
+}
+
+#loginModal.loginAddEdit .modalSubTitle, #favLoginModal.loginAddEdit .modalSubTitle, #confirmEmailModal.loginAddEdit .modalSubTitle, #loginSocialForm.loginAddEdit .modalSubTitle {
+    padding: .25em 3em
+}
+
+#loginModal.loginModal input, #favLoginModal.loginModal input, #savedSearchLoginModal.loginModal input {
+    width: 15.5em
+}
+
+#loginModal.loginModal #savedSearchName, #favLoginModal.loginModal #savedSearchName, #savedSearchLoginModal.loginModal #savedSearchName {
+    width: 100% !important
+}
+
+#loginModal.loginModal .loginForm, #favLoginModal.loginModal .loginForm, #savedSearchLoginModal.loginModal .loginForm {
+    width: 15.5em;
+    float: left
+}
+
+#loginModal.loginModal .loginForm a, #favLoginModal.loginModal .loginForm a, #savedSearchLoginModal.loginModal .loginForm a {
+    font-size: .75em;
+    font-weight: bold
+}
+
+#loginModal.loginModal .loginForm li .error, #favLoginModal.loginModal .loginForm li .error, #savedSearchLoginModal.loginModal .loginForm li .error {
+    padding: .2em 0 0
+}
+
+#loginModal.loginModal .loginSocial, #favLoginModal.loginModal .loginSocial, #savedSearchLoginModal.loginModal .loginSocial {
+    display: inline-block;
+    position: relative
+}
+
+#loginModal.loginModal .or, #favLoginModal.loginModal .or, #savedSearchLoginModal.loginModal .or {
+    position: relative;
+    top: -4.2em;
+    margin: 0 .75em
+}
+
+#loginModal.loginModal .notMember, #favLoginModal.loginModal .notMember, #savedSearchLoginModal.loginModal .notMember {
+    top: -.68em;
+    position: relative;
+    font-size: .91em
+}
+
+#loginModal.loginModal .facebookLogoIcon, #favLoginModal.loginModal .facebookLogoIcon, #savedSearchLoginModal.loginModal .facebookLogoIcon, #loginModal.loginModal .googleLogoIcon, #favLoginModal.loginModal .googleLogoIcon, #savedSearchLoginModal.loginModal .googleLogoIcon {
+    vertical-align: bottom;
+    margin-right: .75em
+}
+
+#loginModal.loginModal .spinner, #favLoginModal.loginModal .spinner, #savedSearchLoginModal.loginModal .spinner {
+    position: absolute
+}
+
+.favModalHeading {
+    text-align: center;
+    margin: 0 0 15px !important
+}
+
+.text-green {
+    color: #77b800
+}
+
+#loginModal.loginSocialModal .modalContainer, #savedSearchLoginModal.loginSocialModal .modalContainer, #confirmEmailModal.loginSocialModal .modalContainer, #loginSocialForm.loginSocialModal .modalContainer, #loginModal.loginSocialForm .modalContainer, #savedSearchLoginModal.loginSocialForm .modalContainer, #confirmEmailModal.loginSocialForm .modalContainer, #loginSocialForm.loginSocialForm .modalContainer {
+    margin-left: -250px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-60%);
+    transform: translateY(-50%)
+}
+
+#loginModal.loginSocialModal .modalContainer .modalContent, #savedSearchLoginModal.loginSocialModal .modalContainer .modalContent, #confirmEmailModal.loginSocialModal .modalContainer .modalContent, #loginSocialForm.loginSocialModal .modalContainer .modalContent, #loginModal.loginSocialForm .modalContainer .modalContent, #savedSearchLoginModal.loginSocialForm .modalContainer .modalContent, #confirmEmailModal.loginSocialForm .modalContainer .modalContent, #loginSocialForm.loginSocialForm .modalContainer .modalContent, #loginModal.loginSocialModal .modalContainer .formContent, #savedSearchLoginModal.loginSocialModal .modalContainer .formContent, #confirmEmailModal.loginSocialModal .modalContainer .formContent, #loginSocialForm.loginSocialModal .modalContainer .formContent, #loginModal.loginSocialForm .modalContainer .formContent, #savedSearchLoginModal.loginSocialForm .modalContainer .formContent, #confirmEmailModal.loginSocialForm .modalContainer .formContent, #loginSocialForm.loginSocialForm .modalContainer .formContent {
+    display: inherit
+}
+
+#loginModal.loginSocialModal .modalContainer .loginForm, #savedSearchLoginModal.loginSocialModal .modalContainer .loginForm, #confirmEmailModal.loginSocialModal .modalContainer .loginForm, #loginSocialForm.loginSocialModal .modalContainer .loginForm, #loginModal.loginSocialForm .modalContainer .loginForm, #savedSearchLoginModal.loginSocialForm .modalContainer .loginForm, #confirmEmailModal.loginSocialForm .modalContainer .loginForm, #loginSocialForm.loginSocialForm .modalContainer .loginForm {
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ddd
+}
+
+#loginModal.loginSocialModal .modalContainer .loginForm .forgotPassword, #savedSearchLoginModal.loginSocialModal .modalContainer .loginForm .forgotPassword, #confirmEmailModal.loginSocialModal .modalContainer .loginForm .forgotPassword, #loginSocialForm.loginSocialModal .modalContainer .loginForm .forgotPassword, #loginModal.loginSocialForm .modalContainer .loginForm .forgotPassword, #savedSearchLoginModal.loginSocialForm .modalContainer .loginForm .forgotPassword, #confirmEmailModal.loginSocialForm .modalContainer .loginForm .forgotPassword, #loginSocialForm.loginSocialForm .modalContainer .loginForm .forgotPassword, #loginModal.loginSocialModal .modalContainer .loginForm .notMember, #savedSearchLoginModal.loginSocialModal .modalContainer .loginForm .notMember, #confirmEmailModal.loginSocialModal .modalContainer .loginForm .notMember, #loginSocialForm.loginSocialModal .modalContainer .loginForm .notMember, #loginModal.loginSocialForm .modalContainer .loginForm .notMember, #savedSearchLoginModal.loginSocialForm .modalContainer .loginForm .notMember, #confirmEmailModal.loginSocialForm .modalContainer .loginForm .notMember, #loginSocialForm.loginSocialForm .modalContainer .loginForm .notMember {
+    font-size: .91em;
+    margin-bottom: 1em
+}
+
+#loginModal.loginSocialModal .modalContainer .loginForm .spinner, #savedSearchLoginModal.loginSocialModal .modalContainer .loginForm .spinner, #confirmEmailModal.loginSocialModal .modalContainer .loginForm .spinner, #loginSocialForm.loginSocialModal .modalContainer .loginForm .spinner, #loginModal.loginSocialForm .modalContainer .loginForm .spinner, #savedSearchLoginModal.loginSocialForm .modalContainer .loginForm .spinner, #confirmEmailModal.loginSocialForm .modalContainer .loginForm .spinner, #loginSocialForm.loginSocialForm .modalContainer .loginForm .spinner {
+    font-size: 2.5em;
+    position: absolute;
+    bottom: .675em;
+    right: 3.75em;
+    display: none
+}
+
+#loginModal.loginSocialModal .modalContainer .loginForm .spinner.active, #savedSearchLoginModal.loginSocialModal .modalContainer .loginForm .spinner.active, #confirmEmailModal.loginSocialModal .modalContainer .loginForm .spinner.active, #loginSocialForm.loginSocialModal .modalContainer .loginForm .spinner.active, #loginModal.loginSocialForm .modalContainer .loginForm .spinner.active, #savedSearchLoginModal.loginSocialForm .modalContainer .loginForm .spinner.active, #confirmEmailModal.loginSocialForm .modalContainer .loginForm .spinner.active, #loginSocialForm.loginSocialForm .modalContainer .loginForm .spinner.active {
+    display: block
+}
+
+#loginModal.loginSocialModal .modalContainer .loginSocial, #savedSearchLoginModal.loginSocialModal .modalContainer .loginSocial, #confirmEmailModal.loginSocialModal .modalContainer .loginSocial, #loginSocialForm.loginSocialModal .modalContainer .loginSocial, #loginModal.loginSocialForm .modalContainer .loginSocial, #savedSearchLoginModal.loginSocialForm .modalContainer .loginSocial, #confirmEmailModal.loginSocialForm .modalContainer .loginSocial, #loginSocialForm.loginSocialForm .modalContainer .loginSocial {
+    margin-top: 1em
+}
+
+#loginModal.loginSocialModal .modalContainer .loginSocial .socialBtn, #savedSearchLoginModal.loginSocialModal .modalContainer .loginSocial .socialBtn, #confirmEmailModal.loginSocialModal .modalContainer .loginSocial .socialBtn, #loginSocialForm.loginSocialModal .modalContainer .loginSocial .socialBtn, #loginModal.loginSocialForm .modalContainer .loginSocial .socialBtn, #savedSearchLoginModal.loginSocialForm .modalContainer .loginSocial .socialBtn, #confirmEmailModal.loginSocialForm .modalContainer .loginSocial .socialBtn, #loginSocialForm.loginSocialForm .modalContainer .loginSocial .socialBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.1em;
+    padding-top: .2em;
+    color: #fff;
+    cursor: pointer;
+    margin-left: .5em
+}
+
+#loginModal.loginSocialModal .modalContainer .loginSocial .facebookBtn, #savedSearchLoginModal.loginSocialModal .modalContainer .loginSocial .facebookBtn, #confirmEmailModal.loginSocialModal .modalContainer .loginSocial .facebookBtn, #loginSocialForm.loginSocialModal .modalContainer .loginSocial .facebookBtn, #loginModal.loginSocialForm .modalContainer .loginSocial .facebookBtn, #savedSearchLoginModal.loginSocialForm .modalContainer .loginSocial .facebookBtn, #confirmEmailModal.loginSocialForm .modalContainer .loginSocial .facebookBtn, #loginSocialForm.loginSocialForm .modalContainer .loginSocial .facebookBtn {
+    background-color: #3b5998
+}
+
+#loginModal.loginSocialModal .modalContainer .loginSocial .googleplusBtn, #savedSearchLoginModal.loginSocialModal .modalContainer .loginSocial .googleplusBtn, #confirmEmailModal.loginSocialModal .modalContainer .loginSocial .googleplusBtn, #loginSocialForm.loginSocialModal .modalContainer .loginSocial .googleplusBtn, #loginModal.loginSocialForm .modalContainer .loginSocial .googleplusBtn, #savedSearchLoginModal.loginSocialForm .modalContainer .loginSocial .googleplusBtn, #confirmEmailModal.loginSocialForm .modalContainer .loginSocial .googleplusBtn, #loginSocialForm.loginSocialForm .modalContainer .loginSocial .googleplusBtn {
+    background-color: #dd4b39
+}
+
+#loginModal.loginSocialModal .modalContainer .loginSocial .socialType, #savedSearchLoginModal.loginSocialModal .modalContainer .loginSocial .socialType, #confirmEmailModal.loginSocialModal .modalContainer .loginSocial .socialType, #loginSocialForm.loginSocialModal .modalContainer .loginSocial .socialType, #loginModal.loginSocialForm .modalContainer .loginSocial .socialType, #savedSearchLoginModal.loginSocialForm .modalContainer .loginSocial .socialType, #confirmEmailModal.loginSocialForm .modalContainer .loginSocial .socialType, #loginSocialForm.loginSocialForm .modalContainer .loginSocial .socialType {
+    font-size: .8em;
+    display: inline-block;
+    margin-top: .5em
+}
+
+#loginModal .modalBody {
+    padding: 0 3em
+}
+
+#loginModal .aptsLogoMarkIcon, #loginModal .spinner {
+    position: initial !important;
+    float: right;
+    margin-right: .25em;
+    margin-top: -.1em
+}
+
+#loginModal .loginSocial {
+    padding-bottom: 1em
+}
+
+#loginModal .notMember {
+    text-align: center;
+    margin-bottom: 0
+}
+
+#loginModal.loginSocialModal .checkboxGroup span {
+    line-height: 1.5em
+}
+
+#loginSocialForm .aptsLogoMarkIcon, #savedSearchLoginModal .aptsLogoMarkIcon, #loginSocialForm .spinner, #savedSearchLoginModal .spinner {
+    right: 3.75em;
+    bottom: .675em
+}
+
+#confirmPhoneModal .modalContainer, #lastNameModal .modalContainer {
+    width: 620px;
+    left: 50%;
+    top: 35%
+}
+
+#confirmPhoneModal .modalContainer .modalContent, #lastNameModal .modalContainer .modalContent {
+    padding-bottom: .5em
+}
+
+#confirmPhoneModal .modalContainer .modalHeader, #lastNameModal .modalContainer .modalHeader {
+    padding-bottom: 0
+}
+
+#confirmPhoneModal .modalContainer .modalHeader .subHeader, #lastNameModal .modalContainer .modalHeader .subHeader {
+    text-align: center;
+    padding: 0 2.5em
+}
+
+#confirmPhoneModal .modalContainer .modalBody, #lastNameModal .modalContainer .modalBody {
+    padding-top: 0
+}
+
+#confirmPhoneModal .modalContainer input, #lastNameModal .modalContainer input {
+    width: 100%
+}
+
+#confirmPhoneModal .modalContainer .primary, #lastNameModal .modalContainer .primary {
+    min-width: 80px;
+    margin-bottom: 1em
+}
+
+#confirmPhoneModal .modalContainer .primary, #lastNameModal .modalContainer .primary, #confirmPhoneModal .modalContainer .secondary, #lastNameModal .modalContainer .secondary, #confirmPhoneModal .modalContainer .spinner, #lastNameModal .modalContainer .spinner {
+    float: right;
+    margin-right: 1.5em
+}
+
+#confirmPhoneModal .modalContainer .inputRow, #lastNameModal .modalContainer .inputRow {
+    padding: 1.5em
+}
+
+#confirmPhoneModal .modalContainer .actionRow, #lastNameModal .modalContainer .actionRow {
+    text-align: center
+}
+
+#signupSocial.signupSocial .currentAccountSignup {
+    display: none
+}
+
+#signupSocial.signupSocial .radioOpt {
+    margin-right: 1.5em;
+    width: 100%;
+    display: block;
+    margin-bottom: 1em
+}
+
+#signupSocial.signupSocial .newAccountSignup, #signupSocial.signupSocial .currentAccountSignup {
+    margin-bottom: 1.5em
+}
+
+#signupSocial.signupSocial .terms {
+    display: inline-block;
+    margin-top: 1em
+}
+
+#signInSocial.signInSocial .modalContainer, #signupSocial.signInSocial .modalContainer, #signInSocial.signupSocial .modalContainer, #signupSocial.signupSocial .modalContainer {
+    margin-left: -250px;
+    width: 500px;
+    top: 40%
+}
+
+#signInSocial.signInSocial .modalBody, #signupSocial.signInSocial .modalBody, #signInSocial.signupSocial .modalBody, #signupSocial.signupSocial .modalBody {
+    padding: 0 3.125em 4em
+}
+
+#signInSocial.signInSocial .modalBody p, #signupSocial.signInSocial .modalBody p, #signInSocial.signupSocial .modalBody p, #signupSocial.signupSocial .modalBody p {
+    margin: 0 0 1em 0
+}
+
+#signInSocial.signInSocial .bodyTxt, #signupSocial.signInSocial .bodyTxt, #signInSocial.signupSocial .bodyTxt, #signupSocial.signupSocial .bodyTxt {
+    margin: 0 0 1em
+}
+
+#signInSocial.signInSocial .formLnk, #signupSocial.signInSocial .formLnk, #signInSocial.signupSocial .formLnk, #signupSocial.signupSocial .formLnk {
+    font-size: .85em;
+    color: #77b800
+}
+
+#signInSocial.signInSocial .formLnk, #signupSocial.signInSocial .formLnk, #signInSocial.signupSocial .formLnk, #signupSocial.signupSocial .formLnk, #signInSocial.signInSocial .greenLnk, #signupSocial.signInSocial .greenLnk, #signInSocial.signupSocial .greenLnk, #signupSocial.signupSocial .greenLnk {
+    color: #77b800
+}
+
+#signInSocial.signInSocial .primary, #signupSocial.signInSocial .primary, #signInSocial.signupSocial .primary, #signupSocial.signupSocial .primary {
+    padding: .5em 2em;
+    float: right
+}
+
+#signInSocial.signInSocial .closeIcon, #signupSocial.signInSocial .closeIcon, #signInSocial.signupSocial .closeIcon, #signupSocial.signupSocial .closeIcon {
+    color: #999
+}
+
+#signInSocial.signInSocial input[type="text"], #signupSocial.signInSocial input[type="text"], #signInSocial.signupSocial input[type="text"], #signupSocial.signupSocial input[type="text"], #signInSocial.signInSocial input[type="password"], #signupSocial.signInSocial input[type="password"], #signInSocial.signupSocial input[type="password"], #signupSocial.signupSocial input[type="password"] {
+    width: 100%;
+    padding: .4em;
+    margin-bottom: 1em
+}
+
+#signInSocial.signInSocial .spinner, #signupSocial.signInSocial .spinner, #signInSocial.signupSocial .spinner, #signupSocial.signupSocial .spinner {
+    float: right;
+    margin-right: 2em;
+    display: none
+}
+
+#signInSocial.signInSocial .spinner.active, #signupSocial.signInSocial .spinner.active, #signInSocial.signupSocial .spinner.active, #signupSocial.signupSocial .spinner.active {
+    display: block
+}
+
+#signInSocial.signInSocial .currentAccountSignup #signupForgotPassword, #signupSocial.signInSocial .currentAccountSignup #signupForgotPassword, #signInSocial.signupSocial .currentAccountSignup #signupForgotPassword, #signupSocial.signupSocial .currentAccountSignup #signupForgotPassword {
+    float: right;
+    margin-bottom: 1em;
+    width: 100%;
+    text-align: right
+}
+
+#createAccountModal.createAccountModal .modalContainer {
+    width: 26.563em;
+    margin-left: -13.3em
+}
+
+#createAccountModal.createAccountModal .modalBody {
+    padding: 0 3.125em 1.25em
+}
+
+#createAccountModal.createAccountModal input {
+    width: 100%
+}
+
+#createAccountModal.createAccountModal .checkboxGroup {
+    position: relative;
+    margin-bottom: .5em
+}
+
+#createAccountModal.createAccountModal .checkboxGroup input[type="checkbox"] {
+    position: absolute;
+    left: 0;
+    width: 19px !important;
+    height: 19px
+}
+
+#createAccountModal.createAccountModal .checkboxGroup input[type="checkbox"]:checked + label:after {
+    font-size: 1.1em;
+    top: -3px
+}
+
+#createAccountModal.createAccountModal .checkboxGroup label:before {
+    height: 19px;
+    width: 19px;
+    border: 1px solid #cacaca;
+    border-radius: 3px
+}
+
+#createAccountModal.createAccountModal .checkboxGroup span {
+    vertical-align: top;
+    color: #999;
+    font-size: .875em
+}
+
+#createAccountModal.createAccountModal .checkboxGroup:last-of-type {
+    margin-bottom: 1em
+}
+
+#createAccountModal.createAccountModal .closeIcon {
+    color: #999
+}
+
+#createAccountModal.signInSocial .modalHeader, #signInSocial.signInSocial .modalHeader, #signupSocial.signInSocial .modalHeader, #createAccountModal.signupSocial .modalHeader, #signInSocial.signupSocial .modalHeader, #signupSocial.signupSocial .modalHeader, #createAccountModal.createAccountModal .modalHeader, #signInSocial.createAccountModal .modalHeader, #signupSocial.createAccountModal .modalHeader {
+    border-bottom: 0 none;
+    padding: 1em
+}
+
+#createAccountModal.signInSocial h2, #signInSocial.signInSocial h2, #signupSocial.signInSocial h2, #createAccountModal.signupSocial h2, #signInSocial.signupSocial h2, #signupSocial.signupSocial h2, #createAccountModal.createAccountModal h2, #signInSocial.createAccountModal h2, #signupSocial.createAccountModal h2 {
+    margin: 0 1em .5em;
+    font-size: 2em;
+    color: #77b800;
+    text-align: center
+}
+
+#createAccountModal.signInSocial ul, #signInSocial.signInSocial ul, #signupSocial.signInSocial ul, #createAccountModal.signupSocial ul, #signInSocial.signupSocial ul, #signupSocial.signupSocial ul, #createAccountModal.createAccountModal ul, #signInSocial.createAccountModal ul, #signupSocial.createAccountModal ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0
+}
+
+#createAccountModal.signInSocial li, #signInSocial.signInSocial li, #signupSocial.signInSocial li, #createAccountModal.signupSocial li, #signInSocial.signupSocial li, #signupSocial.signupSocial li, #createAccountModal.createAccountModal li, #signInSocial.createAccountModal li, #signupSocial.createAccountModal li {
+    margin-bottom: 1em
+}
+
+#createAccountModal.signInSocial input, #signInSocial.signInSocial input, #signupSocial.signInSocial input, #createAccountModal.signupSocial input, #signInSocial.signupSocial input, #signupSocial.signupSocial input, #createAccountModal.createAccountModal input, #signInSocial.createAccountModal input, #signupSocial.createAccountModal input {
+    padding: .25em
+}
+
+#createAccountModal.signInSocial input::-webkit-input-placeholder, #signInSocial.signInSocial input::-webkit-input-placeholder, #signupSocial.signInSocial input::-webkit-input-placeholder, #createAccountModal.signupSocial input::-webkit-input-placeholder, #signInSocial.signupSocial input::-webkit-input-placeholder, #signupSocial.signupSocial input::-webkit-input-placeholder, #createAccountModal.createAccountModal input::-webkit-input-placeholder, #signInSocial.createAccountModal input::-webkit-input-placeholder, #signupSocial.createAccountModal input::-webkit-input-placeholder {
+    color: #999
+}
+
+#createAccountModal.signInSocial input:-moz-placeholder, #signInSocial.signInSocial input:-moz-placeholder, #signupSocial.signInSocial input:-moz-placeholder, #createAccountModal.signupSocial input:-moz-placeholder, #signInSocial.signupSocial input:-moz-placeholder, #signupSocial.signupSocial input:-moz-placeholder, #createAccountModal.createAccountModal input:-moz-placeholder, #signInSocial.createAccountModal input:-moz-placeholder, #signupSocial.createAccountModal input:-moz-placeholder {
+    color: #999
+}
+
+#createAccountModal.signInSocial input::-moz-placeholder, #signInSocial.signInSocial input::-moz-placeholder, #signupSocial.signInSocial input::-moz-placeholder, #createAccountModal.signupSocial input::-moz-placeholder, #signInSocial.signupSocial input::-moz-placeholder, #signupSocial.signupSocial input::-moz-placeholder, #createAccountModal.createAccountModal input::-moz-placeholder, #signInSocial.createAccountModal input::-moz-placeholder, #signupSocial.createAccountModal input::-moz-placeholder {
+    color: #999
+}
+
+#createAccountModal.signInSocial input:-ms-input-placeholder, #signInSocial.signInSocial input:-ms-input-placeholder, #signupSocial.signInSocial input:-ms-input-placeholder, #createAccountModal.signupSocial input:-ms-input-placeholder, #signInSocial.signupSocial input:-ms-input-placeholder, #signupSocial.signupSocial input:-ms-input-placeholder, #createAccountModal.createAccountModal input:-ms-input-placeholder, #signInSocial.createAccountModal input:-ms-input-placeholder, #signupSocial.createAccountModal input:-ms-input-placeholder {
+    color: #999
+}
+
+#createAccountModal.signInSocial .primary, #signInSocial.signInSocial .primary, #signupSocial.signInSocial .primary, #createAccountModal.signupSocial .primary, #signInSocial.signupSocial .primary, #signupSocial.signupSocial .primary, #createAccountModal.createAccountModal .primary, #signInSocial.createAccountModal .primary, #signupSocial.createAccountModal .primary {
+    float: right
+}
+
+#createAccountModal.signInSocial .alreadyMember, #signInSocial.signInSocial .alreadyMember, #signupSocial.signInSocial .alreadyMember, #createAccountModal.signupSocial .alreadyMember, #signInSocial.signupSocial .alreadyMember, #signupSocial.signupSocial .alreadyMember, #createAccountModal.createAccountModal .alreadyMember, #signInSocial.createAccountModal .alreadyMember, #signupSocial.createAccountModal .alreadyMember {
+    display: inline-block;
+    width: 100%;
+    text-align: center
+}
+
+#createAccountModal.signInSocial .loginComplete, #signInSocial.signInSocial .loginComplete, #signupSocial.signInSocial .loginComplete, #createAccountModal.signupSocial .loginComplete, #signInSocial.signupSocial .loginComplete, #signupSocial.signupSocial .loginComplete, #createAccountModal.createAccountModal .loginComplete, #signInSocial.createAccountModal .loginComplete, #signupSocial.createAccountModal .loginComplete {
+    padding-bottom: 3.125em
+}
+
+#createAccountModal.signInSocial .loginComplete label, #signInSocial.signInSocial .loginComplete label, #signupSocial.signInSocial .loginComplete label, #createAccountModal.signupSocial .loginComplete label, #signInSocial.signupSocial .loginComplete label, #signupSocial.signupSocial .loginComplete label, #createAccountModal.createAccountModal .loginComplete label, #signInSocial.createAccountModal .loginComplete label, #signupSocial.createAccountModal .loginComplete label {
+    font-size: .75em
+}
+
+#createAccountModal.signInSocial .loginComplete .spinner, #signInSocial.signInSocial .loginComplete .spinner, #signupSocial.signInSocial .loginComplete .spinner, #createAccountModal.signupSocial .loginComplete .spinner, #signInSocial.signupSocial .loginComplete .spinner, #signupSocial.signupSocial .loginComplete .spinner, #createAccountModal.createAccountModal .loginComplete .spinner, #signInSocial.createAccountModal .loginComplete .spinner, #signupSocial.createAccountModal .loginComplete .spinner {
+    position: relative;
+    left: 12.5em;
+    bottom: .438em
+}
+
+#createAccountModal.signInSocial .loginComplete li, #signInSocial.signInSocial .loginComplete li, #signupSocial.signInSocial .loginComplete li, #createAccountModal.signupSocial .loginComplete li, #signInSocial.signupSocial .loginComplete li, #signupSocial.signupSocial .loginComplete li, #createAccountModal.createAccountModal .loginComplete li, #signInSocial.createAccountModal .loginComplete li, #signupSocial.createAccountModal .loginComplete li {
+    margin-bottom: 0
+}
+
+#createAccountModal.signInSocial .passwordRule, #signInSocial.signInSocial .passwordRule, #signupSocial.signInSocial .passwordRule, #createAccountModal.signupSocial .passwordRule, #signInSocial.signupSocial .passwordRule, #signupSocial.signupSocial .passwordRule, #createAccountModal.createAccountModal .passwordRule, #signInSocial.createAccountModal .passwordRule, #signupSocial.createAccountModal .passwordRule {
+    font-size: .75em
+}
+
+#createAccountModal.signInSocial .error, #signInSocial.signInSocial .error, #signupSocial.signInSocial .error, #createAccountModal.signupSocial .error, #signInSocial.signupSocial .error, #signupSocial.signupSocial .error, #createAccountModal.createAccountModal .error, #signInSocial.createAccountModal .error, #signupSocial.createAccountModal .error {
+    display: none;
+    margin: 0;
+    color: red;
+    word-wrap: break-word
+}
+
+#createAccountModal.signInSocial .aptsLogoMarkIcon, #signInSocial.signInSocial .aptsLogoMarkIcon, #signupSocial.signInSocial .aptsLogoMarkIcon, #createAccountModal.signupSocial .aptsLogoMarkIcon, #signInSocial.signupSocial .aptsLogoMarkIcon, #signupSocial.signupSocial .aptsLogoMarkIcon, #createAccountModal.createAccountModal .aptsLogoMarkIcon, #signInSocial.createAccountModal .aptsLogoMarkIcon, #signupSocial.createAccountModal .aptsLogoMarkIcon {
+    color: #77b800;
+    font-size: 2.5em;
+    display: none;
+    float: right;
+    margin-right: .25em;
+    margin-top: -.1em
+}
+
+#createAccountModal.signInSocial .aptsLogoMarkIcon.rotate, #signInSocial.signInSocial .aptsLogoMarkIcon.rotate, #signupSocial.signInSocial .aptsLogoMarkIcon.rotate, #createAccountModal.signupSocial .aptsLogoMarkIcon.rotate, #signInSocial.signupSocial .aptsLogoMarkIcon.rotate, #signupSocial.signupSocial .aptsLogoMarkIcon.rotate, #createAccountModal.createAccountModal .aptsLogoMarkIcon.rotate, #signInSocial.createAccountModal .aptsLogoMarkIcon.rotate, #signupSocial.createAccountModal .aptsLogoMarkIcon.rotate {
+    -moz-animation: rotate .75s infinite linear;
+    -webkit-animation: rotate .75s infinite linear;
+    animation: rotate .75s infinite linear
+}
+
+#createAccountModal.signInSocial .aptsLogoMarkIcon.active, #signInSocial.signInSocial .aptsLogoMarkIcon.active, #signupSocial.signInSocial .aptsLogoMarkIcon.active, #createAccountModal.signupSocial .aptsLogoMarkIcon.active, #signInSocial.signupSocial .aptsLogoMarkIcon.active, #signupSocial.signupSocial .aptsLogoMarkIcon.active, #createAccountModal.createAccountModal .aptsLogoMarkIcon.active, #signInSocial.createAccountModal .aptsLogoMarkIcon.active, #signupSocial.createAccountModal .aptsLogoMarkIcon.active {
+    display: block
+}
+
+#createAccountModal.createAccountModal .modalSubTitle {
+    text-align: center
+}
+
+#createAccountModal.createAccountModal .modalContainer {
+    margin-left: -250px;
+    width: 500px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%)
+}
+
+#createAccountModal.createAccountModal .modalContainer .modalContent {
+    display: inherit
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginForm {
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    display: inline-block
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginForm input {
+    width: 100%
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginForm .forgotPassword, #createAccountModal.createAccountModal .modalContainer .loginForm .notMember {
+    text-align: right
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginForm .notMember {
+    margin-bottom: 1em
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginForm .terms {
+    font-size: .9em;
+    width: 100%;
+    display: inline-block;
+    margin: 5px 0
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginForm .primary {
+    padding: 7px 20px
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginSocial {
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0 0
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginSocial .socialBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    display: block;
+    text-align: center;
+    font-size: 1.1em;
+    padding-top: .2em;
+    color: #fff;
+    cursor: pointer;
+    margin-left: .75em
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginSocial .facebookBtn {
+    background-color: #3b5998
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginSocial .googleplusBtn {
+    background-color: #dd4b39
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginSocial .socialType {
+    font-size: .8em;
+    margin-top: .5em
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginSocial li {
+    float: left
+}
+
+#createAccountModal.createAccountModal .modalContainer .loginSocial span {
+    font-size: .9em
+}
+
+.ie9 .modalContainer {
+    top: 30% !important
+}
+
+.greenLink {
+    color: #77b800
+}
+
+.hiddenForgotPassword {
+    display: none;
+    font-size: .75em;
+    font-weight: bold
+}
+
+#changePasswordModal .modalContainer, #setPasswordModal .modalContainer {
+    width: 31em;
+    margin-left: -250px;
+    top: 50%
+}
+
+@media only screen and (max-height: 768px) {
+    #changePasswordModal .modalContainer, #setPasswordModal .modalContainer {
+        top: 12em
+    }
+}
+
+#changePasswordModal .modalHeader .modalSubTitle, #setPasswordModal .modalHeader .modalSubTitle {
+    text-align: center;
+    font-size: 2em;
+    color: #77b800;
+    margin: 0 1em .2em
+}
+
+#changePasswordModal .modalBody, #setPasswordModal .modalBody {
+    padding: 0 3em 4em
+}
+
+#changePasswordModal ul, #setPasswordModal ul {
+    list-style: none;
+    padding: 0
+}
+
+#changePasswordModal ul li, #setPasswordModal ul li {
+    margin-bottom: 1em
+}
+
+#changePasswordModal input, #setPasswordModal input {
+    width: 100%;
+    padding: .4em
+}
+
+#changePasswordModal .passwordRule, #setPasswordModal .passwordRule {
+    font-size: .9em;
+    font-family: 'CostarBrownLightItalic';
+    color: #999;
+    line-height: 1.2em;
+    border-bottom: 1px solid #cacaca;
+    padding-bottom: 2em
+}
+
+#changePasswordModal .primary, #setPasswordModal .primary, #changePasswordModal .formLnk, #setPasswordModal .formLnk {
+    float: right
+}
+
+#changePasswordModal .formLnk, #setPasswordModal .formLnk {
+    margin: .2em 1em 0 0
+}
+
+#changePasswordModal .error, #setPasswordModal .error, #changePasswordModal .success, #setPasswordModal .success {
+    display: none;
+    word-wrap: break-word;
+    text-align: center
+}
+
+#changePasswordModal .error, #setPasswordModal .error {
+    color: red
+}
+
+#changePasswordModal .success, #setPasswordModal .success {
+    color: green
+}
+
+#changePasswordModal .spinner, #setPasswordModal .spinner {
+    position: absolute;
+    left: 150px;
+    bottom: 25px
+}
+
+#forgotPasswordModal .modalHeader .modalSubTitle, #forgotPasswordSentModal .modalHeader .modalSubTitle {
+    text-align: center;
+    font-size: 2em;
+    color: #77b800;
+    margin: 0 1em .2em
+}
+
+#forgotPasswordModal ul, #forgotPasswordSentModal ul {
+    list-style: none;
+    padding: 0
+}
+
+#forgotPasswordModal ul li, #forgotPasswordSentModal ul li {
+    margin-bottom: 1em
+}
+
+#forgotPasswordModal input, #forgotPasswordSentModal input {
+    width: 79%;
+    padding: .3em
+}
+
+#forgotPasswordModal .primary, #forgotPasswordSentModal .primary {
+    padding: .55em 2em
+}
+
+#forgotPasswordModal .formLnk, #forgotPasswordSentModal .formLnk {
+    font-size: .85em;
+    color: #77b800
+}
+
+#forgotPasswordModal a.formLnk:hover, #forgotPasswordSentModal a.formLnk:hover {
+    color: #7f7e7e
+}
+
+#forgotPasswordModal .error, #forgotPasswordSentModal .error {
+    display: none;
+    word-wrap: break-word;
+    color: red
+}
+
+#forgotPasswordModal .signupLink, #forgotPasswordSentModal .signupLink {
+    color: #77b800;
+    display: none
+}
+
+#forgotPasswordModal .modalBody {
+    padding: 0 2.5em 2.5em
+}
+
+#forgotPasswordModal .marginRight {
+    margin-right: -5px
+}
+
+.forgotPasswordSentModal .primary {
+    float: right
+}
+
+.forgotPasswordSentModal .modalBody {
+    padding: 0 3.7em 4em
+}
+
+.variantHeaderSignUpTest #mainHeader.mainHeader .loginSection {
+    padding-right: initial;
+    height: 100%;
+    order: 1
+}
+
+.variantHeaderSignUpTest #mainHeader.mainHeader .loginSection .headerSignIn, .variantHeaderSignUpTest #mainHeader.mainHeader .loginSection .headerSignUp, .variantHeaderSignUpTest #mainHeader.mainHeader .loginSection .username {
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 1em
+}
+
+.variantHeaderSignUpTest #mainHeader.mainHeader .loginSection > span {
+    display: none
+}
+
+.variantHeaderSignUpTest #mainHeader.mainHeader .loginSection .headerSignUp {
+    order: 1;
+    background-color: #2196f3;
+    color: #fff
+}
+
+.variantHeaderSignUpTest #mainHeader.mainHeader .loginSection .headerSignUp:hover {
+    color: #fff
+}
+
+.variantHeaderSignUpTest #mainHeader.mainHeader .loginSection .headerSignIn {
+    order: 0
+}
+
+.variantHeaderSignUpTest #mainHeader.mainHeader .loginSection .headerSignIn:hover {
+    color: #7f7e7e
+}
+
+.variantHeaderSignUpTest #mainHeader.mainHeader .loginSection .username > span {
+    order: 0;
+    max-width: 100px
+}
+
+.variantHeaderSignUpTest #mainHeader.mainHeader .loginSection .username i {
+    order: 1
+}
+
+.variantHeaderSignUpTest #mainHeader.mainHeader .prevNextSection {
+    padding-right: 6.857em
+}
+
+#browserLanguagePromptModal.browserLanguagePromptModal .modalContainer {
+    width: 522px;
+    position: initial;
+    margin: 0 auto;
+    padding-top: 15%
+}
+
+@media (max-width: 1920px) {
+    #browserLanguagePromptModal.browserLanguagePromptModal .modalContainer {
+        padding-top: 12%
+    }
+}
+
+@media (max-width: 1920px) and (max-height: 800px) {
+    #browserLanguagePromptModal.browserLanguagePromptModal .modalContainer {
+        padding-top: 4.5%
+    }
+}
+
+@media (max-width: 1024px) {
+    #browserLanguagePromptModal.browserLanguagePromptModal .modalContainer {
+        padding-top: 13%
+    }
+}
+
+@media (max-width: 768px) {
+    #browserLanguagePromptModal.browserLanguagePromptModal .modalContainer {
+        padding-top: 35%
+    }
+}
+
+#browserLanguagePromptModal.browserLanguagePromptModal .browserLanguagePromptHero {
+    background: url("/a/ca5ac3/modules/browserlanguageprompt/content/images/1366_hero.jpg") no-repeat;
+    width: 522px;
+    height: 260px;
+    margin: 0 auto;
+    padding: 47px 0;
+    text-align: center;
+    color: #fff
+}
+
+#browserLanguagePromptModal.browserLanguagePromptModal .browserLanguagePromptHero .logo {
+    background: url("/a/7856f1/modules/browserlanguageprompt/content/images/spanish_logo_white.png") no-repeat;
+    width: 184px;
+    height: 25px;
+    margin: 0 auto
+}
+
+#browserLanguagePromptModal.browserLanguagePromptModal .browserLanguagePromptHero h2 {
+    margin-top: 48px;
+    font: 45px 'amatic', sans-serif;
+    text-transform: uppercase
+}
+
+#browserLanguagePromptModal.browserLanguagePromptModal .languageConfirmation {
+    margin: 47px 0;
+    text-align: center;
+    color: #4c4c4c;
+    font-family: "CostarBrownRegular", sans-serif
+}
+
+#browserLanguagePromptModal.browserLanguagePromptModal .languageConfirmation h3 {
+    font-size: 25px
+}
+
+#browserLanguagePromptModal.browserLanguagePromptModal .languageConfirmation p {
+    font-size: 18px;
+    font-family: "CostarBrownLight", sans-serif
+}
+
+#browserLanguagePromptModal.browserLanguagePromptModal .languageConfirmation .buttonWrapper {
+    width: 100%;
+    text-align: center
+}
+
+#browserLanguagePromptModal.browserLanguagePromptModal .languageConfirmation .buttonWrapper button {
+    margin: 0 auto;
+    display: block;
+    width: 45%;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 14px
+}
+
+#browserLanguagePromptModal.browserLanguagePromptModal .languageConfirmation .buttonWrapper button:first-of-type {
+    margin-bottom: 10px
+}

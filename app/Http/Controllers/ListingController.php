@@ -8,16 +8,18 @@ use App\User;
 use App\Listing;
 use App\Favorit;
 use App\ListingImage;
+use App\Review;
 
 class ListingController extends Controller
 {
 
-    public function __construct(User $user, Listing $listing , ListingImage $listingImage , Favorit $favorit)
+    public function __construct(User $user, Listing $listing , ListingImage $listingImage , Favorit $favorit ,Review $review)
     {
         $this->user = $user;
         $this->favorit = $favorit;
         $this->listing = $listing;
         $this->listingImage = $listingImage;
+        $this->review = $review;
     }
 
 
@@ -309,6 +311,17 @@ class ListingController extends Controller
         if($this->listingImage->where('id' ,$id)->delete()){
              return redirect()->back();
         }
+    }
+
+    public function writeReviews(Request $request){
+        if($this->review->create($request->all())){
+            return redirect()->back()->with('writed' , 'Your review Sucessfully addet');
+        }
+    }
+
+    public function deleteReviews($id){
+        $this->review()->where('id'  ,$id)->delete();
+        return redirect()->back();
     }
 
 

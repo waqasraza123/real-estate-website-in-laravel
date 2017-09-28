@@ -3954,7 +3954,14 @@ section.thumbs-slider {
 	transition:         all .5s ease-in-out;
 }
 
+.no_style{
+	list-style: none;
+	text-align: left;
+}
 
+.no_padding{
+	padding-left: 3px;
+}
 
 /********** ESTATE DETAILS **********/
 
@@ -3968,7 +3975,19 @@ section.thumbs-slider {
 	width: 40px;
 }
 
-.details-image i.fa {
+.box_2{
+	background: white !important;
+	border-top: 1px solid #eeeeee !important;
+	border-right: 1px solid #eeeeee !important;
+	border-bottom: 1px solid #eeeeee !important;
+}
+
+
+.hidden_box{
+	display: none;
+}
+
+.details-image i .fa {
 	top: 50%;
 	left: 0;
 	transform: translateY(-50%);	
@@ -3981,6 +4000,18 @@ section.thumbs-slider {
 	font-size: 2.4em;
 }
 
+.details-image i {
+	top: 50%;
+	left: 7px;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	position: absolute;
+	font-size: 2.4em;
+}
 .details-image img {
 	top: 50%;
 	left: 0;
@@ -4124,6 +4155,32 @@ section.thumbs-slider {
 	-ms-transition:     all .5s ease-in-out;
 	-o-transition:      all .5s ease-in-out;
 	transition:         all .5s ease-in-out;
+}
+
+.agent-icon-circle-2 {
+	display: block;
+	border-radius: 50% 50%;
+	border: 1px solid #3797dd;
+	background: #3797dd;
+	line-height: 35px;
+	width: 35px;
+	height: 35px;
+	text-align: center;
+	margin-top: 8px;
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition:    all .5s ease-in-out;
+	-ms-transition:     all .5s ease-in-out;
+	-o-transition:      all .5s ease-in-out;
+	transition:         all .5s ease-in-out;
+}
+
+.style_none{
+	list-style: none;
+}
+
+.agent-icon-circle-2 i {
+	font-size: 20px;
+	color:white;
 }
 
 .icon-margin {

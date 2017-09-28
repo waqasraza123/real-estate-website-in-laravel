@@ -34,6 +34,7 @@ Route::get('/setlang/{lang}', function($lang)
 
 Route::get('/account/{id}', ['as' => 'account' , 'uses' => 'HomeController@account']);
 Route::get('account/listings/{id}', ['as' => 'accountListing' , 'uses' => 'HomeController@accountListing']);
+Route::get('account/dashboard/{id}', ['as' => 'accountDashboard' , 'uses' => 'HomeController@accountDashboard']);
 Route::get('account/savedListings/{id}', ['as' => 'savedListings' , 'uses' => 'HomeController@savedListings']);
 Route::get('account/favorites/{id}', ['as' => 'accountFavorites' , 'uses' => 'HomeController@accountFavorites']);
 Route::get('account/saved_searches/{id}', ['as' => 'accountSavedSearches' , 'uses' => 'HomeController@accountSavedSearches']);
@@ -66,6 +67,8 @@ Route::post('search_listing' , ['as' => 'searchListing' , 'uses' => 'ListingCont
 Route::post('search_listing_ajax' , ['as' => 'searchListingAjax' , 'uses' => 'ListingController@searchListingAjax']);
 Route::post('search_listing_user_profile', ['as' => 'searchSavedSeraches' , 'uses' => 'ListingController@searchSavedSeraches']);
 Route::get('delete_listing_images/{id}', ['as' => 'delListingImages' , 'uses' => 'ListingController@delListingImages']);
+Route::post('write_rewievs' , ['as' => 'writeReviews' , 'uses' => 'ListingController@writeReviews']);
+Route::post('delete_rewievs' , ['as' => 'deleteReviews' , 'uses' => 'ListingController@deleteReviews']);
 
 Auth::routes();
 

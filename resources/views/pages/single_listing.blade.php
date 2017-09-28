@@ -71,7 +71,7 @@
                                 <div class="small-icon"><i class="jfont"></i></div>
                             </div>
                         @endif
-                        <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="details-image pull-left hidden-xs">
                                 <i class="fa fa-home"></i>
                             </div>
@@ -98,9 +98,109 @@
                             <div class="title-separator-primary"></div>
                             <p class="details-desc">{{ $listing->description }}</p>
                         </div>
-                        <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+                    </div>
 
-                            <div class="details-parameters-price">${{ $listing->rent }}</div>
+                    <div class="row margin-top-15">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <h4 class="">{{ Lang::get('pages.app_ametites') }}<span class="">.</span></h4>
+                            <div class="title-separator-primary"></div>
+                            <div class="row margin-top-30">
+                                <div class="col-md-4 text-center">
+                                    <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                        <i class="featuresIcon"></i>
+                                    </div>
+                                    <div class="details-title pull-left">
+                                        <h5 class="subtitle-margin"> </h5>
+                                        <h4>Unique Features<span class="special-color">.</span></h4>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <ul class="no_padding">
+                                        @if($listing->no_smocking == '1')
+                                            <li class="no_style"><span class="bullet">•</span> {{ Lang::get('listing.no_smo') }}</li>
+                                        @endif
+                                        @if($listing->wheelchair == '1')
+                                            <li class="no_style"><span class="bullet">•</span> {{ Lang::get('listing.wheel_access') }}</li>
+                                        @endif
+                                        @if($listing->furnished == '1')
+                                            <li class="no_style"><span class="bullet">•</span> {{ Lang::get('listing.furnished') }}</li>
+                                        @endif
+                                            <li class="no_style"><span class="bullet">•</span> Bedrooms {{ $listing->beds_count }}</li>
+                                            <li class="no_style"><span class="bullet">•</span> Bathrooms {{ $listing->baths_count }}</li>
+
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                        <i class="petIcon"></i>
+                                    </div>
+                                    <div class="details-title pull-left">
+                                        <h5 class="subtitle-margin"> </h5>
+                                        <h4>Pet Policy<span class="special-color">.</span></h4>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <ul class="no_padding">
+                                        @if($listing->dogs == '1')
+                                            <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.dogs_ok') }}</li>
+                                        @endif
+                                        @if($listing->cats == '1')
+                                            <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.cats_ok') }}</li>
+                                        @endif
+                                        @if($listing->no_pets == '1')
+                                            <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.no_pets') }}</li>
+                                        @endif
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                        <i class="parkingIcon"></i>
+                                    </div>
+                                    <div class="details-title pull-left">
+                                        <h5 class="subtitle-margin"> </h5>
+                                        <h4>{{ Lang::get('listing.parking_type') }}<span class="special-color">.</span></h4>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <ul class="no_padding">
+                                        <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                            @if($listing->parking_type == '1')
+                                                {{ Lang::get('listing.surfact_lot') }}
+                                            @elseif($listing->parking_type == '3')
+                                                {{ Lang::get('listing.covered') }}
+                                            @elseif($listing->parking_type == '4')
+                                                {{ Lang::get('listing.street') }}
+                                            @elseif($listing->parking_type == '5')
+                                                {{ Lang::get('listing.garage') }}
+                                            @elseif($listing->parking_type == '7')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                        </li>
+                                        <li style="list-style: none;text-align:left">
+                                            <span class="bullet">•</span>
+                                            Parking Fee {{ $listing->parking_fee }}$/mo
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                        <i class="leaseIcon"></i>
+                                    </div>
+                                    <div class="details-title pull-left">
+                                        <h5 class="subtitle-margin"> </h5>
+                                        <h4>Lease Length<span class="special-color">.</span></h4>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <ul class="no_padding">
+                                        <li class="no_style" >
+                                            {{ $listing->lease_length }}
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+
+
+                            {{--<div class="">${{ $listing->rent }}</div>
                             <div class="details-parameters">
                                 <div class="details-parameters-cont">
                                     <div class="details-parameters-name">bedrooms</div>
@@ -130,17 +230,19 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="details-parameters-cont">
-                                    <div class="details-parameters-name">Parking Fee</div>
+                                    <div class="details-parameters-name"></div>
                                     <div class="details-parameters-val">
-                                       {{ $listing->parking_fee }}$/mo
+                                        {{ $listing->parking_fee }}$/mo
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
-                    </div>
-                    <div class="row margin-top-45">
-                        <div class="col-xs-6 col-sm-4">
+
+
+
+
+                       {{-- <div class="col-xs-6 col-sm-4">
                             <ul class="details-ticks">
                                 @if($listing->dogs == '1')
                                     <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
@@ -166,9 +268,9 @@
                                 @endif
                             </ul>
 
-                        </div>
+                        </div>--}}
                     </div>
-                    <div class="row margin-top-45">
+                    <div class="row margin-top-15">
                         <div class="col-xs-12 apartment-tabs">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
@@ -196,6 +298,67 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Reviews Area -->
+                    <div class="row margin-top-60">
+                        <div class="col-xs-12">
+                            <h3 class="title-negative-margin">Reviews<span class="special-color">.</span></h3>
+                            <div class="title-separator-primary"></div>
+                        </div>
+                    </div>
+                    <div class="row margin-top-60">
+                        <div class="col-xs-8">
+                            <div class="quote-box box_2" >
+                                <h5>Apartment Reviews</h5>
+                                <br>
+                                @if(!$listing->Reviews()->first())
+                                    <p>There are no reviews for this property. Be the first to add a review on this property</p>
+                                @endif
+                                <button type="button" href="#" id="show_review_box" class="button-primary ">
+                                    <span>Write a Review</span>
+                                    <div class="button-triangle"></div>
+                                    <div class="button-triangle2"></div>
+                                    <div class="button-icon"><i class="fa fa-quote-right"></i></div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-xs-12 hidden_box margin-top-15">
+                            <form name="contact-from" action="{{ route('writeReviews') }}" method="post">
+                                {{ csrf_field() }}
+                                <input type="hidden" value="{{ $listing->id }}" name="listing_id">
+                                @if(Auth::user())
+                                    <input type="hidden" value="{{ $listing->User()->first()->id }}" name="user_id">
+                                @endif
+                                <input name="title" value="" type="text" class="input-full main-input" placeholder="Title">
+                                <textarea name="description" class="input-full agent-textarea main-input" placeholder="Review"></textarea>
+                                <div class="form-submit-cont">
+                                    <button type="submit" href="#" class="button-primary pull-right">
+                                        <span>Write</span>
+                                        <div class="button-triangle"></div>
+                                        <div class="button-triangle2"></div>
+                                        <div class="button-icon"><i class="fa fa-paper-plane"></i></div>
+                                    </button>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                        @if($listing->Reviews()->first())
+                            <div class="col-xs-12">
+                                @foreach($listing->Reviews()->get() as $review)
+                                    <div class="quote-box box_2 margin-top-15" >
+                                        <h5>{{ $review->title }}</h5>
+                                        <br>
+                                        <p>{{ $review->description }}</p>
+                                        <div class="small-triangle"></div>
+                                        <div class="small-icon"><i class="fa fa-quote-right"></i></div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @endif
+                    </div>
+
+                    <!-- Contact Seller Area -->
                     <div class="row margin-top-60">
                         <div class="col-xs-12">
                             <h3 class="title-negative-margin">contact the seller<span class="special-color">.</span></h3>
@@ -278,6 +441,14 @@
                 mapInitAddress("{{ $listing->address }}","featured-map","{{ asset('images/pin-house.png') }}", false);
         }
 
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $('#show_review_box').click(function () {
+                $('.hidden_box').css('display' , 'block' )
+            })
+        })
     </script>
 
 @endsection

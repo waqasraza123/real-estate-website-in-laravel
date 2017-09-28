@@ -8,6 +8,7 @@ use App\Listing;
 use App\Favorit;
 use App\SavedSearch;
 use App\UserNotification;
+use App\Review;
 
 class HomeController extends Controller
 {
@@ -16,13 +17,14 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct(User $user , Listing $listing , Favorit $favorit , SavedSearch $savedSearch ,UserNotification $notification)
+    public function __construct(User $user , Listing $listing , Favorit $favorit , SavedSearch $savedSearch ,UserNotification $notification , Review $review)
     {
         $this->user = $user;
         $this->savedSearch = $savedSearch;
         $this->favorits = $favorit;
         $this->listing = $listing;
         $this->notification = $notification;
+        $this->review = $review;
     }
 
     /**
@@ -40,6 +42,11 @@ class HomeController extends Controller
     public function homePage(){
         $listing = $this->listing->where('listing_status' , 'done')->paginate(6);
         return view('welcome'  , compact('listing'));
+    }
+
+    public function accountDashboard($id){
+       $reviews =  $this->review->where('user_id' , $id)->get();
+       return view('user.dashboardReviews'  , compact('reviews'));
     }
 
     public function  addListing(){

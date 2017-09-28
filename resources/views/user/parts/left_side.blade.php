@@ -30,7 +30,7 @@
             </a>
         </div>
         <div class=" margin-top-15">
-            <a href="my-profile.html" class="button-primary  button-fulls">
+            <a href="{{ route('accountDashboard' , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
                 <span class="peofile_left_text">{{ Lang::get('profile.dashboard') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>

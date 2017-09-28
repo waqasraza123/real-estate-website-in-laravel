@@ -43,6 +43,7 @@ return [
     'insertadd' => 'Instert your account email address.',
     'send_pass' => 'We will send you a link to reset your password.',
     'reset_pass' => 'Reset password',
+    'app_ametites' => 'Apartment Amenities',
 
 
 

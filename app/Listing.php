@@ -64,4 +64,8 @@ class Listing extends Model
     public function Favorites(){
         return $this->hasMany('App\Favorit');
     }
+
+    public function Reviews(){
+        return $this->hasMany('App\Review');
+    }
 }
