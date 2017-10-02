@@ -44,7 +44,9 @@ class Listing extends Model
         'user_id',
         'lat',
         'lng',
-        'listing_status'
+        'listing_status',
+        'featured',
+        'approved'
     ];
 
     public function ListingsImages(){

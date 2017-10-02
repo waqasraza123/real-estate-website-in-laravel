@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'admin@erpscloud.com', 'name' => 'Apartaments'],
+    'from' => ['address' => 'admin_files@erpscloud.com', 'name' => 'Apartaments'],
 
     /*
     |--------------------------------------------------------------------------

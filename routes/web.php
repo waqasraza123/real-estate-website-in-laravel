@@ -83,4 +83,48 @@ Route::get('/social/redirect/{provider}',   ['as' => $s . 'redirect',   'uses' =
 Route::get('/social/handle/{provider}',     ['as' => $s . 'handle',     'uses' => 'SocialAuthController@googleCallback']);
 
 
+        #Admin Routes
+
+Route::get('/admin' , ['as' => 'adminLogin' , 'uses' => 'AdminController@index']);
+Route::post('/admin_login' , ['as' => 'adminPostLogin' , 'uses' => 'AdminController@adminPostLogin']);
+
+Route::group(['middleware' => 'admin.only'], function() {
+    Route::group(['prefix' => 'admin'], function () {
+        Route::get('/home' , ['as' => 'adminHome' , 'uses' => 'AdminController@adminHome']);
+
+            /*Users Controlling*/
+
+        Route::get('/users' , ['as' => 'admUsers' , 'uses' => 'AdminController@admUsers']);
+        Route::get('/users/create' , ['as' => 'admUsersCreate' , 'uses' => 'AdminController@admUsersCreate']);
+        Route::post('/users/create' , ['as' => 'postadmUsersCreate' , 'uses' => 'AdminController@postadmUsersCreate']);
+        Route::get('/users/edit/{id}' , ['as' => 'admEditUsers' , 'uses' => 'AdminController@admEditUsers']);
+        Route::get('/users/delete/{id}' , ['as' => 'admDeleteUsers' , 'uses' => 'AdminController@admDeleteUsers']);
+        Route::post('edit_users' , ['as' => 'postEditUser' , 'uses' => 'AdminController@postEditUser' ]);
+
+            /*Logo */
+
+        Route::get('logo' , ['as' => 'admLogo'  , 'uses' => 'AdminController@admLogo']);
+        Route::post('logo' , ['as' => 'admPostLogo'  , 'uses' => 'AdminController@admPostLogo']);
+
+
+            /*Footer Contact Us Section*/
+
+
+            /*Listing delete Edit*/
+
+
+        Route::get('/listing' , ['as' => 'admListing' , 'uses' => 'AdminController@admListing']);
+        Route::get('/listing/edit/{id}'  , ['as' => 'admEditListing'  , 'uses' => 'AdminController@admEditListing']);
+        Route::post('/listing/edit'  , ['as' => 'admPostEditListing'  , 'uses' => 'AdminController@admPostEditListing']);
+        Route::get('/listing/delete/{id}' , ['as' => 'admDeleteListing' , 'uses' => 'AdminController@admDeleteListing']);
+
+            /*Blog Area*/
+
+        Route::get('/blog' , ['as' => 'admBlog' , 'uses' => 'AdminController@admBlog']);
+
+    });
+});
+
+
+
 
