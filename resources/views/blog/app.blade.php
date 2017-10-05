@@ -413,6 +413,5 @@
         @endif
     </script>
     @yield('scripts')
-    @yield('footer-scripts')
     </body>
 </html>

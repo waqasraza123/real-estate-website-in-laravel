@@ -185,7 +185,7 @@ class AdminController extends Controller
 
 
     public function admBlog(){
-        
+
     }
 
 

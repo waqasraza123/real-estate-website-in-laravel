@@ -356,7 +356,7 @@
                         <i class="fa fa-address-book-o"></i> <span>Listings</span>
                     </a>
                 </li>
-                <li class="active ">
+               <li class="active ">
                     <a href="{{ route('admBlog') }}">
                         <i class="fa fa-address-book-o"></i> <span>Blog</span>
                     </a>
@@ -622,6 +622,10 @@
 <script src="{{ asset('admin_files/dist/js/pages/dashboard.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('admin_files/dist/js/demo.js') }}"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
 @yield('scripts')
+@yield('footer-scripts')
 </body>
 </html>

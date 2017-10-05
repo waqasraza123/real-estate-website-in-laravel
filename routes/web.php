@@ -120,10 +120,12 @@ Route::group(['middleware' => 'admin.only'], function() {
 
             /*Blog Area*/
 
-        Route::get('/blog' , ['as' => 'admBlog' , 'uses' => 'AdminController@admBlog']);
+        //Route::get('/blog' , ['as' => 'admBlog' , 'uses' => 'AdminController@admBlog']);
 
     });
 });
+
+
 
 
 
