@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 use App\User;
+use App\Logo;
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,7 +24,12 @@ class AppServiceProvider extends ServiceProvider
               'password' => bcrypt('tyom666'),
               'role' => '1'
           ]);
+
+
       }
+
+        $logo =  Logo::first();
+        \View::share('logo_image' , $logo);
     }
 
     /**

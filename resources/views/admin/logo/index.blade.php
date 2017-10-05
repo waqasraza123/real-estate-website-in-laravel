@@ -38,12 +38,15 @@
                             <p>
                                 Current Logo
                             </p>
-                            <img src="{{ asset('assets/images/'.$logo->image) }}" alt="">
+                            @if($logo)
+                                <img src="" alt="">
+                            @endif
                         </div>
                         <form action="{{ route('admPostLogo') }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="exampleInputFile">Logo</label>
+                                <p>The image must have max width 452px and max height 80px</p>
                                 <input type="file" name="image" id="exampleInputFile">
                             </div>
                             <div class="form-group text-center">

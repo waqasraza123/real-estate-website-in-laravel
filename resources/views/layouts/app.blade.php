@@ -128,7 +128,11 @@
 
                 <div class="logo">
                     <a href="{{ route('homes')}}">
-                        <img src="{{ asset('images\logo-dark.png') }}" alt=" Logo">
+                        @if($logo_image)
+                            <img src="{{ asset('assets/images/'.$logo_image->image) }}" alt=" Logo">
+                        @else
+                            <img src="{{ asset('images\logo-dark.png') }}" alt=" Logo">
+                        @endif
                     </a>
                 </div>
 

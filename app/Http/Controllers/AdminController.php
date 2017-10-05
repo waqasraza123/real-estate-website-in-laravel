@@ -118,14 +118,23 @@ class AdminController extends Controller
 
     public function admPostLogo(Request $request){
         $this->validate($request, [
-           'image' => 'required|image|dimensions:max_heigth:80px,max_width:452px'
+           'image' => 'required|image|dimensions:max_height=80px,max_width=452px'
         ]);
         $image = $this->getImagesName($request->file());
-        if($this->logo->first()->update(['image' => $image[0]['image']])){
-            return redirect()->back()->with('success' , 'Successfully complated');
+        if($this->logo->first()){
+            if($this->logo->first()->update(['image' => $image[0]['image']])){
+                return redirect()->back()->with('success' , 'Successfully complated');
+            }else{
+                return redirect()->back()->withErrors('error' , 'please try again');
+            }
         }else{
-            return redirect()->back()->withErrors('error' , 'please try again');
+            if($this->logo->create(['image' => $image[0]['image']])){
+                return redirect()->back()->with('success' , 'Successfully complated');
+            }else{
+                return redirect()->back()->withErrors('error' , 'please try again');
+            }
         }
+
     }
 
 
