@@ -39,7 +39,7 @@
                                 Current Logo
                             </p>
                             @if($logo)
-                                <img src="" alt="">
+                                <img src="{{ asset('assets/images/'.$logo->image) }}" alt="">
                             @endif
                         </div>
                         <form action="{{ route('admPostLogo') }}" method="post" enctype="multipart/form-data">
