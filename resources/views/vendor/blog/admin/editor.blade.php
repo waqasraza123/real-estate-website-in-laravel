@@ -28,14 +28,6 @@
                                     <input type="text" class="form-control" id="slug" name="slug">
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="published_at">Publish date</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="published_at">
-                                </div>
-                            </div>
-
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="chapo">Category</label>
                                 <div class="col-sm-10">

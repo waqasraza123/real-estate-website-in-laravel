@@ -3,7 +3,8 @@
 namespace App\Providers;
 use App\User;
 use App\Logo;
-
+use App\FooterContent;
+use App\SliderImage;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,8 +29,10 @@ class AppServiceProvider extends ServiceProvider
 
       }
 
-        $logo =  Logo::first();
-        \View::share('logo_image' , $logo);
+        $logo_image =  Logo::first();
+        $footer_content = FooterContent::first();
+        $slider_images = SliderImage::first();
+        \View::share(compact('logo_image' , 'footer_content' , 'slider_images'));
     }
 
     /**

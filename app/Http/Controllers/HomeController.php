@@ -40,7 +40,7 @@ class HomeController extends Controller
 
 
     public function homePage(){
-        $listing = $this->listing->where('listing_status' , 'done')->paginate(6);
+        $listing = $this->listing->where('listing_status' , 'done')->whereNotNull('featured')->paginate(6);
         return view('welcome'  , compact('listing'));
     }
 

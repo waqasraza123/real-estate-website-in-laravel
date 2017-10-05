@@ -7,27 +7,22 @@
             <div class="swiper-wrapper" >
                 <!-- Slides -->
                 <div class="swiper-slide">
-                    <div class="slide-bg swiper-lazy" data-background="images/slides/1.jpg"></div>
+                    <div class="slide-bg swiper-lazy" data-background="{{$slider_images ?  asset('assets/images/'.$slider_images->image_1) : 'images/slides/1.jpg' }}"></div>
                     <!-- Preloader image -->
                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     <div class="container">
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="slide-bg swiper-lazy" data-background="images/slides/2.jpg"></div>
+                    <div class="slide-bg swiper-lazy" data-background="{{$slider_images ?  asset('assets/images/'.$slider_images->image_2) : 'images/slides/2.jpg' }}"></div>
                     <!-- Preloader image -->
                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     <div class="container">
 
                     </div>
-                    <div class="video-slide">
-                        <video poster="images/slides/2.jpg" preload="auto" loop="" autoplay="" muted="">
-                            <source src='images\slides\2.mp4' type='video/mp4'></source>
-                        </video>
-                    </div>
                 </div>
                 <div class="swiper-slide">
-                    <div class="slide-bg swiper-lazy" data-background="images/slides/3.jpg"></div>
+                    <div class="slide-bg swiper-lazy" data-background="{{$slider_images ?  asset('assets/images/'.$slider_images->image_3) : 'images/slides/3.jpg' }}"></div>
                     <!-- Preloader image -->
                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     <div class="container">

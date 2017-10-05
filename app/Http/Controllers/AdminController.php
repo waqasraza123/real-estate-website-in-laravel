@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Logo;
 use App\Listing;
+use App\FooterContent;
+use App\SliderImage;
 
 class AdminController extends Controller
 {
@@ -17,10 +19,12 @@ class AdminController extends Controller
 
 
 
-    public function __construct(User $user ,Logo $logo , Listing $listing){
+    public function __construct(User $user ,Logo $logo , Listing $listing , FooterContent $footerContent, SliderImage $sliderImage){
         $this->user = $user;
         $this->logo = $logo;
         $this->listing = $listing;
+        $this->footer = $footerContent;
+        $this->images = $sliderImage;
     }
 
     public function index(){
@@ -189,15 +193,68 @@ class AdminController extends Controller
 
 
     /*=============================================================
-        Listings Editing Deleting area
+            Footer area
     ==============================================================*/
 
 
-    public function admBlog(){
+    public function admFooter(){
+        $footer = $this->footer->first();
+        return view('admin.footer.index' , compact('footer'));
+    }
+
+    public function admPostFooter(Request $request){
+       $inputs = $request->except('_token');
+        if(!$this->footer->first()){
+            if($this->footer->create($inputs)){
+                return redirect()->back()->with('success' , 'Successfully complated');
+            }else{
+                return redirect()->back()->withErrors('error' , 'please try again');
+            }
+        }else{
+            if($this->footer->first()->update($inputs)){
+                return redirect()->back()->with('success' , 'Successfully complated');
+            }else{
+                return redirect()->back()->withErrors('error' , 'please try again');
+            }
+        }
+    }
+
+
+
+    /*=============================================================
+          Slider Images area
+  ==============================================================*/
+
+
+    public function admSliderImages(){
+       $images =  $this->images->first();
+       return view('admin.slider.index' , compact('images'));
 
     }
 
 
+    public function admPostSliderImages(Request $request){
+        $input = $request->except('_token');
+        $image = $this->getImagesName($input);
+        foreach ($input as $key=>$val){
+            $input[$key] = $image[0]['image'];
+        }
+        if($this->images->first()){
+            if($this->images->first()->update($input)){
+                return redirect()->back()->with('success' , 'Successfully complated');
+            }else{
+                return redirect()->back()->withErrors('error' , 'please try again');
+            }
+        }else{
+            if($this->images->create($input)){
+                return redirect()->back()->with('success' , 'Successfully complated');
+            }else{
+                return redirect()->back()->withErrors('error' , 'please try again');
+            }
+        }
+
+
+    }
 
     /**
      * Show the form for creating a new resource.

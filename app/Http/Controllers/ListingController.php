@@ -214,21 +214,29 @@ class ListingController extends Controller
 
     public function searchListing(Request $request){
         $request->flash();
-        $points = $this->listing->where('lat' , '!=' ,  'null')->where('listing_status' , 'done')->get();
+        $points = $this->listing->where('lat' , '!=' ,  'null')->where('listing_status' , 'done')->whereNotNull('approved')->get();
         $inputs = $request->except('token');
-        $listing = $this->listing->where('listing_type' , $inputs['listing_type'])->where('listing_status' , 'done')->where('address' , $inputs['address']);
+        $listing = $this->listing
+            ->where('listing_type' , $inputs['listing_type'])
+            ->where('listing_status' , 'done')
+            ->where('address' , $inputs['address'])
+            ->whereNotNull('approved');
         if($inputs['rent'] != null){
             $rent_amount = explode('-' , $inputs['rent']);
-            $listing->where('rent', '>' , $rent_amount['0'])->where('listing_status' , 'done')->where('rent', '<' ,$rent_amount['1']);
+            $listing
+                ->where('rent', '>' , $rent_amount['0'])
+                ->where('listing_status' , 'done')
+                ->where('rent', '<' ,$rent_amount['1'])
+                ->whereNotNull('approved');
         }if($request->has('beds_baths')){
             if($inputs['beds_baths']['0'] == 'all_baths'){
-                $listing->where('listing_status' , 'done')->where('baths_count' , '>' , $inputs['beds_baths']['1']);
+                $listing->where('listing_status' , 'done')->whereNotNull('approved')->where('baths_count' , '>' , $inputs['beds_baths']['1']);
             }
             if($inputs['beds_baths']['0'] == 'all'){
-                $listing->where('listing_status' , 'done')->where('beds_count' , $inputs['beds_baths']['0']);
+                $listing->where('listing_status' , 'done')->whereNotNull('approved')->where('beds_count' , $inputs['beds_baths']['0']);
             }
             if (array_key_exists('0', $inputs['beds_baths']) && array_key_exists('1', $inputs['beds_baths'])) {
-                $listing->where('listing_status' , 'done')->where('beds_count', $inputs['beds_baths']['0'])->where('baths_count', '>', $inputs['beds_baths']['1']);
+                $listing->where('listing_status' , 'done')->whereNotNull('approved')->where('beds_count', $inputs['beds_baths']['0'])->where('baths_count', '>', $inputs['beds_baths']['1']);
             }
         }
         $listings = $listing->get();

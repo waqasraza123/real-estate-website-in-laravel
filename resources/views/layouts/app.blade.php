@@ -174,13 +174,13 @@
                     <div class="col-xs-6 col-sm-6 col-lg-3">
                         <h4 class="second-color">{{ Lang::get('pages.contact_us') }}<span class="special-color">.</span></h4>
                         <div class="footer-title-separator"></div>
-                        <p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p class="footer-p">{{ $footer_content ?  $footer_content->text  : 'Please edit this text on the admin side'}}</p>
                         <address>
-                            <span><i class="fa fa-map-marker"></i>00456 Some Address line</span>
+                            <span><i class="fa fa-map-marker"></i>{{ $footer_content ?  $footer_content->address  : 'Please edit this text on the admin side'}}</span>
                             <div class="footer-separator"></div>
-                            <span><i class="fa fa-envelope fa-sm"></i><a href="#">email@domain.tld</a></span>
+                            <span><i class="fa fa-envelope fa-sm"></i><a href="#">{{ $footer_content ?  $footer_content->email  : 'Please edit this text on the admin side'}}</a></span>
                             <div class="footer-separator"></div>
-                            <span><i class="fa fa-phone"></i>01-23456789</span>
+                            <span><i class="fa fa-phone"></i>{{ $footer_content ?  $footer_content->phone  : 'Please edit this text on the admin side'}}</span>
                         </address>
                         <div class="clear"></div>
                     </div>

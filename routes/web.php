@@ -109,6 +109,9 @@ Route::group(['middleware' => 'admin.only'], function() {
 
             /*Footer Contact Us Section*/
 
+        Route::get('/footer' , ['as' => 'admFooter' , 'uses' => 'AdminController@admFooter']);
+        Route::post('/footer' , ['as' => 'admPostFooter' , 'uses' => 'AdminController@admPostFooter']);
+
 
             /*Listing delete Edit*/
 
@@ -118,10 +121,10 @@ Route::group(['middleware' => 'admin.only'], function() {
         Route::post('/listing/edit'  , ['as' => 'admPostEditListing'  , 'uses' => 'AdminController@admPostEditListing']);
         Route::get('/listing/delete/{id}' , ['as' => 'admDeleteListing' , 'uses' => 'AdminController@admDeleteListing']);
 
-            /*Blog Area*/
+            /*Slider Images Area*/
 
-        //Route::get('/blog' , ['as' => 'admBlog' , 'uses' => 'AdminController@admBlog']);
-
+        Route::get('/slder_images' , ['as' => 'admSliderImages' , 'uses' => 'AdminController@admSliderImages']);
+        Route::post('/slder_images/updload' , ['as' => 'admPostSliderImages' , 'uses' => 'AdminController@admPostSliderImages']);
     });
 });
 
