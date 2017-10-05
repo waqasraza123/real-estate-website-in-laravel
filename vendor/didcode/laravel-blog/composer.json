@@ -1,0 +1,24 @@
+{
+    "name": "didcode/laravel-blog",
+    "description": "Provides blog capabilities to your Laravel 5 installation. /!\\ Early pre-stable version",
+    "keywords": ["laravel","blog"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Didier Sampaolo",
+            "email": "didier@didcode.com",
+            "homepage": "http://didcode.com/",
+            "role": "CEO/Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/html": "5.*",
+        "intervention/image": "^2.3"
+    },
+    "autoload": {
+        "classmap": [
+            "src/Models"
+        ]
+    }
+}
