@@ -30,15 +30,15 @@ class AppServiceProvider extends ServiceProvider
       }
         if (\Schema::hasTable('footer_contents')) {
             $footer_content = FooterContent::first();
+            \View::share(compact('footer_content'));
         }
         if (\Schema::hasTable('slider_images')) {
             $slider_images = SliderImage::first();
+            \View::share(compact('slider_images'));
         }
         if (\Schema::hasTable('	logo')) {
             $logo_image =  Logo::first();
-        }
-        if($footer_content && $slider_images && $logo_image){
-            \View::share(compact('logo_image' , 'footer_content' , 'slider_images'));
+            \View::share(compact('logo_image'));
         }
     }
 
