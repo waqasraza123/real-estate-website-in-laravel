@@ -107,7 +107,7 @@
                                     </li>
 
 
-                                    <li><a id="menuNavLnkMobileApps" target="_blank" href="https://www.apartments.com/mobile/" data-requirelogin="false">Mobile Apps</a></li>
+                                    <li><a id="menuNavLnkMobileApps" target="_blank" href="" data-requirelogin="false">Mobile Apps</a></li>
 
                                 </ul>
                             </div>

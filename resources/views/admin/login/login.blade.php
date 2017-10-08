@@ -31,7 +31,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>Admin</b>LTE</a>
+        @if($logo_image)
+            <img src="{{ asset('assets/images/'.$logo_image->image) }}" alt=" Logo">
+        @else
+            <img src="{{ asset('images\logo-dark.png') }}" alt=" Logo">
+        @endif
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
