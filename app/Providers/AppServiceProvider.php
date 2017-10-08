@@ -36,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
             $slider_images = SliderImage::first();
             \View::share(compact('slider_images'));
         }
-        if (\Schema::hasTable('	logo')) {
+        if (\Schema::hasTable('logo')) {
             $logo_image =  Logo::first();
             \View::share(compact('logo_image'));
         }
