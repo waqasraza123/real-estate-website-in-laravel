@@ -28,11 +28,18 @@ class AppServiceProvider extends ServiceProvider
 
 
       }
-
-        $logo_image =  Logo::first();
-        $footer_content = FooterContent::first();
-        $slider_images = SliderImage::first();
-        \View::share(compact('logo_image' , 'footer_content' , 'slider_images'));
+        if (Schema::hasTable('footer_contents')) {
+            $footer_content = FooterContent::first();
+        }
+        if (Schema::hasTable('slider_images')) {
+            $slider_images = SliderImage::first();
+        }
+        if (Schema::hasTable('	logo')) {
+            $logo_image =  Logo::first();
+        }
+        if($footer_content && $slider_images && $logo_image){
+            \View::share(compact('logo_image' , 'footer_content' , 'slider_images'));
+        }
     }
 
     /**
