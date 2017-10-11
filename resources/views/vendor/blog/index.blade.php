@@ -21,9 +21,7 @@
                         <article class="archive-item zoom-cont2">
                             <h2 class="title-negative-margin">{{ $post->title }}<span
                                         class="special-color">.</span></h2>
-                            <a href="#" class="title-link"><div class="blog-top-icon pull-left"><i class="fa fa-user"></i>Joshua Smith</div></a>
                             <a href="#" class="title-link"><div class="blog-top-icon pull-left"><i class="fa fa-calendar-o"></i>28/09/15</div></a>
-                            <a href="#" class="title-link"><div class="blog-top-icon pull-left"><i class="fa fa-folder-open-o"></i> category</div></a>
                             <a href="#" class="title-link"><div class="blog-top-icon pull-left"><i class="fa fa-comment-o"></i>2</div></a>
                             <div class="clearfix"></div>
                             <div class="title-separator-primary"></div>

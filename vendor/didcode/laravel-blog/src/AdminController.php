@@ -7,6 +7,7 @@ use didcode\Blog\Models\Option;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
+use App\Tag;
 
 
 class AdminController extends Controller {
@@ -31,25 +32,27 @@ class AdminController extends Controller {
         return view('blog::admin.index')
             ->withPosts($posts)
             ->withCategories(Category::all())
-            ->withOptionRssName(Option::get('rss_name'))
-            ->withOptionRssNumber(Option::get('rss_number'));
+            ->withTags(Tag::all());
     }
 
     public function createPost() {
         $categories = Category::pluck('name', 'id');
-
+        $tags = Tag::pluck('name', 'id');
         return view('blog::admin.editor')
             ->withCategories($categories)
+            ->withTags($tags)
             ->withPostId('');
     }
 
     public function editPost($id) {
         $categories = Category::pluck('name', 'id');
+        $tags = Tag::pluck('name', 'id');
         $post= Post::find($id);
 
         return view('blog::admin.editor')
             ->withCategories($categories)
             ->withPost($post)
+            ->withTags($tags)
             ->withPostId($id);
     }
 
@@ -94,11 +97,14 @@ class AdminController extends Controller {
     }
 
     public function ajax_post_save() {
-
         $fields = array_except(Input::all(), ['_token', 'post_id' ]);
-
         $fields['slug'] = (strlen($fields['slug']) === 0) ? Str::slug($fields['title']) : Str::slug($fields['slug']);
-
+        if(array_key_exists('tag_id' , $fields)){
+            $fields['tag_id'] = json_encode($fields['tag_id']);
+        }
+        if(array_key_exists('category_id' , $fields)){
+            $fields['category_id'] = json_encode($fields['category_id']);
+        }
         if (Input::get('post_id') > 0) {
             $post = Post::find(Input::get('post_id'));
             $post->update($fields);
@@ -154,5 +160,23 @@ class AdminController extends Controller {
 
         $category = Category::create(['name' => $category_name, 'slug' => Str::slug($category_name)]);
         return response()->json(['status' => 'success', 'object' => $category]);
+    }
+
+    public function ajax_tag_create() {
+        $tagname = Input::get('tagname');
+
+
+        if (strlen($tagname) == 0) {
+            return response()->json(['status' => 'error', 'error' => 'Categories cannot have empty names.']);
+        }
+
+        $tag = Tag::whereName($tagname)->first();
+        if ($tag) {
+            return response()->json(['status' => 'error', 'error' => 'This category already exists.']);
+        }
+
+        $tag = Tag::create(['name' => $tagname]);
+        return response()->json(['status' => 'success', 'object' => $tag]);
+
     }
 }

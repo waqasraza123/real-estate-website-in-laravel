@@ -12,8 +12,6 @@
                         @else
                             <h1 class="col-md-offset-2">Create a Post</h1>
                         @endif
-
-
                         <form class="form-horizontal">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="title">Title</label>
@@ -29,13 +27,27 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-sm-2 control-label" for="slug">Published & Draft</label>
+                                <div class="col-sm-10">
+                                    <select name="post_status" id="" class="form-control">
+                                        <option value="published">Published</option>
+                                        <option value="draft">Draft</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-sm-2 control-label" for="chapo">Category</label>
                                 <div class="col-sm-10">
                                     <?php $category = isset($post) ? $post->category_id : null; ?>
-                                    {!! Form::select('category_id', $categories, $category, ["id"=>"category_id", "class" => "form-control"] ) !!}
+                                    {!! Form::select('category_id', $categories, $category, ['multiple' => 'multiple' ,   "id"=>"category_id", "class" => "form-control selectpicker"] ) !!}
                                 </div>
                             </div>
-
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="chapo">Tags</label>
+                                <div class="col-sm-10">
+                                    {!! Form::select('tag_id', $tags, '' ,  ['multiple' => 'multiple' , 'name'=>'tag_id[]' ,"id"=>"tag_id", "class" => "form-control selectpicker"] ) !!}
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="chapo">Excerpt</label>
                                 <div class="col-sm-10">
@@ -60,8 +72,6 @@
                                 </button>
                                 <a href="/admin/post/{{ $post_id }}/image" class="btn btn-default">Add Image</a>
                             @endif
-
-
                         </form>
                     </div>
                 </div>
@@ -84,6 +94,7 @@
             $('#content').val(data.content);
             $('#published_at').val(data.published_at);
             $('#category_id').val(data.category_id);
+            $('#tag_id').val(data.tag_id);
         }
 
         $().ready(function () {
@@ -121,6 +132,7 @@
                     content: CKEDITOR.instances['content'].getData(),
                     published_at: $('#published_at').val(),
                     category_id: $('#category_id').val(),
+                    tag_id: $('#tag_id').val(),
 
                     post_id: $('#post_id').val()
                 }, function (data) {

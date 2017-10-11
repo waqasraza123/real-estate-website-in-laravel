@@ -1278,6 +1278,7 @@ input[type="checkbox"].main-checkbox:checked + label span::after {
 
 .archive-item figure {
 	border-width: 0 0 2px 0;
+	margin-left: 0px;
 }
 
 .quote-box {

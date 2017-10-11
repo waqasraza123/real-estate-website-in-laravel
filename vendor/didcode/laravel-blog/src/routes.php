@@ -14,6 +14,7 @@ Route::group(['prefix' => 'admin'], function()
     Route::post('blog/publish_post', 'didcode\Blog\AdminController@ajax_post_publish');
 
     Route::post('blog/create_category', 'didcode\Blog\AdminController@ajax_category_create');
+    Route::post('blog/create_tag', 'didcode\Blog\AdminController@ajax_tag_create');
 
     Route::post('blog/save_options', 'didcode\Blog\AdminController@ajax_options_save');
 

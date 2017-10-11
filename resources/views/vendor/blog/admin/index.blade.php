@@ -7,27 +7,54 @@
             <div class="col-lg-12">
                 <div class="box">
                     <div class="box-body">
-                        <h2>Categories</h2>
-                        <table class="table table-bordered table-hover table-striped">
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Slug</th>
-                                <th># of posts</th>
-                            </tr>
-                            @foreach($categories as $category)
-                                <tr>
-                                    <td>{{ $category->id }}</td>
-                                    <td>{{ $category->name }}</td>
-                                    <td>{{ $category->slug }}</td>
-                                    <td>{{ $category->posts_num }}</td>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h2>Categories</h2>
+                                <table class="table table-bordered table-hover table-striped">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Slug</th>
+                                        <th># of posts</th>
+                                    </tr>
+                                    @foreach($categories as $category)
+                                        <tr>
+                                            <td>{{ $category->id }}</td>
+                                            <td>{{ $category->name }}</td>
+                                            <td>{{ $category->slug }}</td>
+                                            <td>{{ $category->posts_num }}</td>
 
-                                </tr>
+                                        </tr>
 
-                            @endforeach
-                        </table>
-                        <input type="text" id="new_cat" name="new_cat" value=""/>
-                        <button id="create_category" class="btn btn-success">Create Category</button>
+                                    @endforeach
+                                </table>
+                                <input type="text" id="new_cat" name="new_cat" value=""/>
+                                <button id="create_category" class="btn btn-success">Create Category</button>
+                            </div>
+                            <div class="col-lg-6">
+                                <h2>Tags</h2>
+                                <table class="table table-bordered table-hover table-striped">
+                                    <tr>
+                                        <th>
+                                            ID
+                                        </th>
+                                        <th>
+                                            Name
+                                        </th>
+
+                                    </tr>
+                                    @foreach($tags as $tag)
+                                        <tr>
+                                            <td>{{ $tag->id }}</td>
+                                            <td>{{ $tag->name }}</td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+                                <input type="text" id="new_tag" name="new_tag" value=""/>
+                                <button id="create_tag" class="btn btn-success">Create Tag</button>
+                            </div>
+                        </div>
+
 
                         <hr/>
                         <h2>Posts</h2>
@@ -99,7 +126,6 @@
 
                 }, function (data) {
                     $(btn).removeClass('disabled');
-
                     if (data.status == 'success') {
                         toastr.success('Category created.');
                         window.location.reload()
@@ -126,6 +152,27 @@
 
                 }, 'json');
             });
+
+            // Adding Tag
+            $('#create_tag').click(function (e) {
+                e.preventDefault();
+                $(this).addClass('disabled');
+                var btn = $(this);
+                $.post('/admin/blog/create_tag', {
+                    _token: "{{ csrf_token() }}",
+                    tagname: $('#new_tag').val()
+
+                }, function (data) {
+                    $(btn).removeClass('disabled');
+                    if (data.status == 'success') {
+                        toastr.success('Category created.');
+                        window.location.reload()
+                    } else {
+                        toastr.error(data.error);
+                    }
+                }, 'json');
+            })
+
 
         });
     </script>
