@@ -59,7 +59,7 @@
                         @foreach($comments as $comment)
                             <div class="post-comment margin-top-45">
                                 <div class="comment-left">
-                                    <img src="@if($comment->User->avatar) {{ asset('assets\images').'/'.$comment->User->avatar }}  @else {{ asset('images\agent3.jpg') }}@endif" alt="">
+                                    <img src="@if($comment->user) @if($comment->User->avatar) {{ asset('assets\images').'/'.$comment->User->avatar }}  @else {{ asset('images\agent3.jpg') }}@endif @else {{ asset('images\agent3.jpg') }} @endif" alt="">
                                 </div>
                                 <div class="comment-right">
                                     <div class="comment-author">
