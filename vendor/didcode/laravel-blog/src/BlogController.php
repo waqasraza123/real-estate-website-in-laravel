@@ -42,7 +42,9 @@ class BlogController extends Controller {
         $post = Post::whereSlug($slug)->first();
         $categories = Category::all();
         $tags_ids = json_decode($post->tag_id);
-        $tags = Tag::whereIn('id' , $tags_ids)->get();
+        if($tags_ids != null){
+            $tags = Tag::whereIn('id' , $tags_ids)->get();
+        }
         $comments = Comment::where('post_id' , $post->id)->get();
         return view('blog::post.show' , compact('post' , 'tags'  , 'categories' , 'comments' ));
     }
