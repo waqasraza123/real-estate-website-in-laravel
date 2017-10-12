@@ -40,6 +40,7 @@ class BlogController extends Controller {
 
     public function showPost($slug) {
         $post = Post::whereSlug($slug)->first();
+        $tags = [];
         $categories = Category::all();
         $tags_ids = json_decode($post->tag_id);
         if($tags_ids != null){
