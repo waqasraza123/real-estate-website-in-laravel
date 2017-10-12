@@ -379,6 +379,7 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
         'AddLastNameToUsers' => __DIR__ . '/../..' . '/database/migrations/2017_08_18_193023_add_last_name_to_users.php',
         'AddListingStatusToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_16_003527_add_listing_status_to_listings_table.php',
         'AddListingTypeToSavedSearches' => __DIR__ . '/../..' . '/database/migrations/2017_09_09_010736_add_listing_type_to_saved_searches.php',
+        'AddListingsOptionsToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_12_173604_add_listings_options_to_listings_table.php',
         'AddNameToSavedSearches' => __DIR__ . '/../..' . '/database/migrations/2017_09_09_024823_add_name_to_saved_searches.php',
         'AddPhoneTypeToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_18_152915_add_phone_type_to_users_table.php',
         'AddRolesToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_30_212322_add_roles_to_users_table.php',

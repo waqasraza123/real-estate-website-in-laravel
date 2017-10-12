@@ -10,6 +10,7 @@ return array(
     'AddLastNameToUsers' => $baseDir . '/database/migrations/2017_08_18_193023_add_last_name_to_users.php',
     'AddListingStatusToListingsTable' => $baseDir . '/database/migrations/2017_09_16_003527_add_listing_status_to_listings_table.php',
     'AddListingTypeToSavedSearches' => $baseDir . '/database/migrations/2017_09_09_010736_add_listing_type_to_saved_searches.php',
+    'AddListingsOptionsToListingsTable' => $baseDir . '/database/migrations/2017_10_12_173604_add_listings_options_to_listings_table.php',
     'AddNameToSavedSearches' => $baseDir . '/database/migrations/2017_09_09_024823_add_name_to_saved_searches.php',
     'AddPhoneTypeToUsersTable' => $baseDir . '/database/migrations/2017_08_18_152915_add_phone_type_to_users_table.php',
     'AddRolesToUsersTable' => $baseDir . '/database/migrations/2017_09_30_212322_add_roles_to_users_table.php',
