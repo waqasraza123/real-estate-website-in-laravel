@@ -11,6 +11,7 @@ use App\ListingImage;
 use App\Review;
 use App\Mail\AgentsEamil;
 
+
 class ListingController extends Controller
 {
 
@@ -351,7 +352,7 @@ class ListingController extends Controller
         ]);
 
         $inputs = $request->except('_token');
-        if(\Mail::to('artcas91@gmail.com')->send(new AgentsEamil($inputs)) == 0) {
+        if(\Mail::to('info@2ndchanceleasing.com')->send(new AgentsEamil($inputs)) == 0) {
            return redirect()->back()->with('sucess' , 'Thank you for your massage we will contact with you soon ');
         }
     }

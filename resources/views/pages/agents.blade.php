@@ -26,10 +26,10 @@
                         <br>
                     @endif
                     @if(Session::has('sucess'))
-                            <div class="success-box margin-top-30" style="margin: 0px auto;">
-                                {{ Session::get('sucess') }}
-                            </div>
-                            <br>
+                        <div class="success-box margin-top-30" style="margin: 0px auto;">
+                            {{ Session::get('sucess') }}
+                        </div>
+                        <br>
                     @endif
                     {{ Form::open(['url' => route('PostagentForm') , 'method' => 'post' , 'class' => 'form-horizontal']) }}
                         <div class="form-group">

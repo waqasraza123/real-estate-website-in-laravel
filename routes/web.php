@@ -73,6 +73,8 @@ Route::get('choose_type' , ['as' => 'chooseType' , 'uses' => 'ListingController@
 Route::get('agent_form' , ['as' => 'agentForm' , 'uses' => 'ListingController@agentForm']);
 Route::post('agent_form_post' , ['as' => 'PostagentForm' , 'uses' => 'ListingController@PostagentForm']);
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
