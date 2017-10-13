@@ -12,7 +12,7 @@
             </div>
         </div>
     </section>
-    <section class="section-light no-bottom-padding">
+    <section class="section-light" style="min-height: 600px">
         <div class="container">
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
