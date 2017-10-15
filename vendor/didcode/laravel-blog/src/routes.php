@@ -18,6 +18,8 @@ Route::group(['prefix' => 'admin'], function()
 
     Route::post('blog/save_options', 'didcode\Blog\AdminController@ajax_options_save');
 
+
+
 //    Route::resource('post', 'didcode\Blog\BlogPostController');
 });
 Route::group(['middleware' => ['web']], function () {
@@ -26,4 +28,5 @@ Route::group(['middleware' => ['web']], function () {
     Route::get(config('blog.base_path'), 'didcode\Blog\BlogController@index');
     Route::get(config('blog.base_path') . 'c-{slug}', 'didcode\Blog\BlogController@showCategory');
     Route::get(config('blog.base_path') . '{slug}', 'didcode\Blog\BlogController@showPost');
+    Route::post('add_comments' , ['as' => 'addBlogComments' , 'uses' => 'didcode\Blog\BlogController@addBlogComments']);
 });

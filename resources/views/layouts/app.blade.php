@@ -162,7 +162,7 @@
 
                 </div>
 
-                <a href="{{ route('addListing') }}" id="headerAddListing" title="Add a Listing">
+                <a href="{{ route('chooseType') }}" id="headerAddListing" title="Add a Listing">
                     <span>Add a Listing</span>
                 </a>
             </nav>

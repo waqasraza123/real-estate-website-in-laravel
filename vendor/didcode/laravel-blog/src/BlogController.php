@@ -4,8 +4,10 @@ use App\Http\Controllers\Controller;
 use didcode\Blog\Models\Category;
 use didcode\Blog\Models\Option;
 use didcode\Blog\Models\Post;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Tag;
+use App\Comment;
 
 class BlogController extends Controller {
 
@@ -38,15 +40,16 @@ class BlogController extends Controller {
 
     public function showPost($slug) {
         $post = Post::whereSlug($slug)->first();
-        $categories = Category::all();
-        $tags = Tag::all();
-        return view('blog::post.show')
-            ->withPageTitle($post->title)
-            ->withPost($post)
-            ->withTags($tags)
-            ->withCategories($categories)
 
-            ->withActiveCategory($post->category_id);
+        $categories = Category::all();
+        $tags_ids = json_decode($post->tag_id);
+        if($tags_ids != null){
+            $tags = Tag::whereIn('id' , $tags_ids)->get();
+        }else{
+            $tags = Tag::all();
+        }
+        $comments = Comment::where('post_id' , $post->id)->get();
+        return view('blog::post.show' , compact('post' , 'tags'  , 'categories' , 'comments' ));
     }
 
     public function rss() {
@@ -73,5 +76,18 @@ class BlogController extends Controller {
             ->withCategory($category)
             ->withCategories($categories)
             ->withActiveCategory($category->id);
+    }
+
+    public function addBlogComments(Request $request){
+        $this->validate($request , [
+           'text' => 'required'
+        ]);
+        $inputs = $request->except('_token');
+        if(Comment::create($inputs)){
+            return redirect()->back()->with('success' ,  'Your comment addet Sucessfully');
+        }else{
+            return redirect()->back()->withErrors(['error' => 'Please try again']);
+        }
+
     }
 }

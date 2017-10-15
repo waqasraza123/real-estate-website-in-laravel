@@ -9,6 +9,8 @@ use App\Listing;
 use App\Favorit;
 use App\ListingImage;
 use App\Review;
+use App\Mail\AgentsEamil;
+
 
 class ListingController extends Controller
 {
@@ -331,6 +333,30 @@ class ListingController extends Controller
         $this->review()->where('id'  ,$id)->delete();
         return redirect()->back();
     }
+
+
+    public function chooseType(){
+        return view('pages.listing_option');
+    }
+
+    public function agentForm(){
+        return view('pages.agents');
+    }
+
+    public function PostagentForm(Request $request){
+        $this->validate($request, [
+            'name'           => 'required',
+            'email'          => 'required|email',
+            'phone'          => 'required',
+            'license_number' => 'required'
+        ]);
+
+        $inputs = $request->except('_token');
+        if(\Mail::to('info@2ndchanceleasing.com')->send(new AgentsEamil($inputs)) == 0) {
+           return redirect()->back()->with('sucess' , 'Thank you for your massage we will contact with you soon ');
+        }
+    }
+
 
 
 }

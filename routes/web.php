@@ -69,6 +69,11 @@ Route::post('search_listing_user_profile', ['as' => 'searchSavedSeraches' , 'use
 Route::get('delete_listing_images/{id}', ['as' => 'delListingImages' , 'uses' => 'ListingController@delListingImages']);
 Route::post('write_rewievs' , ['as' => 'writeReviews' , 'uses' => 'ListingController@writeReviews']);
 Route::post('delete_rewievs' , ['as' => 'deleteReviews' , 'uses' => 'ListingController@deleteReviews']);
+Route::get('choose_type' , ['as' => 'chooseType' , 'uses' => 'ListingController@chooseType']);
+Route::get('agent_form' , ['as' => 'agentForm' , 'uses' => 'ListingController@agentForm']);
+Route::post('agent_form_post' , ['as' => 'PostagentForm' , 'uses' => 'ListingController@PostagentForm']);
+
+
 
 Auth::routes();
 

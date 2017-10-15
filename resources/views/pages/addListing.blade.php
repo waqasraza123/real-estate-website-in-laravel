@@ -242,6 +242,26 @@
                                                 <input type="checkbox"  value="1" @if(old('wheelchair') == 1)  checked @endif id="c6" name="wheelchair" class="main-checkbox">
                                                 <label for="c6"><span></span>{{ Lang::get('listing.wheel_access') }}</label>
                                             </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('washer_dryer') == 1)  checked @endif id="c11" name="washer_dryer" class="main-checkbox">
+                                                <label for="c11"><span></span>Washer Dryer</label>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('washer_dryer_hockups') == 1)  checked @endif id="c7" name="washer_dryer_hockups" class="main-checkbox">
+                                                <label for="c7"><span></span>Washer Dryer Hockups</label>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('onsite_laundry') == 1)  checked @endif id="c8" name="onsite_laundry" class="main-checkbox">
+                                                <label for="c8"><span></span>Onsite Laundry</label>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('fitness_center') == 1)  checked @endif id="c9" name="fitness_center" class="main-checkbox">
+                                                <label for="c9"><span></span>Fitness Center</label>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('pool') == 1)  checked @endif id="c10" name="pool" class="main-checkbox">
+                                                <label for="c10"><span></span>Pool</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

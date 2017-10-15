@@ -33,4 +33,8 @@ class Post extends Eloquent {
         return '/img/posts/'.$value;
     }
 
+
+    public function Comments(){
+        return $this->hasMany('App\Comment');
+    }
 }
