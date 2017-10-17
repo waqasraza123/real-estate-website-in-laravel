@@ -17,8 +17,8 @@ class AddListingsOptionsToListingsTable extends Migration
             $table->string('washer_dryer')->nullable();
             $table->string('washer_dryer_hockups')->nullable();
             $table->string('onsite_laundry')->nullable();
-            $table->string(' fitness_center')->nullable();
-            $table->string(' pool')->nullable();
+            $table->string('fitness_center')->nullable();
+            $table->string('pool')->nullable();
         });
     }
 
@@ -33,8 +33,8 @@ class AddListingsOptionsToListingsTable extends Migration
             $table->dropColumn('washer_dryer');
             $table->dropColumn('washer_dryer_hockups');
             $table->dropColumn('onsite_laundry');
-            $table->dropColumn(' fitness_center');
-            $table->dropColumn(' pool');
+            $table->dropColumn('fitness_center');
+            $table->dropColumn('pool');
         });
     }
 }

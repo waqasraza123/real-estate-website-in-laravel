@@ -74,6 +74,15 @@ Route::get('agent_form' , ['as' => 'agentForm' , 'uses' => 'ListingController@ag
 Route::post('agent_form_post' , ['as' => 'PostagentForm' , 'uses' => 'ListingController@PostagentForm']);
 
 
+    #Agent Routes
+
+Route::get('payment/{type}' , ['as' => 'payment'  , 'uses' => 'ListingController@payment']);
+Route::get('agent_form_listing' , ['as' => 'getAgentForm' , 'uses' => 'ListingController@getAgentForm']);
+Route::post('agent_submit_listing' , ['as' => 'submitAgentListing' , 'uses' => 'ListingController@submitAgentListing']);
+Route::get('email_to_agent/{email}' , ['as' => 'emailToAgent' , 'uses' => 'ListingController@emailToAgent']);
+Route::get('send_link_agent' , ['as' => 'sendLinkToAgent' , 'uses' => 'ListingConteoller@sendLinkToAgent']);
+
+
 
 Auth::routes();
 

@@ -10,7 +10,7 @@
    License Number : {{ $data['license_number'] }}
 @endcomponent
 
-@component('mail::button', ['url' => ''])
+@component('mail::button', ['url' => route('emailToAgent' , ['email' => $data['email']])])
 Send a link
 @endcomponent
 

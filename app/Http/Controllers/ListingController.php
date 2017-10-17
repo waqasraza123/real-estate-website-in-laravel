@@ -34,7 +34,6 @@ class ListingController extends Controller
             'deposit' => 'required',
             'available_date' => 'required',
             'lease_length' => 'required',
-            'loundry_type' => 'required',
             'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
@@ -74,7 +73,7 @@ class ListingController extends Controller
                   $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
             }
         }
-            return redirect()->route('accountListing' , ['id' => Auth::user()->id]);
+            return redirect()->route('payment' , ['type' => 'user']);
     }
 
     public function saveListing(Request $request){
@@ -139,7 +138,6 @@ class ListingController extends Controller
         return '';
     }
 
-
     public function deleteListing($id){
         if($this->listing->where('id' , $id)->delete()){
             return redirect()->back()->with('success' , 'Sucessfully deleted');
@@ -147,7 +145,6 @@ class ListingController extends Controller
             return redirect()->back()->withErrors('error' , 'Ups something goes wrong');
         }
     }
-
 
     public function postEditListing(Request $request){
         $this->validate($request, [
@@ -179,19 +176,15 @@ class ListingController extends Controller
 
     }
 
-
-
     public function editListing($id){
       $listing =   $this->listing->where('id' , $id)->first();
         return view('pages.editListing' , compact('listing'));
     }
 
-
     public function index()
     {
         //
     }
-
 
     public function randomPassword() {
         $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890&$&*';
@@ -204,7 +197,6 @@ class ListingController extends Controller
         return implode($pass); //turn the array into a string
     }
 
-
     public function singleListing($id , $title){
         $listing = $this->listing->where('id' , $id)->first();
         if(Auth::user()){
@@ -212,7 +204,6 @@ class ListingController extends Controller
         }
         return view('pages.single_listing' , compact('listing' , 'hasfavorite'));
     }
-
 
     public function searchListing(Request $request){
         $request->flash();
@@ -264,7 +255,6 @@ class ListingController extends Controller
 
     }
 
-
     public function searchListingAjax(Request $request){
        $points = $this->listing->where('listing_status' , 'done')->where('lat' , '!=' ,  'null')->select('lat' , 'lng')->get();
        $array = json_decode($request->datas);
@@ -278,7 +268,6 @@ class ListingController extends Controller
        }
         return \Response::json(['listing' => $listings]);
     }
-
 
     public function addFavorite($user_id , $listing_id){
         $listing = $this->favorit->where('user_id' , $user_id)->where('listing_id' , $listing_id)->first();
@@ -334,7 +323,6 @@ class ListingController extends Controller
         return redirect()->back();
     }
 
-
     public function chooseType(){
         return view('pages.listing_option');
     }
@@ -352,11 +340,78 @@ class ListingController extends Controller
         ]);
 
         $inputs = $request->except('_token');
-        if(\Mail::to('info@2ndchanceleasing.com')->send(new AgentsEamil($inputs)) == 0) {
+        if(\Mail::to('arty.petr@gmail.com')->send(new AgentsEamil($inputs)) == 0) {
            return redirect()->back()->with('sucess' , 'Thank you for your massage we will contact with you soon ');
         }
     }
 
+    public function emailToAgent($email){
 
+    }
+
+
+
+   /*=======================================================
+                Agent Form
+    ========================================================*/
+    public function getAgentForm(){
+        return view('pages.agent_form');
+    }
+
+
+    public function submitAgentListing(Request $request){
+        $this->validate($request, [
+            'listing_type' => 'required',
+            'square_feet' => 'required',
+            'rent' => 'required',
+            'deposit' => 'required',
+            'available_date' => 'required',
+            'lease_length' => 'required',
+            'parking_type' => 'required',
+            'parking_fee' => 'required',
+        ]);
+        $pass =    $this->randomPassword();
+        $inputs = $request->except('_token' , 'file');
+        if(Auth::user()){
+            $this->user->where('id' , Auth::user()->id)->update([
+                'first_name' => $inputs['first_name'],
+                'last_name' => $inputs['last_name'],
+                'email' => $inputs['email'],
+                'phone' => $inputs['phone'],
+                'contact_type' => $inputs['contact_type']
+
+            ]);
+        }else{
+            $this->user->create([
+                'first_name' => $inputs['first_name'],
+                'last_name' => $inputs['last_name'],
+                'email' => $inputs['email'],
+                'phone' => $inputs['phone'],
+                'contact_type' => $inputs['contact_type'],
+                'password' =>   bcrypt($pass)
+            ]);
+        }
+        if(!Auth::user()){
+            Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
+        }
+
+        $inputs['user_id'] = Auth::user()->id;
+        $inputs['listing_status'] = 'done';
+        $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
+        $this->listing->create($inputs);
+        $listing = $this->listing->latest()->first();
+        if($request->file()){
+            $images = $this->getImagesName($request->file());
+            foreach ($images as $image){
+                $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
+            }
+        }
+        return redirect()->route('payment' , ['type' => 'agent']);
+    }
+
+
+    public function payment($type){
+        return view('pages.payment' , compact('type'));
+    }
 
 }

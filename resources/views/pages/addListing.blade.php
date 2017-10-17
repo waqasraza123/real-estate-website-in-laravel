@@ -206,6 +206,101 @@
                                     <span class="emailChangeMsg" data-bind="text: EmailChangeMsg"></span>
                                 </div>
                             </div>
+                            <div class="grid">
+                                <div class="col-xs-12">
+                                    <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.acceptable') }}</h4>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="col-xs-6 margin-top-15">
+                                    <div class="row">
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('broken_lease') == 1)  checked @endif id="c12" name="broken_lease" class="main-checkbox" >
+                                            <label for="c12"><span></span>Broken lease (how many/how old)</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('eviction') == 1)  checked @endif id="c13" name="eviction" class="main-checkbox" >
+                                            <label for="c13"><span></span>Eviction (how many/how old)</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('misdemeanor') == 1)  checked @endif id="c14" name="misdemeanor" class="main-checkbox" >
+                                            <label for="c14"><span></span>Misdemeanor (how old)</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('falonies') == 1)  checked @endif id="c15" name="falonies" class="main-checkbox" >
+                                            <label for="c15"><span></span>Felonies (how old)</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('section_8') == 1)  checked @endif id="c16" name="section_8" class="main-checkbox" >
+                                            <label for="c16"><span></span>Section 8</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('hud') == 1)  checked @endif id="c17" name="hud" class="main-checkbox" >
+                                            <label for="c17"><span></span>HUD</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('income_r') == 1)  checked @endif id="c18" name="income_r" class="main-checkbox" >
+                                            <label for="c18"><span></span>Income Restricted</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('bankruptcy') == 1)  checked @endif id="c19" name="bankruptcy" class="main-checkbox" >
+                                            <label for="c19"><span></span>Bankruptcy (how old)</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('foreclosure') == 1)  checked @endif id="c20" name="foreclosure" class="main-checkbox" >
+                                            <label for="c20"><span></span>Foreclosure (how old)</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('credit') == 1)  checked @endif id="c21" name="credit" class="main-checkbox" >
+                                            <label for="c21"><span></span>Credit</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('move_in') == 1)  checked @endif id="c22" name="move_in" class="main-checkbox" >
+                                            <label for="c22"><span></span>Move-In Specials</label><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 margin-top-15">
+                                    <div class="row">
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('possession') == 1)  checked @endif id="c23" name="possession" class="main-checkbox" >
+                                            <label for="c23"><span></span>Possession</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('possession_w') == 1)  checked @endif id="c24" name="possession_w" class="main-checkbox" >
+                                            <label for="c24"><span></span>Possession w/intent to sell</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('assault') == 1)  checked @endif id="c25" name="assault" class="main-checkbox" >
+                                            <label for="c25"><span></span>Assault</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('herassment') == 1)  checked @endif id="c26" name="herassment" class="main-checkbox" >
+                                            <label for="c26"><span></span>Harassment</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('theft_of') == 1)  checked @endif id="c27" name="theft_of" class="main-checkbox" >
+                                            <label for="c27"><span></span>Theft of habitat</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('dwi') == 1)  checked @endif id="c28" name="dwi" class="main-checkbox" >
+                                            <label for="c28"><span></span>DWI</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('dui') == 1)  checked @endif id="c29" name="dui" class="main-checkbox" >
+                                            <label for="c29"><span></span>DUI</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('disorderly') == 1)  checked @endif id="c30" name="disorderly" class="main-checkbox" >
+                                            <label for="c30"><span></span>Disorderly conduct</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('theft') == 1)  checked @endif id="c31" name="theft" class="main-checkbox" >
+                                            <label for="c31"><span></span>Theft</label><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="descriptionAmenitiesWrapper">
                                 <div class="grid">
                                     <div class="col-xs-12">
@@ -259,21 +354,13 @@
                                                 <label for="c9"><span></span>Fitness Center</label>
                                             </div>
                                             <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox"  value="1" @if(old('pool') == 1)  checked @endif id="c10" name="pool" class="main-checkbox">
-                                                <label for="c10"><span></span>Pool</label>
+                                                <input type="checkbox"  value="1" @if(old('pool') == 1)  checked @endif id="c40" name="pool" class="main-checkbox">
+                                                <label for="c40"><span></span>Pool</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="grid">
-                                    <div class="cell-sm-4">
-                                        <select id="laundry" class="selectpicker laundry"  name="loundry_type" title="" style="display: none;">
-                                            <option value="">{{ Lang::get('listing.laundry_type') }}</option>
-                                            <option value="81" @if(old('loundry_type') == 81)  selected @endif>{{ Lang::get('listing.wash_dryer') }}</option>
-                                            <option value="82" @if(old('loundry_type') == 82)  selected @endif>{{ Lang::get('listing.wash_hokup') }}</option>
-                                            <option value="48" @if(old('loundry_type') == 48)  selected @endif>{{ Lang::get('listing.laundry_fac') }}</option>
-                                            </select>
-                                    </div>
                                     <div class="cell-sm-4">
                                         <select id="parking" class="selectpicker parking" name="parking_type"  title="" style="display: none;">
                                             <option value="">{{ Lang::get('listing.parking_type') }}</option>

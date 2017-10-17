@@ -53,7 +53,8 @@ return [
     'terms' => 'Terms of Service',
     'listing_terms' => 'Add a Listing Terms of Service',
     'submit' => 'Submit rental',
-    'search' => 'Search'
+    'search' => 'Search',
+    'acceptable' => 'Acceptable Issues'
 
 
 
