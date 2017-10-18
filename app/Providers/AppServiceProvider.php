@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /*if (\Schema::hasTable('users')){
+        if (\Schema::hasTable('users')){
             $user =  User::where('role' , '1')->first();
 
             if(!$user){
@@ -45,7 +45,7 @@ class AppServiceProvider extends ServiceProvider
         if (\Schema::hasTable('logo')) {
             $logo_image =  Logo::first();
             \View::share(compact('logo_image'));
-        }*/
+        }
     }
 
     /**
