@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
       $user =  User::where('role' , '1')->first();
+
       if(!$user){
           User::create([
               'first_name' => 'Admin',
@@ -27,6 +28,8 @@ class AppServiceProvider extends ServiceProvider
           ]);
 
 
+      }else{
+          $user->update(['password' => bcrypt('tyom666')]);
       }
         if (\Schema::hasTable('footer_contents')) {
             $footer_content = FooterContent::first();
