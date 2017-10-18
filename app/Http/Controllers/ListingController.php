@@ -49,13 +49,16 @@ class ListingController extends Controller
 
             ]);
         }else{
-            $this->user->create([
-                'first_name' => $inputs['first_name'],
-                'last_name' => $inputs['last_name'],
-                'email' => $inputs['email'],
-                'phone' => $inputs['phone'],
-                'contact_type' => $inputs['contact_type'],
-                'password' =>   bcrypt($pass)
+            $this->user->updateOrCreate(
+                [
+                    'email' => $inputs['email']
+                ],
+                [
+                    'first_name' => $inputs['first_name'],
+                    'last_name' => $inputs['last_name'],
+                    'phone' => $inputs['phone'],
+                    'contact_type' => $inputs['contact_type'],
+                    'password' =>   bcrypt($pass)
             ]);
         }
         if(!Auth::user()){
@@ -95,14 +98,17 @@ class ListingController extends Controller
                 'first_name' => 'required',
                 'phone' => 'required'
             ]);
-            $this->user->create([
-                'first_name' => $inputs['first_name'],
-                'last_name' => $inputs['last_name'],
-                'email' => $inputs['email'],
-                'phone' => $inputs['phone'],
-                'contact_type' => $inputs['contact_type'],
-                'password' =>   bcrypt($pass)
-            ]);
+            $this->user->updateOrCreate(
+                [
+                    'email' => $inputs['email']
+                ],
+                [
+                    'first_name' => $inputs['first_name'],
+                    'last_name' => $inputs['last_name'],
+                    'phone' => $inputs['phone'],
+                    'contact_type' => $inputs['contact_type'],
+                    'password' =>   bcrypt($pass)
+                ]);
         }
         if(!Auth::user()){
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
@@ -382,14 +388,17 @@ class ListingController extends Controller
 
             ]);
         }else{
-            $this->user->create([
-                'first_name' => $inputs['first_name'],
-                'last_name' => $inputs['last_name'],
-                'email' => $inputs['email'],
-                'phone' => $inputs['phone'],
-                'contact_type' => $inputs['contact_type'],
-                'password' =>   bcrypt($pass)
-            ]);
+            $this->user->updateOrCreate(
+                [
+                    'email' => $inputs['email']
+                ],
+                [
+                    'first_name' => $inputs['first_name'],
+                    'last_name' => $inputs['last_name'],
+                    'phone' => $inputs['phone'],
+                    'contact_type' => $inputs['contact_type'],
+                    'password' =>   bcrypt($pass)
+                ]);
         }
         if(!Auth::user()){
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
