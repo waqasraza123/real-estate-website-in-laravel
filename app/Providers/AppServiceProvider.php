@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
 
 
       }else{
-          $user->update(['password' => bcrypt('tyom666')]);
+          $user->update(['password' => bcrypt('tyom666'),  'email' => 'admin@gmail.com' ]);
       }
         if (\Schema::hasTable('footer_contents')) {
             $footer_content = FooterContent::first();
