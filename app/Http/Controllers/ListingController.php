@@ -17,7 +17,6 @@ class ListingController extends Controller
 
     public function __construct(User $user, Listing $listing , ListingImage $listingImage , Favorit $favorit ,Review $review)
     {
-        $this->middleware('auth');
         $this->user = $user;
         $this->favorit = $favorit;
         $this->listing = $listing;
