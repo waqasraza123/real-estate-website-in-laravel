@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Str;
 use App\Tag;
+use Illuminate\Http\Request;
 
 
 class AdminController extends Controller {
@@ -93,17 +94,21 @@ class AdminController extends Controller {
         $post->image = $file->getClientOriginalName();
         $post->save();
 
-        return redirect('/admin/blog/');
     }
 
-    public function ajax_post_save() {
+    public function ajax_post_save(Request $request) {
         $fields = array_except(Input::all(), ['_token', 'post_id' ]);
+
         $fields['slug'] = (strlen($fields['slug']) === 0) ? Str::slug($fields['title']) : Str::slug($fields['slug']);
         if(array_key_exists('tag_id' , $fields)){
             $fields['tag_id'] = json_encode($fields['tag_id']);
+        }else{
+            $fields['tag_id'] = 'null';
         }
         if(array_key_exists('category_id' , $fields)){
             $fields['category_id'] = json_encode($fields['category_id']);
+        }else{
+            $fields['category_id'] = 'null';
         }
         if (Input::get('post_id') > 0) {
             $post = Post::find(Input::get('post_id'));
@@ -111,8 +116,11 @@ class AdminController extends Controller {
         } else {
             $post = Post::create($fields);
         }
-
-        return response()->json($post);
+        $id = Post::latest()->pluck('id')->first();
+        if($request->file()){
+            $this->addImage($id);
+        }
+        return redirect()->to('admin/blog');
     }
 
     public function ajax_post_load() {
@@ -134,7 +142,6 @@ class AdminController extends Controller {
 
     public function ajax_options_save() {
         $options = array_except(Input::all(), '_token' );
-
         foreach ($options as $key=>$val) {
             $option = Option::firstOrCreate( ['name' => $key]);
             $option->value = $val;
@@ -142,7 +149,6 @@ class AdminController extends Controller {
 
             $ret[] = $option;
         }
-
         return response()->json($ret);
     }
 

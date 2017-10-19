@@ -12,11 +12,11 @@
                         @else
                             <h1 class="col-md-offset-2">Create a Post</h1>
                         @endif
-                        <form class="form-horizontal">
+                        <form action="/admin/blog/save_post" method="post" class="form-horizontal" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="title">Title</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="title">
+                                    <input type="text" class="form-control" name="title" id="title">
                                 </div>
                             </div>
 
@@ -29,10 +29,18 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="slug">Published & Draft</label>
                                 <div class="col-sm-10">
-                                    <select name="post_status" id="" class="form-control">
+                                    <select name="post_status" id="published_at" class="form-control">
                                         <option value="published">Published</option>
                                         <option value="draft">Draft</option>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-md-2 control-label">
+                                    Featured Image
+                                </label>
+                                <div class="col-sm-10">
+                                    <input type="file" name="image" id="image">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -95,6 +103,7 @@
             $('#published_at').val(data.published_at);
             $('#category_id').val(data.category_id);
             $('#tag_id').val(data.tag_id);
+
         }
 
         $().ready(function () {
@@ -106,45 +115,14 @@
             if (post_id > 0) {
                 $.post('/admin/blog/load_post', {
                     _token: "{{ csrf_token() }}",
-
                     post_id: post_id
                 }, function (data) {
                     showPost(data);
-
                 }, 'json');
             }
 
             // saving
-            $('#btn_save_post').click(function (e) {
-                e.preventDefault();
 
-                $(this).addClass('disabled');
-
-                console.log('cat_id : ' + $('#category_id').val());
-
-
-                $.post('/admin/blog/save_post', {
-                    _token: "{{ csrf_token() }}",
-
-                    title: $('#title').val(),
-                    slug: $('#slug').val(),
-                    chapo: CKEDITOR.instances['chapo'].getData(),
-                    content: CKEDITOR.instances['content'].getData(),
-                    published_at: $('#published_at').val(),
-                    category_id: $('#category_id').val(),
-                    tag_id: $('#tag_id').val(),
-
-                    post_id: $('#post_id').val()
-                }, function (data) {
-
-                    $('#btn_save_post').removeClass('disabled');
-                    $('#post_id').val(data.id);
-
-                    toastr.success('Post saved.');
-                    window.location.href = '/admin/blog'
-                    showPost(data);
-                }, 'json');
-            });
 
             // publishing
             $('#btn_publish_post').click(function (e) {
