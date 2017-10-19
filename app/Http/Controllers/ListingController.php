@@ -17,6 +17,7 @@ class ListingController extends Controller
 
     public function __construct(User $user, Listing $listing , ListingImage $listingImage , Favorit $favorit ,Review $review)
     {
+        $this->middleware('auth');
         $this->user = $user;
         $this->favorit = $favorit;
         $this->listing = $listing;
@@ -25,7 +26,10 @@ class ListingController extends Controller
     }
 
 
-
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function submitListing(Request $request){
         $this->validate($request, [
             'listing_type' => 'required',
@@ -79,6 +83,13 @@ class ListingController extends Controller
             return redirect()->route('payment' , ['type' => 'user']);
     }
 
+
+    /**
+     * @param Request $request
+     * @return mixed
+     *
+     * save the listing
+     */
     public function saveListing(Request $request){
         $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file');
@@ -100,15 +111,15 @@ class ListingController extends Controller
             ]);
             $this->user->updateOrCreate(
                 [
-                    'email' => $inputs['email']
+                'email' => $inputs['email']
                 ],
                 [
-                    'first_name' => $inputs['first_name'],
-                    'last_name' => $inputs['last_name'],
-                    'phone' => $inputs['phone'],
-                    'contact_type' => $inputs['contact_type'],
-                    'password' =>   bcrypt($pass)
-                ]);
+                'first_name' => $inputs['first_name'],
+                'last_name' => $inputs['last_name'],
+                'phone' => $inputs['phone'],
+                'contact_type' => $inputs['contact_type'],
+                'password' =>   bcrypt($pass)
+            ]);
         }
         if(!Auth::user()){
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
@@ -128,6 +139,11 @@ class ListingController extends Controller
         return \Response::json(['massage' => 'true' , 'id' => Auth::user()->id]);
     }
 
+
+    /**
+     * @param $files
+     * @return array|string
+     */
     public function getImagesName($files)
     {
         $file_names = [];
@@ -144,6 +160,11 @@ class ListingController extends Controller
         return '';
     }
 
+
+    /**
+     * @param $id
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
     public function deleteListing($id){
         if($this->listing->where('id' , $id)->delete()){
             return redirect()->back()->with('success' , 'Sucessfully deleted');
@@ -152,6 +173,11 @@ class ListingController extends Controller
         }
     }
 
+
+    /**
+     * @param Request $request
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
     public function postEditListing(Request $request){
         $this->validate($request, [
             'listing_type' => 'required',
@@ -182,6 +208,11 @@ class ListingController extends Controller
 
     }
 
+
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function editListing($id){
       $listing =   $this->listing->where('id' , $id)->first();
         return view('pages.editListing' , compact('listing'));
@@ -192,6 +223,10 @@ class ListingController extends Controller
         //
     }
 
+
+    /**
+     * @return string
+     */
     public function randomPassword() {
         $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890&$&*';
         $pass = array(); //remember to declare $pass as an array
@@ -203,6 +238,12 @@ class ListingController extends Controller
         return implode($pass); //turn the array into a string
     }
 
+
+    /**
+     * @param $id
+     * @param $title
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function singleListing($id , $title){
         $listing = $this->listing->where('id' , $id)->first();
         if(Auth::user()){
@@ -211,6 +252,11 @@ class ListingController extends Controller
         return view('pages.single_listing' , compact('listing' , 'hasfavorite'));
     }
 
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function searchListing(Request $request){
         $request->flash();
         $points = $this->listing->where('lat' , '!=' ,  'null')->where('listing_status' , 'done')->whereNotNull('approved')->get();
@@ -261,6 +307,11 @@ class ListingController extends Controller
 
     }
 
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function searchListingAjax(Request $request){
        $points = $this->listing->where('listing_status' , 'done')->where('lat' , '!=' ,  'null')->select('lat' , 'lng')->get();
        $array = json_decode($request->datas);
@@ -275,6 +326,12 @@ class ListingController extends Controller
         return \Response::json(['listing' => $listings]);
     }
 
+
+    /**
+     * @param $user_id
+     * @param $listing_id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function addFavorite($user_id , $listing_id){
         $listing = $this->favorit->where('user_id' , $user_id)->where('listing_id' , $listing_id)->first();
         if($listing){
@@ -286,6 +343,11 @@ class ListingController extends Controller
         }
     }
 
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function searchSavedSeraches(Request $request){
         $inputs = [];
         foreach($request->except('_token') as  $key=>$value){
@@ -312,31 +374,59 @@ class ListingController extends Controller
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
     }
 
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function delListingImages($id){
         if($this->listingImage->where('id' ,$id)->delete()){
              return redirect()->back();
         }
     }
 
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function writeReviews(Request $request){
         if($this->review->create($request->all())){
             return redirect()->back()->with('writed' , 'Your review Sucessfully addet');
         }
     }
 
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function deleteReviews($id){
         $this->review()->where('id'  ,$id)->delete();
         return redirect()->back();
     }
 
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function chooseType(){
         return view('pages.listing_option');
     }
 
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function agentForm(){
         return view('pages.agents');
     }
 
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function PostagentForm(Request $request){
         $this->validate($request, [
             'name'           => 'required',
@@ -365,6 +455,10 @@ class ListingController extends Controller
     }
 
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function submitAgentListing(Request $request){
         $this->validate($request, [
             'listing_type' => 'required',
@@ -419,6 +513,10 @@ class ListingController extends Controller
     }
 
 
+    /**
+     * @param $type
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function payment($type){
         return view('pages.payment' , compact('type'));
     }
