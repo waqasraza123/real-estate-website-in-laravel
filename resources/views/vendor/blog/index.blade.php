@@ -30,9 +30,10 @@
                         </article>
                     @endforeach
                 </div>
-                @include('blog::sidebar')
+                <div class="col-md-3">
+                    @include('blog::sidebar')
+                </div>
             </div>
         </div>
     </section>
-
 @endsection

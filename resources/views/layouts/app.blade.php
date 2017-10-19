@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Apartment - Premium Real Estate HMTL Site Template</title>
+    <title>2ndChanceLeasing | Find a Home</title>
     <meta name="keywords" content="Download, Apartment, Premium, Real Estate, HMTL, Site Template, property, mortgage, CSS">
     <meta name="description" content="Download Apartment - Premium Real Estate HMTL Site Template">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">

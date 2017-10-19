@@ -40,7 +40,6 @@ class BlogController extends Controller {
 
     public function showPost($slug) {
         $post = Post::whereSlug($slug)->first();
-
         $categories = Category::all();
         $tags_ids = json_decode($post->tag_id);
         if($tags_ids != null){
@@ -84,7 +83,7 @@ class BlogController extends Controller {
         ]);
         $inputs = $request->except('_token');
         if(Comment::create($inputs)){
-            return redirect()->back()->with('success' ,  'Your comment addet Sucessfully');
+            return redirect()->back()->with('success' ,  'Your comment added Successfully');
         }else{
             return redirect()->back()->withErrors(['error' => 'Please try again']);
         }
