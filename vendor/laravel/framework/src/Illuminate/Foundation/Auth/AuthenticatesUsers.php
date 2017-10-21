@@ -4,6 +4,7 @@ namespace Illuminate\Foundation\Auth;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 trait AuthenticatesUsers
 {
@@ -28,7 +29,6 @@ trait AuthenticatesUsers
     public function login(Request $request)
     {
         $this->validateLogin($request);
-
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
@@ -58,10 +58,15 @@ trait AuthenticatesUsers
      */
     protected function validateLogin(Request $request)
     {
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             $this->username() => 'required|string',
             'password' => 'required|string',
         ]);
+        if ($validator->fails()) {
+            return redirect('/login')
+                ->withErrors($validator)
+                ->withInput();
+        }
     }
 
     /**
