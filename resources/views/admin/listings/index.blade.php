@@ -56,18 +56,24 @@
                                         <td>{{ $listing->address }}</td>
                                         <td>{{ $listing->listing_status	}}</td>
                                         <td>
-                                            @if($listing->approved == null)
-                                                Not Approved
-                                            @else
-                                                Approved
-                                            @endif
+                                            <form action="{{ route('admPostEditListing') }}" method="post" enctype="multipart/form-data">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="id" value="{{ $listing->id }}">
+                                                <div class="form-group">
+                                                    <input type="radio" value="" name="approved" @if($listing->approved == null) checked @endif onchange="this.form.submit()"> No
+                                                    <input type="radio" value="1" name="approved" @if($listing->approved != null) checked @endif onchange="this.form.submit()"> Yes
+                                                </div>
+                                            </form>
                                         </td>
                                         <td>
-                                            @if($listing->featured == null)
-                                                Not Featured
-                                            @else
-                                                Featured
-                                            @endif
+                                            <form action="{{ route('admPostEditListing') }}" method="post" enctype="multipart/form-data">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" name="id" value="{{ $listing->id }}">
+                                                <div class="form-group">
+                                                    <input type="radio" value="" name="featured" @if($listing->featured == null) checked @endif onchange="this.form.submit()"> No
+                                                    <input type="radio" value="1" name="featured" @if($listing->featured != null) checked @endif onchange="this.form.submit()"> Yes
+                                                </div>
+                                            </form>
                                         </td>
                                         <td><a href="{{ route('admEditListing' , ['id' => $listing->id ]) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a></td>
                                         <td><a href="{{ route('admDeleteListing' , ['id' => $listing->id]) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>

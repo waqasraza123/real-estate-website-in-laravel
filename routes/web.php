@@ -55,11 +55,11 @@ Route::get('equal_opportunity' , ['as' => 'equalOpportunity' , 'uses' => 'HomeCo
 
  #Listing Routes
 
-Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing']);
-Route::post('/save_listing', ['as' => 'saveListing' , 'uses' => 'ListingController@saveListing']);
+Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing'])->middleware('auth');
+Route::post('/save_listing', ['as' => 'saveListing' , 'uses' => 'ListingController@saveListing'])->middleware('auth');
 Route::get('listing/{id}/{title}' , ['as' => 'singleListing' , 'uses' => 'ListingController@singleListing']);
 Route::post('submit_listing' , ['as' => 'submitListing' , 'uses' => 'ListingController@submitListing']);
-Route::get('edit_listing/{id}' , ['as' => 'editListing' , 'uses' => 'ListingController@editListing']);
+Route::get('edit_listing/{id}' , ['as' => 'editListing' , 'uses' => 'ListingController@editListing'])->middleware('auth');
 Route::post('edit_listing' , ['as' => 'postEditListing' , 'uses' => 'ListingController@postEditListing']);
 Route::get('delete_listing/{id}' , ['as' => 'deleteListing' , 'uses' => 'ListingController@deleteListing']);
 Route::get('add_favorite/{user_id}/{listing_id}' , ['as' => 'addFavorite' , 'uses' => 'ListingController@addFavorite']);
@@ -69,9 +69,9 @@ Route::post('search_listing_user_profile', ['as' => 'searchSavedSeraches' , 'use
 Route::get('delete_listing_images/{id}', ['as' => 'delListingImages' , 'uses' => 'ListingController@delListingImages']);
 Route::post('write_rewievs' , ['as' => 'writeReviews' , 'uses' => 'ListingController@writeReviews']);
 Route::post('delete_rewievs' , ['as' => 'deleteReviews' , 'uses' => 'ListingController@deleteReviews']);
-Route::get('choose_type' , ['as' => 'chooseType' , 'uses' => 'ListingController@chooseType']);
-Route::get('agent_form' , ['as' => 'agentForm' , 'uses' => 'ListingController@agentForm']);
-Route::post('agent_form_post' , ['as' => 'PostagentForm' , 'uses' => 'ListingController@PostagentForm']);
+Route::get('choose_type' , ['as' => 'chooseType' , 'uses' => 'ListingController@chooseType'])->middleware('auth');
+Route::get('agent_form' , ['as' => 'agentForm' , 'uses' => 'ListingController@agentForm'])->middleware('auth');
+Route::post('agent_form_post' , ['as' => 'PostagentForm' , 'uses' => 'ListingController@PostagentForm'])->middleware('auth');
 
 
     #Agent Routes
