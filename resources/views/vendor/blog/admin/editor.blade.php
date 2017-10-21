@@ -19,22 +19,43 @@
                                     <input type="text" class="form-control" name="title" id="title">
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="slug">Slug</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control" id="slug" name="slug">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label" for="slug">Published & Draft</label>
-                                <div class="col-sm-10">
-                                    <select name="post_status" id="published_at" class="form-control">
-                                        <option value="published">Published</option>
-                                        <option value="draft">Draft</option>
-                                    </select>
+                            @if(isset($post))
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="slug">Published & Draft</label>
+                                    <div class="col-sm-10">
+                                        <select name="post_status" id="published_at" class="form-control">
+                                            <option value="published" {{ $post->post_status == 'published' ? 'selected' : ''  }}>Published</option>
+                                            <option value="draft" {{ $post->post_status == 'draft' ? 'selected' : ''  }}>Draft</option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
+                            @else
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="slug">Published & Draft</label>
+                                    <div class="col-sm-10">
+                                        <select name="post_status" id="published_at" class="form-control">
+                                            <option value="published" >Published</option>
+                                            <option value="draft" >Draft</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            @endif
+                            @if(isset($post))
+                                <div class="form-group">
+                                    <div class="col-lg-2"></div>
+                                    <div class="col-lg-10">
+                                        @if ($post->image != '')
+                                            <img src="{{ $post->image }}" alt="" class="">
+                                        @endif
+                                    </div>
+                                </div>
+                            @endif
                             <div class="form-group">
                                 <label for="" class="col-md-2 control-label">
                                     Featured Image
@@ -46,40 +67,35 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="chapo">Category</label>
                                 <div class="col-sm-10">
-                                    <?php $category = isset($post) ? $post->category_id : null; ?>
+                                    <?php $category = isset($post) ? json_decode($post->category_id) : null; ?>
                                     {!! Form::select('category_id', $categories, $category, ['multiple' => 'multiple' ,   "id"=>"category_id", "class" => "form-control selectpicker"] ) !!}
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="chapo">Tags</label>
                                 <div class="col-sm-10">
-                                    {!! Form::select('tag_id', $tags, '' ,  ['multiple' => 'multiple' , 'name'=>'tag_id[]' ,"id"=>"tag_id", "class" => "form-control selectpicker"] ) !!}
+                                    <?php $tag  = isset($post) ? json_decode($post->tag_id) : null; ?>
+                                    {!! Form::select('tag_id', $tags, $tag ,  ['multiple' => 'multiple' , 'name'=>'tag_id[]' ,"id"=>"tag_id", "class" => "form-control selectpicker"] ) !!}
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="chapo">Excerpt</label>
                                 <div class="col-sm-10">
-                                    <textarea id="chapo" name="chapo" class="ckeditor form-control"></textarea>
+                                    <textarea id="chapo" name="chapo" class="ckeditor form-control">  @if(isset($post)){!! $post->chapo !!}@endif</textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="content">Content</label>
                                 <div class="col-sm-10">
-                                    <textarea id="content" name="content" class="ckeditor form-control"></textarea>
+                                    <textarea id="content" name="content" class="ckeditor form-control">  @if(isset($post)){!! $post->content !!}@endif</textarea>
                                 </div>
                             </div>
 
-                            <input type="hidden" id="post_id" value="{{ $post_id }}"/>
+                            <input name="post_id" type="hidden" id="post_id" value="{{ $post_id }}"/>
 
                             <button id="btn_save_post" type="submit" class="col-md-offset-2 btn btn-primary">Save post
                             </button>
-
-                            @if ($post_id > 0)
-                                <button id="btn_publish_post" type="submit" class="btn btn-success">Publish post
-                                </button>
-                                <a href="/admin/post/{{ $post_id }}/image" class="btn btn-default">Add Image</a>
-                            @endif
                         </form>
                     </div>
                 </div>
@@ -100,7 +116,6 @@
             $('#slug').val(data.slug);
             $('#chapo').val(data.chapo);
             $('#content').val(data.content);
-            $('#published_at').val(data.published_at);
             $('#category_id').val(data.category_id);
             $('#tag_id').val(data.tag_id);
 

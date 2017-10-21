@@ -23,9 +23,7 @@
                                             <td>{{ $category->name }}</td>
                                             <td>{{ $category->slug }}</td>
                                             <td>{{ $category->posts_num }}</td>
-
                                         </tr>
-
                                     @endforeach
                                 </table>
                                 <input type="text" id="new_cat" name="new_cat" value=""/>
@@ -165,7 +163,7 @@
                 }, function (data) {
                     $(btn).removeClass('disabled');
                     if (data.status == 'success') {
-                        toastr.success('Category created.');
+                        toastr.success('Tag created.');
                         window.location.reload()
                     } else {
                         toastr.error(data.error);
