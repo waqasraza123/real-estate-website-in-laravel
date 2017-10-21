@@ -32,8 +32,6 @@
                             </a>
                         </figure>
                         <div class="blog-text">
-                                {!! $post->chapo !!}
-                            <br><br>
                                 {!! $post->content !!}
                         </div>
                         <div class="agent-social-bar margin-top-30">
@@ -109,7 +107,7 @@
                             <textarea name="text" class="input-full agent-textarea main-input" placeholder="Reply"></textarea>
                             <div class="form-submit-cont">
                                 <button type="submit" class="button-primary pull-right">
-                                    <span>send</span>
+                                    <span>Comment</span>
                                     <div class="button-triangle"></div>
                                     <div class="button-triangle2"></div>
                                     <div class="button-icon"><i class="fa fa-pencil"></i></div>

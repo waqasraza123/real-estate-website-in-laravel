@@ -188,10 +188,10 @@
                         <h4 class="second-color">{{ Lang::get('pages.quick_links') }}<span class="special-color">.</span></h4>
                         <div class="footer-title-separator"></div>
                         <ul class="footer-ul">
-                            <li><span class="custom-ul-bullet"></span><a href="index-1.html">{{ Lang::get('pages.home') }}</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href="{{ route('homes') }}">{{ Lang::get('pages.home') }}</a></li>
                             <li><span class="custom-ul-bullet"></span><a href="listing-grid-right-sidebar.html">{{ Lang::get('pages.listing') }}</a></li>
                             <li><span class="custom-ul-bullet"></span><a href="agencies-listing-right-sidebar.html">{{ Lang::get('pages.agencies') }}</a></li>
-                            <li><span class="custom-ul-bullet"></span><a href="archive-grid.html">{{ Lang::get('blog') }}</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href="/blog">{{ Lang::get('blog') }}</a></li>
                             <li><span class="custom-ul-bullet"></span><a href="contact1.html">{{ Lang::get('pages.contact_us') }}</a></li>
                             <li><span class="custom-ul-bullet"></span><a href="submit-property.html">{{ Lang::get('pages.add_listing') }}</a></li>
                         </ul>
@@ -200,23 +200,25 @@
                         <h4 class="second-color">{{ Lang::get('pages.from_blog') }}<span class="special-color">.</span></h4>
                         <div class="footer-title-separator"></div>
                         <div class="row">
-                            <div class="col-xs-6 col-sm-12">
-                                <article>
-                                    <a href="blog-right-sidebar.html"><img src="{{ asset('images\footer-blog1.jpg') }}" alt="" class="footer-blog-image"></a>
-                                    <div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
-                                    <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                    <div class="clearfix"></div>
-                                </article>
-                                <div class="footer-blog-separator hidden-xs"></div>
-                            </div>
-                            <div class="col-xs-6 col-sm-12">
-                                <article>
-                                    <a href="blog-right-sidebar.html"><img src="{{ asset('images\footer-blog2.jpg') }}" alt="" class="footer-blog-image"></a>
-                                    <div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
-                                    <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                    <div class="clearfix"></div>
-                                </article>
-                            </div>
+                            @if($blog_posts->first())
+                                @foreach($blog_posts as $posts)
+                                <div class="col-xs-6 col-sm-12">
+                                    <article>
+                                        <a href="{{$posts->url}}">
+                                            @if($logo_image)
+                                                <img src="{{ $posts->image }}" alt=" Logo" class="footer-blog-image">
+                                            @else
+                                                <img src="{{ asset('images\footer-blog1.jpg') }}" alt=" Logo" class="footer-blog-image">
+                                            @endif
+                                        </a>
+                                        <div class="footer-blog-title"><a href="{{$posts->url}}">{{ $posts->title }}</a></div>
+                                        <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>{{ \Carbon\Carbon::parse($posts->created_at)->format('d/m/y') }}</div>
+                                        <div class="clearfix"></div>
+                                    </article>
+                                    <div class="footer-blog-separator hidden-xs"></div>
+                                </div>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-lg-3">
@@ -235,7 +237,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-6 small-cont">
-                        <img src="{{ asset('images\logo-light.png') }}" alt="" class="img-responsive footer-logo">
+                        @if($logo_image)
+                            <img src="{{ asset('assets/images/'.$logo_image->image) }}" alt=" Logo" class="img-responsive footer-logo">
+                        @else
+                            <img src="{{ asset('images\logo-light.png') }}" alt=" Logo" class="img-responsive footer-logo">
+                        @endif
                     </div>
                     <div class="col-xs-12 col-md-6 footer-copyrights">
                     </div>
