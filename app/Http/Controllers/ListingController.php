@@ -186,7 +186,6 @@ class ListingController extends Controller
             'available_date' => 'required',
             'lease_length' => 'required',
             'description' => 'required',
-            'loundry_type' => 'required',
             'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
