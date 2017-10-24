@@ -91,7 +91,6 @@
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             <input type="hidden" name="rent" value="{{ old('rent') }}">
                             <input type="hidden" name="listing_type" value="{{ old('listing_type') }}">
-
                             @if(array_key_exists('beds_baths' , old()))
                                 @if(array_key_exists('0' , old('beds_baths')))
                                 <input type="hidden" name="beds" value="{{ old('beds_baths')[0] }}">
@@ -132,62 +131,51 @@
         <div class="col-lg-5 " id="offers-list" style="background: white;  overflow-y: scroll">
             <div class="row"  style="overflow: scroll">
                 <div class="col-xs-12">
-
                     @foreach($listings as $listing)
-                     <div>
-                         <i class="fa fa-map-marker list-offer-localization hidden-xs"></i>
-                        <h4 class="list-offer-title">{{ $listing->address }}</h4>
-                     </div>
-                    <div class="list-offer">
-                        <div class="list-offer-left">
-                            <div class="list-offer-front">
-                                <div class="list-offer-photo">
-                                    @if($listing->ListingsImages()->first())
-                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt="">
-                                    @endif
-                                </div>
-                                <div class="list-offer-params">
-                                    <div class="list-area">
-                                        <img src="images\area-icon.png" alt="">54m<sup>2</sup>
+                        <div class="list-agency" style="height: 250px;">
+                            <div class="list-agency-left">
+                                @if($listing->ListingsImages()->first())
+                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt="" width="100%">
+                                @endif
+                                <div class="list-agency-description">
+                                    <div class="team-desc-line">
+												<span class="team-icon-circle">
+													<i class="fa fa-clock-o" style="line-height: 22px;"></i>
+												</span>
+                                        <span>{{ $listing->created_at->diffInhours() }}HR</span>
                                     </div>
-                                    <div class="list-rooms">
-                                        <img src="images\rooms-icon.png" alt="">3
+                                    <div class="team-desc-line">
+												<span class="team-icon-circle">
+													<i class="fa fa-dollar" style="line-height: 22px;"></i>
+												</span>
+                                        <span>{{ $listing->rent }} </span>
                                     </div>
-                                    <div class="list-baths">
-                                        <img src="images\bathrooms-icon.png" alt="">1
+                                    <div class="team-desc-line">
+												<span class="team-icon-circle">
+													<i class="fa fa-bed fa-sm" style="line-height: 22px;"></i>
+												</span>
+                                        <span><a href="#"> {{ $listing->beds_count }} Bed</a></span>
+                                    </div>
+                                    <div class="team-desc-line">
+												<span class="team-icon-circle">
+													<i class="fa fa-phone" style="line-height: 22px;"></i>
+												</span>
+                                        <span><a href="#">{{ App\User::where('id' ,$listing->user_id)->pluck('phone')->first() }}</a></span>
                                     </div>
                                 </div>
                             </div>
+                            <a class="list-agency-right-large" href="agency-details-right-sidebar.html">
+                                <div class="list-agency-text">
+                                    <h4 class="list-agency-title"><i class="fa fa-map-marker"></i>  {{ $listing->address }}</h4>
+                                    <div class="list-agency-separator"></div>
+                                    {{ $listing->description }}
+                                </div>
 
+                            </a>
+                            <div class="small-triangle"></div>
+                            <div class="small-triangle2"></div>
+                            <a class="small-icon" href="agency-details-right-sidebar.html"><i class="jfont fa-2x"></i></a>
                         </div>
-                        <a class="list-offer-right-large" href="estate-details-right-sidebar.html" style="min-width: 320px">
-                            <div class="list-offer-text">
-                                <i class="fa fa-clock-o list-offer-localization hidden-xs"></i>
-                                {{ $listing->created_at->diffInhours() }}HR
-                                <div class="clearfix"></div>
-                                <h4>
-                                    {{ $listing->rent }}$
-                                </h4>
-                                <br>
-                               {{ $listing->beds_count }} Bed
-                                <br>
-                                Available {{ \Carbon\Carbon::parse($listing->available_date)->format('m/d/y') }}
-                                <br>
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                {{ App\User::where('id' ,$listing->user_id)->pluck('phone')->first() }}
-                                <div class="clearfix"></div>
-                                  {{--  {{ $listing->description }}--}}
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="price-list-cont">
-                                <div class="list-price">
-                                    <i class="fa fa-envelope-o"></i>
-                                    Email Property
-                                </div>
-                            </div>
-                        </a>
-                        <div class="clearfix"></div>
-                    </div>
                     @endforeach
                 </div>
             </div>

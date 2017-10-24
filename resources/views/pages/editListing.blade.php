@@ -41,10 +41,10 @@
                                             <div id="submit-property-map" class="submit-property-map" style="height: 300px;"></div>
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-6 margin-top-15">
-                                                    <input name="lng" type="hidden" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly">
+                                                    <input name="lng" value="{{ $listing->lng }}" type="hidden" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly">
                                                 </div>
                                                 <div class="col-xs-12 col-sm-6 margin-top-15">
-                                                    <input name="lat" type="hidden" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly">
+                                                    <input name="lat" value="{{ $listing->lat }}" type="hidden" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly">
                                                 </div>
                                             </div>
                                         </div>
@@ -254,14 +254,17 @@
                                                     <div class="grid-offer-photo">
                                                         <img src=" {{ asset('assets/images').'/'.$images->image }}" class="zoom" alt="">
                                                         <div class="type-container">
-
+                                                            @if($images->featured == '1')
+                                                                <a href="" class="transaction-type" style="cursor: pointer;color: white; margin-right: 10px">  Featured</a>
+                                                            @else
+                                                                <a href="{{ route('makeFeatureImage' , ['id' => $images->id , 'listing_id' => $listing->id]) }}" class="estate-type" style="cursor: pointer;color: white; margin-right: 10px"> Make Featured</a>
+                                                            @endif
                                                             <a href="{{ route('delListingImages' , ['id' => $images->id]) }}" class="estate-type" style="cursor: pointer;color: white">delete</a>
                                                         </div>
                                                     </div>
                                                     <div class="clearfix"></div>
                                                 </a>
                                             </div>
-
                                         @endforeach
                                         </div>
                                     </div>

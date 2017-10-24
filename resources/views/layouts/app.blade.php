@@ -189,11 +189,7 @@
                         <div class="footer-title-separator"></div>
                         <ul class="footer-ul">
                             <li><span class="custom-ul-bullet"></span><a href="{{ route('homes') }}">{{ Lang::get('pages.home') }}</a></li>
-                            <li><span class="custom-ul-bullet"></span><a href="listing-grid-right-sidebar.html">{{ Lang::get('pages.listing') }}</a></li>
-                            <li><span class="custom-ul-bullet"></span><a href="agencies-listing-right-sidebar.html">{{ Lang::get('pages.agencies') }}</a></li>
                             <li><span class="custom-ul-bullet"></span><a href="/blog">{{ Lang::get('blog') }}</a></li>
-                            <li><span class="custom-ul-bullet"></span><a href="contact1.html">{{ Lang::get('pages.contact_us') }}</a></li>
-                            <li><span class="custom-ul-bullet"></span><a href="submit-property.html">{{ Lang::get('pages.add_listing') }}</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-lg-3">

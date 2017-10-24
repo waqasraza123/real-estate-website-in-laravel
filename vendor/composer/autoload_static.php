@@ -376,6 +376,7 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
 
     public static $classMap = array (
         'AddFeatureToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_02_152659_add_feature_to_listings_table.php',
+        'AddFeaturedToListingImages' => __DIR__ . '/../..' . '/database/migrations/2017_10_24_164955_add_featured_to_listing_images.php',
         'AddLastNameToUsers' => __DIR__ . '/../..' . '/database/migrations/2017_08_18_193023_add_last_name_to_users.php',
         'AddListingStatusToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_16_003527_add_listing_status_to_listings_table.php',
         'AddListingTypeToSavedSearches' => __DIR__ . '/../..' . '/database/migrations/2017_09_09_010736_add_listing_type_to_saved_searches.php',
@@ -2375,7 +2376,6 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
         'League\\OAuth1\\Client\\Signature\\PlainTextSignature' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Signature/PlainTextSignature.php',
         'League\\OAuth1\\Client\\Signature\\Signature' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Signature/Signature.php',
         'League\\OAuth1\\Client\\Signature\\SignatureInterface' => __DIR__ . '/..' . '/league/oauth1-client/src/Client/Signature/SignatureInterface.php',
-        'MakeTagFieldNullable' => __DIR__ . '/../..' . '/database/migrations/2017_10_19_194647_make_tag_field_nullable.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',

@@ -304,7 +304,7 @@
                             <div class="featured-offer-front">
                                 <div class="featured-offer-photo">
                                     @if($lis->ListingsImages()->first())
-                                        <img src="{{ asset('assets/images').'/'.$lis->ListingsImages()->first()->image }}" alt="">
+                                        <img src="{{ asset('assets/images').'/'.$lis->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="">
                                     @else
                                         <img src="{{ asset('images/featured-offer7.jpg') }}" alt="">
                                     @endif
