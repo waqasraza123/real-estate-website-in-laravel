@@ -16,6 +16,8 @@ return array(
     'AddNewCheckoxesToListings' => $baseDir . '/database/migrations/2017_10_16_161912_add_new_checkoxes_to_listings.php',
     'AddPhoneTypeToUsersTable' => $baseDir . '/database/migrations/2017_08_18_152915_add_phone_type_to_users_table.php',
     'AddRolesToUsersTable' => $baseDir . '/database/migrations/2017_09_30_212322_add_roles_to_users_table.php',
+    'AddSchjoolDisctrictToListingsTable' => $baseDir . '/database/migrations/2017_10_25_221835_add_schjool_disctrict_to_listings_table.php',
+    'AddStateToListingsTagle' => $baseDir . '/database/migrations/2017_10_25_201358_add_state_to_listings_tagle.php',
     'AddTagsIdDidcodeBlogPosts' => $baseDir . '/database/migrations/2017_10_11_125531_add_tags_id_didcode_blog_posts.php',
     'AddTitleToListingsTable' => $baseDir . '/database/migrations/2017_09_23_200734_add_title_to_listings_table.php',
     'AddUsersInfoToUsersTable' => $baseDir . '/database/migrations/2017_09_02_001109_add_users_info_to_users_table.php',

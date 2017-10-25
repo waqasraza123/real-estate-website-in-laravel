@@ -39,9 +39,13 @@ class ListingController extends Controller
             'lease_length' => 'required',
             'parking_type' => 'required',
             'parking_fee' => 'required',
+            'description' => 'required',
+            'state' => 'required',
+            'zip_code' => 'required'
         ]);
+
         $pass =    $this->randomPassword();
-        $inputs = $request->except('_token' , 'file');
+        $inputs = $request->except('_token' , 'file', 'featured');
         if(Auth::user()){
             $this->user->where('id' , Auth::user()->id)->update([
                'first_name' => $inputs['first_name'],
@@ -67,12 +71,14 @@ class ListingController extends Controller
         if(!Auth::user()){
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
         }
-
+        $name = $request->featured->hashName();
+        $request->featured->move(public_path() . '/assets/images/' , $name);
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
         $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
+        $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
         if($request->file()){
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){
@@ -145,6 +151,7 @@ class ListingController extends Controller
      */
     public function getImagesName($files)
     {
+
         $file_names = [];
         if ($files) {
             foreach ($files as $file) {
@@ -463,9 +470,12 @@ class ListingController extends Controller
             'lease_length' => 'required',
             'parking_type' => 'required',
             'parking_fee' => 'required',
+            'description' => 'required',
+            'state' => 'required',
+            'zip_code' => 'required'
         ]);
         $pass =    $this->randomPassword();
-        $inputs = $request->except('_token' , 'file');
+        $inputs = $request->except('_token' , 'file', 'featured');
         if(Auth::user()){
             $this->user->where('id' , Auth::user()->id)->update([
                 'first_name' => $inputs['first_name'],
@@ -491,12 +501,14 @@ class ListingController extends Controller
         if(!Auth::user()){
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
         }
-
+        $name = $request->featured->hashName();
+        $request->featured->move(public_path() . '/assets/images/' , $name);
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
         $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
+        $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
         if($request->file()){
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){
