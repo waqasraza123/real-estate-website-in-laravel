@@ -298,11 +298,7 @@ class ListingController extends Controller
                 array_push($langLtd, $new);
             }
         }
-
-
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
-
-
     }
 
 
@@ -517,6 +513,14 @@ class ListingController extends Controller
      */
     public function payment($type){
         return view('pages.payment' , compact('type'));
+    }
+
+
+    public function makeFeatureImage($id , $listing_id){
+        $this->listingImage->where('listing_id' , $listing_id)->update(['featured' => NULL]);
+        if($this->listingImage->where('id' , $id)->update(['featured' => '1'])){
+            return redirect()->back()->with('success' , 'Featured image changed');
+        }
     }
 
 }

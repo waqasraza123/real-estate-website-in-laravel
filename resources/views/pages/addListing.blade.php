@@ -304,7 +304,7 @@
                             <div class="descriptionAmenitiesWrapper">
                                 <div class="grid">
                                     <div class="col-xs-12">
-                                        <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.descirption') }} <span style="color: #999;text-transform: lowercase;font-size: 16px;">({{ Lang::get('listing.optional') }})</span></h4>
+                                        <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.descirption') }} </h4>
                                     </div>
                                 </div>
                                 <div class="grid">

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddFeatureToListingsTable' => $baseDir . '/database/migrations/2017_10_02_152659_add_feature_to_listings_table.php',
+    'AddFeaturedToListingImages' => $baseDir . '/database/migrations/2017_10_24_164955_add_featured_to_listing_images.php',
     'AddLastNameToUsers' => $baseDir . '/database/migrations/2017_08_18_193023_add_last_name_to_users.php',
     'AddListingStatusToListingsTable' => $baseDir . '/database/migrations/2017_09_16_003527_add_listing_status_to_listings_table.php',
     'AddListingTypeToSavedSearches' => $baseDir . '/database/migrations/2017_09_09_010736_add_listing_type_to_saved_searches.php',
@@ -2006,7 +2007,6 @@ return array(
     'League\\OAuth1\\Client\\Signature\\PlainTextSignature' => $vendorDir . '/league/oauth1-client/src/Client/Signature/PlainTextSignature.php',
     'League\\OAuth1\\Client\\Signature\\Signature' => $vendorDir . '/league/oauth1-client/src/Client/Signature/Signature.php',
     'League\\OAuth1\\Client\\Signature\\SignatureInterface' => $vendorDir . '/league/oauth1-client/src/Client/Signature/SignatureInterface.php',
-    'MakeTagFieldNullable' => $baseDir . '/database/migrations/2017_10_19_194647_make_tag_field_nullable.php',
     'Mockery' => $vendorDir . '/mockery/mockery/library/Mockery.php',
     'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => $vendorDir . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
     'Mockery\\Adapter\\Phpunit\\MockeryTestCase' => $vendorDir . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php',

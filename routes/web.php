@@ -72,7 +72,7 @@ Route::post('delete_rewievs' , ['as' => 'deleteReviews' , 'uses' => 'ListingCont
 Route::get('choose_type' , ['as' => 'chooseType' , 'uses' => 'ListingController@chooseType'])->middleware('auth');
 Route::get('agent_form' , ['as' => 'agentForm' , 'uses' => 'ListingController@agentForm'])->middleware('auth');
 Route::post('agent_form_post' , ['as' => 'PostagentForm' , 'uses' => 'ListingController@PostagentForm'])->middleware('auth');
-
+Route::get('make_featured_iamge/{id}/{listing_id}' , ['as' => 'makeFeatureImage' , 'uses' => 'ListingController@makeFeatureImage' ]);
 
     #Agent Routes
 
