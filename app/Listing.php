@@ -72,7 +72,10 @@ class Listing extends Model
         'onsite_laundry',
         'fitness_center',
         'pool',
-        'no_smocking'
+        'no_smocking',
+        'state',
+        'zip_code',
+        'school_dc'
     ];
 
     public function ListingsImages(){

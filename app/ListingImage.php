@@ -8,6 +8,7 @@ class ListingImage extends Model
 {
         protected  $fillable = [
             'listing_id',
-            'image'
+            'image',
+            'featured'
         ];
 }

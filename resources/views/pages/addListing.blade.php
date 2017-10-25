@@ -64,6 +64,20 @@
                                 </div>
                             </div>
                             <div class="grid">
+                                <div class="col-sm-4">
+                                    <h5 class="labeles">State</h5>
+                                    <input name="state" type="text" value="{{ old('state') }}" class="input-full main-input" placeholder="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5 class="labeles">Zip Code</h5>
+                                    <input name="zip_code" type="text" value="{{ old('zip_code') }}" class="input-full main-input" placeholder="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <h5 class="labeles">School District</h5>
+                                    <input name="school_dc" type="text" value="{{ old('school_dc') }}" class="input-full main-input" placeholder="">
+                                </div>
+                            </div>
+                            <div class="grid">
                                 <!-- ko foreach: PropertyTypes -->
                                 <div class="col-xs-12">
                                     <br>
@@ -162,9 +176,20 @@
                                     <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.photos') }}</h4>
                                 </div>
                             </div>
-                            <div class="grid noMargin">
+
+                            <div class="grid">
                                 <div class="col-xs-12 ">
                                     <input id="file-upload" name="files[]" type="file" multiple="">
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="col-xs-12">
+                                    <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">Featured Image</h4>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <div class="col-xs-12">
+                                    <input type="file" name="featured" >
                                 </div>
                             </div>
                             <div class="grid">
@@ -465,7 +490,10 @@
                         required: true,
                         email: true
                     },
-                    agree: "required"
+                    agree: "required",
+                    description: "required",
+                    state: "required",
+                    zip_code: "required",
                 },
                 messages: {
                     first_name: "Please enter your Firstname",
@@ -516,7 +544,6 @@
                             type: 'post',
                             url: '{{ route('saveListing') }}',
                             data: datas,
-
                             success: function (res) {
                                 if (res.massage == 'true') {
                                     window.location.href = 'account/savedListings/'+res.id+''
