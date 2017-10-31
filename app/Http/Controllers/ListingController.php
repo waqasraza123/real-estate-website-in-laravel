@@ -196,9 +196,15 @@ class ListingController extends Controller
             'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
+
         $inputs = $request->except('_token' , 'listingid'  ,'files');
         $inputs['listing_status'] = 'done';
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
+        if($request->has('featured')){
+            $name = $request->featured->hashName();
+            $request->featured->move(public_path() . '/assets/images/' , $name);
+            $this->listingImage->create(['listing_id' => $request->get('listingid'), 'image' => $name , 'featured' => '1']);
+        }
         if($request->file()){
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){

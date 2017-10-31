@@ -29,9 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-12">
-
                         <h3 class="title-negative-margin">{{ Lang::get('listing.header') }}<span class="special-color">.</span></h3>
-
                         <div class="title-separator-primary"></div>
                         <div class="dark-col margin-top-60">
                             <div class="row">
