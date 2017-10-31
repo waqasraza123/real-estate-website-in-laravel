@@ -189,45 +189,7 @@
                                     <input type="file" name="featured" >
                                 </div>
                             </div>
-                            <div class="grid">
-                                <div class="cell-xs-12">
-                                    <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.contact') }}</h4>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input name="first_name"  type="text" value="@if(Auth::user()){{ Auth::user()->first_name }}@else{{ old('first_name') }}@endif" placeholder="{{ Lang::get('listing.first_name') }}" class="input-full main-input" maxlength="15"  title="">
-                                    <span class="first_name_fails"></span>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input name="last_name" type="text" value="@if(Auth::user()){{ Auth::user()->last_name }}@else{{ old('last_name') }}@endif" placeholder="{{ Lang::get('listing.last_name') }}" class="input-full main-input" maxlength="25"  title="">
-                                    <span class="last_name_fails"></span>
-                                </div>
 
-                                <div class="col-sm-4">
-                                    <input type="text" name="email"  value="@if(Auth::user()){{ Auth::user()->email }}@else{{ old('email') }}@endif" placeholder="{{ Lang::get('listing.email') }}" class="input-full main-input" maxlength="100"  title="">
-                                    <span class="email_fails"></span>
-                                </div>
-                                <div class="col-sm-4">
-                                    <input name="phone" value="@if(Auth::user()){{ Auth::user()->phone }}@else{{ old('phone') }}@endif" type="text" placeholder="{{ Lang::get('listing.phone') }}" class="input-full main-input">
-                                    <span class="phone_fails"></span>
-                                </div>
-                                <div class="col-sm-4">
-                                    <select name="contact_type" class="selectpicker contactpreference" data-bind="options: ContactPreferenceTypes, optionsText: 'Description', optionsValue: 'Id', value: Contact.ContactPreference, optionsCaption: 'Contact Preference'"  title="" style="display: none;">
-                                        <option value="">{{ Lang::get('listing.contact_ref') }}</option>
-                                        <option value="3" @if(old('contact_type') == 3)  selected @endif>{{ Lang::get('listing.phone_email') }}</option>
-                                        <option value="2" @if(old('contact_type') == 2)  selected  @endif>{{ Lang::get('listing.email_only') }}</option>
-                                        <option value="1" @if(old('contact_type') == 1)  selected  @endif>{{ Lang::get('listing.phone_only') }}</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-4 ">
-                                    <div class="">
-                                        <input type="checkbox" id="c1"  @if(old('contact_type') == 3)  checked @endif name="contact_type" class="main-checkbox">
-                                        <label for="c1" style="font-size: 15px"><span></span>{{ Lang::get('listing.hide_name') }}</label><br>
-                                    </div>
-                                </div>
-                                <div class="cell-xs-12 msg">
-                                    <span class="emailChangeMsg" data-bind="text: EmailChangeMsg"></span>
-                                </div>
-                            </div>
                             <div class="grid">
                                 <div class="col-xs-12">
                                     <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.acceptable') }}</h4>

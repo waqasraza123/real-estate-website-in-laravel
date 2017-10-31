@@ -43,7 +43,6 @@ class ListingController extends Controller
             'state' => 'required',
             'zip_code' => 'required'
         ]);
-
         $inputs = $request->except('_token' , 'file', 'featured');
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
