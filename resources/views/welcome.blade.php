@@ -303,7 +303,7 @@
                             <span style="display: none">{{ $count++ }}</span>
                             <div class="featured-offer-front">
                                 <div class="featured-offer-photo">
-                                    @if($lis->ListingsImages()->first())
+                                    @if($lis->ListingsImages()->whereNotNull('featured')->first())
                                         <img src="{{ asset('assets/images').'/'.$lis->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="">
                                     @else
                                         <img src="{{ asset('images/featured-offer7.jpg') }}" alt="">
