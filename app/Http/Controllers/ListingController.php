@@ -43,42 +43,17 @@ class ListingController extends Controller
             'state' => 'required',
             'zip_code' => 'required'
         ]);
-
-        $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file', 'featured');
-        if(Auth::user()){
-            $this->user->where('id' , Auth::user()->id)->update([
-               'first_name' => $inputs['first_name'],
-               'last_name' => $inputs['last_name'],
-               'email' => $inputs['email'],
-               'phone' => $inputs['phone'],
-               'contact_type' => $inputs['contact_type']
-
-            ]);
-        }else{
-            $this->user->updateOrCreate(
-                [
-                    'email' => $inputs['email']
-                ],
-                [
-                    'first_name' => $inputs['first_name'],
-                    'last_name' => $inputs['last_name'],
-                    'phone' => $inputs['phone'],
-                    'contact_type' => $inputs['contact_type'],
-                    'password' =>   bcrypt($pass)
-            ]);
-        }
-        if(!Auth::user()){
-            Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
-        }
-        $name = $request->featured->hashName();
-        $request->featured->move(public_path() . '/assets/images/' , $name);
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
         $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
-        $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
+        if($request->has('featured')){
+            $name = $request->featured->hashName();
+            $request->featured->move(public_path() . '/assets/images/' , $name);
+            $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
+        }
         if($request->file()){
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){
@@ -196,9 +171,15 @@ class ListingController extends Controller
             'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
+
         $inputs = $request->except('_token' , 'listingid'  ,'files');
         $inputs['listing_status'] = 'done';
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
+        if($request->has('featured')){
+            $name = $request->featured->hashName();
+            $request->featured->move(public_path() . '/assets/images/' , $name);
+            $this->listingImage->create(['listing_id' => $request->get('listingid'), 'image' => $name , 'featured' => '1']);
+        }
         if($request->file()){
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){

@@ -8250,4 +8250,29 @@ h4.neighbourhood-title {
 	color:    #999;
 }
 
+/*
+ ====================================================
+		Mobile Css
+=====================================================	*/
 
+
+
+@media (max-width: 500px) {
+	.center-button-cont  {
+		text-align: center !important;
+		margin-bottom: 15px;
+	}
+	.labeles{
+		white-space: normal;
+	}
+	.file-drop-zone-title{
+		font-size: 15px !important;
+	}
+	.dark-col {
+		padding: 30px 30px 15px 30px;
+	}
+	.catpchat{
+		margin-left: -29px !important;
+	}
+	.g-recaptcha {transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;}
+}

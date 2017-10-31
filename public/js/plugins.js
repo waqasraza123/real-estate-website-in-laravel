@@ -4453,7 +4453,7 @@ InfoBox.prototype = new google.maps.OverlayView, InfoBox.prototype.createInfoBox
         previewFileIconClass: "file-icon-4x",
         previewFileIconSettings: {},
         previewFileExtSettings: {},
-        buttonLabelClass: "hidden-xs",
+        buttonLabelClass: "",
         browseIcon: '',
         browseClass: "btn btn-primary",
         removeIcon: '<i class="glyphicon glyphicon-trash"></i>',
