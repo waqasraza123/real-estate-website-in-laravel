@@ -50,6 +50,20 @@
                                         </div>
                                     </div>
                                 </div>
+                                    <div class="grid">
+                                        <div class="col-sm-4">
+                                            <h5 class="labeles">State</h5>
+                                            <input name="state" type="text" value="{{ $listing->state }}" class="input-full main-input" placeholder="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h5 class="labeles">Zip Code</h5>
+                                            <input name="zip_code" type="text" value="{{ $listing->zip_code }}" class="input-full main-input" placeholder="">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h5 class="labeles">School District</h5>
+                                            <input name="school_dc" type="text" value="{{ $listing->school_dc }}" class="input-full main-input" placeholder="">
+                                        </div>
+                                    </div>
                                 <div class="grid">
                                     <!-- ko foreach: PropertyTypes -->
                                     <div class="col-xs-12">

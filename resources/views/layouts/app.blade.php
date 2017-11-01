@@ -171,7 +171,7 @@
         <footer class="large-cont">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-lg-3">
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
                         <h4 class="second-color">{{ Lang::get('pages.contact_us') }}<span class="special-color">.</span></h4>
                         <div class="footer-title-separator"></div>
                         <p class="footer-p">{{ $footer_content ?  $footer_content->text  : 'Please edit this text on the admin side'}}</p>
@@ -184,7 +184,7 @@
                         </address>
                         <div class="clear"></div>
                     </div>
-                    <div class="col-xs-6 col-sm-6 col-lg-3">
+                    <div class="col-xs-12 col-sm-6 col-lg-3">
                         <h4 class="second-color">{{ Lang::get('pages.quick_links') }}<span class="special-color">.</span></h4>
                         <div class="footer-title-separator"></div>
                         <ul class="footer-ul">

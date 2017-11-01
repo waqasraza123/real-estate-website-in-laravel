@@ -19,7 +19,7 @@
 @section('content')
     <div class="row">
         <div class="col-xs-12">
-            <div class="white_bg" style="background: white; padding-left: 20px">
+            <div class="white_bg" style="background: white; padding-left: 20px; padding-right: 20px">
                 <div class="row">
                         <div class="success-box margin-top-30" style="display: none">
                             <p>Successfully saved</p>
@@ -27,7 +27,7 @@
                             <div class="small-icon"><i class="jfont"></i></div>
                         </div>
 
-                    <div class="col-xs-8">
+                    <div class="col-xs-12 col-lg-8">
                         <form action="{{ route('searchListing') }}" class="apartament_form " method="post" style="margin-bottom: 0px">
                             {{ csrf_field()  }}
                             <input type="hidden" name="listing_type" value="2">
@@ -45,7 +45,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-3 col-xs-12 form-">
                                     <select name="rent" id="rent" class="selectpicker"   title="Rent">
                                         <option value="500-700">$500 - $700</option>
                                         <option value="700-900">$700 - $900</option>
@@ -55,7 +55,7 @@
                                         <option value="2100-2150">$2100 - $2150</option>
                                     </select>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-3 col-xs-12">
                                     <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
                                         <optgroup label="Beds" data-max-options="1">
                                             <option value="all">All Beds</option>
@@ -72,7 +72,7 @@
                                         </optgroup>
                                     </select>
                                 </div>
-                                <div class="col-sm-12 col-md-6 col-lg-2  adv-search-button-cont">
+                                <div class="col-sm-12 col-md-6 col-lg-2 col-xs-12 text-center  adv-search-button-cont">
                                     <button type="submit" class="button-primary  appartament_search">
                                         <span>{{ Lang::get('home.search_btn') }}</span>
                                         <div class="button-triangle"></div>
@@ -83,9 +83,9 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-12 col-lg-4">
                         @if(Auth::user())
-                        <form action="{{ route('saveSearch') }}" class="apartament_form pull-right" id="save_search" method="post" style="margin-bottom: 0px">
+                        <form action="{{ route('saveSearch') }}" class="apartament_form pull-right" id="save_search" method="post">
                             {{ csrf_field() }}
                             <input type="hidden" name="address" value="{{ old('address') }}">
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -132,7 +132,7 @@
             <div class="row"  style="overflow: scroll">
                 <div class="col-xs-12">
                     @foreach($listings as $listing)
-                        <div class="list-agency" style="height: 250px;">
+                        <div class="list-agency">
                             <div class="list-agency-left">
                                 @if($listing->ListingsImages()->first())
                                     <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt="" width="100%">
