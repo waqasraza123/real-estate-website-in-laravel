@@ -30,7 +30,7 @@
                         </article>
                     @endforeach
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 col-xs-12">
                     @include('blog::sidebar')
                 </div>
             </div>

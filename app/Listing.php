@@ -75,7 +75,13 @@ class Listing extends Model
         'no_smocking',
         'state',
         'zip_code',
-        'school_dc'
+        'school_dc',
+        'name',
+        'city',
+        'br_le_ye',
+        'ev_ye',
+        'ba_ye',
+        'fo_ye'
     ];
 
     public function ListingsImages(){

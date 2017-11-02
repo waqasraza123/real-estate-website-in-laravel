@@ -392,6 +392,7 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
         'AddFeatureToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_02_152659_add_feature_to_listings_table.php',
         'AddFeaturedToListingImages' => __DIR__ . '/../..' . '/database/migrations/2017_10_24_164955_add_featured_to_listing_images.php',
         'AddLastNameToUsers' => __DIR__ . '/../..' . '/database/migrations/2017_08_18_193023_add_last_name_to_users.php',
+        'AddListingNewFields' => __DIR__ . '/../..' . '/database/migrations/2017_11_02_174705_add_listing_new_fields.php',
         'AddListingStatusToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_16_003527_add_listing_status_to_listings_table.php',
         'AddListingTypeToSavedSearches' => __DIR__ . '/../..' . '/database/migrations/2017_09_09_010736_add_listing_type_to_saved_searches.php',
         'AddListingsOptionsToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_12_173604_add_listings_options_to_listings_table.php',
