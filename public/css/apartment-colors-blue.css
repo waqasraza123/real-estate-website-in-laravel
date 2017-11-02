@@ -944,7 +944,13 @@ textarea.main-input,
 .bootstrap-select .btn-default:focus, 
 .bootstrap-select.open > .dropdown-toggle.btn-default,
 .bootstrap-select .dropdown-menu {
-	border: 1px solid #ebebeb;
+	border: 1px solid #969595;
+}
+
+.input_no_border{
+	border: none;
+	border-bottom: 1px solid #969595;
+	width:50px;
 }
 
 header.header2 .top-icon-circle,

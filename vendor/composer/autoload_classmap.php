@@ -9,6 +9,7 @@ return array(
     'AddFeatureToListingsTable' => $baseDir . '/database/migrations/2017_10_02_152659_add_feature_to_listings_table.php',
     'AddFeaturedToListingImages' => $baseDir . '/database/migrations/2017_10_24_164955_add_featured_to_listing_images.php',
     'AddLastNameToUsers' => $baseDir . '/database/migrations/2017_08_18_193023_add_last_name_to_users.php',
+    'AddListingNewFields' => $baseDir . '/database/migrations/2017_11_02_174705_add_listing_new_fields.php',
     'AddListingStatusToListingsTable' => $baseDir . '/database/migrations/2017_09_16_003527_add_listing_status_to_listings_table.php',
     'AddListingTypeToSavedSearches' => $baseDir . '/database/migrations/2017_09_09_010736_add_listing_type_to_saved_searches.php',
     'AddListingsOptionsToListingsTable' => $baseDir . '/database/migrations/2017_10_12_173604_add_listings_options_to_listings_table.php',

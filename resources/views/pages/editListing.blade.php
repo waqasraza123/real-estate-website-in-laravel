@@ -32,7 +32,6 @@
                                     <br>
                                 @endif
                                 {{ csrf_field() }}
-
                                 <div class="grid">
                                     <div class="col-xs-12">
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px; text-transform: capitalize">{{ Lang::get('listing.address') }}</h4>
@@ -166,11 +165,16 @@
                                             <div class="row">
                                                 <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" value="1" @if($listing->broken_lease == 1)  checked @endif id="c12" name="broken_lease" class="main-checkbox" >
-                                                    <label for="c12"><span></span>Broken lease (how many/how old)</label><br>
+                                                    <label for="c12"><span></span>Broken lease-How old
+                                                        <input name="br_le_ye" class="input_no_border" value="{{ $listing->br_le_ye }}" type="text">yr(s)
+                                                    </label>
                                                 </div>
                                                 <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" value="1" @if($listing->eviction == 1)  checked @endif id="c13" name="eviction" class="main-checkbox" >
-                                                    <label for="c13"><span></span>Eviction (how many/how old)</label><br>
+                                                    <label for="c13"><span></span>Eviction-How old
+                                                        <input name="ev_ye" class="input_no_border" value="{{ $listing->ev_ye }}" type="text">yr(s)
+                                                    </label>
+                                                    <br>
                                                 </div>
                                                 <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" value="1" @if($listing->misdemeanor == 1)  checked @endif id="c14" name="misdemeanor" class="main-checkbox" >
@@ -194,11 +198,13 @@
                                                 </div>
                                                 <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" value="1" @if($listing->bankruptcy == 1)  checked @endif id="c19" name="bankruptcy" class="main-checkbox" >
-                                                    <label for="c19"><span></span>Bankruptcy (how old)</label><br>
+                                                    <label for="c19"><span></span>Bankruptcy-How old
+                                                        <input name="ba_ye" value="{{ $listing->ba_ye }}" class="input_no_border" type="text">yr(s)</label><br>
                                                 </div>
                                                 <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" value="1" @if($listing->foreclosure == 1)  checked @endif id="c20" name="foreclosure" class="main-checkbox" >
-                                                    <label for="c20"><span></span>Foreclosure (how old)</label><br>
+                                                    <label for="c20"><span></span>Foreclosure-How old
+                                                        <input name="fo_ye" value="{{ $listing->fo_ye }}" class="input_no_border" type="text">yr(s)</label><br>
                                                 </div>
                                                 <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox" value="1" @if($listing->credit == 1)  checked @endif id="c21" name="credit" class="main-checkbox" >
