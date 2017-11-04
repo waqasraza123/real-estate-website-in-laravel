@@ -26,7 +26,9 @@ Route::get('/setlang/{lang}', function($lang)
 #The Site Routes
 
 
-
+Route::get('test' , function(){
+    return view('test');
+});
 
 
  #User Routes

@@ -37,6 +37,8 @@
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px; text-transform: capitalize">{{ Lang::get('listing.address') }}</h4>
                                         <div class="margin-top-60">
                                             <input value="{{ $listing->address }}" id="geocomplete" name="address" type="text" class="input-full main-input" placeholder="{{ Lang::get('listing.address') }}">
+
+
                                             <div id="submit-property-map" class="submit-property-map" style="height: 300px;"></div>
                                             <div class="row">
                                                 <div class="col-xs-12 col-sm-6 margin-top-15">
