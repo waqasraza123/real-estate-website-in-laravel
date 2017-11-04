@@ -170,7 +170,7 @@ class AdminController extends Controller
 
     public function admEditListing($id){
         $listing = $this->listing->where('id' , $id)->first();
-        return view('admin.listings.edit' , compact('listing'));
+        return view('pages.editListing' , compact('listing'));
     }
 
     public function admPostEditListing(Request $request){
