@@ -15,6 +15,7 @@ class SocialAccountService
             ->first();
         if ($account) {
             return $account->user;
+
         } else {
             $account = new SocialAccount([
                 'provider_user_id' => $providerUser->getId(),
@@ -27,6 +28,7 @@ class SocialAccountService
                     'first_name' => $providerUser->getName(),
                 ]);
             }
+
             $account->user()->associate($user);
             $account->save();
             return $user;

@@ -250,7 +250,7 @@ class ListingController extends Controller
         $listing = $this->listing
             ->where('listing_type' , $inputs['listing_type'])
             ->where('listing_status' , 'done')
-            ->where('address' , $inputs['address'])
+            ->where('state' , $inputs['state'])
             ->whereNotNull('approved');
         if($inputs['rent'] != null){
             $rent_amount = explode('-' , $inputs['rent']);

@@ -939,9 +939,9 @@ jQuery(window).load(function() {
 		
 		
 		
-/********** GEOCOMPLETE ON SUMBMIT PROPERTY PAGE **********/		
+/********** GEOCOMPLETE ON SUMBMIT PROPERTY PAGE **********/
 
-		
+
 		
 		if($("#geocomplete").length) {
 			$("#geocomplete").geocomplete({
@@ -987,7 +987,7 @@ jQuery(window).load(function() {
                             window.alert('Geocoder failed due to: ' + status);
                         }
                     });
-
+					console.log(results[1])
 					$("input[name=lat]").val(latLng.lat());
 					$("input[name=lng]").val(latLng.lng());
 				});
@@ -1038,7 +1038,7 @@ jQuery(window).load(function() {
                         window.alert('Geocoder failed due to: ' + status);
                     }
                 });
-
+                console.log(results[1])
                 $("input[name=lat]").val(latLng.lat());
                 $("input[name=lng]").val(latLng.lng());
             });
