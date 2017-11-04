@@ -38,7 +38,7 @@
                                     <table id="address" style="display: none">
                                         <input class="field"  id="street_number" type="hidden">
                                         <input class="field"  id="route" type="hidden">
-                                        <input class="field" id="locality"  type="hidden">
+                                        <input class="field" id="locality"   type="hidden">
                                         <input class="field" id="administrative_area_level_1" name="state" type="hidden">
                                         <input class="field" id="postal_code"  type="hidden">
                                         <input class="field"  id="country" type="hidden">
@@ -482,6 +482,6 @@
             }
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8NFf6d_o4NsjkrwdPgrboEDUo0SMgkE&libraries=places&callback=initAutocomplete"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8NFf6d_o4NsjkrwdPgrboEDUo0SMgkE&language=en&libraries=places&callback=initAutocomplete"
             async defer></script>
 @endsection
