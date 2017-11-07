@@ -323,20 +323,12 @@
                                     <h4 class="featured-offer-title"><i class=" fa fa-map-marker"></i>  {{ $lis->address }}</h4>
                                     <p>{{ str_limit($lis->description , 150) }}</p>
                                 </div>
-                                <div class="featured-offer-params">
-                                    <div class="featured-area">
-                                        <img src="images\area-icon.png" alt="">54m<sup>2</sup>
-                                    </div>
-                                    <div class="featured-rooms">
-                                        <img src="images\rooms-icon.png" alt="">3
-                                    </div>
-                                    <div class="featured-baths">
-                                        <img src="images\bathrooms-icon.png" alt="">1
-                                    </div>
-                                </div>
-                                <div class="featured-price">
-                                    $ 320 000
-                                </div>
+                                <a href="{{ route('singleListing' , ['id' => $lis->id  , 'title' => $lis->title]) }}" class="button-primary">
+                                    <span>read more</span>
+                                    <div class="button-triangle"></div>
+                                    <div class="button-triangle2"></div>
+                                    <div class="button-icon"><i class="fa fa-search"></i></div>
+                                </a>
                             </div>
                             <div class="featured-offer-back">
                                 <div id="featured-map{{$count}}" class="featured-offer-map"></div>

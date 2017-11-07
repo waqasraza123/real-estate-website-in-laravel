@@ -15,9 +15,8 @@
         <!-- Logo -->
         <a href="{{route('adminHome')}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>2</b>nd</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Chance</b>Leasing</span>
+            <span class="logo-lg"><b>2nd Chance</b>Leasing</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">

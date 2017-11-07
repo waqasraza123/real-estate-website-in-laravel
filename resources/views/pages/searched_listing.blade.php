@@ -26,7 +26,6 @@
                             <div class="small-triangle"></div>
                             <div class="small-icon"><i class="jfont"></i></div>
                         </div>
-
                     <div class="col-xs-12 col-lg-8">
                         <form action="{{ route('searchListing') }}" class="apartament_form " method="post" style="margin-bottom: 0px">
                             {{ csrf_field()  }}
@@ -43,7 +42,6 @@
                                         <input class="field" id="postal_code"  type="hidden">
                                         <input class="field"  id="country" type="hidden">
                                     </table>
-
                                     <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                     <div class="row" style="display: none">
                                         <div class="col-xs-12 col-sm-6 margin-top-15">
@@ -117,9 +115,6 @@
                             @endif
                     </div>
                 </div>
-
-
-
             </div>
         </div>
 
@@ -173,7 +168,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="list-agency-right-large" href="agency-details-right-sidebar.html">
+                            <a class="list-agency-right-large" href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}">
                                 <div class="list-agency-text">
                                     <h4 class="list-agency-title"><i class="fa fa-map-marker"></i>  {{ $listing->address }}</h4>
                                     <div class="list-agency-separator"></div>
@@ -183,7 +178,7 @@
                             </a>
                             <div class="small-triangle"></div>
                             <div class="small-triangle2"></div>
-                            <a class="small-icon" href="agency-details-right-sidebar.html"><i class="jfont fa-2x"></i></a>
+                            <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>
                         </div>
                     @endforeach
                 </div>
