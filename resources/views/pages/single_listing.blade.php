@@ -361,7 +361,7 @@
                     <!-- Contact Seller Area -->
                     <div class="row margin-top-60">
                         <div class="col-xs-12">
-                            <h3 class="title-negative-margin">contact the seller<span class="special-color">.</span></h3>
+                            <h3 class="title-negative-margin">contact the REPRESENTATIVE<span class="special-color">.</span></h3>
                             <div class="title-separator-primary"></div>
                         </div>
                     </div>

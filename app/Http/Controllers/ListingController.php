@@ -49,7 +49,8 @@ class ListingController extends Controller
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
         $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
-        if($request->has('featured')){
+
+        if($request->file('featured')){
             $name = $request->featured->hashName();
             $request->featured->move(public_path() . '/assets/images/' , $name);
             $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
@@ -175,7 +176,7 @@ class ListingController extends Controller
         $inputs = $request->except('_token' , 'listingid'  ,'files');
         $inputs['listing_status'] = 'done';
         $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
-        if($request->has('featured')){
+        if($request->file('featured')){
             $name = $request->featured->hashName();
             $request->featured->move(public_path() . '/assets/images/' , $name);
             $this->listingImage->create(['listing_id' => $request->get('listingid'), 'image' => $name , 'featured' => '1']);

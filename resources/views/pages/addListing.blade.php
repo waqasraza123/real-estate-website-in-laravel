@@ -67,13 +67,14 @@
                                     <input name="city" type="text" value="{{ old('city') }}" class="input-full main-input" placeholder="">
                                 </div>
                                 <div class="col-sm-4">
+                                    <h5 class="labeles">State</h5>
+                                    <input name="state" type="text" value="{{ old('state') }}" class="input-full main-input" placeholder="">
+                                </div>
+                                <div class="col-sm-4">
                                     <h5 class="labeles">Zip Code</h5>
                                     <input name="zip_code" type="text" value="{{ old('zip_code') }}" class="input-full main-input" placeholder="">
                                 </div>
-                                <div class="col-sm-4">
-                                    <h5 class="labeles">School District</h5>
-                                    <input name="school_dc" type="text" value="{{ old('school_dc') }}" class="input-full main-input" placeholder="">
-                                </div>
+
                             </div>
                             <div class="grid">
                                 <div class="col-sm-6">
@@ -81,8 +82,8 @@
                                     <input name="name" type="text" value="{{ old('name') }}" class="input-full main-input" placeholder="">
                                 </div>
                                 <div class="col-sm-6">
-                                    <h5 class="labeles">State</h5>
-                                    <input name="state" type="text" value="{{ old('state') }}" class="input-full main-input" placeholder="">
+                                    <h5 class="labeles">School District</h5>
+                                    <input name="school_dc" type="text" value="{{ old('school_dc') }}" class="input-full main-input" placeholder="">
                                 </div>
                             </div>
                             <div class="grid">

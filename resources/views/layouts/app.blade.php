@@ -148,6 +148,10 @@
                                 <i class="fa fa-chevron-down" data-toggle="dropdown"></i>
                                 <div class="userMenu" id="userMenu">
                                     <ul class="userMenuDropdown">
+                                        @if(Auth::user()->role == 1)
+                                            <li> <a id="adminArea" href="{{ route('adminHome') }}">Admin Area</a></li>
+                                            <li> <a id="editListing" href="{{ route('admListing') }}">Edit Listings</a></li>
+                                         @endif
                                         <li> <a id="headerMyAccount" href="{{ route('account' , ['id' => Auth::user()->id]) }}">My Account</a></li>
                                         <li><a id="headerSignOut" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Sign Out</a></li>
                                     </ul>
@@ -415,6 +419,14 @@
         @if(Auth::user())
             $('#headerMyAccount').click(function(){
                 window.location.href = '{{ route('account' , ['id' => Auth::user()->id]) }}'
+            })
+        @endif
+        @if(Auth::user())
+            $('#adminArea').click(function(){
+                window.location.href = '{{ route('adminHome') }}'
+            })
+        $('#editListing').click(function(){
+                window.location.href = '{{ route('admListing') }}'
             })
         @endif
     </script>
