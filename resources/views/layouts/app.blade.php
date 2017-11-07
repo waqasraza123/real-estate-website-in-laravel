@@ -205,7 +205,7 @@
                                 <div class="col-xs-6 col-sm-12">
                                     <article>
                                         <a href="{{$posts->url}}">
-                                            @if($logo_image)
+                                            @if($posts->image)
                                                 <img src="{{ $posts->image }}" alt=" Logo" class="footer-blog-image">
                                             @else
                                                 <img src="{{ asset('images\footer-blog1.jpg') }}" alt=" Logo" class="footer-blog-image">
