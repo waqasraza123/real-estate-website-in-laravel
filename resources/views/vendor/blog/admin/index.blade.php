@@ -79,6 +79,8 @@
                                                 Publish
                                             </button>
                                         @endif
+                                        <a href="{{ action('\didcode\Blog\AdminController@deletePost', $post->id) }}"
+                                           class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
 

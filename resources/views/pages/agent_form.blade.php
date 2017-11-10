@@ -182,6 +182,16 @@
                                 </div>
                                 <div class="grid">
                                     <div class="col-xs-12">
+                                        <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">Featured Image</h4>
+                                    </div>
+                                </div>
+                                <div class="grid">
+                                    <div class="col-xs-12">
+                                        <input type="file" name="featured" >
+                                    </div>
+                                </div>
+                                <div class="grid">
+                                    <div class="col-xs-12">
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.photos') }}</h4>
                                     </div>
                                 </div>
@@ -191,16 +201,7 @@
                                         <input id="file-upload" name="files[]" type="file" multiple="">
                                     </div>
                                 </div>
-                                <div class="grid">
-                                    <div class="col-xs-12">
-                                        <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">Featured Image</h4>
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="col-xs-12">
-                                        <input type="file" name="featured" >
-                                    </div>
-                                </div>
+
 
                                 <div class="grid">
                                     <div class="col-xs-12">
@@ -339,7 +340,7 @@
                                                 </div>
                                                 <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox"  value="1" @if(old('washer_dryer_hockups') == 1)  checked @endif id="c7" name="washer_dryer_hockups" class="main-checkbox">
-                                                    <label for="c7"><span></span>Washer Dryer Hockups</label>
+                                                    <label for="c7"><span></span>Washer Dryer Hookups</label>
                                                 </div>
                                                 <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox"  value="1" @if(old('onsite_laundry') == 1)  checked @endif id="c8" name="onsite_laundry" class="main-checkbox">

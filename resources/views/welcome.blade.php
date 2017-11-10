@@ -192,6 +192,7 @@
                                     </div>
                                     <div class="col-lg-3">
                                         <select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
+
                                             <option value="500-700">$500 - $700</option>
                                             <option value="700-900">$700 - $900</option>
                                             <option value="900-1300">$900 - $1300</option>

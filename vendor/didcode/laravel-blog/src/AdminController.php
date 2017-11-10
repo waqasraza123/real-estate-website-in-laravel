@@ -57,6 +57,11 @@ class AdminController extends Controller {
             ->withPostId($id);
     }
 
+    public function deletePost($id){
+        $post= Post::find($id)->delete();
+        return redirect()->back();
+    }
+
     public function show($slug) {
         $post = Post::whereSlug($slug)->first();
 
@@ -185,4 +190,5 @@ class AdminController extends Controller {
         return response()->json(['status' => 'success', 'object' => $tag]);
 
     }
+
 }

@@ -176,7 +176,7 @@ class AdminController extends Controller
     public function admPostEditListing(Request $request){
         $inputs = $request->except('id' , '_token' );
         if($this->listing->where('id' , $request->get('id'))->update($inputs)){
-            return redirect()->back()->with('success' , 'Successfully complated');
+            return redirect()->back()->with('success' , 'Successfully completed');
         }else{
             return redirect()->back()->withErrors('error' , 'please try again');
         }
@@ -184,7 +184,7 @@ class AdminController extends Controller
 
     public function admDeleteListing($id){
         if($this->listing->where('id' , $id)->delete()){
-            return redirect()->back()->with('success' , 'Successfully complated');
+            return redirect()->back()->with('success' , 'Successfully completed');
         }else{
             return redirect()->back()->withErrors('error' , 'please try again');
         }
@@ -206,13 +206,13 @@ class AdminController extends Controller
        $inputs = $request->except('_token');
         if(!$this->footer->first()){
             if($this->footer->create($inputs)){
-                return redirect()->back()->with('success' , 'Successfully complated');
+                return redirect()->back()->with('success' , 'Successfully completed');
             }else{
                 return redirect()->back()->withErrors('error' , 'please try again');
             }
         }else{
             if($this->footer->first()->update($inputs)){
-                return redirect()->back()->with('success' , 'Successfully complated');
+                return redirect()->back()->with('success' , 'Successfully completed');
             }else{
                 return redirect()->back()->withErrors('error' , 'please try again');
             }
@@ -241,13 +241,13 @@ class AdminController extends Controller
         }
         if($this->images->first()){
             if($this->images->first()->update($input)){
-                return redirect()->back()->with('success' , 'Successfully complated');
+                return redirect()->back()->with('success' , 'Successfully completed');
             }else{
                 return redirect()->back()->withErrors('error' , 'please try again');
             }
         }else{
             if($this->images->create($input)){
-                return redirect()->back()->with('success' , 'Successfully complated');
+                return redirect()->back()->with('success' , 'Successfully completed');
             }else{
                 return redirect()->back()->withErrors('error' , 'please try again');
             }

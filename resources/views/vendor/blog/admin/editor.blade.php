@@ -106,8 +106,8 @@
 
 @section('footer-scripts')
 
-    <script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>
-    <script src="//cdn.ckeditor.com/4.5.6/standard/adapters/jquery.js"></script>
+    <script src="//cdn.ckeditor.com/4.7.3/full-all/ckeditor.js"></script>
+    <script src="//cdn.ckeditor.com/4.7.3/full-all/adapters/jquery.js"></script>
 
     <script>
 
@@ -123,7 +123,7 @@
 
         $().ready(function () {
 
-            $('.ckedit').ckeditor(); // if class is prefered.
+            $('.ckedit').ckeditor(  { name: 'colors', items : [ 'TextColor','BGColor' ] }); // if class is prefered.
 
             // loading
             var post_id = $('#post_id').val();

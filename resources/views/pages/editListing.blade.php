@@ -357,7 +357,7 @@
                                                 </div>
                                                 <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox"  value="1" @if($listing->washer_dryer_hockups == 1)  checked @endif id="c7" name="washer_dryer_hockups" class="main-checkbox">
-                                                    <label for="c7"><span></span>Washer Dryer Hockups</label>
+                                                    <label for="c7"><span></span>Washer Dryer Hookups</label>
                                                 </div>
                                                 <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox"  value="1" @if($listing->onsite_laundry == 1)  checked @endif id="c8" name="onsite_laundry" class="main-checkbox">

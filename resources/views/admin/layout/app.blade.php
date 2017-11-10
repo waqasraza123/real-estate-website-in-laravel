@@ -16,7 +16,7 @@
         <a href="{{route('adminHome')}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>2nd Chance</b>Leasing</span>
+            <span class="logo-lg"><b>2nd Chance Leasing </b></span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
