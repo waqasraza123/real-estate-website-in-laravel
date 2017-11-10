@@ -21,6 +21,10 @@ return [
     'quick_links' => 'quick links',
     'from_blog' => 'from the blog',
     'newslater' => 'newsletter',
+    'enter_email' => 'enter your email',
+    'owners' => 'Owners',
+    'agents' => 'agents',
+
 
 
 

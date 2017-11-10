@@ -101,7 +101,7 @@
                         <span>/</span>
                         <a href="javascript:void(0);" data-toggle="modal" data-target="#loginModal" >Sign In</a>
                     @else
-                        <a href="{{ route('account' , ['id' => Auth::user()->id]) }}">My account</a>
+                        <a href="{{ route('account' , ['id' => Auth::user()->id]) }}">{{ Lang::get('profile.m_a') }}</a>
                         <span>/</span>
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();

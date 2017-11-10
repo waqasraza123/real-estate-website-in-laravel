@@ -144,8 +144,8 @@
                                 <i class="fa fa-chevron-down" data-toggle="dropdown"></i>
                                 <div class="userMenu" id="userMenu">
                                     <ul class="userMenuDropdown">
-                                        <li> <a id="headerMyAccount" href="{{ route('account' , ['id' => Auth::user()->id]) }}">My Account</a></li>
-                                        <li><a id="headerSignOut" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Sign Out</a></li>
+                                        <li> <a id="headerMyAccount" href="{{ route('account' , ['id' => Auth::user()->id]) }}">{{ Lang::get('profile.m_a') }}</a></li>
+                                        <li><a id="headerSignOut" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ Lang::get('profile.s_a') }}</a></li>
                                     </ul>
                                 </div>
                             </div>

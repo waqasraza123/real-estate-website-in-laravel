@@ -103,8 +103,8 @@
                                             <li> <a id="adminArea" href="{{ route('adminHome') }}">Admin Area</a></li>
                                             <li> <a id="editListing" href="{{ route('admListing') }}">Edit Listings</a></li>
                                          @endif
-                                        <li> <a id="headerMyAccount" href="{{ route('account' , ['id' => Auth::user()->id]) }}">My Account</a></li>
-                                        <li><a id="headerSignOut" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Sign Out</a></li>
+                                        <li> <a id="headerMyAccount" href="{{ route('account' , ['id' => Auth::user()->id]) }}"> {{ Lang::get('profile.m_a') }}</a></li>
+                                        <li><a id="headerSignOut" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ Lang::get('profile.s_a') }}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -118,7 +118,7 @@
                 </div>
 
                 <a href="{{ route('chooseType') }}" id="headerAddListing" title="Add a Listing">
-                    <span>Add a Listing</span>
+                    <span>{{ Lang::get('pages.add_listing') }}</span>
                 </a>
             </nav>
         </header>
@@ -177,7 +177,7 @@
                         <div class="footer-title-separator"></div>
                         <p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <form class="form-inline footer-newsletter">
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="enter your email">
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="{{ Lang::get('pages.enter_email') }}">
                             <button type="submit" class="btn"><i class="fa fa-lg fa-paper-plane"></i></button>
                         </form>
                     </div>

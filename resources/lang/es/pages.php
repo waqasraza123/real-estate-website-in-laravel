@@ -9,19 +9,21 @@ return [
     #Menu
 
     'home' => 'Home',
-    'listing' => 'Listing',
+    'listing' => 'listado',
     'agencies' => 'Agencies',
     'blog' => 'Blog',
-    'add_listing' => 'Add a Listing',
+    'add_listing' => 'agregar una lista',
+    'owners' => 'propietarios',
+    'agents' => 'agentes',
 
 
     #Footer
 
-    'contact_us' => 'contact us',
-    'quick_links' => 'quick links',
-    'from_blog' => 'from the blog',
-    'newslater' => 'newsletter',
-
+    'contact_us' => 'Contáctenos',
+    'quick_links' => 'enlaces rápidos',
+    'from_blog' => 'desde el blog',
+    'newslater' => 'Boletín informativo',
+    'enter_email' => 'Introduce tu correo electrónico',
 
 
     #Login

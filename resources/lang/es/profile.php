@@ -1,13 +1,13 @@
 <?php
 return [
     'back' => 'Welcome back',
-    'my_profile' => 'My Profile',
+    'my_profile' => 'perfil',
     'my_listing' => 'My Listings',
     'dashboard' => 'Reviews Dashboard',
     'saved_searches' => 'My Saved Searches',
     'favorites' => 'My Favorites',
     'notifi_set' => 'Notifications Settings',
-    'account' => 'Account',
+    'account' => 'mi cuenta',
     'dashboard_profile' => 'dashboard',
     'setings' => 'Settings',
     'state' => 'Estado',
@@ -30,7 +30,9 @@ return [
     'pass_text' => 'Fill this fields only if you want to change your password',
     'new_pass' => 'New Password',
     'repeat_pass' => 'Repeat Password',
-    'save' => 'Save'
+    'save' => 'Save',
+    'm_a' => 'Mi Cuenta',
+    's_a' => 'Desconectar',
 
 
 

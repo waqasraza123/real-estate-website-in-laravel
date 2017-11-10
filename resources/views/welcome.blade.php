@@ -61,7 +61,7 @@
                                         <table id="address" style="display: none">
                                             <input class="field"  id="street_number" type="hidden">
                                             <input class="field"  id="route" type="hidden">
-                                            <input class="field" id="locality"  type="hidden">
+                                            <input class="field" id="locality" name="city"  type="hidden">
                                             <input class="field" id="administrative_area_level_1" name="state" type="hidden">
                                             <input class="field" id="postal_code"  type="hidden">
                                             <input class="field"  id="country" type="hidden">
@@ -325,7 +325,7 @@
                                     <p>{{ str_limit($lis->description , 150) }}</p>
                                 </div>
                                 <a href="{{ route('singleListing' , ['id' => $lis->id  , 'title' => $lis->title]) }}" class="button-primary">
-                                    <span>read more</span>
+                                    <span>{{ Lang::get('home.read_more') }}</span>
                                     <div class="button-triangle"></div>
                                     <div class="button-triangle2"></div>
                                     <div class="button-icon"><i class="fa fa-search"></i></div>
@@ -335,7 +335,7 @@
                                 <div id="featured-map{{$count}}" class="featured-offer-map"></div>
                                 <div class="button">
                                     <a href="{{ route('singleListing' , ['id' => $lis->id  , 'title' => $lis->title]) }}" class="button-primary">
-                                        <span>read more</span>
+                                        <span>{{ Lang::get('home.read_more') }}</span>
                                         <div class="button-triangle"></div>
                                         <div class="button-triangle2"></div>
                                         <div class="button-icon"><i class="fa fa-search"></i></div>

@@ -30,7 +30,9 @@ return [
     'pass_text' => 'Fill this fields only if you want to change your password',
     'new_pass' => 'New Password',
     'repeat_pass' => 'Repeat Password',
-    'save' => 'Save'
+    'save' => 'Save',
+    'm_a' => 'my account',
+    's_a' => 'sign out',
 
 
 

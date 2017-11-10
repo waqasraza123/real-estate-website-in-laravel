@@ -17,7 +17,7 @@ return [
     'appartament'  => 'apartment',
     'sale'         => 'sale',
     'house'        => 'House',
-    'read_more'    => 'read more',
+    'read_more'    => 'Lee mas',
     'all_be'       => 'Todas las camas',
     'all_ba'       => 'Todos los baños'
 

@@ -206,13 +206,13 @@
                                     <ul class="no_padding">
                                         <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                             @if($listing->broken_lease == '1')
-                                                Broken lease-How old {{ $listing->br_le_ye }}
+                                                {{ Lang::get('listing.b_l') }}-{{ Lang::get('listing.h_o') }} {{ $listing->br_le_ye }}
                                             @endif
                                             @if($listing->eviction == '1')
-                                                Eviction-How old {{ $listing->ev_ye }}
+                                                {{ Lang::get('listing.e_v') }}-{{ Lang::get('listing.h_o') }} {{ $listing->ev_ye }}
                                             @endif
                                             @if($listing->misdemeanor == '1')
-                                                Misdemeanor
+                                                {{ Lang::get('listing.mis') }}
                                             @endif
                                             @if($listing->falonies == '1')
                                                 {{ Lang::get('listing.garage') }}
@@ -230,7 +230,7 @@
                                                 {{ Lang::get('listing.other') }}
                                             @endif
                                             @if($listing->foreclosure == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                {{ Lang::get('listing.forec') }}
                                             @endif
                                             @if($listing->credit == '1')
                                                 {{ Lang::get('listing.other') }}
@@ -263,7 +263,7 @@
                                                 {{ Lang::get('listing.covered') }}
                                             @endif
                                             @if($listing->assault == '1')
-                                                {{ Lang::get('listing.street') }}
+                                                {{ Lang::get('listing.as') }}
                                             @endif
                                             @if($listing->herassment == '1')
                                                 {{ Lang::get('listing.garage') }}
@@ -284,7 +284,7 @@
                                                 {{ Lang::get('listing.other') }}
                                             @endif
                                             @if($listing->credit == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                {{ Lang::get('listing.cre') }}
                                             @endif
                                             @if($listing->move_in == '1')
                                                 {{ Lang::get('listing.other') }}
