@@ -11875,3 +11875,22 @@ ol li .jqx-listmenu-item-label:before {
     font-weight: 600;
     font-size: 1.17em;
 }
+.featured-offer-photo img {
+    max-width: 100%;
+    min-height: 100% !important;
+    height: 300px;
+}
+.featured-offer-photo {
+    max-height: 300px;
+}
+.featured-offer-text {
+    min-height: 100px;
+    height: 100px;
+    line-height: 20px;
+    overflow: hidden;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.featured-offer-col {
+    max-height: 500px !important;
+}
