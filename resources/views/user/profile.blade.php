@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-xs-12 col-lg-12 short-image-title">
                     <h5 class="subtitle-margin second-color">{{ Lang::get('profile.dashboard_profile') }}</h5>
-                    <h1 class="second-color">my account</h1>
+                    <h1 class="second-color">{{ Lang::get('profile.m_a') }}</h1>
                     <div class="short-title-separator"></div>
                 </div>
             </div>

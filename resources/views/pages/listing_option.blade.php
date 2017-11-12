@@ -19,7 +19,7 @@
                     <div class="row">
                         <div class="col-md-6 text-center">
                             <a href="{{ route('addListing') }}" class="button-primary">
-                                <span>owners</span>
+                                <span>{{ Lang::get('pages.owners') }}</span>
                                 <div class="button-triangle"></div>
                                 <div class="button-triangle2"></div>
                                 <div class="button-icon"><i class="fa fa-user"></i></div>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-md-6 text-center">
                             <a href="{{ route('agentForm') }}" class="button-primary">
-                                <span>agents</span>
+                                <span>{{ Lang::get('pages.agents') }}</span>
                                 <div class="button-triangle"></div>
                                 <div class="button-triangle2"></div>
                                 <div class="button-icon"><i class="fa fa-users"></i></div>

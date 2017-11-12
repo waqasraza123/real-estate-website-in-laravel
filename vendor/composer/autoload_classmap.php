@@ -136,6 +136,7 @@ return array(
     'CreateFooterContentsTable' => $baseDir . '/database/migrations/2017_10_05_130709_create_footer_contents_table.php',
     'CreateListigsTable' => $baseDir . '/database/migrations/2017_08_18_135613_create_listigs_table.php',
     'CreateListingImagesTable' => $baseDir . '/database/migrations/2017_08_18_140623_create_listing_images_table.php',
+    'CreateListingPropertisTable' => $baseDir . '/database/migrations/2017_11_09_184453_create_listing_propertis_table.php',
     'CreateLogoTable' => $baseDir . '/database/migrations/2017_10_02_012453_create_logo_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateReviewsTable' => $baseDir . '/database/migrations/2017_09_28_221610_create_reviews_table.php',

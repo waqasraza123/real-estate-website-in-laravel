@@ -126,7 +126,6 @@
                                         @endif
                                             <li class="no_style"><span class="bullet">•</span> Bedrooms {{ $listing->beds_count }}</li>
                                             <li class="no_style"><span class="bullet">•</span> Bathrooms {{ $listing->baths_count }}</li>
-
                                     </ul>
                                 </div>
                                 <div class="col-md-4 text-center">
@@ -136,7 +135,6 @@
                                     <div class="details-title pull-left">
                                         <h5 class="subtitle-margin"> </h5>
                                         <h4>Pet Policy<span class="special-color">.</span></h4>
-
                                     </div>
                                     <div class="clearfix"></div>
                                     <ul class="no_padding">
@@ -194,6 +192,108 @@
                                             {{ $listing->lease_length }}
                                         </li>
 
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                        <i class="propertyIcon"></i>
+                                    </div>
+                                    <div class="details-title pull-left">
+                                        <h5 class="subtitle-margin"> </h5>
+                                        <h4>ACCEPTABLE ISSUES <span class="special-color">.</span></h4>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <ul class="no_padding">
+                                        <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                            @if($listing->broken_lease == '1')
+                                                {{ Lang::get('listing.b_l') }}-{{ Lang::get('listing.h_o') }} {{ $listing->br_le_ye }}
+                                            @endif
+                                            @if($listing->eviction == '1')
+                                                {{ Lang::get('listing.e_v') }}-{{ Lang::get('listing.h_o') }} {{ $listing->ev_ye }}
+                                            @endif
+                                            @if($listing->misdemeanor == '1')
+                                                {{ Lang::get('listing.mis') }}
+                                            @endif
+                                            @if($listing->falonies == '1')
+                                                {{ Lang::get('listing.garage') }}
+                                            @endif
+                                            @if($listing->section_8 == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                            @if($listing->hud == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                            @if($listing->income_r == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                            @if($listing->bankruptcy == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                            @if($listing->foreclosure == '1')
+                                                {{ Lang::get('listing.forec') }}
+                                            @endif
+                                            @if($listing->credit == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                            @if($listing->move_in == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                        </li>
+                                        <li style="list-style: none;text-align:left">
+                                            <span class="bullet">•</span>
+                                            Parking Fee {{ $listing->parking_fee }}$/mo
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                        <i class="propertyIcon"></i>
+                                    </div>
+                                    <div class="details-title pull-left">
+                                        <h5 class="subtitle-margin"> </h5>
+                                        <h4>ACCEPTABLE ISSUES <span class="special-color">.</span></h4>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <ul class="no_padding">
+                                        <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                            @if($listing->possession == '1')
+                                                {{ Lang::get('listing.surfact_lot') }}
+                                            @endif
+                                            @if($listing->possession_w == '1')
+                                                {{ Lang::get('listing.covered') }}
+                                            @endif
+                                            @if($listing->assault == '1')
+                                                {{ Lang::get('listing.as') }}
+                                            @endif
+                                            @if($listing->herassment == '1')
+                                                {{ Lang::get('listing.garage') }}
+                                            @endif
+                                            @if($listing->theft_of == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                            @if($listing->dwi == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                            @if($listing->dui == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                            @if($listing->disorderly == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                            @if($listing->theft == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                            @if($listing->credit == '1')
+                                                {{ Lang::get('listing.cre') }}
+                                            @endif
+                                            @if($listing->move_in == '1')
+                                                {{ Lang::get('listing.other') }}
+                                            @endif
+                                        </li>
+                                        <li style="list-style: none;text-align:left">
+                                            <span class="bullet">•</span>
+                                            Parking Fee {{ $listing->parking_fee }}$/mo
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

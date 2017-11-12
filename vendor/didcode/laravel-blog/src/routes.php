@@ -5,6 +5,7 @@ Route::group(['prefix' => 'admin'], function()
     Route::get('blog', 'didcode\Blog\AdminController@index')->name('admBlog');
     Route::get('post/create', 'didcode\Blog\AdminController@createPost');
     Route::get('post/{id}/edit', 'didcode\Blog\AdminController@editPost');
+    Route::get('post/{id}/delete', 'didcode\Blog\AdminController@deletePost');
 
     Route::post('post/{id}/image', 'didcode\Blog\AdminController@addImage');
     Route::get('post/{id}/image', 'didcode\Blog\AdminController@formAddImage');

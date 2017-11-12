@@ -1,6 +1,6 @@
 <?php
 return [
-    'header'  => 'One step. Millions of renters',
+    'header'  => 'Un paso. millones de inquilinos',
     'details' => 'Details',
     'address' => 'Dirección',
     'listing_type' => 'LISTING TYPE',
@@ -15,7 +15,7 @@ return [
     'deposit' => 'Depositar',
     'available' => 'Disponible',
     'lase_length' => 'LEASE LENGTH',
-    'photos' => 'Photos',
+    'photos' => 'fotos',
     'contact' => 'Contact',
     'first_name' => 'Nombre',
     'last_name' => 'Apellido',
@@ -52,8 +52,30 @@ return [
     'terms' => 'Términos de Servicio',
     'listing_terms' => ' Términos de Servicio al Agregar un',
     'submit' => 'Enviar alquiler',
-    'search' => 'Buscar'
-
+    'search' => 'Buscar',
+    'acceptable' => 'problemas aceptables',
+    'b_l' => 'Rompimiento del contrato de arrendamiento',
+    'h_m' => 'cuántos',
+    'h_o' => 'cuántos años',
+    'e_v' => 'desalojo',
+    'mis' => 'falta',
+    'fel' => 'Delito',
+    'fels' => 'Delito Grave',
+    'sec_8' => 'Sección 8',
+    'in_r' => 'ingreso restringido',
+    'forec' => 'Juicio hipotecario',
+    'cre' => 'Crédito',
+    'm_i_s' => 'Especiales de mudanza',
+    'pos' => 'Posesión',
+    'pos_w' => 'Posesión con intención de vender',
+    'with' => 'con',
+    'as' => 'Asalto',
+    'th_o_h' => 'Robo de Hábitat',
+    'di_xc' => 'Conducta desordenada',
+    'theft' => 'Robo',
+    'right' => 'derecho',
+    's_f_l' => 'guardar para más',
+    'dr_pho' => 'Suelta fotos aquí o usa el botón de la izquierda para agregar fotos',
 
 
 

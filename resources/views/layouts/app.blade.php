@@ -60,55 +60,6 @@
                                             <li><a href="#">Seattle Apartments</a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#" class="expandable" data-requirelogin="false">Homes For Rent <i class="mapZoomInIcon"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="#">Charlotte Houses for Rent</a></li>
-                                            <li><a href="#">Dallas Houses for Rent</a></li>
-                                            <li><a href="#">Fresno Houses for Rent</a></li>
-                                            <li><a href="#">Houston Houses for Rent</a></li>
-                                            <li><a href="#">Louisville Houses for Rent</a></li>
-                                            <li><a href="#">Memphis Houses for Rent</a></li>
-                                            <li><a href="#">Nashville Houses for Rent</a></li>
-                                            <li><a href="#">Phoenix Houses for Rent</a></li>
-                                            <li><a href="#">San Antonio Houses for Rent</a></li>
-                                            <li><a href="#">Tampa Houses for Rent</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="expandable" data-requirelogin="false">Condos For Rent <i class="mapZoomInIcon"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="#">Atlanta Condos for Rent</a></li>
-                                            <li><a href="#">Charlotte Condos for Rent</a></li>
-                                            <li><a href="#">Chicago Condos for Rent</a></li>
-                                            <li><a href="#">Houston Condos for Rent</a></li>
-                                            <li><a href="#">Jacksonville Condos for Rent</a></li>
-                                            <li><a href="#">Las Vegas Condos for Rent</a></li>
-                                            <li><a href="#">Miami Condos for Rent</a></li>
-                                            <li><a href="#">Nashville Condos for Rent</a></li>
-                                            <li><a href="#">Orlando Condos for Rent</a></li>
-                                            <li><a href="#">San Diego Condos for Rent</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="expandable" data-requirelogin="false">Townhomes for Rent <i class="mapZoomInIcon"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="#atlanta-ga/">Atlanta Townhomes for Rent</a></li>
-                                            <li><a href="#charlotte-nc/">Charlotte Townhomes for Rent</a></li>
-                                            <li><a href="#dallas-tx/">Dallas Townhomes for Rent</a></li>
-                                            <li><a href="#denver-co/">Denver Townhomes for Rent</a></li>
-                                            <li><a href="#houston-tx/">Houston Townhomes for Rent</a></li>
-                                            <li><a href="#jacksonville-fl/">Jacksonville Townhomes for Rent</a></li>
-                                            <li><a href="#nashville-tn/">Nashville Townhomes for Rent</a></li>
-                                            <li><a href="#omaha-ne/">Omaha Townhomes for Rent</a></li>
-                                            <li><a href="#raleigh-nc/">Raleigh Townhomes for Rent</a></li>
-                                            <li><a href="#san-antonio-tx/">San Antonio Townhomes for Rent</a></li>
-                                        </ul>
-                                    </li>
-
-
-                                    <li><a id="menuNavLnkMobileApps" target="_blank" href="" data-requirelogin="false">Mobile Apps</a></li>
-
                                 </ul>
                             </div>
 
@@ -116,7 +67,7 @@
                     </div>
                 </div>
 
-                <div class="headerSwitchLanguageWrapper">
+                <div class="headerSwitchLanguageWrapper hidden-xs">
                     @if(app()->getLocale() == 'en')
                         <a href="/setlang/es" class="headerSwitchLanguage"><i class="fa fa-globe"></i>Español</a>
                     @else
@@ -136,7 +87,7 @@
                     </a>
                 </div>
 
-                <div class="loginPrevNextWrapper">
+                <div class="hidden-xs loginPrevNextWrapper">
                     <div id="headerLoginSection" class="loginSection">
                         @if(!Auth::user())
                         <a href="#register-modal" class="js-headerSignUp headerSignUp" data-toggle="modal">{{ Lang::get('pages.sign_up') }}</a>
@@ -152,8 +103,8 @@
                                             <li> <a id="adminArea" href="{{ route('adminHome') }}">Admin Area</a></li>
                                             <li> <a id="editListing" href="{{ route('admListing') }}">Edit Listings</a></li>
                                          @endif
-                                        <li> <a id="headerMyAccount" href="{{ route('account' , ['id' => Auth::user()->id]) }}">My Account</a></li>
-                                        <li><a id="headerSignOut" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Sign Out</a></li>
+                                        <li> <a id="headerMyAccount" href="{{ route('account' , ['id' => Auth::user()->id]) }}"> {{ Lang::get('profile.m_a') }}</a></li>
+                                        <li><a id="headerSignOut" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ Lang::get('profile.s_a') }}</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -167,7 +118,7 @@
                 </div>
 
                 <a href="{{ route('chooseType') }}" id="headerAddListing" title="Add a Listing">
-                    <span>Add a Listing</span>
+                    <span>{{ Lang::get('pages.add_listing') }}</span>
                 </a>
             </nav>
         </header>
@@ -226,7 +177,7 @@
                         <div class="footer-title-separator"></div>
                         <p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <form class="form-inline footer-newsletter">
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="enter your email">
+                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="{{ Lang::get('pages.enter_email') }}">
                             <button type="submit" class="btn"><i class="fa fa-lg fa-paper-plane"></i></button>
                         </form>
                     </div>

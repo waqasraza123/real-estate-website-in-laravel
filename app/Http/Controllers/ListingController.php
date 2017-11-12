@@ -252,7 +252,9 @@ class ListingController extends Controller
             ->where('listing_type' , $inputs['listing_type'])
             ->where('listing_status' , 'done')
             ->where('state' , $inputs['state'])
+            ->orWhere('city' , $inputs['city'])
             ->whereNotNull('approved');
+
         if($inputs['rent'] != null){
             $rent_amount = explode('-' , $inputs['rent']);
             $listing
