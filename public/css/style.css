@@ -11886,11 +11886,11 @@ ol li .jqx-listmenu-item-label:before {
 .featured-offer-text {
     min-height: 100px;
     height: 100px;
-    line-height: 20px;
+    line-height: 22px !important;
     overflow: hidden;
-    padding: 15px;
+    padding: 15px !important;
     margin-bottom: 15px;
 }
 .featured-offer-col {
-    max-height: 500px !important;
+    height: 500px !important;
 }
