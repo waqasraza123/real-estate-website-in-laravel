@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Listing_propertie extends Model
+class ListingAttribute extends Model
 {
     protected  $fillable = [
-        'listing_id',
         'listing_type',
         'beds_count',
         'baths_count',
@@ -16,5 +15,6 @@ class Listing_propertie extends Model
         'deposit',
         'available_date',
         'lease_length',
+        'listing_id'
     ];
 }

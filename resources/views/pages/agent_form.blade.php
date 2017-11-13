@@ -25,7 +25,7 @@
                 </button>
             </div>
         </div>
-        <form name="offer-from" id="listing_form" action="{{ route('submitAgentListing') }}" method="post" enctype="multipart/form-data">
+        <form name="offer-from" id="listing_form" action="{{ route('submitListing') }}" method="post" enctype="multipart/form-data">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-12">
@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="grid">
                                     <div class="col-sm-6">
-                                        <h5 class="labeles">Name</h5>
+                                        <h5 class="labeles">Name of Apartment</h5>
                                         <input name="name" type="text" value="{{ old('name') }}" class="input-full main-input" placeholder="">
                                     </div>
                                     <div class="col-sm-6">
@@ -97,87 +97,100 @@
                                         <br>
                                     </div>
                                 </div>
-                                <div class="grid">
-                                    <div class="col-sm-3" >
-                                        <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio" @if(old('listing_type') == 2) checked @endif value="2" id="propType2" name="listing_type" title="">
-                                            <label  for="propType2"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.appartament') }}</span></label>
+                                <div id="cloning_area">
+                                    <div class="grid">
+                                        <div class="col-sm-3" >
+                                            <div class="radioGroup">
+                                                <input type="radio" class="primaryRadio" @if(old('listing_type') == 2) checked @endif value="2" id="propType2" name="listing_type[]" title="">
+                                                <label  for="propType2"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.appartament') }}</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3" >
+                                            <div class="radioGroup">
+                                                <input type="radio" class="primaryRadio"  value="7" @if(old('listing_type') == 7) checked @endif id="propType7" name="listing_type[]" title="">
+                                                <label  for="propType7"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.condo') }}</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3" >
+                                            <div class="radioGroup">
+                                                <input type="radio" class="primaryRadio"  value="5" @if(old('listing_type') == 5) checked @endif id="propType5" name="listing_type[]" title="">
+                                                <label  for="propType5"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.townhome') }}</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3" >
+                                            <div class="radioGroup">
+                                                <input type="radio" class="primaryRadio"  value="3" @if(old('listing_type') == 3) checked @endif id="propType3" name="listing_type[]" title="">
+                                                <label  for="propType3"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.single_home') }}</span></label>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3" >
-                                        <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="7" @if(old('listing_type') == 7) checked @endif id="propType7" name="listing_type" title="">
-                                            <label  for="propType7"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.condo') }}</span></label>
+                                    <div class="grid">
+                                        <div class="col-sm-4">
+                                            <h5 class="labeles">{{ Lang::get('listing.beds') }}</h5>
+                                            <select name="beds_count[]" id="beds" class="selectpicker beds" data-bind="value: Details.BedType, options: Beds, optionsText: 'Description', optionsValue: 'Id'"  title="" style="display: none;">
+                                                <option value="-1">Studio</option>
+                                                <option value="1" @if(old('beds_count') == 1) selected @endif>1.0</option>
+                                                <option value="2" @if(old('beds_count') == 2) selected @endif>2.0</option>
+                                                <option value="3" @if(old('beds_count') == 3) selected @endif>3.0</option>
+                                                <option value="4" @if(old('beds_count') == 4) selected @endif>4.0</option>
+                                                <option value="5" @if(old('beds_count') == 5) selected @endif>5.0</option>
+                                                <option value="6" @if(old('beds_count') == 6) selected @endif>6.0</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h5 class="labeles">{{ Lang::get('listing.baths') }}</h5>
+                                            <select name="baths_count[]" id="baths" class="selectpicker baths" data-bind="value: Details.BathType, options: Baths, optionsText: 'Description', optionsValue: 'Id'"  title="" style="display: none;">
+                                                <option value="0.5" @if(old('baths_count') == 0.5) selected @endif>0.5</option>
+                                                <option value="1" @if(old('baths_count') == 1) selected @endif>1.0</option>
+                                                <option value="1.5" @if(old('baths_count') == 1.5) selected @endif>1.5</option>
+                                                <option value="2" @if(old('baths_count') == 2) selected @endif>2.0</option>
+                                                <option value="2.5" @if(old('baths_count') == 2.5) selected @endif>2.5</option>
+                                                <option value="3" @if(old('baths_count') == 3) selected @endif>3.0</option>
+                                                <option value="3.5" @if(old('baths_count') == 3.5) selected @endif>3.5</option>
+                                                <option value="4" @if(old('baths_count') == 4) selected @endif>4.0</option>
+                                                <option value="4.5" @if(old('baths_count') == 4.5) selected @endif>4.5</option>
+                                                <option value="5" @if(old('baths_count') == 5) selected @endif>5.0</option>
+                                                <option value="5.5" @if(old('baths_count') == 5.5) selected @endif>5.5</option>
+                                                <option value="6" @if(old('baths_count') == 6) selected @endif>6.0</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h5 class="labeles">{{ Lang::get('listing.square') }}</h5>
+                                            <input name="square_feet[]" value="{{ old('square_feet') }}" type="text" placeholder="SF" maxlength="9"   min="1" class="input-full main-input" title="">
                                         </div>
                                     </div>
-                                    <div class="col-sm-3" >
-                                        <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="5" @if(old('listing_type') == 5) checked @endif id="propType5" name="listing_type" title="">
-                                            <label  for="propType5"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.townhome') }}</span></label>
+                                    <div class="grid">
+                                        <div class="col-sm-4">
+                                            <h5 class="labeles">{{ Lang::get('listing.rent') }}</h5>
+                                            <input name="rent[]" type="text" value="{{ old('rent') }}" class="input-full main-input" placeholder="0$">
                                         </div>
-                                    </div>
-                                    <div class="col-sm-3" >
-                                        <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="3" @if(old('listing_type') == 3) checked @endif id="propType3" name="listing_type" title="">
-                                            <label  for="propType3"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.single_home') }}</span></label>
+                                        <div class="col-sm-4">
+                                            <h5 class="labeles">{{ Lang::get('listing.deposit') }}</h5>
+                                            <input name="deposit[]" type="text" value="{{ old('deposit') }}" class="input-full main-input" placeholder="0$">
+                                        </div>
+                                        <div class="col-sm-2">
+
+                                            <h5 class="labeles">
+                                                {{ Lang::get('listing.available') }}
+                                            </h5>
+                                            <input value="{{ old('available_date') }}"  class="input-full main-input" id="datepicker" type="text" name="available_date[]" placeholder="Date" readonly=""  title="">
+
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <h5 class="labeles"> {{ Lang::get('listing.lase_length') }}</h5>
+                                            <input name="lease_length[]"  value="{{ old('lease_length') }}" type="text" class="input-full main-input" placeholder="12 mos">
                                         </div>
                                     </div>
                                 </div>
+                                <div class="grid" id="cloned_arae"></div>
                                 <div class="grid">
-                                    <div class="col-sm-4">
-                                        <h5 class="labeles">{{ Lang::get('listing.beds') }}</h5>
-                                        <select name="beds_count" id="beds" class="selectpicker beds" data-bind="value: Details.BedType, options: Beds, optionsText: 'Description', optionsValue: 'Id'"  title="" style="display: none;">
-                                            <option value="-1">Studio</option>
-                                            <option value="1" @if(old('beds_count') == 1) selected @endif>1.0</option>
-                                            <option value="2" @if(old('beds_count') == 2) selected @endif>2.0</option>
-                                            <option value="3" @if(old('beds_count') == 3) selected @endif>3.0</option>
-                                            <option value="4" @if(old('beds_count') == 4) selected @endif>4.0</option>
-                                            <option value="5" @if(old('beds_count') == 5) selected @endif>5.0</option>
-                                            <option value="6" @if(old('beds_count') == 6) selected @endif>6.0</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <h5 class="labeles">{{ Lang::get('listing.baths') }}</h5>
-                                        <select name="baths_count" id="baths" class="selectpicker baths" data-bind="value: Details.BathType, options: Baths, optionsText: 'Description', optionsValue: 'Id'"  title="" style="display: none;">
-                                            <option value="0.5" @if(old('baths_count') == 0.5) selected @endif>0.5</option>
-                                            <option value="1" @if(old('baths_count') == 1) selected @endif>1.0</option>
-                                            <option value="1.5" @if(old('baths_count') == 1.5) selected @endif>1.5</option>
-                                            <option value="2" @if(old('baths_count') == 2) selected @endif>2.0</option>
-                                            <option value="2.5" @if(old('baths_count') == 2.5) selected @endif>2.5</option>
-                                            <option value="3" @if(old('baths_count') == 3) selected @endif>3.0</option>
-                                            <option value="3.5" @if(old('baths_count') == 3.5) selected @endif>3.5</option>
-                                            <option value="4" @if(old('baths_count') == 4) selected @endif>4.0</option>
-                                            <option value="4.5" @if(old('baths_count') == 4.5) selected @endif>4.5</option>
-                                            <option value="5" @if(old('baths_count') == 5) selected @endif>5.0</option>
-                                            <option value="5.5" @if(old('baths_count') == 5.5) selected @endif>5.5</option>
-                                            <option value="6" @if(old('baths_count') == 6) selected @endif>6.0</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <h5 class="labeles">{{ Lang::get('listing.square') }}</h5>
-                                        <input name="square_feet" value="{{ old('square_feet') }}" type="text" placeholder="SF" maxlength="9"   min="1" class="input-full main-input" title="">
-                                    </div>
-                                </div>
-                                <div class="grid">
-                                    <div class="col-sm-4">
-                                        <h5 class="labeles">{{ Lang::get('listing.rent') }}</h5>
-                                        <input name="rent" type="text" value="{{ old('rent') }}" class="input-full main-input" placeholder="0$">
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <h5 class="labeles">{{ Lang::get('listing.deposit') }}</h5>
-                                        <input name="deposit" type="text" value="{{ old('deposit') }}" class="input-full main-input" placeholder="0$">
-                                    </div>
-                                    <div class="col-sm-2">
-
-                                        <h5 class="labeles">
-                                            {{ Lang::get('listing.available') }}
-                                        </h5>
-                                        <input value="{{ old('available_date') }}"  class="input-full main-input" id="datepicker" type="text" name="available_date" placeholder="Date" readonly=""  title="">
-
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <h5 class="labeles"> {{ Lang::get('listing.lase_length') }}</h5>
-                                        <input name="lease_length"  value="{{ old('lease_length') }}" type="text" class="input-full main-input" placeholder="12 mos">
+                                    <div class="col-sm-12 text-center">
+                                        <a href="#" id="clone_button" class="button-primary">
+                                            <span>Add More</span>
+                                            <div class="button-triangle"></div>
+                                            <div class="button-triangle2"></div>
+                                            <div class="button-icon"><i class="fa fa-lg fa-plus"></i></div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="grid">
@@ -436,7 +449,7 @@
 @section('scripts')
     <script type="text/javascript">
         $(function() {
-            $('input[name="available_date"]').daterangepicker({
+            $('#datepicker').daterangepicker({
                     singleDatePicker: true,
                     showDropdowns: true
                 },
@@ -447,6 +460,38 @@
     </script>
     <script>
         $( document ).ready( function () {
+
+
+            (function() {
+                var count = 1;
+
+                $('#clone_button').click(function () {
+
+                    var source = $('#cloning_area'),
+                        clone = source.clone();
+                    /*Incrementind Radio Buttons Id*/
+                    clone.find(':input').attr('id', function(i, val) {
+                        return val + count;
+                    });
+                    /*Incrementind Radio Buttons name*/
+                    clone.find(':input[type="radio"]').attr('name', function(i, val) {
+                        return val + count;
+                    });
+
+                    clone.find(':input[type="radio"]').attr('name', function(i, val) {
+                        return val + count;
+                    });
+                    /*Incrementind Radio Buttons  Label For*/
+                    clone.find('label').attr('for' , function(i, val) {
+                        return val + count;
+                    })
+                    clone.appendTo('#cloned_arae');
+
+                    count++;
+                });
+
+            })();
+
             $("#listing_form").validate({
                 ignore:"",
                 rules: {

@@ -23,14 +23,6 @@ class Listing extends Model
     protected $fillable = [
         'address',
         'unit',
-        'listing_type',
-        'beds_count',
-        'baths_count',
-        'square_feet',
-        'rent',
-        'deposit',
-        'available_date',
-        'lease_length',
         'description',
         'dogs',
         'cats',
@@ -104,5 +96,9 @@ class Listing extends Model
 
     public function Reviews(){
         return $this->hasMany('App\Review');
+    }
+
+    public function ListingAttr(){
+        return $this->hasMany(ListingAttribute::class);
     }
 }
