@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Listing;
+use App\ListingAttribute;
 use App\Favorit;
 use App\ListingImage;
 use App\Review;
@@ -31,25 +32,29 @@ class ListingController extends Controller
      */
     public function submitListing(Request $request){
         $this->validate($request, [
-            'listing_type' => 'required',
-            'square_feet' => 'required',
-            'rent' => 'required',
-            'deposit' => 'required',
-            'available_date' => 'required',
-            'lease_length' => 'required',
+            'description' => 'required',
             'parking_type' => 'required',
             'parking_fee' => 'required',
-            'description' => 'required',
-            'state' => 'required',
-            'zip_code' => 'required'
         ]);
-        $inputs = $request->except('_token' , 'file', 'featured');
+        $inputs = $request->except('_token' , 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
-        $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
         $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
+        foreach(array_keys($request->listing_type) as $key) {
+            ListingAttribute::create([
 
+                'listing_id' => $listing->id,
+                'listing_type' => $request->listing_type[$key],
+                'beds_count' => $request->beds_count[$key],
+                'baths_count' => $request->baths_count[$key],
+                'square_feet' => $request->square_feet[$key],
+                'rent' => $request->rent[$key],
+                'deposit' => $request->deposit[$key],
+                'available_date' => $request->available_date[$key],
+                'lease_length' => $request->lease_length[$key],
+            ]);
+        }
         if($request->file('featured')){
             $name = $request->featured->hashName();
             $request->featured->move(public_path() . '/assets/images/' , $name);
@@ -162,20 +167,26 @@ class ListingController extends Controller
      */
     public function postEditListing(Request $request){
         $this->validate($request, [
-            'listing_type' => 'required',
-            'square_feet' => 'required',
-            'rent' => 'required',
-            'deposit' => 'required',
-            'available_date' => 'required',
-            'lease_length' => 'required',
             'description' => 'required',
             'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
 
-        $inputs = $request->except('_token' , 'listingid'  ,'files');
+
+        $inputs = $request->except('_token' , 'listingid', 'list_a_id', 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
         $inputs['listing_status'] = 'done';
-        $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
+        foreach(array_keys($request->listing_type) as $key) {
+            ListingAttribute::where('id' , $request->list_a_id[$key])->update([
+                'listing_type' => $request->listing_type[$key],
+                'beds_count' => $request->beds_count[$key],
+                'baths_count' => $request->baths_count[$key],
+                'square_feet' => $request->square_feet[$key],
+                'rent' => $request->rent[$key],
+                'deposit' => $request->deposit[$key],
+                'available_date' => $request->available_date[$key],
+                'lease_length' => $request->lease_length[$key],
+            ]);
+        }
         if($request->file('featured')){
             $name = $request->featured->hashName();
             $request->featured->move(public_path() . '/assets/images/' , $name);
@@ -446,12 +457,6 @@ class ListingController extends Controller
      */
     public function submitAgentListing(Request $request){
         $this->validate($request, [
-            'listing_type' => 'required',
-            'square_feet' => 'required',
-            'rent' => 'required',
-            'deposit' => 'required',
-            'available_date' => 'required',
-            'lease_length' => 'required',
             'parking_type' => 'required',
             'parking_fee' => 'required',
             'description' => 'required',
@@ -459,7 +464,7 @@ class ListingController extends Controller
             'zip_code' => 'required'
         ]);
         $pass =    $this->randomPassword();
-        $inputs = $request->except('_token' , 'file', 'featured');
+        $inputs = $request->except('_token' , 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
         if(Auth::user()){
             $this->user->where('id' , Auth::user()->id)->update([
                 'first_name' => $inputs['first_name'],
@@ -489,9 +494,22 @@ class ListingController extends Controller
         $request->featured->move(public_path() . '/assets/images/' , $name);
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
-        $inputs['available_date'] = \Carbon\Carbon::parse($inputs['available_date'])->format('Y-m-d H:i:s');
+
         $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
+        foreach(array_keys($request->listing_type) as $key) {
+            ListingAttribute::create([
+                'listing_id' => $listing->id,
+                'listing_type' => $request->listing_type[$key],
+                'beds_count' => $request->beds_count[$key],
+                'baths_count' => $request->baths_count[$key],
+                'square_feet' => $request->square_feet[$key],
+                'rent' => $request->rent[$key],
+                'deposit' => $request->deposit[$key],
+                'available_date' => $request->available_date[$key],
+                'lease_length' => $request->lease_length[$key],
+            ]);
+        }
         $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
         if($request->file()){
             $images = $this->getImagesName($request->file());

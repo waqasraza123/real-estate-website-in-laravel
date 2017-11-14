@@ -99,7 +99,285 @@
                             <p class="details-desc">{{ $listing->description }}</p>
                         </div>
                     </div>
+                    @if($listing->ListingAttr()->get())
+                    <div class="row margin-top-15">
+                        <div class="col-xs-12 apartment-tabs">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#tab-all" aria-controls="tab-map" role="tab" data-toggle="tab">
+                                        <span>All</span>
+                                        <div class="button-triangle2"></div>
+                                    </a>
+                                </li>
 
+                                @foreach($listing->ListingAttr()->get() as $lis)
+                                    @if($lis->beds_count == 1)
+                                        <li role="presentation">
+                                            <a href="#tab-4" aria-controls="tab-street-view" role="tab" data-toggle="tab">
+                                                    <span>
+                                                        1 Bedroom
+                                                    </span>
+                                                <div class="button-triangle2"></div>
+                                            </a>
+                                        </li>
+                                        @break
+                                    @endif
+                                @endforeach
+                                @foreach($listing->ListingAttr()->get() as $lis)
+                                    @if($lis->beds_count == 2)
+                                        <li role="presentation">
+                                            <a href="#tab-3" aria-controls="tab-street-view" role="tab" data-toggle="tab">
+                                                    <span>
+                                                        2 Bedroom
+                                                    </span>
+                                                <div class="button-triangle2"></div>
+                                            </a>
+                                        </li>
+                                        @break
+                                    @endif
+                                @endforeach
+                                @foreach($listing->ListingAttr()->get() as $lis)
+                                    @if($lis->beds_count == 3)
+                                        <li role="presentation">
+                                            <a href="#tab-2" aria-controls="tab-street-view" role="tab" data-toggle="tab">
+                                                    <span>
+                                                        3 Bedroom
+                                                    </span>
+                                                <div class="button-triangle2"></div>
+                                            </a>
+                                        </li>
+                                        @break
+                                    @endif
+                                @endforeach
+                                @foreach($listing->ListingAttr()->get() as $lis)
+                                    @if($lis->beds_count == 4)
+                                        <li role="presentation">
+                                            <a href="#tab-1" aria-controls="tab-street-view" role="tab" data-toggle="tab">
+                                                <span>
+                                                    4 Bedroom
+                                                </span>
+                                                <div class="button-triangle2"></div>
+                                            </a>
+                                        </li>
+                                        @break
+                                    @endif
+                                @endforeach
+                            </ul>
+                        <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="tab-all">
+                                    <table class="table table-bordered table-responsive">
+                                        <thead>
+
+                                        </thead>
+                                        <tbody>
+                                            @foreach($listing->ListingAttr()->get() as $lis)
+                                                <tr>
+                                                    <td>
+                                                        @if($lis->listing_type == '2')
+                                                            {{ Lang::get('listing.appartament') }}
+                                                        @elseif($lis->listing_type == '7')
+                                                            {{ Lang::get('listing.condo') }}
+                                                        @elseif($lis->listing_type == '5')
+                                                            {{ Lang::get('listing.townhome') }}
+                                                        @elseif($lis->listing_type == '3')
+                                                            {{ Lang::get('listing.single_home') }}
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->beds_count }} Bedroom
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->baths_count }} Bathroom
+                                                    </td>
+
+                                                    <td>
+                                                        {{ $lis->square_feet }} SF
+                                                    </td>
+                                                    <td>
+                                                       $ {{ $lis->rent }}
+                                                    </td>
+                                                    <td>
+                                                       {{ $lis->available_date }}
+                                                    </td>
+                                                </tr>
+
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="tab-4">
+                                    <table class="table table-bordered table-responsive">
+                                        <thead>
+
+                                        </thead>
+                                        <tbody>
+                                        @foreach($listing->ListingAttr()->get() as $lis)
+                                            @if($lis->beds_count == 1)
+                                                <tr>
+                                                    <td>
+                                                        @if($lis->listing_type == '2')
+                                                            {{ Lang::get('listing.appartament') }}
+                                                        @elseif($lis->listing_type == '7')
+                                                            {{ Lang::get('listing.condo') }}
+                                                        @elseif($lis->listing_type == '5')
+                                                            {{ Lang::get('listing.townhome') }}
+                                                        @elseif($lis->listing_type == '3')
+                                                            {{ Lang::get('listing.single_home') }}
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->beds_count }} Bedroom
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->baths_count }} Bathroom
+                                                    </td>
+
+                                                    <td>
+                                                        {{ $lis->square_feet }} SF
+                                                    </td>
+                                                    <td>
+                                                        $ {{ $lis->rent }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->available_date }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="tab-3">
+                                    <table class="table table-bordered table-responsive">
+                                        <thead>
+
+                                        </thead>
+                                        <tbody>
+                                        @foreach($listing->ListingAttr()->get() as $lis)
+                                            @if($lis->beds_count == 2)
+                                                <tr>
+                                                    <td>
+                                                        @if($lis->listing_type == '2')
+                                                            {{ Lang::get('listing.appartament') }}
+                                                        @elseif($lis->listing_type == '7')
+                                                            {{ Lang::get('listing.condo') }}
+                                                        @elseif($lis->listing_type == '5')
+                                                            {{ Lang::get('listing.townhome') }}
+                                                        @elseif($lis->listing_type == '3')
+                                                            {{ Lang::get('listing.single_home') }}
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->beds_count }} Bedroom
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->baths_count }} Bathroom
+                                                    </td>
+
+                                                    <td>
+                                                        {{ $lis->square_feet }} SF
+                                                    </td>
+                                                    <td>
+                                                        $ {{ $lis->rent }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->available_date }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="tab-2">
+                                            <table class="table table-bordered table-responsive">
+                                                <thead>
+
+                                                </thead>
+                                                <tbody>
+                                                @foreach($listing->ListingAttr()->get() as $lis)
+                                                    @if($lis->beds_count == 3)
+                                                        <tr>
+                                                            <td>
+                                                                @if($lis->listing_type == '2')
+                                                                    {{ Lang::get('listing.appartament') }}
+                                                                @elseif($lis->listing_type == '7')
+                                                                    {{ Lang::get('listing.condo') }}
+                                                                @elseif($lis->listing_type == '5')
+                                                                    {{ Lang::get('listing.townhome') }}
+                                                                @elseif($lis->listing_type == '3')
+                                                                    {{ Lang::get('listing.single_home') }}
+                                                                @endif
+                                                            </td>
+                                                            <td>
+                                                                {{ $lis->beds_count }} Bedroom
+                                                            </td>
+                                                            <td>
+                                                                {{ $lis->baths_count }} Bathroom
+                                                            </td>
+
+                                                            <td>
+                                                                {{ $lis->square_feet }} SF
+                                                            </td>
+                                                            <td>
+                                                                $ {{ $lis->rent }}
+                                                            </td>
+                                                            <td>
+                                                                {{ $lis->available_date }}
+                                                            </td>
+                                                        </tr>
+                                                    @endif
+                                                    @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                <div role="tabpanel" class="tab-pane" id="tab-1">
+                                    <table class="table table-bordered table-responsive">
+                                        <thead>
+
+                                        </thead>
+                                        <tbody>
+                                        @foreach($listing->ListingAttr()->get() as $lis)
+                                            @if($lis->beds_count == 4)
+                                                <tr>
+                                                    <td>
+                                                        @if($lis->listing_type == '2')
+                                                            {{ Lang::get('listing.appartament') }}
+                                                        @elseif($lis->listing_type == '7')
+                                                            {{ Lang::get('listing.condo') }}
+                                                        @elseif($lis->listing_type == '5')
+                                                            {{ Lang::get('listing.townhome') }}
+                                                        @elseif($lis->listing_type == '3')
+                                                            {{ Lang::get('listing.single_home') }}
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->beds_count }} Bedroom
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->baths_count }} Bathroom
+                                                    </td>
+
+                                                    <td>
+                                                        {{ $lis->square_feet }} SF
+                                                    </td>
+                                                    <td>
+                                                        $ {{ $lis->rent }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->available_date }}
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
                     <div class="row margin-top-15">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <h4 class="">{{ Lang::get('pages.app_ametites') }}<span class="">.</span></h4>
