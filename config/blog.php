@@ -2,7 +2,7 @@
 return [
     'title' => 'didcode/laravel-blog',
     'layout_path' => 'layouts.app',
-    'default_image' => 'http://lorempixel.com/400/300/',
+    'default_image' => '',
     'admin_middleware' => 'admin.only',
     'base_path' => '/blog/',
 

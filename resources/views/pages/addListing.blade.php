@@ -127,7 +127,7 @@
                                 <div class="grid">
                                     <div class="col-sm-4">
                                         <h5 class="labeles">{{ Lang::get('listing.beds') }}</h5>
-                                        <select name="beds_count[]" id="beds" class="selectpicker beds" data-bind="value: Details.BedType, options: Beds, optionsText: 'Description', optionsValue: 'Id'"  title="" style="display: none;">
+                                        <select name="beds_count[]" id="beds" class="selectpicker beds"  title="" style="display: none;">
                                             <option value="-1">Studio</option>
                                             <option value="1" @if(old('beds_count') == 1) selected @endif>1.0</option>
                                             <option value="2" @if(old('beds_count') == 2) selected @endif>2.0</option>
@@ -139,7 +139,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <h5 class="labeles">{{ Lang::get('listing.baths') }}</h5>
-                                        <select name="baths_count[]" id="baths" class="selectpicker baths" data-bind="value: Details.BathType, options: Baths, optionsText: 'Description', optionsValue: 'Id'"  title="" style="display: none;">
+                                        <select name="baths_count[]" id="baths" class="selectpicker baths" title="" style="display: none;">
                                             <option value="0.5" @if(old('baths_count') == 0.5) selected @endif>0.5</option>
                                             <option value="1" @if(old('baths_count') == 1) selected @endif>1.0</option>
                                             <option value="1.5" @if(old('baths_count') == 1.5) selected @endif>1.5</option>
@@ -470,9 +470,7 @@
                     var source = $('#cloning_area'),
                         clone = source.clone();
                     /*Incrementind Radio Buttons Id*/
-                    clone.find(':input').attr('id', function(i, val) {
-                        return val + count;
-                    });
+
                   /*Incrementind Radio Buttons name*/
                   clone.find(':input[type="radio"]').attr('name', function(i, val) {
                       return val + count;
@@ -485,6 +483,21 @@
                     clone.find('label').attr('for' , function(i, val) {
                       return val + count;
                     })
+
+                    clone.find('input[name="available_date[]"]').daterangepicker({
+                                singleDatePicker: true,
+                                showDropdowns: true
+                            },
+                            function(start, end, label) {
+                                var years = moment().diff(start, 'years');
+                            });
+                  clone.find('input[name="beds_count[]"]').selectpicker({
+                      container: 'body',
+                      selectedTextFormat: 'count > 2'
+
+                  });
+
+                  clone.find('input[name="bath_count[]"]').selectpicker();
                     clone.appendTo('#cloned_arae');
 
                     count++;
