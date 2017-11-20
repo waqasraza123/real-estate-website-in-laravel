@@ -76,6 +76,12 @@ return [
     'right' => 'derecho',
     's_f_l' => 'guardar para más',
     'dr_pho' => 'Suelta fotos aquí o usa el botón de la izquierda para agregar fotos',
+    'map' => 'mapa',
+    'guest' => 'huésped',
+    'app' => 'solicitud',
+    'dep' => 'deposito',
+    's_l' => 'guardar para más adelante',
+
 
 
 
