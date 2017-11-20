@@ -18,7 +18,7 @@
     <div class="container">
             <div class="center-button-cont" style="text-align: right">
                 <button  type="button" class="button-secondary" id="save_for_later">
-                    <span>Save for later</span>
+                    <span>{{ Lang::get('listing.s_l') }}</span>
                     <div class="button-triangle"></div>
                     <div class="button-triangle2"></div>
                     <div class="button-icon"><i class="jfont fa-lg"></i></div>

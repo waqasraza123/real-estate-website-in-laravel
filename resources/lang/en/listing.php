@@ -77,6 +77,12 @@ return [
     'right' => 'right',
     's_f_l' => 'save for later',
     'dr_pho' => 'Drop photos here or use teh button on the left to add photos',
+    'map' => 'map',
+    'guest' => 'guest',
+    'app' => 'application',
+    'dep' => 'deposit',
+    's_l' => 'save for later',
+
 
 
 
