@@ -151,7 +151,7 @@
                                 <div class="row">
                                     <br>
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                        <input id="geocomplete1" name="address" type="text" class="input-full main-input" required placeholder="Address">
+                                        <input id="geocomplete1" name="address" type="text" class="input-full main-input" required placeholder="{{ Lang::get('profile.city') }}">
                                         <input type="hidden">
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
@@ -164,14 +164,35 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
-                                            <option value="500-700">$500 - $700</option>
-                                            <option value="700-900">$700 - $900</option>
-                                            <option value="900-1300">$900 - $1300</option>
-                                            <option value="1300-1800">$1300 - $1800</option>
-                                            <option value="1800-2100">$1800 - $2100</option>
-                                            <option value="2100-2150">$2100 - $2150</option>
-                                        </select>
+                                       <div class="dropdown btn-group bootstrap-select show-tick  ">
+                                                <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">Rent Range<strong class="caret"></strong>
+                                                </button>
+                                                <div class="dropdown-menu col-sm-2" style="padding:10px;">
+                                                    <div class="col-xs-6">
+                                                        <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
+                                                        <li data-value="500">$500</li>
+                                                        <li data-value="700">$700</li>
+                                                        <li data-value="900">$900</li>
+                                                        <li data-value="1100">$1100</li>
+                                                        <li data-value="1300">$1300</li>
+                                                        <li data-value="1500">$1500</li>
+                                                    </ul>
+                                                    <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
+                                                        <li data-value="1500">$1500</li>
+                                                        <li data-value="1700">$1700</li>
+                                                        <li data-value="1900">$1900</li>
+                                                        <li data-value="2100">$2100</li>
+                                                        <li data-value="2300">$2300</li>
+                                                        <li data-value="2500">$2500</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
@@ -208,7 +229,7 @@
                                 <div class="row">
                                     <br>
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                        <input id="geocomplete2" name="address" type="text" class="input-full main-input" required placeholder="Address">
+                                        <input id="geocomplete2" name="address" type="text" class="input-full main-input" required placeholder="{{ Lang::get('profile.city') }}">
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
@@ -220,15 +241,35 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
-
-                                            <option value="500-700">$500 - $700</option>
-                                            <option value="700-900">$700 - $900</option>
-                                            <option value="900-1300">$900 - $1300</option>
-                                            <option value="1300-1800">$1300 - $1800</option>
-                                            <option value="1800-2100">$1800 - $2100</option>
-                                            <option value="2100-2150">$2100 - $2150</option>
-                                        </select>
+                                        <div class="dropdown btn-group bootstrap-select show-tick  ">
+                                            <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">Rent Range<strong class="caret"></strong>
+                                            </button>
+                                            <div class="dropdown-menu col-sm-2" style="padding:10px;">
+                                                <div class="col-xs-6">
+                                                    <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
+                                                </div>
+                                                <div class="col-xs-6">
+                                                    <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
+                                                    <li data-value="500">$500</li>
+                                                    <li data-value="700">$700</li>
+                                                    <li data-value="900">$900</li>
+                                                    <li data-value="1100">$1100</li>
+                                                    <li data-value="1300">$1300</li>
+                                                    <li data-value="1500">$1500</li>
+                                                </ul>
+                                                <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
+                                                    <li data-value="1500">$1500</li>
+                                                    <li data-value="1700">$1700</li>
+                                                    <li data-value="1900">$1900</li>
+                                                    <li data-value="2100">$2100</li>
+                                                    <li data-value="2300">$2300</li>
+                                                    <li data-value="2500">$2500</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
@@ -265,7 +306,7 @@
                                 <div class="row">
                                     <br>
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                        <input id="geocomplete3" name="address" type="text" class="input-full main-input" required placeholder="Address">
+                                        <input id="geocomplete3" name="address" type="text" class="input-full main-input" required placeholder="{{ Lang::get('profile.city') }}">
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
@@ -277,14 +318,35 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3">
-                                        <select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
-                                            <option value="500-700">$500 - $700</option>
-                                            <option value="700-900">$700 - $900</option>
-                                            <option value="900-1300">$900 - $1300</option>
-                                            <option value="1300-1800">$1300 - $1800</option>
-                                            <option value="1800-2100">$1800 - $2100</option>
-                                            <option value="2100-2150">$2100 - $2150</option>
-                                        </select>
+                                       <div class="dropdown btn-group bootstrap-select show-tick  ">
+                                                <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">Rent Range<strong class="caret"></strong>
+                                                </button>
+                                                <div class="dropdown-menu col-sm-2" style="padding:10px;">
+                                                    <div class="col-xs-6">
+                                                        <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                    <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
+                                                        <li data-value="500">$500</li>
+                                                        <li data-value="700">$700</li>
+                                                        <li data-value="900">$900</li>
+                                                        <li data-value="1100">$1100</li>
+                                                        <li data-value="1300">$1300</li>
+                                                        <li data-value="1500">$1500</li>
+                                                    </ul>
+                                                    <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
+                                                        <li data-value="1500">$1500</li>
+                                                        <li data-value="1700">$1700</li>
+                                                        <li data-value="1900">$1900</li>
+                                                        <li data-value="2100">$2100</li>
+                                                        <li data-value="2300">$2300</li>
+                                                        <li data-value="2500">$2500</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                     </div>
                                     <div class="col-lg-3">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
