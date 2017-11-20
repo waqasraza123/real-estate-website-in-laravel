@@ -476,28 +476,27 @@
                       return val + count;
                   });
 
-                  clone.find(':input[type="radio"]').attr('name', function(i, val) {
-                      return val + count;
-                  });
                   /*Incrementind Radio Buttons  Label For*/
                     clone.find('label').attr('for' , function(i, val) {
                       return val + count;
                     })
 
-                    clone.find('input[name="available_date[]"]').daterangepicker({
+
+
+
+                  clone.find('input[name="available_date[]"]').daterangepicker({
                                 singleDatePicker: true,
                                 showDropdowns: true
                             },
                             function(start, end, label) {
                                 var years = moment().diff(start, 'years');
                             });
-                  clone.find('input[name="beds_count[]"]').selectpicker({
-                      container: 'body',
-                      selectedTextFormat: 'count > 2'
+                  clone.find('.dropdown-toggle').remove();
+                  clone.find('select').attr('id' , function(i, val) {
+                      return val + count;
+                  }).selectpicker()
 
-                  });
 
-                  clone.find('input[name="bath_count[]"]').selectpicker();
                     clone.appendTo('#cloned_arae');
 
                     count++;
