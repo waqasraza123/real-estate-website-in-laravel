@@ -485,41 +485,48 @@
                                         <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                             @if($listing->broken_lease == '1')
                                                 {{ Lang::get('listing.b_l') }}-{{ Lang::get('listing.h_o') }} {{ $listing->br_le_ye }}
+                                                <br>
                                             @endif
                                             @if($listing->eviction == '1')
                                                 {{ Lang::get('listing.e_v') }}-{{ Lang::get('listing.h_o') }} {{ $listing->ev_ye }}
+                                                <br>
                                             @endif
                                             @if($listing->misdemeanor == '1')
-                                                {{ Lang::get('listing.mis') }}
+                                                {{ Lang::get('listing.mis') }} -{{ Lang::get('listing.h_o') }}
+                                                <br>
                                             @endif
                                             @if($listing->falonies == '1')
-                                                {{ Lang::get('listing.garage') }}
+                                                {{ Lang::get('listing.fels') }}
+                                                <br>
                                             @endif
                                             @if($listing->section_8 == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                {{ Lang::get('listing.sec_8') }}
+                                                <br>
                                             @endif
                                             @if($listing->hud == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                HUD
+                                                <br>
                                             @endif
                                             @if($listing->income_r == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                {{ Lang::get('listing.in_r') }}
+                                                <br>
                                             @endif
                                             @if($listing->bankruptcy == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                Bankruptcy-{{ Lang::get('listing.h_o') }} {{ $listing->ba_ye }}
+                                                <br>
                                             @endif
                                             @if($listing->foreclosure == '1')
-                                                {{ Lang::get('listing.forec') }}
+                                                {{ Lang::get('listing.forec') }}-{{ Lang::get('listing.h_o') }} {{ $listing->fo_ye }}
+                                                <br>
                                             @endif
                                             @if($listing->credit == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                {{ Lang::get('listing.cre') }}
+                                                <br>
                                             @endif
                                             @if($listing->move_in == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                {{ Lang::get('listing.m_i_s') }}
+                                                <br>
                                             @endif
-                                        </li>
-                                        <li style="list-style: none;text-align:left">
-                                            <span class="bullet">•</span>
-                                            Parking Fee {{ $listing->parking_fee }}$/mo
                                         </li>
                                     </ul>
                                 </div>
@@ -535,42 +542,41 @@
                                     <ul class="no_padding">
                                         <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                             @if($listing->possession == '1')
-                                                {{ Lang::get('listing.surfact_lot') }}
+                                                {{ Lang::get('listing.pos') }}
+                                                <br>
                                             @endif
                                             @if($listing->possession_w == '1')
-                                                {{ Lang::get('listing.covered') }}
+                                                {{ Lang::get('listing.pos_w') }}
+                                                <br>
                                             @endif
                                             @if($listing->assault == '1')
                                                 {{ Lang::get('listing.as') }}
+                                                <br>
                                             @endif
                                             @if($listing->herassment == '1')
-                                                {{ Lang::get('listing.garage') }}
+                                                Harassment
+                                                <br>
                                             @endif
                                             @if($listing->theft_of == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                {{ Lang::get('listing.th_o_h') }}
+                                                <br>
                                             @endif
                                             @if($listing->dwi == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                DWI
+                                                <br>
                                             @endif
                                             @if($listing->dui == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                DUI
+                                                <br>
                                             @endif
                                             @if($listing->disorderly == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                {{ Lang::get('listing.di_xc') }}
+                                                <br>
                                             @endif
                                             @if($listing->theft == '1')
-                                                {{ Lang::get('listing.other') }}
+                                                {{ Lang::get('listing.theft') }}
+                                                <br>
                                             @endif
-                                            @if($listing->credit == '1')
-                                                {{ Lang::get('listing.cre') }}
-                                            @endif
-                                            @if($listing->move_in == '1')
-                                                {{ Lang::get('listing.other') }}
-                                            @endif
-                                        </li>
-                                        <li style="list-style: none;text-align:left">
-                                            <span class="bullet">•</span>
-                                            Parking Fee {{ $listing->parking_fee }}$/mo
                                         </li>
                                     </ul>
                                 </div>
