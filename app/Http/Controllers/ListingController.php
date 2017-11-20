@@ -266,14 +266,21 @@ class ListingController extends Controller
             ->orWhere('city' , $inputs['city'])
             ->whereNotNull('approved');
 
-        if($inputs['rent'] != null){
-            $rent_amount = explode('-' , $inputs['rent']);
+        if($inputs['min'] != null){
             $listing
-                ->where('rent', '>' , $rent_amount['0'])
+                ->where('rent', '>' , $inputs['min'])
                 ->where('listing_status' , 'done')
-                ->where('rent', '<' ,$rent_amount['1'])
                 ->whereNotNull('approved');
-        }if($request->has('beds_baths')){
+        }
+
+        if($inputs['max'] != null){
+            $listing
+                ->where('rent', '<' , $inputs['max'])
+                ->where('listing_status' , 'done')
+                ->whereNotNull('approved');
+        }
+
+        if($request->has('beds_baths')){
             if($inputs['beds_baths']['0'] == 'all_baths'){
                 $listing->where('listing_status' , 'done')->whereNotNull('approved')->where('baths_count' , '>' , $inputs['beds_baths']['1']);
             }

@@ -53,14 +53,35 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-xs-12 form-">
-                                    <select name="rent" id="rent" class="selectpicker"   title="Rent">
-                                        <option value="500-700">$500 - $700</option>
-                                        <option value="700-900">$700 - $900</option>
-                                        <option value="900-1300">$900 - $1300</option>
-                                        <option value="1300-1800">$1300 - $1800</option>
-                                        <option value="1800-2100">$1800 - $2100</option>
-                                        <option value="2100-2150">$2100 - $2150</option>
-                                    </select>
+                                    <div class="dropdown btn-group bootstrap-select show-tick  ">
+                                        <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">Rent Range<strong class="caret"></strong>
+                                        </button>
+                                        <div class="dropdown-menu col-sm-2" style="padding:10px;">
+                                            <div class="col-xs-6">
+                                                <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
+                                                <li data-value="500">$500</li>
+                                                <li data-value="700">$700</li>
+                                                <li data-value="900">$900</li>
+                                                <li data-value="1100">$1100</li>
+                                                <li data-value="1300">$1300</li>
+                                                <li data-value="1500">$1500</li>
+                                            </ul>
+                                            <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
+                                                <li data-value="1500">$1500</li>
+                                                <li data-value="1700">$1700</li>
+                                                <li data-value="1900">$1900</li>
+                                                <li data-value="2100">$2100</li>
+                                                <li data-value="2300">$2300</li>
+                                                <li data-value="2500">$2500</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-lg-3 col-xs-12">
                                     <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
@@ -210,6 +231,30 @@
 
 @endsection
 @section('scripts')
+    <script>
+        $('#min-max-price-range').click(function (event) {
+            setTimeout(function(){ $('.price-label').first().focus();	},0);
+        });
+        var priceLabelObj;
+        $('.price-label').focus(function (event) {
+            priceLabelObj=$(this);
+            $('.price-range').addClass('hide');
+            $('#'+$(this).data('dropdownId')).removeClass('hide');
+        });
+
+        $(".price-range li").click(function(){
+            priceLabelObj.attr('value', $(this).attr('data-value'));
+            var curElmIndex=$( ".price-label" ).index( priceLabelObj );
+            var nextElm=$( ".price-label" ).eq(curElmIndex+1);
+
+            if(nextElm.length){
+                $( ".price-label" ).eq(curElmIndex+1).focus();
+            }else{
+                $('#min-max-price-range').dropdown('toggle');
+            }
+        });
+
+    </script>
     <script>
     $(document).ready(function () {
         var defaultBounds = new google.maps.LatLngBounds(
