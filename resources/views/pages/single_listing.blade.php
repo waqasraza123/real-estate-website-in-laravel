@@ -77,7 +77,7 @@
                             </div>
                             <div class="details-title pull-left">
                                 <h5 class="subtitle-margin"> </h5>
-                                <h3>{{ $listing->address }}<span class="special-color">.</span></h3>
+                                <h3>{{ $listing->name }}<span class="special-color">.</span></h3>
                             </div>
                             @if(Auth::user())
                                 <div class="details-title pull-right">
@@ -531,16 +531,9 @@
                                     </ul>
                                 </div>
                                 <div class="col-md-4 text-center">
-                                    <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
-                                        <i class="propertyIcon"></i>
-                                    </div>
-                                    <div class="details-title pull-left">
-                                        <h5 class="subtitle-margin"> </h5>
-                                        <h4>ACCEPTABLE ISSUES <span class="special-color">.</span></h4>
-                                    </div>
                                     <div class="clearfix"></div>
                                     <ul class="no_padding">
-                                        <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                        <li class="no_style" style="list-style: none;text-align:left">
                                             @if($listing->possession == '1')
                                                 {{ Lang::get('listing.pos') }}
                                                 <br>

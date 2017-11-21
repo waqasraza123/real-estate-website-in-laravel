@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="col-lg-3 col-xs-12 form-">
                                     <div class="dropdown btn-group bootstrap-select show-tick  ">
-                                        <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">Rent Range<strong class="caret"></strong>
+                                        <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span><span class="maxp">Range</span><strong class="caret"></strong>
                                         </button>
                                         <div class="dropdown-menu col-sm-2" style="padding:10px;">
                                             <div class="col-xs-6">
@@ -165,9 +165,9 @@
                                 <div class="list-agency-description">
                                     <div class="team-desc-line">
 												<span class="team-icon-circle">
-													<i class="fa fa-clock-o" style="line-height: 22px;"></i>
+													<i class="fa fa-house" style="line-height: 22px;"></i>
 												</span>
-                                        <span>{{ $listing->created_at->diffInhours() }}HR</span>
+                                        <span>{{ $listing->name }}</span>
                                     </div>
                                     <div class="team-desc-line">
 												<span class="team-icon-circle">
@@ -246,7 +246,11 @@
             priceLabelObj.attr('value', $(this).attr('data-value'));
             var curElmIndex=$( ".price-label" ).index( priceLabelObj );
             var nextElm=$( ".price-label" ).eq(curElmIndex+1);
-
+            if(curElmIndex == 0){
+                $('.minp').text('$' + priceLabelObj.val() + '-');
+            }else if(curElmIndex == 1){
+                $('.maxp').text('$' + priceLabelObj.val());
+            }
             if(nextElm.length){
                 $( ".price-label" ).eq(curElmIndex+1).focus();
             }else{
