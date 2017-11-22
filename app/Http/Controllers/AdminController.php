@@ -25,6 +25,7 @@ class AdminController extends Controller
         $this->listing = $listing;
         $this->footer = $footerContent;
         $this->images = $sliderImage;
+        $this->middleware('auth');
     }
 
     public function index(){
