@@ -37,7 +37,7 @@
                                     <table id="address" style="display: none">
                                         <input class="field"  id="street_number" type="hidden">
                                         <input class="field"  id="route" type="hidden">
-                                        <input class="field" id="locality"   type="hidden">
+                                        <input class="field" id="locality" name="city"  type="hidden">
                                         <input class="field" id="administrative_area_level_1" name="state" type="hidden">
                                         <input class="field" id="postal_code"  type="hidden">
                                         <input class="field"  id="country" type="hidden">
