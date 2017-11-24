@@ -13,6 +13,9 @@ Author: Jan Skwara - http://themeforest.net/user/johnnychaos
 	line-height: 21px;
 }
 
+.dropdown-menu .inner{
+	max-height: 240px !important;
+}
 
 .swiper-container  {
 	height: 41.875em;

@@ -13,7 +13,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="{{route('adminHome')}}" class="logo">
+        <a href="{{route('homes')}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>2nd Chance Leasing </b></span>

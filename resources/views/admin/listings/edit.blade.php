@@ -93,6 +93,7 @@
                                 </div>
                                 @if($listing->ListingAttr()->get())
                                     @foreach($listing->ListingAttr()->get() as $lis)
+                                        <input type="hidden" name="list_a_id[]" value="{{ $lis->id }}">
                                         <div style="display: none">
 
                                             {{ $count ++ }}
@@ -126,7 +127,7 @@
                                         <div class="grid">
                                             <div class="col-sm-4">
                                                 <h5 class="labeles">{{ Lang::get('listing.beds') }}</h5>
-                                                <select name="beds_count[]" id="beds" class="selectpicker beds" data-bind="value: Details.BedType, options: Beds, optionsText: 'Description', optionsValue: 'Id'" required="true" title="" style="display: none;">
+                                                <select name="beds_count[]" id="beds" class="selectpicker beds" data-bind="value: Details.BedType, options: Beds, optionsText: 'Description', optionsValue: 'Id'" title="" style="display: none;">
                                                     <option value="">Studio</option>
                                                     <option value="1" @if($lis->beds_count == '1')  selected  @endif>1.0</option>
                                                     <option value="2" @if($lis->beds_count == '2')  selected  @endif>2.0</option>
@@ -138,7 +139,7 @@
                                             </div>
                                             <div class="col-sm-4">
                                                 <h5 class="labeles">{{ Lang::get('listing.baths') }}</h5>
-                                                <select name="baths_count[]" id="baths" class="selectpicker baths" data-bind="value: Details.BathType, options: Baths, optionsText: 'Description', optionsValue: 'Id'" required="true" title="" style="display: none;">
+                                                <select name="baths_count[]" id="baths" class="selectpicker baths" data-bind="value: Details.BathType, options: Baths, optionsText: 'Description', optionsValue: 'Id'"  title="" style="display: none;">
                                                     <option value="0.5" @if($lis->baths_count == '0.5')  selected  @endif>0.5</option>
                                                     <option value="1"   @if($lis->baths_count == '1')  selected  @endif>1.0</option>
                                                     <option value="1.5" @if($lis->baths_count == '1.5')  selected  @endif>1.5</option>

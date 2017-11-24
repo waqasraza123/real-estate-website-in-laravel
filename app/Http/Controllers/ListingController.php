@@ -41,19 +41,21 @@ class ListingController extends Controller
         $inputs['listing_status'] = 'done';
         $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
-        foreach(array_keys($request->listing_type) as $key) {
-            ListingAttribute::create([
+        if($request->listing_type != null) {
+            foreach (array_keys($request->listing_type) as $key) {
+                ListingAttribute::create([
 
-                'listing_id' => $listing->id,
-                'listing_type' => $request->listing_type[$key],
-                'beds_count' => $request->beds_count[$key],
-                'baths_count' => $request->baths_count[$key],
-                'square_feet' => $request->square_feet[$key],
-                'rent' => $request->rent[$key],
-                'deposit' => $request->deposit[$key],
-                'available_date' => $request->available_date[$key],
-                'lease_length' => $request->lease_length[$key],
-            ]);
+                    'listing_id' => $listing->id,
+                    'listing_type' => $request->listing_type[$key],
+                    'beds_count' => $request->beds_count[$key],
+                    'baths_count' => $request->baths_count[$key],
+                    'square_feet' => $request->square_feet[$key],
+                    'rent' => $request->rent[$key],
+                    'deposit' => $request->deposit[$key],
+                    'available_date' => $request->available_date[$key],
+                    'lease_length' => $request->lease_length[$key],
+                ]);
+            }
         }
         if($request->file('featured')){
             $name = $request->featured->hashName();
@@ -175,17 +177,19 @@ class ListingController extends Controller
 
         $inputs = $request->except('_token' , 'listingid', 'list_a_id', 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
         $inputs['listing_status'] = 'done';
-        foreach(array_keys($request->listing_type) as $key) {
-            ListingAttribute::where('id' , $request->list_a_id[$key])->update([
-                'listing_type' => $request->listing_type[$key],
-                'beds_count' => $request->beds_count[$key],
-                'baths_count' => $request->baths_count[$key],
-                'square_feet' => $request->square_feet[$key],
-                'rent' => $request->rent[$key],
-                'deposit' => $request->deposit[$key],
-                'available_date' => $request->available_date[$key],
-                'lease_length' => $request->lease_length[$key],
-            ]);
+        if($request->listing_type != null) {
+            foreach (array_keys($request->listing_type) as $key) {
+                ListingAttribute::where('id', $request->list_a_id[$key])->update([
+                    'listing_type' => $request->listing_type[$key],
+                    'beds_count' => $request->beds_count[$key],
+                    'baths_count' => $request->baths_count[$key],
+                    'square_feet' => $request->square_feet[$key],
+                    'rent' => $request->rent[$key],
+                    'deposit' => $request->deposit[$key],
+                    'available_date' => $request->available_date[$key],
+                    'lease_length' => $request->lease_length[$key],
+                ]);
+            }
         }
         if($request->file('featured')){
             $name = $request->featured->hashName();
