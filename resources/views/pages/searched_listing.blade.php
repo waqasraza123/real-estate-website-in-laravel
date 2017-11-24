@@ -37,7 +37,7 @@
                                     <table id="address" style="display: none">
                                         <input class="field"  id="street_number" type="hidden">
                                         <input class="field"  id="route" type="hidden">
-                                        <input class="field" id="locality"   type="hidden">
+                                        <input class="field" id="locality" name="city"  type="hidden">
                                         <input class="field" id="administrative_area_level_1" name="state" type="hidden">
                                         <input class="field" id="postal_code"  type="hidden">
                                         <input class="field"  id="country" type="hidden">
@@ -160,7 +160,7 @@
                         <div class="list-agency">
                             <div class="list-agency-left">
                                 @if($listing->ListingsImages()->first())
-                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt="" width="100%">
+                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt="" width="100%" height="100%">
                                 @endif
                                 <div class="list-agency-description">
                                     <div class="team-desc-line">
