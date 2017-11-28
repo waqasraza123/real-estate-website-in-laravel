@@ -44,7 +44,6 @@ class ListingController extends Controller
         if($request->listing_type != null) {
             foreach (array_keys($request->listing_type) as $key) {
                 ListingAttribute::create([
-
                     'listing_id' => $listing->id,
                     'listing_type' => $request->listing_type[$key],
                     'beds_count' => $request->beds_count[$key],
@@ -261,27 +260,27 @@ class ListingController extends Controller
      */
     public function searchListing(Request $request){
         $request->flash();
+        $min = [];
         $points = $this->listing->where('lat' , '!=' ,  'null')->where('listing_status' , 'done')->whereNotNull('approved')->get();
         $inputs = $request->except('token');
         $listing = $this->listing
-            ->where('listing_type' , $inputs['listing_type'])
-            ->where('listing_status' , 'done')
-            ->where('state' , $inputs['state'])
-            ->orWhere('city' , $inputs['city'])
-            ->whereNotNull('approved');
-
+            ->where('listings.listing_type' , $inputs['listing_type'])
+            ->where('listings.listing_status' , 'done')
+            ->where('listings.state' , $inputs['state'])
+            ->orWhere('listings.city' , $inputs['city'])
+            ->whereNotNull('listings.approved');
         if($inputs['min'] != null){
-            $listing
-                ->where('rent', '>' , $inputs['min'])
-                ->where('listing_status' , 'done')
-                ->whereNotNull('approved');
-        }
-
-        if($inputs['max'] != null){
-            $listing
-                ->where('rent', '<' , $inputs['max'])
-                ->where('listing_status' , 'done')
-                ->whereNotNull('approved');
+            $listing->join('listing_attributes' , function($join) use($inputs) {
+                $join->on('listings.id', '=', 'listing_attributes.listing_id')
+                    ->where('listings.listing_type' , $inputs['listing_type'])
+                    ->where('listings.listing_status' , 'done')
+                    ->where('listings.state' , $inputs['state'])
+                    ->orWhere('listings.city' , $inputs['city'])
+                    ->whereNotNull('listings.approved')
+                    ->where('listing_attributes.rent', '>',$inputs['min'])
+                    ->orWhere('listing_attributes.rent', '<' , $inputs['max'])
+                    ->groupBy('listing_attributes.listing_id');
+            })->get();
         }
 
         if($request->has('beds_baths')){
@@ -292,11 +291,16 @@ class ListingController extends Controller
                 $listing->where('listing_status' , 'done')->whereNotNull('approved')->where('beds_count' , $inputs['beds_baths']['0']);
             }
             if (array_key_exists('0', $inputs['beds_baths']) && array_key_exists('1', $inputs['beds_baths'])) {
-                $listing->where('listing_status' , 'done')->whereNotNull('approved')->where('beds_count', $inputs['beds_baths']['0'])->where('baths_count', '>', $inputs['beds_baths']['1']);
+                $listing
+                    ->where('listing_status' , 'done')
+                    ->whereNotNull('approved')
+                    ->where('beds_count', $inputs['beds_baths']['0'])
+                    ->where('baths_count', '>', $inputs['beds_baths']['1']);
             }
         }
         $listings = $listing->get();
         $langLtd = [];
+        $new = '';
        foreach ($listings as $listing){
             if($listing->lat != '') {
                 if($listing->listing_type == '2'){
