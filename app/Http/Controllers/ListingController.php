@@ -270,17 +270,22 @@ class ListingController extends Controller
             ->orWhere('listings.city' , $inputs['city'])
             ->whereNotNull('listings.approved');
         if($inputs['min'] != null){
-            $listing->join('listing_attributes' , function($join) use($inputs) {
+            $listing = $listing->crossJoin('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
+                ->select('listings.*')
+                ->where('listing_attributes.rent', '>',$inputs['min'])
+                ->orWhere('listing_attributes.rent', '<' , $inputs['max'])->groupBy('listings.id');
+
+
+
+
+
+
+            /*join('listing_attributes' , function($join) use($inputs) {
                 $join->on('listings.id', '=', 'listing_attributes.listing_id')
-                    ->where('listings.listing_type' , $inputs['listing_type'])
-                    ->where('listings.listing_status' , 'done')
-                    ->where('listings.state' , $inputs['state'])
-                    ->orWhere('listings.city' , $inputs['city'])
-                    ->whereNotNull('listings.approved')
+                    ->select('listings.*')
                     ->where('listing_attributes.rent', '>',$inputs['min'])
-                    ->orWhere('listing_attributes.rent', '<' , $inputs['max'])
-                    ->groupBy('listing_attributes.listing_id');
-            })->get();
+                    ->orWhere('listing_attributes.rent', '<' , $inputs['max']);
+            });*/
         }
 
         if($request->has('beds_baths')){
