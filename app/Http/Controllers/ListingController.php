@@ -279,11 +279,6 @@ class ListingController extends Controller
                     ->where('listings.state' , $inputs['state'])
                     ->orWhere('listings.city' , $inputs['city'])
                     ->whereNotNull('listings.approved');
-
-
-
-
-
             /*join('listing_attributes' , function($join) use($inputs) {
                 $join->on('listings.id', '=', 'listing_attributes.listing_id')
                     ->select('listings.*')
@@ -292,7 +287,7 @@ class ListingController extends Controller
             });*/
         }
 
-        if($request->has('beds_baths')){
+      /*  if($request->has('beds_baths')){
             if($inputs['beds_baths']['0'] == 'all_baths'){
                 $listing->where('listing_status' , 'done')->whereNotNull('approved')->where('baths_count' , '>' , $inputs['beds_baths']['1']);
             }
@@ -306,7 +301,7 @@ class ListingController extends Controller
                     ->where('beds_count', $inputs['beds_baths']['0'])
                     ->where('baths_count', '>', $inputs['beds_baths']['1']);
             }
-        }
+        }*/
         $listings = $listing->get();
         $langLtd = [];
         $new = '';
