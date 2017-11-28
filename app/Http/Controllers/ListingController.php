@@ -273,8 +273,12 @@ class ListingController extends Controller
             $listing = $listing->crossJoin('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
                 ->select('listings.*')
                 ->where('listing_attributes.rent', '>',$inputs['min'])
-                ->orWhere('listing_attributes.rent', '<' , $inputs['max'])->groupBy('listings.id');
-
+                ->orWhere('listing_attributes.rent', '<' , $inputs['max'])->groupBy('listings.id')
+                ->where('listings.listing_type' , $inputs['listing_type'])
+                    ->where('listings.listing_status' , 'done')
+                    ->where('listings.state' , $inputs['state'])
+                    ->orWhere('listings.city' , $inputs['city'])
+                    ->whereNotNull('listings.approved');
 
 
 
