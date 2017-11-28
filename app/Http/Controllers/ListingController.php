@@ -306,6 +306,7 @@ class ListingController extends Controller
         $langLtd = [];
         $new = '';
        foreach ($listings as $listing){
+
             if($listing->lat != '') {
                 if($listing->listing_type == '2'){
                     $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
@@ -315,10 +316,13 @@ class ListingController extends Controller
                     $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png"],';
                 }elseif($listing->listing_type == '3'){
                     $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                }else{
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
                 }
                 array_push($langLtd, $new);
             }
         }
+
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
     }
 
