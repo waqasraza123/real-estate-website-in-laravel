@@ -51,7 +51,7 @@
                                     <div class="col-lg-2"></div>
                                     <div class="col-lg-10">
                                         @if ($post->image != '')
-                                            <img src="{{ $post->image }}" alt="" class="">
+                                            <img src="{{ $post->image }}" alt="" class="" width="30%" height="auto">
                                         @endif
                                     </div>
                                 </div>
