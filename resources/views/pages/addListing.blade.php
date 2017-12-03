@@ -43,7 +43,19 @@
                                 <br>
                             @endif
                                 {{ csrf_field() }}
-
+                                <input type="hidden" name="wq-street_address" class="wq-street_address">
+                                <input type="hidden" name="wq-street_number" class="wq-street_number">
+                                <input type="hidden" name="wq-intersection" class="wq-intersection">
+                                <input type="hidden" name="wq-route" class="wq-route">
+                                <input type="hidden" name="wq-sublocality" class="wq-sublocality">
+                                <input type="hidden" name="wq-locality" class="wq-locality">
+                                <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
+                                <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
+                                <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
+                                <input type="hidden" name="wq-administrative_area_level_4" class="wq-administrative_area_level_4">
+                                <input type="hidden" name="wq-administrative_area_level_5" class="wq-administrative_area_level_5">
+                                <input type="hidden" name="wq-country" class="wq-country">
+                                <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                             <div class="grid">
                                 <div class="col-xs-12">
                                     <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px; text-transform: capitalize">{{ Lang::get('listing.address') }}</h4>
@@ -211,7 +223,7 @@
 
                             <div class="grid">
                                 <div class="col-xs-12 ">
-                                    <input id="file-upload" name="files[]" type="file" multiple="">
+                                    <input id="file-upload" name="files[]" type="file" multiple>
                                 </div>
                             </div>
 
@@ -456,6 +468,22 @@
                 function(start, end, label) {
                     var years = moment().diff(start, 'years');
                 });
+            initAutocompleteAddress()
+            function initAutocompleteAddress(){
+                autocomplete = new google.maps.places.Autocomplete(
+                    (document.getElementById('geocomplete')),
+                    {types: ['geocode']});
+
+                // When the user selects an address from the dropdown, populate the address
+                // fields in the form.
+                google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                    var place = autocomplete.getPlace();
+                    //console.log(place.address_components)
+                    $.each(place.address_components, function (i, v) {
+                        console.log(v.types[0], v.long_name)
+                    })
+                });
+            }
         });
     </script>
     <script>
@@ -527,12 +555,12 @@
                     city: "required"
                 },
                 messages: {
-                    first_name: "Please enter your Firstname",
+                    first_name: "Please enter your First Name",
                     beds_count: "Please enter Beds count",
                     listing_type: "Please choose Listing Type",
                     address: "Please enter a address",
                     phone: "Please enter your Phone number",
-                    last_name: "Please enter your Lastname",
+                    last_name: "Please enter your Last Name",
                     password: {
                         required: "Please provide a password",
                         minlength: "Your password must be at least 5 characters long"

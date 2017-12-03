@@ -50,13 +50,26 @@
                 <div class="container">
                     <div class="row tab-content">
                         <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade in active" id="apartments">
-                            <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
+                            <form action="{{ route('searchListing') }}" class="apartament_form" method="get">
                                 {{ csrf_field()  }}
+                                <input type="hidden" name="wq-street_address" class="wq-street_address">
+                                <input type="hidden" name="wq-street_number" class="wq-street_number">
+                                <input type="hidden" name="wq-intersection" class="wq-intersection">
+                                <input type="hidden" name="wq-route" class="wq-route">
+                                <input type="hidden" name="wq-sublocality" class="wq-sublocality">
+                                <input type="hidden" name="wq-locality" class="wq-locality">
+                                <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
+                                <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
+                                <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
+                                <input type="hidden" name="wq-administrative_area_level_4" class="wq-administrative_area_level_4">
+                                <input type="hidden" name="wq-administrative_area_level_5" class="wq-administrative_area_level_5">
+                                <input type="hidden" name="wq-country" class="wq-country">
+                                <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                                 <input type="hidden" name="listing_type" value="2">
                                 <div class="row">
                                     <br>
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                        <input id="autocomplete" class="input-full main-input" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('profile.city') }}">
+                                        <input id="autocomplete" class="input-full main-input" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('profile.city') }}" name="address">
 
                                         <table id="address" style="display: none">
                                             <input class="field"  id="street_number" type="hidden">
@@ -69,10 +82,10 @@
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
-                                                <input name="lng" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly">
+                                                <input name="lng" type="text" class="input-full lng main-input input-last" placeholder="Longitude" readonly="readonly">
                                             </div>
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
-                                                <input name="lat" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly">
+                                                <input name="lat" type="text" class="input-full main-input lat input-last" placeholder="Latitude" readonly="readonly" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -147,6 +160,19 @@
                         <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="houses">
                             <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
                                 {{ csrf_field()  }}
+                                <input type="hidden" name="wq-street_address" class="wq-street_address">
+                                <input type="hidden" name="wq-street_number" class="wq-street_number">
+                                <input type="hidden" name="wq-intersection" class="wq-intersection">
+                                <input type="hidden" name="wq-route" class="wq-route">
+                                <input type="hidden" name="wq-sublocality" class="wq-sublocality">
+                                <input type="hidden" name="wq-locality" class="wq-locality">
+                                <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
+                                <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
+                                <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
+                                <input type="hidden" name="wq-administrative_area_level_4" class="wq-administrative_area_level_4">
+                                <input type="hidden" name="wq-administrative_area_level_5" class="wq-administrative_area_level_5">
+                                <input type="hidden" name="wq-country" class="wq-country">
+                                <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                                 <input type="hidden" name="listing_type" value="7">
                                 <div class="row">
                                     <br>
@@ -156,10 +182,10 @@
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
-                                                <input name="lng" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly">
+                                                <input name="lng" type="text" class="input-full lng main-input input-last" placeholder="Longitude" readonly="readonly" value="">
                                             </div>
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
-                                                <input name="lat" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly">
+                                                <input name="lat" type="text" class="input-full lat main-input input-last" placeholder="Latitude" readonly="readonly" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -225,6 +251,19 @@
                         <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="commercials">
                             <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
                                 {{ csrf_field()  }}
+                                <input type="hidden" name="wq-street_address" class="wq-street_address">
+                                <input type="hidden" name="wq-street_number" class="wq-street_number">
+                                <input type="hidden" name="wq-intersection" class="wq-intersection">
+                                <input type="hidden" name="wq-route" class="wq-route">
+                                <input type="hidden" name="wq-sublocality" class="wq-sublocality">
+                                <input type="hidden" name="wq-locality" class="wq-locality">
+                                <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
+                                <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
+                                <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
+                                <input type="hidden" name="wq-administrative_area_level_4" class="wq-administrative_area_level_4">
+                                <input type="hidden" name="wq-administrative_area_level_5" class="wq-administrative_area_level_5">
+                                <input type="hidden" name="wq-country" class="wq-country">
+                                <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                                 <input type="hidden" name="listing_type" value="5">
                                 <div class="row">
                                     <br>
@@ -233,10 +272,10 @@
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
-                                                <input name="lng" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly">
+                                                <input name="lng" type="text" class="input-full lng main-input input-last" placeholder="Longitude" readonly="readonly">
                                             </div>
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
-                                                <input name="lat" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly">
+                                                <input name="lat" type="text" class="input-full lat main-input input-last" placeholder="Latitude" readonly="readonly" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -301,6 +340,19 @@
                         </div>
                         <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="lands">
                             <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
+                                <input type="hidden" name="wq-street_address" class="wq-street_address">
+                                <input type="hidden" name="wq-street_number" class="wq-street_number">
+                                <input type="hidden" name="wq-intersection" class="wq-intersection">
+                                <input type="hidden" name="wq-route" class="wq-route">
+                                <input type="hidden" name="wq-sublocality" class="wq-sublocality">
+                                <input type="hidden" name="wq-locality" class="wq-locality">
+                                <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
+                                <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
+                                <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
+                                <input type="hidden" name="wq-administrative_area_level_4" class="wq-administrative_area_level_4">
+                                <input type="hidden" name="wq-administrative_area_level_5" class="wq-administrative_area_level_5">
+                                <input type="hidden" name="wq-country" class="wq-country">
+                                <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                                 {{ csrf_field()  }}
                                 <input type="hidden" name="listing_type" value="3">
                                 <div class="row">
@@ -310,10 +362,10 @@
                                         <div id="submit-property-map" style="display: none" class="submit-property-map"></div>
                                         <div class="row" style="display: none">
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
-                                                <input name="lng" type="text" class="input-full main-input input-last" placeholder="Longitude" readonly="readonly">
+                                                <input name="lng" type="text" class="input-full lng main-input input-last" placeholder="Longitude" readonly="readonly">
                                             </div>
                                             <div class="col-xs-12 col-sm-6 margin-top-15">
-                                                <input name="lat" type="text" class="input-full main-input input-last" placeholder="Latitude" readonly="readonly">
+                                                <input name="lat" type="text" class="input-full lat main-input input-last" placeholder="Latitude" readonly="readonly" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -618,7 +670,45 @@
         function fillInAddress() {
             // Get the place details from the autocomplete object.
             var place = autocomplete.getPlace();
+            //console.log(place.address_components)
+            $.each(place.address_components, function (i, v) {
+                if(v.types[0] == 'street_address'){
+                    $(".wq-street_address").val(v.long_name)
+                }if(v.types[0] == 'street_number'){
+                    $(".wq-street_number").val(v.long_name)
+                }if(v.types[0] == 'intersection'){
+                    $(".wq-intersection").val(v.long_name)
+                }if(v.types[0] == 'route'){
+                    $(".wq-route").val(v.long_name)
+                }if(v.types[0] == 'sublocality'){
+                    $(".wq-sublocality").val(v.long_name)
+                }
+                if(v.types[0] == 'locality'){
+                    $("input[name=city]").val(v.long_name)
+                    $(".wq-locality").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_1'){
+                    $("input[name=state]").val(v.long_name)
+                    $(".wq-administrative_area_level_1").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_2'){
+                    $(".wq-administrative_area_level_2").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_3'){
+                    $(".wq-administrative_area_level_3").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_4'){
+                    $(".wq-administrative_area_level_4").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_5'){
+                    $(".wq-administrative_area_level_5").val(v.long_name)
+                }if(v.types[0] == 'country') {
+                    $(".wq-country-name").val(v.long_name)
+                }if(v.types[0] == 'neighborhood') {
+                    $(".wq-neighborhood").val(v.long_name)
+                }if(v.types[0] == 'postal_code'){
+                    $("input[name=zip_code]").val(v.long_name)
+                }
 
+                console.log(v.types[0], v.long_name)
+            })
+            $('.lat').attr("value", place.geometry.location.lat());
+            $('.lng').attr("value", place.geometry.location.lng());
             for (var component in componentForm) {
                 document.getElementById(component).value = '';
                 document.getElementById(component).disabled = false;

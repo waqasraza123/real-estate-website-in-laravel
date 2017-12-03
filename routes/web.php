@@ -27,7 +27,7 @@ Route::get('/setlang/{lang}', function($lang)
 
 
 Route::get('test' , function(){
-    return view('test');
+    echo null || "hello";
 });
 
 
@@ -65,7 +65,7 @@ Route::get('edit_listing/{id}' , ['as' => 'editListing' , 'uses' => 'ListingCont
 Route::post('edit_listing' , ['as' => 'postEditListing' , 'uses' => 'ListingController@postEditListing']);
 Route::get('delete_listing/{id}' , ['as' => 'deleteListing' , 'uses' => 'ListingController@deleteListing']);
 Route::get('add_favorite/{user_id}/{listing_id}' , ['as' => 'addFavorite' , 'uses' => 'ListingController@addFavorite']);
-Route::post('search_listing' , ['as' => 'searchListing' , 'uses' => 'ListingController@searchListing']);
+Route::get('search_listing' , ['as' => 'searchListing' , 'uses' => 'ListingController@searchListing']);
 Route::post('search_listing_ajax' , ['as' => 'searchListingAjax' , 'uses' => 'ListingController@searchListingAjax']);
 Route::post('search_listing_user_profile', ['as' => 'searchSavedSeraches' , 'uses' => 'ListingController@searchSavedSeraches']);
 Route::get('delete_listing_images/{id}', ['as' => 'delListingImages' , 'uses' => 'ListingController@delListingImages']);

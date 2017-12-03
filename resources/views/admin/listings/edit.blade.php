@@ -32,6 +32,19 @@
                                     <br>
                                 @endif
                                 {{ csrf_field() }}
+                                    <input type="hidden" name="wq-street_address" class="wq-street_address">
+                                    <input type="hidden" name="wq-street_number" class="wq-street_number">
+                                    <input type="hidden" name="wq-intersection" class="wq-intersection">
+                                    <input type="hidden" name="wq-route" class="wq-route">
+                                    <input type="hidden" name="wq-sublocality" class="wq-sublocality">
+                                    {{--<input type="hidden" name="wq-locality" class="wq-locality">--}}
+                                    <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
+                                    <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
+                                    <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
+                                    <input type="hidden" name="wq-administrative_area_level_4" class="wq-administrative_area_level_4">
+                                    <input type="hidden" name="wq-administrative_area_level_5" class="wq-administrative_area_level_5">
+                                    <input type="hidden" name="wq-country" class="wq-country">
+                                    <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                                 <div class="grid">
                                     <div class="col-xs-12">
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px; text-transform: capitalize">{{ Lang::get('listing.address') }}</h4>

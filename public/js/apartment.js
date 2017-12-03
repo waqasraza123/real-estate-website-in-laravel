@@ -838,7 +838,7 @@ jQuery(window).load(function() {
 			$('#file-upload').fileinput({
 			uploadUrl: '#',
 			layoutTemplates: 'main2',
-			allowedFileExtensions : ['jpg','png','gif'],
+			allowedFileExtensions : ['jpg','png','gif', 'jpeg'],
 			showUpload: true,
 			showRemove: true,
 			browseClass: "button-shadow btn",
@@ -973,11 +973,53 @@ jQuery(window).load(function() {
 					icon: '../images/pin-empty.png'
 				}
 			});
-				
+            	$("#geocomplete").geocomplete().bind("geocode:result", function(event, result){
+                    $.each(result.address_components, function (i, v) {
+                        if(v.types[0] == 'street_address'){
+                            $(".wq-street_address").val(v.long_name)
+                        }if(v.types[0] == 'street_number'){
+                            $(".wq-street_number").val(v.long_name)
+                        }if(v.types[0] == 'intersection'){
+                            $(".wq-intersection").val(v.long_name)
+                        }if(v.types[0] == 'route'){
+                            $(".wq-route").val(v.long_name)
+                        }if(v.types[0] == 'sublocality'){
+                            $(".wq-sublocality").val(v.long_name)
+                        }
+                    	if(v.types[0] == 'locality'){
+                        	$("input[name=city]").val(v.long_name)
+							$(".wq-locality").val(v.long_name)
+						}if(v.types[0] == 'administrative_area_level_1'){
+                            $("input[name=state]").val(v.long_name)
+							$(".wq-administrative_area_level_1").val(v.long_name)
+						}if(v.types[0] == 'administrative_area_level_2'){
+                            $(".wq-administrative_area_level_2").val(v.long_name)
+                        }if(v.types[0] == 'administrative_area_level_3'){
+                            $(".wq-administrative_area_level_3").val(v.long_name)
+                        }if(v.types[0] == 'administrative_area_level_4'){
+                            $(".wq-administrative_area_level_4").val(v.long_name)
+                        }if(v.types[0] == 'administrative_area_level_5'){
+                            $(".wq-administrative_area_level_5").val(v.long_name)
+                        }if(v.types[0] == 'country') {
+                            $(".wq-country-name").val(v.long_name)
+                        }if(v.types[0] == 'neighborhood') {
+                            $(".wq-neighborhood").val(v.long_name)
+                        }if(v.types[0] == 'postal_code'){
+                        	$("input[name=zip_code]").val(v.long_name)
+						}
+
+                        console.log(v.types[0], v.long_name)
+                    })
+				})
 				$("#geocomplete").bind("geocode:dragged", function(event, latLng){
                     var geocoder = new google.maps.Geocoder;
                     geocoder.geocode({'location': latLng}, function(results, status) {
+
                         if (status === 'OK') {
+                        	console.log(results)
+                            $.each(results[0].address_components, function (i, v) {
+                                console.log(v.types[0], v.long_name)
+                            })
                             if (results[1]) {
                                 $("input[name=address]").val(results[1].formatted_address);
                             } else {
@@ -987,7 +1029,6 @@ jQuery(window).load(function() {
                             window.alert('Geocoder failed due to: ' + status);
                         }
                     });
-					console.log(results[1])
 					$("input[name=lat]").val(latLng.lat());
 					$("input[name=lng]").val(latLng.lng());
 				});

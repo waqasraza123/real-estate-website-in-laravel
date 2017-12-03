@@ -11,6 +11,7 @@ use App\Favorit;
 use App\ListingImage;
 use App\Review;
 use App\Mail\AgentsEamil;
+use Illuminate\Support\Facades\DB;
 
 
 class ListingController extends Controller
@@ -259,50 +260,72 @@ class ListingController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function searchListing(Request $request){
+        //dd($request->all());
         $request->flash();
         $min = [];
+
         $points = $this->listing->where('lat' , '!=' ,  'null')->where('listing_status' , 'done')->whereNotNull('approved')->get();
+
         $inputs = $request->except('token');
-        $listing = $this->listing
-            ->where('listings.listing_type' , $inputs['listing_type'])
-            ->where('listings.listing_status' , 'done')
-            ->where('listings.state' , $inputs['state'])
-            ->orWhere('listings.city' , $inputs['city'])
-            ->whereNotNull('listings.approved');
-        if($inputs['min'] != null){
-            $listing = $listing->crossJoin('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
-                ->select('listings.*')
-                ->where('listing_attributes.rent', '>',$inputs['min'])
-                ->orWhere('listing_attributes.rent', '<' , $inputs['max'])->groupBy('listings.id')
-                ->where('listings.listing_type' , $inputs['listing_type'])
-                    ->where('listings.listing_status' , 'done')
-                    ->where('listings.state' , $inputs['state'])
-                    ->orWhere('listings.city' , $inputs['city'])
-                    ->whereNotNull('listings.approved');
-            /*join('listing_attributes' , function($join) use($inputs) {
-                $join->on('listings.id', '=', 'listing_attributes.listing_id')
-                    ->select('listings.*')
-                    ->where('listing_attributes.rent', '>',$inputs['min'])
-                    ->orWhere('listing_attributes.rent', '<' , $inputs['max']);
-            });*/
+        $listing = Listing::where('listings.listing_status' , 'done')
+            ->where('listings.approved', "1")
+            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
+
+        if(isset($inputs['min']) && isset($inputs['max'])){
+            $listing->whereBetween('listing_attributes.rent', [(int)$inputs['min'], (int)$inputs['max']]);
         }
 
-      /*  if($request->has('beds_baths')){
-            if($inputs['beds_baths']['0'] == 'all_baths'){
-                $listing->where('listing_status' , 'done')->whereNotNull('approved')->where('baths_count' , '>' , $inputs['beds_baths']['1']);
+        if(isset($request->input('beds_baths')[0])){
+            $listing->where('listing_attributes.beds_count', $request->input('beds_baths')[0]);
+        }
+
+        if(isset($request->input('beds_baths')[1])){
+            $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
+        }
+
+        if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
+            $listing->orWhere('wq-street_address', $inputs['wq-street_address'])
+                ->orWhere('wq-street_number', $inputs['wq-street_number'])
+                ->orWhere('wq-intersection', $inputs['wq-intersection'])
+                ->orWhere('wq-route', $inputs['wq-route'])
+                ->orWhere('wq-neighbourhood', $inputs['wq-neighbourhood']);
+        }
+        elseif ($inputs['wq-sublocality']){
+            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-sublocality'])->pluck('zip_code')->toArray();
+            $listing->whereIn('zip_code', $zipCodes);
+        }
+        if ($inputs['wq-locality']){
+            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
+
+            $listing->whereIn('zip_code', $zipCodes);
+
+        }
+        elseif ($inputs['wq-administrative_area_level_2']){
+            $zipCodes = DB::table('zip_codes')->where('zip_code_county', $inputs['wq-administrative_area_level_2'])->pluck('zip_code')->toArray();
+            $listing->whereIn('zip_code', $zipCodes);
+        }
+        elseif ($inputs['wq-administrative_area_level_1']){
+            $zipCodes = DB::table('zip_codes')->where('zip_code_state', $inputs['wq-administrative_area_level_1'])->pluck('zip_code')->toArray();
+            $listing->whereIn('zip_code', $zipCodes);
+        }
+
+        $listing = $listing->get();
+        $arr = array();
+        if(count($listing)){
+            foreach ($listing as $l){
+                $theta = $l->lng - $inputs['lng'];
+                $dist = sin(deg2rad($l->lat)) * sin(deg2rad($inputs['lat'])) +  cos(deg2rad($l->lat)) * cos(deg2rad($inputs['lat'])) * cos(deg2rad($theta));
+                $dist = acos($dist);
+                $dist = rad2deg($dist);
+                $miles = $dist * 60 * 1.1515 * 1.609344;
+                //dd($miles);
+                if($miles <= 100 || $l->address == $inputs['address']){
+                    array_push($arr, $l);
+                }
             }
-            if($inputs['beds_baths']['0'] == 'all'){
-                $listing->where('listing_status' , 'done')->whereNotNull('approved')->where('beds_count' , $inputs['beds_baths']['0']);
-            }
-            if (array_key_exists('0', $inputs['beds_baths']) && array_key_exists('1', $inputs['beds_baths'])) {
-                $listing
-                    ->where('listing_status' , 'done')
-                    ->whereNotNull('approved')
-                    ->where('beds_count', $inputs['beds_baths']['0'])
-                    ->where('baths_count', '>', $inputs['beds_baths']['1']);
-            }
-        }*/
-        $listings = $listing->get();
+        }
+
+        $listings = collect($arr);
         $langLtd = [];
         $new = '';
        foreach ($listings as $listing){
@@ -325,7 +348,6 @@ class ListingController extends Controller
 
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
     }
-
 
     /**
      * @param Request $request

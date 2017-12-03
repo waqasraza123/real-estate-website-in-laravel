@@ -73,7 +73,45 @@ class Listing extends Model
         'br_le_ye',
         'ev_ye',
         'ba_ye',
-        'fo_ye'
+        'fo_ye',
+        'wq-street_number',
+        'wq-street_address'	,
+
+
+	'wq-intersection'	,
+
+
+	'wq-administrative_area_level_1'	,
+
+
+	'wq-administrative_area_level_2',
+
+
+	'wq-administrative_area_level_3',
+
+
+	'wq-administrative_area_level_4'	,
+
+
+	'wq-administrative_area_level_5',
+
+
+	'wq-route'		,
+
+
+	'wq-neighbourhood'		,
+
+
+	'wq-country'	,
+
+
+	'wq-county'		,
+
+
+	'wq-sublocality'	,
+
+
+	'wq-neighborhood'
     ];
 
     public function ListingsImages(){
@@ -99,6 +137,6 @@ class Listing extends Model
     }
 
     public function ListingAttr(){
-        return $this->hasMany(ListingAttribute::class);
+        return $this->hasMany(ListingAttribute::class, 'listing_id', 'id');
     }
 }
