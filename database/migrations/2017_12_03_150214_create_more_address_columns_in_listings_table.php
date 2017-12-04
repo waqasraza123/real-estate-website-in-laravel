@@ -14,20 +14,20 @@ class CreateMoreAddressColumnsInListingsTable extends Migration
     public function up()
     {
         Schema::table('listings', function (Blueprint $table) {
-            $table->string('wq-street_number')->nullable();
-            $table->string('wq-street_address')->nullable();
-            $table->string('wq-intersection')->nullable();
-            $table->string('wq-administrative_area_level_1')->nullable()->comment = "states in case of usa";
-            $table->string('wq-administrative_area_level_2')->nullable()->comment = "counties in case of usa";
-            $table->string('wq-administrative_area_level_3')->nullable()->comment = "3rd level civil division in case of usa";
-            $table->string('wq-administrative_area_level_4')->nullable()->comment = "4th level civil division in case of usa";
-            $table->string('wq-administrative_area_level_5')->nullable()->comment = "5th level civil division in case of usa";
-            $table->string('wq-route')->nullable();
-            $table->string('wq-neighbourhood')->nullable();
-            $table->string('wq-country')->nullable();
-            $table->string('wq-county')->nullable();
-            $table->string('wq-sublocality')->nullable();
-            $table->string('wq-neighborhood')->nullable();
+            $table->string('wq-street_number' , '190')->nullable();
+            $table->string('wq-street_address' , '190')->nullable();
+            $table->string('wq-intersection' , '190')->nullable();
+            $table->string('wq-administrative_area_level_1' , '190')->nullable()->comment = "states in case of usa";
+            $table->string('wq-administrative_area_level_2' , '190')->nullable()->comment = "counties in case of usa";
+            $table->string('wq-administrative_area_level_3' , '190')->nullable()->comment = "3rd level civil division in case of usa";
+            $table->string('wq-administrative_area_level_4' , '190')->nullable()->comment = "4th level civil division in case of usa";
+            $table->string('wq-administrative_area_level_5' , '190')->nullable()->comment = "5th level civil division in case of usa";
+            $table->string('wq-route' , '190')->nullable();
+            $table->string('wq-neighbourhood' , '190')->nullable();
+            $table->string('wq-country' , '190')->nullable();
+            $table->string('wq-county' , '190')->nullable();
+            $table->string('wq-sublocality' , '190')->nullable();
+            $table->string('wq-neighborhood' , '190')->nullable();
         });
     }
 
