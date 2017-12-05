@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ZipCodeController extends Controller
 {
@@ -11,6 +12,7 @@ class ZipCodeController extends Controller
         if (($handle = fopen ( public_path () . '/zip_codes.csv', 'r' )) !== FALSE) {
             while ( ($data = fgetcsv ( $handle, 1000, ',' )) !== FALSE ) {
                 if($row != 1){
+                    if(!DB::table('zip_codes')->where("zip_code", $data[0])->first())
                     \DB::table('zip_codes')->insert(
                         [
                             'zip_code' => $data[0],
