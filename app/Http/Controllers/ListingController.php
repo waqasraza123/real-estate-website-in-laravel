@@ -284,12 +284,18 @@ class ListingController extends Controller
         }
 
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
-            $listing->orWhere('wq-street_address', $inputs['wq-street_address'])
-                ->orWhere('wq-street_number', $inputs['wq-street_number'])
-                ->orWhere('wq-intersection', $inputs['wq-intersection'])
-                ->orWhere('wq-route', $inputs['wq-route'])
-                ->orWhere('wq-neighbourhood', $inputs['wq-neighbourhood']);
+            if (isset($inputs['wq-street_address']))
+                $listing->where('wq-street_address', $inputs['wq-street_address']);
+            if (isset($inputs['wq-street_number']))
+                $listing->where('wq-street_number', $inputs['wq-street_number']);
+            if (isset($inputs['wq-intersection']))
+                $listing->where('wq-intersection', $inputs['wq-intersection']);
+            if (isset($inputs['wq-route']))
+                $listing->where('wq-route', $inputs['wq-route']);
+            if(isset($inputs['wq-neighbourhood']))
+                $listing->where('wq-neighbourhood', $inputs['wq-neighbourhood']);
         }
+
         elseif ($inputs['wq-sublocality']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-sublocality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
@@ -301,6 +307,7 @@ class ListingController extends Controller
 
         }
         elseif ($inputs['wq-administrative_area_level_2']){
+
             $zipCodes = DB::table('zip_codes')->where('zip_code_county', $inputs['wq-administrative_area_level_2'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
         }
