@@ -88,7 +88,9 @@ Route::get('send_link_agent' , ['as' => 'sendLinkToAgent' , 'uses' => 'ListingCo
 #Zip Codes
 
 Route::get('insert-zip-codes', ['as' => 'insertZipCode' , 'uses' => 'ZipcodeController@insertZipCode']);
-
+Route::get("zip-count", function (){
+    return \Illuminate\Support\Facades\DB::table('zip_codes')->count();
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
