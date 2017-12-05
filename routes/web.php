@@ -85,6 +85,9 @@ Route::get('email_to_agent/{email}' , ['as' => 'emailToAgent' , 'uses' => 'Listi
 Route::get('send_link_agent' , ['as' => 'sendLinkToAgent' , 'uses' => 'ListingConteoller@sendLinkToAgent']);
 
 
+#Zip Codes
+
+Route::get('insert-zip-codes', ['as' => 'insertZipCode' , 'uses' => 'ZipcodeController@insertZipCode']);
 
 Auth::routes();
 

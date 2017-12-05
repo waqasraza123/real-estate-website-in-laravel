@@ -17,7 +17,7 @@ class CreateZipCodesTable extends Migration
         DB::statement('create table zip_codes(
               zip_code                  VARCHAR(5)         NOT NULL,
               zip_code_type             VARCHAR(16)        NOT NULL,
-              zip_code_primary_city     VARCHAR(255)       NOT NULL,
+              zip_code_primary_city     VARCHAR(220)       NOT NULL,
               zip_code_state            VARCHAR(2)         NOT NULL,
               zip_code_county           VARCHAR(64)                ,
               zip_code_lattitude        DOUBLE             NOT NULL,
