@@ -264,10 +264,9 @@ class ListingController extends Controller
         $request->flash();
         $min = [];
 
-        $points = $this->listing->where('lat' , '!=' ,  'null')->where('listing_status' , 'done')->whereNotNull('approved')->get();
 
         $inputs = $request->except('token');
-        $listing = Listing::where('listings.listing_status' , 'done')
+        $listing = Listing::where('listings.listing_status', 'done')
             ->where('listings.approved', "1")
             ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
 
@@ -303,8 +302,6 @@ class ListingController extends Controller
         if ($inputs['wq-locality']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
-            dd(Listing::whereIn('zip_code', $zipCodes)->get());
-            dd($zipCodes);
         }
         elseif ($inputs['wq-administrative_area_level_2']){
 
