@@ -303,7 +303,7 @@ class ListingController extends Controller
         if ($inputs['wq-locality']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
-
+            dd($zipCodes);
         }
         elseif ($inputs['wq-administrative_area_level_2']){
 
@@ -312,6 +312,7 @@ class ListingController extends Controller
         }
         elseif ($inputs['wq-administrative_area_level_1']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_state', $inputs['wq-administrative_area_level_1'])->pluck('zip_code')->toArray();
+            dd($zipCodes);
             $listing->whereIn('zip_code', $zipCodes);
         }
 
