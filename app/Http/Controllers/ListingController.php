@@ -302,7 +302,6 @@ class ListingController extends Controller
         }
         if ($inputs['wq-locality']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
-
             $listing->whereIn('zip_code', $zipCodes);
 
         }
