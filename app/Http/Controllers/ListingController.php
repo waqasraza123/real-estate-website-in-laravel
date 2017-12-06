@@ -315,23 +315,7 @@ class ListingController extends Controller
             $listing->whereIn('zip_code', $zipCodes);
         }
 
-        $listing = $listing->get();
-        $arr = array();
-        if(count($listing)){
-            foreach ($listing as $l){
-                $theta = $l->lng - $inputs['lng'];
-                $dist = sin(deg2rad($l->lat)) * sin(deg2rad($inputs['lat'])) +  cos(deg2rad($l->lat)) * cos(deg2rad($inputs['lat'])) * cos(deg2rad($theta));
-                $dist = acos($dist);
-                $dist = rad2deg($dist);
-                $miles = $dist * 60 * 1.1515 * 1.609344;
-                //dd($miles);
-                if($miles <= 100 || $l->address == $inputs['address']){
-                    array_push($arr, $l);
-                }
-            }
-        }
-
-        $listings = collect($arr);
+        $listings = $listing->get();
         $langLtd = [];
         $new = '';
        foreach ($listings as $listing){
