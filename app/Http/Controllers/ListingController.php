@@ -251,7 +251,7 @@ class ListingController extends Controller
         $listing = $this->listing->where('id' , $id)->first();
 
         if(Auth::check()){
-            dd($this->favorit, Auth::user()->id, $listing->id);
+            dd($this->favorit/*, Auth::user()->id, $listing->id*/);
             $hasfavorite = $this->favorit->where('user_id' , Auth::user()->id)->where('listing_id' , $listing->id)->first();
 
           dd(Auth::user()->id);
