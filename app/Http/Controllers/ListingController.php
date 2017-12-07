@@ -336,7 +336,7 @@ class ListingController extends Controller
             }
         }
 
-
+        $listings = $listings->unique();
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
     }
 
