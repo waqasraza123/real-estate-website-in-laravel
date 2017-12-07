@@ -32,6 +32,7 @@ class ListingController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function submitListing(Request $request){
+        //dd($request->all());
         $this->validate($request, [
             'description' => 'required',
             'parking_type' => 'required',
@@ -81,7 +82,7 @@ class ListingController extends Controller
     public function saveListing(Request $request){
         $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file');
-        if(Auth::user()){
+        if(Auth::check()){
             $this->user->where('id' , Auth::user()->id)->update([
                 'first_name' => $inputs['first_name'],
                 'last_name' => $inputs['last_name'],
@@ -109,7 +110,7 @@ class ListingController extends Controller
                 'password' =>   bcrypt($pass)
             ]);
         }
-        if(!Auth::user()){
+        if(!Auth::check()){
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
         }
         $inputs['user_id'] = Auth::user()->id;
@@ -248,7 +249,7 @@ class ListingController extends Controller
      */
     public function singleListing($id , $title){
         $listing = $this->listing->where('id' , $id)->first();
-        if(Auth::user()){
+        if(Auth::check()){
           $hasfavorite =   $this->favorit->where('user_id' , Auth::user()->id)->where('listing_id' , $listing->id)->first();
         }
         return view('pages.single_listing' , compact('listing' , 'hasfavorite'));
@@ -498,7 +499,7 @@ class ListingController extends Controller
         ]);
         $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
-        if(Auth::user()){
+        if(Auth::check()){
             $this->user->where('id' , Auth::user()->id)->update([
                 'first_name' => $inputs['first_name'],
                 'last_name' => $inputs['last_name'],
@@ -520,7 +521,7 @@ class ListingController extends Controller
                     'password' =>   bcrypt($pass)
                 ]);
         }
-        if(!Auth::user()){
+        if(!Auth::check()){
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
         }
         $name = $request->featured->hashName();
