@@ -315,7 +315,7 @@ class ListingController extends Controller
             $listing->whereIn('zip_code', $zipCodes);
         }
 
-        $listings = $listing->get();
+        $listings = $listing->distinct()->get();
         $langLtd = [];
         $new = '';
        foreach ($listings as $listing){
@@ -335,8 +335,7 @@ class ListingController extends Controller
                 array_push($langLtd, $new);
             }
         }
-
-        $listings = $listings->unique();
+        
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
     }
 
