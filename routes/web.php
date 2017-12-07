@@ -27,7 +27,7 @@ Route::get('/setlang/{lang}', function($lang)
 
 
 Route::get('test' , function(){
-    echo null || "hello";
+    return \App\Favorit::where('user_id', 1)->first();
 });
 
 
