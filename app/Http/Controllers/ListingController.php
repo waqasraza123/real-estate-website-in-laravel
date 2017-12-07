@@ -249,13 +249,9 @@ class ListingController extends Controller
      */
     public function singleListing($id , $title){
         $listing = $this->listing->where('id' , (int)$id)->first();
-        dd($id, $listing);
 
         if(Auth::check()){
-            dd($listing->id);
             $hasfavorite = $this->favorit->where('user_id' , Auth::user()->id)->where('listing_id' , $listing->id)->first();
-
-          dd(Auth::user()->id);
         }
         return view('pages.single_listing' , compact('listing' , 'hasfavorite'));
     }
@@ -340,6 +336,7 @@ class ListingController extends Controller
             }
         }
 
+        dd($listings);
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
     }
 
