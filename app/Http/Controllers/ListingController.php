@@ -249,6 +249,7 @@ class ListingController extends Controller
      */
     public function singleListing($id , $title){
         $listing = $this->listing->where('id' , (int)$id)->first();
+        dd($id, $listing);
 
         if(Auth::check()){
             dd($listing->id);
