@@ -336,26 +336,8 @@ class ListingController extends Controller
             }
         }
 
-        dd($listings);
+
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
-    }
-
-    /**
-     * @param Request $request
-     * @return mixed
-     */
-    public function searchListingAjax(Request $request){
-       $points = $this->listing->where('listing_status' , 'done')->where('lat' , '!=' ,  'null')->select('lat' , 'lng')->get();
-       $array = json_decode($request->datas);
-
-       $listings = [];
-       foreach ($array as $ar){
-          $listing =  $this->listing->where('listing_status' , 'done')->where('lat' ,'>' ,  get_object_vars($ar)['lat'])->where('lng' ,'>' ,  get_object_vars($ar)['lng'])->first();
-          if($listing != null) {
-              array_push($listings, $listing);
-          }
-       }
-        return \Response::json(['listing' => $listings]);
     }
 
 
