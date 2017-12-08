@@ -345,6 +345,38 @@ header.header3 .hover-menu,
     color: #ffffff !important;
 }
 
+#price-min li{
+	font-size: 13px;
+	font-weight: 500;
+	padding: 6px 0px;
+	cursor: pointer;
+}
+
+#price-min li:hover{
+	background: #3797dd;
+	color: white;
+}
+
+#price-min li span{
+	padding-left: 15px;
+}
+
+#price-max li{
+	font-size: 13px;
+	font-weight: 500;
+	padding:6px 2px 5px 5px;
+	cursor: pointer;
+}
+
+#price-max li:hover{
+	background: #3797dd;
+	color: white;
+}
+
+#price-max li span{
+	padding-right: 15px;
+}
+
 .navigation-box-icon2,
 .testimonials2-content {
 	color: #ebebeb;
