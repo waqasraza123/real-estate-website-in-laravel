@@ -99,18 +99,20 @@
                                 </div>
                                 <div class="col-lg-3 col-xs-12">
                                     <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
-                                        <optgroup label="Beds" data-max-options="1">
-                                            <option value="all">All Beds</option>
+                                        <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
+                                            <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                            <option value="any_bed">Any Bed</option>
                                             <option value="1">1 Bed</option>
-                                            <option value="2">2 Beds</option>
-                                            <option value="3">3 Beds</option>
-                                            <option value="4">4+  Beds</option>
+                                            <option value="2">2 {{ Lang::get('listing.beds') }}</option>
+                                            <option value="3">3 {{ Lang::get('listing.beds') }}</option>
+                                            <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                         </optgroup>
-                                        <optgroup label="Baths" data-max-options="1">
-                                            <option value="all_baths">All Baths</option>
-                                            <option value="1">1+ Baths</option>
-                                            <option value="2">2+ Baths</option>
-                                            <option value="3">3+ Baths</option>
+                                        <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
+                                            <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                            <option value="any_bath">Any Bath</option>
+                                            <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
+                                            <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
+                                            <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
                                         </optgroup>
                                     </select>
                                 </div>
