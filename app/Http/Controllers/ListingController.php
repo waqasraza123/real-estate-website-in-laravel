@@ -63,7 +63,9 @@ class ListingController extends Controller
             $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
         }
         if($request->file()){
+
             $images = $this->getImagesName($request->file());
+            dd($images);
             foreach ($images as $image){
                   $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
             }
@@ -168,6 +170,7 @@ class ListingController extends Controller
      * @return $this|\Illuminate\Http\RedirectResponse
      */
     public function postEditListing(Request $request){
+        dd($request->all());
         $this->validate($request, [
             'description' => 'required',
             'parking_type' => 'required',
