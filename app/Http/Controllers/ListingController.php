@@ -263,7 +263,6 @@ class ListingController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function searchListing(Request $request){
-        //dd($request->all());
         $request->flash();
         $min = [];
 
@@ -305,6 +304,11 @@ class ListingController extends Controller
 
         if(isset($inputs['min']) && isset($inputs['max'])){
             $listing->whereBetween('listing_attributes.rent', [(int)$inputs['min'], (int)$inputs['max']]);
+        }elseif (isset($inputs['min'])){
+            $listing->where('listing_attributes.rent', '>=', (int)$inputs['min']);
+        }
+        elseif (isset($inputs['max'])){
+            $listing->where('listing_attributes.rent', '<=', (int)$inputs['max']);
         }
 
         //beds
