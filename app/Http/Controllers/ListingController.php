@@ -262,7 +262,7 @@ class ListingController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function searchListing(Request $request){
-        dd($request->all());
+        //dd($request->all());
         $request->flash();
         $min = [];
 
@@ -271,18 +271,6 @@ class ListingController extends Controller
         $listing = Listing::where('listings.listing_status', 'done')
             ->where('listings.approved', "1")
             ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
-
-        if(isset($inputs['min']) && isset($inputs['max'])){
-            $listing->whereBetween('listing_attributes.rent', [(int)$inputs['min'], (int)$inputs['max']]);
-        }
-
-        if(isset($request->input('beds_baths')[0])){
-            $listing->where('listing_attributes.beds_count', $request->input('beds_baths')[0]);
-        }
-
-        if(isset($request->input('beds_baths')[1])){
-            $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
-        }
 
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
             if (isset($inputs['wq-street_address']))
@@ -313,6 +301,28 @@ class ListingController extends Controller
         elseif ($inputs['wq-administrative_area_level_1']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_state', $inputs['wq-administrative_area_level_1'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
+        }
+
+        if(isset($inputs['min']) && isset($inputs['max'])){
+            $listing->whereBetween('listing_attributes.rent', [(int)$inputs['min'], (int)$inputs['max']]);
+        }
+
+        //beds
+        if(isset($request->input('beds_baths')[0])){
+            if($request->input('beds_baths')[0] == 'any_bed'){
+                $listing->orWhere('listing_attributes.beds_count', $request->input('beds_baths')[0]);
+            }else{
+                $listing->where('listing_attributes.beds_count', $request->input('beds_baths')[0]);
+            }
+        }
+
+        //baths
+        if(isset($request->input('beds_baths')[1])){
+            if($request->input('beds_baths')[1]  == 'any_bath'){
+                $listing->orWhere('listing_attributes.baths_count', $request->input('beds_baths')[1]);
+            }else{
+                $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
+            }
         }
 
         $listings = $listing->distinct()->get();
