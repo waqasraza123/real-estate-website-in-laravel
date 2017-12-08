@@ -287,11 +287,11 @@ class ListingController extends Controller
         }
 
         elseif ($inputs['wq-sublocality']){
-            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-sublocality'])->pluck('zip_code')->toArray();
+            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-sublocality'])->orWhere('acceptable_city', $inputs['wq-sublocality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
         }
         if ($inputs['wq-locality']){
-            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
+            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-locality'])->orWhere('acceptable_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
         }
         elseif ($inputs['wq-administrative_area_level_2']){
@@ -326,8 +326,7 @@ class ListingController extends Controller
         }
 
         $listings = ($listing->get()->unique('listing_id'));
-        /*$listings = $listings->unique('listing_id')->values()->all();
-        $listings = collect($listings);*/
+
         $langLtd = [];
         $new = '';
        foreach ($listings as $listing){
