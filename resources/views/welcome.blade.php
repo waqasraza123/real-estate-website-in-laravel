@@ -93,7 +93,7 @@
                                             <div class="dropdown btn-group bootstrap-select show-tick  ">
                                                 <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                 </button>
-                                                <div class="dropdown-menu col-sm-2" style="padding:10px;">
+                                                <div class="dropdown-menu col-sm-2" style="padding-top:10px;">
                                                     <div class="col-xs-6">
                                                         <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
                                                     </div>
@@ -101,21 +101,35 @@
                                                         <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
                                                     </div>
                                                     <div class="clearfix"></div>
-                                                    <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
-                                                        <li data-value="500">$500</li>
-                                                        <li data-value="700">$700</li>
-                                                        <li data-value="900">$900</li>
-                                                        <li data-value="1100">$1100</li>
-                                                        <li data-value="1300">$1300</li>
-                                                        <li data-value="1500">$1500</li>
+                                                    <ul  id="price-min" class="   price-range list-unstyled">
+                                                        <li data-value="500">
+                                                            <span>$500</span>
+                                                        </li>
+                                                        <li data-value="700">
+                                                            <span>$700</span></li>
+                                                        <li data-value="900">
+                                                            <span>$900</span></li>
+                                                        <li data-value="1100">
+                                                            <span>$1100</span></li>
+                                                        <li data-value="1300">
+                                                            <span>$1300</span></li>
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
                                                     </ul>
-                                                    <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
-                                                        <li data-value="1500">$1500</li>
-                                                        <li data-value="1700">$1700</li>
-                                                        <li data-value="1900">$1900</li>
-                                                        <li data-value="2100">$2100</li>
-                                                        <li data-value="2300">$2300</li>
-                                                        <li data-value="2500">$2500</li>
+                                                    <ul  id="price-max" class="   price-range text-right list-unstyled hide">
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
+                                                        <li data-value="1700">
+                                                            <span>$1700</span></li>
+                                                        <li data-value="1900">
+                                                            <span>$1900</span></li>
+                                                        <li data-value="2100">
+                                                            <span>$2100</span></li>
+                                                        <li data-value="2300">
+                                                            <span>$2300</span></li>
+                                                        <li data-value="2500">
+                                                            <span>$2500</span>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -195,7 +209,7 @@
                                        <div class="dropdown btn-group bootstrap-select show-tick  ">
                                                 <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                 </button>
-                                                <div class="dropdown-menu col-sm-2" style="padding:10px;">
+                                                <div class="dropdown-menu col-sm-2" style="padding-top:10px;">
                                                     <div class="col-xs-6">
                                                         <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
                                                     </div>
@@ -203,21 +217,35 @@
                                                         <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
                                                     </div>
                                                     <div class="clearfix"></div>
-                                                    <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
-                                                        <li data-value="500">$500</li>
-                                                        <li data-value="700">$700</li>
-                                                        <li data-value="900">$900</li>
-                                                        <li data-value="1100">$1100</li>
-                                                        <li data-value="1300">$1300</li>
-                                                        <li data-value="1500">$1500</li>
+                                                    <ul  id="price-min" class="   price-range list-unstyled">
+                                                        <li data-value="500">
+                                                            <span>$500</span>
+                                                        </li>
+                                                        <li data-value="700">
+                                                            <span>$700</span></li>
+                                                        <li data-value="900">
+                                                            <span>$900</span></li>
+                                                        <li data-value="1100">
+                                                            <span>$1100</span></li>
+                                                        <li data-value="1300">
+                                                            <span>$1300</span></li>
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
                                                     </ul>
-                                                    <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
-                                                        <li data-value="1500">$1500</li>
-                                                        <li data-value="1700">$1700</li>
-                                                        <li data-value="1900">$1900</li>
-                                                        <li data-value="2100">$2100</li>
-                                                        <li data-value="2300">$2300</li>
-                                                        <li data-value="2500">$2500</li>
+                                                    <ul  id="price-max" class="   price-range text-right list-unstyled hide">
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
+                                                        <li data-value="1700">
+                                                            <span>$1700</span></li>
+                                                        <li data-value="1900">
+                                                            <span>$1900</span></li>
+                                                        <li data-value="2100">
+                                                            <span>$2100</span></li>
+                                                        <li data-value="2300">
+                                                            <span>$2300</span></li>
+                                                        <li data-value="2500">
+                                                            <span>$2500</span>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -293,21 +321,35 @@
                                                     <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
                                                 </div>
                                                 <div class="clearfix"></div>
-                                                <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
-                                                    <li data-value="500">$500</li>
-                                                    <li data-value="700">$700</li>
-                                                    <li data-value="900">$900</li>
-                                                    <li data-value="1100">$1100</li>
-                                                    <li data-value="1300">$1300</li>
-                                                    <li data-value="1500">$1500</li>
+                                                <ul  id="price-min" class="   price-range list-unstyled">
+                                                    <li data-value="500">
+                                                        <span>$500</span>
+                                                    </li>
+                                                    <li data-value="700">
+                                                        <span>$700</span></li>
+                                                    <li data-value="900">
+                                                        <span>$900</span></li>
+                                                    <li data-value="1100">
+                                                        <span>$1100</span></li>
+                                                    <li data-value="1300">
+                                                        <span>$1300</span></li>
+                                                    <li data-value="1500">
+                                                        <span>$1500</span></li>
                                                 </ul>
-                                                <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
-                                                    <li data-value="1500">$1500</li>
-                                                    <li data-value="1700">$1700</li>
-                                                    <li data-value="1900">$1900</li>
-                                                    <li data-value="2100">$2100</li>
-                                                    <li data-value="2300">$2300</li>
-                                                    <li data-value="2500">$2500</li>
+                                                <ul  id="price-max" class="   price-range text-right list-unstyled hide">
+                                                    <li data-value="1500">
+                                                        <span>$1500</span></li>
+                                                    <li data-value="1700">
+                                                        <span>$1700</span></li>
+                                                    <li data-value="1900">
+                                                        <span>$1900</span></li>
+                                                    <li data-value="2100">
+                                                        <span>$2100</span></li>
+                                                    <li data-value="2300">
+                                                        <span>$2300</span></li>
+                                                    <li data-value="2500">
+                                                        <span>$2500</span>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -383,21 +425,35 @@
                                                         <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
                                                     </div>
                                                     <div class="clearfix"></div>
-                                                    <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
-                                                        <li data-value="500">$500</li>
-                                                        <li data-value="700">$700</li>
-                                                        <li data-value="900">$900</li>
-                                                        <li data-value="1100">$1100</li>
-                                                        <li data-value="1300">$1300</li>
-                                                        <li data-value="1500">$1500</li>
+                                                    <ul  id="price-min" class="   price-range list-unstyled">
+                                                        <li data-value="500">
+                                                            <span>$500</span>
+                                                        </li>
+                                                        <li data-value="700">
+                                                            <span>$700</span></li>
+                                                        <li data-value="900">
+                                                            <span>$900</span></li>
+                                                        <li data-value="1100">
+                                                            <span>$1100</span></li>
+                                                        <li data-value="1300">
+                                                            <span>$1300</span></li>
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
                                                     </ul>
-                                                    <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
-                                                        <li data-value="1500">$1500</li>
-                                                        <li data-value="1700">$1700</li>
-                                                        <li data-value="1900">$1900</li>
-                                                        <li data-value="2100">$2100</li>
-                                                        <li data-value="2300">$2300</li>
-                                                        <li data-value="2500">$2500</li>
+                                                    <ul  id="price-max" class="   price-range text-right list-unstyled hide">
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
+                                                        <li data-value="1700">
+                                                            <span>$1700</span></li>
+                                                        <li data-value="1900">
+                                                            <span>$1900</span></li>
+                                                        <li data-value="2100">
+                                                            <span>$2100</span></li>
+                                                        <li data-value="2300">
+                                                            <span>$2300</span></li>
+                                                        <li data-value="2500">
+                                                            <span>$2500</span>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
