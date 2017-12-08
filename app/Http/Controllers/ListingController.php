@@ -325,7 +325,7 @@ class ListingController extends Controller
             }
         }
 
-        $listings = $listing->distinct()->get();
+        $listings = $listing->get();
         $langLtd = [];
         $new = '';
        foreach ($listings as $listing){
