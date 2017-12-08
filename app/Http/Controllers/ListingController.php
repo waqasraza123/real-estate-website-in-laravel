@@ -277,11 +277,15 @@ class ListingController extends Controller
         }
 
         if(isset($request->input('beds_baths')[0])){
-            $listing->where('listing_attributes.beds_count', $request->input('beds_baths')[0]);
+            if($request->input('beds_baths')[0] != 'any_bed'){
+                $listing->where('listing_attributes.beds_count', $request->input('beds_baths')[0]);
+            }
         }
 
         if(isset($request->input('beds_baths')[1])){
-            $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
+            if($request->input('beds_baths')[1] != 'any_bath') {
+                $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
+            }
         }
 
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){

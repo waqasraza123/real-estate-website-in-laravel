@@ -69,7 +69,7 @@
                                 <div class="row">
                                     <br>
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                        <input id="autocomplete" class="input-full main-input" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('profile.city') }}" name="address">
+                                        <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('profile.city') }}" name="address">
 
                                         <table id="address" style="display: none">
                                             <input class="field"  id="street_number" type="hidden">
@@ -89,7 +89,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                             <div class="dropdown btn-group bootstrap-select show-tick  ">
                                                 <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                 </button>
@@ -128,10 +128,11 @@
                                                 <option value="2100-2150">$2100 - $2150</option>
                                         </select>--}}
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
                                                 <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                                <option value="any_bed">Any Bed</option>
                                                 <option value="1">1 Bed</option>
                                                 <option value="2">2 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="3">3 {{ Lang::get('listing.beds') }}</option>
@@ -139,13 +140,14 @@
                                             </optgroup>
                                             <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
                                                 <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                <option value="any_bath">Any Bath</option>
                                                 <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
                                             </optgroup>
                                         </select>
                                     </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-2  adv-search-button-cont">
+                                    <div class="col-sm-12 col-md-6 col-xs-12 col-lg-2  adv-search-button-cont">
                                         <button type="submit" class="button-primary  appartament_search">
                                             <span>{{ Lang::get('home.search_btn') }}</span>
                                             <div class="button-triangle"></div>
@@ -189,7 +191,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                        <div class="dropdown btn-group bootstrap-select show-tick  ">
                                                 <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                 </button>
@@ -220,7 +222,7 @@
                                                 </div>
                                             </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
                                                 <option value="all">{{ Lang::get('home.all_be') }}</option>
@@ -279,7 +281,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                         <div class="dropdown btn-group bootstrap-select show-tick  ">
                                             <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                             </button>
@@ -310,7 +312,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
                                                 <option value="all">{{ Lang::get('home.all_be') }}</option>
@@ -745,7 +747,5 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8NFf6d_o4NsjkrwdPgrboEDUo0SMgkE&language=en&libraries=places&callback=initAutocomplete"
             async defer></script>
-    </body>
-    </html>
 @endsection
 

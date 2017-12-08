@@ -65,26 +65,26 @@
                                     </div>
                                 </div>
                                 <div class="grid">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 col-xs-12">
                                         <h5 class="labeles">{{ Lang::get('profile.city') }}</h5>
                                         <input name="city" type="text" value="{{ $listing->city }}" class="input-full main-input" placeholder="">
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 col-xs-12">
                                         <h5 class="labeles">{{ Lang::get('profile.state') }}</h5>
                                         <input name="state" type="text" value="{{ $listing->state }}" class="input-full main-input" placeholder="">
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 col-xs-12">
                                         <h5 class="labeles">Zip Code</h5>
                                         <input name="zip_code" type="text" value="{{ $listing->zip_code }}" class="input-full main-input" placeholder="">
                                     </div>
 
                                 </div>
                                 <div class="grid">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 col-xs-12">
                                         <h5 class="labeles">Name of Apartment</h5>
                                         <input name="name" type="text" value="{{ $listing->name }}" class="input-full main-input" placeholder="">
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 col-xs-12">
                                         <h5 class="labeles">School District</h5>
                                         <input name="school_dc" type="text" value="{{ $listing->school_dc }}" class="input-full main-input" placeholder="">
                                     </div>
@@ -112,25 +112,25 @@
                                             {{ $count ++ }}
                                         </div>
                                         <div class="grid">
-                                            <div class="col-sm-3" >
+                                            <div class="col-sm-3 col-xs-12" >
                                                 <div class="radioGroup">
                                                     <input type="radio" class="primaryRadio"  value="2" @if($lis->listing_type == '2')  checked  @endif id="propType2" name="listing_type[]{{ $count }}" title="">
                                                     <label  for="propType2"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.appartament') }}</span></label>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-3" >
+                                            <div class="col-sm-3 col-xs-12" >
                                                 <div class="radioGroup">
                                                     <input type="radio" class="primaryRadio" @if($lis->listing_type == '7')  checked  @endif  value="7" id="propType7" name="listing_type[]{{ $count }}" title="">
                                                     <label  for="propType7"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.condo') }}</span></label>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-3" >
+                                            <div class="col-sm-3 col-xs-12" >
                                                 <div class="radioGroup">
                                                     <input type="radio" class="primaryRadio" @if($lis->listing_type == '5')  checked  @endif  value="5" id="propType5" name="listing_type[]{{ $count }}" title="">
                                                     <label  for="propType5"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.townhome') }}</span></label>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-3" >
+                                            <div class="col-sm-3 col-xs-12" >
                                                 <div class="radioGroup">
                                                     <input type="radio" class="primaryRadio" @if($lis->listing_type == '3')  checked  @endif  value="3" id="propType3" name="listing_type[]{{ $count }}" title="">
                                                     <label  for="propType3"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.single_home') }}</span></label>
@@ -138,7 +138,7 @@
                                             </div>
                                         </div>
                                         <div class="grid">
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 col-xs-12">
                                                 <h5 class="labeles">{{ Lang::get('listing.beds') }}</h5>
                                                 <select name="beds_count[]" id="beds" class="selectpicker beds" data-bind="value: Details.BedType, options: Beds, optionsText: 'Description', optionsValue: 'Id'" title="" style="display: none;">
                                                     <option value="">Studio</option>
@@ -150,44 +150,38 @@
                                                     <option value="6" @if($lis->beds_count == '6')  selected  @endif>6.0</option>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 col-xs-12">
                                                 <h5 class="labeles">{{ Lang::get('listing.baths') }}</h5>
                                                 <select name="baths_count[]" id="baths" class="selectpicker baths" data-bind="value: Details.BathType, options: Baths, optionsText: 'Description', optionsValue: 'Id'"  title="" style="display: none;">
-                                                    <option value="0.5" @if($lis->baths_count == '0.5')  selected  @endif>0.5</option>
                                                     <option value="1"   @if($lis->baths_count == '1')  selected  @endif>1.0</option>
-                                                    <option value="1.5" @if($lis->baths_count == '1.5')  selected  @endif>1.5</option>
                                                     <option value="2"   @if($lis->baths_count == '2')  selected  @endif>2.0</option>
-                                                    <option value="2.5" @if($lis->baths_count == '2.5')  selected  @endif>2.5</option>
                                                     <option value="3"   @if($lis->baths_count == '3')  selected  @endif>3.0</option>
-                                                    <option value="3.5" @if($lis->baths_count == '3.5')  selected  @endif>3.5</option>
                                                     <option value="4"   @if($lis->baths_count == '4')  selected  @endif>4.0</option>
-                                                    <option value="4.5" @if($lis->baths_count == '4.5')  selected  @endif>4.5</option>
                                                     <option value="5"   @if($lis->baths_count == '5')  selected  @endif>5.0</option>
-                                                    <option value="5.5" @if($lis->baths_count == '5.5')  selected  @endif>5.5</option>
                                                     <option value="6"   @if($lis->baths_count == '6')  selected  @endif>6.0</option>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 col-xs-12">
                                                 <h5 class="labeles">{{ Lang::get('listing.square') }}</h5>
                                                 <input name="square_feet[]" type="text" value="{{ $lis->square_feet }}" placeholder="SF" maxlength="9"  required="true" min="1" class="input-full main-input" title="">
                                             </div>
                                         </div>
                                         <div class="grid">
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 col-xs-12">
                                                 <h5 class="labeles">{{ Lang::get('listing.rent') }}</h5>
                                                 <input name="rent[]" value="{{ $lis->rent }}" type="text" class="input-full main-input" placeholder="0$">
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-4 col-xs-12">
                                                 <h5 class="labeles">{{ Lang::get('listing.deposit') }}</h5>
                                                 <input name="deposit[]" value="{{ $lis->deposit }}" type="text" class="input-full main-input" placeholder="0$">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-2 col-xs-12">
                                                 <h5 class="labeles">
                                                     {{ Lang::get('listing.available') }}
                                                 </h5>
                                                 <input  class="input-full main-input" id="datepicker" type="text" name="available_date[]" value="{{ Carbon\Carbon::parse($lis->available_date)->format('m/d/Y') }}" placeholder="Date" readonly="" required="true" title="">
                                             </div>
-                                            <div class="col-sm-2">
+                                            <div class="col-sm-2 col-xs-12">
                                                 <h5 class="labeles">{{ Lang::get('listing.lase_length') }}</h5>
                                                 <input name="lease_length[]" value="{{ $lis->lease_length }}" type="text" class="input-full main-input" placeholder="12 mos">
                                             </div>
