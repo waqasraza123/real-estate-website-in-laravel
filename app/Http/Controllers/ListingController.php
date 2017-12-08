@@ -294,7 +294,6 @@ class ListingController extends Controller
             $listing->whereIn('zip_code', $zipCodes);
         }
         elseif ($inputs['wq-administrative_area_level_2']){
-
             $zipCodes = DB::table('zip_codes')->where('zip_code_county', $inputs['wq-administrative_area_level_2'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
         }
@@ -325,7 +324,9 @@ class ListingController extends Controller
             }
         }
 
-        $listings = $listing->get();
+        $listings = ($listing->get()->unique('listing_id'));
+        /*$listings = $listings->unique('listing_id')->values()->all();
+        $listings = collect($listings);*/
         $langLtd = [];
         $new = '';
        foreach ($listings as $listing){
