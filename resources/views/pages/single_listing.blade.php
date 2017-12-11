@@ -477,14 +477,13 @@
                                     </div>
                                     <div class="details-title pull-left">
                                         <h5 class="subtitle-margin"> </h5>
-                                        <h4>Lease Length<span class="special-color">.</span></h4>
+                                        <h4>School District<span class="special-color">.</span></h4>
                                     </div>
                                     <div class="clearfix"></div>
                                     <ul class="no_padding">
                                         <li class="no_style" >
-                                            {{ $listing->lease_length }}
+                                            {{ $listing->school_dc }}
                                         </li>
-
                                     </ul>
                                 </div>
                                 <div class="col-md-4 text-center">
