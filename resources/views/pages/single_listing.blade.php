@@ -200,6 +200,9 @@
                                                     <td>
                                                        {{ $lis->available_date }}
                                                     </td>
+                                                    <td>
+                                                        {{ $lis->lease_length }} months
+                                                    </td>
                                                 </tr>
 
                                             @endforeach
@@ -241,6 +244,9 @@
                                                     </td>
                                                     <td>
                                                         {{ $lis->available_date }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->lease_length }} months
                                                     </td>
                                                 </tr>
                                             @endif
@@ -284,6 +290,9 @@
                                                     <td>
                                                         {{ $lis->available_date }}
                                                     </td>
+                                                    <td>
+                                                        {{ $lis->lease_length }} months
+                                                    </td>
                                                 </tr>
                                             @endif
                                         @endforeach
@@ -326,6 +335,9 @@
                                                             <td>
                                                                 {{ $lis->available_date }}
                                                             </td>
+                                                            <td>
+                                                                {{ $lis->lease_length }} months
+                                                            </td>
                                                         </tr>
                                                     @endif
                                                     @endforeach
@@ -367,6 +379,9 @@
                                                     </td>
                                                     <td>
                                                         {{ $lis->available_date }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->lease_length }} months
                                                     </td>
                                                 </tr>
                                             @endif

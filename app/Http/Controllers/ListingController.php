@@ -170,6 +170,7 @@ class ListingController extends Controller
      * @return $this|\Illuminate\Http\RedirectResponse
      */
     public function postEditListing(Request $request){
+        //dd($request->all());
         $this->validate($request, [
             'description' => 'required',
             'parking_type' => 'required',
