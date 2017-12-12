@@ -12,6 +12,7 @@ use App\ListingImage;
 use App\Review;
 use App\Mail\AgentsEamil;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 
 class ListingController extends Controller
@@ -29,6 +30,26 @@ class ListingController extends Controller
 
     /**
      * @param Request $request
+     * @return
+     */
+
+    public function postListingImage(Request $request){
+        if(!\Session::has('id')){
+            $this->listing->create();
+        }
+        $listing_id = $this->listing->latest()->pluck('id')->first();
+        \Session::put('id' , $listing_id);
+        if($request->file()){
+            $images = $this->getImagesName($request->file());
+            foreach ($images as $image){
+                $this->listingImage->create(['listing_id' => $listing_id, 'image' => $image['image']]);
+            }
+        }
+        return \Response::json(['massage' => 'true']);
+    }
+
+    /**
+     * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function submitListing(Request $request){
@@ -37,10 +58,10 @@ class ListingController extends Controller
             'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
-        $inputs = $request->except('_token' , 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
+        $inputs = $request->except('_token' , 'agree', 'g-recaptcha-response', 'files', 'image_ids', 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
-        $this->listing->create($inputs);
+        $this->listing->where('id' , \Session::get('id'))->update($inputs);
         $listing = $this->listing->latest()->first();
         if($request->listing_type != null) {
             foreach (array_keys($request->listing_type) as $key) {
@@ -57,17 +78,19 @@ class ListingController extends Controller
                 ]);
             }
         }
+
         if($request->file('featured')){
             $name = $request->featured->hashName();
             $request->featured->move(public_path() . '/assets/images/' , $name);
             $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
         }
-        if($request->file()){
+       /* if($request->file()){
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){
                   $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
             }
-        }
+        }*/
+            \Session::forget('id');
             return redirect()->route('payment' , ['type' => 'user']);
     }
 
@@ -283,12 +306,12 @@ class ListingController extends Controller
             $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
         }
 
-        if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
+        if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] ){
             $listing->orWhere('wq-street_address', $inputs['wq-street_address'])
                 ->orWhere('wq-street_number', $inputs['wq-street_number'])
                 ->orWhere('wq-intersection', $inputs['wq-intersection'])
-                ->orWhere('wq-route', $inputs['wq-route'])
-                ->orWhere('wq-neighbourhood', $inputs['wq-neighbourhood']);
+                ->orWhere('wq-route', $inputs['wq-route']);
+                //->orWhere('wq-neighbourhood', $inputs['wq-neighbourhood']);
         }
         elseif ($inputs['wq-sublocality']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-sublocality'])->pluck('zip_code')->toArray();

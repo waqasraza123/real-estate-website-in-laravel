@@ -836,16 +836,17 @@ jQuery(window).load(function() {
 
 		if( $('#file-upload').length ) {
 			$('#file-upload').fileinput({
-			uploadUrl: '#',
+			uploadUrl: '/listing_image',
 			layoutTemplates: 'main2',
 			allowedFileExtensions : ['jpg','png','gif', 'jpeg'],
 			showUpload: true,
 			showRemove: true,
-			browseClass: "button-shadow btn",
+			browseClass: "button-shadow btn"
+
 		});
+
 	}
-		
-		
+
 		
 /********** AGENT PHOTO UPLOAD **********/		
 		

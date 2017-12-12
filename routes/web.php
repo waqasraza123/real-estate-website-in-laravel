@@ -57,6 +57,8 @@ Route::get('equal_opportunity' , ['as' => 'equalOpportunity' , 'uses' => 'HomeCo
 
  #Listing Routes
 
+
+Route::post('listing_image' , ['as' => 'postListingImage' , 'uses' => 'ListingController@postListingImage']);
 Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing'])->middleware('auth');
 Route::post('/save_listing', ['as' => 'saveListing' , 'uses' => 'ListingController@saveListing'])->middleware('auth');
 Route::get('listing/{id}/{title}' , ['as' => 'singleListing' , 'uses' => 'ListingController@singleListing']);
