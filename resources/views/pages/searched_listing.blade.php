@@ -202,13 +202,8 @@
                     @foreach($listings as $listing)
                         <div class="list-agency">
                             <div class="list-agency-left">
-<<<<<<< HEAD
-                                @if($listing->ListingsImages()->first())
-                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="250px">
-=======
                                 @if($listing->ListingsImages()->where('featured', "1")->first())
-                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt="" width="100%" height="250px">
->>>>>>> abd9e12a05ea4f1412d749415f52cff90bc438c4
+                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="250px">
                                 @endif
                                 <div class="list-agency-description">
                                     <div class="team-desc-line">

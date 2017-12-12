@@ -28,6 +28,28 @@ class ListingController extends Controller
     }
 
 
+
+    /**
+         * @param Request $request
+         * @return
+         */
+
+    public function postListingImage(Request $request){
+        if(!\Session::has('id')){
+                $this->listing->create();
+        }
+         $listing_id = $this->listing->latest()->pluck('id')->first();
+         \Session::put('id' , $listing_id);
+         if($request->file()){
+                    $images = $this->getImagesName($request->file());
+                    foreach ($images as $image){
+                            $this->listingImage->create(['listing_id' => $listing_id, 'image' => $image['image']]);
+                        }
+         }
+         return \Response::json(['massage' => 'true']);
+     }
+
+
     /**
      * @param Request $request
      * @return
