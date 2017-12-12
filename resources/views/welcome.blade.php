@@ -145,7 +145,7 @@
                                     <div class="col-lg-3 col-xs-12">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
-                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                                
                                                 <option value="any_bed">Any Bed</option>
                                                 <option value="1">1 Bed</option>
                                                 <option value="2">2 {{ Lang::get('listing.beds') }}</option>
@@ -153,7 +153,7 @@
                                                 <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
                                             <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
-                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                
                                                 <option value="any_bath">Any Bath</option>
                                                 <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
@@ -253,14 +253,14 @@
                                     <div class="col-lg-3 col-xs-12">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
-                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                                
                                                 <option value="1">1 Bed</option>
                                                 <option value="2">2 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="3">3 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
                                             <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
-                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                
                                                 <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
@@ -357,14 +357,14 @@
                                     <div class="col-lg-3 col-xs-12">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
-                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                                
                                                 <option value="1">1 Bed</option>
                                                 <option value="2">2 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="3">3 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
                                             <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
-                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                
                                                 <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
@@ -461,14 +461,14 @@
                                     <div class="col-lg-3">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
-                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                                
                                                 <option value="1">1 Bed</option>
                                                 <option value="2">2 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="3">3 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
                                             <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
-                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                
                                                 <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
@@ -515,7 +515,7 @@
                             <span style="display: none">{{ $count++ }}</span>
                             <div class="featured-offer-front">
                                 <div class="featured-offer-photo">
-                                    @if($lis->ListingsImages()->whereNotNull('featured')->first())
+                                    @if($lis->ListingsImages()->where('featured', "1")->first())
                                         <img src="{{ asset('assets/images').'/'.$lis->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="">
                                     @else
                                         <img src="{{ asset('images/featured-offer7.jpg') }}" alt="">
