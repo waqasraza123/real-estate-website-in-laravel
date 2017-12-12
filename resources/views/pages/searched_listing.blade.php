@@ -206,6 +206,7 @@
                                 @if($listing->ListingsImages()->first())
                                     <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="250px">
 
+
                                 @endif
                                 <div class="list-agency-description">
                                     <div class="team-desc-line">

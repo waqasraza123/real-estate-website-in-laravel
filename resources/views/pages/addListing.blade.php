@@ -457,6 +457,7 @@
 
 
 
+
         $(function() {
             $('#datepicker').daterangepicker({
                     singleDatePicker: true,
