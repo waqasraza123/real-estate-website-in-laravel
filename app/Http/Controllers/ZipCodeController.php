@@ -10,7 +10,7 @@ class ZipCodeController extends Controller
     public function insertZipCode(){
         $row = 1;
         if (($handle = fopen ( public_path () . '/zip_codes.csv', 'r' )) !== FALSE) {
-            while ( ($data = fgetcsv ( $handle, 2000, ',' )) !== FALSE ) {
+            while ( ($data = fgetcsv( $handle, 2000, ',' )) !== FALSE ) {
                 if($row != 1){
                     $acceptableCities = explode(',', $data[4]);
                     foreach ($acceptableCities as $acceptableCity){
