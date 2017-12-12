@@ -53,6 +53,7 @@ class ListingController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function submitListing(Request $request){
+        //dd($request->all());
         $this->validate($request, [
             'description' => 'required',
             'parking_type' => 'required',
@@ -85,6 +86,7 @@ class ListingController extends Controller
             $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
         }
        /* if($request->file()){
+
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){
                   $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
@@ -104,7 +106,7 @@ class ListingController extends Controller
     public function saveListing(Request $request){
         $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file');
-        if(Auth::user()){
+        if(Auth::check()){
             $this->user->where('id' , Auth::user()->id)->update([
                 'first_name' => $inputs['first_name'],
                 'last_name' => $inputs['last_name'],
@@ -132,7 +134,7 @@ class ListingController extends Controller
                 'password' =>   bcrypt($pass)
             ]);
         }
-        if(!Auth::user()){
+        if(!Auth::check()){
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
         }
         $inputs['user_id'] = Auth::user()->id;
@@ -191,6 +193,7 @@ class ListingController extends Controller
      * @return $this|\Illuminate\Http\RedirectResponse
      */
     public function postEditListing(Request $request){
+        //dd($request->all());
         $this->validate($request, [
             'description' => 'required',
             'parking_type' => 'required',
@@ -270,9 +273,10 @@ class ListingController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function singleListing($id , $title){
-        $listing = $this->listing->where('id' , $id)->first();
-        if(Auth::user()){
-          $hasfavorite =   $this->favorit->where('user_id' , Auth::user()->id)->where('listing_id' , $listing->id)->first();
+        $listing = $this->listing->where('id' , (int)$id)->first();
+
+        if(Auth::check()){
+            $hasfavorite = $this->favorit->where('user_id' , Auth::user()->id)->where('listing_id' , $listing->id)->first();
         }
         return view('pages.single_listing' , compact('listing' , 'hasfavorite'));
     }
@@ -283,45 +287,34 @@ class ListingController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function searchListing(Request $request){
-        //dd($request->all());
         $request->flash();
         $min = [];
 
-        $points = $this->listing->where('lat' , '!=' ,  'null')->where('listing_status' , 'done')->whereNotNull('approved')->get();
 
         $inputs = $request->except('token');
-        $listing = Listing::where('listings.listing_status' , 'done')
+        $listing = Listing::where('listings.listing_status', 'done')
             ->where('listings.approved', "1")
             ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
-
-        if(isset($inputs['min']) && isset($inputs['max'])){
-            $listing->whereBetween('listing_attributes.rent', [(int)$inputs['min'], (int)$inputs['max']]);
+        if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
+            if (isset($inputs['wq-street_address']))
+                $listing->where('wq-street_address', $inputs['wq-street_address']);
+            if (isset($inputs['wq-street_number']))
+                $listing->where('wq-street_number', $inputs['wq-street_number']);
+            if (isset($inputs['wq-intersection']))
+                $listing->where('wq-intersection', $inputs['wq-intersection']);
+            if (isset($inputs['wq-route']))
+                $listing->where('wq-route', $inputs['wq-route']);
+            if(isset($inputs['wq-neighbourhood']))
+                $listing->where('wq-neighbourhood', $inputs['wq-neighbourhood']);
         }
 
-        if(isset($request->input('beds_baths')[0])){
-            $listing->where('listing_attributes.beds_count', $request->input('beds_baths')[0]);
-        }
-
-        if(isset($request->input('beds_baths')[1])){
-            $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
-        }
-
-        if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] ){
-            $listing->orWhere('wq-street_address', $inputs['wq-street_address'])
-                ->orWhere('wq-street_number', $inputs['wq-street_number'])
-                ->orWhere('wq-intersection', $inputs['wq-intersection'])
-                ->orWhere('wq-route', $inputs['wq-route']);
-                //->orWhere('wq-neighbourhood', $inputs['wq-neighbourhood']);
-        }
         elseif ($inputs['wq-sublocality']){
-            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-sublocality'])->pluck('zip_code')->toArray();
+            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-sublocality'])->orWhere('acceptable_city', $inputs['wq-sublocality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
         }
         if ($inputs['wq-locality']){
-            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
-
+            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-locality'])->orWhere('acceptable_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
-
         }
         elseif ($inputs['wq-administrative_area_level_2']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_county', $inputs['wq-administrative_area_level_2'])->pluck('zip_code')->toArray();
@@ -332,23 +325,35 @@ class ListingController extends Controller
             $listing->whereIn('zip_code', $zipCodes);
         }
 
-        $listing = $listing->get();
-        $arr = array();
-        if(count($listing)){
-            foreach ($listing as $l){
-                $theta = $l->lng - $inputs['lng'];
-                $dist = sin(deg2rad($l->lat)) * sin(deg2rad($inputs['lat'])) +  cos(deg2rad($l->lat)) * cos(deg2rad($inputs['lat'])) * cos(deg2rad($theta));
-                $dist = acos($dist);
-                $dist = rad2deg($dist);
-                $miles = $dist * 60 * 1.1515 * 1.609344;
-                //dd($miles);
-                if($miles <= 100 || $l->address == $inputs['address']){
-                    array_push($arr, $l);
-                }
+        if(isset($inputs['min']) && isset($inputs['max'])){
+            $listing->whereBetween('listing_attributes.rent', [(int)$inputs['min'], (int)$inputs['max']]);
+        }elseif (isset($inputs['min'])){
+            $listing->where('listing_attributes.rent', '>=', (int)$inputs['min']);
+        }
+        elseif (isset($inputs['max'])){
+            $listing->where('listing_attributes.rent', '<=', (int)$inputs['max']);
+        }
+
+        //beds
+        if(isset($request->input('beds_baths')[0])){
+            if($request->input('beds_baths')[0] == 'any_bed'){
+                $listing->orWhere('listing_attributes.beds_count', $request->input('beds_baths')[0]);
+            }else{
+                $listing->where('listing_attributes.beds_count', $request->input('beds_baths')[0]);
             }
         }
 
-        $listings = collect($arr);
+        //baths
+        if(isset($request->input('beds_baths')[1])){
+            if($request->input('beds_baths')[1]  == 'any_bath'){
+                $listing->orWhere('listing_attributes.baths_count', $request->input('beds_baths')[1]);
+            }else{
+                $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
+            }
+        }
+
+        $listings = ($listing->get()->unique('listing_id'));
+
         $langLtd = [];
         $new = '';
        foreach ($listings as $listing){
@@ -370,24 +375,6 @@ class ListingController extends Controller
         }
 
         return view('pages.searched_listing' , compact('listings' , 'langLtd'));
-    }
-
-    /**
-     * @param Request $request
-     * @return mixed
-     */
-    public function searchListingAjax(Request $request){
-       $points = $this->listing->where('listing_status' , 'done')->where('lat' , '!=' ,  'null')->select('lat' , 'lng')->get();
-       $array = json_decode($request->datas);
-
-       $listings = [];
-       foreach ($array as $ar){
-          $listing =  $this->listing->where('listing_status' , 'done')->where('lat' ,'>' ,  get_object_vars($ar)['lat'])->where('lng' ,'>' ,  get_object_vars($ar)['lng'])->first();
-          if($listing != null) {
-              array_push($listings, $listing);
-          }
-       }
-        return \Response::json(['listing' => $listings]);
     }
 
 
@@ -533,7 +520,7 @@ class ListingController extends Controller
         ]);
         $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
-        if(Auth::user()){
+        if(Auth::check()){
             $this->user->where('id' , Auth::user()->id)->update([
                 'first_name' => $inputs['first_name'],
                 'last_name' => $inputs['last_name'],
@@ -555,7 +542,7 @@ class ListingController extends Controller
                     'password' =>   bcrypt($pass)
                 ]);
         }
-        if(!Auth::user()){
+        if(!Auth::check()){
             Auth::attempt(['email' =>$inputs['email'] ,  'password' => $pass]);
         }
         $name = $request->featured->hashName();

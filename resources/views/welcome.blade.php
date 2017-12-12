@@ -69,7 +69,7 @@
                                 <div class="row">
                                     <br>
                                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                                        <input id="autocomplete" class="input-full main-input" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('profile.city') }}" name="address">
+                                        <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('profile.city') }}" name="address">
 
                                         <table id="address" style="display: none">
                                             <input class="field"  id="street_number" type="hidden">
@@ -89,11 +89,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                             <div class="dropdown btn-group bootstrap-select show-tick  ">
                                                 <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                 </button>
-                                                <div class="dropdown-menu col-sm-2" style="padding:10px;">
+                                                <div class="dropdown-menu col-sm-2" style="padding-top:10px;">
                                                     <div class="col-xs-6">
                                                         <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
                                                     </div>
@@ -101,21 +101,35 @@
                                                         <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
                                                     </div>
                                                     <div class="clearfix"></div>
-                                                    <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
-                                                        <li data-value="500">$500</li>
-                                                        <li data-value="700">$700</li>
-                                                        <li data-value="900">$900</li>
-                                                        <li data-value="1100">$1100</li>
-                                                        <li data-value="1300">$1300</li>
-                                                        <li data-value="1500">$1500</li>
+                                                    <ul  id="price-min" class="   price-range list-unstyled">
+                                                        <li data-value="500">
+                                                            <span>$500</span>
+                                                        </li>
+                                                        <li data-value="700">
+                                                            <span>$700</span></li>
+                                                        <li data-value="900">
+                                                            <span>$900</span></li>
+                                                        <li data-value="1100">
+                                                            <span>$1100</span></li>
+                                                        <li data-value="1300">
+                                                            <span>$1300</span></li>
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
                                                     </ul>
-                                                    <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
-                                                        <li data-value="1500">$1500</li>
-                                                        <li data-value="1700">$1700</li>
-                                                        <li data-value="1900">$1900</li>
-                                                        <li data-value="2100">$2100</li>
-                                                        <li data-value="2300">$2300</li>
-                                                        <li data-value="2500">$2500</li>
+                                                    <ul  id="price-max" class="   price-range text-right list-unstyled hide">
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
+                                                        <li data-value="1700">
+                                                            <span>$1700</span></li>
+                                                        <li data-value="1900">
+                                                            <span>$1900</span></li>
+                                                        <li data-value="2100">
+                                                            <span>$2100</span></li>
+                                                        <li data-value="2300">
+                                                            <span>$2300</span></li>
+                                                        <li data-value="2500">
+                                                            <span>$2500</span>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -128,24 +142,26 @@
                                                 <option value="2100-2150">$2100 - $2150</option>
                                         </select>--}}
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
-                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                                
+                                                <option value="any_bed">Any Bed</option>
                                                 <option value="1">1 Bed</option>
                                                 <option value="2">2 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="3">3 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
                                             <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
-                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                
+                                                <option value="any_bath">Any Bath</option>
                                                 <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
                                             </optgroup>
                                         </select>
                                     </div>
-                                    <div class="col-sm-12 col-md-6 col-lg-2  adv-search-button-cont">
+                                    <div class="col-sm-12 col-md-6 col-xs-12 col-lg-2  adv-search-button-cont">
                                         <button type="submit" class="button-primary  appartament_search">
                                             <span>{{ Lang::get('home.search_btn') }}</span>
                                             <div class="button-triangle"></div>
@@ -189,11 +205,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                        <div class="dropdown btn-group bootstrap-select show-tick  ">
                                                 <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                 </button>
-                                                <div class="dropdown-menu col-sm-2" style="padding:10px;">
+                                                <div class="dropdown-menu col-sm-2" style="padding-top:10px;">
                                                     <div class="col-xs-6">
                                                         <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
                                                     </div>
@@ -201,36 +217,50 @@
                                                         <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
                                                     </div>
                                                     <div class="clearfix"></div>
-                                                    <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
-                                                        <li data-value="500">$500</li>
-                                                        <li data-value="700">$700</li>
-                                                        <li data-value="900">$900</li>
-                                                        <li data-value="1100">$1100</li>
-                                                        <li data-value="1300">$1300</li>
-                                                        <li data-value="1500">$1500</li>
+                                                    <ul  id="price-min" class="   price-range list-unstyled">
+                                                        <li data-value="500">
+                                                            <span>$500</span>
+                                                        </li>
+                                                        <li data-value="700">
+                                                            <span>$700</span></li>
+                                                        <li data-value="900">
+                                                            <span>$900</span></li>
+                                                        <li data-value="1100">
+                                                            <span>$1100</span></li>
+                                                        <li data-value="1300">
+                                                            <span>$1300</span></li>
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
                                                     </ul>
-                                                    <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
-                                                        <li data-value="1500">$1500</li>
-                                                        <li data-value="1700">$1700</li>
-                                                        <li data-value="1900">$1900</li>
-                                                        <li data-value="2100">$2100</li>
-                                                        <li data-value="2300">$2300</li>
-                                                        <li data-value="2500">$2500</li>
+                                                    <ul  id="price-max" class="   price-range text-right list-unstyled hide">
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
+                                                        <li data-value="1700">
+                                                            <span>$1700</span></li>
+                                                        <li data-value="1900">
+                                                            <span>$1900</span></li>
+                                                        <li data-value="2100">
+                                                            <span>$2100</span></li>
+                                                        <li data-value="2300">
+                                                            <span>$2300</span></li>
+                                                        <li data-value="2500">
+                                                            <span>$2500</span>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
-                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                                
                                                 <option value="1">1 Bed</option>
                                                 <option value="2">2 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="3">3 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
                                             <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
-                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                
                                                 <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
@@ -279,7 +309,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                         <div class="dropdown btn-group bootstrap-select show-tick  ">
                                             <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                             </button>
@@ -291,36 +321,50 @@
                                                     <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
                                                 </div>
                                                 <div class="clearfix"></div>
-                                                <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
-                                                    <li data-value="500">$500</li>
-                                                    <li data-value="700">$700</li>
-                                                    <li data-value="900">$900</li>
-                                                    <li data-value="1100">$1100</li>
-                                                    <li data-value="1300">$1300</li>
-                                                    <li data-value="1500">$1500</li>
+                                                <ul  id="price-min" class="   price-range list-unstyled">
+                                                    <li data-value="500">
+                                                        <span>$500</span>
+                                                    </li>
+                                                    <li data-value="700">
+                                                        <span>$700</span></li>
+                                                    <li data-value="900">
+                                                        <span>$900</span></li>
+                                                    <li data-value="1100">
+                                                        <span>$1100</span></li>
+                                                    <li data-value="1300">
+                                                        <span>$1300</span></li>
+                                                    <li data-value="1500">
+                                                        <span>$1500</span></li>
                                                 </ul>
-                                                <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
-                                                    <li data-value="1500">$1500</li>
-                                                    <li data-value="1700">$1700</li>
-                                                    <li data-value="1900">$1900</li>
-                                                    <li data-value="2100">$2100</li>
-                                                    <li data-value="2300">$2300</li>
-                                                    <li data-value="2500">$2500</li>
+                                                <ul  id="price-max" class="   price-range text-right list-unstyled hide">
+                                                    <li data-value="1500">
+                                                        <span>$1500</span></li>
+                                                    <li data-value="1700">
+                                                        <span>$1700</span></li>
+                                                    <li data-value="1900">
+                                                        <span>$1900</span></li>
+                                                    <li data-value="2100">
+                                                        <span>$2100</span></li>
+                                                    <li data-value="2300">
+                                                        <span>$2300</span></li>
+                                                    <li data-value="2500">
+                                                        <span>$2500</span>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-3 col-xs-12">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
-                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                                
                                                 <option value="1">1 Bed</option>
                                                 <option value="2">2 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="3">3 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
                                             <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
-                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                
                                                 <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
@@ -381,21 +425,35 @@
                                                         <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
                                                     </div>
                                                     <div class="clearfix"></div>
-                                                    <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
-                                                        <li data-value="500">$500</li>
-                                                        <li data-value="700">$700</li>
-                                                        <li data-value="900">$900</li>
-                                                        <li data-value="1100">$1100</li>
-                                                        <li data-value="1300">$1300</li>
-                                                        <li data-value="1500">$1500</li>
+                                                    <ul  id="price-min" class="   price-range list-unstyled">
+                                                        <li data-value="500">
+                                                            <span>$500</span>
+                                                        </li>
+                                                        <li data-value="700">
+                                                            <span>$700</span></li>
+                                                        <li data-value="900">
+                                                            <span>$900</span></li>
+                                                        <li data-value="1100">
+                                                            <span>$1100</span></li>
+                                                        <li data-value="1300">
+                                                            <span>$1300</span></li>
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
                                                     </ul>
-                                                    <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
-                                                        <li data-value="1500">$1500</li>
-                                                        <li data-value="1700">$1700</li>
-                                                        <li data-value="1900">$1900</li>
-                                                        <li data-value="2100">$2100</li>
-                                                        <li data-value="2300">$2300</li>
-                                                        <li data-value="2500">$2500</li>
+                                                    <ul  id="price-max" class="   price-range text-right list-unstyled hide">
+                                                        <li data-value="1500">
+                                                            <span>$1500</span></li>
+                                                        <li data-value="1700">
+                                                            <span>$1700</span></li>
+                                                        <li data-value="1900">
+                                                            <span>$1900</span></li>
+                                                        <li data-value="2100">
+                                                            <span>$2100</span></li>
+                                                        <li data-value="2300">
+                                                            <span>$2300</span></li>
+                                                        <li data-value="2500">
+                                                            <span>$2500</span>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -403,14 +461,14 @@
                                     <div class="col-lg-3">
                                         <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                             <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
-                                                <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                                
                                                 <option value="1">1 Bed</option>
                                                 <option value="2">2 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="3">3 {{ Lang::get('listing.beds') }}</option>
                                                 <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                             </optgroup>
                                             <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
-                                                <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                
                                                 <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
                                                 <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
@@ -457,7 +515,7 @@
                             <span style="display: none">{{ $count++ }}</span>
                             <div class="featured-offer-front">
                                 <div class="featured-offer-photo">
-                                    @if($lis->ListingsImages()->whereNotNull('featured')->first())
+                                    @if($lis->ListingsImages()->where('featured', "1")->first())
                                         <img src="{{ asset('assets/images').'/'.$lis->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="">
                                     @else
                                         <img src="{{ asset('images/featured-offer7.jpg') }}" alt="">
@@ -593,34 +651,37 @@
 @endsection
 @section('scripts')
     <script>
-        $('#min-max-price-range').click(function (event) {
-            setTimeout(function(){ $('.price-label').first().focus();	},0);
-        });
-        var priceLabelObj;
-        $('.price-label').focus(function (event) {
-            priceLabelObj=$(this);
-            $('.price-range').addClass('hide');
-            $('#'+$(this).data('dropdownId')).removeClass('hide');
-        });
+        $(document).ready(function () {
+            $( "select[name='beds_baths']" ).selectpicker();
+            $( "select[name='rent']" ).selectpicker();
+            $('#min-max-price-range').click(function (event) {
+                setTimeout(function(){ $('.price-label').first().focus();	},0);
+            });
+            var priceLabelObj;
+            $('.price-label').focus(function (event) {
+                priceLabelObj=$(this);
+                $('.price-range').addClass('hide');
+                $('#'+$(this).data('dropdownId')).removeClass('hide');
+            });
 
 
-        $(".price-range li").click(function(){
-            priceLabelObj.attr('value', $(this).attr('data-value'));
-            var curElmIndex=$( ".price-label" ).index( priceLabelObj );
-            var nextElm=$( ".price-label" ).eq(curElmIndex+1);
-            if(curElmIndex == 0){
-                $('.minp').text('$' + priceLabelObj.val() + '-');
-            }else if(curElmIndex == 1){
-                $('.maxp').text('$' + priceLabelObj.val());
-            }
+            $(".price-range li").click(function(){
+                priceLabelObj.attr('value', $(this).attr('data-value'));
+                var curElmIndex=$( ".price-label" ).index( priceLabelObj );
+                var nextElm=$( ".price-label" ).eq(curElmIndex+1);
+                if(curElmIndex == 0){
+                    $('.minp').text('$' + priceLabelObj.val() + '-');
+                }else if(curElmIndex == 1){
+                    $('.maxp').text('$' + priceLabelObj.val());
+                }
 
-            if(nextElm.length){
-                $( ".price-label" ).eq(curElmIndex+1).focus();
-            }else{
-                $('#min-max-price-range').dropdown('toggle');
-            }
-        });
-
+                if(nextElm.length){
+                    $( ".price-label" ).eq(curElmIndex+1).focus();
+                }else{
+                    $('#min-max-price-range').dropdown('toggle');
+                }
+            });
+        })
     </script>
     <script type="text/javascript">
         google.maps.event.addDomListener(window, 'load', init);
@@ -630,12 +691,6 @@
             @endforeach
         }
 
-    </script>
-    <script>
-        $(document).ready(function () {
-            $( "select[name='beds_baths']" ).selectpicker();
-            $( "select[name='rent']" ).selectpicker();
-        })
     </script>
     <script>
         // This example displays an address form, using the autocomplete feature
@@ -698,7 +753,7 @@
                 }if(v.types[0] == 'administrative_area_level_5'){
                     $(".wq-administrative_area_level_5").val(v.long_name)
                 }if(v.types[0] == 'country') {
-                    $(".wq-country-name").val(v.long_name)
+                    $(".wq-country").val(v.long_name)
                 }if(v.types[0] == 'neighborhood') {
                     $(".wq-neighborhood").val(v.long_name)
                 }if(v.types[0] == 'postal_code'){
@@ -745,7 +800,5 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8NFf6d_o4NsjkrwdPgrboEDUo0SMgkE&language=en&libraries=places&callback=initAutocomplete"
             async defer></script>
-    </body>
-    </html>
 @endsection
 

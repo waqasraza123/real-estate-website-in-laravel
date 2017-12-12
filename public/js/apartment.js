@@ -1002,7 +1002,7 @@ jQuery(window).load(function() {
                         }if(v.types[0] == 'administrative_area_level_5'){
                             $(".wq-administrative_area_level_5").val(v.long_name)
                         }if(v.types[0] == 'country') {
-                            $(".wq-country-name").val(v.long_name)
+                            $(".wq-country").val(v.long_name)
                         }if(v.types[0] == 'neighborhood') {
                             $(".wq-neighborhood").val(v.long_name)
                         }if(v.types[0] == 'postal_code'){

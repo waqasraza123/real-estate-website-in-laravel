@@ -70,7 +70,7 @@
                                     <div class="dropdown btn-group bootstrap-select show-tick  ">
                                         <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span><span class="maxp">Range</span><strong class="caret"></strong>
                                         </button>
-                                        <div class="dropdown-menu col-sm-2" style="padding:10px;">
+                                        <div class="dropdown-menu col-sm-2" style="padding-top:10px;">
                                             <div class="col-xs-6">
                                                 <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
                                             </div>
@@ -78,39 +78,55 @@
                                                 <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
                                             </div>
                                             <div class="clearfix"></div>
-                                            <ul  id="price-min" class="col-sm-12   price-range list-unstyled">
-                                                <li data-value="500">$500</li>
-                                                <li data-value="700">$700</li>
-                                                <li data-value="900">$900</li>
-                                                <li data-value="1100">$1100</li>
-                                                <li data-value="1300">$1300</li>
-                                                <li data-value="1500">$1500</li>
+                                            <ul  id="price-min" class="   price-range list-unstyled">
+                                                <li data-value="500">
+                                                    <span>$500</span>
+                                                </li>
+                                                <li data-value="700">
+                                                    <span>$700</span></li>
+                                                <li data-value="900">
+                                                    <span>$900</span></li>
+                                                <li data-value="1100">
+                                                    <span>$1100</span></li>
+                                                <li data-value="1300">
+                                                    <span>$1300</span></li>
+                                                <li data-value="1500">
+                                                    <span>$1500</span></li>
                                             </ul>
-                                            <ul  id="price-max" class="col-sm-12   price-range text-right list-unstyled hide">
-                                                <li data-value="1500">$1500</li>
-                                                <li data-value="1700">$1700</li>
-                                                <li data-value="1900">$1900</li>
-                                                <li data-value="2100">$2100</li>
-                                                <li data-value="2300">$2300</li>
-                                                <li data-value="2500">$2500</li>
+                                            <ul  id="price-max" class="   price-range text-right list-unstyled hide">
+                                                <li data-value="1500">
+                                                    <span>$1500</span></li>
+                                                <li data-value="1700">
+                                                    <span>$1700</span></li>
+                                                <li data-value="1900">
+                                                    <span>$1900</span></li>
+                                                <li data-value="2100">
+                                                    <span>$2100</span></li>
+                                                <li data-value="2300">
+                                                    <span>$2300</span></li>
+                                                <li data-value="2500">
+                                                    <span>$2500</span>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-xs-12">
                                     <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
-                                        <optgroup label="Beds" data-max-options="1">
-                                            <option value="all">All Beds</option>
+                                        <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
+                                            <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                            <option value="any_bed">Any Bed</option>
                                             <option value="1">1 Bed</option>
-                                            <option value="2">2 Beds</option>
-                                            <option value="3">3 Beds</option>
-                                            <option value="4">4+  Beds</option>
+                                            <option value="2">2 {{ Lang::get('listing.beds') }}</option>
+                                            <option value="3">3 {{ Lang::get('listing.beds') }}</option>
+                                            <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                         </optgroup>
-                                        <optgroup label="Baths" data-max-options="1">
-                                            <option value="all_baths">All Baths</option>
-                                            <option value="1">1+ Baths</option>
-                                            <option value="2">2+ Baths</option>
-                                            <option value="3">3+ Baths</option>
+                                        <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
+                                            <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                            <option value="any_bath">Any Bath</option>
+                                            <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
+                                            <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
+                                            <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
                                         </optgroup>
                                     </select>
                                 </div>
@@ -186,8 +202,13 @@
                     @foreach($listings as $listing)
                         <div class="list-agency">
                             <div class="list-agency-left">
+<<<<<<< HEAD
                                 @if($listing->ListingsImages()->first())
                                     <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="250px">
+=======
+                                @if($listing->ListingsImages()->where('featured', "1")->first())
+                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt="" width="100%" height="250px">
+>>>>>>> abd9e12a05ea4f1412d749415f52cff90bc438c4
                                 @endif
                                 <div class="list-agency-description">
                                     <div class="team-desc-line">
@@ -216,7 +237,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="list-agency-right-large" href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}">
+                            <a class="list-agency-right-large" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}">
                                 <div class="list-agency-text">
                                     <h4 class="list-agency-title"><i class="fa fa-map-marker"></i>  {{ $listing->address }}</h4>
                                     <div class="list-agency-separator"></div>
@@ -226,7 +247,7 @@
                             </a>
                             <div class="small-triangle"></div>
                             <div class="small-triangle2"></div>
-                            <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>
+                            <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>
                         </div>
                     @endforeach
                 </div>

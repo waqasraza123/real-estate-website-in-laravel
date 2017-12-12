@@ -27,7 +27,7 @@ Route::get('/setlang/{lang}', function($lang)
 
 
 Route::get('test' , function(){
-    echo null || "hello";
+    return \App\Favorit::where('user_id', 1)->first();
 });
 
 
@@ -87,7 +87,12 @@ Route::get('email_to_agent/{email}' , ['as' => 'emailToAgent' , 'uses' => 'Listi
 Route::get('send_link_agent' , ['as' => 'sendLinkToAgent' , 'uses' => 'ListingConteoller@sendLinkToAgent']);
 
 
+#Zip Codes
 
+//Route::get('insert-zip-codes', ['as' => 'insertZipCode' , 'uses' => 'ZipCodeController@insertZipCode']);
+Route::get("zip-count", function (){
+    return \Illuminate\Support\Facades\DB::table('zip_codes')->count();
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -199,6 +199,9 @@
                                                     <td>
                                                        {{ $lis->available_date }}
                                                     </td>
+                                                    <td>
+                                                        {{ $lis->lease_length }}
+                                                    </td>
                                                 </tr>
 
                                             @endforeach
@@ -240,6 +243,9 @@
                                                     </td>
                                                     <td>
                                                         {{ $lis->available_date }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->lease_length }}
                                                     </td>
                                                 </tr>
                                             @endif
@@ -283,6 +289,9 @@
                                                     <td>
                                                         {{ $lis->available_date }}
                                                     </td>
+                                                    <td>
+                                                        {{ $lis->lease_length }}
+                                                    </td>
                                                 </tr>
                                             @endif
                                         @endforeach
@@ -325,6 +334,9 @@
                                                             <td>
                                                                 {{ $lis->available_date }}
                                                             </td>
+                                                            <td>
+                                                                {{ $lis->lease_length }}
+                                                            </td>
                                                         </tr>
                                                     @endif
                                                     @endforeach
@@ -366,6 +378,9 @@
                                                     </td>
                                                     <td>
                                                         {{ $lis->available_date }}
+                                                    </td>
+                                                    <td>
+                                                        {{ $lis->lease_length }}
                                                     </td>
                                                 </tr>
                                             @endif
@@ -461,14 +476,13 @@
                                     </div>
                                     <div class="details-title pull-left">
                                         <h5 class="subtitle-margin"> </h5>
-                                        <h4>Lease Length<span class="special-color">.</span></h4>
+                                        <h4>School District<span class="special-color">.</span></h4>
                                     </div>
                                     <div class="clearfix"></div>
                                     <ul class="no_padding">
                                         <li class="no_style" >
-                                            {{ $listing->lease_length }}
+                                            {{ $listing->school_dc }}
                                         </li>
-
                                     </ul>
                                 </div>
                                 <div class="col-md-4 text-center">

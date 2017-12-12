@@ -385,5 +385,8 @@
     </script>
     @yield('scripts')
     @yield('footer-scripts')
+    <link rel="stylesheet" type="text/css" href="{{asset('/swal/sweetalert.css')}}" />
+    <script src="{{asset('swal/sweetalert.min.js')}}"></script>
+    <script src="/js/custom.js"></script>
     </body>
 </html>
