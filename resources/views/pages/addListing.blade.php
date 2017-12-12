@@ -455,27 +455,7 @@
     <script type="text/javascript">
 
 
-        $('#file-upload').change(function () {
-            console.log($(this).val());
-            var file_data =  $(this).prop('files')[0];
-            var  form_data = new FormData();
-            form_data.append('file' , file_data);
 
-            $.ajax({
-                type:'post',
-                iframe: true,
-                processData: false,
-                contentType: false,
-                url:'{{ route('postListingImage') }}',
-                data:form_data,
-                success:function(res){
-
-                },
-                error: function (response) {
-                   alert(response.message);
-                }
-            })
-        })
 
 
         $(function() {

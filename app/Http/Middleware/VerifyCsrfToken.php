@@ -14,7 +14,8 @@ class VerifyCsrfToken extends BaseVerifier
      */
     protected $except = [
         'search_listing_ajax',
-        'listing_image'
+        'listing_image',
+
     ];
 
 
