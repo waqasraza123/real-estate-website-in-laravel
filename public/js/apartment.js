@@ -847,11 +847,11 @@ jQuery(window).load(function() {
 
 	}
 
-
-/********** AGENT PHOTO UPLOAD **********/
-
-
-
+		
+/********** AGENT PHOTO UPLOAD **********/		
+		
+		
+		
 		$( "#agent-photo" ).change( function() {
 			$( "#agent-file-name" ).val( $(this).val() );
 			$( "#agent-file-name" ).fadeTo(500,1);

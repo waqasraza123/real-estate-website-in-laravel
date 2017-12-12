@@ -27,7 +27,7 @@ Route::get('/setlang/{lang}', function($lang)
 
 
 Route::get('test' , function(){
-    echo null || "hello";
+    return \App\Favorit::where('user_id', 1)->first();
 });
 
 
@@ -57,6 +57,8 @@ Route::get('equal_opportunity' , ['as' => 'equalOpportunity' , 'uses' => 'HomeCo
 
  #Listing Routes
 
+
+Route::post('listing_image' , ['as' => 'postListingImage' , 'uses' => 'ListingController@postListingImage']);
 Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing'])->middleware('auth');
 Route::post('listing_image' , ['as' => 'postListingImage' , 'uses' => 'ListingController@postListingImage']);
 Route::post('/save_listing', ['as' => 'saveListing' , 'uses' => 'ListingController@saveListing'])->middleware('auth');
@@ -88,8 +90,10 @@ Route::get('send_link_agent' , ['as' => 'sendLinkToAgent' , 'uses' => 'ListingCo
 
 #Zip Codes
 
-Route::get('insert-zip-codes', ['as' => 'insertZipCode' , 'uses' => 'ZipcodeController@insertZipCode']);
-
+//Route::get('insert-zip-codes', ['as' => 'insertZipCode' , 'uses' => 'ZipCodeController@insertZipCode']);
+Route::get("zip-count", function (){
+    return \Illuminate\Support\Facades\DB::table('zip_codes')->count();
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
