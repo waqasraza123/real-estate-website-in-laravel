@@ -836,30 +836,31 @@ jQuery(window).load(function() {
 
 		if( $('#file-upload').length ) {
 			$('#file-upload').fileinput({
-			uploadUrl: '#',
+			uploadUrl: '/listing_image',
 			layoutTemplates: 'main2',
 			allowedFileExtensions : ['jpg','png','gif', 'jpeg'],
 			showUpload: true,
 			showRemove: true,
-			browseClass: "button-shadow btn",
+			browseClass: "button-shadow btn"
+
 		});
+
 	}
-		
-		
-		
-/********** AGENT PHOTO UPLOAD **********/		
-		
-		
-		
+
+
+/********** AGENT PHOTO UPLOAD **********/
+
+
+
 		$( "#agent-photo" ).change( function() {
 			$( "#agent-file-name" ).val( $(this).val() );
 			$( "#agent-file-name" ).fadeTo(500,1);
 			$( "#agent-profile-photo" ).fadeTo(500,0.5);
 		})
 
-		
-		
-/********** ADVANCED SEARCH HIDE **********/		
+
+
+/********** ADVANCED SEARCH HIDE **********/
 
 
 
@@ -871,25 +872,25 @@ jQuery(window).load(function() {
 					$(this).css('margin-top','18px');
 					$(this).removeClass('adv-search-hide-rotate');
 					$(this).removeClass('search-hidden');
-					setTimeout(function(){ 
-						$('.adv-search-section').css('overflow', 'visible'); 
+					setTimeout(function(){
+						$('.adv-search-section').css('overflow', 'visible');
 					}, 1000);
-					
+
 				} else {
 					$(".adv-search-cont").css('bottom', -$(".adv-search-cont").innerHeight() + 'px');
 					$(this).css('margin-top','-50px');
 					$(this).addClass('adv-search-hide-rotate');
 					$(this).addClass('search-hidden');
-					$('.adv-search-section').css('overflow', 'hidden'); 
+					$('.adv-search-section').css('overflow', 'hidden');
 				}
 			})
 		}
 
-		
-		
-/********** MODALS **********/		
-		
-		
+
+
+/********** MODALS **********/
+
+
 		var click;
 		$( ".register-link" ).click( function() {
 			$( "#login-modal").modal('hide');
@@ -900,7 +901,7 @@ jQuery(window).load(function() {
 			})
 			$('body').css('padding-right','0px');
 		})
-		
+
 		$( ".login-link" ).click( function() {
 			$( "#register-modal" ).modal('hide');
 			click = true;
@@ -910,13 +911,13 @@ jQuery(window).load(function() {
 			})
 			$('body').css('padding-right','0px');
 		})
-		
+
 		$( ".forgot-link" ).click( function() {
 			$( "#login-modal" ).modal('hide');
 			$( "#forgot-modal" ).modal();
 			$('body').css('padding-right','0px');
 		})
-		
+
 		$( "#login-modal" ).on('hidden.bs.modal', function (e) {
 			$('body').css('padding-right','0px');
 		})
@@ -926,7 +927,7 @@ jQuery(window).load(function() {
 		$( "#forgot-modal" ).on('hidden.bs.modal', function (e) {
 			$('body').css('padding-right','0px');
 		})
-		
+
 		$(".register-link").on('shown.bs.modal', function (e) {
 			$('body').css('padding-right','0px');
 		})
@@ -936,13 +937,13 @@ jQuery(window).load(function() {
 		$(".forgot-link").on('shown.bs.modal', function (e) {
 			$('body').css('padding-right','0px');
 		})
-		
-		
-		
+
+
+
 /********** GEOCOMPLETE ON SUMBMIT PROPERTY PAGE **********/
 
 
-		
+
 		if($("#geocomplete").length) {
 			$("#geocomplete").geocomplete({
 				map: "#submit-property-map",
@@ -966,7 +967,7 @@ jQuery(window).load(function() {
 					streetViewControlOptions: {
 						position: google.maps.ControlPosition.RIGHT_TOP
 					},
-					styles: mapStyle         
+					styles: mapStyle
 				},
 				markerOptions: {
 					draggable: true,
@@ -1001,7 +1002,7 @@ jQuery(window).load(function() {
                         }if(v.types[0] == 'administrative_area_level_5'){
                             $(".wq-administrative_area_level_5").val(v.long_name)
                         }if(v.types[0] == 'country') {
-                            $(".wq-country-name").val(v.long_name)
+                            $(".wq-country").val(v.long_name)
                         }if(v.types[0] == 'neighborhood') {
                             $(".wq-neighborhood").val(v.long_name)
                         }if(v.types[0] == 'postal_code'){

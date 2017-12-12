@@ -27,6 +27,28 @@ class ListingController extends Controller
     }
 
 
+
+    /**
+         * @param Request $request
+         * @return
+         */
+
+    public function postListingImage(Request $request){
+        if(!\Session::has('id')){
+                $this->listing->create();
+        }
+         $listing_id = $this->listing->latest()->pluck('id')->first();
+         \Session::put('id' , $listing_id);
+         if($request->file()){
+                    $images = $this->getImagesName($request->file());
+                    foreach ($images as $image){
+                            $this->listingImage->create(['listing_id' => $listing_id, 'image' => $image['image']]);
+                        }
+         }
+         return \Response::json(['massage' => 'true']);
+     }
+
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
@@ -37,10 +59,10 @@ class ListingController extends Controller
             'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
-        $inputs = $request->except('_token' , 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
+        $inputs = $request->except('_token' , 'agree', 'g-recaptcha-response', 'files', 'image_ids', 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
-        $this->listing->create($inputs);
+        $this->listing->where('id' , \Session::get('id'))->update($inputs);
         $listing = $this->listing->latest()->first();
         if($request->listing_type != null) {
             foreach (array_keys($request->listing_type) as $key) {
@@ -62,13 +84,14 @@ class ListingController extends Controller
             $request->featured->move(public_path() . '/assets/images/' , $name);
             $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
         }
-        if($request->file()){
+       /* if($request->file()){
 
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){
                   $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
             }
-        }
+        }*/
+            \Session::forget('id');
             return redirect()->route('payment' , ['type' => 'user']);
     }
 

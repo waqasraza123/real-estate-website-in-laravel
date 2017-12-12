@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>2ndChanceLeasing | Find a Home</title>
     <meta name="keywords" content="Download, Apartment, Premium, Real Estate, HMTL, Site Template, property, mortgage, CSS">
     <meta name="description" content="Download Apartment - Premium Real Estate HMTL Site Template">
@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css\plugins.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\init.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css\fileinput.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\apartment-layout.css') }}">
     <link id="skin" rel="stylesheet" type="text/css" href="{{ asset('css\apartment-colors-blue.css') }}">
     <!--[if lt IE 9]>
@@ -358,6 +359,7 @@
     <script type="text/javascript" src="{{ asset('mail\validate.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/date/moment.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/date/daterangepicker.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js\fileinput.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js\apartment.js') }}"></script>
     <script>
         $('#headerMenuLink').click(function () {
@@ -383,5 +385,8 @@
     </script>
     @yield('scripts')
     @yield('footer-scripts')
+    <link rel="stylesheet" type="text/css" href="{{asset('/swal/sweetalert.css')}}" />
+    <script src="{{asset('swal/sweetalert.min.js')}}"></script>
+    <script src="/js/custom.js"></script>
     </body>
 </html>

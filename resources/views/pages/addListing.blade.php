@@ -221,7 +221,6 @@
                                 </div>
                             </div>
 
-
                             <div class="grid">
                                 <div class="col-xs-12">
                                     <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.acceptable') }}</h4>
@@ -454,6 +453,10 @@
 @endsection
 @section('scripts')
     <script type="text/javascript">
+
+
+
+
         $(function() {
             $('#datepicker').daterangepicker({
                     singleDatePicker: true,

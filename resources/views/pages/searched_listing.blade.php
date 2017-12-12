@@ -202,7 +202,7 @@
                     @foreach($listings as $listing)
                         <div class="list-agency">
                             <div class="list-agency-left">
-                                @if($listing->ListingsImages()->first())
+                                @if($listing->ListingsImages()->where('featured', "1")->first())
                                     <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->first()->image }}" alt="" width="100%" height="250px">
                                 @endif
                                 <div class="list-agency-description">
@@ -232,7 +232,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="list-agency-right-large" href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}">
+                            <a class="list-agency-right-large" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}">
                                 <div class="list-agency-text">
                                     <h4 class="list-agency-title"><i class="fa fa-map-marker"></i>  {{ $listing->address }}</h4>
                                     <div class="list-agency-separator"></div>
@@ -242,7 +242,7 @@
                             </a>
                             <div class="small-triangle"></div>
                             <div class="small-triangle2"></div>
-                            <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>
+                            <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>
                         </div>
                     @endforeach
                 </div>

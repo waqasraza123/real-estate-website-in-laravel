@@ -1647,7 +1647,7 @@ li.ap-submenu {
 
 .button-shadow{
 	position: absolute !important;
-	top: -70px;
+	top: -94px;
 	left: 15px;
 	background: white !important;
 	border: 1px solid #3797dd !important;
@@ -1670,9 +1670,7 @@ li.ap-submenu {
 	display: none !important;
 }
 
-.fileinput-upload{
-	display: none;
-}
+
 
 .descriptionAmenitiesWrapper{
 	position: relative;
