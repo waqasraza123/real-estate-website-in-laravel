@@ -48,7 +48,7 @@
                                 <input type="hidden" name="wq-intersection" class="wq-intersection">
                                 <input type="hidden" name="wq-route" class="wq-route">
                                 <input type="hidden" name="wq-sublocality" class="wq-sublocality">
-                                <input type="hidden" name="wq-locality" class="wq-locality">
+                                {{--<input type="hidden" name="wq-locality" class="wq-locality">--}}
                                 <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
                                 <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
                                 <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
