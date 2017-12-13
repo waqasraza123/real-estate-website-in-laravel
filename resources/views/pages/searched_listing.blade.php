@@ -200,8 +200,8 @@
             <div class="row"  style="overflow: scroll">
                 <div class="col-xs-12">
                     @foreach($listings as $listing)
-                        <div class="list-agency">
-                            <div class="list-agency-left">
+                        <div class="list-agency row">
+                            <div class="list-agency-left col-xs-6">
 
                                 @if($listing->ListingsImages()->first())
                                     <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="250px">
@@ -235,11 +235,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="list-agency-right-large" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}">
+                            <a class="list-agency-right-large col-xs-6" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}">
                                 <div class="list-agency-text">
                                     <h4 class="list-agency-title"><i class="fa fa-map-marker"></i>  {{ $listing->address }}</h4>
                                     <div class="list-agency-separator"></div>
-                                    {{ $listing->description }}
+                                    <p class="text-justified">{{ $listing->description }}</p>
                                 </div>
 
                             </a>

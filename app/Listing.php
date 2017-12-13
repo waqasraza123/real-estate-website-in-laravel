@@ -99,9 +99,6 @@ class Listing extends Model
 	'wq-route'		,
 
 
-	'wq-neighbourhood'		,
-
-
 	'wq-country'	,
 
 

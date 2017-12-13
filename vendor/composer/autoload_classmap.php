@@ -3119,6 +3119,7 @@ return array(
     'Ramsey\\Uuid\\UuidFactoryInterface' => $vendorDir . '/ramsey/uuid/src/UuidFactoryInterface.php',
     'Ramsey\\Uuid\\UuidInterface' => $vendorDir . '/ramsey/uuid/src/UuidInterface.php',
     'RemoveExtraColumnsFromZipCodesTable' => $baseDir . '/database/migrations/2017_12_08_200207_remove_extra_columns_from_zip_codes_table.php',
+    'RemoveExtraNeighbourhoodCol' => $baseDir . '/database/migrations/2017_12_13_010801_remove_extra_neighbourhood_col.php',
     'SebastianBergmann\\CodeCoverage\\CodeCoverage' => $vendorDir . '/phpunit/php-code-coverage/src/CodeCoverage.php',
     'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => $vendorDir . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
     'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => $vendorDir . '/phpunit/php-code-coverage/src/Driver/Driver.php',

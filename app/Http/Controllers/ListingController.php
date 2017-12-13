@@ -291,6 +291,7 @@ class ListingController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function searchListing(Request $request){
+        //dd($request->all());
         $request->flash();
         $min = [];
 
@@ -308,16 +309,16 @@ class ListingController extends Controller
                 $listing->where('wq-intersection', $inputs['wq-intersection']);
             if (isset($inputs['wq-route']))
                 $listing->where('wq-route', $inputs['wq-route']);
-            if(isset($inputs['wq-neighbourhood']))
-                $listing->where('wq-neighbourhood', $inputs['wq-neighbourhood']);
+            if(isset($inputs['wq-neighborhood']))
+                $listing->where('wq-neighborhood', $inputs['wq-neighborhood']);
         }
 
         elseif ($inputs['wq-sublocality']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-sublocality'])->orWhere('acceptable_city', $inputs['wq-sublocality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
         }
-        if ($inputs['wq-locality']){
-            $zipCodes = DB::table('zip_codes')->where('acceptable_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
+        elseif ($inputs['wq-locality']){
+            $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-locality'])->orWhere('acceptable_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
         }
         elseif ($inputs['wq-administrative_area_level_2']){
@@ -355,7 +356,6 @@ class ListingController extends Controller
                 $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
             }
         }
-
         $listings = ($listing->get()->unique('listing_id'));
 
         $langLtd = [];
