@@ -321,11 +321,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid noMargin">
-                                    <div class="col-xs-12 ">
-                                        <input id="file-upload" name="files[]"  type="file" multiple="">
-                                    </div>
-                                </div>
                                 <div class="grid">
                                     <div class="col-xs-12">
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">Featured Image</h4>
@@ -334,6 +329,11 @@
                                 <div class="grid">
                                     <div class="col-xs-12">
                                         <input type="file" name="featured" >
+                                    </div>
+                                </div>
+                                <div class="grid noMargin">
+                                    <div class="col-xs-12 ">
+                                        <input id="file-upload" name="files[]"  type="file" multiple="">
                                     </div>
                                 </div>
                                 <div class="descriptionAmenitiesWrapper">
