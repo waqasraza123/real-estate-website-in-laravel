@@ -332,11 +332,17 @@
                                     </div>
                                 </div>
                                 <br>
-                                <div class="grid noMargin">
-                                    <div class="col-xs-12 ">
-                                        <input id="file-upload" name="files[]"  type="file" multiple="">
+                                <div class="grid">
+                                    <div class="col-xs-12">
+                                        <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.photos') }}</h4>
                                     </div>
                                 </div>
+                                <div class="grid noMargin">
+                                    <div class="col-xs-12">
+                                        <input name="files[]" class="form-control" type="file" multiple>
+                                    </div>
+                                </div>
+                                <br>
                                 <div class="descriptionAmenitiesWrapper">
                                     <div class="grid">
                                         <div class="col-xs-12">

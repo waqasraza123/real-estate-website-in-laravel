@@ -63,10 +63,10 @@ class ListingController extends Controller
             'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
-        $inputs = $request->except('_token' , 'agree', 'g-recaptcha-response', 'files', 'image_ids', 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
+        $inputs = $request->except('_token' , 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
-        $this->listing->where('id' , \Session::get('id'))->update($inputs);
+        $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
         if($request->listing_type != null) {
             foreach (array_keys($request->listing_type) as $key) {
@@ -83,21 +83,18 @@ class ListingController extends Controller
                 ]);
             }
         }
-
         if($request->file('featured')){
             $name = $request->featured->hashName();
             $request->featured->move(public_path() . '/assets/images/' , $name);
             $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
         }
-       /* if($request->file()){
-
+        if($request->file()){
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){
-                  $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
+                $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
             }
-        }*/
-            \Session::forget('id');
-            return redirect()->route('payment' , ['type' => 'user']);
+        }
+        return redirect()->route('payment' , ['type' => 'user']);
     }
 
 
@@ -197,7 +194,6 @@ class ListingController extends Controller
      * @return $this|\Illuminate\Http\RedirectResponse
      */
     public function postEditListing(Request $request){
-        //dd($request->all());
         $this->validate($request, [
             'description' => 'required',
             'parking_type' => 'required',
@@ -205,7 +201,7 @@ class ListingController extends Controller
         ]);
 
 
-        $inputs = $request->except('_token' , 'listingid', 'list_a_id', 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
+        $inputs = $request->except('_token' , 'listingid', 'list_a_id', 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length', 'files');
         $inputs['listing_status'] = 'done';
         if($request->listing_type != null) {
             foreach (array_keys($request->listing_type) as $key) {
