@@ -376,9 +376,15 @@ class ListingController extends Controller
                 }
                 array_push($langLtd, $new);
             }
-        }
+       }
+        $filtered = $listings->filter(function ($value, $key) {
+            return $value -> id = $value->listing_id;
+        });
 
-        return view('pages.searched_listing' , compact('listings' , 'langLtd'));
+        $filtered->all();
+
+        
+       return view('pages.searched_listing' , compact('listings' , 'langLtd'));
     }
 
 
