@@ -205,10 +205,11 @@
                                 </div>
                             </div>
                             <div class="grid">
-                                <div class="col-xs-12">
-                                    <input type="file" name="featured" >
+                                <div class="col-xs-12" style="margin-bottom: 20px">
+                                    <input type="file" name="featured" class="form-control">
                                 </div>
                             </div>
+                            <br>
                             <div class="grid">
                                 <div class="col-xs-12">
                                     <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.photos') }}</h4>
