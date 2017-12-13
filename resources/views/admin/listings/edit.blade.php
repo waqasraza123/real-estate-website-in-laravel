@@ -327,10 +327,11 @@
                                     </div>
                                 </div>
                                 <div class="grid">
-                                    <div class="col-xs-12">
-                                        <input type="file" name="featured" >
+                                    <div class="col-xs-12" style="margin-bottom: 20px">
+                                        <input type="file" name="featured" class="form-control">
                                     </div>
                                 </div>
+                                <br>
                                 <div class="grid noMargin">
                                     <div class="col-xs-12 ">
                                         <input id="file-upload" name="files[]"  type="file" multiple="">
