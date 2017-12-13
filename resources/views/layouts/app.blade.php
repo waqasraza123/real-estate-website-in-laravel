@@ -349,7 +349,14 @@
     <script type="text/javascript" src="{{ asset('bootstrap\bootstrap.min.js') }}"></script>
 
     <!-- Google Maps -->
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDF8NFf6d_o4NsjkrwdPgrboEDUo0SMgkE&amp;sensor=false&amp;libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8NFf6d_o4NsjkrwdPgrboEDUo0SMgkE&language=en&libraries=places"></script>
+    <script>
+        $(document).ready(function () {
+            if (typeof initAutocomplete === 'function'){
+                google.maps.event.addDomListener(window, 'load', initAutocomplete);
+            }
+        })
+    </script>
 
     <!-- plugins script -->
     <script type="text/javascript" src="{{ asset('js\plugins.js') }}"></script>

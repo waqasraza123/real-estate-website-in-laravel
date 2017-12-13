@@ -291,7 +291,6 @@ class ListingController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function searchListing(Request $request){
-        //dd($request->all());
         $request->flash();
         $min = [];
 
@@ -299,7 +298,8 @@ class ListingController extends Controller
         $inputs = $request->except('token');
         $listing = Listing::where('listings.listing_status', 'done')
             ->where('listings.approved', "1")
-            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
+            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
+            ->where('listing_attributes.listing_type', $inputs['listing_type']);
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
             if (isset($inputs['wq-street_address']))
                 $listing->where('wq-street_address', $inputs['wq-street_address']);
@@ -383,7 +383,6 @@ class ListingController extends Controller
 
         $filtered->all();
 
-        
        return view('pages.searched_listing' , compact('listings' , 'langLtd'));
     }
 

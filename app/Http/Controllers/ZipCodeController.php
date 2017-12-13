@@ -14,7 +14,7 @@ class ZipCodeController extends Controller
                 if($row != 1){
                     $acceptableCities = explode(',', $data[4]);
                     foreach ($acceptableCities as $acceptableCity){
-
+                        $acceptableCity = trim($acceptableCity);
                         if (!DB::table('zip_codes')->where("zip_code", $data[0])->where('acceptable_city', $acceptableCity)->first()) {
                             DB::table('zip_codes')->insert(
                                 [
