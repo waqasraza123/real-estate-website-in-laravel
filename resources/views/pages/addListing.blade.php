@@ -217,10 +217,11 @@
                             </div>
 
                             <div class="grid">
-                                <div class="col-xs-12 ">
-                                    <input id="file-upload" name="files[]" type="file" multiple>
+                                <div class="col-xs-12">
+                                    <input name="files[]" class="form-control" type="file" multiple>
                                 </div>
                             </div>
+                            <br>
 
                             <div class="grid">
                                 <div class="col-xs-12">
