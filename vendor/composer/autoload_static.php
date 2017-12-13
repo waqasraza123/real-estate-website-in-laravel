@@ -3504,6 +3504,7 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
         'RemoveExtraColumnsFromZipCodesTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_08_200207_remove_extra_columns_from_zip_codes_table.php',
+        'RemoveExtraNeighbourhoodCol' => __DIR__ . '/../..' . '/database/migrations/2017_12_13_010801_remove_extra_neighbourhood_col.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',
         'SebastianBergmann\\CodeCoverage\\Driver\\Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Driver/Driver.php',
