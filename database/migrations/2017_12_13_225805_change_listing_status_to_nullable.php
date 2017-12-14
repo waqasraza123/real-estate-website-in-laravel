@@ -15,6 +15,7 @@ class ChangeListingStatusToNullable extends Migration
     {
         Schema::table('listings', function (Blueprint $table) {
             $table->string('listing_status')->nullable()->change();
+            $table->string('title')->nullable()->change();
         });
     }
 
@@ -27,6 +28,7 @@ class ChangeListingStatusToNullable extends Migration
     {
         Schema::table('listings', function (Blueprint $table) {
             $table->string('listing_status')->nullable(false)->change();
+            $table->string('title')->nullable(false)->change();
         });
     }
 }
