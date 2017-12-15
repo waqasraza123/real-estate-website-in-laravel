@@ -90,10 +90,10 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-xs-12">
-                                            <div class="dropdown btn-group bootstrap-select show-tick  ">
+                                            <div class=" btn-group bootstrap-select show-tick  ">
                                                 <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                 </button>
-                                                <div class="dropdown-menu col-sm-2" style="padding-top:10px;">
+                                                <div class=" dropdown-menu col-sm-2" style="padding-top:10px;">
                                                     <div class="col-xs-6">
                                                         <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
                                                     </div>
@@ -250,6 +250,9 @@
                                                         <li data-value="2500">
                                                             <span>$2500</span>
                                                         </li>
+                                                        <li data-value="">
+                                                            <span>$2500+</span>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -354,6 +357,9 @@
                                                     <li data-value="2500">
                                                         <span>$2500</span>
                                                     </li>
+                                                    <li data-value="">
+                                                        <span>$2500+</span>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -457,6 +463,9 @@
                                                             <span>$2300</span></li>
                                                         <li data-value="2500">
                                                             <span>$2500</span>
+                                                        </li>
+                                                        <li data-value="">
+                                                            <span>$2500+</span>
                                                         </li>
                                                     </ul>
                                                 </div>

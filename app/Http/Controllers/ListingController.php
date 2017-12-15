@@ -57,13 +57,15 @@ class ListingController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function submitListing(Request $request){
-        //dd($request->all());
         $this->validate($request, [
             'description' => 'required',
-            'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
-        $inputs = $request->except('_token' , 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
+        $inputs = $request->except('_token' , 'agree', 'g-recaptcha-response', 'files', 'image_ids', 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
+
+        if($request->has('parking_type')){
+            $inputs['parking_type'] = json_encode($request->get('parking_type'));
+        }
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
         if(count($inputs['parking_type']) > 1){
@@ -108,6 +110,7 @@ class ListingController extends Controller
      * save the listing
      */
     public function saveListing(Request $request){
+
         $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file');
         if(Auth::check()){
