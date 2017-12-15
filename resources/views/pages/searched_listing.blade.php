@@ -107,6 +107,9 @@
                                                 <li data-value="2500">
                                                     <span>$2500</span>
                                                 </li>
+                                                <li data-value="2500+">
+                                                    <span>$2500+</span>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -279,13 +282,16 @@
             setTimeout(function(){ $('.price-label').first().focus();	},0);
         });
         var priceLabelObj;
-        $('.price-label').focus(function (event) {
+        $('.price-label').bind("mouseenter focus mouseleave", function (event) {
             priceLabelObj=$(this);
             $('.price-range').addClass('hide');
             $('#'+$(this).data('dropdownId')).removeClass('hide');
         });
 
         $(".price-range li").click(function(){
+            if(!priceLabelObj){
+                $(".price-label").get(0).focus()
+            }
             priceLabelObj.attr('value', $(this).attr('data-value'));
             var curElmIndex=$( ".price-label" ).index( priceLabelObj );
             var nextElm=$( ".price-label" ).eq(curElmIndex+1);

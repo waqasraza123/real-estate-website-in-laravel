@@ -13,12 +13,20 @@
             </div>
             <div class="clearfix"></div>
         </div>
-        <div class="margin-top-30">
-            <a href="{{ route('account' , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
-                <span class="peofile_left_text">{{ Lang::get('profile.my_profile') }}</span>
+        <div class=" margin-top-30">
+            <a href="{{ route('accountFavorites' , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
+                <span class="peofile_left_text">{{ Lang::get('profile.favorites') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>
-                <div class="button-icon"><i class="fa fa-user"></i></div>
+                <div class="button-icon"><i class="fa fa-heart"></i></div>
+            </a>
+        </div>
+        <div class=" margin-top-15">
+            <a href="{{ route('accountSavedSearches' , ['id' => Auth::user()->id] )  }}" class="button-primary  button-fulls">
+                <span class="peofile_left_text">{{ Lang::get('profile.saved_searches') }}</span>
+                <div class="button-triangle"></div>
+                <div class="button-triangle2"></div>
+                <div class="button-icon"><i class="fa fa-search-plus"></i></div>
             </a>
         </div>
         <div class="margin-top-15">
@@ -46,27 +54,19 @@
             </a>
         </div>
         <div class=" margin-top-15">
-            <a href="{{ route('accountSavedSearches' , ['id' => Auth::user()->id] )  }}" class="button-primary  button-fulls">
-                <span class="peofile_left_text">{{ Lang::get('profile.saved_searches') }}</span>
-                <div class="button-triangle"></div>
-                <div class="button-triangle2"></div>
-                <div class="button-icon"><i class="fa fa-search-plus"></i></div>
-            </a>
-        </div>
-        <div class=" margin-top-15">
-            <a href="{{ route('accountFavorites' , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
-                <span class="peofile_left_text">{{ Lang::get('profile.favorites') }}</span>
-                <div class="button-triangle"></div>
-                <div class="button-triangle2"></div>
-                <div class="button-icon"><i class="fa fa-heart"></i></div>
-            </a>
-        </div>
-        <div class=" margin-top-15">
             <a href="{{ route('userNotification'  , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
                 <span class="peofile_left_text">{{ Lang::get('profile.notifi_set') }}</span>
                 <div class="button-triangle"></div>
                 <div class="button-triangle2"></div>
                 <div class="button-icon"><i class="fa fa-envelope"></i></div>
+            </a>
+        </div>
+        <div class="margin-top-15">
+            <a href="{{ route('account' , ['id' => Auth::user()->id]) }}" class="button-primary  button-fulls">
+                <span class="peofile_left_text">{{ Lang::get('profile.my_profile') }}</span>
+                <div class="button-triangle"></div>
+                <div class="button-triangle2"></div>
+                <div class="button-icon"><i class="fa fa-user"></i></div>
             </a>
         </div>
     </div>

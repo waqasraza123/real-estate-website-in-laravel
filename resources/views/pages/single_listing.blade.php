@@ -58,10 +58,137 @@
             </div>
         </div>
     </section>
+    <section class="section-light no-bottom-padding" style="padding-top: 0 !important;">
+        <div class="container">
+            <!-- Contact Seller Area -->
+            <div class="row margin-top-60">
+                <div class="col-xs-12">
+                    <h3 class="title-negative-margin">contact the REPRESENTATIVE<span class="special-color">.</span></h3>
+                    <div class="title-separator-primary"></div>
+                </div>
+            </div>
+            <div class="row margin-top-60">
+                <div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0">
+                    <h5 class="subtitle-margin"> </h5>
+                    <h3 class="title-negative-margin">{{ $listing->User()->first()->first_name }} {{ $listing->User()->first()->last_name }}<span class="special-color">.</span></h3>
+                    <a href="#" class="agent-photo">
+                        <img src="{{ asset('assets/images').'/'.$listing->User()->first()->avatar }}" alt="" class="img-responsive">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-9">
+                    <div class="agent-social-bar">
+                        <div class="pull-left">
+									<span class="agent-icon-circle">
+										<i class="fa fa-phone"></i>
+									</span>
+                            <span class="agent-bar-text">{{ $listing->User()->first()->phone }}</span>
+                        </div>
+                        <div class="pull-left">
+									<span class="agent-icon-circle">
+										<i class="fa fa-envelope fa-sm"></i>
+									</span>
+                            <span class="agent-bar-text">{{ $listing->User()->first()->email }}</span>
+                        </div>
+                        <div class="pull-right">
+                            <div class="pull-right">
+                                <a class="agent-icon-circle" href="{{ $listing->User()->first()->facebook_link }}">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </div>
+                            <div class="pull-right">
+                                <a class="agent-icon-circle icon-margin" href="{{ $listing->User()->first()->google_link }}">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <form name="contact-from" action="{{ route('mailToClient') }}" method="post">
+                        {{ csrf_field() }}
+                        <input type="hidden" value="{{ $listing->User()->first()->email }}" name="sending_email">
+                        <input name="name" value="@if(Auth::user()){{ Auth::user()->first_name }} @endif" type="text" class="input-long main-input" placeholder="Your name">
+                        <input name="phone" value="@if(Auth::user()){{ Auth::user()->phone }} @endif" type="text" class="input-short pull-right main-input" placeholder="Your phone">
+                        <input name="email" value="@if(Auth::user()){{ Auth::user()->email }} @endif" type="email" class="input-full main-input" placeholder="Your email">
+                        <textarea name="message" class="input-full agent-textarea main-input" placeholder="Your question"></textarea>
+                        <div class="form-submit-cont">
+                            <button type="submit" href="#" class="button-primary pull-right">
+                                <span>send</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-paper-plane"></i></div>
+                            </button>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section-light no-bottom-padding">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
+                    <div class="row margin-top-15">
+                        <div class="col-xs-12">
+                            <h3 class="title-negative-margin">contact the REPRESENTATIVE<span class="special-color">.</span></h3>
+                            <div class="title-separator-primary"></div>
+                        </div>
+                    </div>
+                    <div class="row margin-top-15">
+                        <div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0">
+                            <h5 class="subtitle-margin"> </h5>
+                            <h3 class="title-negative-margin">{{ $listing->User()->first()->first_name }} {{ $listing->User()->first()->last_name }}<span class="special-color">.</span></h3>
+                            <a href="#" class="agent-photo">
+                                <img src="{{ asset('assets/images').'/'.$listing->User()->first()->avatar }}" alt="" class="img-responsive">
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="agent-social-bar">
+                                <div class="pull-left">
+									<span class="agent-icon-circle">
+										<i class="fa fa-phone"></i>
+									</span>
+                                    <span class="agent-bar-text">{{ $listing->User()->first()->phone }}</span>
+                                </div>
+                                <div class="pull-left">
+									<span class="agent-icon-circle">
+										<i class="fa fa-envelope fa-sm"></i>
+									</span>
+                                    <span class="agent-bar-text">{{ $listing->User()->first()->email }}</span>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="pull-right">
+                                        <a class="agent-icon-circle" href="{{ $listing->User()->first()->facebook_link }}">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a class="agent-icon-circle icon-margin" href="{{ $listing->User()->first()->google_link }}">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <form name="contact-from" action="{{ route('mailToClient') }}" method="post">
+                                {{ csrf_field() }}
+                                <input type="hidden" value="{{ $listing->User()->first()->email }}" name="sending_email">
+                                <input name="name" value="@if(Auth::user()){{ Auth::user()->first_name }} @endif" type="text" class="input-long main-input" placeholder="Your name">
+                                <input name="phone" value="@if(Auth::user()){{ Auth::user()->phone }} @endif" type="text" class="input-short pull-right main-input" placeholder="Your phone">
+                                <input name="email" value="@if(Auth::user()){{ Auth::user()->email }} @endif" type="email" class="input-full main-input" placeholder="Your email">
+                                <textarea name="message" class="input-full agent-textarea main-input" placeholder="Your question"></textarea>
+                                <div class="form-submit-cont">
+                                    <button type="submit" href="#" class="button-primary pull-right">
+                                        <span>send</span>
+                                        <div class="button-triangle"></div>
+                                        <div class="button-triangle2"></div>
+                                        <div class="button-icon"><i class="fa fa-paper-plane"></i></div>
+                                    </button>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                     <div class="row">
                         @if(Session::has('addet'))
                             <div class="success-box">
@@ -450,141 +577,284 @@
                                         <h4>{{ Lang::get('listing.parking_type') }}<span class="special-color">.</span></h4>
                                     </div>
                                     <div class="clearfix"></div>
+                                    <?php $parkingTypes = array();?>
+                                    @if(strpos($listing->parking_type, ",") !== false)
+                                        <?php $parkingTypes = explode(",", $listing->parking_type);?>
+                                    @endif
                                     <ul class="no_padding">
-                                        <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                            @if($listing->parking_type == '1')
+                                        @if($listing->parking_type == '1' || in_array('1', $parkingTypes))
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.surfact_lot') }}
-                                            @elseif($listing->parking_type == '3')
-                                                {{ Lang::get('listing.covered') }}
-                                            @elseif($listing->parking_type == '4')
-                                                {{ Lang::get('listing.street') }}
-                                            @elseif($listing->parking_type == '5')
+                                            </li>
+                                        @endif
+                                        @if($listing->parking_type == '3'  || in_array('3', $parkingTypes))
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                {{ Lang::get('listing.covered')}}
+                                            </li>
+                                        @endif
+                                        @if($listing->parking_type == '4' || in_array('4', $parkingTypes))
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                {{ Lang::get('listing.street')}}
+                                            </li>
+                                        @endif
+                                        @if($listing->parking_type == '5' || in_array('5', $parkingTypes))
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.garage') }}
-                                            @elseif($listing->parking_type == '7')
+                                            </li>
+                                        @endif
+                                        @if($listing->parking_type == '7' || in_array('7', $parkingTypes))
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.other') }}
-                                            @endif
-                                        </li>
-                                        <li style="list-style: none;text-align:left">
-                                            <span class="bullet">•</span>
+                                            </li>
+                                        @endif
+                                        <li style="list-style: none;text-align:left; font-weight: bold">
                                             Parking Fee {{ $listing->parking_fee }}$/mo
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-md-4 text-center">
-                                    <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
-                                        <i class="leaseIcon"></i>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-md-4 text-center">
+                                            <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                                <i class="leaseIcon"></i>
+                                            </div>
+                                            <div class="details-title pull-left">
+                                                <h5 class="subtitle-margin"> </h5>
+                                                <h4>School District<span class="special-color">.</span></h4>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <ul class="no_padding">
+                                                <li class="no_style" >
+                                                    {{ $listing->school_dc }}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-8 text-center">
+                                            <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                                <i class="propertyIcon"></i>
+                                            </div>
+                                            <div class="details-title pull-left">
+                                                <h5 class="subtitle-margin"> </h5>
+                                                <h4>ACCEPTABLE ISSUES <span class="special-color">.</span></h4>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <ul class="no_padding">
+                                                        <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                            @if($listing->broken_lease == '1')
+                                                                {{ Lang::get('listing.b_l') }}-{{ Lang::get('listing.h_o') }} {{ $listing->br_le_ye }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->eviction == '1')
+                                                                {{ Lang::get('listing.e_v') }}-{{ Lang::get('listing.h_o') }} {{ $listing->ev_ye }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->misdemeanor == '1')
+                                                                {{ Lang::get('listing.mis') }} -{{ Lang::get('listing.h_o') }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->falonies == '1')
+                                                                {{ Lang::get('listing.fels') }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->section_8 == '1')
+                                                                {{ Lang::get('listing.sec_8') }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->hud == '1')
+                                                                HUD
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->income_r == '1')
+                                                                {{ Lang::get('listing.in_r') }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->bankruptcy == '1')
+                                                                Bankruptcy-{{ Lang::get('listing.h_o') }} {{ $listing->ba_ye }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->foreclosure == '1')
+                                                                {{ Lang::get('listing.forec') }}-{{ Lang::get('listing.h_o') }} {{ $listing->fo_ye }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->credit == '1')
+                                                                {{ Lang::get('listing.cre') }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->move_in == '1')
+                                                                {{ Lang::get('listing.m_i_s') }}
+                                                                <br>
+                                                            @endif
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <ul class="no_padding">
+                                                        <li class="no_style" style="list-style: none;text-align:left">
+                                                            @if($listing->possession == '1')
+                                                                {{ Lang::get('listing.pos') }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->possession_w == '1')
+                                                                {{ Lang::get('listing.pos_w') }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->assault == '1')
+                                                                {{ Lang::get('listing.as') }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->herassment == '1')
+                                                                Harassment
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->theft_of == '1')
+                                                                {{ Lang::get('listing.th_o_h') }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->dwi == '1')
+                                                                DWI
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->dui == '1')
+                                                                DUI
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->disorderly == '1')
+                                                                {{ Lang::get('listing.di_xc') }}
+                                                                <br>
+                                                            @endif
+                                                            @if($listing->theft == '1')
+                                                                {{ Lang::get('listing.theft') }}
+                                                                <br>
+                                                            @endif
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="details-title pull-left">
-                                        <h5 class="subtitle-margin"> </h5>
-                                        <h4>School District<span class="special-color">.</span></h4>
-                                    </div>
+<<<<<<< HEAD
+=======
                                     <div class="clearfix"></div>
                                     <ul class="no_padding">
-                                        <li class="no_style" >
-                                            {{ $listing->school_dc }}
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
-                                        <i class="propertyIcon"></i>
-                                    </div>
-                                    <div class="details-title pull-left">
-                                        <h5 class="subtitle-margin"> </h5>
-                                        <h4>ACCEPTABLE ISSUES <span class="special-color">.</span></h4>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <ul class="no_padding">
-                                        <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+
                                             @if($listing->broken_lease == '1')
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.b_l') }}-{{ Lang::get('listing.h_o') }} {{ $listing->br_le_ye }}
-                                                <br>
+                                            </li>
                                             @endif
                                             @if($listing->eviction == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.e_v') }}-{{ Lang::get('listing.h_o') }} {{ $listing->ev_ye }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->misdemeanor == '1')
+                                                    <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.mis') }} -{{ Lang::get('listing.h_o') }}
-                                                <br>
+                                                    </li>
                                             @endif
                                             @if($listing->falonies == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.fels') }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->section_8 == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.sec_8') }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->hud == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 HUD
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->income_r == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.in_r') }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->bankruptcy == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 Bankruptcy-{{ Lang::get('listing.h_o') }} {{ $listing->ba_ye }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->foreclosure == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.forec') }}-{{ Lang::get('listing.h_o') }} {{ $listing->fo_ye }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->credit == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.cre') }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->move_in == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.m_i_s') }}
-                                                <br>
+                                                </li>
                                             @endif
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col-md-4 text-center">
+                                    <div class="details-title pull-left">
+                                        <h5 class="subtitle-margin"> </h5>
+                                        <h5 class="subtitle-margin"> </h5>
+                                        <h5 class="subtitle-margin"> </h5>
+                                        <h4> </h4>
+                                    </div>
                                     <div class="clearfix"></div>
                                     <ul class="no_padding">
                                         <li class="no_style" style="list-style: none;text-align:left">
                                             @if($listing->possession == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.pos') }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->possession_w == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.pos_w') }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->assault == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.as') }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->herassment == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 Harassment
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->theft_of == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.th_o_h') }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->dwi == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 DWI
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->dui == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 DUI
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->disorderly == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.di_xc') }}
-                                                <br>
+                                                </li>
                                             @endif
                                             @if($listing->theft == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                 {{ Lang::get('listing.theft') }}
-                                                <br>
+                                                </li>
                                             @endif
                                         </li>
                                     </ul>
+>>>>>>> dev
                                 </div>
                             </div>
 
@@ -747,69 +1017,13 @@
                             </div>
                         @endif
                     </div>
+<<<<<<< HEAD
+=======
 
                     <!-- Contact Seller Area -->
-                    <div class="row margin-top-60">
-                        <div class="col-xs-12">
-                            <h3 class="title-negative-margin">contact the REPRESENTATIVE<span class="special-color">.</span></h3>
-                            <div class="title-separator-primary"></div>
-                        </div>
-                    </div>
-                    <div class="row margin-top-60">
-                        <div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0">
-                            <h5 class="subtitle-margin"> </h5>
-                            <h3 class="title-negative-margin">{{ $listing->User()->first()->first_name }} {{ $listing->User()->first()->last_name }}<span class="special-color">.</span></h3>
-                            <a href="#" class="agent-photo">
-                                <img src="{{ asset('assets/images').'/'.$listing->User()->first()->avatar }}" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-xs-12 col-sm-9">
-                            <div class="agent-social-bar">
-                                <div class="pull-left">
-									<span class="agent-icon-circle">
-										<i class="fa fa-phone"></i>
-									</span>
-                                    <span class="agent-bar-text">{{ $listing->User()->first()->phone }}</span>
-                                </div>
-                                <div class="pull-left">
-									<span class="agent-icon-circle">
-										<i class="fa fa-envelope fa-sm"></i>
-									</span>
-                                    <span class="agent-bar-text">{{ $listing->User()->first()->email }}</span>
-                                </div>
-                                <div class="pull-right">
-                                    <div class="pull-right">
-                                        <a class="agent-icon-circle" href="{{ $listing->User()->first()->facebook_link }}">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a class="agent-icon-circle icon-margin" href="{{ $listing->User()->first()->google_link }}">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <form name="contact-from" action="{{ route('mailToClient') }}" method="post">
-                                {{ csrf_field() }}
-                                <input type="hidden" value="{{ $listing->User()->first()->email }}" name="sending_email">
-                                <input name="name" value="@if(Auth::user()){{ Auth::user()->first_name }} @endif" type="text" class="input-long main-input" placeholder="Your name">
-                                <input name="phone" value="@if(Auth::user()){{ Auth::user()->phone }} @endif" type="text" class="input-short pull-right main-input" placeholder="Your phone">
-                                <input name="email" value="@if(Auth::user()){{ Auth::user()->email }} @endif" type="email" class="input-full main-input" placeholder="Your email">
-                                <textarea name="message" class="input-full agent-textarea main-input" placeholder="Your question"></textarea>
-                                <div class="form-submit-cont">
-                                    <button type="submit" href="#" class="button-primary pull-right">
-                                        <span>send</span>
-                                        <div class="button-triangle"></div>
-                                        <div class="button-triangle2"></div>
-                                        <div class="button-icon"><i class="fa fa-paper-plane"></i></div>
-                                    </button>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+
+
+>>>>>>> dev
                     <div class="margin-top-45"></div>
                 </div>
             </div>

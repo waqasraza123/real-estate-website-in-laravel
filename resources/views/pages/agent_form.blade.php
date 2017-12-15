@@ -43,7 +43,19 @@
                                     <br>
                                 @endif
                                 {{ csrf_field() }}
-
+                                <input type="hidden" name="wq-street_address" class="wq-street_address">
+                                <input type="hidden" name="wq-street_number" class="wq-street_number">
+                                <input type="hidden" name="wq-intersection" class="wq-intersection">
+                                <input type="hidden" name="wq-route" class="wq-route">
+                                <input type="hidden" name="wq-sublocality" class="wq-sublocality">
+                                <input type="hidden" name="wq-locality" class="wq-locality">
+                                <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
+                                <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
+                                <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
+                                <input type="hidden" name="wq-administrative_area_level_4" class="wq-administrative_area_level_4">
+                                <input type="hidden" name="wq-administrative_area_level_5" class="wq-administrative_area_level_5">
+                                <input type="hidden" name="wq-country" class="wq-country">
+                                <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                                 <div class="grid">
                                     <div class="col-xs-12">
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px; text-transform: capitalize">{{ Lang::get('listing.address') }}</h4>
@@ -62,26 +74,26 @@
                                     </div>
                                 </div>
                                 <div class="grid">
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 col-xs-12">
                                         <h5 class="labeles">{{ Lang::get('profile.city') }}</h5>
                                         <input name="city" type="text" value="{{ old('city') }}" class="input-full main-input" placeholder="">
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 col-xs-12">
                                         <h5 class="labeles">{{ Lang::get('profile.state') }}</h5>
                                         <input name="state" type="text" value="{{ old('state') }}" class="input-full main-input" placeholder="">
                                     </div>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-4 col-xs-12">
                                         <h5 class="labeles">Zip Code</h5>
                                         <input name="zip_code" type="text" value="{{ old('zip_code') }}" class="input-full main-input" placeholder="">
                                     </div>
 
                                 </div>
                                 <div class="grid">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 col-xs-12">
                                         <h5 class="labeles">Name of Apartment</h5>
                                         <input name="name" type="text" value="{{ old('name') }}" class="input-full main-input" placeholder="">
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 col-xs-12">
                                         <h5 class="labeles">School District</h5>
                                         <input name="school_dc" type="text" value="{{ old('school_dc') }}" class="input-full main-input" placeholder="">
                                     </div>
@@ -99,25 +111,25 @@
                                 </div>
                                 <div id="cloning_area">
                                     <div class="grid">
-                                        <div class="col-sm-3" >
+                                        <div class="col-sm-3  col-xs-12" >
                                             <div class="radioGroup">
                                                 <input type="radio" class="primaryRadio" @if(old('listing_type') == 2) checked @endif value="2" id="propType2" name="listing_type[]" title="">
                                                 <label  for="propType2"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.appartament') }}</span></label>
                                             </div>
                                         </div>
-                                        <div class="col-sm-3" >
+                                        <div class="col-sm-3  col-xs-12" >
                                             <div class="radioGroup">
                                                 <input type="radio" class="primaryRadio"  value="7" @if(old('listing_type') == 7) checked @endif id="propType7" name="listing_type[]" title="">
                                                 <label  for="propType7"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.condo') }}</span></label>
                                             </div>
                                         </div>
-                                        <div class="col-sm-3" >
+                                        <div class="col-sm-3  col-xs-12" >
                                             <div class="radioGroup">
                                                 <input type="radio" class="primaryRadio"  value="5" @if(old('listing_type') == 5) checked @endif id="propType5" name="listing_type[]" title="">
                                                 <label  for="propType5"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.townhome') }}</span></label>
                                             </div>
                                         </div>
-                                        <div class="col-sm-3" >
+                                        <div class="col-sm-3  col-xs-12" >
                                             <div class="radioGroup">
                                                 <input type="radio" class="primaryRadio"  value="3" @if(old('listing_type') == 3) checked @endif id="propType3" name="listing_type[]" title="">
                                                 <label  for="propType3"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.single_home') }}</span></label>
@@ -125,9 +137,9 @@
                                         </div>
                                     </div>
                                     <div class="grid">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4  col-xs-12">
                                             <h5 class="labeles">{{ Lang::get('listing.beds') }}</h5>
-                                            <select name="beds_count[]" id="beds" class="selectpicker beds" data-bind="value: Details.BedType, options: Beds, optionsText: 'Description', optionsValue: 'Id'"  title="" style="display: none;">
+                                            <select name="beds_count[]" id="beds" class="selectpicker beds"  title="" style="display: none;">
                                                 <option value="-1">Studio</option>
                                                 <option value="1" @if(old('beds_count') == 1) selected @endif>1.0</option>
                                                 <option value="2" @if(old('beds_count') == 2) selected @endif>2.0</option>
@@ -137,38 +149,32 @@
                                                 <option value="6" @if(old('beds_count') == 6) selected @endif>6.0</option>
                                             </select>
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 col-xs-12">
                                             <h5 class="labeles">{{ Lang::get('listing.baths') }}</h5>
-                                            <select name="baths_count[]" id="baths" class="selectpicker baths" data-bind="value: Details.BathType, options: Baths, optionsText: 'Description', optionsValue: 'Id'"  title="" style="display: none;">
-                                                <option value="0.5" @if(old('baths_count') == 0.5) selected @endif>0.5</option>
+                                            <select name="baths_count[]" id="baths" class="selectpicker baths" title="" style="display: none;">
                                                 <option value="1" @if(old('baths_count') == 1) selected @endif>1.0</option>
-                                                <option value="1.5" @if(old('baths_count') == 1.5) selected @endif>1.5</option>
                                                 <option value="2" @if(old('baths_count') == 2) selected @endif>2.0</option>
-                                                <option value="2.5" @if(old('baths_count') == 2.5) selected @endif>2.5</option>
                                                 <option value="3" @if(old('baths_count') == 3) selected @endif>3.0</option>
-                                                <option value="3.5" @if(old('baths_count') == 3.5) selected @endif>3.5</option>
                                                 <option value="4" @if(old('baths_count') == 4) selected @endif>4.0</option>
-                                                <option value="4.5" @if(old('baths_count') == 4.5) selected @endif>4.5</option>
                                                 <option value="5" @if(old('baths_count') == 5) selected @endif>5.0</option>
-                                                <option value="5.5" @if(old('baths_count') == 5.5) selected @endif>5.5</option>
                                                 <option value="6" @if(old('baths_count') == 6) selected @endif>6.0</option>
                                             </select>
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 col-xs-12">
                                             <h5 class="labeles">{{ Lang::get('listing.square') }}</h5>
                                             <input name="square_feet[]" value="{{ old('square_feet') }}" type="text" placeholder="SF" maxlength="9"   min="1" class="input-full main-input" title="">
                                         </div>
                                     </div>
                                     <div class="grid">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 col-xs-12">
                                             <h5 class="labeles">{{ Lang::get('listing.rent') }}</h5>
                                             <input name="rent[]" type="text" value="{{ old('rent') }}" class="input-full main-input" placeholder="0$">
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-4 col-xs-12">
                                             <h5 class="labeles">{{ Lang::get('listing.deposit') }}</h5>
                                             <input name="deposit[]" type="text" value="{{ old('deposit') }}" class="input-full main-input" placeholder="0$">
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-2 col-xs-12">
 
                                             <h5 class="labeles">
                                                 {{ Lang::get('listing.available') }}
@@ -176,7 +182,7 @@
                                             <input value="{{ old('available_date') }}"  class="input-full main-input" id="datepicker" type="text" name="available_date[]" placeholder="Date" readonly=""  title="">
 
                                         </div>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-2 col-xs-12">
                                             <h5 class="labeles"> {{ Lang::get('listing.lase_length') }}</h5>
                                             <input name="lease_length[]"  value="{{ old('lease_length') }}" type="text" class="input-full main-input" placeholder="12 mos">
                                         </div>
@@ -184,7 +190,7 @@
                                 </div>
                                 <div class="grid" id="cloned_arae"></div>
                                 <div class="grid">
-                                    <div class="col-sm-12 text-center">
+                                    <div class="col-sm-12 col-xs-12 text-center">
                                         <a href="#" id="clone_button" class="button-primary">
                                             <span>Add More</span>
                                             <div class="button-triangle"></div>
@@ -211,10 +217,9 @@
 
                                 <div class="grid">
                                     <div class="col-xs-12 ">
-                                        <input id="file-upload" name="files[]" type="file" multiple="">
+                                        <input id="file-upload" name="files[]" type="file" multiple>
                                     </div>
                                 </div>
-
 
                                 <div class="grid">
                                     <div class="col-xs-12">
@@ -372,8 +377,7 @@
                                     </div>
                                     <div class="grid">
                                         <div class="cell-sm-4">
-                                            <select id="parking" class="selectpicker parking" name="parking_type"  title="" style="display: none;">
-                                                <option value="">{{ Lang::get('listing.parking_type') }}</option>
+                                            <select id="parking" class="selectpicker parking" multiple="" name="parking_type[]"   title="{{ Lang::get('listing.parking_type') }}" style="display: none;">
                                                 <option value="1" @if(old('parking_type') == 1)  selected @endif>{{ Lang::get('listing.surfact_lot') }}</option>
                                                 <option value="3" @if(old('parking_type') == 3)  selected @endif>{{ Lang::get('listing.covered') }}</option>
                                                 <option value="4" @if(old('parking_type') == 4)  selected @endif>{{ Lang::get('listing.street') }}</option>
@@ -448,6 +452,11 @@
 @endsection
 @section('scripts')
     <script type="text/javascript">
+
+
+
+
+
         $(function() {
             $('#datepicker').daterangepicker({
                     singleDatePicker: true,
@@ -456,6 +465,22 @@
                 function(start, end, label) {
                     var years = moment().diff(start, 'years');
                 });
+            initAutocompleteAddress()
+            function initAutocompleteAddress(){
+                autocomplete = new google.maps.places.Autocomplete(
+                    (document.getElementById('geocomplete')),
+                    {types: ['geocode']});
+
+                // When the user selects an address from the dropdown, populate the address
+                // fields in the form.
+                google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                    var place = autocomplete.getPlace();
+                    //console.log(place.address_components)
+                    $.each(place.address_components, function (i, v) {
+                        console.log(v.types[0], v.long_name)
+                    })
+                });
+            }
         });
     </script>
     <script>
@@ -470,21 +495,33 @@
                     var source = $('#cloning_area'),
                         clone = source.clone();
                     /*Incrementind Radio Buttons Id*/
-                    clone.find(':input').attr('id', function(i, val) {
-                        return val + count;
-                    });
+
                     /*Incrementind Radio Buttons name*/
                     clone.find(':input[type="radio"]').attr('name', function(i, val) {
                         return val + count;
                     });
 
-                    clone.find(':input[type="radio"]').attr('name', function(i, val) {
-                        return val + count;
-                    });
                     /*Incrementind Radio Buttons  Label For*/
                     clone.find('label').attr('for' , function(i, val) {
                         return val + count;
                     })
+
+
+
+
+                    clone.find('input[name="available_date[]"]').daterangepicker({
+                            singleDatePicker: true,
+                            showDropdowns: true
+                        },
+                        function(start, end, label) {
+                            var years = moment().diff(start, 'years');
+                        });
+                    clone.find('.dropdown-toggle').remove();
+                    clone.find('select').attr('id' , function(i, val) {
+                        return val + count;
+                    }).selectpicker()
+
+
                     clone.appendTo('#cloned_arae');
 
                     count++;
@@ -515,12 +552,12 @@
                     city: "required"
                 },
                 messages: {
-                    first_name: "Please enter your Firstname",
+                    first_name: "Please enter your First Name",
                     beds_count: "Please enter Beds count",
                     listing_type: "Please choose Listing Type",
                     address: "Please enter a address",
                     phone: "Please enter your Phone number",
-                    last_name: "Please enter your Lastname",
+                    last_name: "Please enter your Last Name",
                     password: {
                         required: "Please provide a password",
                         minlength: "Your password must be at least 5 characters long"

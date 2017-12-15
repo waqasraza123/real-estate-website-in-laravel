@@ -39,9 +39,16 @@
 
                         {{-- end notify Massage--}}
                         <div class="col-xs-12">
-                            <h5 class="subtitle-margin">My</h5>
-                            <h1>Favorites<span class="special-color">.</span></h1>
-                            <div class="title-separator-primary"></div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <h5 class="subtitle-margin">My</h5>
+                                    <h1>Favorites<span class="special-color">.</span></h1>
+                                    <div class="title-separator-primary"></div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <a class="btn btn-primary pull-right" href="/">Search Properties</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     @if($list->first())

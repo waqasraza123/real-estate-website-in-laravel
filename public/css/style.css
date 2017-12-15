@@ -11894,3 +11894,35 @@ ol li .jqx-listmenu-item-label:before {
 .featured-offer-col {
     height: 500px !important;
 }
+.btn-group.bootstrap-select.show-tick.parking.select2-hidden-accessible {
+    width: 100% !important;
+}
+.select2-container--default .select2-selection--multiple {
+    height: 50px !important;
+}
+.select2-container {
+    width: 100% !important;
+}
+.select2-container--default .select2-selection--multiple {
+    border: 1px solid #aaa !important;
+    border-radius: 0 !important;
+}
+input.select2-search__field {
+    font-weight: 600 !important;
+}
+.select2-container .select2-search--inline .select2-search__field {
+    font-size: 110%;
+    margin-top: 15px;
+    padding: 0;
+}
+li.select2-search.select2-search--inline {
+    width: 100% !important;
+}
+input.select2-search__field {
+    width: 100% !important;
+}
+input.select2-search__field {
+    padding: 10px !important;
+    font-weight: 600 !important;
+    font-size: 110% !important;
+}

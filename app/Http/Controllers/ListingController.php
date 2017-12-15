@@ -57,15 +57,20 @@ class ListingController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function submitListing(Request $request){
-        //dd($request->all());
         $this->validate($request, [
             'description' => 'required',
-            'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
-        $inputs = $request->except('_token' , 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
+        $inputs = $request->except('_token' , 'agree', 'g-recaptcha-response', 'files', 'image_ids', 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
+
+        if($request->has('parking_type')){
+            $inputs['parking_type'] = json_encode($request->get('parking_type'));
+        }
         $inputs['user_id'] = Auth::user()->id;
         $inputs['listing_status'] = 'done';
+        if(count($inputs['parking_type']) > 1){
+            $inputs['parking_type'] = implode(",", $inputs['parking_type']);
+        }
         $this->listing->create($inputs);
         $listing = $this->listing->latest()->first();
         if($request->listing_type != null) {
@@ -105,6 +110,7 @@ class ListingController extends Controller
      * save the listing
      */
     public function saveListing(Request $request){
+
         $pass =    $this->randomPassword();
         $inputs = $request->except('_token' , 'file');
         if(Auth::check()){
@@ -228,6 +234,9 @@ class ListingController extends Controller
                 $this->listingImage->create(['listing_id' => $request->get('listingid'), 'image' => $image['image']]);
             }
         }
+        if(count($inputs['parking_type']) > 1){
+            $inputs['parking_type'] = implode(",", $inputs['parking_type']);
+        }
         if($this->listing->where('id' , $request->get('listingid'))->update($inputs)){
             return redirect()->back()->with('success' , 'Successfully Updated');
         }else{
@@ -327,12 +336,21 @@ class ListingController extends Controller
         }
 
         if(isset($inputs['min']) && isset($inputs['max'])){
-            $listing->whereBetween('listing_attributes.rent', [(int)$inputs['min'], (int)$inputs['max']]);
+            if($inputs['max'] == '2500+'){
+                $listing->whereBetween('listing_attributes.rent', [(int)$inputs['min'], 100000000000]);
+            }else{
+                $listing->whereBetween('listing_attributes.rent', [(int)$inputs['min'], (int)$inputs['max']]);
+            }
         }elseif (isset($inputs['min'])){
             $listing->where('listing_attributes.rent', '>=', (int)$inputs['min']);
         }
         elseif (isset($inputs['max'])){
-            $listing->where('listing_attributes.rent', '<=', (int)$inputs['max']);
+            if($inputs['max'] == '2500+'){
+                $listing->where('listing_attributes.rent', '>=', '2500');
+            }
+            else{
+                $listing->where('listing_attributes.rent', '<=', (int)$inputs['max']);
+            }
         }
 
         //beds
