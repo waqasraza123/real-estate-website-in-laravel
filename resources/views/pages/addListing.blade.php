@@ -379,8 +379,8 @@
                                 </div>
                                 <div class="grid">
                                     <div class="cell-sm-4">
-                                        <select id="parking" class="selectpicker parking" name="parking_type"  title="" style="display: none;">
-                                            <option value="">{{ Lang::get('listing.parking_type') }}</option>
+                                        <select multiple id="parking" class="selectpicker parking" name="parking_type[]"  title="" style="display: none;">
+                                            {{--<option disabled selected value="">{{ Lang::get('listing.parking_type') }}</option>--}}
                                             <option value="1" @if(old('parking_type') == 1)  selected @endif>{{ Lang::get('listing.surfact_lot') }}</option>
                                             <option value="3" @if(old('parking_type') == 3)  selected @endif>{{ Lang::get('listing.covered') }}</option>
                                             <option value="4" @if(old('parking_type') == 4)  selected @endif>{{ Lang::get('listing.street') }}</option>
@@ -454,13 +454,24 @@
 
 @endsection
 @section('scripts')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script type="text/javascript">
 
-
-
-
-
         $(function() {
+            $("#parking").select2({
+                placeholder: 'Parking Type'
+            })
+            $('#parking').on('select2:close', function (evt) {
+                var uldiv = $('.select2-container').find('ul')
+                var count = uldiv.find('li').length - 1;
+                if(count <= 0){
+                    uldiv.find("li").find(".select2-search__field").val('Parking Type')
+                }else{
+                    uldiv.find("li").find(".select2-search__field").val('')
+                    uldiv.html('<li style="font-weight: 600;font-size: 110%;padding: 12px;">' + count + ' items selected</li>')
+                }
+            });
             $('#datepicker').daterangepicker({
                     singleDatePicker: true,
                     showDropdowns: true

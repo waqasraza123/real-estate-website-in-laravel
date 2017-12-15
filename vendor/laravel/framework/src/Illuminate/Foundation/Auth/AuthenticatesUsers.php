@@ -119,6 +119,12 @@ trait AuthenticatesUsers
     protected function authenticated(Request $request, $user)
     {
         //user is authenticated
+        if($user->role == null){
+            return redirect(route('accountFavorites', ['id' => $user->id]));
+        }
+        else{
+            return redirect()->back();
+        }
     }
 
     /**
