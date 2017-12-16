@@ -218,7 +218,7 @@
 
                             <div class="grid">
                                 <div class="col-xs-12">
-                                    <input name="files[]" class="form-control" type="file" multiple>
+                                    <input name="files[]" id="file-upload" class="form-control" type="file" multiple>
                                 </div>
                             </div>
                             <br>

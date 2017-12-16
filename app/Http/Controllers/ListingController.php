@@ -93,12 +93,12 @@ class ListingController extends Controller
             $request->featured->move(public_path() . '/assets/images/' , $name);
             $this->listingImage->create(['listing_id' => $listing->id, 'image' => $name , 'featured' => '1']);
         }
-        if($request->file()){
+       /* if($request->file()){
             $images = $this->getImagesName($request->file());
             foreach ($images as $image){
                 $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
             }
-        }
+        }*/
         return redirect()->route('payment' , ['type' => 'user']);
     }
 
