@@ -18,7 +18,7 @@ class ChangeListingStatusToNullable extends Migration
             $table->string('title')->nullable()->change();
         });
     }
-
+    
     /**
      * Reverse the migrations.
      *
