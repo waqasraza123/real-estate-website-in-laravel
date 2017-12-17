@@ -128,67 +128,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="row margin-top-15">
-                        <div class="col-xs-12">
-                            <h3 class="title-negative-margin">contact the REPRESENTATIVE<span class="special-color">.</span></h3>
-                            <div class="title-separator-primary"></div>
-                        </div>
-                    </div>
-                    <div class="row margin-top-15">
-                        <div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0">
-                            <h5 class="subtitle-margin"> </h5>
-                            <h3 class="title-negative-margin">{{ $listing->User()->first()->first_name }} {{ $listing->User()->first()->last_name }}<span class="special-color">.</span></h3>
-                            <a href="#" class="agent-photo">
-                                <img src="{{ asset('assets/images').'/'.$listing->User()->first()->avatar }}" alt="" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-xs-12 col-sm-9">
-                            <div class="agent-social-bar">
-                                <div class="pull-left">
-									<span class="agent-icon-circle">
-										<i class="fa fa-phone"></i>
-									</span>
-                                    <span class="agent-bar-text">{{ $listing->User()->first()->phone }}</span>
-                                </div>
-                                <div class="pull-left">
-									<span class="agent-icon-circle">
-										<i class="fa fa-envelope fa-sm"></i>
-									</span>
-                                    <span class="agent-bar-text">{{ $listing->User()->first()->email }}</span>
-                                </div>
-                                <div class="pull-right">
-                                    <div class="pull-right">
-                                        <a class="agent-icon-circle" href="{{ $listing->User()->first()->facebook_link }}">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a class="agent-icon-circle icon-margin" href="{{ $listing->User()->first()->google_link }}">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <form name="contact-from" action="{{ route('mailToClient') }}" method="post">
-                                {{ csrf_field() }}
-                                <input type="hidden" value="{{ $listing->User()->first()->email }}" name="sending_email">
-                                <input name="name" value="@if(Auth::user()){{ Auth::user()->first_name }} @endif" type="text" class="input-long main-input" placeholder="Your name">
-                                <input name="phone" value="@if(Auth::user()){{ Auth::user()->phone }} @endif" type="text" class="input-short pull-right main-input" placeholder="Your phone">
-                                <input name="email" value="@if(Auth::user()){{ Auth::user()->email }} @endif" type="email" class="input-full main-input" placeholder="Your email">
-                                <textarea name="message" class="input-full agent-textarea main-input" placeholder="Your question"></textarea>
-                                <div class="form-submit-cont">
-                                    <button type="submit" href="#" class="button-primary pull-right">
-                                        <span>send</span>
-                                        <div class="button-triangle"></div>
-                                        <div class="button-triangle2"></div>
-                                        <div class="button-icon"><i class="fa fa-paper-plane"></i></div>
-                                    </button>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                     <div class="row">
                         @if(Session::has('addet'))
                             <div class="success-box">

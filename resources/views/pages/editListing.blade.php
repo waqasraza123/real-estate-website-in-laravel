@@ -339,7 +339,7 @@
                                 </div>
                                 <div class="grid noMargin">
                                     <div class="col-xs-12">
-                                        <input name="files[]" class="form-control" type="file" multiple>
+                                        <input name="files[]" id="file-upload_edit" class="form-control" type="file" multiple>
                                     </div>
                                 </div>
                                 <br>
@@ -529,5 +529,20 @@
                 }
             });
         });
+
+        if( $('#file-upload_edit').length ) {
+            $('#file-upload_edit').fileinput({
+                uploadUrl: '/edit_listing_image',
+                layoutTemplates: 'main2',
+                allowedFileExtensions : ['jpg','png','gif', 'jpeg'],
+                uploadExtraData:{listing_id:'{{ $listing->id }}'},
+                showUpload: true,
+                showRemove: true,
+                browseClass: "button-shadow btn"
+
+            });
+
+        }
+
     </script>
 @endsection

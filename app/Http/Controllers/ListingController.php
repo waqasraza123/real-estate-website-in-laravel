@@ -52,6 +52,17 @@ class ListingController extends Controller
         return \Response::json(['massage' => 'true']);
     }
 
+
+    public function postEditListingImage(Request $request){
+        if($request->file()){
+            $images = $this->getImagesName($request->file());
+            foreach ($images as $image){
+                $this->listingImage->create(['listing_id' => $request->get('listing_id'), 'image' => $image['image']]);
+            }
+        }
+        return \Response::json(['massage' => 'true']);
+    }
+
     /**
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
@@ -71,7 +82,7 @@ class ListingController extends Controller
         if(count($inputs['parking_type']) > 1){
             $inputs['parking_type'] = implode(",", $inputs['parking_type']);
         }
-        $this->listing->create($inputs);
+        $this->listing->where('id' , \Session::get('id'))->update($inputs);
         $listing = $this->listing->latest()->first();
         if($request->listing_type != null) {
             foreach (array_keys($request->listing_type) as $key) {
