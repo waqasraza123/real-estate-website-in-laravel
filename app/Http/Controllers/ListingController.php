@@ -110,6 +110,7 @@ class ListingController extends Controller
                 $this->listingImage->create(['listing_id' => $listing->id, 'image' => $image['image']]);
             }
         }*/
+       \Session::forget('id');
         return redirect()->route('payment' , ['type' => 'user']);
     }
 
