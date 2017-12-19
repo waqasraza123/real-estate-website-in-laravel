@@ -503,7 +503,10 @@
                 </div>
             </div>
     </section>
-    <section class="section-light bottom-padding-45 section-both-shadow">
+    <section class="section-light bottom-padding-45 section-both-shadow" style="padding-top: 50px">
+        <h1 class="text-center">2nd Chance Leasing</h1>
+        <br>
+        <h2 class="text-center">{{__('home.Find Your Perfect Rental Home...No Matter Your Past')}}</h2>
         <div class="container">
             <div class="row margin-top-30">
                 <div class="col-xs-12">
@@ -533,6 +536,13 @@
                     </a>
                 </div>
 
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="text-b-btn-home">
+                        {{__('home.text-b-btn-home')}}
+                    </p>
+                </div>
             </div>
             <div class="row margin-top-60">
                 <div class="col-xs-12 col-sm-9">

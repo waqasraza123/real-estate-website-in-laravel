@@ -11926,3 +11926,27 @@ input.select2-search__field {
     font-weight: 600 !important;
     font-size: 110% !important;
 }
+a.btn.btn-default.btn-secondary.fileinput-upload.fileinput-upload-button {
+    background-color: #fff;
+    color: #3797DD;
+    width: 200px;
+    height: 60px;
+}
+a.button-alternative.new_class_button {
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    background-color: #2AA265 !important;
+}
+.button-alternative span {
+    position: relative;
+    z-index: 10;
+    top: 32%;
+    text-align: center;
+}
+p.text-b-btn-home {
+    padding: 50px 0 0 0;
+    font-size: 20px;
+    text-align: justify;
+}
