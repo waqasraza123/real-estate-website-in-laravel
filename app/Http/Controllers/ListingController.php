@@ -293,7 +293,7 @@ class ListingController extends Controller
      * @param $title
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function singleListing($id , $title){
+    public function singleListing($id){
         $listing = $this->listing->where('id' , (int)$id)->first();
 
         if(Auth::check()){
