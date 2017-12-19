@@ -505,15 +505,6 @@
     </section>
     <section class="section-light bottom-padding-45 section-both-shadow">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-9">
-                    <h5 class="subtitle-margin alternative-color">dallas ~ fort worth ~ houston, Texas</h5>
-                    <h1 class="special-color">Second Chance Apartments<span class="special-color">.</span></h1>
-                    <div class="title-separator-secondary"></div>
-
-                </div>
-
-            </div>
             <div class="row margin-top-30">
                 <div class="col-xs-12">
                     <a href="#" class="button-alternative new_class_button">

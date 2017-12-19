@@ -673,127 +673,6 @@
                                             </div>
                                         </div>
                                     </div>
-<<<<<<< HEAD
-=======
-                                    <div class="clearfix"></div>
-                                    <ul class="no_padding">
-
-                                            @if($listing->broken_lease == '1')
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.b_l') }}-{{ Lang::get('listing.h_o') }} {{ $listing->br_le_ye }}
-                                            </li>
-                                            @endif
-                                            @if($listing->eviction == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.e_v') }}-{{ Lang::get('listing.h_o') }} {{ $listing->ev_ye }}
-                                                </li>
-                                            @endif
-                                            @if($listing->misdemeanor == '1')
-                                                    <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.mis') }} -{{ Lang::get('listing.h_o') }}
-                                                    </li>
-                                            @endif
-                                            @if($listing->falonies == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.fels') }}
-                                                </li>
-                                            @endif
-                                            @if($listing->section_8 == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.sec_8') }}
-                                                </li>
-                                            @endif
-                                            @if($listing->hud == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                HUD
-                                                </li>
-                                            @endif
-                                            @if($listing->income_r == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.in_r') }}
-                                                </li>
-                                            @endif
-                                            @if($listing->bankruptcy == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                Bankruptcy-{{ Lang::get('listing.h_o') }} {{ $listing->ba_ye }}
-                                                </li>
-                                            @endif
-                                            @if($listing->foreclosure == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.forec') }}-{{ Lang::get('listing.h_o') }} {{ $listing->fo_ye }}
-                                                </li>
-                                            @endif
-                                            @if($listing->credit == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.cre') }}
-                                                </li>
-                                            @endif
-                                            @if($listing->move_in == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.m_i_s') }}
-                                                </li>
-                                            @endif
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <div class="details-title pull-left">
-                                        <h5 class="subtitle-margin"> </h5>
-                                        <h5 class="subtitle-margin"> </h5>
-                                        <h5 class="subtitle-margin"> </h5>
-                                        <h4> </h4>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <ul class="no_padding">
-                                        <li class="no_style" style="list-style: none;text-align:left">
-                                            @if($listing->possession == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.pos') }}
-                                                </li>
-                                            @endif
-                                            @if($listing->possession_w == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.pos_w') }}
-                                                </li>
-                                            @endif
-                                            @if($listing->assault == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.as') }}
-                                                </li>
-                                            @endif
-                                            @if($listing->herassment == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                Harassment
-                                                </li>
-                                            @endif
-                                            @if($listing->theft_of == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.th_o_h') }}
-                                                </li>
-                                            @endif
-                                            @if($listing->dwi == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                DWI
-                                                </li>
-                                            @endif
-                                            @if($listing->dui == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                DUI
-                                                </li>
-                                            @endif
-                                            @if($listing->disorderly == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.di_xc') }}
-                                                </li>
-                                            @endif
-                                            @if($listing->theft == '1')
-                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.theft') }}
-                                                </li>
-                                            @endif
-                                        </li>
-                                    </ul>
->>>>>>> dev
                                 </div>
                             </div>
 
@@ -956,13 +835,7 @@
                             </div>
                         @endif
                     </div>
-<<<<<<< HEAD
-=======
-
                     <!-- Contact Seller Area -->
-
-
->>>>>>> dev
                     <div class="margin-top-45"></div>
                 </div>
             </div>
