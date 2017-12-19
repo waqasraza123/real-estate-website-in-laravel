@@ -577,40 +577,38 @@
                                         <h4>{{ Lang::get('listing.parking_type') }}<span class="special-color">.</span></h4>
                                     </div>
                                     <div class="clearfix"></div>
-                                    <?php $parkingTypes = array();?>
-                                    @if(strpos($listing->parking_type, ",") !== false)
-                                        <?php $parkingTypes = explode(",", $listing->parking_type);?>
+                                    @if($listing->parking_type != NULL)
+                                        @foreach(json_decode($listing->parking_type) as $parking_type)
+                                            @if($parking_type == '1')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                    {{ Lang::get('listing.surfact_lot') }}
+                                                </li>
+                                            @endif
+                                            @if($parking_type == '3')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                    {{ Lang::get('listing.covered') }}
+                                                </li>
+                                            @endif
+                                            @if($parking_type == '4')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                    {{ Lang::get('listing.street') }}
+                                                </li>
+                                            @endif
+                                            @if($parking_type == '5')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                    {{ Lang::get('listing.garage') }}
+                                                </li>
+                                            @endif
+                                            @if($parking_type == '7')
+                                                <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                    {{ Lang::get('listing.other') }}
+                                                </li>
+                                            @endif
+                                        @endforeach
                                     @endif
-                                    <ul class="no_padding">
-                                        @if($listing->parking_type == '1' || in_array('1', $parkingTypes))
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.surfact_lot') }}
-                                            </li>
-                                        @endif
-                                        @if($listing->parking_type == '3'  || in_array('3', $parkingTypes))
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.covered')}}
-                                            </li>
-                                        @endif
-                                        @if($listing->parking_type == '4' || in_array('4', $parkingTypes))
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.street')}}
-                                            </li>
-                                        @endif
-                                        @if($listing->parking_type == '5' || in_array('5', $parkingTypes))
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.garage') }}
-                                            </li>
-                                        @endif
-                                        @if($listing->parking_type == '7' || in_array('7', $parkingTypes))
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.other') }}
-                                            </li>
-                                        @endif
-                                        <li style="list-style: none;text-align:left; font-weight: bold">
-                                            Parking Fee {{ $listing->parking_fee }}$/mo
-                                        </li>
-                                    </ul>
+                                    <li style="list-style: none;text-align:left; font-weight: bold">
+                                        Parking Fee {{ $listing->parking_fee }}$/mo
+                                    </li>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="row">
