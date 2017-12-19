@@ -11,6 +11,11 @@ body {
 }
 
 
+.fileinput-upload{
+	border:2px solid red !important;
+}
+
+
 
 /*********************** TEXT COLOR ***********************/
 

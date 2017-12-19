@@ -325,7 +325,7 @@
     <script type="text/javascript">
         function offersMapInitt(id, locations) {
             var mapOptions = {
-                zoom: 1,
+                zoom: 15,
                 disableDefaultUI: false,
                 mapTypeControl: true,
                 mapTypeControlOptions: {

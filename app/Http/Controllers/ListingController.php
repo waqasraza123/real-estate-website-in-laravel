@@ -39,7 +39,7 @@ class ListingController extends Controller
 
     public function postListingImage(Request $request){
         if(!\Session::has('id')){
-            $this->listing->create();
+            $this->listing->create(['title' => '']);
         }
         $listing_id = $this->listing->latest()->pluck('id')->first();
         \Session::put('id' , $listing_id);
