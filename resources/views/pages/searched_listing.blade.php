@@ -392,13 +392,15 @@
                 paths: polygon
             });
 
-
-            bermudaTriangle.setMap(map);
-            var bounds = new google.maps.LatLngBounds();
-            for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
-                bounds.extend(LatLngList[i]);
+            if(LatLngList.length > 1){
+                bermudaTriangle.setMap(map);
+                var bounds = new google.maps.LatLngBounds();
+                for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
+                    bounds.extend(LatLngList[i]);
+                }
+                map.fitBounds(bounds);
             }
-            map.fitBounds(bounds);
+
 
             var markerClusterStyle = [{
                 url: 'images/pin-empty.png',

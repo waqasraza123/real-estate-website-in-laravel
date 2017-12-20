@@ -72,7 +72,22 @@ class ListingController extends Controller
             'description' => 'required',
             'parking_fee' => 'required',
         ]);
-        $inputs = $request->except('_token' , 'agree', 'g-recaptcha-response', 'files', 'image_ids', 'file', 'featured', 'listing_type' , 'beds_count' , 'baths_count' , 'square_feet' , 'rent', 'deposit' , 'available_date' , 'lease_length');
+        $inputs = $request->except('_token' ,
+            'agree',
+            'g-recaptcha-response',
+            'files',
+            'image_ids',
+            'file',
+            'featured',
+            'listing_type',
+            'beds_count',
+            'baths_count',
+            'square_feet',
+            'rent',
+            'deposit',
+            'available_date',
+            'lease_length'
+        );
 
         if($request->has('parking_type')){
             $inputs['parking_type'] = json_encode($request->get('parking_type'));
