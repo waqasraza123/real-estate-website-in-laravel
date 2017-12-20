@@ -78,7 +78,6 @@ class Listing extends Model
         'fo_ye',
         'wq-street_number',
         'wq-street_address'	,
-        'title',
 
 	'wq-intersection'	,
 

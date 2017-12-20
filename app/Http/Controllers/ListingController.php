@@ -39,7 +39,7 @@ class ListingController extends Controller
 
     public function postListingImage(Request $request){
         if(!\Session::has('id')){
-            $this->listing->create(['title' => '']);
+            $this->listing->create();
         }
         $listing_id = $this->listing->latest()->pluck('id')->first();
         \Session::put('id' , $listing_id);
@@ -97,8 +97,10 @@ class ListingController extends Controller
         if(count($inputs['parking_type']) > 1){
             $inputs['parking_type'] = implode(",", $inputs['parking_type']);
         }
-        $this->listing->where('id' , \Session::get('id'))->update($inputs);
         $listing = $this->listing->latest()->first();
+        $listing->title = null;
+        $listing->update($inputs);
+
         if($request->listing_type != null) {
             foreach (array_keys($request->listing_type) as $key) {
                 ListingAttribute::create([
