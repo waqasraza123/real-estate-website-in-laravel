@@ -11932,13 +11932,7 @@ a.btn.btn-default.btn-secondary.fileinput-upload.fileinput-upload-button {
     width: 200px;
     height: 60px;
 }
-a.button-alternative.new_class_button {
-    border-radius: 100%;
-    width: 130px;
-    height: 130px;
-    text-align: center;
-    background-color: #2AA265 !important;
-}
+
 .button-alternative span {
     position: relative;
     z-index: 10;

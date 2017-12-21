@@ -1854,9 +1854,7 @@ body .ui-tooltip {
     background-repeat: no-repeat
 }
 
-.swiper-container{
-    height: 470px !important;
-}
+
 
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
     opacity: .35;
