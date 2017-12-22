@@ -867,6 +867,11 @@ html.ie9 #swiper2 .swiper2-static-cont .slide-buttons {
 	margin-right: 20px;
 }
 
+
+.swiper-container{
+	height:600px !important;
+}
+
 .adv-search-outer {
 	padding: 0 15px 10px 15px;
 }
@@ -964,6 +969,7 @@ html.ie9 #swiper2 .swiper2-static-cont .slide-buttons {
 	display: inline-block;
 	margin-left: -4px;
 	border: 1px solid white;
+	width: 25%;
 }
 
 .adv-search-tabs li a {
@@ -1023,10 +1029,10 @@ html.ie9 #swiper2 .swiper2-static-cont .slide-buttons {
 	font-size: 2.2em;
 }
 
-.adv-search-col-cont1, 
+/*.adv-search-col-cont1,
 .adv-search-icons {
 	padding-right: 0px;
-}
+}*/
 
 .adv-search-col-cont2, 
 .adv-search-col-cont3 {

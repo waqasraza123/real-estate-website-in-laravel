@@ -33,7 +33,7 @@
         <div class="adv-search-cont" >
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12 col-lg-11 adv-search-icons">
+                        <div class="col-lg-8 col-xs-12 col-lg-offset-2 adv-search-icons">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs adv-search-tabs" role="tablist" style="margin-bottom:16px ">
                                 <li role="presentation" class="active" data-toggle="tooltip" data-placement="top" title=""><a href="#apartments" aria-controls="apartments" role="tab" data-toggle="tab" id="adv-search-tab1">{{ Lang::get('listing.appartament') }}</a></li>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6 " style="margin-left: 20%">
+                        <div class="col-lg-8 col-xs-12 col-lg-offset-2 " >
                             <div class="row tab-content">
                                 <div role="tabpanel" class="adv-search-outer tab-pane fade in active" id="apartments">
                                     <form action="{{ route('searchListing') }}" class="apartament_form" method="get">
@@ -68,7 +68,7 @@
                                         <div class="row">
                                             <br>
                                             <div class="col-xs-12 col-sm-12 col-lg-12">
-                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('profile.city') }}" name="address">
+                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -197,7 +197,7 @@
                                         <div class="row">
                                             <br>
                                             <div class="col-xs-12 col-sm-12 col-lg-12">
-                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('profile.city') }}" name="address">
+                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -326,7 +326,7 @@
                                         <div class="row">
                                             <br>
                                             <div class="col-xs-12 col-sm-12 col-lg-12">
-                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('profile.city') }}" name="address">
+                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -455,7 +455,7 @@
                                         <div class="row">
                                             <br>
                                             <div class="col-xs-12 col-sm-12 col-lg-12">
-                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('profile.city') }}" name="address">
+                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -668,7 +668,7 @@
                             <i class="fa fa-building"></i>
                         </div>
                         <span class="number-label text-color2">{{ Lang::get('listing.appartament') }}</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status'  , 'done')->where('listing_type' , '2')->get()->toArray()) }}" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\ListingAttribute::where('listing_type'  , '2')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-3 number_border">
@@ -677,7 +677,7 @@
                             <i class="fa fa-home"></i>
                         </div>
                         <span class="number-label text-color2">{{ Lang::get('listing.condo') }}</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status' , 'done')->where('listing_type' , '7')->get()->toArray()) }}" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to=""{{ count(App\ListingAttribute::where('listing_type'  , '7')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-3 number_border3">
@@ -686,7 +686,7 @@
                             <i class="fa fa-industry"></i>
                         </div>
                         <span class="number-label text-color2">{{ Lang::get('listing.townhome') }}</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status'  , 'done')->where('listing_type' , '5')->get()->toArray()) }}" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to=""{{ count(App\ListingAttribute::where('listing_type'  , '5')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-3 number_border">
@@ -695,7 +695,7 @@
                             <i class="fa fa-tree"></i>
                         </div>
                         <span class="number-label text-color2">{{ Lang::get('listing.single_home') }}</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\Listing::where('listing_status'  , 'done')->where('listing_type' , '3')->get()->toArray()) }}" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to=""{{ count(App\ListingAttribute::where('listing_type'  , '3')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
             </div>
