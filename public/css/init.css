@@ -70,30 +70,30 @@
 #swiper1  {
     position: relative;
     background-color: #f4f4f4;
-    height: 41.875em
+    height: 65.875em  !important;
 }
 
 @media (max-width: 1680px) {
     #swiper1  {
-        height: 36.25em
+        height: 36.25em !important;
     }
 }
 
 @media (max-width: 1366px) {
     #swiper1  {
-        height: 29.375em
+        height: 29.375em !important;
     }
 }
 
 @media (max-width: 1024px) {
     #swiper1  {
-        height: 21.875em
+        height: 21.875em !important;
     }
 }
 
 @media (max-width: 768px) {
     #swiper1  {
-        height: 16.5625em
+        height: 16.5625em !important;
     }
 }
 

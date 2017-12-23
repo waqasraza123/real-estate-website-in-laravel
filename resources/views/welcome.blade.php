@@ -47,7 +47,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-xs-12 col-lg-offset-2 " >
-                            <div class="row tab-content">
+                            <div class="row tab-content" style="background: transparent">
                                 <div role="tabpanel" class="adv-search-outer tab-pane fade in active" id="apartments">
                                     <form action="{{ route('searchListing') }}" class="apartament_form" method="get">
                                         {{ csrf_field()  }}
@@ -137,14 +137,6 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                {{--<select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
-                                                        <option value="500-700">$500 - $700</option>
-                                                        <option value="700-900">$700 - $900</option>
-                                                        <option value="900-1300">$900 - $1300</option>
-                                                        <option value="1300-1800">$1300 - $1800</option>
-                                                        <option value="1800-2100">$1800 - $2100</option>
-                                                        <option value="2100-2150">$2100 - $2150</option>
-                                                </select>--}}
                                             </div>
                                             <div class="col-lg-4 col-xs-12">
                                                 <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
@@ -165,7 +157,7 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont">
+                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont text-right">
                                                 <button type="submit" class="button-primary  appartament_search">
                                                     <span>{{ Lang::get('home.search_btn') }}</span>
                                                     <div class="button-triangle"></div>
@@ -266,14 +258,6 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                {{--<select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
-                                                        <option value="500-700">$500 - $700</option>
-                                                        <option value="700-900">$700 - $900</option>
-                                                        <option value="900-1300">$900 - $1300</option>
-                                                        <option value="1300-1800">$1300 - $1800</option>
-                                                        <option value="1800-2100">$1800 - $2100</option>
-                                                        <option value="2100-2150">$2100 - $2150</option>
-                                                </select>--}}
                                             </div>
                                             <div class="col-lg-4 col-xs-12">
                                                 <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
@@ -294,7 +278,7 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont">
+                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont text-right">
                                                 <button type="submit" class="button-primary  appartament_search">
                                                     <span>{{ Lang::get('home.search_btn') }}</span>
                                                     <div class="button-triangle"></div>
@@ -395,14 +379,6 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                {{--<select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
-                                                        <option value="500-700">$500 - $700</option>
-                                                        <option value="700-900">$700 - $900</option>
-                                                        <option value="900-1300">$900 - $1300</option>
-                                                        <option value="1300-1800">$1300 - $1800</option>
-                                                        <option value="1800-2100">$1800 - $2100</option>
-                                                        <option value="2100-2150">$2100 - $2150</option>
-                                                </select>--}}
                                             </div>
                                             <div class="col-lg-4 col-xs-12">
                                                 <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
@@ -423,7 +399,7 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont">
+                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont text-right">
                                                 <button type="submit" class="button-primary  appartament_search">
                                                     <span>{{ Lang::get('home.search_btn') }}</span>
                                                     <div class="button-triangle"></div>
@@ -524,14 +500,7 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                {{--<select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
-                                                        <option value="500-700">$500 - $700</option>
-                                                        <option value="700-900">$700 - $900</option>
-                                                        <option value="900-1300">$900 - $1300</option>
-                                                        <option value="1300-1800">$1300 - $1800</option>
-                                                        <option value="1800-2100">$1800 - $2100</option>
-                                                        <option value="2100-2150">$2100 - $2150</option>
-                                                </select>--}}
+
                                             </div>
                                             <div class="col-lg-4 col-xs-12">
                                                 <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
@@ -552,7 +521,7 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont">
+                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont text-right    ">
                                                 <button type="submit" class="button-primary  appartament_search">
                                                     <span>{{ Lang::get('home.search_btn') }}</span>
                                                     <div class="button-triangle"></div>
@@ -600,6 +569,22 @@
     </section>
     <section class="section-light bottom-padding-45 section-both-shadow" style="padding-top: 50px">
         <div class="container">
+            <div class="row margin-top-60">
+                <div class="col-xs-12 col-sm-12 col-lg-12">
+                    <h1 class="special-color subtitle-margin">2nd Chance Leasing<span class="special-color">.</span></h1>
+                    <h3 class="subtitle-margin" style="font-weight: lighter">Find Your Perfect Rental Home...No Matter Your Past</h3>
+                    <div class="title-separator-secondary"></div>
+                    <br>
+                    <br>
+                    <p class="chance_p">
+                        2nd Chance Leasing is your leading resource for properties that offer second chance leasing programs.
+                        We feature apartments townhomes, condos, and homes that can work with such issues as past evictions, broken leases, felonies, misdemeanors, bankruptcy, foreclosure, & more.
+                        If you have had issues in the past, it is important that you show yourself in the best possible light. You want to prove to the property owner or management that you have moved on from your problems of the past, and that you are a responsible and respectful prospective tenant.
+                        Don't let your problems of the past stop you from finding a home that will make you happy. Our FREE database will help you find the properties in your area that will work with your situation.
+
+                    </p>
+                </div>
+            </div>
             <div class="row margin-top-60">
                 <div class="col-xs-12 col-sm-9">
                     <h5 class="subtitle-margin special-color">{{ Lang::get('home.highly_recom') }}</h5>
@@ -715,7 +700,7 @@
             $('.price-label').bind("mouseenter focus mouseleave", function (event) {
                 priceLabelObj = $(this);
                 $('.price-range').addClass('hide');
-                $('#'+$(this).data('dropdownId')).removeClass('hide');
+                $('.'+$(this).data('dropdownId')).removeClass('hide');
             });
 
             $(".price-range li").click(function(){

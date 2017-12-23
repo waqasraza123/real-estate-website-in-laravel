@@ -582,11 +582,11 @@
                                                     <ul class="no_padding">
                                                         <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
                                                             @if($listing->broken_lease == '1')
-                                                                {{ Lang::get('listing.b_l') }}-{{ Lang::get('listing.h_o') }} {{ $listing->br_le_ye }}
+                                                                {{ Lang::get('listing.b_l') }}-{{ Lang::get('listing.h_o') }} {{ $listing->br_le_ye }} years
                                                                 <br>
                                                             @endif
                                                             @if($listing->eviction == '1')
-                                                                {{ Lang::get('listing.e_v') }}-{{ Lang::get('listing.h_o') }} {{ $listing->ev_ye }}
+                                                                {{ Lang::get('listing.e_v') }}-{{ Lang::get('listing.h_o') }} {{ $listing->ev_ye }} years
                                                                 <br>
                                                             @endif
                                                             @if($listing->misdemeanor == '1')
@@ -610,11 +610,11 @@
                                                                 <br>
                                                             @endif
                                                             @if($listing->bankruptcy == '1')
-                                                                Bankruptcy-{{ Lang::get('listing.h_o') }} {{ $listing->ba_ye }}
+                                                                Bankruptcy-{{ Lang::get('listing.h_o') }} {{ $listing->ba_ye }} years
                                                                 <br>
                                                             @endif
                                                             @if($listing->foreclosure == '1')
-                                                                {{ Lang::get('listing.forec') }}-{{ Lang::get('listing.h_o') }} {{ $listing->fo_ye }}
+                                                                {{ Lang::get('listing.forec') }}-{{ Lang::get('listing.h_o') }} {{ $listing->fo_ye }} years
                                                                 <br>
                                                             @endif
                                                             @if($listing->credit == '1')
