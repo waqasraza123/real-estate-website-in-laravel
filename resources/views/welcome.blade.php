@@ -216,13 +216,13 @@
                                                     </button>
                                                     <div class=" dropdown-menu col-sm-2" style="padding-top:10px;">
                                                         <div class="col-xs-6">
-                                                            <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
+                                                            <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min1"/>
                                                         </div>
                                                         <div class="col-xs-6">
-                                                            <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
+                                                            <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max1"/>
                                                         </div>
                                                         <div class="clearfix"></div>
-                                                        <ul  id="price-min" class="   price-range list-unstyled">
+                                                        <ul  id="price-min1" class="   price-range list-unstyled">
                                                             <li data-value="500">
                                                                 <span>$500</span>
                                                             </li>
@@ -238,7 +238,7 @@
                                                                 <span>$1500</span>
                                                             </li>
                                                         </ul>
-                                                        <ul  id="price-max" class="price-range text-right list-unstyled hide">
+                                                        <ul  id="price-max1" class="price-range text-right list-unstyled hide">
                                                             <li data-value="1500">
                                                                 <span>$1500</span></li>
                                                             <li data-value="1700">
@@ -258,6 +258,14 @@
                                                         </ul>
                                                     </div>
                                                 </div>
+                                                {{--<select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
+                                                        <option value="500-700">$500 - $700</option>
+                                                        <option value="700-900">$700 - $900</option>
+                                                        <option value="900-1300">$900 - $1300</option>
+                                                        <option value="1300-1800">$1300 - $1800</option>
+                                                        <option value="1800-2100">$1800 - $2100</option>
+                                                        <option value="2100-2150">$2100 - $2150</option>
+                                                </select>--}}
                                             </div>
                                             <div class="col-lg-4 col-xs-12">
                                                 <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
@@ -337,13 +345,13 @@
                                                     </button>
                                                     <div class=" dropdown-menu col-sm-2" style="padding-top:10px;">
                                                         <div class="col-xs-6">
-                                                            <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
+                                                            <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min2"/>
                                                         </div>
                                                         <div class="col-xs-6">
-                                                            <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
+                                                            <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max2"/>
                                                         </div>
                                                         <div class="clearfix"></div>
-                                                        <ul  id="price-min" class="   price-range list-unstyled">
+                                                        <ul  id="price-min2" class="   price-range list-unstyled">
                                                             <li data-value="500">
                                                                 <span>$500</span>
                                                             </li>
@@ -359,7 +367,7 @@
                                                                 <span>$1500</span>
                                                             </li>
                                                         </ul>
-                                                        <ul  id="price-max" class="price-range text-right list-unstyled hide">
+                                                        <ul  id="price-max2" class="price-range text-right list-unstyled hide">
                                                             <li data-value="1500">
                                                                 <span>$1500</span></li>
                                                             <li data-value="1700">
@@ -458,13 +466,13 @@
                                                     </button>
                                                     <div class=" dropdown-menu col-sm-2" style="padding-top:10px;">
                                                         <div class="col-xs-6">
-                                                            <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min"/>
+                                                            <input name="min" class="form-control price-label" placeholder="Min" data-dropdown-id="price-min3"/>
                                                         </div>
                                                         <div class="col-xs-6">
-                                                            <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max"/>
+                                                            <input name="max" class="form-control price-label" placeholder="Max" data-dropdown-id="price-max3"/>
                                                         </div>
                                                         <div class="clearfix"></div>
-                                                        <ul  id="price-min" class="   price-range list-unstyled">
+                                                        <ul  id="price-min3" class="   price-range list-unstyled">
                                                             <li data-value="500">
                                                                 <span>$500</span>
                                                             </li>
@@ -480,7 +488,7 @@
                                                                 <span>$1500</span>
                                                             </li>
                                                         </ul>
-                                                        <ul  id="price-max" class="price-range text-right list-unstyled hide">
+                                                        <ul  id="price-max3" class="price-range text-right list-unstyled hide">
                                                             <li data-value="1500">
                                                                 <span>$1500</span></li>
                                                             <li data-value="1700">
@@ -700,7 +708,7 @@
             $('.price-label').bind("mouseenter focus mouseleave", function (event) {
                 priceLabelObj = $(this);
                 $('.price-range').addClass('hide');
-                $('.'+$(this).data('dropdownId')).removeClass('hide');
+                $('#'+$(this).data('dropdownId')).removeClass('hide');
             });
 
             $(".price-range li").click(function(){
@@ -710,9 +718,25 @@
                 priceLabelObj.attr('value', $(this).attr('data-value'));
                 var curElmIndex=$( ".price-label" ).index( priceLabelObj );
                 var nextElm=$( ".price-label" ).eq(curElmIndex+1);
+
                 if(curElmIndex == 0){
                     $('.minp').text('$' + priceLabelObj.val() + '-');
                 }else if(curElmIndex == 1){
+                    $('.maxp').text('$' + priceLabelObj.val());
+                }
+                if(curElmIndex == 2){
+                    $('.minp').text('$' + priceLabelObj.val() + '-');
+                }else if(curElmIndex == 3){
+                    $('.maxp').text('$' + priceLabelObj.val());
+                }
+                if(curElmIndex == 4){
+                    $('.minp').text('$' + priceLabelObj.val() + '-');
+                }else if(curElmIndex == 5){
+                    $('.maxp').text('$' + priceLabelObj.val());
+                }
+                if(curElmIndex == 6){
+                    $('.minp').text('$' + priceLabelObj.val() + '-');
+                }else if(curElmIndex == 7){
                     $('.maxp').text('$' + priceLabelObj.val());
                 }
 

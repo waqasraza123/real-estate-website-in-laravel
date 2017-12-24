@@ -404,6 +404,118 @@ header.header3 .hover-menu,
 	padding-right: 15px;
 }
 
+/*
+=======================
+*/
+
+#price-min1 li{
+	font-size: 13px;
+	font-weight: 500;
+	padding: 6px 0px;
+	cursor: pointer;
+}
+
+#price-min1 li:hover{
+	background: #3797dd;
+	color: white;
+}
+
+#price-min1 li span{
+	padding-left: 15px;
+}
+
+#price-max1 li{
+	font-size: 13px;
+	font-weight: 500;
+	padding:6px 2px 5px 5px;
+	cursor: pointer;
+}
+
+#price-max1 li:hover{
+	background: #3797dd;
+	color: white;
+}
+
+#price-max1 li span{
+	padding-right: 15px;
+}
+
+/*
+=======================
+*/
+
+#price-min2 li{
+	font-size: 13px;
+	font-weight: 500;
+	padding: 6px 0px;
+	cursor: pointer;
+}
+
+#price-min2 li:hover{
+	background: #3797dd;
+	color: white;
+}
+
+#price-min2 li span{
+	padding-left: 15px;
+}
+
+#price-max2 li{
+	font-size: 13px;
+	font-weight: 500;
+	padding:6px 2px 5px 5px;
+	cursor: pointer;
+}
+
+#price-max2 li:hover{
+	background: #3797dd;
+	color: white;
+}
+
+#price-max2 li span{
+	padding-right: 15px;
+}
+
+
+/*
+=======================
+*/
+
+
+
+
+#price-min3 li{
+	font-size: 13px;
+	font-weight: 500;
+	padding: 6px 0px;
+	cursor: pointer;
+}
+
+#price-min3 li:hover{
+	background: #3797dd;
+	color: white;
+}
+
+#price-min3 li span{
+	padding-left: 15px;
+}
+
+#price-max3 li{
+	font-size: 13px;
+	font-weight: 500;
+	padding:6px 2px 5px 5px;
+	cursor: pointer;
+}
+
+#price-max3 li:hover{
+	background: #3797dd;
+	color: white;
+}
+
+#price-max3 li span{
+	padding-right: 15px;
+}
+
 .navigation-box-icon2,
 .testimonials2-content {
 	color: #ebebeb;

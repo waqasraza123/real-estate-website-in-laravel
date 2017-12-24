@@ -842,8 +842,9 @@ html.ie9 #swiper2 .swiper2-static-cont .slide-buttons {
 }
 
 .gouped_button{
-	float:right;
+	text-align: center;
 	margin-right: 20px;
+	width: 100%;
 }
 
 
