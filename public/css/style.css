@@ -11944,3 +11944,6 @@ p.text-b-btn-home {
     font-size: 20px;
     text-align: justify;
 }
+.list-agency-separator {
+    margin: 3px 0 5px 0 !important;
+}

@@ -560,7 +560,7 @@ header.header3 .hover-menu,
 }
 
 .list-agency{
-	height: 250px !important;
+	min-height: 250px !important;
 }
 
 @media only screen and (max-width: 768px)  {

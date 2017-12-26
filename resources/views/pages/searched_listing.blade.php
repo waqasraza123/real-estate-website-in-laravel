@@ -202,9 +202,17 @@
         <div class="col-lg-5 " id="offers-list" style="background: white;  overflow-y: scroll">
             <div class="row"  style="overflow: scroll">
                 <div class="col-xs-12">
+                    <?php function limit_text($text, $limit) {
+                        if (str_word_count($text, 0) > $limit) {
+                            $words = str_word_count($text, 2);
+                            $pos = array_keys($words);
+                            $text = substr($text, 0, $pos[$limit]) . '...';
+                        }
+                        return $text;
+                    }?>
                     @foreach($listings as $listing)
                         <div class="list-agency row">
-                            <div class="list-agency-left col-xs-6">
+                            <div class="list-agency-left col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                 @if($listing->ListingsImages()->where('featured', "1")->first())
                                     <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="250px">
                                 @endif
@@ -235,11 +243,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="list-agency-right-large col-xs-6" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}">
+                            <a class="list-agency-right-large col-xs-12 col-sm-12 col-md-6 col-lg-6" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}">
                                 <div class="list-agency-text">
                                     <h4 class="list-agency-title"><i class="fa fa-map-marker"></i>  {{ $listing->address }}</h4>
                                     <div class="list-agency-separator"></div>
-                                    <p class="text-justified">{{ $listing->description }}</p>
+                                    <p class="text-justified">{{ limit_text($listing->description, 20) }}</p>
                                 </div>
 
                             </a>
