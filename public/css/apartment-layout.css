@@ -7509,16 +7509,6 @@ h4.neighbourhood-title {
 		margin-left: auto;
 		margin-right: auto;
 	}
-	
-	.list-agency-left,
-	.list-agency-description {
-		width: 210px;
-	}
-	
-	.list-agency-left img {
-		max-width: 90%;
-	}
-	
 	.sidebar {
 		border-left: none;
 		padding: 30px;
