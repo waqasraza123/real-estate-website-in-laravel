@@ -33,6 +33,9 @@
         <div class="adv-search-cont" >
                 <div class="container">
                     <div class="row">
+                        <h1 class="h_p_h">
+                            Find Home...No Matter Your Past
+                        </h1>
                         <div class="col-lg-8 col-xs-12 col-lg-offset-2 adv-search-icons">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs adv-search-tabs" role="tablist" style="margin-bottom:16px ">
@@ -586,8 +589,11 @@
                     <br>
                     <p class="chance_p">
                         2nd Chance Leasing is your leading resource for properties that offer second chance leasing programs.
-                        We feature apartments townhomes, condos, and homes that can work with such issues as past evictions, broken leases, felonies, misdemeanors, bankruptcy, foreclosure, & more.
+                        We feature apartments townhomes, condos, and homes that can work with such issues as past evictions, broken leases, felonies, misdemeanors, bankruptcy, foreclosure, & more.</p>
+                    <p class="chance_p">
                         If you have had issues in the past, it is important that you show yourself in the best possible light. You want to prove to the property owner or management that you have moved on from your problems of the past, and that you are a responsible and respectful prospective tenant.
+                    </p>
+                    <p class="chance_p">
                         Don't let your problems of the past stop you from finding a home that will make you happy. Our FREE database will help you find the properties in your area that will work with your situation.
 
                     </p>

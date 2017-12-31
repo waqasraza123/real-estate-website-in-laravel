@@ -42,12 +42,11 @@
                             <div class="menuOpenWrapper">
                                 <span id="menuHeader" class="menuHeader"><i class="fa fa-bars"></i><span class="menuText">Menu</span></span>
                                 <ul id="menuNavigation" class="menuNavigation">
-                                    <li><a href="#" rel="nofollow" data-requirelogin="true">Customer Tools</a></li>
                                     <li><a id="menuNavLnkSaveSearches" href="#" rel="nofollow" data-requirelogin="true">My Saved Searches</a></li>
                                     <li><a id="menuNavLnkFavorites" href="#" rel="nofollow">My Favorites</a></li>
                                     <li id="menuNavLnkUserNotificationSettings"><a href="#" rel="nofollow"><span>Notification Settings</span></a></li>
                                     <li>
-                                        <a href="index.html" class="expandable" data-requirelogin="false">Apartments For Rent <i class="mapZoomInIcon"></i></a>
+                                        <a href="#" class="expandable" data-requirelogin="false">Apartments For Rent <i class="mapZoomInIcon"></i></a>
                                         <ul class="submenu">
                                             <li><a href="#">Austin Apartments</a></li>
                                             <li><a href="#">Boston Apartments</a></li>
@@ -127,7 +126,7 @@
         <footer class="large-cont">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
                         <h4 class="second-color">{{ Lang::get('pages.contact_us') }}<span class="special-color">.</span></h4>
                         <div class="footer-title-separator"></div>
                         <p class="footer-p">{{ $footer_content ?  $footer_content->text  : 'Please edit this text on the admin side'}}</p>
@@ -140,15 +139,19 @@
                         </address>
                         <div class="clear"></div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h4 class="second-color">{{ Lang::get('pages.quick_links') }}<span class="special-color">.</span></h4>
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <h4 class="second-color">Popular Searches<span class="special-color">.</span></h4>
                         <div class="footer-title-separator"></div>
                         <ul class="footer-ul">
                             <li><span class="custom-ul-bullet"></span><a href="{{ route('homes') }}">{{ Lang::get('pages.home') }}</a></li>
                             <li><span class="custom-ul-bullet"></span><a href="/blog">{{ Lang::get('blog') }}</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href="http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=Houston&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Harris+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=Houston%2C+TX%2C+United+States&city=Houston&state=Texas&lng=-95.3698028&lat=29.7604267&min=&max=">Houston Apartments</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href="http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=Austin&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Travis+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=Austin%2C+TX%2C+United+States&city=Austin&state=Texas&lng=-97.74306079999997&lat=30.267153&min=&max=">Austin Apartments</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href="http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=Dallas&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Dallas+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=Dallas%2C+TX%2C+United+States&city=Dallas&state=Texas&lng=-96.79698789999998&lat=32.7766642&min=&max=">Dallas  Apartments</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href=http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=San+Antonio&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Bexar+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=San+Antonio%2C+TX%2C+United+States&city=San+Antonio&state=Texas&lng=-98.49362819999999&lat=29.4241219&min=&max=>San Antonio   Apartments</a></li>
                         </ul>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
                         <h4 class="second-color">{{ Lang::get('pages.from_blog') }}<span class="special-color">.</span></h4>
                         <div class="footer-title-separator"></div>
                         <div class="row">
@@ -173,7 +176,7 @@
                             @endif
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                   {{-- <div class="col-xs-12 col-sm-6 col-lg-3">
                         <h4 class="second-color">{{ Lang::get('pages.newslater') }}<span class="special-color">.</span></h4>
                         <div class="footer-title-separator"></div>
                         <p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -181,7 +184,7 @@
                             <input type="email" class="form-control" id="exampleInputEmail2" placeholder="{{ Lang::get('pages.enter_email') }}">
                             <button type="submit" class="btn"><i class="fa fa-lg fa-paper-plane"></i></button>
                         </form>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </footer>

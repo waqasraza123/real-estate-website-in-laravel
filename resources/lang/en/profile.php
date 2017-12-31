@@ -31,8 +31,8 @@ return [
     'new_pass' => 'New Password',
     'repeat_pass' => 'Repeat Password',
     'save' => 'Save',
-    'm_a' => 'my account',
-    's_a' => 'sign out',
+    'm_a' => 'My Account',
+    's_a' => 'Sign Out',
 
 
 
