@@ -45,21 +45,6 @@
                                     <li><a id="menuNavLnkSaveSearches" href="#" rel="nofollow" data-requirelogin="true">My Saved Searches</a></li>
                                     <li><a id="menuNavLnkFavorites" href="#" rel="nofollow">My Favorites</a></li>
                                     <li id="menuNavLnkUserNotificationSettings"><a href="#" rel="nofollow"><span>Notification Settings</span></a></li>
-                                    <li>
-                                        <a href="#" class="expandable" data-requirelogin="false">Apartments For Rent <i class="mapZoomInIcon"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="#">Austin Apartments</a></li>
-                                            <li><a href="#">Boston Apartments</a></li>
-                                            <li><a href="#">Charlotte Apartments</a></li>
-                                            <li><a href="#">Chicago Apartments</a></li>
-                                            <li><a href="#">Houston Apartments</a></li>
-                                            <li><a href="#">Las Vegas Apartments</a></li>
-                                            <li><a href="#">Los Angeles Apartments</a></li>
-                                            <li><a href="#">New York City Apartments</a></li>
-                                            <li><a href="#">San Diego Apartments</a></li>
-                                            <li><a href="#">Seattle Apartments</a></li>
-                                        </ul>
-                                    </li>
                                 </ul>
                             </div>
 
@@ -138,6 +123,32 @@
                             <span><i class="fa fa-phone"></i>{{ $footer_content ?  $footer_content->phone  : 'Please edit this text on the admin side'}}</span>
                         </address>
                         <div class="clear"></div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="social">
+                                    <li class="soc_fb">
+                                        <a href="">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="soc_tw">
+                                        <a href="">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li class="soc_g">
+                                        <a href="">
+                                            <i class="fa fa-google-plus"></i>
+                                        </a>
+                                    </li>
+                                    <li class="soc_p">
+                                        <a href="">
+                                            <i class="fa fa-pinterest-p"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-lg-4">
                         <h4 class="second-color">Popular Searches<span class="special-color">.</span></h4>

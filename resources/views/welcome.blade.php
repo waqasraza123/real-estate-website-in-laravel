@@ -69,8 +69,7 @@
                                         <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                                         <input type="hidden" name="listing_type" value="2">
                                         <div class="row">
-                                            <br>
-                                            <div class="col-xs-12 col-sm-12 col-lg-12">
+                                            <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
                                                 <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
@@ -90,9 +89,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4 col-xs-12">
+                                            <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <div class=" btn-group bootstrap-select show-tick  ">
                                                     <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                     </button>
@@ -140,8 +137,9 @@
                                                         </ul>
                                                     </div>
                                                 </div>
+
                                             </div>
-                                            <div class="col-lg-4 col-xs-12">
+                                            <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                                     <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
 
@@ -160,7 +158,9 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont text-right">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-12  adv-search-button-cont text-center    ">
                                                 <button type="submit" class="button-primary  appartament_search">
                                                     <span>{{ Lang::get('home.search_btn') }}</span>
                                                     <div class="button-triangle"></div>
@@ -168,7 +168,6 @@
                                                     <div class="button-icon"><i class="fa fa-search"></i></div>
                                                 </button>
                                             </div>
-                                            <br>
                                         </div>
                                     </form>
                                 </div>
@@ -190,8 +189,7 @@
                                         <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                                         <input type="hidden" name="listing_type" value="7">
                                         <div class="row">
-                                            <br>
-                                            <div class="col-xs-12 col-sm-12 col-lg-12">
+                                            <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
                                                 <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
@@ -211,9 +209,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4 col-xs-12">
+                                            <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <div class=" btn-group bootstrap-select show-tick  ">
                                                     <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                     </button>
@@ -261,16 +257,9 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                {{--<select name="rent" id="rent" class="selectpicker"   title="{{ Lang::get('listing.rent') }}">
-                                                        <option value="500-700">$500 - $700</option>
-                                                        <option value="700-900">$700 - $900</option>
-                                                        <option value="900-1300">$900 - $1300</option>
-                                                        <option value="1300-1800">$1300 - $1800</option>
-                                                        <option value="1800-2100">$1800 - $2100</option>
-                                                        <option value="2100-2150">$2100 - $2150</option>
-                                                </select>--}}
+
                                             </div>
-                                            <div class="col-lg-4 col-xs-12">
+                                            <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                                     <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
 
@@ -289,7 +278,9 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont text-right">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-12  adv-search-button-cont text-center    ">
                                                 <button type="submit" class="button-primary  appartament_search">
                                                     <span>{{ Lang::get('home.search_btn') }}</span>
                                                     <div class="button-triangle"></div>
@@ -297,7 +288,6 @@
                                                     <div class="button-icon"><i class="fa fa-search"></i></div>
                                                 </button>
                                             </div>
-                                            <br>
                                         </div>
                                     </form>
                                 </div>
@@ -319,8 +309,7 @@
                                         <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                                         <input type="hidden" name="listing_type" value="5">
                                         <div class="row">
-                                            <br>
-                                            <div class="col-xs-12 col-sm-12 col-lg-12">
+                                            <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
                                                 <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
@@ -340,9 +329,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4 col-xs-12">
+                                            <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <div class=" btn-group bootstrap-select show-tick  ">
                                                     <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                     </button>
@@ -390,8 +377,9 @@
                                                         </ul>
                                                     </div>
                                                 </div>
+
                                             </div>
-                                            <div class="col-lg-4 col-xs-12">
+                                            <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                                     <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
 
@@ -410,7 +398,9 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont text-right">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-12  adv-search-button-cont text-center    ">
                                                 <button type="submit" class="button-primary  appartament_search">
                                                     <span>{{ Lang::get('home.search_btn') }}</span>
                                                     <div class="button-triangle"></div>
@@ -418,7 +408,6 @@
                                                     <div class="button-icon"><i class="fa fa-search"></i></div>
                                                 </button>
                                             </div>
-                                            <br>
                                         </div>
                                     </form>
                                 </div>
@@ -440,8 +429,7 @@
                                         {{ csrf_field()  }}
                                         <input type="hidden" name="listing_type" value="3">
                                         <div class="row">
-                                            <br>
-                                            <div class="col-xs-12 col-sm-12 col-lg-12">
+                                            <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
                                                 <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
@@ -461,9 +449,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-lg-4 col-xs-12">
+                                            <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <div class=" btn-group bootstrap-select show-tick  ">
                                                     <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
                                                     </button>
@@ -513,7 +499,7 @@
                                                 </div>
 
                                             </div>
-                                            <div class="col-lg-4 col-xs-12">
+                                            <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                                     <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
 
@@ -532,7 +518,9 @@
                                                     </optgroup>
                                                 </select>
                                             </div>
-                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4  adv-search-button-cont text-right    ">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6 col-xs-12 col-lg-12  adv-search-button-cont text-center    ">
                                                 <button type="submit" class="button-primary  appartament_search">
                                                     <span>{{ Lang::get('home.search_btn') }}</span>
                                                     <div class="button-triangle"></div>
@@ -540,7 +528,6 @@
                                                     <div class="button-icon"><i class="fa fa-search"></i></div>
                                                 </button>
                                             </div>
-                                            <br>
                                         </div>
                                     </form>
                                 </div>

@@ -153,10 +153,15 @@
                                         <h5 class="labeles">{{ Lang::get('listing.baths') }}</h5>
                                         <select name="baths_count[]" id="baths" class="selectpicker baths" title="" style="display: none;">
                                             <option value="1" @if(old('baths_count') == 1) selected @endif>1.0</option>
+                                            <option value="1.5" @if(old('baths_count') == 1.5) selected @endif>1.5</option>
                                             <option value="2" @if(old('baths_count') == 2) selected @endif>2.0</option>
+                                            <option value="2.5" @if(old('baths_count') == 2.5) selected @endif>2.5</option>
                                             <option value="3" @if(old('baths_count') == 3) selected @endif>3.0</option>
+                                            <option value="3.5" @if(old('baths_count') == 3.5) selected @endif>3.5</option>
                                             <option value="4" @if(old('baths_count') == 4) selected @endif>4.0</option>
+                                            <option value="4.5" @if(old('baths_count') == 4.5) selected @endif>4.5</option>
                                             <option value="5" @if(old('baths_count') == 5) selected @endif>5.0</option>
+                                            <option value="5.5" @if(old('baths_count') == 5.5) selected @endif>5.5</option>
                                             <option value="6" @if(old('baths_count') == 6) selected @endif>6.0</option>
                                         </select>
                                     </div>
