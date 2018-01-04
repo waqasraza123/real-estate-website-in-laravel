@@ -231,7 +231,6 @@ class ListingController extends Controller
     public function postEditListing(Request $request){
         $this->validate($request, [
             'description' => 'required',
-            'parking_type' => 'required',
             'parking_fee' => 'required',
         ]);
 

@@ -142,7 +142,7 @@
                             </div>
                             <div class="details-title pull-left">
                                 <h5 class="subtitle-margin"> </h5>
-                                <h3>{{ $listing->name }}<span class="special-color">.</span></h3>
+                                <h3>{{ $listing->address }}<span class="special-color">.</span></h3>
                             </div>
                             @if(Auth::user())
                                 <div class="details-title pull-right">
