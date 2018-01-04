@@ -327,8 +327,6 @@ class ListingController extends Controller
     public function searchListing(Request $request){
         $request->flash();
         $min = [];
-
-
         $inputs = $request->except('token');
         $listing = Listing::where('listings.listing_status', 'done')
             ->where('listings.approved', "1")
@@ -403,8 +401,9 @@ class ListingController extends Controller
 
         $langLtd = [];
         $new = '';
+        $listingsIds = [];
        foreach ($listings as $listing){
-
+           array_push($listingsIds , $listing->listing_id);
             if($listing->lat != '') {
                 if($listing->listing_type == '2'){
                     $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
@@ -420,13 +419,72 @@ class ListingController extends Controller
                 array_push($langLtd, $new);
             }
        }
+
+
+        \Session::put('ids' , $listingsIds);
+
         $filtered = $listings->filter(function ($value, $key) {
             return $value -> id = $value->listing_id;
         });
 
         $filtered->all();
 
-       return view('pages.searched_listing' , compact('listings' , 'langLtd'));
+       return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
+    }
+
+
+
+    public function filterListings(Request $request){
+        $langLtd = [];
+        $new = '';
+
+        $request->flash();
+        foreach ($request->all() as $key => $filter){
+            foreach ($filter as $fil){
+                $listings = $this->listing->whereIn('id' , Session::get('ids'))->whereNotNull($fil)->get();
+            }
+
+        }
+        if($listings->first()){
+
+            foreach ($listings as $listing){
+                if($listing->lat != '') {
+                    if($listing->listing_type == '2'){
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                    }elseif($listing->listing_type == '7'){
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png"],';
+                    }elseif($listing->listing_type == '5'){
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png"],';
+                    }elseif($listing->listing_type == '3'){
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                    }else{
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                    }
+                    array_push($langLtd, $new);
+                }
+            }
+            return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
+        }else{
+            $listings = $this->listing->whereIn('id' , Session::get('ids'))->get();
+            foreach ($listings as $listing){
+                if($listing->lat != '') {
+                    if($listing->listing_type == '2'){
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                    }elseif($listing->listing_type == '7'){
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png"],';
+                    }elseif($listing->listing_type == '5'){
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png"],';
+                    }elseif($listing->listing_type == '3'){
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                    }else{
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                    }
+                    array_push($langLtd, $new);
+                }
+            }
+
+            return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
+        }
     }
 
 

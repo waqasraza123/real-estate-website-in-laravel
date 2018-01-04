@@ -26,10 +26,9 @@
                             <div class="small-triangle"></div>
                             <div class="small-icon"><i class="jfont"></i></div>
                         </div>
-                    <div class="col-xs-12 col-lg-8">
+                    <div class="col-xs-12 col-lg-10">
                         <form action="{{ route('searchListing') }}" class="apartament_form " method="get" style="margin-bottom: 0px">
                             {{ csrf_field()  }}
-
                             <input type="hidden" name="wq-street_address" class="wq-street_address">
                             <input type="hidden" name="wq-street_number" class="wq-street_number">
                             <input type="hidden" name="wq-intersection" class="wq-intersection">
@@ -91,7 +90,8 @@
                                                 <li data-value="1300">
                                                     <span>$1300</span></li>
                                                 <li data-value="1500">
-                                                    <span>$1500</span></li>
+                                                    <span>$1500</span>
+                                                </li>
                                             </ul>
                                             <ul  id="price-max" class="   price-range text-right list-unstyled hide">
                                                 <li data-value="1500">
@@ -103,7 +103,8 @@
                                                 <li data-value="2100">
                                                     <span>$2100</span></li>
                                                 <li data-value="2300">
-                                                    <span>$2300</span></li>
+                                                    <span>$2300</span>
+                                                </li>
                                                 <li data-value="2500">
                                                     <span>$2500</span>
                                                 </li>
@@ -115,23 +116,32 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-3 col-xs-12">
-                                    <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
-                                        <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
-                                            <option value="all">{{ Lang::get('home.all_be') }}</option>
-                                            <option value="any_bed">Any Bed</option>
-                                            <option value="1">1 Bed</option>
-                                            <option value="2">2 {{ Lang::get('listing.beds') }}</option>
-                                            <option value="3">3 {{ Lang::get('listing.beds') }}</option>
-                                            <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
-                                        </optgroup>
-                                        <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
-                                            <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
-                                            <option value="any_bath">Any Bath</option>
-                                            <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
-                                            <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
-                                            <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
-                                        </optgroup>
-                                    </select>
+                                    <div class="row">
+                                        <div class="col-lg-9 col-xs-12">
+                                            <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
+                                                <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
+                                                    <option value="all">{{ Lang::get('home.all_be') }}</option>
+                                                    <option value="any_bed">Any Bed</option>
+                                                    <option value="1">1 Bed</option>
+                                                    <option value="2">2 {{ Lang::get('listing.beds') }}</option>
+                                                    <option value="3">3 {{ Lang::get('listing.beds') }}</option>
+                                                    <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
+                                                </optgroup>
+                                                <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
+                                                    <option value="all_baths">{{ Lang::get('home.all_ba') }}</option>
+                                                    <option value="any_bath">Any Bath</option>
+                                                    <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
+                                                    <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
+                                                    <option value="3">3+ {{ Lang::get('listing.baths') }}</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3 col-xs-12">
+                                            <a href="#" class="boldet_link">
+                                                Filter
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-sm-12 col-md-6 col-lg-2 col-xs-12 text-center  adv-search-button-cont">
                                     <button type="submit" class="button-primary  appartament_search">
@@ -144,7 +154,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-xs-12 col-lg-4">
+                    <div class="col-xs-12 col-lg-2">
                         @if(Auth::user())
                         <form action="{{ route('saveSearch') }}" class="apartament_form pull-right" id="save_search" method="post">
                             {{ csrf_field() }}
@@ -202,6 +212,157 @@
         <div class="col-lg-5 " id="offers-list" style="background: white;  overflow-y: scroll">
             <div class="row"  style="overflow: scroll">
                 <div class="col-xs-12">
+                    <div class="abs_f_h">
+                        <form action="{{ route('filterListings') }}" method="get">
+                            <div class="desktopView clearfix" id="advancedFilters">
+                            <h4 class="amenitiesHeading">Interior &amp; Community Amenities</h4>
+                            <div class="grid">
+                                <div class="col-xs-12 col-md-6 col-lg-6 margin-top-15">
+                                    <div class="row">
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="broken_lease" id="c12" name="filter[]" class="main-checkbox">
+                                            <label for="c12"><span></span>broken lease </label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="eviction" id="c13" name="filter[]" class="main-checkbox">
+                                            <label for="c13"><span></span>eviction</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="misdemeanor" id="c14" name="filter[]" class="main-checkbox">
+                                            <label for="c14"><span></span>misdemeanor</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="falonies" id="c15" name="filter[]" class="main-checkbox">
+                                            <label for="c15"><span></span>Felonies</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="section_8" id="c16" name="filter[]" class="main-checkbox">
+                                            <label for="c16"><span></span>Section 8</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="hud" id="c17" name="filter[]" class="main-checkbox">
+                                            <label for="c17"><span></span>HUD</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="income_r" id="c18" name="filter[]" class="main-checkbox">
+                                            <label for="c18"><span></span>income restricted</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="bankruptcy" id="c19" name="filter[]" class="main-checkbox">
+                                            <label for="c19"><span></span>Bankruptcy</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="foreclosure" id="c20" name="filter[]" class="main-checkbox">
+                                            <label for="c20"><span></span>Foreclosure</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="credit" id="c21" name="filter[]" class="main-checkbox">
+                                            <label for="c21"><span></span>Credit</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="move_in" id="c22" name="filter[]" class="main-checkbox">
+                                            <label for="c22"><span></span>Move-In Specials</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input  name="filter[]" id="noSmocking" type="checkbox" value="no_smocking" class="main-checkbox">
+                                            <label for="noSmocking"><span></span>No Smoking</label>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input name="filter[]" id="UnitAmenities_131072" type="checkbox" value="wheelchair" class="main-checkbox">
+                                            <label for="UnitAmenities_131072"><span></span>Wheelchair Access</label>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input name="filter[]" id="UnitAmenities_1048576" type="checkbox" value="washer_dryer_hockups" class="main-checkbox">
+                                            <label for="UnitAmenities_1048576"><span></span>Washer &amp; Dryer Hookups</label>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input name="filter[]" id="CommunityAmenities_256" type="checkbox" value="fitness_center" class="main-checkbox">
+                                            <label for="CommunityAmenities_256"><span></span>Fitness Center</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 col-lg-6 margin-top-15">
+                                    <div class="row">
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="possession" id="c23" name="filter[]" class="main-checkbox">
+                                            <label for="c23"><span></span>Possession</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="possession_w" id="c24" name="filter[]" class="main-checkbox">
+                                            <label for="c24"><span></span>Possession w/intent to sell</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="assault" id="c25" name="filter[]" class="main-checkbox">
+                                            <label for="c25"><span></span>Assault</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="herassment" id="c26" name="filter[]" class="main-checkbox">
+                                            <label for="c26"><span></span>Harassment</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="theft_of" id="c27" name="filter[]" class="main-checkbox">
+                                            <label for="c27"><span></span>Theft of Habitat</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="dwi" id="c28" name="filter[]" class="main-checkbox">
+                                            <label for="c28"><span></span>DWI</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="dui" id="c29" name="filter[]" class="main-checkbox">
+                                            <label for="c29"><span></span>DUI</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="disorderly" id="c30" name="filter[]" class="main-checkbox">
+                                            <label for="c30"><span></span>Disorderly conduct</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="theft" id="c31" name="filter[]" class="main-checkbox">
+                                            <label for="c31"><span></span>Theft</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input  name="filter[]" id="PetFriendly_1" type="checkbox" value="dogs" class="main-checkbox">
+                                            <label for="PetFriendly_1"><span></span>Dog Friendly</label>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input name="filter[]" id="PetFriendly_2" type="checkbox" value="cats" class="main-checkbox">
+                                            <label for="PetFriendly_2"><span></span>Cat Friendly</label>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input  name="filter[]" id="PetFriendly_3" type="checkbox" value="no_pets" class="main-checkbox">
+                                            <label for="PetFriendly_3"><span></span>No Pets</label>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input  name="filter[]" id="AdditionalAmenities_128" type="checkbox" value="furnished" class="main-checkbox">
+                                            <label for="AdditionalAmenities_128"><span></span>Furnished</label>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input name="filter[]" id="UnitAmenities_2" type="checkbox" value="washer_dryer" class="main-checkbox">
+                                            <label for="UnitAmenities_2"><span></span> Washer &amp; Dryer</label>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input name="filter[]" id="CommunityAmenities_2097152" type="checkbox" value="onsite_laundry" class="main-checkbox">
+                                            <label for="CommunityAmenities_2097152"><span></span>Laundry Facilities</label>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input name="filter[]" id="CommunityAmenities_512" type="checkbox" value="pool" class="main-checkbox">
+                                            <label for="CommunityAmenities_512"><span></span>Pool</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="button-primary  text-center appartament_done">
+                                <span>Close</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                            </button>
+                            <button type="submit" class="button-primary  text-center ">
+                                <span>Filter</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                            </button>
+                        </div>
+                        </form>
+                    </div>
                     <?php
                         function limit_text($text, $limit) {
                             if (str_word_count($text, 0) > $limit) {
@@ -213,6 +374,33 @@
                         }
                     ?>
                     @foreach($listings as $listing)
+{{--
+                        <span>{{ $listing->dogs }}</span>
+                        <span>{{ $listing->cats }}</span>
+                        <span>{{ $listing->no_pets }}</span>
+                        <span>{{ $listing->furnished }}</span>
+                        <span>{{ $listing->wheelchair }}</span>
+                        <span>{{ $listing->fitness_center }}</span>
+                        <span>{{ $listing->pool }}</span>
+                        <span>{{ $listing->no_smocking }}</span>
+                        <span>{{ $listing->broken_lease }}</span>
+                        <span>{{ $listing->eviction }}</span>
+                        <span>{{ $listing->misdemeanor }}</span>
+                        <span>{{ $listing->falonies }}</span>
+                        <span>{{ $listing->section_8 }}</span>
+                        <span>{{ $listing->hud }}</span>
+                        <span>{{ $listing->income_r }}</span>
+                        <span>{{ $listing->bankruptcy }}</span>
+                        <span>{{ $listing->foreclosure }}</span>
+                        <span>{{ $listing->credit }}</span>
+                        <span>{{ $listing->move_in }}</span>
+                        <span>{{ $listing->possession }}</span>
+                        <span>{{ $listing->possession_w }}</span>
+                        <span>{{ $listing->assault }}</span>
+                        <span>{{ $listing->herassment }}</span>
+--}}
+
+
                         <div class="list-agency row">
                             <div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">
                                 @if($listing->ListingsImages()->where('featured', "1")->first())
@@ -504,6 +692,19 @@
     </script>
 
     <script>
+
+        $('.boldet_link').click(function () {
+            $('.abs_f_h').show();
+            $('.list-agency').hide()
+        });
+
+        $('.appartament_done').click(function () {
+            $('.abs_f_h').hide();
+            $('.list-agency').show()
+        });
+
+        $('.primaryCheckbox').on('change' )
+
         $( "#save_search" ).on( "submit", function( event ) {
             event.preventDefault();
             console.log(  );
