@@ -80,6 +80,7 @@ Route::get('agent_form' , ['as' => 'agentForm' , 'uses' => 'ListingController@ag
 Route::post('agent_form_post' , ['as' => 'PostagentForm' , 'uses' => 'ListingController@PostagentForm'])->middleware('auth');
 Route::get('make_featured_iamge/{id}/{listing_id}' , ['as' => 'makeFeatureImage' , 'uses' => 'ListingController@makeFeatureImage' ]);
 Route::get('filter_listings' , ['as' => 'filterListings' , 'uses' => 'ListingController@filterListings']);
+Route::get('clear_filter' , ['as' => 'clearFilter' , 'uses' => 'ListingController@clearFilter']);
 
     #Agent Routes
 

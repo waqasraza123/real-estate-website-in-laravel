@@ -45,7 +45,7 @@
                             <input type="hidden" name="listing_type" value="2">
                             <div class="row">
                                 <br>
-                                <div class="col-xs-12 col-sm-6 col-lg-4">
+                                <div class="col-xs-12 col-sm-6 col-lg-3">
                                     <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('listing.address') }}" name="address">
                                     <table id="address" style="display: none">
                                         <input class="field"  id="street_number" type="hidden">
@@ -143,6 +143,14 @@
                                         </div>
                                     </div>
                                 </div>
+                                 @if(Request::path() == 'filter_listings')
+                                <div class="col-lg-1">
+                                    <a href="{{ route('clearFilter') }}" class=" btn btn-primary" style="    height: 50px; line-height: 41px;">
+                                        Clear
+                                    </a>
+                                </div>
+
+                                @endif
                                 <div class="col-sm-12 col-md-6 col-lg-2 col-xs-12 text-center  adv-search-button-cont">
                                     <button type="submit" class="button-primary  appartament_search">
                                         <span>{{ Lang::get('home.search_btn') }}</span>

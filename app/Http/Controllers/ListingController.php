@@ -488,6 +488,32 @@ class ListingController extends Controller
     }
 
 
+    public function clearFilter(){
+
+        $langLtd = [];
+        $new = '';
+
+        $listings = $this->listing->whereIn('id' , Session::get('ids'))->get();
+        foreach ($listings as $listing){
+            if($listing->lat != '') {
+                if($listing->listing_type == '2'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                }elseif($listing->listing_type == '7'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png"],';
+                }elseif($listing->listing_type == '5'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png"],';
+                }elseif($listing->listing_type == '3'){
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                }else{
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                }
+                array_push($langLtd, $new);
+            }
+        }
+
+        return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
+    }
+
     /**
      * @param $user_id
      * @param $listing_id
