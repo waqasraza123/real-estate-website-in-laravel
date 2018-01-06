@@ -223,7 +223,7 @@
                     <div class="abs_f_h">
                         <form action="{{ route('filterListings') }}" method="get">
                             <div class="desktopView clearfix" id="advancedFilters">
-                            <h4 class="amenitiesHeading">Interior &amp; Community Amenities</h4>
+                            <h4 class="amenitiesHeading">Click on Your Needs</h4>
                             <div class="grid">
                                 <div class="col-xs-12 col-md-6 col-lg-6 margin-top-15">
                                     <div class="row">
