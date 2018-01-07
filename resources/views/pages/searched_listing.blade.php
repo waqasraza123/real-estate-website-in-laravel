@@ -412,7 +412,7 @@
                         <div class="list-agency row">
                             <div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">
                                 @if($listing->ListingsImages()->where('featured', "1")->first())
-                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="250px">
+                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="auto">
                                 @endif
                                 <div class="list-agency-description">
                                     <div class="team-desc-line">
@@ -449,7 +449,7 @@
                                 </div>
 
                             </a>
-                            <div class="small-triangle"></div>
+                            <a href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" class="small-triangle"></a>
                             <div class="small-triangle2"></div>
                             <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>
                         </div>

@@ -616,7 +616,7 @@
                                     @endif
                                 </div>
                                 <div class="featured-offer-text">
-                                    <h4 class="featured-offer-title"><i class=" fa fa-map-marker"></i>  {{ $lis->address }}</h4>
+                                    <h4 class="featured-offer-title"><i class=" fa fa-map-marker"></i>  {{ $lis->name }}</h4>
                                     <p>{{ str_limit($lis->description , 150) }}</p>
                                 </div>
                                 <a href="{{ route('singleListing' , ['id' => $lis->id  , 'title' => $lis->title]) }}" class="button-primary">
@@ -663,7 +663,7 @@
                             <i class="fa fa-home"></i>
                         </div>
                         <span class="number-label text-color2">{{ Lang::get('listing.condo') }}</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to=""{{ count(App\ListingAttribute::where('listing_type'  , '7')->get()->toArray()) }}" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\ListingAttribute::where('listing_type'  , '7')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-3 number_border3">
@@ -672,7 +672,7 @@
                             <i class="fa fa-industry"></i>
                         </div>
                         <span class="number-label text-color2">{{ Lang::get('listing.townhome') }}</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to=""{{ count(App\ListingAttribute::where('listing_type'  , '5')->get()->toArray()) }}" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\ListingAttribute::where('listing_type'  , '5')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
                 <div class="col-xs-6 col-lg-3 number_border">
@@ -681,7 +681,7 @@
                             <i class="fa fa-tree"></i>
                         </div>
                         <span class="number-label text-color2">{{ Lang::get('listing.single_home') }}</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to=""{{ count(App\ListingAttribute::where('listing_type'  , '3')->get()->toArray()) }}" data-speed="2000"></span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{ count(App\ListingAttribute::where('listing_type'  , '3')->get()->toArray()) }}" data-speed="2000"></span>
                     </div>
                 </div>
             </div>

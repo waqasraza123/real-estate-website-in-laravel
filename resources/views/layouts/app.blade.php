@@ -170,7 +170,7 @@
                                 @foreach($blog_posts as $posts)
                                 <div class="col-xs-6 col-sm-12">
                                     <article>
-                                        <a href="{{$posts->url}}">
+                                        <a href="{{$posts->url}}" class="footer_blog">
                                             @if($posts->image)
                                                 <img src="{{ $posts->image }}" alt=" Logo" class="footer-blog-image">
                                             @else
