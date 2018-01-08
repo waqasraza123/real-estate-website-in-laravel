@@ -594,12 +594,12 @@
                 LatLngList[i] = pos;
             }
 
-            var bermudaTriangle = new google.maps.Polygon({
+           /* var bermudaTriangle = new google.maps.Polygon({
                 paths: polygon
-            });
+            });*/
 
             if(LatLngList.length > 1){
-                bermudaTriangle.setMap(map);
+               /* bermudaTriangle.setMap(map);*/
                 var bounds = new google.maps.LatLngBounds();
                 for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
                     bounds.extend(LatLngList[i]);
