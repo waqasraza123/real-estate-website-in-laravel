@@ -409,6 +409,8 @@
                                     <div class="grid">
                                         <div class="col-sm-4">
                                             <select id="parking" class="selectpicker parking" name="parking_type[]" multiple title="" style="display: none;">
+
+                                                @if(strlen($listing->parking_type) > 3)
                                                 @foreach(json_decode($listing->parking_type) as $parkingTypes)
                                                     @if($parkingTypes == '1')
                                                         <option value="1" selected>{{ Lang::get('listing.surfact_lot') }}</option>
@@ -426,6 +428,8 @@
                                                         <option value="7" selected>{{ Lang::get('listing.other') }}</option>
                                                     @endif
                                                 @endforeach
+
+                                                @endif
                                                 <option value="1">{{ Lang::get('listing.surfact_lot') }}</option>
                                                 <option value="3">{{ Lang::get('listing.covered') }}</option>
                                                 <option value="4">{{ Lang::get('listing.street') }}</option>
