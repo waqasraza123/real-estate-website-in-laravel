@@ -46,9 +46,9 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
-                            <div class="swiper-slide">
+                           {{-- <div class="swiper-slide">
                                 <img class="slide-thumb" src="{{ asset('img/map.png') }}" alt="" width="150px" height="83px">
-                            </div>
+                            </div>--}}
                             @foreach($listing->ListingsImages()->get() as $images)
                                 <div class="swiper-slide">
                                     <img class="slide-thumb" src="{{ asset('assets/images').'/'.$images->image }}" alt="" width="150px" height="83px">
