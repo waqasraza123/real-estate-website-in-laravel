@@ -270,7 +270,7 @@ jQuery(window).load(function() {
 				// Optional parameters
 				nextButton: '.slide-next',
 				prevButton: '.slide-prev',
-				loop: true,
+				loop: false,
 				grabCursor: true,
 				preloadImages: false,
 				lazyLoading: true,

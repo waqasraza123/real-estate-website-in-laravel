@@ -10,7 +10,9 @@
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 <div class="swiper-slide">
-                    <div id="featured-map" class="featured-offer-map"></div>
+                    <div class="slide-bg swiper-lazy">
+                        <div id="featured-map" class="featured-offer-map"></div>
+                    </div>
                     <!-- Preloader image -->
                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                 </div>
@@ -44,9 +46,12 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
+                            <div class="swiper-slide">
+                                <img class="slide-thumb" src="{{ asset('img/map.png') }}" alt="" width="150px" height="83px">
+                            </div>
                             @foreach($listing->ListingsImages()->get() as $images)
                                 <div class="swiper-slide">
-                                    <img class="slide-thumb" src="{{ asset('assets/images').'/'.$images->image }}" alt="" width="150px">
+                                    <img class="slide-thumb" src="{{ asset('assets/images').'/'.$images->image }}" alt="" width="150px" height="83px">
                                 </div>
                             @endforeach
                         </div>
