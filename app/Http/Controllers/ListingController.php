@@ -262,8 +262,8 @@ class ListingController extends Controller
                 $this->listingImage->create(['listing_id' => $request->get('listingid'), 'image' => $image['image']]);
             }
         }
-        if(count($inputs['parking_type']) > 1){
-            $inputs['parking_type'] = implode(",", $inputs['parking_type']);
+        if($request->has('parking_type')){
+            $inputs['parking_type'] = json_encode($request->get('parking_type'));
         }
         if($this->listing->where('id' , $request->get('listingid'))->update($inputs)){
             return redirect()->back()->with('success' , 'Successfully Updated');

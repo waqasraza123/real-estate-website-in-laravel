@@ -32,19 +32,19 @@
                                     <br>
                                 @endif
                                 {{ csrf_field() }}
-                                    <input type="hidden" name="wq-street_address" class="wq-street_address">
-                                    <input type="hidden" name="wq-street_number" class="wq-street_number">
-                                    <input type="hidden" name="wq-intersection" class="wq-intersection">
-                                    <input type="hidden" name="wq-route" class="wq-route">
-                                    <input type="hidden" name="wq-sublocality" class="wq-sublocality">
-                                    {{--<input type="hidden" name="wq-locality" class="wq-locality">--}}
-                                    <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
-                                    <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
-                                    <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
-                                    <input type="hidden" name="wq-administrative_area_level_4" class="wq-administrative_area_level_4">
-                                    <input type="hidden" name="wq-administrative_area_level_5" class="wq-administrative_area_level_5">
-                                    <input type="hidden" name="wq-country" class="wq-country">
-                                    <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
+                                <input type="hidden" name="wq-street_address" class="wq-street_address">
+                                <input type="hidden" name="wq-street_number" class="wq-street_number">
+                                <input type="hidden" name="wq-intersection" class="wq-intersection">
+                                <input type="hidden" name="wq-route" class="wq-route">
+                                <input type="hidden" name="wq-sublocality" class="wq-sublocality">
+                                {{--<input type="hidden" name="wq-locality" class="wq-locality">--}}
+                                <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
+                                <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
+                                <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
+                                <input type="hidden" name="wq-administrative_area_level_4" class="wq-administrative_area_level_4">
+                                <input type="hidden" name="wq-administrative_area_level_5" class="wq-administrative_area_level_5">
+                                <input type="hidden" name="wq-country" class="wq-country">
+                                <input type="hidden" name="wq-neighborhood" class="wq-neighborhood">
                                 <div class="grid">
                                     <div class="col-xs-12">
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px; text-transform: capitalize">{{ Lang::get('listing.address') }}</h4>
@@ -193,7 +193,6 @@
                                         </div>
                                     @endforeach
                                 @endif
-
                                 <div class="grid">
                                     <div class="col-xs-12">
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.acceptable') }}</h4>
@@ -344,7 +343,7 @@
                                 </div>
                                 <div class="grid noMargin">
                                     <div class="col-xs-12">
-                                        <input name="files[]" class="form-control" type="file" multiple>
+                                        <input name="files[]" id="file-upload_edit" class="form-control" type="file" multiple>
                                     </div>
                                 </div>
                                 <br>
@@ -409,16 +408,29 @@
                                     </div>
                                     <div class="grid">
                                         <div class="col-sm-4">
-                                            <?php $parkingTypes = array();?>
-                                            @if(strpos($listing->parking_type, ",") !== false)
-                                                <?php $parkingTypes = explode(",", $listing->parking_type);?>
-                                            @endif
                                             <select id="parking" class="selectpicker parking" name="parking_type[]" multiple title="" style="display: none;">
-                                                <option value="1" @if(in_array('1', $parkingTypes)) selected @elseif($listing->parking_type == '1') selected @endif>{{ Lang::get('listing.surfact_lot') }}</option>
-                                                <option value="3" @if(in_array('3', $parkingTypes)) selected @elseif($listing->parking_type == '3') selected @endif>{{ Lang::get('listing.covered') }}</option>
-                                                <option value="4" @if(in_array('4', $parkingTypes)) selected @elseif($listing->parking_type == '4') selected @endif>{{ Lang::get('listing.street') }}</option>
-                                                <option value="5" @if(in_array('5', $parkingTypes)) selected @elseif($listing->parking_type == '5') selected @endif>{{ Lang::get('listing.garage') }}</option>
-                                                <option value="7" @if(in_array('7', $parkingTypes)) selected @elseif($listing->parking_type == '7') selected @endif>{{ Lang::get('listing.other') }}</option>
+                                                @foreach(json_decode($listing->parking_type) as $parkingTypes)
+                                                    @if($parkingTypes == '1')
+                                                        <option value="1" selected>{{ Lang::get('listing.surfact_lot') }}</option>
+                                                    @endif
+                                                    @if($parkingTypes == '3')
+                                                        <option value="3" selected>{{ Lang::get('listing.covered') }}</option>
+                                                    @endif
+                                                    @if($parkingTypes == '4')
+                                                        <option value="4" selected>{{ Lang::get('listing.street') }}</option>
+                                                    @endif
+                                                    @if($parkingTypes == '5')
+                                                        <option value="5" selected>{{ Lang::get('listing.garage') }}</option>
+                                                    @endif
+                                                    @if($parkingTypes == '7')
+                                                        <option value="7" selected>{{ Lang::get('listing.other') }}</option>
+                                                    @endif
+                                                @endforeach
+                                                <option value="1">{{ Lang::get('listing.surfact_lot') }}</option>
+                                                <option value="3">{{ Lang::get('listing.covered') }}</option>
+                                                <option value="4">{{ Lang::get('listing.street') }}</option>
+                                                <option value="5"  >{{ Lang::get('listing.garage') }}</option>
+                                                <option value="7"  >{{ Lang::get('listing.other') }}</option>
                                             </select>
                                         </div>
                                         <div class="col-sm-4">
@@ -534,5 +546,20 @@
                 }
             });
         });
+
+        if( $('#file-upload_edit').length ) {
+            $('#file-upload_edit').fileinput({
+                uploadUrl: '/edit_listing_image',
+                layoutTemplates: 'main2',
+                allowedFileExtensions : ['jpg','png','gif', 'jpeg'],
+                uploadExtraData:{listing_id:'{{ $listing->id }}'},
+                showUpload: true,
+                showRemove: true,
+                browseClass: "button-shadow btn"
+
+            });
+
+        }
+
     </script>
 @endsection
