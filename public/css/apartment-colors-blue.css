@@ -680,10 +680,41 @@ header.header3 .hover-menu,
 	min-height: 250px !important;
 }
 
+
+@media all and (max-width: 768px)  {
+	.adv-search-tabs li{
+		width: 100% !important;
+	}
+
+	.adv-search-tabs li a {
+		border-bottom: 0.5px solid #333232 !important;
+	}
+
+	#autocomplete{
+		margin-bottom: 0px;
+	}
+
+	.appartament_search{
+		margin-bottom: 59px;
+		margin-top: 15px;
+	}
+
+	.gouped_button{
+		overflow-x: auto;
+		white-space: nowrap;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+}
+
+
 @media only screen and (max-width: 768px)  {
 	.list-agency{
 		height: auto !important;
 	}
+
+
 }
 html.no-pointerevents.no-touchevents .list-agency:hover .list-agency-text {
 	color: #f8f8f8;

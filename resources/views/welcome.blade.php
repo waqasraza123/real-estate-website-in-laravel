@@ -537,7 +537,7 @@
                 </div>
             </div>
         <div class="transparend_bottom">
-            <div class="btn-group gouped_button">
+            <div class="btn-group gouped_button ">
                 <a href="#" class="button-alternative new_class_button">
                         <span>Multiple Issues</span>
                     </a>
