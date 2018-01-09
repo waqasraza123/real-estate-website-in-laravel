@@ -170,12 +170,8 @@
                                 @foreach($blog_posts as $posts)
                                 <div class="col-xs-6 col-sm-12">
                                     <article>
-                                        <a href="{{$posts->url}}" class="footer_blog">
-                                            @if($posts->image)
-                                                <img src="{{ $posts->image }}" alt=" Logo" class="footer-blog-image">
-                                            @else
-                                                <img src="{{ asset('images\footer-blog1.jpg') }}" alt=" Logo" class="footer-blog-image">
-                                            @endif
+                                        <a href="{{$posts->url}}" class="footer_blog" style="background: url('{{ $posts->image ? $posts->image : asset('images/footer-blog1.jpg')}}'); background-size: cover " >
+
                                         </a>
                                         <div class="footer-blog-title"><a href="{{$posts->url}}">{{ $posts->title }}</a></div>
                                         <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>{{ \Carbon\Carbon::parse($posts->created_at)->format('d/m/y') }}</div>

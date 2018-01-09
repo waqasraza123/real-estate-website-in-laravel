@@ -583,6 +583,7 @@
                     closeBoxURL: "images/infobox-close.png",
                     infoBoxClearance: new google.maps.Size(1, 1)
                 });
+
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                     return function() {
                         var j = 0;
