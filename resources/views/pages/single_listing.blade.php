@@ -255,7 +255,7 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        @if($lis->beds_count)
+                                                        @if($lis->beds_count == -1)
                                                             studio apartment
                                                         @else
                                                             {{ $lis->beds_count }} Bedroom

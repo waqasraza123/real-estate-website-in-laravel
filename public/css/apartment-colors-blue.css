@@ -466,9 +466,7 @@ header.header3 .hover-menu,
 	margin: 0;
 }
 
-.abs_f_h{
-	display: none;
-}
+
 
 #advancedFilters ul:not(.selectpicker) li:nth-child(odd) {
 	margin-right: 2%;
