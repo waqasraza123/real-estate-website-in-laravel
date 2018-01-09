@@ -141,7 +141,7 @@
                                             <div class="col-sm-4 col-xs-12">
                                                 <h5 class="labeles">{{ Lang::get('listing.beds') }}</h5>
                                                 <select name="beds_count[]" id="beds" class="selectpicker beds" data-bind="value: Details.BedType, options: Beds, optionsText: 'Description', optionsValue: 'Id'" title="" style="display: none;">
-                                                    <option value="">Studio</option>
+                                                    <option value="-1">Studio</option>
                                                     <option value="1" @if($lis->beds_count == '1')  selected  @endif>1.0</option>
                                                     <option value="2" @if($lis->beds_count == '2')  selected  @endif>2.0</option>
                                                     <option value="3" @if($lis->beds_count == '3')  selected  @endif>3.0</option>
