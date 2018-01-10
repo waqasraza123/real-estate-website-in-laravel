@@ -89,6 +89,10 @@ class ListingController extends Controller
             'lease_length'
         );
 
+        if(Auth::user()->role == 1){
+            $inputs['approved'] =  1;
+        }
+
         if($request->has('parking_type')){
             $inputs['parking_type'] = json_encode($request->get('parking_type'));
         }
