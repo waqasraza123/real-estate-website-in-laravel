@@ -469,7 +469,16 @@
                                 <div role="tabpanel" class="tab-pane" id="tab-1">
                                     <table class="table table-bordered table-responsive">
                                         <thead>
-
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Beds</th>
+                                            <th>Baths</th>
+                                            <th>Square Feet</th>
+                                            <th>Rent</th>
+                                            <th>Deposit</th>
+                                            <th>Available Date</th>
+                                            <th>Lease Length</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($listing->ListingAttr()->get() as $lis)
