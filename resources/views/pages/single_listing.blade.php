@@ -238,7 +238,16 @@
                                 <div role="tabpanel" class="tab-pane active" id="tab-all">
                                     <table class="table table-bordered table-responsive">
                                         <thead>
-
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Beds</th>
+                                            <th>Baths</th>
+                                            <th>Square Feet</th>
+                                            <th>Rent</th>
+                                            <th>Deposit</th>
+                                            <th>Available Date</th>
+                                            <th>Lease Length</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($listing->ListingAttr()->get() as $lis)
@@ -289,7 +298,16 @@
                                 <div role="tabpanel" class="tab-pane" id="tab-4">
                                     <table class="table table-bordered table-responsive">
                                         <thead>
-
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Beds</th>
+                                            <th>Baths</th>
+                                            <th>Square Feet</th>
+                                            <th>Rent</th>
+                                            <th>Deposit</th>
+                                            <th>Available Date</th>
+                                            <th>Lease Length</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($listing->ListingAttr()->get() as $lis)
@@ -337,7 +355,16 @@
                                 <div role="tabpanel" class="tab-pane" id="tab-3">
                                     <table class="table table-bordered table-responsive">
                                         <thead>
-
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Beds</th>
+                                            <th>Baths</th>
+                                            <th>Square Feet</th>
+                                            <th>Rent</th>
+                                            <th>Deposit</th>
+                                            <th>Available Date</th>
+                                            <th>Lease Length</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($listing->ListingAttr()->get() as $lis)
@@ -385,7 +412,16 @@
                                 <div role="tabpanel" class="tab-pane" id="tab-2">
                                             <table class="table table-bordered table-responsive">
                                                 <thead>
-
+                                                    <tr>
+                                                        <th>Type</th>
+                                                        <th>Beds</th>
+                                                        <th>Baths</th>
+                                                        <th>Square Feet</th>
+                                                        <th>Rent</th>
+                                                        <th>Deposit</th>
+                                                        <th>Available Date</th>
+                                                        <th>Lease Length</th>
+                                                    </tr>
                                                 </thead>
                                                 <tbody>
                                                 @foreach($listing->ListingAttr()->get() as $lis)
