@@ -417,7 +417,7 @@
                                 <div class="list-agency-description">
                                     <div class="team-desc-line">
 												<span class="team-icon-circle">
-													<i class="fa fa-house" style="line-height: 22px;"></i>
+													<i class="fa fa-map-marker" style="line-height: 22px;"></i>
 												</span>
                                         <span>{{ $listing->name }}</span>
                                     </div>

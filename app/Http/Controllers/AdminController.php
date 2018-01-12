@@ -165,7 +165,7 @@ class AdminController extends Controller
     ==============================================================*/
 
     public function admListing(){
-        $listings = $this->listing->get();
+        $listings = $this->listing->whereNotNull('address')->get();
         return view('admin.listings.index'  ,compact('listings'));
     }
 
