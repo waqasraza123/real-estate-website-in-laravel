@@ -449,10 +449,10 @@
                                                                 {{ $lis->square_feet }} SF
                                                             </td>
                                                             <td>
-                                                               Rent $ {{ $lis->rent }}
+                                                                $ {{ $lis->rent }}
                                                             </td>
                                                             <td>
-                                                               Deposit  $ {{ $lis->deposit }}
+                                                                 $ {{ $lis->deposit }}
                                                             </td>
                                                             <td>
                                                                 {{ $lis->available_date }}
