@@ -46,6 +46,7 @@
                                 <th>Approved</th>
                                 <th>Featured</th>
                                 <th>Edit</th>
+                                <th>View</th>
                                 <th>Delete</th>
                             </tr>
                             </thead>
@@ -76,6 +77,7 @@
                                             </form>
                                         </td>
                                         <td><a href="{{ route('admEditListing' , ['id' => $listing->id ]) }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a></td>
+                                        <td><a href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}" class="btn btn-info"><i class="fa fa-eye"></i></a></td>
                                         <td><a href="{{ route('admDeleteListing' , ['id' => $listing->id]) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a></td>
                                     </tr>
                                 @endforeach

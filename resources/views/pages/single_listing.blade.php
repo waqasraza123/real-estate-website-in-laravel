@@ -272,6 +272,9 @@
                                                        $ {{ $lis->rent }}
                                                     </td>
                                                     <td>
+                                                        $ {{ $lis->deposit }}
+                                                    </td>
+                                                    <td>
                                                        {{ $lis->available_date }}
                                                     </td>
                                                     <td>
@@ -315,6 +318,9 @@
                                                     </td>
                                                     <td>
                                                         $ {{ $lis->rent }}
+                                                    </td>
+                                                    <td>
+                                                        $ {{ $lis->deposit }}
                                                     </td>
                                                     <td>
                                                         {{ $lis->available_date }}
@@ -362,6 +368,9 @@
                                                         $ {{ $lis->rent }}
                                                     </td>
                                                     <td>
+                                                        $ {{ $lis->deposit }}
+                                                    </td>
+                                                    <td>
                                                         {{ $lis->available_date }}
                                                     </td>
                                                     <td>
@@ -405,6 +414,9 @@
                                                             </td>
                                                             <td>
                                                                 $ {{ $lis->rent }}
+                                                            </td>
+                                                            <td>
+                                                                $ {{ $lis->deposit }}
                                                             </td>
                                                             <td>
                                                                 {{ $lis->available_date }}
@@ -472,6 +484,7 @@
                             <h4 class="">{{ Lang::get('pages.app_ametites') }}<span class="">.</span></h4>
                             <div class="title-separator-primary"></div>
                             <div class="row margin-top-30">
+
                                 <div class="col-md-4 text-center">
                                     <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
                                         <i class="featuresIcon"></i>
