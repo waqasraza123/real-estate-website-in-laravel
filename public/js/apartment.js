@@ -841,13 +841,22 @@ jQuery(window).load(function() {
 			allowedFileExtensions : ['jpg','png','gif', 'jpeg'],
 			showUpload: true,
 			showRemove: true,
-			browseClass: "button-shadow btn"
+			browseClass: "button-shadow btn",
+
 
 		});
 
+
+
 	}
 
-		
+        $('#file-upload').on('filebatchuploadcomplete', function(event, data) {
+           $('#submit_button').removeAttr('disabled');
+        });
+
+
+
+
 /********** AGENT PHOTO UPLOAD **********/		
 
 		$( "#agent-photo" ).change( function() {

@@ -429,7 +429,7 @@
                 <div class="col-xs-12">
                     <div class="row">
                         <div class="center-button-cont margin-top-60">
-                            <button type="submit" id="submit_button" class="button-primary">
+                            <button type="submit" id="submit_button" class="button-primary" >
                                 <span>{{ Lang::get('listing.submit') }}</span>
                                 <div class="button-triangle"></div>
                                 <div class="button-triangle2"></div>

@@ -14,6 +14,7 @@ $(document).ready(function () {
         var k = $(".wq-administrative_area_level_5")
         var l = $(".wq-country")
         var m = $(".wq-neighborhood")
+        var fil = $('#file-upload');
 
         if(!a.val() && !b.val() && !c.val() && !d.val() && !e.val() && !f.val() && !g.val() && !h.val() && !i.val() && !j.val() && !k.val() && !l.val() && !m.val()){
             swal(
@@ -21,6 +22,18 @@ $(document).ready(function () {
                 'Please select the address from suggestions when you type!',
                 'error'
             )
+            event.stopImmediatePropagation();
+            event.preventDefault()
+            return false;
+        }
+
+        if(!fil.val()){
+            swal(
+                'Wrong Address',
+                'Please Upload image first!',
+                'error'
+            )
+
             event.stopImmediatePropagation();
             event.preventDefault()
             return false;
