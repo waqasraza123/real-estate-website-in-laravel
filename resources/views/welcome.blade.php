@@ -190,7 +190,7 @@
                                         <input type="hidden" name="listing_type" value="7">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
-                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
+                                                <input id="autocomplete1" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -310,7 +310,7 @@
                                         <input type="hidden" name="listing_type" value="5">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
-                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
+                                                <input id="autocomplete2" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -430,7 +430,7 @@
                                         <input type="hidden" name="listing_type" value="3">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
-                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
+                                                <input id="autocomplete3" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -502,7 +502,6 @@
                                             <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                                     <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
-
                                                         <option value="any_bed">Any Bed</option>
                                                         <option value="1">1 Bed</option>
                                                         <option value="2">2 {{ Lang::get('listing.beds') }}</option>
@@ -510,7 +509,6 @@
                                                         <option value="4">4+  {{ Lang::get('listing.beds') }}</option>
                                                     </optgroup>
                                                     <optgroup label="{{ Lang::get('listing.baths') }}" data-max-options="1">
-
                                                         <option value="any_bath">Any Bath</option>
                                                         <option value="1">1+ {{ Lang::get('listing.baths') }}</option>
                                                         <option value="2">2+ {{ Lang::get('listing.baths') }}</option>
@@ -774,10 +772,22 @@
             autocomplete = new google.maps.places.Autocomplete(
                 /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
                 {types: ['geocode']});
+            autocomplete1 = new google.maps.places.Autocomplete(
+                /** @type {!HTMLInputElement} */(document.getElementById('autocomplete1')),
+                {types: ['geocode']});
+            autocomplete2 = new google.maps.places.Autocomplete(
+                /** @type {!HTMLInputElement} */(document.getElementById('autocomplete2')),
+                {types: ['geocode']});
+            autocomplete3 = new google.maps.places.Autocomplete(
+                /** @type {!HTMLInputElement} */(document.getElementById('autocomplete3')),
+                {types: ['geocode']});
 
             // When the user selects an address from the dropdown, populate the address
             // fields in the form.
             autocomplete.addListener('place_changed', fillInAddress);
+            autocomplete1.addListener('place_changed', fillInAddress);
+            autocomplete2.addListener('place_changed', fillInAddress);
+            autocomplete3.addListener('place_changed', fillInAddress);
         }
 
         function fillInAddress() {
@@ -818,8 +828,7 @@
                     $("input[name=zip_code]").val(v.long_name)
                 }
 
-                console.log(v.types[0], v.long_name)
-            })
+            });
             $('.lat').attr("value", place.geometry.location.lat());
             $('.lng').attr("value", place.geometry.location.lng());
             for (var component in componentForm) {

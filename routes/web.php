@@ -59,6 +59,7 @@ Route::get('equal_opportunity' , ['as' => 'equalOpportunity' , 'uses' => 'HomeCo
 
 
 Route::post('listing_image' , ['as' => 'postListingImage' , 'uses' => 'ListingController@postListingImage']);
+Route::post('checking_address' , ['as' => 'checkingAddress' , 'uses' => 'ListingController@checkingAddress']);
 Route::post('edit_listing_image' , ['as' => 'postEditListingImage' , 'uses' => 'ListingController@postEditListingImage']);
 Route::get('/add_listing', ['as' => 'addListing' , 'uses' => 'HomeController@addListing'])->middleware('auth');
 Route::post('listing_image' , ['as' => 'postListingImage' , 'uses' => 'ListingController@postListingImage']);

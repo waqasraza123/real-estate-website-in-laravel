@@ -414,41 +414,41 @@
                                 @if($listing->ListingsImages()->where('featured', "1")->first())
                                     <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="auto">
                                 @endif
-                                <div class="list-agency-description">
-                                    <div class="team-desc-line">
-												<span class="team-icon-circle">
-													<i class="fa fa-map-marker" style="line-height: 22px;"></i>
-												</span>
-                                        <span>{{ $listing->name }}</span>
-                                    </div>
-                                    <div class="team-desc-line">
-												<span class="team-icon-circle">
-													<i class="fa fa-dollar" style="line-height: 22px;"></i>
-												</span>
-                                        <span>{{ $listing->rent }} </span>
-                                    </div>
-                                    <div class="team-desc-line">
-												<span class="team-icon-circle">
-													<i class="fa fa-bed fa-sm" style="line-height: 22px;"></i>
-												</span>
-                                        <span><a href="#"> {{ $listing->beds_count }} Bed</a></span>
-                                    </div>
-                                    <div class="team-desc-line">
-												<span class="team-icon-circle">
-													<i class="fa fa-phone" style="line-height: 22px;"></i>
-												</span>
-                                        <span><a href="#">{{ App\User::where('id' ,$listing->user_id)->pluck('phone')->first() }}</a></span>
-                                    </div>
-                                </div>
                             </div>
                             <a class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-12" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}">
                                 <div class="list-agency-text">
                                     <h4 class="list-agency-title"><i class="fa fa-map-marker"></i>  {{ $listing->address }}</h4>
                                     <div class="list-agency-separator"></div>
-                                    <p class="text-justified">{{ limit_text($listing->description, 20) }}</p>
                                 </div>
-
                             </a>
+                            <ul class="app_attr_list">
+                                <li class="">
+                                    <span class="team-icon-circle">
+                                        <i class="fa fa-map-marker" style="line-height: 22px;"></i>
+                                    </span>
+                                    <span>{{ $listing->name }}</span>
+                                </li>
+                                <li class="">
+                                    <span class="team-icon-circle">
+                                        <i class="fa fa-dollar" style="line-height: 22px;"></i>
+                                    </span>
+                                    <span>{{ $listing->rent }} </span>
+                                </li>
+                                <li class="">
+                                    <span class="team-icon-circle">
+                                        <i class="fa fa-bed fa-sm" style="line-height: 22px;"></i>
+                                    </span>
+                                    <span><a href="#"> {{ $listing->beds_count }} Bed</a></span>
+                                </li>
+                                <li class="">
+                                    <span class="team-icon-circle">
+                                        <i class="fa fa-phone" style="line-height: 22px;"></i>
+                                    </span>
+                                    <span><a href="#">{{ App\User::where('id' ,$listing->user_id)->pluck('phone')->first() }}</a></span>
+                                </li>
+                            </ul>
+
+
                             <a href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" class="small-triangle"></a>
                             <div class="small-triangle2"></div>
                             <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>

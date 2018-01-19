@@ -167,7 +167,7 @@ html.no-pointerevents.no-touchevents .feature2:hover > .feature2-icon,
 .list-agency-description,
 .list-agency-description a,
 .list-agency-description a:hover,
-html.no-pointerevents.no-touchevents .list-agency:hover .list-agency-title,
+
 .file-input .file-preview,
 .file-input .file-drop-zone-title,
 .file-input .close,
@@ -488,7 +488,7 @@ header.header3 .hover-menu,
 
 #advancedFilters h4 {
 	color: #3797dd;
-	font-size: 14px;
+	font-size: 21px;
 	margin-top: .75em;
 	margin-bottom: .5em;
 }
@@ -503,7 +503,10 @@ header.header3 .hover-menu,
 
 
 .footer_blog{
-	height: 91px;display:  block;width:  91px;float:  left;
+	height: 91px;display:  block;float:  left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	width: 176px;
 }
 
 .footer_blog img{
@@ -1012,9 +1015,9 @@ html.no-pointerevents.no-touchevents .feature:hover > .feature-icon,
 	background: #1e8e19;
 }
 
-html.no-pointerevents.no-touchevents .list-agency:hover .list-agency-separator {
+/*html.no-pointerevents.no-touchevents .list-agency:hover .list-agency-separator {
 	background: #54abeb;
-}
+}*/
 
 .agency-map,
 .details-map,
@@ -1684,6 +1687,19 @@ input[type="checkbox"].main-checkbox:checked + label span::after {
 
 .apartment-tabs .nav-tabs li a {
 	border-width: 1px 1px 0 1px;
+}
+
+
+.app_attr_list li{
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.team-icon-circle{
+	border: 1px solid #131313;
+	color: black;
+	float: left;
+	margin-left: 10px;
 }
 
 .apartment-tabs .nav-tabs li a .button-triangle2 {

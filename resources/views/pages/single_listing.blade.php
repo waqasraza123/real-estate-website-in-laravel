@@ -614,7 +614,7 @@
                                             @endforeach
                                         @endif
                                         <li style="list-style: none;text-align:left; font-weight: bold">
-                                            Parking Fee {{ $listing->parking_fee }}$/mo
+                                            Parking Fee ${{ $listing->parking_fee }}/mo
                                         </li>
                                     </ul>
                                 </div>

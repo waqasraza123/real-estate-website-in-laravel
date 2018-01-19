@@ -476,6 +476,21 @@
                     uldiv.html('<li style="font-weight: 600;font-size: 110%;padding: 12px;">' + count + ' items selected</li>')
                 }
             });
+
+
+           /* $('#submit_button').click(function (event) {
+                var address = $('#geocomplete').val();
+                $.ajax({
+                    url : '{{ route('checkingAddress') }}',
+                    type:'post',
+                    data:{adr:address},
+                    success:function (res) {
+                        console.log(res);
+                    }
+                });
+                event.stopImmediatePropagation();
+                event.preventDefault()
+            });*/
             $('#datepicker').daterangepicker({
                     singleDatePicker: true,
                     showDropdowns: true
@@ -493,10 +508,16 @@
                 // fields in the form.
                 google.maps.event.addListener(autocomplete, 'place_changed', function() {
                     var place = autocomplete.getPlace();
+                   // console.log(place.address_components)
                     //console.log(place.address_components)
-                    $.each(place.address_components, function (i, v) {
+                   /* $.each(place.address_components, function (i, v) {
                         console.log(v.types[0], v.long_name)
+
                     })
+                    $.ajax({
+                        url:'/'
+                        data
+                    })*/
                 });
             }
         });

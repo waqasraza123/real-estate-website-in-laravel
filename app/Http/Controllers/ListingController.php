@@ -731,4 +731,8 @@ class ListingController extends Controller
         }
     }
 
+  /*  public function checkingAddress(Request $request){
+        dd($request->all());
+    }*/
+
 }
