@@ -216,11 +216,17 @@
                                             </div>
                                             <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox" value="1" @if($listing->misdemeanor == 1)  checked @endif id="c14" name="misdemeanor" class="main-checkbox" >
-                                                <label for="c14"><span></span>{{ Lang::get('listing.mis') }} ({{ Lang::get('listing.h_o') }})</label><br>
+                                                <label for="c14"><span></span>{{ Lang::get('listing.mis') }} -{{ Lang::get('listing.h_o') }}
+                                                    <input name="mis_ye" class="input_no_border" value="{{ $listing->mis_ye }}" type="text">yr(s)
+                                                </label>
+                                                <br>
                                             </div>
                                             <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox" value="1" @if($listing->falonies == 1)  checked @endif id="c15" name="falonies" class="main-checkbox" >
-                                                <label for="c15"><span></span>{{ Lang::get('listing.fels') }} ({{ Lang::get('listing.h_o') }})</label><br>
+                                                <label for="c15"><span></span>{{ Lang::get('listing.fels') }} -{{ Lang::get('listing.h_o') }}
+                                                    <input name="fe_ye" class="input_no_border" value="{{ $listing->fe_ye }}" type="text">yr(s)
+                                                </label>
+                                                <br>
                                             </div>
                                             <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox" value="1" @if($listing->section_8 == 1)  checked @endif id="c16" name="section_8" class="main-checkbox" >

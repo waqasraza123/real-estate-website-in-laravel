@@ -209,12 +209,6 @@
     <div class="row">
         @if($listings->first())
         <div class="col-lg-7 " style="    padding-right: 0;">
-            <div class="polygon">
-                Polygon
-                <i class="fa fa-map-o">
-
-                </i>
-            </div>
             <div id="offers-map"></div>
         </div>
         <div class="col-lg-5 " id="offers-list" style="background: white;  overflow-y: scroll">
@@ -382,35 +376,11 @@
                         }
                     ?>
                     @foreach($listings as $listing)
-{{--
-                        <span>{{ $listing->dogs }}</span>
-                        <span>{{ $listing->cats }}</span>
-                        <span>{{ $listing->no_pets }}</span>
-                        <span>{{ $listing->furnished }}</span>
-                        <span>{{ $listing->wheelchair }}</span>
-                        <span>{{ $listing->fitness_center }}</span>
-                        <span>{{ $listing->pool }}</span>
-                        <span>{{ $listing->no_smocking }}</span>
-                        <span>{{ $listing->broken_lease }}</span>
-                        <span>{{ $listing->eviction }}</span>
-                        <span>{{ $listing->misdemeanor }}</span>
-                        <span>{{ $listing->falonies }}</span>
-                        <span>{{ $listing->section_8 }}</span>
-                        <span>{{ $listing->hud }}</span>
-                        <span>{{ $listing->income_r }}</span>
-                        <span>{{ $listing->bankruptcy }}</span>
-                        <span>{{ $listing->foreclosure }}</span>
-                        <span>{{ $listing->credit }}</span>
-                        <span>{{ $listing->move_in }}</span>
-                        <span>{{ $listing->possession }}</span>
-                        <span>{{ $listing->possession_w }}</span>
-                        <span>{{ $listing->assault }}</span>
-                        <span>{{ $listing->herassment }}</span>
---}}
-
-
                         <div class="list-agency row">
                             <div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">
+                                <div class="full_blue">
+                                    <h2> {{ $listing->name }}</h2>
+                                </div>
                                 @if($listing->ListingsImages()->where('featured', "1")->first())
                                     <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="auto">
                                 @endif
@@ -447,8 +417,6 @@
                                     <span><a href="#">{{ App\User::where('id' ,$listing->user_id)->pluck('phone')->first() }}</a></span>
                                 </li>
                             </ul>
-
-
                             <a href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" class="small-triangle"></a>
                             <div class="small-triangle2"></div>
                             <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>
