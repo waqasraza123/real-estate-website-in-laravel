@@ -33,26 +33,7 @@
     <div id="wrapper">
         <header class=" mainHeader" id="mainHeader">
             <nav class="mainHeaderNavigation" id="mainHeaderNavigation">
-                <div class="menuSection">
-                    <button id="headerMenuLink" type="button" class="dropdownToggle primary homeBtn">
-                        <i class="fa fa-bars"></i><span>Menu</span>
-                    </button>
-                    <div id="menuNavWrapper" class="menuNavWrapper">
-                        <div id="menuNavContainer">
-                            <div class="menuOpenWrapper">
-                                <span id="menuHeader" class="menuHeader"><i class="fa fa-bars"></i><span class="menuText">Menu</span></span>
-                                <ul id="menuNavigation" class="menuNavigation">
-                                    <li><a id="menuNavLnkSaveSearches" href="#" rel="nofollow" data-requirelogin="true">My Saved Searches</a></li>
-                                    <li><a id="menuNavLnkFavorites" href="#" rel="nofollow">My Favorites</a></li>
-                                    <li id="menuNavLnkUserNotificationSettings"><a href="#" rel="nofollow"><span>Notification Settings</span></a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="headerSwitchLanguageWrapper hidden-xs">
+                <div class="headerSwitchLanguageWrapper hidden-xs" style="margin-left: 15px">
                     @if(app()->getLocale() == 'en')
                         <a href="/setlang/es" class="headerSwitchLanguage"><i class="fa fa-globe"></i>Español</a>
                     @else

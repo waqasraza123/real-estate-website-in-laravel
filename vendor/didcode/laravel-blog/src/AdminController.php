@@ -91,7 +91,7 @@ class AdminController extends Controller {
         $post = Post::find($post_id);
 
         $file = Input::file('image');
-        $img = \Image::make($file)->fit(1000, 500);
+        $img = \Image::make($file);
 
         $filename = '/img/posts/'.$file->getClientOriginalName();
         $img->save( public_path().$filename );

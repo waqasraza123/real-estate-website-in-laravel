@@ -505,7 +505,7 @@ header.header3 .hover-menu,
 .footer_blog{
 	height: 91px;display:  block;float:  left;
 	background-size: contain;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat !important;
 	width: 176px;
 }
 

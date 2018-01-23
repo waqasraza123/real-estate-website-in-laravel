@@ -172,7 +172,7 @@
                                     </form>
                                 </div>
                                 <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="houses">
-                                    <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
+                                    <form action="{{ route('searchListing') }}" class="apartament_form" >
                                         {{ csrf_field()  }}
                                         <input type="hidden" name="wq-street_address" class="wq-street_address">
                                         <input type="hidden" name="wq-street_number" class="wq-street_number">
@@ -292,7 +292,7 @@
                                     </form>
                                 </div>
                                 <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="commercials">
-                                    <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
+                                    <form action="{{ route('searchListing') }}" class="apartament_form" >
                                         {{ csrf_field()  }}
                                         <input type="hidden" name="wq-street_address" class="wq-street_address">
                                         <input type="hidden" name="wq-street_number" class="wq-street_number">
@@ -412,7 +412,7 @@
                                     </form>
                                 </div>
                                 <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade" id="lands">
-                                    <form action="{{ route('searchListing') }}" class="apartament_form" method="post">
+                                    <form action="{{ route('searchListing') }}" class="apartament_form" >
                                         <input type="hidden" name="wq-street_address" class="wq-street_address">
                                         <input type="hidden" name="wq-street_number" class="wq-street_number">
                                         <input type="hidden" name="wq-intersection" class="wq-intersection">
@@ -785,14 +785,185 @@
             // When the user selects an address from the dropdown, populate the address
             // fields in the form.
             autocomplete.addListener('place_changed', fillInAddress);
-            autocomplete1.addListener('place_changed', fillInAddress);
-            autocomplete2.addListener('place_changed', fillInAddress);
-            autocomplete3.addListener('place_changed', fillInAddress);
+            autocomplete1.addListener('place_changed', fillInAddressOne);
+            autocomplete2.addListener('place_changed', fillInAddressSecond);
+            autocomplete3.addListener('place_changed', fillInAddressThird);
         }
 
         function fillInAddress() {
             // Get the place details from the autocomplete object.
             var place = autocomplete.getPlace();
+            //console.log(place.address_components)
+            $.each(place.address_components, function (i, v) {
+                if(v.types[0] == 'street_address'){
+                    $(".wq-street_address").val(v.long_name)
+                }if(v.types[0] == 'street_number'){
+                    $(".wq-street_number").val(v.long_name)
+                }if(v.types[0] == 'intersection'){
+                    $(".wq-intersection").val(v.long_name)
+                }if(v.types[0] == 'route'){
+                    $(".wq-route").val(v.long_name)
+                }if(v.types[0] == 'sublocality'){
+                    $(".wq-sublocality").val(v.long_name)
+                }
+                if(v.types[0] == 'locality'){
+                    $("input[name=city]").val(v.long_name)
+                    $(".wq-locality").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_1'){
+                    $("input[name=state]").val(v.long_name)
+                    $(".wq-administrative_area_level_1").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_2'){
+                    $(".wq-administrative_area_level_2").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_3'){
+                    $(".wq-administrative_area_level_3").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_4'){
+                    $(".wq-administrative_area_level_4").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_5'){
+                    $(".wq-administrative_area_level_5").val(v.long_name)
+                }if(v.types[0] == 'country') {
+                    $(".wq-country").val(v.long_name)
+                }if(v.types[0] == 'neighborhood') {
+                    $(".wq-neighborhood").val(v.long_name)
+                }if(v.types[0] == 'postal_code'){
+                    $("input[name=zip_code]").val(v.long_name)
+                }
+
+            });
+            $('.lat').attr("value", place.geometry.location.lat());
+            $('.lng').attr("value", place.geometry.location.lng());
+            for (var component in componentForm) {
+                document.getElementById(component).value = '';
+                document.getElementById(component).disabled = false;
+            }
+
+            // Get each component of the address from the place details
+            // and fill the corresponding field on the form.
+            for (var i = 0; i < place.address_components.length; i++) {
+                var addressType = place.address_components[i].types[0];
+                if (componentForm[addressType]) {
+                    var val = place.address_components[i][componentForm[addressType]];
+                    document.getElementById(addressType).value = val;
+                }
+            }
+        }
+
+        function fillInAddressOne() {
+            // Get the place details from the autocomplete object.
+            var place = autocomplete1.getPlace();
+            //console.log(place.address_components)
+            $.each(place.address_components, function (i, v) {
+                if(v.types[0] == 'street_address'){
+                    $(".wq-street_address").val(v.long_name)
+                }if(v.types[0] == 'street_number'){
+                    $(".wq-street_number").val(v.long_name)
+                }if(v.types[0] == 'intersection'){
+                    $(".wq-intersection").val(v.long_name)
+                }if(v.types[0] == 'route'){
+                    $(".wq-route").val(v.long_name)
+                }if(v.types[0] == 'sublocality'){
+                    $(".wq-sublocality").val(v.long_name)
+                }
+                if(v.types[0] == 'locality'){
+                    $("input[name=city]").val(v.long_name)
+                    $(".wq-locality").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_1'){
+                    $("input[name=state]").val(v.long_name)
+                    $(".wq-administrative_area_level_1").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_2'){
+                    $(".wq-administrative_area_level_2").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_3'){
+                    $(".wq-administrative_area_level_3").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_4'){
+                    $(".wq-administrative_area_level_4").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_5'){
+                    $(".wq-administrative_area_level_5").val(v.long_name)
+                }if(v.types[0] == 'country') {
+                    $(".wq-country").val(v.long_name)
+                }if(v.types[0] == 'neighborhood') {
+                    $(".wq-neighborhood").val(v.long_name)
+                }if(v.types[0] == 'postal_code'){
+                    $("input[name=zip_code]").val(v.long_name)
+                }
+
+            });
+            $('.lat').attr("value", place.geometry.location.lat());
+            $('.lng').attr("value", place.geometry.location.lng());
+            for (var component in componentForm) {
+                document.getElementById(component).value = '';
+                document.getElementById(component).disabled = false;
+            }
+
+            // Get each component of the address from the place details
+            // and fill the corresponding field on the form.
+            for (var i = 0; i < place.address_components.length; i++) {
+                var addressType = place.address_components[i].types[0];
+                if (componentForm[addressType]) {
+                    var val = place.address_components[i][componentForm[addressType]];
+                    document.getElementById(addressType).value = val;
+                }
+            }
+        }
+
+        function fillInAddressSecond() {
+            // Get the place details from the autocomplete object.
+            var place = autocomplete2.getPlace();
+            //console.log(place.address_components)
+            $.each(place.address_components, function (i, v) {
+                if(v.types[0] == 'street_address'){
+                    $(".wq-street_address").val(v.long_name)
+                }if(v.types[0] == 'street_number'){
+                    $(".wq-street_number").val(v.long_name)
+                }if(v.types[0] == 'intersection'){
+                    $(".wq-intersection").val(v.long_name)
+                }if(v.types[0] == 'route'){
+                    $(".wq-route").val(v.long_name)
+                }if(v.types[0] == 'sublocality'){
+                    $(".wq-sublocality").val(v.long_name)
+                }
+                if(v.types[0] == 'locality'){
+                    $("input[name=city]").val(v.long_name)
+                    $(".wq-locality").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_1'){
+                    $("input[name=state]").val(v.long_name)
+                    $(".wq-administrative_area_level_1").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_2'){
+                    $(".wq-administrative_area_level_2").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_3'){
+                    $(".wq-administrative_area_level_3").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_4'){
+                    $(".wq-administrative_area_level_4").val(v.long_name)
+                }if(v.types[0] == 'administrative_area_level_5'){
+                    $(".wq-administrative_area_level_5").val(v.long_name)
+                }if(v.types[0] == 'country') {
+                    $(".wq-country").val(v.long_name)
+                }if(v.types[0] == 'neighborhood') {
+                    $(".wq-neighborhood").val(v.long_name)
+                }if(v.types[0] == 'postal_code'){
+                    $("input[name=zip_code]").val(v.long_name)
+                }
+
+            });
+            $('.lat').attr("value", place.geometry.location.lat());
+            $('.lng').attr("value", place.geometry.location.lng());
+            for (var component in componentForm) {
+                document.getElementById(component).value = '';
+                document.getElementById(component).disabled = false;
+            }
+
+            // Get each component of the address from the place details
+            // and fill the corresponding field on the form.
+            for (var i = 0; i < place.address_components.length; i++) {
+                var addressType = place.address_components[i].types[0];
+                if (componentForm[addressType]) {
+                    var val = place.address_components[i][componentForm[addressType]];
+                    document.getElementById(addressType).value = val;
+                }
+            }
+        }
+
+        function fillInAddressThird() {
+            // Get the place details from the autocomplete object.
+            var place = autocomplete3.getPlace();
             //console.log(place.address_components)
             $.each(place.address_components, function (i, v) {
                 if(v.types[0] == 'street_address'){
