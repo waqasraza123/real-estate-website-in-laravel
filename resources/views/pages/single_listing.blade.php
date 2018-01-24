@@ -77,7 +77,11 @@
                             </div>
                         </div>
                         <div class="row margin-top-60">
+
                             <div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0">
+                                <div class="abs_banner">
+                                    <img src="{{ asset('images/special.png') }}" alt="">
+                                </div>
                                 <div class="full_blue">
                                     <h2>
                                         <i class="fa fa-phone"></i>
@@ -772,78 +776,7 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-                            {{--<div class="">${{ $listing->rent }}</div>
-                            <div class="details-parameters">
-                                <div class="details-parameters-cont">
-                                    <div class="details-parameters-name">bedrooms</div>
-                                    <div class="details-parameters-val">{{ $listing->beds_count }}</div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="details-parameters-cont">
-                                    <div class="details-parameters-name">bathrooms</div>
-                                    <div class="details-parameters-val">{{ $listing->baths_count }}</div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="details-parameters-cont">
-                                    <div class="details-parameters-name">{{ Lang::get('listing.parking_type') }}</div>
-                                    <div class="details-parameters-val">
-                                        @if($listing->parking_type == '1')
-                                            {{ Lang::get('listing.surfact_lot') }}
-                                        @elseif($listing->parking_type == '3')
-                                            {{ Lang::get('listing.covered') }}
-                                        @elseif($listing->parking_type == '4')
-                                            {{ Lang::get('listing.street') }}
-                                        @elseif($listing->parking_type == '5')
-                                            {{ Lang::get('listing.garage') }}
-                                        @elseif($listing->parking_type == '7')
-                                            {{ Lang::get('listing.other') }}
-                                        @endif
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="details-parameters-cont">
-                                    <div class="details-parameters-name"></div>
-                                    <div class="details-parameters-val">
-                                        {{ $listing->parking_fee }}$/mo
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>--}}
                         </div>
-
-
-
-
-                       {{-- <div class="col-xs-6 col-sm-4">
-                            <ul class="details-ticks">
-                                @if($listing->dogs == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.dogs_ok') }}</li>
-                                @endif
-                                @if($listing->cats == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.cats_ok') }}</li>
-                                @endif
-                                @if($listing->no_pets == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.no_pets') }}</li>
-                                @endif
-                                @if($listing->furnished == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.furnished') }}</li>
-                                @endif
-                            </ul>
-                        </div>
-                        <div class="col-xs-6 col-sm-4">
-                            <ul class="details-ticks">
-                                @if($listing->no_smocking == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.no_smo') }}</li>
-                                @endif
-                                @if($listing->wheelchair == '1')
-                                    <li><i class="jfont">&#xe815;</i>{{ Lang::get('listing.wheel_access') }}</li>
-                                @endif
-                            </ul>
-
-                        </div>--}}
                     </div>
                     <div class="row margin-top-15">
                         <div class="col-xs-12 apartment-tabs">

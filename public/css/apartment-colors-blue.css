@@ -314,6 +314,22 @@ html.no-pointerevents.no-touchevents .feature2:hover .special-color,
 	color: #1b2835;
 }
 
+
+.abs_banner{
+	position: absolute;
+	left: -304px;
+	z-index: 9999;
+}
+
+@media all and (max-width: 768px)  {
+	.abs_banner{
+		position: relative 	!important;
+		left: -25px;
+		z-index: 9999;
+		margin-bottom: 15px;
+	}
+}
+
 .new_class_button{
  	padding: 0px 10px 0px 10px !important;
  	font-size: 13px !important;
