@@ -78,7 +78,7 @@
                         </div>
                         <div class="row margin-top-60">
 
-                            <div class="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0">
+                            <div class="col-xs-8 col-xs-offset-2 col-sm-3 ">
                                 <div class="abs_banner">
                                     <img src="{{ asset('images/special.png') }}" alt="">
                                 </div>
@@ -94,7 +94,7 @@
                                     <img src="{{ asset('assets/images').'/'.$listing->User()->first()->avatar }}" alt="" class="img-responsive">
                                 </a>
                             </div>
-                            <div class="col-xs-12 col-sm-9">
+                            <div class="col-xs-12 col-sm-6 ">
                                 <div class="agent-social-bar">
                                     <div class="pull-left">
 
