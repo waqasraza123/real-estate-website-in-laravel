@@ -630,6 +630,10 @@ header.header3 .hover-menu,
 	color: white;
 }
 
+label {
+ text-transform: capitalize;
+}
+
 #price-min3 li span{
 	padding-left: 15px;
 }
@@ -721,7 +725,13 @@ header.header3 .hover-menu,
 		white-space: nowrap;
 		padding-left: 10px;
 		padding-right: 10px;
+		margin-right: 0px;
 	}
+
+	#swiper1{
+		height: 17.25em !important;
+	}
+
 
 }
 

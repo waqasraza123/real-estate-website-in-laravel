@@ -28,13 +28,13 @@ $(document).ready(function () {
         }
 
 
-        if(window.location.pathname != '/'){
+        if(window.location.pathname != '/' && window.location.pathname != '/search_listing'){
             if(!fil.val()){
                 swal(
                     'Wrong Address',
                     'Please Upload image first!',
                     'error'
-                )
+                );
 
                 event.stopImmediatePropagation();
                 event.preventDefault()

@@ -376,7 +376,7 @@
                         }
                     ?>
                     @foreach($listings as $listing)
-                        <div class="list-agency row">
+                        <a href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }} class="list-agency row">
                             <div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">
                                 <div class="full_blue">
                                     <h2> {{ $listing->name }}</h2>
@@ -418,12 +418,11 @@
                                     </span>
                                     <span><a href="#"> {{ $listing->beds_count }} Bed</a></span>
                                 </li>
-
                             </ul>
                             <a href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" class="small-triangle"></a>
                             <div class="small-triangle2"></div>
                             <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
             </div>
