@@ -40,7 +40,8 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="@if(Auth::user()->avatar) {{ asset('assets\images').'/'.Auth::user()->avatar }}  @else {{ asset('images\agent3.jpg') }}@endif" class="img-circle" alt="User Image">
+
+                    <img src="{{ Auth::user() ?  asset('assets\images').'/'.Auth::user()->avatar : asset('images\agent3.jpg') }}" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
                     <p>Admin</p>
