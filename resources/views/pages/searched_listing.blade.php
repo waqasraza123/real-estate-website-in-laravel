@@ -67,7 +67,7 @@
                                 </div>
                                 <div class="col-lg-3 col-xs-12 form-">
                                     <div class="dropdown btn-group bootstrap-select show-tick  ">
-                                        <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span><span class="maxp">Range</span><strong class="caret"></strong>
+                                        <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">{!!  Lang::get('pages.r_e') !!}<strong class="caret"></strong>
                                         </button>
                                         <div class="dropdown-menu col-sm-2" style="padding-top:10px;">
                                             <div class="col-xs-6">
@@ -118,7 +118,7 @@
                                 <div class="col-lg-3 col-xs-12">
                                     <div class="row">
                                         <div class="col-lg-9 col-xs-12">
-                                            <select name="beds_baths[]" class="selectpicker" multiple="" title="Beds X Baths">
+                                            <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                                 <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
                                                     <option value="all">{{ Lang::get('home.all_be') }}</option>
                                                     <option value="any_bed">Any Bed</option>
@@ -138,7 +138,7 @@
                                         </div>
                                         <div class="col-lg-3 col-xs-12">
                                             <a href="#" class="boldet_link">
-                                                Filter
+                                                {{ Lang::get('pages.f_is') }}
                                             </a>
                                         </div>
                                     </div>
@@ -191,7 +191,7 @@
                                     <input type="hidden" name="baths" value="{{ old('beds_baths')[1] }}">
                                 @endif
                             @endif
-                                <button type="submit" class="button-primary  appartament_search" style="margin-right: 60px;margin-top: 26px;"> Save Search
+                                <button type="submit" class="button-primary  appartament_search" style="margin-right: 60px;margin-top: 26px;"> {{ Lang::get('pages.s_s') }}
                                 <div class="button-triangle"></div>
                                 <div class="button-triangle2"></div>
                                 <div class="button-icon"><i class="fa fa-search-plus"></i></div>
@@ -217,29 +217,29 @@
                     <div class="abs_f_h">
                         <form action="{{ route('filterListings') }}" method="get">
                             <div class="desktopView clearfix" id="advancedFilters">
-                            <h4 class="amenitiesHeading">Click on Your Needs</h4>
+                            <h4 class="amenitiesHeading">{{ Lang::get('pages.c_n') }}</h4>
                             <div class="grid">
                                 <div class="col-xs-12 col-md-6 col-lg-6 margin-top-15">
                                     <div class="row">
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="broken_lease" id="c12" name="filter[]" class="main-checkbox">
-                                            <label for="c12"><span></span>broken lease </label><br>
+                                            <label for="c12"><span></span>{{ Lang::get('listing.b_l') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="eviction" id="c13" name="filter[]" class="main-checkbox">
-                                            <label for="c13"><span></span>eviction</label><br>
+                                            <label for="c13"><span></span>{{ Lang::get('listing.e_v') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="misdemeanor" id="c14" name="filter[]" class="main-checkbox">
-                                            <label for="c14"><span></span>misdemeanor</label><br>
+                                            <label for="c14"><span></span>{{ Lang::get('listing.mis') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="falonies" id="c15" name="filter[]" class="main-checkbox">
-                                            <label for="c15"><span></span>Felonies</label><br>
+                                            <label for="c15"><span></span>{{ Lang::get('listing.fels') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="section_8" id="c16" name="filter[]" class="main-checkbox">
-                                            <label for="c16"><span></span>Section 8</label><br>
+                                            <label for="c16"><span></span>{{ Lang::get('listing.sec_8') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="hud" id="c17" name="filter[]" class="main-checkbox">
@@ -247,39 +247,39 @@
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="income_r" id="c18" name="filter[]" class="main-checkbox">
-                                            <label for="c18"><span></span>income restricted</label><br>
+                                            <label for="c18"><span></span>{{ Lang::get('listing.in_r') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="bankruptcy" id="c19" name="filter[]" class="main-checkbox">
-                                            <label for="c19"><span></span>Bankruptcy</label><br>
+                                            <label for="c19"><span></span>{{ Lang::get('pages.bank') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="foreclosure" id="c20" name="filter[]" class="main-checkbox">
-                                            <label for="c20"><span></span>Foreclosure</label><br>
+                                            <label for="c20"><span></span>{{ Lang::get('listing.forec') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="credit" id="c21" name="filter[]" class="main-checkbox">
-                                            <label for="c21"><span></span>Credit</label><br>
+                                            <label for="c21"><span></span>{{ Lang::get('listing.cre') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="move_in" id="c22" name="filter[]" class="main-checkbox">
-                                            <label for="c22"><span></span>Move-In Specials</label><br>
+                                            <label for="c22"><span></span>{{ Lang::get('listing.m_i_s') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input  name="filter[]" id="noSmocking" type="checkbox" value="no_smocking" class="main-checkbox">
-                                            <label for="noSmocking"><span></span>No Smoking</label>
+                                            <label for="noSmocking"><span></span>{{ Lang::get('listing.no_smo') }}</label>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input name="filter[]" id="UnitAmenities_131072" type="checkbox" value="wheelchair" class="main-checkbox">
-                                            <label for="UnitAmenities_131072"><span></span>Wheelchair Access</label>
+                                            <label for="UnitAmenities_131072"><span></span>{{ Lang::get('listing.wheel_access') }}</label>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input name="filter[]" id="UnitAmenities_1048576" type="checkbox" value="washer_dryer_hockups" class="main-checkbox">
-                                            <label for="UnitAmenities_1048576"><span></span>Washer &amp; Dryer Hookups</label>
+                                            <label for="UnitAmenities_1048576"><span></span>{{ Lang::get('pages.w_h') }}</label>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input name="filter[]" id="CommunityAmenities_256" type="checkbox" value="fitness_center" class="main-checkbox">
-                                            <label for="CommunityAmenities_256"><span></span>Fitness Center</label>
+                                            <label for="CommunityAmenities_256"><span></span>{{ Lang::get('pages.f_c') }}</label>
                                         </div>
                                     </div>
                                 </div>
@@ -287,15 +287,15 @@
                                     <div class="row">
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="possession" id="c23" name="filter[]" class="main-checkbox">
-                                            <label for="c23"><span></span>Possession</label><br>
+                                            <label for="c23"><span></span>{{ Lang::get('listing.pos') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="possession_w" id="c24" name="filter[]" class="main-checkbox">
-                                            <label for="c24"><span></span>Possession w/intent to sell</label><br>
+                                            <label for="c24"><span></span>{{ Lang::get('listing.pos_w') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="assault" id="c25" name="filter[]" class="main-checkbox">
-                                            <label for="c25"><span></span>Assault</label><br>
+                                            <label for="c25"><span></span>{{ Lang::get('listing.as') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="herassment" id="c26" name="filter[]" class="main-checkbox">
@@ -315,50 +315,50 @@
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="disorderly" id="c30" name="filter[]" class="main-checkbox">
-                                            <label for="c30"><span></span>Disorderly conduct</label><br>
+                                            <label for="c30"><span></span>{{ Lang::get('listing.di_xc') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="theft" id="c31" name="filter[]" class="main-checkbox">
-                                            <label for="c31"><span></span>Theft</label><br>
+                                            <label for="c31"><span></span>{{ Lang::get('listing.theft') }}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input  name="filter[]" id="PetFriendly_1" type="checkbox" value="dogs" class="main-checkbox">
-                                            <label for="PetFriendly_1"><span></span>Dog Friendly</label>
+                                            <label for="PetFriendly_1"><span></span>{{ Lang::get('listing.dogs_ok') }}</label>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input name="filter[]" id="PetFriendly_2" type="checkbox" value="cats" class="main-checkbox">
-                                            <label for="PetFriendly_2"><span></span>Cat Friendly</label>
+                                            <label for="PetFriendly_2"><span></span>{{ Lang::get('listing.cats_ok') }}</label>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input  name="filter[]" id="PetFriendly_3" type="checkbox" value="no_pets" class="main-checkbox">
-                                            <label for="PetFriendly_3"><span></span>No Pets</label>
+                                            <label for="PetFriendly_3"><span></span>{{ Lang::get('listing.no_pets') }}</label>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input  name="filter[]" id="AdditionalAmenities_128" type="checkbox" value="furnished" class="main-checkbox">
-                                            <label for="AdditionalAmenities_128"><span></span>Furnished</label>
+                                            <label for="AdditionalAmenities_128"><span></span>{{ Lang::get('listing.furnished') }}</label>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input name="filter[]" id="UnitAmenities_2" type="checkbox" value="washer_dryer" class="main-checkbox">
-                                            <label for="UnitAmenities_2"><span></span> Washer &amp; Dryer</label>
+                                            <label for="UnitAmenities_2"><span></span>{{ Lang::get('pages.w_ad') }}</label>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input name="filter[]" id="CommunityAmenities_2097152" type="checkbox" value="onsite_laundry" class="main-checkbox">
-                                            <label for="CommunityAmenities_2097152"><span></span>Laundry Facilities</label>
+                                            <label for="CommunityAmenities_2097152"><span></span>{{ Lang::get('pages.o_n') }}</label>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input name="filter[]" id="CommunityAmenities_512" type="checkbox" value="pool" class="main-checkbox">
-                                            <label for="CommunityAmenities_512"><span></span>Pool</label>
+                                            <label for="CommunityAmenities_512"><span></span>{{ Lang::get('pages.p_l') }}</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <button type="button" class="button-primary  text-center appartament_done">
-                                <span>Close</span>
+                                <span>{{ Lang::get('pages.c_lo') }}</span>
                                 <div class="button-triangle"></div>
                                 <div class="button-triangle2"></div>
                             </button>
                             <button type="submit" class="button-primary  text-center ">
-                                <span>Filter</span>
+                                <span>{{ Lang::get('pages.f_is') }}</span>
                                 <div class="button-triangle"></div>
                                 <div class="button-triangle2"></div>
                             </button>

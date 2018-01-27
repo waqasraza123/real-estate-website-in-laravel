@@ -70,7 +70,7 @@
                                         <input type="hidden" name="listing_type" value="2">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
-                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
+                                                <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('pages.e_n') }}" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -91,7 +91,7 @@
                                             </div>
                                             <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <div class=" btn-group bootstrap-select show-tick  ">
-                                                    <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
+                                                    <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">{!! Lang::get('pages.r_e') !!}<strong class="caret"></strong>
                                                     </button>
                                                     <div class=" dropdown-menu col-sm-2" style="padding-top:10px;">
                                                         <div class="col-xs-6">
@@ -190,7 +190,7 @@
                                         <input type="hidden" name="listing_type" value="7">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
-                                                <input id="autocomplete1" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
+                                                <input id="autocomplete1" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('pages.e_n') }}" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -211,7 +211,7 @@
                                             </div>
                                             <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <div class=" btn-group bootstrap-select show-tick  ">
-                                                    <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
+                                                    <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">{!! Lang::get('pages.r_e') !!}<strong class="caret"></strong>
                                                     </button>
                                                     <div class=" dropdown-menu col-sm-2" style="padding-top:10px;">
                                                         <div class="col-xs-6">
@@ -310,7 +310,7 @@
                                         <input type="hidden" name="listing_type" value="5">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
-                                                <input id="autocomplete2" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
+                                                <input id="autocomplete2" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('pages.e_n') }}" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -331,7 +331,7 @@
                                             </div>
                                             <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <div class=" btn-group bootstrap-select show-tick  ">
-                                                    <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
+                                                    <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">{!! Lang::get('pages.r_e') !!}<strong class="caret"></strong>
                                                     </button>
                                                     <div class=" dropdown-menu col-sm-2" style="padding-top:10px;">
                                                         <div class="col-xs-6">
@@ -430,7 +430,7 @@
                                         <input type="hidden" name="listing_type" value="3">
                                         <div class="row">
                                             <div class="col-xs-12 col-sm-12 col-lg-6" style="padding: 0px !important">
-                                                <input id="autocomplete3" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="Enter a neighborhood, city, address or ZIP code" name="address">
+                                                <input id="autocomplete3" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('pages.e_n') }}" name="address">
                                                 <table id="address" style="display: none">
                                                     <input class="field"  id="street_number" type="hidden">
                                                     <input class="field"  id="route" type="hidden">
@@ -451,7 +451,7 @@
                                             </div>
                                             <div class="col-lg-3 col-xs-12" style="padding: 0px !important">
                                                 <div class=" btn-group bootstrap-select show-tick  ">
-                                                    <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left"><span class="minp">Rent</span>   <span class="maxp">Range</span><strong class="caret"></strong>
+                                                    <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">{!! Lang::get('pages.r_e') !!}<strong class="caret"></strong>
                                                     </button>
                                                     <div class=" dropdown-menu col-sm-2" style="padding-top:10px;">
                                                         <div class="col-xs-6">
@@ -537,28 +537,28 @@
         <div class="transparend_bottom">
             <div class="btn-group gouped_button ">
                 <a href="#" class="button-alternative new_class_button">
-                        <span>Multiple Issues</span>
+                        <span>{{ Lang::get('pages.m_u') }}</span>
                     </a>
                 <a href="#" class="button-alternative new_class_button">
-                        <span>Bad Credit</span>
+                        <span>{{ Lang::get('pages.b_ac') }}</span>
                     </a>
                 <a href="#" class="button-alternative new_class_button">
-                        <span>Broken Lease</span>
+                        <span>{{ Lang::get('pages.b_r') }}</span>
                     </a>
                 <a href="#" class="button-alternative new_class_button">
-                        <span>Eviction</span>
+                        <span>{{ Lang::get('pages.e_v') }}</span>
                     </a>
                 <a href="#" class="button-alternative new_class_button">
-                        <span>First Time Renter</span>
+                        <span>{{ Lang::get('pages.f_ic') }}</span>
                     </a>
                 <a href="#" class="button-alternative new_class_button">
-                        <span>Bankruptcy</span>
+                        <span>{{ Lang::get('pages.b_acc') }}</span>
                     </a>
                 <a href="#" class="button-alternative new_class_button">
-                        <span>Foreclosure</span>
+                        <span>{{ Lang::get('pages.f_o') }}</span>
                     </a>
                 <a href="#" class="button-alternative new_class_button">
-                        <span>Background</span>
+                        <span>{{ Lang::get('pages.b_sa') }}</span>
                     </a>
             </div>
         </div>
@@ -568,19 +568,12 @@
             <div class="row margin-top-60">
                 <div class="col-xs-12 col-sm-12 col-lg-12">
                     <h1 class="special-color subtitle-margin">2nd Chance Leasing<span class="special-color">.</span></h1>
-                    <h3 class="subtitle-margin" style="font-weight: lighter">Find Your Perfect Rental Home...No Matter Your Past</h3>
+                    <h3 class="subtitle-margin" style="font-weight: lighter">{{ Lang::get('pages.home_big') }}</h3>
                     <div class="title-separator-secondary"></div>
                     <br>
                     <br>
                     <p class="chance_p">
-                        2nd Chance Leasing is your leading resource for properties that offer second chance leasing programs.
-                        We feature apartments townhomes, condos, and homes that can work with such issues as past evictions, broken leases, felonies, misdemeanors, bankruptcy, foreclosure, & more.</p>
-                    <p class="chance_p">
-                        If you have had issues in the past, it is important that you show yourself in the best possible light. You want to prove to the property owner or management that you have moved on from your problems of the past, and that you are a responsible and respectful prospective tenant.
-                    </p>
-                    <p class="chance_p">
-                        Don't let your problems of the past stop you from finding a home that will make you happy. Our FREE database will help you find the properties in your area that will work with your situation.
-
+                        {!!  Lang::get('pages.home_big_2') !!}
                     </p>
                 </div>
             </div>

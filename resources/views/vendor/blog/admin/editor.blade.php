@@ -16,13 +16,13 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="title">Title</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="title" id="title">
+                                    <input type="text" class="form-control" name="title" id="title" value="{{ isset($post) ? $post->title : null }}">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-2 control-label" for="slug">Slug</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="slug" name="slug">
+                                    <input type="text" class="form-control" id="slug" name="slug" value="{{ isset($post) ? $post->slug : null }}">
                                 </div>
                             </div>
                             @if(isset($post))

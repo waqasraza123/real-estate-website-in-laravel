@@ -83,18 +83,18 @@
                                     <input name="state" type="text" value="{{ old('state') }}" class="input-full main-input" placeholder="">
                                 </div>
                                 <div class="col-sm-4 col-xs-12">
-                                    <h5 class="labeles">Zip Code</h5>
+                                    <h5 class="labeles">{{ Lang::get('pages.z_c') }}</h5>
                                     <input name="zip_code" type="text" value="{{ old('zip_code') }}" class="input-full main-input" placeholder="">
                                 </div>
 
                             </div>
                             <div class="grid">
                                 <div class="col-sm-6 col-xs-12">
-                                    <h5 class="labeles">Name of Apartment</h5>
+                                    <h5 class="labeles">{{ Lang::get('pages.n_a') }}</h5>
                                     <input name="name" type="text" value="{{ old('name') }}" class="input-full main-input" placeholder="">
                                 </div>
                                 <div class="col-sm-6 col-xs-12">
-                                    <h5 class="labeles">School District</h5>
+                                    <h5 class="labeles">{{ Lang::get('pages.sc_d') }}</h5>
                                     <input name="school_dc" type="text" value="{{ old('school_dc') }}" class="input-full main-input" placeholder="">
                                 </div>
                             </div>
@@ -140,7 +140,7 @@
                                     <div class="col-sm-4  col-xs-12">
                                         <h5 class="labeles">{{ Lang::get('listing.beds') }}</h5>
                                         <select name="beds_count[]" id="beds" class="selectpicker beds"  title="" style="display: none;">
-                                            <option value="-1">Studio</option>
+                                            <option value="-1">{{ Lang::get('pages.st') }}</option>
                                             <option value="1" @if(old('beds_count') == 1) selected @endif>1.0</option>
                                             <option value="2" @if(old('beds_count') == 2) selected @endif>2.0</option>
                                             <option value="3" @if(old('beds_count') == 3) selected @endif>3.0</option>
@@ -197,7 +197,7 @@
                             <div class="grid">
                                 <div class="col-sm-12 col-xs-12 text-center">
                                     <a href="#" id="clone_button" class="button-primary">
-                                        <span>Add More</span>
+                                        <span>{{ Lang::get('pages.a_m') }}</span>
                                         <div class="button-triangle"></div>
                                         <div class="button-triangle2"></div>
                                         <div class="button-icon"><i class="fa fa-lg fa-plus"></i></div>
@@ -206,7 +206,7 @@
                             </div>
                             <div class="grid">
                                 <div class="col-xs-12">
-                                    <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">Featured Image</h4>
+                                    <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('pages.f_i') }}</h4>
                                 </div>
                             </div>
                             <div class="grid">
@@ -266,7 +266,7 @@
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="1" @if(old('bankruptcy') == 1)  checked @endif id="c19" name="bankruptcy" class="main-checkbox" >
-                                            <label for="c19"><span></span>Bankruptcy-{{ Lang::get('listing.h_o') }} <input name="ba_ye" value="{{ old('ba_ye') }}" class="input_no_border" type="text">yr(s)</label><br>
+                                            <label for="c19"><span></span>{{ Lang::get('pages.bank') }}-{{ Lang::get('listing.h_o') }} <input name="ba_ye" value="{{ old('ba_ye') }}" class="input_no_border" type="text">yr(s)</label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="1" @if(old('foreclosure') == 1)  checked @endif id="c20" name="foreclosure" class="main-checkbox" >
@@ -361,23 +361,23 @@
                                             </div>
                                             <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox"  value="1" @if(old('washer_dryer') == 1)  checked @endif id="c11" name="washer_dryer" class="main-checkbox">
-                                                <label for="c11"><span></span>Washer Dryer</label>
+                                                <label for="c11"><span></span>{{ Lang::get('pages.w_ad') }}</label>
                                             </div>
                                             <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox"  value="1" @if(old('washer_dryer_hockups') == 1)  checked @endif id="c7" name="washer_dryer_hockups" class="main-checkbox">
-                                                <label for="c7"><span></span>Washer Dryer Hookups</label>
+                                                <label for="c7"><span></span>{{ Lang::get('pages.w_h') }}</label>
                                             </div>
                                             <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox"  value="1" @if(old('onsite_laundry') == 1)  checked @endif id="c8" name="onsite_laundry" class="main-checkbox">
-                                                <label for="c8"><span></span>Onsite Laundry</label>
+                                                <label for="c8"><span></span>{{ Lang::get('pages.o_n') }}</label>
                                             </div>
                                             <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox"  value="1" @if(old('fitness_center') == 1)  checked @endif id="c9" name="fitness_center" class="main-checkbox">
-                                                <label for="c9"><span></span>Fitness Center</label>
+                                                <label for="c9"><span></span>{{ Lang::get('pages.f_c') }}</label>
                                             </div>
                                             <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox"  value="1" @if(old('pool') == 1)  checked @endif id="c40" name="pool" class="main-checkbox">
-                                                <label for="c40"><span></span>Pool</label>
+                                                <label for="c40"><span></span>{{ Lang::get('pages.p_l') }}</label>
                                             </div>
                                         </div>
                                     </div>
@@ -464,13 +464,13 @@
 
         $(function() {
             $("#parking").select2({
-                placeholder: 'Parking Type'
+                placeholder: '{{ Lang::get('pages.p_a') }}'
             })
             $('#parking').on('select2:close', function (evt) {
                 var uldiv = $('.select2-container').find('ul')
                 var count = uldiv.find('li').length - 1;
                 if(count <= 0){
-                    uldiv.find("li").find(".select2-search__field").val('Parking Type')
+                    uldiv.find("li").find(".select2-search__field").val('{{ Lang::get('pages.p_a') }}')
                 }else{
                     uldiv.find("li").find(".select2-search__field").val('')
                     uldiv.html('<li style="font-weight: 600;font-size: 110%;padding: 12px;">' + count + ' items selected</li>')

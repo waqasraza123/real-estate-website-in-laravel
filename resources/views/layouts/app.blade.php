@@ -11,6 +11,14 @@
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
+
+    <!-- Translations -->
+    <script>
+        var $add = '{!! Lang::get('pages.a_p') !!}'
+        var $drop = '{!! Lang::get('pages.d_p') !!}'
+    </script>
+
+    <!-- /Translations -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('bootstrap\bootstrap.min.css') }}">
     <!-- Font awesome styles -->
@@ -66,8 +74,8 @@
                                 <div class="userMenu" id="userMenu">
                                     <ul class="userMenuDropdown">
                                         @if(Auth::user()->role == 1)
-                                            <li> <a id="adminArea" href="{{ route('adminHome') }}">Admin Area</a></li>
-                                            <li> <a id="editListing" href="{{ route('admListing') }}">Edit Listings</a></li>
+                                            <li> <a id="adminArea" href="{{ route('adminHome') }}">{{ Lang::get('pages.adm_area') }}</a></li>
+                                            <li> <a id="editListing" href="{{ route('admListing') }}">{{ Lang::get('pages.edit_list') }}</a></li>
                                          @endif
                                         <li> <a id="headerMyAccount" href="{{ route('account' , ['id' => Auth::user()->id]) }}"> {{ Lang::get('profile.m_a') }}</a></li>
                                         <li><a id="headerSignOut" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ Lang::get('profile.s_a') }}</a></li>
@@ -132,15 +140,15 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-lg-4">
-                        <h4 class="second-color">Popular Searches<span class="special-color">.</span></h4>
+                        <h4 class="second-color">{{ Lang::get('pages.p_o') }}<span class="special-color">.</span></h4>
                         <div class="footer-title-separator"></div>
                         <ul class="footer-ul">
-                            <li><span class="custom-ul-bullet"></span><a href="{{ route('homes') }}">{{ Lang::get('pages.home') }}</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href="{{ route('homes') }}">{{ Lang::get('pages.h_o') }}</a></li>
                             <li><span class="custom-ul-bullet"></span><a href="/blog">{{ Lang::get('blog') }}</a></li>
-                            <li><span class="custom-ul-bullet"></span><a href="http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=Houston&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Harris+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=Houston%2C+TX%2C+United+States&city=Houston&state=Texas&lng=-95.3698028&lat=29.7604267&min=&max=">Houston Apartments</a></li>
-                            <li><span class="custom-ul-bullet"></span><a href="http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=Austin&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Travis+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=Austin%2C+TX%2C+United+States&city=Austin&state=Texas&lng=-97.74306079999997&lat=30.267153&min=&max=">Austin Apartments</a></li>
-                            <li><span class="custom-ul-bullet"></span><a href="http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=Dallas&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Dallas+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=Dallas%2C+TX%2C+United+States&city=Dallas&state=Texas&lng=-96.79698789999998&lat=32.7766642&min=&max=">Dallas  Apartments</a></li>
-                            <li><span class="custom-ul-bullet"></span><a href=http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=San+Antonio&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Bexar+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=San+Antonio%2C+TX%2C+United+States&city=San+Antonio&state=Texas&lng=-98.49362819999999&lat=29.4241219&min=&max=>San Antonio   Apartments</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href="http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=Houston&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Harris+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=Houston%2C+TX%2C+United+States&city=Houston&state=Texas&lng=-95.3698028&lat=29.7604267&min=&max=">{{ Lang::get('pages.h_oc') }}</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href="http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=Austin&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Travis+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=Austin%2C+TX%2C+United+States&city=Austin&state=Texas&lng=-97.74306079999997&lat=30.267153&min=&max=">{{ Lang::get('pages.a_u') }}</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href="http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=Dallas&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Dallas+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=Dallas%2C+TX%2C+United+States&city=Dallas&state=Texas&lng=-96.79698789999998&lat=32.7766642&min=&max=">{{ Lang::get('pages.d_a') }}</a></li>
+                            <li><span class="custom-ul-bullet"></span><a href=http://www.2ndchanceleasing.com/search_listing?_token=ssvPvAEbvPsYDf44LvGjwUeYgeaQdtiif9J3KscY&wq-street_address=&wq-street_number=&wq-intersection=&wq-route=&wq-sublocality=&wq-locality=San+Antonio&wq-administrative_area_level_1=Texas&wq-administrative_area_level_2=Bexar+County&wq-administrative_area_level_3=&wq-administrative_area_level_4=&wq-administrative_area_level_5=&wq-country=United+States&wq-neighborhood=&listing_type=2&address=San+Antonio%2C+TX%2C+United+States&city=San+Antonio&state=Texas&lng=-98.49362819999999&lat=29.4241219&min=&max=>{{ Lang::get('pages.s_a') }}</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-lg-4">
@@ -155,7 +163,6 @@
 
                                         </a>
                                         <div class="footer-blog-title"><a href="{{$posts->url}}">{{ $posts->title }}</a></div>
-                                        <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>{{ \Carbon\Carbon::parse($posts->created_at)->format('d/m/y') }}</div>
                                         <div class="clearfix"></div>
                                     </article>
                                     <div class="footer-blog-separator hidden-xs"></div>
@@ -164,15 +171,6 @@
                             @endif
                         </div>
                     </div>
-                   {{-- <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <h4 class="second-color">{{ Lang::get('pages.newslater') }}<span class="special-color">.</span></h4>
-                        <div class="footer-title-separator"></div>
-                        <p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <form class="form-inline footer-newsletter">
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="{{ Lang::get('pages.enter_email') }}">
-                            <button type="submit" class="btn"><i class="fa fa-lg fa-paper-plane"></i></button>
-                        </form>
-                    </div>--}}
                 </div>
             </div>
         </footer>

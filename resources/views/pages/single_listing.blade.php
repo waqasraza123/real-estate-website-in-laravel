@@ -72,7 +72,7 @@
                         <!-- Contact Seller Area -->
                         <div class="row margin-top-60">
                             <div class="col-xs-12">
-                                <h3 class="title-negative-margin">contact the REPRESENTATIVE<span class="special-color">.</span></h3>
+                                <h3 class="title-negative-margin">{{ Lang::get('pages.c_re') }}<span class="special-color">.</span></h3>
                                 <div class="title-separator-primary"></div>
                             </div>
                         </div>
@@ -116,10 +116,10 @@
                                     <input name="name" value="@if(Auth::user()){{ Auth::user()->first_name }} @endif" type="text" class="input-long main-input" placeholder="Your name">
                                     <input name="phone" value="@if(Auth::user()){{ Auth::user()->phone }} @endif" type="text" class="input-short pull-right main-input" placeholder="Your phone">
                                     <input name="email" value="" type="email" class="input-full main-input" placeholder="Your email">
-                                    <textarea name="message" class="input-full agent-textarea main-input" placeholder="Your question"></textarea>
+                                    <textarea name="message" class="input-full agent-textarea main-input" placeholder="{{ Lang::get('pages.y_q') }}"></textarea>
                                     <div class="form-submit-cont">
                                         <button type="submit" href="#" class="button-primary pull-right">
-                                            <span>send</span>
+                                            <span>{{ Lang::get('pages.s_e') }}</span>
                                             <div class="button-triangle"></div>
                                             <div class="button-triangle2"></div>
                                             <div class="button-icon"><i class="fa fa-paper-plane"></i></div>
@@ -180,7 +180,7 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active">
                                     <a href="#tab-all" aria-controls="tab-map" role="tab" data-toggle="tab">
-                                        <span>All</span>
+                                        <span>{{ Lang::get('pages.a_l') }}</span>
                                         <div class="button-triangle2"></div>
                                     </a>
                                 </li>
@@ -190,7 +190,7 @@
                                         <li role="presentation">
                                             <a href="#tab-4" aria-controls="tab-street-view" role="tab" data-toggle="tab">
                                                     <span>
-                                                        1 Bedroom
+                                                        1 {{ Lang::get('pages.b_e') }}
                                                     </span>
                                                 <div class="button-triangle2"></div>
                                             </a>
@@ -203,7 +203,7 @@
                                         <li role="presentation">
                                             <a href="#tab-3" aria-controls="tab-street-view" role="tab" data-toggle="tab">
                                                     <span>
-                                                        2 Bedroom
+                                                        2 {{ Lang::get('pages.b_e') }}
                                                     </span>
                                                 <div class="button-triangle2"></div>
                                             </a>
@@ -216,7 +216,7 @@
                                         <li role="presentation">
                                             <a href="#tab-2" aria-controls="tab-street-view" role="tab" data-toggle="tab">
                                                     <span>
-                                                        3 Bedroom
+                                                        3 {{ Lang::get('pages.b_e') }}
                                                     </span>
                                                 <div class="button-triangle2"></div>
                                             </a>
@@ -229,7 +229,7 @@
                                         <li role="presentation">
                                             <a href="#tab-1" aria-controls="tab-street-view" role="tab" data-toggle="tab">
                                                 <span>
-                                                    4 Bedroom
+                                                    4 {{ Lang::get('pages.b_e') }}
                                                 </span>
                                                 <div class="button-triangle2"></div>
                                             </a>
@@ -244,14 +244,14 @@
                                     <table class="table table-bordered table-responsive">
                                         <thead>
                                         <tr>
-                                            <th>Type</th>
-                                            <th>Beds</th>
-                                            <th>Baths</th>
-                                            <th>Square Feet</th>
-                                            <th>Rent</th>
-                                            <th>Deposit</th>
-                                            <th>Available Date</th>
-                                            <th>Lease Length</th>
+                                            <th>{{ Lang::get('pages.ty') }}</th>
+                                            <th>{{ Lang::get('pages.beds') }}</th>
+                                            <th>{{ Lang::get('pages.baths') }}</th>
+                                            <th>{{ Lang::get('pages.s_f') }}</th>
+                                            <th>{{ Lang::get('pages.rent') }}</th>
+                                            <th>{{ Lang::get('pages.deposit') }}</th>
+                                            <th>{{ Lang::get('pages.ava_date') }}</th>
+                                            <th>{{ Lang::get('pages.l_l') }}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -272,11 +272,11 @@
                                                         @if($lis->beds_count == -1)
                                                             studio apartment
                                                         @else
-                                                            {{ $lis->beds_count }} Bedroom
+                                                            {{ $lis->beds_count }} {{ Lang::get('pages.b_e') }}
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        {{ $lis->baths_count }} Bathroom
+                                                        {{ $lis->baths_count }} {{ Lang::get('pages.b_a') }}
                                                     </td>
 
                                                     <td>
@@ -304,14 +304,14 @@
                                     <table class="table table-bordered table-responsive">
                                         <thead>
                                         <tr>
-                                            <th>Type</th>
-                                            <th>Beds</th>
-                                            <th>Baths</th>
-                                            <th>Square Feet</th>
-                                            <th>Rent</th>
-                                            <th>Deposit</th>
-                                            <th>Available Date</th>
-                                            <th>Lease Length</th>
+                                            <th>{{ Lang::get('pages.ty') }}</th>
+                                            <th>{{ Lang::get('pages.beds') }}</th>
+                                            <th>{{ Lang::get('pages.baths') }}</th>
+                                            <th>{{ Lang::get('pages.s_f') }}</th>
+                                            <th>{{ Lang::get('pages.rent') }}</th>
+                                            <th>{{ Lang::get('pages.deposit') }}</th>
+                                            <th>{{ Lang::get('pages.ava_date') }}</th>
+                                            <th>{{ Lang::get('pages.l_l') }}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -330,10 +330,10 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        {{ $lis->beds_count }} Bedroom
+                                                        {{ $lis->beds_count }} {{ Lang::get('pages.b_e') }}
                                                     </td>
                                                     <td>
-                                                        {{ $lis->baths_count }} Bathroom
+                                                        {{ $lis->baths_count }} {{ Lang::get('pages.b_a') }}
                                                     </td>
 
                                                     <td>
@@ -361,14 +361,14 @@
                                     <table class="table table-bordered table-responsive">
                                         <thead>
                                         <tr>
-                                            <th>Type</th>
-                                            <th>Beds</th>
-                                            <th>Baths</th>
-                                            <th>Square Feet</th>
-                                            <th>Rent</th>
-                                            <th>Deposit</th>
-                                            <th>Available Date</th>
-                                            <th>Lease Length</th>
+                                            <th>{{ Lang::get('pages.ty') }}</th>
+                                            <th>{{ Lang::get('pages.beds') }}</th>
+                                            <th>{{ Lang::get('pages.baths') }}</th>
+                                            <th>{{ Lang::get('pages.s_f') }}</th>
+                                            <th>{{ Lang::get('pages.rent') }}</th>
+                                            <th>{{ Lang::get('pages.deposit') }}</th>
+                                            <th>{{ Lang::get('pages.ava_date') }}</th>
+                                            <th>{{ Lang::get('pages.l_l') }}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -387,10 +387,10 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        {{ $lis->beds_count }} Bedroom
+                                                        {{ $lis->beds_count }} {{ Lang::get('pages.b_e') }}
                                                     </td>
                                                     <td>
-                                                        {{ $lis->baths_count }} Bathroom
+                                                        {{ $lis->baths_count }} {{ Lang::get('pages.b_a') }}
                                                     </td>
 
                                                     <td>
@@ -417,16 +417,16 @@
                                 <div role="tabpanel" class="tab-pane" id="tab-2">
                                             <table class="table table-bordered table-responsive">
                                                 <thead>
-                                                    <tr>
-                                                        <th>Type</th>
-                                                        <th>Beds</th>
-                                                        <th>Baths</th>
-                                                        <th>Square Feet</th>
-                                                        <th>Rent</th>
-                                                        <th>Deposit</th>
-                                                        <th>Available Date</th>
-                                                        <th>Lease Length</th>
-                                                    </tr>
+                                                <tr>
+                                                    <th>{{ Lang::get('pages.ty') }}</th>
+                                                    <th>{{ Lang::get('pages.beds') }}</th>
+                                                    <th>{{ Lang::get('pages.baths') }}</th>
+                                                    <th>{{ Lang::get('pages.s_f') }}</th>
+                                                    <th>{{ Lang::get('pages.rent') }}</th>
+                                                    <th>{{ Lang::get('pages.deposit') }}</th>
+                                                    <th>{{ Lang::get('pages.ava_date') }}</th>
+                                                    <th>{{ Lang::get('pages.l_l') }}</th>
+                                                </tr>
                                                 </thead>
                                                 <tbody>
                                                 @foreach($listing->ListingAttr()->get() as $lis)
@@ -444,10 +444,10 @@
                                                                 @endif
                                                             </td>
                                                             <td>
-                                                                {{ $lis->beds_count }} Bedroom
+                                                                {{ $lis->beds_count }} {{ Lang::get('pages.b_e') }}
                                                             </td>
                                                             <td>
-                                                                {{ $lis->baths_count }} Bathroom
+                                                                {{ $lis->baths_count }} {{ Lang::get('pages.b_a') }}
                                                             </td>
 
                                                             <td>
@@ -475,14 +475,14 @@
                                     <table class="table table-bordered table-responsive">
                                         <thead>
                                         <tr>
-                                            <th>Type</th>
-                                            <th>Beds</th>
-                                            <th>Baths</th>
-                                            <th>Square Feet</th>
-                                            <th>Rent</th>
-                                            <th>Deposit</th>
-                                            <th>Available Date</th>
-                                            <th>Lease Length</th>
+                                            <th>{{ Lang::get('pages.ty') }}</th>
+                                            <th>{{ Lang::get('pages.beds') }}</th>
+                                            <th>{{ Lang::get('pages.baths') }}</th>
+                                            <th>{{ Lang::get('pages.s_f') }}</th>
+                                            <th>{{ Lang::get('pages.rent') }}</th>
+                                            <th>{{ Lang::get('pages.deposit') }}</th>
+                                            <th>{{ Lang::get('pages.ava_date') }}</th>
+                                            <th>{{ Lang::get('pages.l_l') }}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -501,10 +501,10 @@
                                                         @endif
                                                     </td>
                                                     <td>
-                                                        {{ $lis->beds_count }} Bedroom
+                                                        {{ $lis->beds_count }} {{ Lang::get('pages.b_e') }}
                                                     </td>
                                                     <td>
-                                                        {{ $lis->baths_count }} Bathroom
+                                                        {{ $lis->baths_count }} {{ Lang::get('pages.b_a') }}
                                                     </td>
 
                                                     <td>
@@ -538,7 +538,7 @@
                             </div>
                             <div class="details-title pull-left">
                                 <h5 class="subtitle-margin">&nbsp;</h5>
-                                <h4>Pet Policy</h4>
+                                <h4>{{ Lang::get('pages.pet_p') }}</h4>
                             </div>
                             <div class="clearfix"></div>
                             <div class="title-separator-primary"></div>
@@ -609,7 +609,7 @@
                             </div>
                             <div class="details-title pull-left">
                                 <h5 class="subtitle-margin">&nbsp;</h5>
-                                <h4>School District</h4>
+                                <h4>{{ Lang::get('pages.sc_d') }}</h4>
                             </div>
                             <div class="clearfix"></div>
                             <div class="title-separator-primary"></div>
@@ -629,7 +629,7 @@
                             </div>
                             <div class="details-title pull-left">
                                 <h5 class="subtitle-margin">&nbsp;</h5>
-                                <h4>ACCEPTABLE ISSUES </h4>
+                                <h4>{{ Lang::get('pages.acept_isse') }}</h4>
                             </div>
                             <div class="clearfix"></div>
                             <div class="title-separator-primary"></div>
@@ -740,7 +740,7 @@
                             </div>
                             <div class="details-title pull-left">
                                 <h5 class="subtitle-margin">&nbsp;</h5>
-                                <h4>Unique Features</h4>
+                                <h4>{{ Lang::get('pages.uniq') }}</h4>
                             </div>
                             <div class="clearfix"></div>
                             <div class="title-separator-primary"></div>
@@ -760,23 +760,23 @@
                                     @endif
                                     @if($listing->washer_dryer == '1')
                                         <span class="bullet">•</span>
-                                        Washer Dryer
+                                            {{ Lang::get('pages.w_ad') }}
                                     @endif
                                     @if($listing->washer_dryer_hockups == '1')
                                         <span class="bullet">•</span>
-                                        Washer Dryer Hookups
+                                            {{ Lang::get('pages.w_h') }}
                                     @endif
                                     @if($listing->onsite_laundry == '1')
                                         <span class="bullet">•</span>
-                                        Onsite Laundry
+                                            {{ Lang::get('pages.o_n') }}
                                     @endif
                                     @if($listing->fitness_center == '1')
                                         <span class="bullet">•</span>
-                                        Fitness Center
+                                            {{ Lang::get('pages.f_c') }}
                                     @endif
                                     @if($listing->pool == '1')
                                         <span class="bullet">•</span>
-                                        Pool
+                                            {{ Lang::get('pages.p_l') }}
                                     @endif
                                 </li>
                             </ul>
@@ -789,13 +789,13 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active">
                                     <a href="#tab-map" aria-controls="tab-map" role="tab" data-toggle="tab">
-                                        <span>Map</span>
+                                        <span>{{ Lang::get('pages.map') }}</span>
                                         <div class="button-triangle2"></div>
                                     </a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#tab-street-view" aria-controls="tab-street-view" role="tab" data-toggle="tab">
-                                        <span>Street view</span>
+                                        <span>{{ Lang::get('pages.str_view') }}</span>
                                         <div class="button-triangle2"></div>
                                     </a>
                                 </li>
@@ -814,20 +814,20 @@
                     <!-- Reviews Area -->
                     <div class="row margin-top-60">
                         <div class="col-xs-12">
-                            <h3 class="title-negative-margin">Reviews</h3>
+                            <h3 class="title-negative-margin">{{ Lang::get('pages.revie') }}</h3>
                             <div class="title-separator-primary"></div>
                         </div>
                     </div>
                     <div class="row margin-top-60">
                         <div class="col-xs-8">
                             <div class="quote-box box_2" >
-                                <h5>Apartment Reviews</h5>
+                                <h5>{{ Lang::get('pages.app_reviewss') }}</h5>
                                 <br>
                                 @if(!$listing->Reviews()->first())
-                                    <p>There are no reviews for this property. Be the first to add a review on this property</p>
+                                    <p>{{ Lang::get('pages.reviews') }}</p>
                                 @endif
                                 <button type="button" href="#" id="show_review_box" class="button-primary ">
-                                    <span>Write a Review</span>
+                                    <span>{{ Lang::get('pages.w_re') }}</span>
                                     <div class="button-triangle"></div>
                                     <div class="button-triangle2"></div>
                                     <div class="button-icon"><i class="fa fa-quote-right"></i></div>

@@ -48,7 +48,7 @@
                                 <input type="hidden" name="wq-intersection" class="wq-intersection">
                                 <input type="hidden" name="wq-route" class="wq-route">
                                 <input type="hidden" name="wq-sublocality" class="wq-sublocality">
-                                <input type="hidden" name="wq-locality" class="wq-locality">
+                                {{--<input type="hidden" name="wq-locality" class="wq-locality">--}}
                                 <input type="hidden" name="wq-administrative_area_level_1" class="wq-administrative_area_level_1">
                                 <input type="hidden" name="wq-administrative_area_level_2" class="wq-administrative_area_level_2">
                                 <input type="hidden" name="wq-administrative_area_level_3" class="wq-administrative_area_level_3">
@@ -83,18 +83,18 @@
                                         <input name="state" type="text" value="{{ old('state') }}" class="input-full main-input" placeholder="">
                                     </div>
                                     <div class="col-sm-4 col-xs-12">
-                                        <h5 class="labeles">Zip Code</h5>
+                                        <h5 class="labeles">{{ Lang::get('pages.z_c') }}</h5>
                                         <input name="zip_code" type="text" value="{{ old('zip_code') }}" class="input-full main-input" placeholder="">
                                     </div>
 
                                 </div>
                                 <div class="grid">
                                     <div class="col-sm-6 col-xs-12">
-                                        <h5 class="labeles">Name of Apartment</h5>
+                                        <h5 class="labeles">{{ Lang::get('pages.n_a') }}</h5>
                                         <input name="name" type="text" value="{{ old('name') }}" class="input-full main-input" placeholder="">
                                     </div>
                                     <div class="col-sm-6 col-xs-12">
-                                        <h5 class="labeles">School District</h5>
+                                        <h5 class="labeles">{{ Lang::get('pages.sc_d') }}</h5>
                                         <input name="school_dc" type="text" value="{{ old('school_dc') }}" class="input-full main-input" placeholder="">
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@
                                         <div class="col-sm-4  col-xs-12">
                                             <h5 class="labeles">{{ Lang::get('listing.beds') }}</h5>
                                             <select name="beds_count[]" id="beds" class="selectpicker beds"  title="" style="display: none;">
-                                                <option value="-1">Studio</option>
+                                                <option value="-1">{{ Lang::get('pages.st') }}</option>
                                                 <option value="1" @if(old('beds_count') == 1) selected @endif>1.0</option>
                                                 <option value="2" @if(old('beds_count') == 2) selected @endif>2.0</option>
                                                 <option value="3" @if(old('beds_count') == 3) selected @endif>3.0</option>
@@ -197,7 +197,7 @@
                                 <div class="grid">
                                     <div class="col-sm-12 col-xs-12 text-center">
                                         <a href="#" id="clone_button" class="button-primary">
-                                            <span>Add More</span>
+                                            <span>{{ Lang::get('pages.a_m') }}</span>
                                             <div class="button-triangle"></div>
                                             <div class="button-triangle2"></div>
                                             <div class="button-icon"><i class="fa fa-lg fa-plus"></i></div>
@@ -206,14 +206,15 @@
                                 </div>
                                 <div class="grid">
                                     <div class="col-xs-12">
-                                        <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">Featured Image</h4>
+                                        <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('pages.f_i') }}</h4>
                                     </div>
                                 </div>
                                 <div class="grid">
-                                    <div class="col-xs-12">
-                                        <input type="file" name="featured" >
+                                    <div class="col-xs-12" style="margin-bottom: 20px">
+                                        <input type="file" name="featured" class="form-control">
                                     </div>
                                 </div>
+                                <br>
                                 <div class="grid">
                                     <div class="col-xs-12">
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.photos') }}</h4>
@@ -221,10 +222,11 @@
                                 </div>
 
                                 <div class="grid">
-                                    <div class="col-xs-12 ">
-                                        <input id="file-upload" name="files[]" type="file" multiple>
+                                    <div class="col-xs-12">
+                                        <input name="files[]" id="file-upload" class="form-control" type="file" multiple>
                                     </div>
                                 </div>
+                                <br>
 
                                 <div class="grid">
                                     <div class="col-xs-12">
@@ -244,11 +246,11 @@
                                             </div>
                                             <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox" value="1" @if(old('misdemeanor') == 1)  checked @endif id="c14" name="misdemeanor" class="main-checkbox" >
-                                                <label for="c14"><span></span>{{ Lang::get('listing.mis') }} ({{ Lang::get('listing.h_o') }})</label><br>
+                                                <label for="c14"><span></span>{{ Lang::get('listing.mis') }}-{{ Lang::get('listing.h_o') }} <input name="mis_ye" class="input_no_border" value="{{ old('mis_ye') }}" type="text">yr(s)</label><br>
                                             </div>
                                             <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox" value="1" @if(old('falonies') == 1)  checked @endif id="c15" name="falonies" class="main-checkbox" >
-                                                <label for="c15"><span></span>{{ Lang::get('listing.fels') }} ({{ Lang::get('listing.h_o') }})</label><br>
+                                                <label for="c15"><span></span>{{ Lang::get('listing.fels') }} -{{ Lang::get('listing.h_o') }} <input name="fe_ye" class="input_no_border" value="{{ old('fe_ye') }}" type="text">yr(s)</label><br>
                                             </div>
                                             <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox" value="1" @if(old('section_8') == 1)  checked @endif id="c16" name="section_8" class="main-checkbox" >
@@ -359,30 +361,30 @@
                                                 </div>
                                                 <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox"  value="1" @if(old('washer_dryer') == 1)  checked @endif id="c11" name="washer_dryer" class="main-checkbox">
-                                                    <label for="c11"><span></span>Washer Dryer</label>
+                                                    <label for="c11"><span></span>{{ Lang::get('pages.w_ad') }}</label>
                                                 </div>
                                                 <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox"  value="1" @if(old('washer_dryer_hockups') == 1)  checked @endif id="c7" name="washer_dryer_hockups" class="main-checkbox">
-                                                    <label for="c7"><span></span>Washer Dryer Hookups</label>
+                                                    <label for="c7"><span></span>{{ Lang::get('pages.w_h') }}</label>
                                                 </div>
                                                 <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox"  value="1" @if(old('onsite_laundry') == 1)  checked @endif id="c8" name="onsite_laundry" class="main-checkbox">
-                                                    <label for="c8"><span></span>Onsite Laundry</label>
+                                                    <label for="c8"><span></span>{{ Lang::get('pages.o_n') }}</label>
                                                 </div>
                                                 <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox"  value="1" @if(old('fitness_center') == 1)  checked @endif id="c9" name="fitness_center" class="main-checkbox">
-                                                    <label for="c9"><span></span>Fitness Center</label>
+                                                    <label for="c9"><span></span>{{ Lang::get('pages.f_c') }}</label>
                                                 </div>
                                                 <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                     <input type="checkbox"  value="1" @if(old('pool') == 1)  checked @endif id="c40" name="pool" class="main-checkbox">
-                                                    <label for="c40"><span></span>Pool</label>
+                                                    <label for="c40"><span></span>{{ Lang::get('pages.p_l') }}</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="grid">
                                         <div class="cell-sm-4">
-                                            <select id="parking" class="selectpicker parking" multiple="" name="parking_type[]"   title="{{ Lang::get('listing.parking_type') }}" style="display: none;">
+                                            <select multiple id="parking" class="selectpicker parking" name="parking_type[]"  title="" style="display: none;">
                                                 <option value="1" @if(old('parking_type') == 1)  selected @endif>{{ Lang::get('listing.surfact_lot') }}</option>
                                                 <option value="3" @if(old('parking_type') == 3)  selected @endif>{{ Lang::get('listing.covered') }}</option>
                                                 <option value="4" @if(old('parking_type') == 4)  selected @endif>{{ Lang::get('listing.street') }}</option>
@@ -427,7 +429,7 @@
                     <div class="col-xs-12">
                         <div class="row">
                             <div class="center-button-cont margin-top-60">
-                                <button type="submit" id="submit_button" class="button-primary">
+                                <button type="submit" id="submit_button" class="button-primary" >
                                     <span>{{ Lang::get('listing.submit') }}</span>
                                     <div class="button-triangle"></div>
                                     <div class="button-triangle2"></div>
