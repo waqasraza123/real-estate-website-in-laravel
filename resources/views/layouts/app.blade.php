@@ -24,7 +24,7 @@
     <!-- Font awesome styles -->
     <link rel="stylesheet" href="{{ asset('apartment-font\css\font-awesome.min.css') }}">
     <!-- Custom styles -->
-    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,500italic,700,700italic&amp;subset=latin,latin-ext'>
+    <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,500italic,700,700italic&amp;subset=latin,latin-ext'>
     <link rel="stylesheet" type="text/css" href="{{ asset('css\plugins.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css\init.css') }}">
