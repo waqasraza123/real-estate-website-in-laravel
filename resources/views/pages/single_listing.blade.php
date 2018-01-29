@@ -86,7 +86,7 @@
                                     </h2>
                                 </div>
                                 <h5 class="subtitle-margin"> </h5>
-                                <h3 class="title-negative-margin">{{ $listing->User()->first()->first_name }} {{ $listing->User()->first()->last_name }}<span class="special-color">.</span></h3>
+                                {{--<h3 class="title-negative-margin">{{ $listing->User()->first()->first_name }} {{ $listing->User()->first()->last_name }}<span class="special-color">.</span></h3>--}}
                                 <a href="#" class="agent-photo">
                                     <img src="{{ asset('images/apartment-move-in-specials.jpg') }}" alt="" class="img-responsive">
                                 </a>
@@ -814,7 +814,7 @@
                     <!-- Reviews Area -->
                     <div class="row margin-top-60">
                         <div class="col-xs-12">
-                            {{--<h3 class="title-negative-margin ">{{ Lang::get('pages.revie') }}</h3>--}}
+                            <h3 class="title-negative-margin">{{ Lang::get('pages.revie') }}</h3>
                             <div class="title-separator-primary"></div>
                         </div>
                     </div>
