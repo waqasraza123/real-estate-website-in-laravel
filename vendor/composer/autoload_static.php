@@ -415,6 +415,7 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
         'AddStateToListingsTagle' => __DIR__ . '/../..' . '/database/migrations/2017_10_25_201358_add_state_to_listings_tagle.php',
         'AddTagsIdDidcodeBlogPosts' => __DIR__ . '/../..' . '/database/migrations/2017_10_11_125531_add_tags_id_didcode_blog_posts.php',
         'AddTitleToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_23_200734_add_title_to_listings_table.php',
+        'AddUniqueFeaturesToListingTable' => __DIR__ . '/../..' . '/database/migrations/2018_01_29_231539_add_unique_features_to_listing_table.php',
         'AddUsersInfoToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_02_001109_add_users_info_to_users_table.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',

@@ -24,6 +24,7 @@ return array(
     'AddStateToListingsTagle' => $baseDir . '/database/migrations/2017_10_25_201358_add_state_to_listings_tagle.php',
     'AddTagsIdDidcodeBlogPosts' => $baseDir . '/database/migrations/2017_10_11_125531_add_tags_id_didcode_blog_posts.php',
     'AddTitleToListingsTable' => $baseDir . '/database/migrations/2017_09_23_200734_add_title_to_listings_table.php',
+    'AddUniqueFeaturesToListingTable' => $baseDir . '/database/migrations/2018_01_29_231539_add_unique_features_to_listing_table.php',
     'AddUsersInfoToUsersTable' => $baseDir . '/database/migrations/2017_09_02_001109_add_users_info_to_users_table.php',
     'App\\Comment' => $baseDir . '/app/Comment.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',

@@ -144,6 +144,12 @@ return [
     'rent' => 'Rent',
     'deposit' => 'Deposit',
     'ava_date' => 'Available Date',
+    'yard' => 'Yards',
+    'h_f' => 'Hardwood Flooring',
+    'w_cl' => 'Walk In Closet',
+    'upde_kitc' => 'Updated Kitchen',
+    'clo_tr' => 'Close to Public Transportation',
+    'd_pa' => 'Dog Park'
 
 
 

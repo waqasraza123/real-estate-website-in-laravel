@@ -751,32 +751,69 @@
                                         {{ Lang::get('listing.furnished') }}
                                     @endif
                                     @if($listing->no_smocking == '1')
+                                            <br>
                                         <span class="bullet">•</span>
                                         {{ Lang::get('listing.no_smo') }}
                                     @endif
                                     @if($listing->wheelchair == '1')
+                                            <br>
                                         <span class="bullet">•</span>
                                         {{ Lang::get('listing.wheel_access') }}
                                     @endif
                                     @if($listing->washer_dryer == '1')
+                                            <br>
                                         <span class="bullet">•</span>
                                             {{ Lang::get('pages.w_ad') }}
                                     @endif
                                     @if($listing->washer_dryer_hockups == '1')
+                                            <br>
                                         <span class="bullet">•</span>
                                             {{ Lang::get('pages.w_h') }}
                                     @endif
                                     @if($listing->onsite_laundry == '1')
+                                            <br>
                                         <span class="bullet">•</span>
                                             {{ Lang::get('pages.o_n') }}
                                     @endif
                                     @if($listing->fitness_center == '1')
+                                            <br>
                                         <span class="bullet">•</span>
                                             {{ Lang::get('pages.f_c') }}
                                     @endif
                                     @if($listing->pool == '1')
+                                            <br>
                                         <span class="bullet">•</span>
                                             {{ Lang::get('pages.p_l') }}
+                                    @endif
+                                    @if($listing->yard == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.yard') }}
+                                    @endif
+                                    @if($listing->hard_floor == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.h_f') }}
+                                    @endif
+                                    @if($listing->wal_closet == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.w_cl') }}
+                                    @endif
+                                    @if($listing->updated_kitchen == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.upde_kitc') }}
+                                    @endif
+                                    @if($listing->close_public == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.clo_tr') }}
+                                    @endif
+                                    @if($listing->dog_park == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
                                     @endif
                                 </li>
                             </ul>

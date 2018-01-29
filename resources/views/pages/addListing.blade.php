@@ -379,6 +379,30 @@
                                                 <input type="checkbox"  value="1" @if(old('pool') == 1)  checked @endif id="c40" name="pool" class="main-checkbox">
                                                 <label for="c40"><span></span>{{ Lang::get('pages.p_l') }}</label>
                                             </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('yard') == 1)  checked @endif id="c41" name="yard" class="main-checkbox">
+                                                <label for="c41"><span></span>{{ Lang::get('pages.yard') }}</label>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('hard_floor') == 1)  checked @endif id="c42" name="hard_floor" class="main-checkbox">
+                                                <label for="c42"><span></span>{{ Lang::get('pages.h_f') }}</label>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('wal_closet') == 1)  checked @endif id="c43" name="wal_closet" class="main-checkbox">
+                                                <label for="c43"><span></span>{{ Lang::get('pages.w_cl') }}</label>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('updated_kitchen') == 1)  checked @endif id="c44" name="updated_kitchen" class="main-checkbox">
+                                                <label for="c44"><span></span>{{ Lang::get('pages.upde_kitc') }}</label>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('close_public') == 1)  checked @endif id="c45" name="close_public" class="main-checkbox">
+                                                <label for="c45"><span></span>{{ Lang::get('pages.clo_tr') }}</label>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox"  value="1" @if(old('dog_park') == 1)  checked @endif id="c46" name="dog_park" class="main-checkbox">
+                                                <label for="c46"><span></span>{{ Lang::get('pages.d_pa') }}</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
