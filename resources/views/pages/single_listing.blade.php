@@ -814,7 +814,7 @@
                     <!-- Reviews Area -->
                     <div class="row margin-top-60">
                         <div class="col-xs-12">
-                            <h3 class="title-negative-margin">{{ Lang::get('pages.revie') }}</h3>
+                            {{--<h3 class="title-negative-margin ">{{ Lang::get('pages.revie') }}</h3>--}}
                             <div class="title-separator-primary"></div>
                         </div>
                     </div>
