@@ -542,7 +542,7 @@
                             </div>
                             <div class="clearfix"></div>
                             <div class="title-separator-primary"></div>
-                            <ul class="no_padding row">
+                            <ul class="no_padding row" style="padding-top: 20px">
                                 <li class="no_style col-lg-6 col-sm-12 col-xs-12" style="list-style: none;text-align:left">
                                     @if($listing->broken_lease == '1')
                                         <span class="bullet">•</span>
