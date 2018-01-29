@@ -56,7 +56,7 @@ return [
     'acceptable' => 'problemas aceptables',
     'b_l' => 'Rompimiento del contrato de arrendamiento',
     'h_m' => 'cuántos',
-    'h_o' => 'cuántos años',
+    'h_o' => 'más de _ años de edad',
     'e_v' => 'desalojo',
     'mis' => 'falta',
     'fel' => 'Delito',

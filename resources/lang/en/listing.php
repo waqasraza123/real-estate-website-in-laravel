@@ -57,7 +57,7 @@ return [
     'acceptable' => 'Acceptable Issues',
     'b_l' => 'broken lease',
     'h_m' => 'how many',
-    'h_o' => 'how old',
+    'h_o' => 'Over',
     'e_v' => 'eviction',
     'mis' => 'misdemeanor',
     'fel' => 'Felony',
