@@ -46,7 +46,7 @@
                             <div class="row">
                                 <br>
                                 <div class="col-xs-12 col-sm-6 col-lg-3">
-                                    <input id="autocomplete" class="input-full main-input"  value="{{ old('address') }}" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('listing.address') }}" name="address">
+                                    <input id="autocomplete" class="input-full main-input"  value="" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('listing.address') }}" name="address">
                                     <table id="address" style="display: none">
                                         <input class="field"  id="street_number" type="hidden">
                                         <input class="field"  id="route" type="hidden">
