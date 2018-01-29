@@ -183,7 +183,7 @@
                                                 <h5 class="labeles">
                                                     {{ Lang::get('listing.available') }}
                                                 </h5>
-                                                <input  class="input-full main-input" id="datepicker" type="text" name="available_date[]" value="{{ Carbon\Carbon::parse($lis->available_date)->format('m/d/Y') }}" placeholder="Date" readonly="" required="true" title="">
+                                                {{Form::select('available_date[]', ['Available Now' => 'Available Now', 'Available Soon' => 'Available Soon', 'Not Available' => 'Not Available'], $lis->available_date, ['class' => 'input-full main-input availability'])}}
                                             </div>
                                             <div class="col-sm-2 col-xs-12">
                                                 <h5 class="labeles">{{ Lang::get('listing.lase_length') }}</h5>
@@ -472,6 +472,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script type="text/javascript">
         $(function() {
+            $(".availability").select2({
+            })
             $("#parking").select2({
                 placeholder: 'Parking Type'
             })
