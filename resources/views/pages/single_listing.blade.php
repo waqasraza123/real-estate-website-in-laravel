@@ -530,97 +530,6 @@
                     </div>
                     @endif
                     <div class="row margin-top-15">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div class="details-image pull-left hidden-xs">
-                                <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
-                                    <i class="petIcon"></i>
-                                </div>
-                            </div>
-                            <div class="details-title pull-left">
-                                <h5 class="subtitle-margin">&nbsp;</h5>
-                                <h4>{{ Lang::get('pages.pet_p') }}</h4>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="title-separator-primary"></div>
-                            <ul class="no_padding margin-top-15">
-                                @if($listing->dogs == '1')
-                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.dogs_ok') }}</li>
-                                @endif
-                                @if($listing->cats == '1')
-                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.cats_ok') }}</li>
-                                @endif
-                                @if($listing->no_pets == '1')
-                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.no_pets') }}</li>
-                                @endif
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                            <div class="details-image pull-left hidden-xs">
-                                <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
-                                    <i class="parkingIcon"></i>
-                                </div>
-                            </div>
-                            <div class="details-title pull-left">
-                                <h5 class="subtitle-margin">&nbsp;</h5>
-                                <h4>{{ Lang::get('listing.parking_type') }}</h4>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <div class="title-separator-primary"></div>
-                            <ul class="no_padding margin-top-15">
-                                @if($listing->parking_type != NULL)
-                                    @foreach(json_decode($listing->parking_type) as $parking_type)
-                                        @if($parking_type == '1')
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.surfact_lot') }}
-                                            </li>
-                                        @endif
-                                        @if($parking_type == '3')
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.covered') }}
-                                            </li>
-                                        @endif
-                                        @if($parking_type == '4')
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.street') }}
-                                            </li>
-                                        @endif
-                                        @if($parking_type == '5')
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.garage') }}
-                                            </li>
-                                        @endif
-                                        @if($parking_type == '7')
-                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
-                                                {{ Lang::get('listing.other') }}
-                                            </li>
-                                        @endif
-                                    @endforeach
-                                @endif
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                            <div class="details-image pull-left hidden-xs">
-                                <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
-                                    <i class="leaseIcon"></i>
-                                </div>
-                            </div>
-                            <div class="details-title pull-left">
-                                <h5 class="subtitle-margin">&nbsp;</h5>
-                                <h4>{{ Lang::get('pages.sc_d') }}</h4>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="title-separator-primary"></div>
-                            <ul class="no_padding margin-top-15">
-                                <li class="no_style" >
-                                    <span class="bullet">•</span>
-                                    {{ $listing->school_dc }}
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                             <div class="details-image pull-left hidden-xs">
                                 <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
@@ -728,6 +637,97 @@
                                         {{ Lang::get('listing.theft') }}
                                         <br>
                                     @endif
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="details-image pull-left hidden-xs">
+                                <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                    <i class="petIcon"></i>
+                                </div>
+                            </div>
+                            <div class="details-title pull-left">
+                                <h5 class="subtitle-margin">&nbsp;</h5>
+                                <h4>{{ Lang::get('pages.pet_p') }}</h4>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="title-separator-primary"></div>
+                            <ul class="no_padding margin-top-15">
+                                @if($listing->dogs == '1')
+                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.dogs_ok') }}</li>
+                                @endif
+                                @if($listing->cats == '1')
+                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.cats_ok') }}</li>
+                                @endif
+                                @if($listing->no_pets == '1')
+                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.no_pets') }}</li>
+                                @endif
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                            <div class="details-image pull-left hidden-xs">
+                                <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                    <i class="parkingIcon"></i>
+                                </div>
+                            </div>
+                            <div class="details-title pull-left">
+                                <h5 class="subtitle-margin">&nbsp;</h5>
+                                <h4>{{ Lang::get('listing.parking_type') }}</h4>
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <div class="title-separator-primary"></div>
+                            <ul class="no_padding margin-top-15">
+                                @if($listing->parking_type != NULL)
+                                    @foreach(json_decode($listing->parking_type) as $parking_type)
+                                        @if($parking_type == '1')
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                {{ Lang::get('listing.surfact_lot') }}
+                                            </li>
+                                        @endif
+                                        @if($parking_type == '3')
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                {{ Lang::get('listing.covered') }}
+                                            </li>
+                                        @endif
+                                        @if($parking_type == '4')
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                {{ Lang::get('listing.street') }}
+                                            </li>
+                                        @endif
+                                        @if($parking_type == '5')
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                {{ Lang::get('listing.garage') }}
+                                            </li>
+                                        @endif
+                                        @if($parking_type == '7')
+                                            <li class="no_style" style="list-style: none;text-align:left"><span class="bullet">•</span>
+                                                {{ Lang::get('listing.other') }}
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                            <div class="details-image pull-left hidden-xs">
+                                <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
+                                    <i class="leaseIcon"></i>
+                                </div>
+                            </div>
+                            <div class="details-title pull-left">
+                                <h5 class="subtitle-margin">&nbsp;</h5>
+                                <h4>{{ Lang::get('pages.sc_d') }}</h4>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="title-separator-primary"></div>
+                            <ul class="no_padding margin-top-15">
+                                <li class="no_style" >
+                                    <span class="bullet">•</span>
+                                    {{ $listing->school_dc }}
                                 </li>
                             </ul>
                             <div class="clearfix"></div>
