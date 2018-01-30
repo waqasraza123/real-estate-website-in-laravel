@@ -5094,13 +5094,11 @@ address.contact-info i.fa {
 }
 
 .apartment-stacked-tabs .nav-stacked {
-	width: 25%;
 	position: relative;
 	z-index: 2;
 }
 
 .apartment-stacked-tabs .tab-content {
-	width: 75%;
 }
 
 .apartment-stacked-tabs .nav-tabs li{

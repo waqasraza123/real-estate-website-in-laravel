@@ -234,96 +234,340 @@
                                 </div>
                             </div>
                             <div class="grid">
-                                <div class="col-xs-12 col-md-6 col-lg-6 margin-top-15">
-                                    <div class="row">
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('broken_lease') == 1)  checked @endif id="c12" name="broken_lease" class="main-checkbox" >
-                                            <label for="c12"><span></span>{{ Lang::get('listing.b_l') }}-{{ Lang::get('listing.h_o') }} <input name="br_le_ye" class="input_no_border" value="{{ old('br_le_ye') }}" type="text">yr(s) </label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('eviction') == 1)  checked @endif id="c13" name="eviction" class="main-checkbox" >
-                                            <label for="c13"><span></span>{{ Lang::get('listing.e_v') }}-{{ Lang::get('listing.h_o') }} <input name="ev_ye" class="input_no_border" value="{{ old('ev_ye') }}" type="text">yr(s)</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('misdemeanor') == 1)  checked @endif id="c14" name="misdemeanor" class="main-checkbox" >
-                                            <label for="c14"><span></span>{{ Lang::get('listing.mis') }}-{{ Lang::get('listing.h_o') }} <input name="mis_ye" class="input_no_border" value="{{ old('mis_ye') }}" type="text">yr(s)</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('falonies') == 1)  checked @endif id="c15" name="falonies" class="main-checkbox" >
-                                            <label for="c15"><span></span>{{ Lang::get('listing.fels') }} -{{ Lang::get('listing.h_o') }} <input name="fe_ye" class="input_no_border" value="{{ old('fe_ye') }}" type="text">yr(s)</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('section_8') == 1)  checked @endif id="c16" name="section_8" class="main-checkbox" >
-                                            <label for="c16"><span></span>{{ Lang::get('listing.sec_8') }}</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('hud') == 1)  checked @endif id="c17" name="hud" class="main-checkbox" >
-                                            <label for="c17"><span></span>HUD</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('income_r') == 1)  checked @endif id="c18" name="income_r" class="main-checkbox" >
-                                            <label for="c18"><span></span>{{ Lang::get('listing.in_r') }}</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('bankruptcy') == 1)  checked @endif id="c19" name="bankruptcy" class="main-checkbox" >
-                                            <label for="c19"><span></span>{{ Lang::get('pages.bank') }}-{{ Lang::get('listing.h_o') }} <input name="ba_ye" value="{{ old('ba_ye') }}" class="input_no_border" type="text">yr(s)</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('foreclosure') == 1)  checked @endif id="c20" name="foreclosure" class="main-checkbox" >
-                                            <label for="c20"><span></span>{{ Lang::get('listing.forec') }}-{{ Lang::get('listing.h_o') }} <input name="fo_ye" value="{{ old('fo_ye') }}" class="input_no_border" type="text">yr(s)</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('credit') == 1)  checked @endif id="c21" name="credit" class="main-checkbox" >
-                                            <label for="c21"><span></span>{{ Lang::get('listing.cre') }}</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('move_in') == 1)  checked @endif id="c22" name="move_in" class="main-checkbox" >
-                                            <label for="c22"><span></span>{{ Lang::get('listing.m_i_s') }}</label><br>
-                                        </div>
+                                <div class="col-xs-12 col-lg-6 margin-top-15">
+                                    <div class="checkboxGroup" style="  margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox"  value="1" @if(old('broken_lease') == 1)  checked @endif id="c12" name="broken_lease" class="main-checkbox" >
+                                        <label for="c12"><span></span>{{ Lang::get('listing.b_l') }}-{{ Lang::get('listing.h_o') }} <input name="br_le_ye" class="input_no_border" value="{{ old('br_le_ye') }}" type="text">yr(s) </label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style="  margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('eviction') == 1)  checked @endif id="c13" name="eviction" class="main-checkbox" >
+                                        <label for="c13"><span></span>{{ Lang::get('listing.e_v') }}-{{ Lang::get('listing.h_o') }} <input name="ev_ye" class="input_no_border" value="{{ old('ev_ye') }}" type="text">yr(s)</label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('misdemeanor') == 1)  checked @endif id="c14" name="misdemeanor" class="main-checkbox" >
+                                        <label for="c14"><span></span>{{ Lang::get('listing.mis') }}-{{ Lang::get('listing.h_o') }} <input name="mis_ye" class="input_no_border" value="{{ old('mis_ye') }}" type="text">yr(s)</label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('falonies') == 1)  checked @endif id="c15" name="falonies" class="main-checkbox" >
+                                        <label for="c15"><span></span>{{ Lang::get('listing.fels') }} -{{ Lang::get('listing.h_o') }} <input name="fe_ye" class="input_no_border" value="{{ old('fe_ye') }}" type="text">yr(s)</label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('section_8') == 1)  checked @endif id="c16" name="section_8" class="main-checkbox" >
+                                        <label for="c16"><span></span>{{ Lang::get('listing.sec_8') }}</label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('hud') == 1)  checked @endif id="c17" name="hud" class="main-checkbox" >
+                                        <label for="c17"><span></span>HUD</label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('income_r') == 1)  checked @endif id="c18" name="income_r" class="main-checkbox" >
+                                        <label for="c18"><span></span>{{ Lang::get('listing.in_r') }}</label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('credit') == 1)  checked @endif id="c21" name="credit" class="main-checkbox" >
+                                        <label for="c21"><span></span>{{ Lang::get('listing.cre') }}</label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('move_in') == 1)  checked @endif id="c22" name="move_in" class="main-checkbox" >
+                                        <label for="c22"><span></span>{{ Lang::get('listing.m_i_s') }}</label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('bankruptcy') == 1)  checked @endif id="c19" name="bankruptcy" class="main-checkbox" >
+                                        <label for="c19"><span></span>{{ Lang::get('pages.bank') }}-{{ Lang::get('listing.h_o') }} <input name="ba_ye" value="{{ old('ba_ye') }}" class="input_no_border" type="text">yr(s)</label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('foreclosure') == 1)  checked @endif id="c20" name="foreclosure" class="main-checkbox" >
+                                        <label for="c20"><span></span>{{ Lang::get('listing.forec') }}-{{ Lang::get('listing.h_o') }} <input name="fo_ye" value="{{ old('fo_ye') }}" class="input_no_border" type="text">yr(s)</label><br>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-md-6 col-lg-6 margin-top-15">
-                                    <div class="row">
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('possession') == 1)  checked @endif id="c23" name="possession" class="main-checkbox" >
-                                            <label for="c23"><span></span>{{ Lang::get('listing.pos') }}</label><br>
+                                <div class="col-xs-12 col-lg-6 margin-top-15">
+                                    <div class="apartment-stacked-tabs">
+
+                                        <!-- Tab panes -->
+                                        <ul class="nav nav-tabs nav-stacked " role="tablist">
+                                            <li role="presentation" class="active">
+                                                <a href="#shome" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">
+                                                    <span>{{ Lang::get('pages.office') }}</span>
+                                                    <div class="button-triangle2"></div>
+                                                </a>
+                                            </li>
+                                            <li role="presentation" class="">
+                                                <a href="#sprofile" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">
+                                                    <span>{{ Lang::get('pages.crimes') }}</span>
+                                                    <div class="button-triangle2"></div>
+                                                </a>
+                                            </li>
+                                            <li role="presentation" class="">
+                                                <a href="#smessages" aria-controls="messages" role="tab" data-toggle="tab" aria-expanded="false">
+                                                    <span>{{ Lang::get('pages.justi') }}</span>
+                                                    <div class="button-triangle2"></div>
+                                                </a>
+                                            </li>
+                                            <li role="presentation" class="">
+                                                <a href="#ssettings" aria-controls="settings" role="tab" data-toggle="tab" aria-expanded="false">
+                                                    <span>{{ Lang::get('pages.victim') }}</span>
+                                                    <div class="button-triangle2"></div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <!-- Nav tabs -->
+                                        <div class="tab-content ">
+                                            <div role="tabpanel" class="tab-pane active" id="shome">
+                                                <ul class="custom-ul">
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.assa') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.assault') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.batt') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.big') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.crim') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.false') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.homes') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.sexual') }}
+                                                        </li>
+                                                    </div>
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.homicide') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.kind') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.mans') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.mayem') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.murder') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.negli') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.public') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.reape') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.robery') }}
+                                                        </li>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </ul>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="sprofile">
+                                                <ul class="custom-ul">
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.arson') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.black') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.bri') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.bulg') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.embez') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.extori') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.falsep') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.fraud') }}
+                                                        </li>
+                                                    </div>
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.larceny') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.payola') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.pick') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.prosse') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.robber') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.tax') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.theft') }}
+                                                        </li>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </ul>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="smessages">
+                                                <ul class="custom-ul">
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.com') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.malf') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.misc') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.misp') }}
+                                                        </li>
+                                                    </div>
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.obst') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.perj') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.perv') }}
+                                                        </li>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </ul>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="ssettings">
+                                                <ul class="custom-ul">
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.adult') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.apos') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.buge') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.provi') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.gamb') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.incest') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.pros') }}
+                                                        </li>
+                                                    </div>
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.dueling') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.forn') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.lewd') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.exh') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.crea') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.sodo') }}
+                                                        </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            {{ Lang::get('pages.suic') }}
+                                                        </li>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('possession_w') == 1)  checked @endif id="c24" name="possession_w" class="main-checkbox" >
-                                            <label for="c24"><span></span>{{ Lang::get('listing.pos_w') }}</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('assault') == 1)  checked @endif id="c25" name="assault" class="main-checkbox" >
-                                            <label for="c25"><span></span>{{ Lang::get('listing.as') }}</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('herassment') == 1)  checked @endif id="c26" name="herassment" class="main-checkbox" >
-                                            <label for="c26"><span></span>Harassment</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('theft_of') == 1)  checked @endif id="c27" name="theft_of" class="main-checkbox" >
-                                            <label for="c27"><span></span>{{ Lang::get('listing.th_o_h') }}</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('dwi') == 1)  checked @endif id="c28" name="dwi" class="main-checkbox" >
-                                            <label for="c28"><span></span>DWI</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('dui') == 1)  checked @endif id="c29" name="dui" class="main-checkbox" >
-                                            <label for="c29"><span></span>DUI</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('disorderly') == 1)  checked @endif id="c30" name="disorderly" class="main-checkbox" >
-                                            <label for="c30"><span></span>{{ Lang::get('listing.di_xc') }}</label><br>
-                                        </div>
-                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('theft') == 1)  checked @endif id="c31" name="theft" class="main-checkbox" >
-                                            <label for="c31"><span></span>{{ Lang::get('listing.theft') }}</label><br>
-                                        </div>
+
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="descriptionAmenitiesWrapper">
+
+                                <div class="descriptionAmenitiesWrapper">
                                 <div class="grid">
                                     <div class="col-xs-12">
                                         <h4 class="special-color" style="font-size: 24px;margin-top: 10px;margin-bottom: 20px;">{{ Lang::get('listing.descirption') }} </h4>
