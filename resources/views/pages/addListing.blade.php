@@ -281,38 +281,26 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-lg-6 margin-top-15">
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('office') == 1)  checked @endif id="office" name="foreclosure" class="main-checkbox" >
+                                        <label for="office"><span></span>{{ Lang::get('pages.office') }}-{{ Lang::get('listing.h_o') }} <button  type="button" class="btn btn-primary shome pull-right"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('crimes') == 1)  checked @endif id="crimes" name="foreclosure" class="main-checkbox" >
+                                        <label for="crimes"><span></span>{{ Lang::get('pages.crimes') }}-{{ Lang::get('listing.h_o') }} <button  type="button" class="btn btn-primary sprofile pull-right"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('justi') == 1)  checked @endif id="justi" name="foreclosure" class="main-checkbox" >
+                                        <label for="justi"><span></span>{{ Lang::get('pages.justi') }}-{{ Lang::get('listing.h_o') }} <button  type="button" class="btn btn-primary smessages pull-right" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
+                                    </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('victim') == 1)  checked @endif id="victim" name="foreclosure" class="main-checkbox" >
+                                        <label for="victim"><span></span>{{ Lang::get('pages.victim') }}-{{ Lang::get('listing.h_o') }} <button  type="button" class="btn btn-primary ssettings pull-right" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
+                                    </div>
                                     <div class="apartment-stacked-tabs">
-
-                                        <!-- Tab panes -->
-                                        <ul class="nav nav-tabs nav-stacked " role="tablist">
-                                            <li role="presentation" class="active">
-                                                <a href="#shome" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">
-                                                    <span>{{ Lang::get('pages.office') }}</span>
-                                                    <div class="button-triangle2"></div>
-                                                </a>
-                                            </li>
-                                            <li role="presentation" class="">
-                                                <a href="#sprofile" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">
-                                                    <span>{{ Lang::get('pages.crimes') }}</span>
-                                                    <div class="button-triangle2"></div>
-                                                </a>
-                                            </li>
-                                            <li role="presentation" class="">
-                                                <a href="#smessages" aria-controls="messages" role="tab" data-toggle="tab" aria-expanded="false">
-                                                    <span>{{ Lang::get('pages.justi') }}</span>
-                                                    <div class="button-triangle2"></div>
-                                                </a>
-                                            </li>
-                                            <li role="presentation" class="">
-                                                <a href="#ssettings" aria-controls="settings" role="tab" data-toggle="tab" aria-expanded="false">
-                                                    <span>{{ Lang::get('pages.victim') }}</span>
-                                                    <div class="button-triangle2"></div>
-                                                </a>
-                                            </li>
-                                        </ul>
                                         <!-- Nav tabs -->
-                                        <div class="tab-content ">
-                                            <div role="tabpanel" class="tab-pane active" id="shome">
+                                        <div class="tab-content " style="padding: 0px; border:none;">
+                                            <div role="tabpanel" class="tab-pane " id="shome">
                                                 <ul class="custom-ul">
                                                     <div class="col-lg-6 col-xs-12">
                                                         <li>
@@ -731,6 +719,25 @@
     <script type="text/javascript">
 
         $(function() {
+
+
+            $('.shome').click(function () {
+                $('.tab-pane').removeClass('active')
+                $('#shome').addClass('active');
+            });
+            $('.smessages').click(function () {
+                $('.tab-pane').removeClass('active')
+                $('#smessages').addClass('active');
+            });
+            $('.ssettings').click(function () {
+                $('.tab-pane').removeClass('active')
+                $('#ssettings').addClass('active');
+            });
+            $('.sprofile').click(function () {
+                $('.tab-pane').removeClass('active')
+                $('#sprofile').addClass('active');
+            });
+
             $(".availability").select2({
             })
             $("#parking").select2({
