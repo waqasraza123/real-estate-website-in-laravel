@@ -18,6 +18,7 @@ return array(
     'AddMisdemeanorYearsToListingTable' => $baseDir . '/database/migrations/2018_01_21_174954_add_misdemeanor_years_to_listing_table.php',
     'AddNameToSavedSearches' => $baseDir . '/database/migrations/2017_09_09_024823_add_name_to_saved_searches.php',
     'AddNewCheckoxesToListings' => $baseDir . '/database/migrations/2017_10_16_161912_add_new_checkoxes_to_listings.php',
+    'AddOficeFieldsToListingsTable' => $baseDir . '/database/migrations/2018_02_02_131144_add_ofice_fields_to_listings_table.php',
     'AddPhoneTypeToUsersTable' => $baseDir . '/database/migrations/2017_08_18_152915_add_phone_type_to_users_table.php',
     'AddRolesToUsersTable' => $baseDir . '/database/migrations/2017_09_30_212322_add_roles_to_users_table.php',
     'AddSchjoolDisctrictToListingsTable' => $baseDir . '/database/migrations/2017_10_25_221835_add_schjool_disctrict_to_listings_table.php',

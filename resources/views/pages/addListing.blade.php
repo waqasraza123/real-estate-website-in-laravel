@@ -283,19 +283,19 @@
                                 <div class="col-xs-12 col-lg-6 margin-top-15">
                                     <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                         <input type="checkbox" value="1" @if(old('office') == 1)  checked @endif id="office" name="foreclosure" class="main-checkbox" >
-                                        <label for="office"><span></span>{{ Lang::get('pages.office') }}-{{ Lang::get('listing.h_o') }} <button  type="button" class="btn btn-primary shome pull-right"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
+                                        <label for="office"><span></span>{{ Lang::get('pages.office') }} <button  type="button" class="btn btn-primary shome pull-right"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
                                     </div>
                                     <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                         <input type="checkbox" value="1" @if(old('crimes') == 1)  checked @endif id="crimes" name="foreclosure" class="main-checkbox" >
-                                        <label for="crimes"><span></span>{{ Lang::get('pages.crimes') }}-{{ Lang::get('listing.h_o') }} <button  type="button" class="btn btn-primary sprofile pull-right"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
+                                        <label for="crimes"><span></span>{{ Lang::get('pages.crimes') }} <button  type="button" class="btn btn-primary sprofile pull-right"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
                                     </div>
                                     <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                         <input type="checkbox" value="1" @if(old('justi') == 1)  checked @endif id="justi" name="foreclosure" class="main-checkbox" >
-                                        <label for="justi"><span></span>{{ Lang::get('pages.justi') }}-{{ Lang::get('listing.h_o') }} <button  type="button" class="btn btn-primary smessages pull-right" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
+                                        <label for="justi"><span></span>{{ Lang::get('pages.justi') }} <button  type="button" class="btn btn-primary smessages pull-right" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
                                     </div>
                                     <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                         <input type="checkbox" value="1" @if(old('victim') == 1)  checked @endif id="victim" name="foreclosure" class="main-checkbox" >
-                                        <label for="victim"><span></span>{{ Lang::get('pages.victim') }}-{{ Lang::get('listing.h_o') }} <button  type="button" class="btn btn-primary ssettings pull-right" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
+                                        <label for="victim"><span></span>{{ Lang::get('pages.victim') }} <button  type="button" class="btn btn-primary ssettings pull-right" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
                                     </div>
                                     <div class="apartment-stacked-tabs">
                                         <!-- Nav tabs -->

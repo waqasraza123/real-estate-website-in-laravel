@@ -260,43 +260,21 @@
                                         </div>
                                     </div>
                                     <div class="col-xs-12 col-lg-6 margin-top-15">
-                                        <div class="row">
-                                            <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox" value="1" @if($listing->possession == 1)  checked @endif id="c23" name="possession" class="main-checkbox" >
-                                                <label for="c23"><span></span>{{ Lang::get('listing.pos') }}</label><br>
-                                            </div>
-                                            <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox" value="1" @if($listing->possession_w == 1)  checked @endif id="c24" name="possession_w" class="main-checkbox" >
-                                                <label for="c24"><span></span>{{ Lang::get('listing.pos_w') }}</label><br>
-                                            </div>
-                                            <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox" value="1" @if($listing->assault == 1)  checked @endif id="c25" name="assault" class="main-checkbox" >
-                                                <label for="c25"><span></span>{{ Lang::get('listing.as') }}</label><br>
-                                            </div>
-                                            <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox" value="1" @if($listing->herassment == 1)  checked @endif id="c26" name="herassment" class="main-checkbox" >
-                                                <label for="c26"><span></span>Harassment</label><br>
-                                            </div>
-                                            <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox" value="1" @if($listing->theft_of == 1)  checked @endif id="c27" name="theft_of" class="main-checkbox" >
-                                                <label for="c27"><span></span>{{ Lang::get('listing.th_o_h') }}</label><br>
-                                            </div>
-                                            <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox" value="1" @if($listing->dwi == 1)  checked @endif id="c28" name="dwi" class="main-checkbox" >
-                                                <label for="c28"><span></span>DWI</label><br>
-                                            </div>
-                                            <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox" value="1" @if($listing->dui == 1)  checked @endif id="c29" name="dui" class="main-checkbox" >
-                                                <label for="c29"><span></span>DUI</label><br>
-                                            </div>
-                                            <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox" value="1" @if($listing->disorderly == 1)  checked @endif id="c30" name="disorderly" class="main-checkbox" >
-                                                <label for="c30"><span></span>{{ Lang::get('listing.di_xc') }}</label><br>
-                                            </div>
-                                            <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox" value="1" @if($listing->theft == 1)  checked @endif id="c31" name="theft" class="main-checkbox" >
-                                                <label for="c31"><span></span>{{ Lang::get('listing.theft') }}</label><br>
-                                            </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if($listing->office == 1)    checked @endif id="office" name="foreclosure" class="main-checkbox" >
+                                            <label for="office"><span></span>{{ Lang::get('pages.office') }} <button  type="button" class="btn btn-primary shome pull-right"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if($listing->crimes == 1)   checked @endif id="crimes" name="foreclosure" class="main-checkbox" >
+                                            <label for="crimes"><span></span>{{ Lang::get('pages.crimes') }} <button  type="button" class="btn btn-primary sprofile pull-right"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1"  @if($listing->justi == 1)    checked @endif id="justi" name="foreclosure" class="main-checkbox" >
+                                            <label for="justi"><span></span>{{ Lang::get('pages.justi') }} <button  type="button" class="btn btn-primary smessages pull-right" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if($listing->victim == 1)  checked @endif id="victim" name="foreclosure" class="main-checkbox" >
+                                            <label for="victim"><span></span>{{ Lang::get('pages.victim') }} <button  type="button" class="btn btn-primary ssettings pull-right" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                     </div>
                                 </div>

@@ -409,6 +409,7 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
         'AddMisdemeanorYearsToListingTable' => __DIR__ . '/../..' . '/database/migrations/2018_01_21_174954_add_misdemeanor_years_to_listing_table.php',
         'AddNameToSavedSearches' => __DIR__ . '/../..' . '/database/migrations/2017_09_09_024823_add_name_to_saved_searches.php',
         'AddNewCheckoxesToListings' => __DIR__ . '/../..' . '/database/migrations/2017_10_16_161912_add_new_checkoxes_to_listings.php',
+        'AddOficeFieldsToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2018_02_02_131144_add_ofice_fields_to_listings_table.php',
         'AddPhoneTypeToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_18_152915_add_phone_type_to_users_table.php',
         'AddRolesToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_30_212322_add_roles_to_users_table.php',
         'AddSchjoolDisctrictToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_25_221835_add_schjool_disctrict_to_listings_table.php',
