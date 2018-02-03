@@ -357,7 +357,7 @@ class ListingController extends Controller
             $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-locality'])->orWhere('acceptable_city', $inputs['wq-locality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
             $listing->orWhere('city', $inputs['wq-locality']);
-            dd($listing->orWhere('city', $inputs['wq-locality']));
+            dd($listing->orWhere('city', $inputs['wq-locality'])->get());
         }
         elseif ($inputs['wq-administrative_area_level_2']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_county', $inputs['wq-administrative_area_level_2'])->pluck('zip_code')->toArray();
