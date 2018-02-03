@@ -17,7 +17,7 @@
                             <!-- Preloader image -->
                             <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                         </div>
-                        @foreach($listing->ListingsImages()->get() as $images)
+                        @foreach($listing->ListingsImages()->orderBy('featured' , 'desc')->get() as $images)
                             <div class="swiper-slide">
                                 <div class="slide-bg swiper-lazy" data-background="{{ asset('assets/images').'/'.$images->image }}"></div>
                                 <!-- Preloader image -->
@@ -25,7 +25,6 @@
                             </div>
                         @endforeach
                     </div>
-
                     <div class="slide-buttons slide-buttons-center">
                         <a href="#" class="navigation-box navigation-box-next slide-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe802;</i></div></a>
                         <div id="slide-more-cont"></div>
@@ -44,7 +43,7 @@
                                 <div id="swiper-thumbs" class="swiper-container">
                                     <!-- Additional required wrapper -->
                                     <div class="swiper-wrapper">
-                                        @foreach($listing->ListingsImages()->get() as $images)
+                                        @foreach($listing->ListingsImages()->orderBy('featured' , 'desc')->get() as $images)
                                             <div class="swiper-slide">
                                                 <img class="slide-thumb" src="{{ asset('assets/images').'/'.$images->image }}" alt="" width="150px" height="83px">
                                             </div>

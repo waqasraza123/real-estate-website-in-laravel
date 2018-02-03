@@ -569,9 +569,7 @@
                 showUpload: true,
                 showRemove: true,
                 browseClass: "button-shadow btn"
-
             });
-
         }
 
     </script>

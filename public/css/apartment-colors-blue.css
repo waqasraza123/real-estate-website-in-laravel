@@ -15,11 +15,24 @@ body {
 	border:2px solid red !important;
 }
 
-
+.abs_f_h{
+	display: none;
+}
 
 /*********************** TEXT COLOR ***********************/
 
-
+.absalut{
+	position: absolute;
+	left: 29px;
+	background: white;
+	border: 1px solid grey;
+	z-index: 999;
+	border-radius: 11px;
+	display: block;
+}
+.absalutx{
+	display: none;
+}
 
 body,
 .huge-header,
@@ -491,8 +504,6 @@ header.header3 .hover-menu,
 #advancedFilters ul:not(.selectpicker) li {
 	margin-bottom: 2%;
 	font-size: 14px;
-	width: 49%;
-	height: 34px;
 	line-height: 33px;
 	float: left;
 	position: relative;
