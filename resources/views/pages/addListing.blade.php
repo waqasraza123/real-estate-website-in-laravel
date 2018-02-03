@@ -113,25 +113,25 @@
                                 <div class="grid">
                                     <div class="col-sm-3  col-xs-12" >
                                         <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio" @if(old('listing_type') == 2) checked @endif value="2" id="propType2" name="listing_type[]" title="">
+                                            <input type="radio" required class="primaryRadio" @if(old('listing_type') == 2) checked @endif value="2" id="propType2" name="listing_type[]" title="">
                                             <label  for="propType2"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.appartament') }}</span></label>
                                         </div>
                                     </div>
                                     <div class="col-sm-3  col-xs-12" >
                                         <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="7" @if(old('listing_type') == 7) checked @endif id="propType7" name="listing_type[]" title="">
+                                            <input type="radio" required class="primaryRadio"  value="7" @if(old('listing_type') == 7) checked @endif id="propType7" name="listing_type[]" title="">
                                             <label  for="propType7"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.condo') }}</span></label>
                                         </div>
                                     </div>
                                     <div class="col-sm-3  col-xs-12" >
                                         <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="5" @if(old('listing_type') == 5) checked @endif id="propType5" name="listing_type[]" title="">
+                                            <input type="radio" required class="primaryRadio"  value="5" @if(old('listing_type') == 5) checked @endif id="propType5" name="listing_type[]" title="">
                                             <label  for="propType5"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.townhome') }}</span></label>
                                         </div>
                                     </div>
                                     <div class="col-sm-3  col-xs-12" >
                                         <div class="radioGroup">
-                                            <input type="radio" class="primaryRadio"  value="3" @if(old('listing_type') == 3) checked @endif id="propType3" name="listing_type[]" title="">
+                                            <input type="radio" required class="primaryRadio"  value="3" @if(old('listing_type') == 3) checked @endif id="propType3" name="listing_type[]" title="">
                                             <label  for="propType3"><span data-bind="text: Description" class="spanes">{{ Lang::get('listing.single_home') }}</span></label>
                                         </div>
                                     </div>
