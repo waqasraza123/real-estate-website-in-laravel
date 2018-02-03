@@ -331,6 +331,7 @@ class ListingController extends Controller
         $request->flash();
         $min = [];
         $inputs = $request->except('token');
+        dd($inputs);
         $listing = Listing::where('listings.listing_status', 'done')
             ->where('listings.approved', "1")
             ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
