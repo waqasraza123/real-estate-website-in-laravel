@@ -177,4 +177,8 @@ class HomeController extends Controller
     public function equalOpportunity(){
         return view('terms.equal_oprtunity');
     }
+
+    public function dANeeds(){
+        return view('pages/dnaneeds');
+    }
 }

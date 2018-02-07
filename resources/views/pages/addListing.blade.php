@@ -267,10 +267,7 @@
                                         <input type="checkbox" value="1" @if(old('credit') == 1)  checked @endif id="c21" name="credit" class="main-checkbox" >
                                         <label for="c21"><span></span>{{ Lang::get('listing.cre') }}</label><br>
                                     </div>
-                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                        <input type="checkbox" value="1" @if(old('move_in') == 1)  checked @endif id="c22" name="move_in" class="main-checkbox" >
-                                        <label for="c22"><span></span>{{ Lang::get('listing.m_i_s') }}</label><br>
-                                    </div>
+
                                     <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                         <input type="checkbox" value="1" @if(old('bankruptcy') == 1)  checked @endif id="c19" name="bankruptcy" class="main-checkbox" >
                                         <label for="c19"><span></span>{{ Lang::get('pages.bank') }}-{{ Lang::get('listing.h_o') }} <input name="ba_ye" value="{{ old('ba_ye') }}" class="input_no_border" type="text">yr(s)</label><br>
@@ -305,14 +302,6 @@
                                                     <div class="col-lg-6 col-xs-12">
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.assa') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.assault') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.batt') }}
                                                         </li>
                                                         <li>
@@ -331,35 +320,12 @@
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.homes') }}
                                                         </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.sexual') }}
-                                                        </li>
+
                                                     </div>
                                                     <div class="col-lg-6 col-xs-12">
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.homicide') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.kind') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.mans') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.mayem') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.murder') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.negli') }}
                                                         </li>
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
@@ -486,10 +452,7 @@
                                             <div role="tabpanel" class="tab-pane" id="ssettings">
                                                 <ul class="custom-ul">
                                                     <div class="col-lg-6 col-xs-12">
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.adult') }}
-                                                        </li>
+
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.apos') }}
@@ -498,10 +461,7 @@
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.buge') }}
                                                         </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.provi') }}
-                                                        </li>
+
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.gamb') }}
@@ -520,26 +480,17 @@
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.dueling') }}
                                                         </li>
+
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.forn') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.lewd') }}
+                                                           Drag a bullet
                                                         </li>
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.exh') }}
                                                         </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.crea') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.sodo') }}
-                                                        </li>
+
+
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.suic') }}
@@ -549,12 +500,9 @@
                                                 </ul>
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>
-
                                 <div class="descriptionAmenitiesWrapper">
                                 <div class="grid">
                                     <div class="col-xs-12">
@@ -634,6 +582,14 @@
                                             <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox"  value="1" @if(old('dog_park') == 1)  checked @endif id="c46" name="dog_park" class="main-checkbox">
                                                 <label for="c46"><span></span>{{ Lang::get('pages.d_pa') }}</label>
+                                            </div>
+                                            <div class="checkboxGroup" style="float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox" value="1" @if(old('move_in') == 1)  checked @endif id="c22" name="move_in" class="main-checkbox" >
+                                                <label for="c22"><span></span>{{ Lang::get('listing.m_i_s') }}</label><br>
+                                            </div>
+                                            <div class="checkboxGroup" style="float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox" value="1" @if(old('townhome_need') == 1)  checked @endif id="c22" name="townhome_need" class="main-checkbox" >
+                                                <label for="c22"><span></span>{{ Lang::get('listing.m_i_s') }}</label><br>
                                             </div>
                                         </div>
                                     </div>

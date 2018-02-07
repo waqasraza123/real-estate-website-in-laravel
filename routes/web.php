@@ -82,6 +82,8 @@ Route::post('agent_form_post' , ['as' => 'PostagentForm' , 'uses' => 'ListingCon
 Route::get('make_featured_iamge/{id}/{listing_id}' , ['as' => 'makeFeatureImage' , 'uses' => 'ListingController@makeFeatureImage' ]);
 Route::get('filter_listings' , ['as' => 'filterListings' , 'uses' => 'ListingController@filterListings']);
 Route::get('clear_filter' , ['as' => 'clearFilter' , 'uses' => 'ListingController@clearFilter']);
+Route::get('d-a-needs' , ['as' => 'dANeeds' , 'uses' => 'HomeController@dANeeds']);
+
 
     #Agent Routes
 

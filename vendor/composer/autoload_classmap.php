@@ -147,6 +147,7 @@ return array(
     'CreateListingImagesTable' => $baseDir . '/database/migrations/2017_08_18_140623_create_listing_images_table.php',
     'CreateLogoTable' => $baseDir . '/database/migrations/2017_10_02_012453_create_logo_table.php',
     'CreateMoreAddressColumnsInListingsTable' => $baseDir . '/database/migrations/2017_12_03_150214_create_more_address_columns_in_listings_table.php',
+    'CreateNewFaluesForListing' => $baseDir . '/database/migrations/2018_02_07_144100_create_new_falues_for_listing.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateReviewsTable' => $baseDir . '/database/migrations/2017_09_28_221610_create_reviews_table.php',
     'CreateSavedSearchsTable' => $baseDir . '/database/migrations/2017_09_06_194205_create_saved_searchs_table.php',

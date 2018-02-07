@@ -196,7 +196,7 @@ return [
     'victim' => 'Victimless Crimes  ',
     'adult' => 'Adultery',
     'apos' => 'Apostasy',
-    'buge' => 'BuggeryBuggery',
+    'buge' => 'Buggery',
     'provi' => 'Providing Contraception Information ( Comstock Law)',
     'dueling' => 'Dueling',
     'forn' => 'Fornication',
