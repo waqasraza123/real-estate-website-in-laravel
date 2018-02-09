@@ -46,10 +46,7 @@
                                     <input type="checkbox" value="1" @if(old('dogs') == 1)  checked @endif id="c100" name="all_box" class="main-checkbox" >
                                     <label for="c100"><span></span>All Bills</label><br>
                                 </div>
-                                <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
-                                    <input type="checkbox" value="1" @if(old('dogs') == 1)  checked @endif id="c10" name="dogs" class="main-checkbox" >
-                                    <label for="c10"><span></span>{{ Lang::get('listing.dogs_ok') }}</label><br>
-                                </div>
+
                                 <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                     <input type="checkbox" value="1" @if(old('cats') == 1)  checked @endif id="c2" name="cats" class="main-checkbox">
                                     <label for="c2"><span></span>{{ Lang::get('listing.cats_ok') }}</label><br>

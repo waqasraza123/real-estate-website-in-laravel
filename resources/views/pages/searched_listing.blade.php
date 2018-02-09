@@ -115,9 +115,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-xs-12">
+                                <div class="col-lg-6 col-xs-12">
                                     <div class="row">
-                                        <div class="col-lg-9 col-xs-12">
+                                        <div class="col-lg-6 col-xs-12">
                                             <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                                 <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
                                                     <option value="all">{{ Lang::get('home.all_be') }}</option>
@@ -136,21 +136,23 @@
                                                 </optgroup>
                                             </select>
                                         </div>
-                                        <div class="col-lg-3 col-xs-12">
-                                            <a href="#" class="boldet_link">
+                                        <div class="col-lg-5 col-xs-12">
+                                            <a href="#" class="boldet_link ">
                                                 {{ Lang::get('pages.f_is') }}
                                             </a>
                                         </div>
+                                        @if(Request::path() == 'filter_listings')
+                                            <div class="col-lg-1">
+                                                <a href="{{ route('clearFilter') }}" class=" btn btn-primary" style="    height: 50px; line-height: 41px;">
+                                                    Clear
+                                                </a>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
-                                 @if(Request::path() == 'filter_listings')
-                                <div class="col-lg-1">
-                                    <a href="{{ route('clearFilter') }}" class=" btn btn-primary" style="    height: 50px; line-height: 41px;">
-                                        Clear
-                                    </a>
-                                </div>
-                                @endif
-                                <div class="col-sm-12 col-md-6 col-lg-2 col-xs-12 text-center  adv-search-button-cont">
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12 text-center  adv-search-button-cont">
                                     <button type="submit" class="button-primary  appartament_search">
                                         <span>{{ Lang::get('home.search_btn') }}</span>
                                         <div class="button-triangle"></div>
@@ -161,7 +163,7 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-xs-12 col-lg-2">
+                    <div class="col-xs-12 col-lg-6">
                         @if(Auth::user())
                         <form action="{{ route('saveSearch') }}" class="apartament_form pull-right" id="save_search" method="post">
                             {{ csrf_field() }}
@@ -201,9 +203,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </div>
     <div class="row">
         @if($listings->first())
@@ -218,7 +217,7 @@
                             <div class="desktopView clearfix" id="advancedFilters">
                             <h4 class="amenitiesHeading">{{ Lang::get('pages.c_n') }}</h4>
                             <div class="grid">
-                                <div class="col-xs-12 col-md-12 col-lg-12 margin-top-15">
+                                <div class="col-xs-12 col-md-12 col-lg-6 margin-top-15">
                                     <div class="row">
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="broken_lease" id="c12" name="filter[]" class="main-checkbox">
@@ -282,24 +281,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-md-12 col-lg-12 margin-top-15">
+                                <div class="col-xs-12 col-md-12 col-lg-6 margin-top-15">
                                     <div class="row">
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input type="checkbox" value="1"  id="office" name="foreclosure" class="main-checkbox" >
-
                                             <label for="office"><span></span>{{ Lang::get('pages.office') }} <button  type="button" class="btn btn-primary shome pull-right toltip_button"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
                                             <ul class="custom-ul">
                                                 <div class="col-lg-6 col-xs-12">
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.assa') }}
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.assault') }}
-                                                    </li>
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.batt') }}
@@ -320,35 +310,12 @@
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.homes') }}
                                                     </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.sexual') }}
-                                                    </li>
+
                                                 </div>
                                                 <div class="col-lg-6 col-xs-12">
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.homicide') }}
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.kind') }}
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.mans') }}
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.mayem') }}
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.murder') }}
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.negli') }}
                                                     </li>
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
@@ -489,20 +456,13 @@
                                                 <div class="col-lg-6 col-xs-12">
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.adult') }}
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.apos') }}
                                                     </li>
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.buge') }}
                                                     </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.provi') }}
-                                                    </li>
+
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.gamb') }}
@@ -521,25 +481,15 @@
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.dueling') }}
                                                     </li>
+
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.forn') }}
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.lewd') }}
+                                                        Drag a bullet
                                                     </li>
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.exh') }}
                                                     </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.crea') }}
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.sodo') }}
                                                     </li>
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
@@ -812,6 +762,22 @@
                                             <input name="filter[]" id="PetFriendly_2" type="checkbox" value="cats" class="main-checkbox">
                                             <label for="PetFriendly_2"><span></span>{{ Lang::get('listing.cats_ok') }}</label>
                                         </div>
+                                        <div class="checkboxGroup" style="margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="loft_box"  id="c100" name="filter[]" class="main-checkbox" >
+                                            <label for="c100"><span></span>{{Lang::get('listing.Lofts_box')}}</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style="   margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('all_box') == 1)  checked @endif id="Dens_box" name="filter[]" class="main-checkbox" >
+                                            <label for="Dens_box"><span></span>{{Lang::get('listing.Dens_box')}} </label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style="   margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('all_bills') == 1)  checked @endif id="All_Bills" name="filter[]" class="main-checkbox" >
+                                            <label for="All_Bills"><span></span>{{Lang::get('listing.All_Bills')}}</label><br>
+                                        </div>
+                                        <div class="checkboxGroup" style="   margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" @if(old('all_townl') == 1)  checked @endif id="Townhomes" name="filter[]" class="main-checkbox" >
+                                            <label for="Townhomes"><span></span>{{Lang::get('listing.Townhomes')}} </label><br>
+                                        </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input  name="filter[]" id="PetFriendly_3" type="checkbox" value="no_pets" class="main-checkbox">
                                             <label for="PetFriendly_3"><span></span>{{ Lang::get('listing.no_pets') }}</label>
@@ -835,6 +801,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="clearfix"></div>
                             <button type="button" class="button-primary  text-center appartament_done">
                                 <span>{{ Lang::get('pages.c_lo') }}</span>
                                 <div class="button-triangle"></div>
@@ -859,7 +826,7 @@
                         }
                     ?>
                     @foreach($listings as $listing)
-                        <a href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }} class="list-agency row">
+                        <a href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" class="list-agency row">
                             <div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">
                                 <div class="full_blue">
                                     <h2> {{ $listing->name }}</h2>
@@ -872,16 +839,19 @@
                                 <div class="list-agency-text" style="padding-bottom: 0px">
                                     <h4 class="list-agency-title"><i class="fa fa-map-marker"></i>  {{ $listing->address }}</h4>
                                     <div class="list-agency-separator"></div>
-
                                 </div>
-
                             </a>
-                            <div class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-12 text-center">
+                            <div class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
                                 <div class="list-agency-text">
                                     <h4 class="list-agency-title"><i class="fa fa-phone"></i>  {{ App\User::where('id' ,$listing->user_id)->pluck('phone')->first() }}</h4>
                                 </div>
                             </div>
-
+                            <div class="col-lg-6 col-xs-12">
+                                <div class="list-agency-text">
+                                <h4 class="list-agency-title"> <i class="fa fa-clock-o"></i> {{ \Carbon\Carbon::parse($listing->updated_at)->diffInDays() }} Days</h4>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
                             <ul class="app_attr_list">
                                 <li class="">
                                     <span class="team-icon-circle">

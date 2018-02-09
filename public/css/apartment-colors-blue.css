@@ -480,6 +480,10 @@ header.header3 .hover-menu,
 	font-weight: bold;
 	letter-spacing: 1px;
 	line-height: 50px;
+	background: #3797dd;
+	color: white;
+	padding: 12px 24px;
+	margin-left: 15px;
 }
 
 #price-min1 li{

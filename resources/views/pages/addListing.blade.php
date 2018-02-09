@@ -520,6 +520,22 @@
                                                 <label for="c10"><span></span>{{ Lang::get('listing.dogs_ok') }}</label><br>
                                             </div>
                                             <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox" value="1" @if(old('loft_box') == 1)  checked @endif id="c100" name="loft_box" class="main-checkbox" >
+                                                <label for="c100"><span></span>{{Lang::get('listing.Lofts_box')}}</label><br>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox" value="1" @if(old('all_box') == 1)  checked @endif id="Dens_box" name="all_box" class="main-checkbox" >
+                                                <label for="Dens_box"><span></span>{{Lang::get('listing.Dens_box')}} </label><br>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox" value="1" @if(old('all_bills') == 1)  checked @endif id="All_Bills" name="all_bills" class="main-checkbox" >
+                                                <label for="All_Bills"><span></span>{{Lang::get('listing.All_Bills')}}</label><br>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
+                                                <input type="checkbox" value="1" @if(old('all_townl') == 1)  checked @endif id="Townhomes" name="all_townl" class="main-checkbox" >
+                                                <label for="Townhomes"><span></span>{{Lang::get('listing.Townhomes')}} </label><br>
+                                            </div>
+                                            <div class="checkboxGroup" style="  float:left; margin-left: 10px;  padding: 10px;">
                                                 <input type="checkbox" value="1" @if(old('cats') == 1)  checked @endif id="c2" name="cats" class="main-checkbox">
                                                 <label for="c2"><span></span>{{ Lang::get('listing.cats_ok') }}</label><br>
                                             </div>
@@ -587,10 +603,7 @@
                                                 <input type="checkbox" value="1" @if(old('move_in') == 1)  checked @endif id="c22" name="move_in" class="main-checkbox" >
                                                 <label for="c22"><span></span>{{ Lang::get('listing.m_i_s') }}</label><br>
                                             </div>
-                                            <div class="checkboxGroup" style="float:left; margin-left: 10px;  padding: 10px;">
-                                                <input type="checkbox" value="1" @if(old('townhome_need') == 1)  checked @endif id="c22" name="townhome_need" class="main-checkbox" >
-                                                <label for="c22"><span></span>{{ Lang::get('listing.m_i_s') }}</label><br>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
