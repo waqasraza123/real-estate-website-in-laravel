@@ -207,7 +207,13 @@
     <div class="row">
         @if($listings->first())
         <div class="col-lg-7 " style="    padding-right: 0;">
-            <div id="offers-map"></div>
+            <div id="offers-map">
+
+            </div>
+            <div class="polygon">
+                <i class="fa fa-map"></i>
+                Polygon
+            </div>
         </div>
         <div class="col-lg-5 " id="offers-list" style="background: white;  overflow-y: scroll">
             <div class="row"  style="overflow: scroll">
@@ -1028,9 +1034,9 @@
                 LatLngList[i] = pos;
             }
 
-           /* var bermudaTriangle = new google.maps.Polygon({
+            var bermudaTriangle = new google.maps.Polygon({
                 paths: polygon
-            });*/
+            });
 
             if(LatLngList.length > 1){
                /* bermudaTriangle.setMap(map);*/
@@ -1093,8 +1099,6 @@
                     'url' : '{{ route('searchListingAjax') }}',
                     'data' : {datas:sending_data},
                 });
-
-
                 poly=new google.maps.Polygon({map:map,path:path});
                 google.maps.event.clearListeners(map.getDiv(), 'mousedown');
                 enable()

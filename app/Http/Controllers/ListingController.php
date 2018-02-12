@@ -293,6 +293,19 @@ class ListingController extends Controller
     }
 
 
+    public function searchListingAjax(Request $request){
+
+
+
+        foreach ($request->all() as $langLtd){
+            foreach(\GuzzleHttp\json_decode($langLtd) as $lng){
+                $this->listing->where('lat' ,  '<=' , $lng->lat)->where('lng' , '<=' , $lng->lng)->get();
+            }
+        }
+        return response()->json($request->all());
+    }
+
+
     /**
      * @return string
      */
