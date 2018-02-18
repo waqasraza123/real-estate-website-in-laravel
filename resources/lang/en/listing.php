@@ -82,26 +82,8 @@ return [
     'app' => 'application',
     'dep' => 'deposit',
     's_l' => 'save for later',
-    'Lofts_box'=>'Lofts box',
-    'Dens_box'=>'Dens box',
-    'All_Bills'=>'All Bills',
+    'Lofts_box'=>'Lofts ',
+    'Dens_box'=>'Dens ',
+    'All_Bills'=>'All Bills Paid',
     'Townhomes'=>'Townhomes',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ];

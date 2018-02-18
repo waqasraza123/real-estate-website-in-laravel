@@ -15,6 +15,20 @@
     .polygon i {
         line-height: 22px;
     }
+
+    .erease{
+        right: 20px;
+        top: 105px;
+        display: none;
+        position: absolute;
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 999999;
+        text-align: -webkit-center;
+        color: white;
+        cursor: pointer;
+        line-height: 22px;
+    }
 </style>
 @section('content')
     <div class="row">
@@ -117,7 +131,7 @@
                                 </div>
                                 <div class="col-lg-6 col-xs-12">
                                     <div class="row">
-                                        <div class="col-lg-6 col-xs-12">
+                                        <div class="col-lg-3 col-xs-12">
                                             <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
                                                 <optgroup label="{{ Lang::get('listing.beds') }}" data-max-options="1">
                                                     <option value="all">{{ Lang::get('home.all_be') }}</option>
@@ -136,10 +150,26 @@
                                                 </optgroup>
                                             </select>
                                         </div>
-                                        <div class="col-lg-5 col-xs-12">
+                                        <div class="col-lg-3 col-xs-12">
                                             <a href="#" class="boldet_link ">
                                                 {{ Lang::get('pages.f_is') }}
                                             </a>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-3 col-xs-12 text-center  adv-search-button-cont">
+                                            <button type="submit" class="button-primary  appartament_search">
+                                                <span>{{ Lang::get('home.search_btn') }}</span>
+                                                <div class="button-triangle"></div>
+                                                <div class="button-triangle2"></div>
+                                                <div class="button-icon"><i class="fa fa-search"></i></div>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6 col-lg-3 col-xs-12 text-center  adv-search-button-cont">
+                                            <button type="submit" class="button-primary  pull-rigth appartament_search"> {{ Lang::get('pages.s_s') }}
+                                                <div class="button-triangle"></div>
+                                                <div class="button-triangle2"></div>
+                                                <div class="button-icon"><i class="fa fa-search-plus"></i></div>
+                                            </button>
+
                                         </div>
                                         @if(Request::path() == 'filter_listings')
                                             <div class="col-lg-1">
@@ -149,16 +179,6 @@
                                             </div>
                                         @endif
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12 text-center  adv-search-button-cont">
-                                    <button type="submit" class="button-primary  appartament_search">
-                                        <span>{{ Lang::get('home.search_btn') }}</span>
-                                        <div class="button-triangle"></div>
-                                        <div class="button-triangle2"></div>
-                                        <div class="button-icon"><i class="fa fa-search"></i></div>
-                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -192,11 +212,7 @@
                                     <input type="hidden" name="baths" value="{{ old('beds_baths')[1] }}">
                                 @endif
                             @endif
-                                <button type="submit" class="button-primary  appartament_search" style="margin-right: 60px;margin-top: 26px;"> {{ Lang::get('pages.s_s') }}
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search-plus"></i></div>
-                            </button>
+
                         </form>
                             @endif
                     </div>
@@ -213,6 +229,10 @@
             <div class="polygon">
                 <i class="fa fa-map"></i>
                 Polygon
+            </div>
+            <div class="erease polygon">
+                <i class="fa fa-pencil"></i>
+                Erease
             </div>
         </div>
         <div class="col-lg-5 " id="offers-list" style="background: white;  overflow-y: scroll">
@@ -327,10 +347,7 @@
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.public') }}
                                                     </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.reape') }}
-                                                    </li>
+
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.robery') }}
@@ -490,7 +507,7 @@
 
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
-                                                        Drag a bullet
+                                                        Drags
                                                     </li>
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
@@ -500,6 +517,36 @@
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.suic') }}
+                                                    </li>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </ul>
+                                        </div>
+                                        <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                            <input type="checkbox" value="1" id="victim" name="foreclosure" class="main-checkbox" >
+                                            <label for="victim"><span></span>Minor Offences<button  type="button" class="btn btn-primary ssettings pull-right toltip_button" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
+                                        </div>
+                                        <div class="absalutx">
+                                            <ul class="custom-ul">
+                                                <div class="col-lg-6 col-xs-12">
+                                                    <li>
+                                                        <span class="custom-ul-bullet"></span>
+                                                       DWI
+                                                    </li>
+                                                    <li>
+                                                        <span class="custom-ul-bullet"></span>
+                                                       DUI
+                                                    </li>
+                                                </div>
+                                                <div class="col-lg-6 col-xs-12">
+                                                    <li>
+                                                        <span class="custom-ul-bullet"></span>
+                                                       Public Intoxication
+                                                    </li>
+
+                                                    <li>
+                                                        <span class="custom-ul-bullet"></span>
+                                                       Other
                                                     </li>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -854,7 +901,7 @@
                             </div>
                             <div class="col-lg-6 col-xs-12">
                                 <div class="list-agency-text">
-                                <h4 class="list-agency-title"> <i class="fa fa-clock-o"></i> {{ \Carbon\Carbon::parse($listing->updated_at)->diffInDays() }} Days</h4>
+                                <h4 class="list-agency-title"><span  data-toggle="tooltip" data-placement="bottom" title="Last Updated"><i class="fa fa-clock-o"  ></i> {{ \Carbon\Carbon::parse($listing->updated_at)->diffInDays() }} Days</span> </h4>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
@@ -967,6 +1014,9 @@
     </script>
 
     <script type="text/javascript">
+        var mapMarkers = [];
+
+
         function offersMapInitt(id, locations) {
             var mapOptions = {
                 zoom: 15,
@@ -994,11 +1044,11 @@
             window.map = new google.maps.Map(mapElement, mapOptions);
             var LatLngList = [];
             var i = 0;
-            var mapMarkers = [];
+
             var polygon = [];
             for (i = 0; i < locations.length; i++) {
                 var pos = new google.maps.LatLng(locations[i][0], locations[i][1]);
-                polygon.push(pos)
+                polygon.push(pos);
                 var marker = new google.maps.Marker({
                     position: pos,
                     map: map,
@@ -1006,7 +1056,6 @@
                     icon: locations[i][2]
                 });
                 mapMarkers[i] = marker;
-                console.log(locations[i]);
                 var infoBoxContent = document.createElement("div");
                 infoBoxContent.className = "infobox-wrapper";
                 infoBoxContent.innerHTML = "<a class='infobox-main' href='" + locations[i][6] + "'><div class='infobox-image'><img src=" + locations[i][3] + " alt='" + locations[i][4] + "' /></div><div class='infobox-text'>" + locations[i][4] + "</div><div class='infobox-price'>$" + locations[i][5] + "</div></a>";
@@ -1047,7 +1096,6 @@
                 map.fitBounds(bounds);
             }
 
-
             var markerClusterStyle = [{
                 url: 'images/pin-empty.png',
                 height: 80,
@@ -1065,25 +1113,22 @@
                 oms.addMarker(mapMarkers[i]);  // <-- here
             }
         }
+
         google.maps.event.addDomListener(window, 'load', init);
         function init() {
-
-
             var locations = [
                 @foreach($langLtd as $lang)
                 {!!  $lang !!}
                 @endforeach
             ];
-
             offersMapInitt("offers-map",locations);
-
         }
 
 
 
         function drawFreeHand(){
             //the polygon
-            var  poly=new google.maps.Polyline({map:map,clickable:false});
+            var poly=new google.maps.Polyline({map:map,clickable:false});
             var move=google.maps.event.addListener(map,'mousemove',function(e){
                 poly.getPath().push(e.latLng);
             });
@@ -1093,13 +1138,56 @@
                 var path=poly.getPath();
                 var sending_data = poly.getPath().getArray();
                 sending_data = JSON.stringify(sending_data);
-                poly.setMap(null);
+                poly=new google.maps.Polygon({map:map,path:path});
                 $.ajax({
                     'type' : 'post',
                     'url' : '{{ route('searchListingAjax') }}',
                     'data' : {datas:sending_data},
+                    success:function (res) {
+                        console.log(poly)
+                        for (i = 0; i < res.length; i++) {
+                            var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
+                            if(google.maps.geometry.poly.containsLocation(latLng, poly)){
+                                var marker = new google.maps.Marker({
+                                    position: pos,
+                                    map: map,
+                                    title: '',
+                                    icon: locations[i][2]
+                                });
+                                mapMarkers[i] = marker;
+                                var infoBoxContent = document.createElement("div");
+                                infoBoxContent.className = "infobox-wrapper";
+                                infoBoxContent.innerHTML = "<a class='infobox-main' href='" + locations[i][6] + "'><div class='infobox-image'><img src=" + locations[i][3] + " alt='" + locations[i][4] + "' /></div><div class='infobox-text'>" + locations[i][4] + "</div><div class='infobox-price'>$" + locations[i][5] + "</div></a>";
+                                mapMarkers[i].infobox = new InfoBox({
+                                    content: infoBoxContent,
+                                    disableAutoPan: false,
+                                    pixelOffset: new google.maps.Size(30, -150),
+                                    zIndex: null,
+                                    boxStyle: {
+                                    },
+                                    closeBoxMargin: "0px",
+                                    closeBoxURL: "images/infobox-close.png",
+                                    infoBoxClearance: new google.maps.Size(1, 1)
+                                });
+
+                                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                                    return function() {
+                                        var j = 0;
+                                        for (j = 0; j < mapMarkers.length; j++) {
+                                            mapMarkers[j].infobox.close();
+                                        }
+                                        mapMarkers[i].infobox.open(map, this);
+                                    }
+                                })(marker, i));
+                                LatLngList[i] = pos;
+                            }
+
+                        }
+                        setMapOnAll(map);
+                        $('.erease').show()
+                    }
                 });
-                poly=new google.maps.Polygon({map:map,path:path});
+
                 google.maps.event.clearListeners(map.getDiv(), 'mousedown');
                 enable()
             });
@@ -1125,7 +1213,7 @@
 
         $(".polygon").click(function(e) {
             e.preventDefault();
-            console.log("draws");
+            clearMarkers();
             disable();
             google.maps.event.addDomListener(map.getDiv(),'mousedown',function(e){
                 drawFreeHand()
@@ -1133,8 +1221,80 @@
 
         });
 
+        // Sets the map on all markers in the array.
+        function setMapOnAll(map) {
+            for (var i = 0; i < mapMarkers.length; i++) {
+                mapMarkers[i].setMap(map);
+            }
+        }
+
+        // Removes the markers from the map, but keeps them in the array.
+        function clearMarkers() {
+            setMapOnAll(null);
+        }
+
+        // Shows any markers currently in the array.
+        function showMarkers() {
+            setMapOnAll(map);
+        }
 
 
+        function removeLine() {
+            flightPath.setMap(null);
+        }
+
+
+
+        $('.erease').click(function () {
+
+            clearMarkers();
+            $.ajax({
+                'type': 'post',
+                'url': '{{ route('erease') }}',
+                'data': {datas: sending_data},
+                success: function (res) {
+                    for (i = 0; i < res.length; i++) {
+                        var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
+                        if (google.maps.geometry.poly.containsLocation(latLng, poly)) {
+                            var marker = new google.maps.Marker({
+                                position: pos,
+                                map: map,
+                                title: '',
+                                icon: locations[i][2]
+                            });
+                            mapMarkers[i] = marker;
+                            var infoBoxContent = document.createElement("div");
+                            infoBoxContent.className = "infobox-wrapper";
+                            infoBoxContent.innerHTML = "<a class='infobox-main' href='" + locations[i][6] + "'><div class='infobox-image'><img src=" + locations[i][3] + " alt='" + locations[i][4] + "' /></div><div class='infobox-text'>" + locations[i][4] + "</div><div class='infobox-price'>$" + locations[i][5] + "</div></a>";
+                            mapMarkers[i].infobox = new InfoBox({
+                                content: infoBoxContent,
+                                disableAutoPan: false,
+                                pixelOffset: new google.maps.Size(30, -150),
+                                zIndex: null,
+                                boxStyle: {},
+                                closeBoxMargin: "0px",
+                                closeBoxURL: "images/infobox-close.png",
+                                infoBoxClearance: new google.maps.Size(1, 1)
+                            });
+
+                            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                                return function () {
+                                    var j = 0;
+                                    for (j = 0; j < mapMarkers.length; j++) {
+                                        mapMarkers[j].infobox.close();
+                                    }
+                                    mapMarkers[i].infobox.open(map, this);
+                                }
+                            })(marker, i));
+                            LatLngList[i] = pos;
+                        }
+
+                    }
+                    setMapOnAll(map);
+                    $('.erease').show()
+                }
+            })
+        })
     </script>
 
     <script>

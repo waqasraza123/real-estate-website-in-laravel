@@ -294,6 +294,10 @@
                                         <input type="checkbox" value="1" @if(old('victim') == 1)  checked @endif id="victim" name="foreclosure" class="main-checkbox" >
                                         <label for="victim"><span></span>{{ Lang::get('pages.victim') }} <button  type="button" class="btn btn-primary ssettings pull-right" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
                                     </div>
+                                    <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
+                                        <input type="checkbox" value="1" @if(old('minor') == 1)  checked @endif id="minor" name="foreclosure" class="main-checkbox" >
+                                        <label for="minor"><span></span>Minor Offences <button  type="button" class="btn btn-primary sminor pull-right" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
+                                    </div>
                                     <div class="apartment-stacked-tabs">
                                         <!-- Nav tabs -->
                                         <div class="tab-content " style="padding: 0px; border:none;">
@@ -333,11 +337,33 @@
                                                         </li>
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.reape') }}
+                                                            {{ Lang::get('pages.robery') }}
+                                                        </li>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </ul>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane " id="sminor">
+                                                <ul class="custom-ul">
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            DWI
                                                         </li>
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.robery') }}
+                                                            DUI
+                                                        </li>
+                                                    </div>
+                                                    <div class="col-lg-6 col-xs-12">
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            Public Intoxication
+                                                        </li>
+
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            Other
                                                         </li>
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -483,7 +509,7 @@
 
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
-                                                           Drag a bullet
+                                                           Drags
                                                         </li>
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
@@ -705,6 +731,11 @@
             $('.sprofile').click(function () {
                 $('.tab-pane').removeClass('active')
                 $('#sprofile').addClass('active');
+            });
+
+            $('.sminor').click(function () {
+                $('.tab-pane').removeClass('active')
+                $('#sminor').addClass('active');
             });
 
             $(".availability").select2({
