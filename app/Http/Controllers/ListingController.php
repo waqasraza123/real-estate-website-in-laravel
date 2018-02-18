@@ -300,7 +300,7 @@ class ListingController extends Controller
             }
         }
 
-        $listings = $this->listing->get();
+
         $langLtd = [];
         $new = '';
 
@@ -320,13 +320,13 @@ class ListingController extends Controller
                 array_push($langLtd, $new);
             }
         }
-
-
         return response()->json($langLtd);
     }
 
     public function erease(){
+        $langLtd = [];
         $listings =  $this->listing->get();
+
         foreach ($listings as $listing){
             if($listing->lat != '') {
                 if($listing->listing_type == '2'){

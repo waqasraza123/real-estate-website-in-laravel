@@ -230,7 +230,7 @@
                 <i class="fa fa-map"></i>
                 Polygon
             </div>
-            <div class="erease polygon">
+            <div class="erease">
                 <i class="fa fa-pencil"></i>
                 Erease
             </div>
@@ -1015,7 +1015,7 @@
 
     <script type="text/javascript">
         var mapMarkers = [];
-
+        var poly = '';
 
         function offersMapInitt(id, locations) {
             var mapOptions = {
@@ -1144,10 +1144,10 @@
                     'url' : '{{ route('searchListingAjax') }}',
                     'data' : {datas:sending_data},
                     success:function (res) {
-                        console.log(poly)
                         for (i = 0; i < res.length; i++) {
                             var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
                             if(google.maps.geometry.poly.containsLocation(latLng, poly)){
+                                console.log(latLng);
                                 var marker = new google.maps.Marker({
                                     position: pos,
                                     map: map,
@@ -1240,18 +1240,16 @@
 
 
         function removeLine() {
-            flightPath.setMap(null);
+            poly.setMap(null);
         }
 
 
 
         $('.erease').click(function () {
-
             clearMarkers();
             $.ajax({
                 'type': 'post',
                 'url': '{{ route('erease') }}',
-                'data': {datas: sending_data},
                 success: function (res) {
                     for (i = 0; i < res.length; i++) {
                         var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
