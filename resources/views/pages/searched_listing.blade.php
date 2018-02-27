@@ -494,10 +494,7 @@
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.incest') }}
                                                     </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.pros') }}
-                                                    </li>
+
                                                 </div>
                                                 <div class="col-lg-6 col-xs-12">
                                                     <li>
@@ -520,6 +517,10 @@
                                                     </li>
                                                 </div>
                                                 <div class="clearfix"></div>
+                                                <li style="margin-left: 14px">
+                                                    <span class="custom-ul-bullet"></span>
+                                                    {{ Lang::get('pages.pros') }}
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
@@ -546,7 +547,7 @@
 
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
-                                                       Other
+                                                        Recreational Drug Use
                                                     </li>
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>

@@ -23,12 +23,13 @@ body {
 
 .absalut{
 	position: absolute;
-	left: 29px;
+	right: 29px;
 	background: white;
 	border: 1px solid grey;
 	z-index: 999;
 	border-radius: 11px;
 	display: block;
+	min-width: 350px;
 }
 .absalutx{
 	display: none;
