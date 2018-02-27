@@ -59,7 +59,7 @@
                             <input type="hidden" name="listing_type" value="2">
                             <div class="row">
                                 <br>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
+                                <div class="col-xs-12 col-sm-6 col-lg-2">
                                     <input id="autocomplete" class="input-full main-input"  value="" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('listing.address') }}" name="address">
                                     <table id="address" style="display: none">
                                         <input class="field"  id="street_number" type="hidden">
@@ -79,7 +79,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-xs-12 form-">
+                                <div class="col-lg-2 col-xs-12 form-">
                                     <div class="dropdown btn-group bootstrap-select show-tick  ">
                                         <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">{!!  Lang::get('pages.r_e') !!}<strong class="caret"></strong>
                                         </button>
@@ -129,7 +129,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-xs-12">
+                                <div class="col-lg-8 col-xs-12">
                                     <div class="row">
                                         <div class="col-lg-3 col-xs-12">
                                             <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
@@ -310,7 +310,7 @@
                                 <div class="col-xs-12 col-md-12 col-lg-6 margin-top-15">
                                     <div class="row">
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1"  id="office" name="foreclosure" class="main-checkbox" >
+                                            <input type="checkbox" value="fitness_center"  id="office" name="filter[]" class="main-checkbox" >
                                             <label for="office"><span></span>{{ Lang::get('pages.office') }} <button  type="button" class="btn btn-primary shome pull-right toltip_button"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
@@ -357,7 +357,7 @@
                                             </ul>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1"  id="crimes" name="foreclosure" class="main-checkbox" >
+                                            <input type="checkbox" value="fitness_center"  id="crimes" name="filter[]" class="main-checkbox" >
                                             <label for="crimes"><span></span>{{ Lang::get('pages.crimes') }} <button  type="button" class="btn btn-primary sprofile pull-right toltip_button"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
@@ -430,7 +430,7 @@
                                             </ul>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1"   id="justi" name="foreclosure" class="main-checkbox" >
+                                            <input type="checkbox" value="no_smocking"   id="justi" name="filter[]" class="main-checkbox" >
                                             <label for="justi"><span></span>{{ Lang::get('pages.justi') }} <button  type="button" class="btn btn-primary smessages pull-right toltip_button" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
@@ -471,7 +471,7 @@
                                             </ul>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" id="victim" name="foreclosure" class="main-checkbox" >
+                                            <input type="checkbox" value="no_smocking" id="victim" name="filter[]" class="main-checkbox" >
                                             <label for="victim"><span></span>{{ Lang::get('pages.victim') }} <button  type="button" class="btn btn-primary ssettings pull-right toltip_button" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
@@ -507,7 +507,7 @@
 
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
-                                                        Drags
+                                                        Drugs
                                                     </li>
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
@@ -523,8 +523,8 @@
                                             </ul>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" id="victim" name="foreclosure" class="main-checkbox" >
-                                            <label for="victim"><span></span>Minor Offences<button  type="button" class="btn btn-primary ssettings pull-right toltip_button" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
+                                            <input type="checkbox" value="no_smocking" id="minor" name="filter[]" class="main-checkbox" >
+                                            <label for="minor"><span></span>Minor Offences<button  type="button" class="btn btn-primary ssettings pull-right toltip_button" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
                                             <ul class="custom-ul">
@@ -548,264 +548,13 @@
                                                         <span class="custom-ul-bullet"></span>
                                                        Other
                                                     </li>
+                                                    <li>
+                                                        <span class="custom-ul-bullet"></span>
+                                                        Minor Drug Charge
+                                                    </li>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </ul>
-                                        </div>
-                                        <div class="apartment-stacked-tabs">
-                                            <!-- Nav tabs -->
-                                            <div class="tab-content " style="padding: 0px; border:none;">
-                                                <div role="tabpanel" class="tab-pane " id="shome">
-                                                    <ul class="custom-ul">
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.assa') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.assault') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.batt') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.big') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.crim') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.false') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.homes') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.sexual') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.homicide') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.kind') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.mans') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.mayem') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.murder') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.negli') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.public') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.reape') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.robery') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </ul>
-                                                </div>
-                                                <div role="tabpanel" class="tab-pane" id="sprofile">
-                                                    <ul class="custom-ul">
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.arson') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.black') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.bri') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.bulg') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.embez') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.extori') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.falsep') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.fraud') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.larceny') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.payola') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.pick') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.prosse') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.robber') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.tax') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.theft') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </ul>
-                                                </div>
-                                                <div role="tabpanel" class="tab-pane" id="smessages">
-                                                    <ul class="custom-ul">
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.com') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.malf') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.misc') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.misp') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.obst') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.perj') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.perv') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </ul>
-                                                </div>
-                                                <div role="tabpanel" class="tab-pane" id="ssettings">
-                                                    <ul class="custom-ul">
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.adult') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.apos') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.buge') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.provi') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.gamb') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.incest') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.pros') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.dueling') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.forn') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.lewd') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.exh') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.crea') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.sodo') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.suic') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input  name="filter[]" id="PetFriendly_1" type="checkbox" value="dogs" class="main-checkbox">
@@ -820,15 +569,15 @@
                                             <label for="c100"><span></span>{{Lang::get('listing.Lofts_box')}}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style="   margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('all_box') == 1)  checked @endif id="Dens_box" name="filter[]" class="main-checkbox" >
+                                            <input type="checkbox" value="all_box" @if(old('all_box') == 1)  checked @endif id="Dens_box" name="filter[]" class="main-checkbox" >
                                             <label for="Dens_box"><span></span>{{Lang::get('listing.Dens_box')}} </label><br>
                                         </div>
                                         <div class="checkboxGroup" style="   margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('all_bills') == 1)  checked @endif id="All_Bills" name="filter[]" class="main-checkbox" >
+                                            <input type="checkbox" value="all_bills" @if(old('all_bills') == 1)  checked @endif id="All_Bills" name="filter[]" class="main-checkbox" >
                                             <label for="All_Bills"><span></span>{{Lang::get('listing.All_Bills')}}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style="   margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('all_townl') == 1)  checked @endif id="Townhomes" name="filter[]" class="main-checkbox" >
+                                            <input type="checkbox" value="all_townl" @if(old('all_townl') == 1)  checked @endif id="Townhomes" name="filter[]" class="main-checkbox" >
                                             <label for="Townhomes"><span></span>{{Lang::get('listing.Townhomes')}} </label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
@@ -878,7 +627,8 @@
                             return $text;
                         }
                     ?>
-                    @foreach($listings as $listing)
+                    @if($listings->first())
+                        @foreach($listings as $listing)
                         <a href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" class="list-agency row">
                             <div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">
                                 <div class="full_blue">
@@ -930,6 +680,7 @@
                             <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>
                         </a>
                     @endforeach
+                    @endif
                 </div>
             </div>
         </div>
@@ -1147,12 +898,11 @@
                         for (i = 0; i < res.length; i++) {
                             var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
                             if(google.maps.geometry.poly.containsLocation(latLng, poly)){
-                                console.log(latLng);
                                 var marker = new google.maps.Marker({
-                                    position: pos,
+                                    position: latLng,
                                     map: map,
                                     title: '',
-                                    icon: locations[i][2]
+                                    icon: res[i][2]
                                 });
                                 mapMarkers[i] = marker;
                                 var infoBoxContent = document.createElement("div");
@@ -1180,10 +930,12 @@
                                     }
                                 })(marker, i));
                                 LatLngList[i] = pos;
+                                mapMarkers[i].setMap(map);
                             }
 
                         }
-                        setMapOnAll(map);
+
+
                         $('.erease').show()
                     }
                 });
@@ -1253,17 +1005,17 @@
                 success: function (res) {
                     for (i = 0; i < res.length; i++) {
                         var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
-                        if (google.maps.geometry.poly.containsLocation(latLng, poly)) {
+
                             var marker = new google.maps.Marker({
-                                position: pos,
+                                position: latLng,
                                 map: map,
                                 title: '',
-                                icon: locations[i][2]
+                                icon: res[i][2]
                             });
                             mapMarkers[i] = marker;
                             var infoBoxContent = document.createElement("div");
                             infoBoxContent.className = "infobox-wrapper";
-                            infoBoxContent.innerHTML = "<a class='infobox-main' href='" + locations[i][6] + "'><div class='infobox-image'><img src=" + locations[i][3] + " alt='" + locations[i][4] + "' /></div><div class='infobox-text'>" + locations[i][4] + "</div><div class='infobox-price'>$" + locations[i][5] + "</div></a>";
+                            infoBoxContent.innerHTML = "<a class='infobox-main' href='" + res[i][6] + "'><div class='infobox-image'><img src=" + res[i][3] + " alt='" + res[i][4] + "' /></div><div class='infobox-text'>" + res[i][4] + "</div><div class='infobox-price'>$" + res[i][5] + "</div></a>";
                             mapMarkers[i].infobox = new InfoBox({
                                 content: infoBoxContent,
                                 disableAutoPan: false,
@@ -1284,11 +1036,10 @@
                                     mapMarkers[i].infobox.open(map, this);
                                 }
                             })(marker, i));
-                            LatLngList[i] = pos;
-                        }
+                            mapMarkers[i].setMap(map);
 
                     }
-                    setMapOnAll(map);
+
                     $('.erease').show()
                 }
             })
@@ -1299,12 +1050,10 @@
 
         $('.boldet_link').click(function () {
             $('.abs_f_h').show();
-            $('.list-agency').hide()
         });
 
         $('.appartament_done').click(function () {
             $('.abs_f_h').hide();
-            $('.list-agency').show()
         });
 
         $('.primaryCheckbox').on('change' )

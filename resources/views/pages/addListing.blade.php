@@ -365,6 +365,11 @@
                                                             <span class="custom-ul-bullet"></span>
                                                             Other
                                                         </li>
+
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            Minor Drug Charge
+                                                        </li>
                                                     </div>
                                                     <div class="clearfix"></div>
                                                 </ul>
@@ -515,8 +520,6 @@
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.exh') }}
                                                         </li>
-
-
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.suic') }}

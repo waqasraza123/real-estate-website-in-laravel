@@ -12,7 +12,6 @@ use App\ListingImage;
 use App\Review;
 use App\Mail\AgentsEamil;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 
 
 class ListingController extends Controller
@@ -496,16 +495,13 @@ class ListingController extends Controller
     public function filterListings(Request $request){
         $langLtd = [];
         $new = '';
-
-        $request->flash();
+        $listings = NULL;
         foreach ($request->all() as $key => $filter){
             foreach ($filter as $fil){
-                $listings = $this->listing->whereIn('id' , Session::get('ids'))->whereNotNull($fil)->get();
+                $listings = $this->listing->whereIn('id' , \Session::get('ids'))->whereNotNull($fil)->get();
             }
-
         }
-        if($listings->first()){
-
+        if($listings){
             foreach ($listings as $listing){
                 if($listing->lat != '') {
                     if($listing->listing_type == '2'){
@@ -522,9 +518,8 @@ class ListingController extends Controller
                     array_push($langLtd, $new);
                 }
             }
-            return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
         }else{
-            $listings = $this->listing->whereIn('id' , Session::get('ids'))->get();
+            $listings = $this->listing->whereIn('id' , \Session::get('ids'))->get();
             foreach ($listings as $listing){
                 if($listing->lat != '') {
                     if($listing->listing_type == '2'){
@@ -542,8 +537,9 @@ class ListingController extends Controller
                 }
             }
 
-            return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
         }
+        dd($listings);
+        return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
     }
 
 
@@ -552,7 +548,7 @@ class ListingController extends Controller
         $langLtd = [];
         $new = '';
 
-        $listings = $this->listing->whereIn('id' , Session::get('ids'))->get();
+        $listings = $this->listing->whereIn('id' , \Session::get('ids'))->get();
         foreach ($listings as $listing){
             if($listing->lat != '') {
                 if($listing->listing_type == '2'){
