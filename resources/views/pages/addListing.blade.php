@@ -490,21 +490,9 @@
                                                         </li>
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.buge') }}
-                                                        </li>
-
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.gamb') }}
                                                         </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.incest') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.pros') }}
-                                                        </li>
+
                                                     </div>
                                                     <div class="col-lg-6 col-xs-12">
                                                         <li>
@@ -519,10 +507,6 @@
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.exh') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.suic') }}
                                                         </li>
                                                     </div>
                                                     <div class="clearfix"></div>

@@ -86,9 +86,11 @@
                                 </div>
                                 <h5 class="subtitle-margin"> </h5>
                                 {{--<h3 class="title-negative-margin">{{ $listing->User()->first()->first_name }} {{ $listing->User()->first()->last_name }}<span class="special-color">.</span></h3>--}}
-                                <a href="#" class="agent-photo">
-                                    <img src="{{ asset('images/apartment-move-in-specials.jpg') }}" alt="" class="img-responsive">
-                                </a>
+                                @if($listing->move_in)
+                                    <a href="#" class="agent-photo">
+                                        <img src="{{ asset('images/apartment-move-in-specials.jpg') }}" alt="" class="img-responsive">
+                                    </a>
+                                @endif
                             </div>
                             <div class=" col-sm-9 ">
                                 <div class="agent-social-bar">
