@@ -354,6 +354,11 @@
                                                             <span class="custom-ul-bullet"></span>
                                                             DUI
                                                         </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                                Recreational Drug Use
+
+                                                        </li>
                                                     </div>
                                                     <div class="col-lg-6 col-xs-12">
                                                         <li>

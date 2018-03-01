@@ -496,7 +496,7 @@
 
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
-                                                        Drags
+                                                        Drugs
                                                     </li>
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>

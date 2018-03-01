@@ -645,28 +645,91 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="details-image pull-left hidden-xs">
                                 <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
-                                    <i class="petIcon"></i>
+                                    <i class="featuresIcon"></i>
                                 </div>
                             </div>
                             <div class="details-title pull-left">
                                 <h5 class="subtitle-margin">&nbsp;</h5>
-                                <h4>{{ Lang::get('pages.pet_p') }}</h4>
+                                <h4>{{ Lang::get('pages.uniq') }}</h4>
                             </div>
                             <div class="clearfix"></div>
                             <div class="title-separator-primary"></div>
                             <ul class="no_padding margin-top-15">
-                                @if($listing->dogs == '1')
-                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.dogs_ok') }}</li>
-                                @endif
-                                @if($listing->cats == '1')
-                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.cats_ok') }}</li>
-                                @endif
-                                @if($listing->no_pets == '1')
-                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.no_pets') }}</li>
-                                @endif
+                                <li class="no_style" >
+                                    @if($listing->furnished == '1')
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('listing.furnished') }}
+                                    @endif
+                                    @if($listing->no_smocking == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('listing.no_smo') }}
+                                    @endif
+                                    @if($listing->wheelchair == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('listing.wheel_access') }}
+                                    @endif
+                                    @if($listing->washer_dryer == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.w_ad') }}
+                                    @endif
+                                    @if($listing->washer_dryer_hockups == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.w_h') }}
+                                    @endif
+                                    @if($listing->onsite_laundry == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.o_n') }}
+                                    @endif
+                                    @if($listing->fitness_center == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.f_c') }}
+                                    @endif
+                                    @if($listing->pool == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.p_l') }}
+                                    @endif
+                                    @if($listing->yard == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.yard') }}
+                                    @endif
+                                    @if($listing->hard_floor == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.h_f') }}
+                                    @endif
+                                    @if($listing->wal_closet == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.w_cl') }}
+                                    @endif
+                                    @if($listing->updated_kitchen == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.upde_kitc') }}
+                                    @endif
+                                    @if($listing->close_public == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.clo_tr') }}
+                                    @endif
+                                    @if($listing->dog_park == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
+                                </li>
                             </ul>
                             <div class="clearfix"></div>
                         </div>
+
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
                             <div class="details-image pull-left hidden-xs">
                                 <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
@@ -736,87 +799,25 @@
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="details-image pull-left hidden-xs">
                                 <div class="agent-icon-circle-2 details-image pull-left hidden-xs">
-                                    <i class="featuresIcon"></i>
+                                    <i class="petIcon"></i>
                                 </div>
                             </div>
                             <div class="details-title pull-left">
                                 <h5 class="subtitle-margin">&nbsp;</h5>
-                                <h4>{{ Lang::get('pages.uniq') }}</h4>
+                                <h4>{{ Lang::get('pages.pet_p') }}</h4>
                             </div>
                             <div class="clearfix"></div>
                             <div class="title-separator-primary"></div>
                             <ul class="no_padding margin-top-15">
-                                <li class="no_style" >
-                                    @if($listing->furnished == '1')
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('listing.furnished') }}
-                                    @endif
-                                    @if($listing->no_smocking == '1')
-                                            <br>
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('listing.no_smo') }}
-                                    @endif
-                                    @if($listing->wheelchair == '1')
-                                            <br>
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('listing.wheel_access') }}
-                                    @endif
-                                    @if($listing->washer_dryer == '1')
-                                            <br>
-                                        <span class="bullet">•</span>
-                                            {{ Lang::get('pages.w_ad') }}
-                                    @endif
-                                    @if($listing->washer_dryer_hockups == '1')
-                                            <br>
-                                        <span class="bullet">•</span>
-                                            {{ Lang::get('pages.w_h') }}
-                                    @endif
-                                    @if($listing->onsite_laundry == '1')
-                                            <br>
-                                        <span class="bullet">•</span>
-                                            {{ Lang::get('pages.o_n') }}
-                                    @endif
-                                    @if($listing->fitness_center == '1')
-                                            <br>
-                                        <span class="bullet">•</span>
-                                            {{ Lang::get('pages.f_c') }}
-                                    @endif
-                                    @if($listing->pool == '1')
-                                            <br>
-                                        <span class="bullet">•</span>
-                                            {{ Lang::get('pages.p_l') }}
-                                    @endif
-                                    @if($listing->yard == '1')
-                                        <br>
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('pages.yard') }}
-                                    @endif
-                                    @if($listing->hard_floor == '1')
-                                        <br>
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('pages.h_f') }}
-                                    @endif
-                                    @if($listing->wal_closet == '1')
-                                        <br>
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('pages.w_cl') }}
-                                    @endif
-                                    @if($listing->updated_kitchen == '1')
-                                        <br>
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('pages.upde_kitc') }}
-                                    @endif
-                                    @if($listing->close_public == '1')
-                                        <br>
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('pages.clo_tr') }}
-                                    @endif
-                                    @if($listing->dog_park == '1')
-                                        <br>
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
-                                    @endif
-                                </li>
+                                @if($listing->dogs == '1')
+                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.dogs_ok') }}</li>
+                                @endif
+                                @if($listing->cats == '1')
+                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.cats_ok') }}</li>
+                                @endif
+                                @if($listing->no_pets == '1')
+                                    <li class="no_style"><span class="bullet">•</span>{{ Lang::get('listing.no_pets') }}</li>
+                                @endif
                             </ul>
                             <div class="clearfix"></div>
                         </div>
