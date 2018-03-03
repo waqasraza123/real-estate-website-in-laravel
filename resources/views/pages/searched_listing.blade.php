@@ -650,7 +650,7 @@
                                     <span class="team-icon-circle">
                                         <i class="fa fa-dollar" style="line-height: 22px;"></i>
                                     </span>
-                                    <span>{{ $listing->rent }} </span>
+                                    <span>{{ $listing->ListingAttr()->first()->rent }} </span>
                                 </li>
                                 <li class="">
                                     <span class="team-icon-circle">
@@ -923,7 +923,6 @@
                         $('.erease').show()
                     }
                 });
-
                 google.maps.event.clearListeners(map.getDiv(), 'mousedown');
                 enable()
             });
@@ -983,6 +982,7 @@
 
         $('.erease').click(function () {
             clearMarkers();
+
             $.ajax({
                 'type': 'post',
                 'url': '{{ route('erease') }}',
@@ -1021,9 +1021,7 @@
                                 }
                             })(marker, i));
                             mapMarkers[i].setMap(map);
-
                     }
-
                     $('.erease').show()
                 }
             })

@@ -184,7 +184,7 @@
                                         <h5 class="labeles">
                                             {{ Lang::get('listing.available') }}
                                         </h5>
-                                        {{Form::select('available_date[]', ['Available Now' => 'Available Now', 'Available Soon' => 'Available Soon', 'Not Available' => 'Not Available'], old('available_date'), ['class' => 'input-full main-input availability'])}}
+                                        {{Form::select('available_date[]', ['Available Now' => 'Available Now', 'Available Soon' => 'Available Soon', 'Not Available' => 'Not Available'], old('available_date'), ['class' => 'input-full main-input  selectpicker '])}}
 
                                     </div>
                                     <div class="col-sm-2 col-xs-12">
@@ -813,13 +813,7 @@
                     clone.find('label').attr('for' , function(i, val) {
                       return val + count;
                     })
-                  clone.find('input[name="available_date[]"]').daterangepicker({
-                                singleDatePicker: true,
-                                showDropdowns: true
-                            },
-                            function(start, end, label) {
-                                var years = moment().diff(start, 'years');
-                            });
+                  clone.find('input[name="available_date[]"]').select2();
                   clone.find('.dropdown-toggle').remove();
                   clone.find('select').attr('id' , function(i, val) {
                       return val + count;
@@ -921,10 +915,7 @@
                                 $('.phone_fails').append(phonefail);
                             }
                         });
-
                     }
-
-
             });
 
 

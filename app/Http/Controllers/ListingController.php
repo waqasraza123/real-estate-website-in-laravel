@@ -538,6 +538,7 @@ class ListingController extends Controller
             }
 
         }
+
         return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
     }
 
