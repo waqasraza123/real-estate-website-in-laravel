@@ -750,7 +750,8 @@
 
     <script type="text/javascript">
         var mapMarkers = [];
-        var poly = '';
+        var polyline;
+        var map;
 
         function offersMapInitt(id, locations) {
             var mapOptions = {
@@ -782,6 +783,7 @@
 
             var polygon = [];
             for (i = 0; i < locations.length; i++) {
+
                 var pos = new google.maps.LatLng(locations[i][0], locations[i][1]);
                 polygon.push(pos);
                 var marker = new google.maps.Marker({
@@ -840,13 +842,7 @@
             }];
 
 
-            var markerCluster = new MarkerClusterer(map, mapMarkers, {styles:markerClusterStyle});
-            minClusterZoom = 14;
-            markerCluster.setMaxZoom(minClusterZoom);
-            var oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true, keepSpiderfied: true, legWeight: 2 });
-            for (var i = 0; i < mapMarkers.length; i ++) {
-                oms.addMarker(mapMarkers[i]);  // <-- here
-            }
+
         }
 
         google.maps.event.addDomListener(window, 'load', init);
@@ -863,17 +859,17 @@
 
         function drawFreeHand(){
             //the polygon
-            var poly=new google.maps.Polyline({map:map,clickable:false});
+            window.polyline=new google.maps.Polyline({map:map,clickable:false});
             var move=google.maps.event.addListener(map,'mousemove',function(e){
-                poly.getPath().push(e.latLng);
+                polyline.getPath().push(e.latLng);
             });
             //mouseup-listener
             google.maps.event.addListenerOnce(map,'mouseup',function(e){
                 google.maps.event.removeListener(move);
-                var path=poly.getPath();
-                var sending_data = poly.getPath().getArray();
+                var path=polyline.getPath();
+                var sending_data = polyline.getPath().getArray();
                 sending_data = JSON.stringify(sending_data);
-                poly=new google.maps.Polygon({map:map,path:path});
+                window.poly=new google.maps.Polygon({map:map,path:path});
                 $.ajax({
                     'type' : 'post',
                     'url' : '{{ route('searchListingAjax') }}',
@@ -888,11 +884,12 @@
                                     title: '',
                                     icon: res[i][2]
                                 });
-                                mapMarkers[i] = marker;
+                                mapMarkers.push(marker);
                                 var infoBoxContent = document.createElement("div");
                                 infoBoxContent.className = "infobox-wrapper";
-                                infoBoxContent.innerHTML = "<a class='infobox-main' href='" + locations[i][6] + "'><div class='infobox-image'><img src=" + locations[i][3] + " alt='" + locations[i][4] + "' /></div><div class='infobox-text'>" + locations[i][4] + "</div><div class='infobox-price'>$" + locations[i][5] + "</div></a>";
-                                mapMarkers[i].infobox = new InfoBox({
+                                infoBoxContent.innerHTML = "<a class='infobox-main' href='" + res[i][6] + "'><div class='infobox-image'><img src=" + res[i][3] + " alt='" + res[i][4] + "' /></div><div class='infobox-text'>" + res[i][4] + "</div><div class='infobox-price'>$" + res[i][5] + "</div></a>";
+                                for(x = 0; x < mapMarkers.length; x++){
+                                mapMarkers[x].infobox = new InfoBox({
                                     content: infoBoxContent,
                                     disableAutoPan: false,
                                     pixelOffset: new google.maps.Size(30, -150),
@@ -903,7 +900,6 @@
                                     closeBoxURL: "images/infobox-close.png",
                                     infoBoxClearance: new google.maps.Size(1, 1)
                                 });
-
                                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                                     return function() {
                                         var j = 0;
@@ -912,17 +908,15 @@
                                         }
                                         mapMarkers[i].infobox.open(map, this);
                                     }
-                                })(marker, i));
-                                LatLngList[i] = pos;
-                                mapMarkers[i].setMap(map);
+                                })(marker, x));
+                                mapMarkers[x].setMap(map);
+                                }
                             }
-
                         }
-
-
                         $('.erease').show()
                     }
                 });
+
                 google.maps.event.clearListeners(map.getDiv(), 'mousedown');
                 enable()
             });
@@ -961,11 +955,16 @@
             for (var i = 0; i < mapMarkers.length; i++) {
                 mapMarkers[i].setMap(map);
             }
+
         }
 
         // Removes the markers from the map, but keeps them in the array.
         function clearMarkers() {
-            setMapOnAll(null);
+            for (var i = 0; i < mapMarkers.length; i++ ) {
+                mapMarkers[i].setMap(null);
+
+            }
+            mapMarkers.length = 0;
         }
 
         // Shows any markers currently in the array.
@@ -982,7 +981,8 @@
 
         $('.erease').click(function () {
             clearMarkers();
-
+            poly.setMap(null);
+            polyline.setMap(null);
             $.ajax({
                 'type': 'post',
                 'url': '{{ route('erease') }}',
@@ -996,33 +996,36 @@
                                 title: '',
                                 icon: res[i][2]
                             });
-                            mapMarkers[i] = marker;
-                            var infoBoxContent = document.createElement("div");
-                            infoBoxContent.className = "infobox-wrapper";
-                            infoBoxContent.innerHTML = "<a class='infobox-main' href='" + res[i][6] + "'><div class='infobox-image'><img src=" + res[i][3] + " alt='" + res[i][4] + "' /></div><div class='infobox-text'>" + res[i][4] + "</div><div class='infobox-price'>$" + res[i][5] + "</div></a>";
-                            mapMarkers[i].infobox = new InfoBox({
+                        mapMarkers.push(marker);
+                        var infoBoxContent = document.createElement("div");
+                        infoBoxContent.className = "infobox-wrapper";
+                        infoBoxContent.innerHTML = "<a class='infobox-main' href='" + res[i][6] + "'><div class='infobox-image'><img src=" + res[i][3] + " alt='" + res[i][4] + "' /></div><div class='infobox-text'>" + res[i][4] + "</div><div class='infobox-price'>$" + res[i][5] + "</div></a>";
+                        for(x = 0; x < mapMarkers.length; x++){
+                            mapMarkers[x].infobox = new InfoBox({
                                 content: infoBoxContent,
                                 disableAutoPan: false,
                                 pixelOffset: new google.maps.Size(30, -150),
                                 zIndex: null,
-                                boxStyle: {},
+                                boxStyle: {
+                                },
                                 closeBoxMargin: "0px",
                                 closeBoxURL: "images/infobox-close.png",
                                 infoBoxClearance: new google.maps.Size(1, 1)
                             });
 
-                            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                                return function () {
+                            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                                return function() {
                                     var j = 0;
                                     for (j = 0; j < mapMarkers.length; j++) {
                                         mapMarkers[j].infobox.close();
                                     }
                                     mapMarkers[i].infobox.open(map, this);
                                 }
-                            })(marker, i));
-                            mapMarkers[i].setMap(map);
+                            })(marker, x));
+                            mapMarkers[x].setMap(map);
+                        }
                     }
-                    $('.erease').show()
+                    $('.erease').hide()
                 }
             })
         })
