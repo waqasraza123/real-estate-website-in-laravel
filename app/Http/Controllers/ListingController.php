@@ -294,7 +294,10 @@ class ListingController extends Controller
 
 
     public function searchListingAjax(Request $request){
-        $listings =  $this->listing->get();
+        $listing = Listing::where('listings.listing_status', 'done')
+            ->where('listings.approved', "1")
+            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
+             $listings = ($listing->get()->unique('listing_id'));
         $langLtd = [];
         foreach ($listings as $listing){
             if($listing->lat != '') {
@@ -318,8 +321,11 @@ class ListingController extends Controller
 
     public function erease(){
         $langLtd = [];
-        $listings =  $this->listing->get();
+        $listing = Listing::where('listings.listing_status', 'done')
+            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
+        $listings = ($listing->get()->unique('listing_id'));
 
+        $langLtd = [];
         foreach ($listings as $listing){
             if($listing->lat != '') {
                 if($listing->listing_type == '2'){

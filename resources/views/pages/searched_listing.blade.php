@@ -1000,8 +1000,7 @@
                         var infoBoxContent = document.createElement("div");
                         infoBoxContent.className = "infobox-wrapper";
                         infoBoxContent.innerHTML = "<a class='infobox-main' href='" + res[i][6] + "'><div class='infobox-image'><img src=" + res[i][3] + " alt='" + res[i][4] + "' /></div><div class='infobox-text'>" + res[i][4] + "</div><div class='infobox-price'>$" + res[i][5] + "</div></a>";
-                        for(x = 0; x < mapMarkers.length; x++){
-                            mapMarkers[x].infobox = new InfoBox({
+                            mapMarkers[i].infobox = new InfoBox({
                                 content: infoBoxContent,
                                 disableAutoPan: false,
                                 pixelOffset: new google.maps.Size(30, -150),
@@ -1021,9 +1020,8 @@
                                     }
                                     mapMarkers[i].infobox.open(map, this);
                                 }
-                            })(marker, x));
-                            mapMarkers[x].setMap(map);
-                        }
+                            })(marker, i));
+                            mapMarkers[i].setMap(map);
                     }
                     $('.erease').hide()
                 }
