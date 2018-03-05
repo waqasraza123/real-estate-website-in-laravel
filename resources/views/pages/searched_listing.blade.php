@@ -876,8 +876,8 @@
                     'data' : {datas:sending_data},
                     success:function (res) {
                         for (i = 0; i < res.length; i++) {
-                            for (i = 0; i < res.length; i++) {
-                                var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
+                            var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
+                            if (google.maps.geometry.poly.containsLocation(latLng, poly)) {
                                 var marker = new google.maps.Marker({
                                     position: latLng,
                                     map: map,
@@ -888,27 +888,28 @@
                                 var infoBoxContent = document.createElement("div");
                                 infoBoxContent.className = "infobox-wrapper";
                                 infoBoxContent.innerHTML = "<a class='infobox-main' href='" + res[i][6] + "'><div class='infobox-image'><img src=" + res[i][3] + " alt='" + res[i][4] + "' /></div><div class='infobox-text'>" + res[i][4] + "</div><div class='infobox-price'>$" + res[i][5] + "</div></a>";
-                                mapMarkers[i].infobox = new InfoBox({
-                                    content: infoBoxContent,
-                                    disableAutoPan: false,
-                                    pixelOffset: new google.maps.Size(30, -150),
-                                    zIndex: null,
-                                    boxStyle: {},
-                                    closeBoxMargin: "0px",
-                                    closeBoxURL: "images/infobox-close.png",
-                                    infoBoxClearance: new google.maps.Size(1, 1)
-                                });
-
-                                google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                                    return function () {
-                                        var j = 0;
-                                        for (j = 0; j < mapMarkers.length; j++) {
-                                            mapMarkers[j].infobox.close();
+                                for (x = 0; x < mapMarkers.length; x++) {
+                                    mapMarkers[x].infobox = new InfoBox({
+                                        content: infoBoxContent,
+                                        disableAutoPan: false,
+                                        pixelOffset: new google.maps.Size(30, -150),
+                                        zIndex: null,
+                                        boxStyle: {},
+                                        closeBoxMargin: "0px",
+                                        closeBoxURL: "images/infobox-close.png",
+                                        infoBoxClearance: new google.maps.Size(1, 1)
+                                    });
+                                    google.maps.event.addListener(marker, 'click', (function (marker, x) {
+                                        return function () {
+                                            var j = 0;
+                                            for (j = 0; j < mapMarkers.length; j++) {
+                                                mapMarkers[j].infobox.close();
+                                            }
+                                            mapMarkers[x].infobox.open(map, this);
                                         }
-                                        mapMarkers[i].infobox.open(map, this);
-                                    }
-                                })(marker, i));
-                                mapMarkers[i].setMap(map);
+                                    })(marker, x));
+                                    mapMarkers[x].setMap(map);
+                                }
                             }
                         }
                         $('.erease').show()
