@@ -232,7 +232,7 @@
             </div>
             <div class="erease">
                 <i class="fa fa-pencil"></i>
-                Erease
+                Erase
             </div>
         </div>
         <div class="col-lg-5 " id="offers-list" style="background: white;  overflow-y: scroll">
