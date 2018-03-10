@@ -456,7 +456,7 @@ class ListingController extends Controller
                 $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
             }
         }
-        $listings = ($listing->get()->unique('listing_id'));
+        $listings = ($listing->where('listings.listing_type' , 2)->get()->unique('listing_id'));
 
         dd($listings);
         $langLtd = [];
