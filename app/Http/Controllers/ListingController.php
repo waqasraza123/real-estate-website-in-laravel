@@ -382,7 +382,6 @@ class ListingController extends Controller
      */
     public function searchListing(Request $request){
         $request->flash();
-        dd($request->all());
         $min = [];
         $inputs = $request->except('_token');
         $listing = Listing::where('listings.listing_status', 'done')
@@ -390,7 +389,6 @@ class ListingController extends Controller
             ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
             ->whereRaw('listing_attributes.listing_type', $request->listing_type);
 
-        dd($listing->get());
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
             if (isset($inputs['wq-street_address']))
                 $listing->where('wq-street_address', $inputs['wq-street_address']);
