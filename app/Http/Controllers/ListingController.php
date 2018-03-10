@@ -388,7 +388,7 @@ class ListingController extends Controller
             ->where('listings.approved', "1")
             ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
 
-        $listing =  $listing->where('listing_type' , $inputs['listing_type']);
+         $listing->where('listings.listing_type' , $inputs['listing_type']);
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
             if (isset($inputs['wq-street_address']))
                 $listing->where('wq-street_address', $inputs['wq-street_address']);
