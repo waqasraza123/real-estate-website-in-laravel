@@ -400,7 +400,6 @@ class ListingController extends Controller
             if(isset($inputs['wq-neighborhood']))
                 $listing->where('wq-neighborhood', $inputs['wq-neighborhood']);
         }
-
         elseif ($inputs['wq-sublocality']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-sublocality'])->orWhere('acceptable_city', $inputs['wq-sublocality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
@@ -481,6 +480,8 @@ class ListingController extends Controller
 
         \Session::put('ids' , $listingsIds);
 
+
+       dd($listings);
         $filtered = $listings->filter(function ($value, $key) {
             return $value -> id = $value->listing_id;
         });
