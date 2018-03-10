@@ -382,12 +382,15 @@ class ListingController extends Controller
      */
     public function searchListing(Request $request){
         $request->flash();
+        dd($request->all());
         $min = [];
         $inputs = $request->except('_token');
         $listing = Listing::where('listings.listing_status', 'done')
             ->where('listings.approved', "1")
             ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
             ->whereRaw('listing_attributes.listing_type', $request->listing_type);
+
+        dd($listing->get());
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
             if (isset($inputs['wq-street_address']))
                 $listing->where('wq-street_address', $inputs['wq-street_address']);
@@ -482,10 +485,8 @@ class ListingController extends Controller
 
 
 
-        $filtered = $listings->filter(function ($value, $key , $inputs) {
-            if($value->listing_type == $inputs['listing_type']){
-                return $value -> id = $value->listing_id;
-            }
+        $filtered = $listings->filter(function ($value, $key) {
+            return $value -> id = $value->listing_id;
         });
 
         $filtered->all();
