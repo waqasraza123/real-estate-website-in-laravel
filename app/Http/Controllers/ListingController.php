@@ -383,11 +383,11 @@ class ListingController extends Controller
     public function searchListing(Request $request){
         $request->flash();
         $min = [];
-        $inputs = $request->except('token');
+        $inputs = $request->except('_token');
         $listing = Listing::where('listings.listing_status', 'done')
             ->where('listings.approved', "1")
             ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
-            ->where('listing_attributes.listing_type', $inputs['listing_type']);
+            ->whereRaw('listing_attributes.listing_type', $request->listing_type);
 
         dd($listing->get());
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
