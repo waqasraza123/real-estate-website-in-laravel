@@ -185,7 +185,6 @@
                                         <div class="button-triangle2"></div>
                                     </a>
                                 </li>
-
                                 @foreach($listing->ListingAttr()->get() as $lis)
                                     @if($lis->beds_count == 1)
                                         <li role="presentation">

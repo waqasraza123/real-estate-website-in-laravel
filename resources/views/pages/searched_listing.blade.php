@@ -613,7 +613,7 @@
                     ?>
                     @if($listings->first())
                         @foreach($listings as $listing)
-                        <a href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" class="list-agency row">
+                        <a href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}" class="list-agency row">
                             <div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">
                                 <div class="full_blue">
                                     <h2> {{ $listing->name }}</h2>
