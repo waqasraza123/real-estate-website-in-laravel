@@ -783,7 +783,6 @@
 
             var polygon = [];
             for (i = 0; i < locations.length; i++) {
-
                 var pos = new google.maps.LatLng(locations[i][0], locations[i][1]);
                 polygon.push(pos);
                 var marker = new google.maps.Marker({

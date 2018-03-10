@@ -386,9 +386,9 @@ class ListingController extends Controller
         $inputs = $request->except('_token');
         $listing = Listing::where('listings.listing_status', 'done')
             ->where('listings.approved', "1")
-            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
-            ->whereRaw('listing_attributes.listing_type', $request->listing_type);
+            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
 
+        $listing =  $listing->where('listing_type' , $inputs['listing_type']);
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
             if (isset($inputs['wq-street_address']))
                 $listing->where('wq-street_address', $inputs['wq-street_address']);
