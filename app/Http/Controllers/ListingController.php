@@ -388,8 +388,6 @@ class ListingController extends Controller
             ->where('listings.approved', "1")
             ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
             ->whereRaw('listing_attributes.listing_type', $request->listing_type);
-
-
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
             if (isset($inputs['wq-street_address']))
                 $listing->where('wq-street_address', $inputs['wq-street_address']);
@@ -456,9 +454,8 @@ class ListingController extends Controller
                 $listing->where('listing_attributes.baths_count', $request->input('beds_baths')[1]);
             }
         }
-        $listings = ($listing->where('listings.listing_type' , 2)->get()->unique('listing_id'));
+        $listings = ($listing->get()->unique('listing_id'));
 
-        dd($listings);
         $langLtd = [];
         $new = '';
         $listingsIds = [];
@@ -485,8 +482,10 @@ class ListingController extends Controller
 
 
 
-        $filtered = $listings->filter(function ($value, $key) {
-            return $value -> id = $value->listing_id;
+        $filtered = $listings->filter(function ($value, $key , $inputs) {
+            if($value->listing_type == $inputs['listing_type']){
+                return $value -> id = $value->listing_id;
+            }
         });
 
         $filtered->all();
