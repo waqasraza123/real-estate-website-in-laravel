@@ -491,7 +491,7 @@ class ListingController extends Controller
         $newList = [];
         foreach($listings as $list){
             if($list->listing_type == $inputs['listing_type']){
-                array_push($newList , $listing);
+                array_push($newList , $list);
             }
         }
 
