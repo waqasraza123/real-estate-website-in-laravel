@@ -3893,7 +3893,7 @@ InfoBox.prototype = new google.maps.OverlayView, InfoBox.prototype.createInfoBox
             if (t.showPreview) {
                 var a = "indicator" + i, r = a + "Title", n = "file-preview-" + i.toLowerCase(),
                     l = e.find(".file-upload-indicator"), o = t.fileActionSettings;
-                e.removeClass("file-preview-success file-preview-error file-preview-loading"), "Error" === i && e.find(".kv-file-upload").attr("disabled", !0), l.html(o[a]), l.attr("title", o[r]), e.addClass(n)
+                e.removeClass("file-preview-success file-preview-error file-preview-loading"), "Error" === i && e.find(".kv-osm").attr("disabled", !0), l.html(o[a]), l.attr("title", o[r]), e.addClass(n)
             }
         }, clearPreview: function () {
             var e = this,

@@ -754,6 +754,7 @@
         var mapMarkers = [];
         var polyline;
         var map;
+        var markerCluster;
 
         function offersMapInitt(id, locations) {
             var mapOptions = {
@@ -793,9 +794,7 @@
                     title: '',
                     icon: locations[i][2]
                 });
-
-
-                mapMarkers.push(marker);
+                mapMarkers[i] = marker;
                 var infoBoxContent = document.createElement("div");
                 infoBoxContent.className = "infobox-wrapper";
                 infoBoxContent.innerHTML = "<a class='infobox-main' href='" + locations[i][6] + "'><div class='infobox-image'><img src=" + locations[i][3] + " alt='" + locations[i][4] + "' /></div><div class='infobox-text'>" + locations[i][4] + "</div><div class='infobox-price'>$" + locations[i][5] + "</div></a>";
@@ -824,19 +823,6 @@
                 LatLngList[i] = pos;
             }
 
-            var bermudaTriangle = new google.maps.Polygon({
-                paths: polygon
-            });
-
-            if(LatLngList.length > 1){
-               /* bermudaTriangle.setMap(map);*/
-                var bounds = new google.maps.LatLngBounds();
-                for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
-                    bounds.extend(LatLngList[i]);
-                }
-                map.fitBounds(bounds);
-            }
-
             var markerClusterStyle = [{
                 url: 'images/pin-empty.png',
                 height: 80,
@@ -844,6 +830,14 @@
                 textSize: 16,
                 textColor: '#3798dd'
             }];
+
+            markerCluster = new MarkerClusterer(map, mapMarkers, {styles:markerClusterStyle});
+            minClusterZoom = 14;
+            markerCluster.setMaxZoom(minClusterZoom);
+            var oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true, keepSpiderfied: true, legWeight: 2 });
+            for (var i = 0; i < mapMarkers.length; i ++) {
+                oms.addMarker(mapMarkers[i]);  // <-- here
+            }
         }
 
         google.maps.event.addDomListener(window, 'load', init);
@@ -876,6 +870,7 @@
                     'url' : '{{ route('searchListingAjax') }}',
                     'data' : {datas:sending_data},
                     success:function (res) {
+                        markerCluster.clearMarkers();
                         var newLangLtd = [];
                         for (i = 0; i < res.length; i++) {
                             var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
@@ -973,6 +968,8 @@
                             })(marker, i));
                             mapMarkers[i].setMap(map);
                         }
+
+                      
                         $('.erease').show()
                     }
                 });
