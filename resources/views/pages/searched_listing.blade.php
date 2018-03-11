@@ -619,7 +619,6 @@
                                 <div class="full_blue">
                                     <h2> {{ $listing->name }}</h2>
                                 </div>
-
                                 @if(App\ListingImage::where('listing_id' , $listing->id)->first())
                                     <img src="{{ asset('assets/images').'/'.App\ListingImage::where('listing_id' , $listing->id)->pluck('image')->first() }}" alt="" width="100%" height="auto">
                                 @endif

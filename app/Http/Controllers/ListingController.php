@@ -497,6 +497,7 @@ class ListingController extends Controller
 
         $listings = $newList;
 
+        dd($listings);
 
        return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids' , 'poly'));
     }
