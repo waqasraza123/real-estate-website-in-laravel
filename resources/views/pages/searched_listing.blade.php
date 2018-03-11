@@ -221,7 +221,7 @@
         </div>
     </div>
     <div class="row">
-        @if($listings->first())
+        @if($listings)
         <div class="col-lg-7 " style="    padding-right: 0;">
             <div id="offers-map">
 
@@ -612,15 +612,16 @@
                         }
                     ?>
                     <div class="ajax_list">
-                    @if($listings->first())
+                    @if($listings)
                         @foreach($listings as $listing)
                         <a href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}" class="list-agency row">
                             <div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">
                                 <div class="full_blue">
                                     <h2> {{ $listing->name }}</h2>
                                 </div>
-                                @if($listing->ListingsImages()->where('featured', "1")->first())
-                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="auto">
+
+                                @if(App\ListingImage::where('listing_id' , $listing->id)->first())
+                                    <img src="{{ asset('assets/images').'/'.App\ListingImage::where('listing_id' , $listing->id)->pluck('image')->first() }}" alt="" width="100%" height="auto">
                                 @endif
                             </div>
                             <a class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-12" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" >

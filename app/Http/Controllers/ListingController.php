@@ -488,6 +488,15 @@ class ListingController extends Controller
 
         $filtered->all();
 
+        $newList = [];
+        foreach($listings as $list){
+            if($list->listing_type == $inputs['listing_type']){
+                array_push($newList , $listing);
+            }
+        }
+
+        $listings = $newList;
+
 
        return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids' , 'poly'));
     }
