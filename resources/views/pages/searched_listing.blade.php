@@ -237,7 +237,7 @@
         </div>
         <div class="col-lg-5 " id="offers-list" style="background: white;  overflow-y: scroll">
             <div class="row"  style="overflow: scroll">
-                <div class="col-xs-12">
+                <div class="col-xs-12 test">
                     <div class="abs_f_h">
                         <form action="{{ route('filterListings') }}" method="get">
                             <div class="desktopView clearfix" id="advancedFilters">
@@ -611,6 +611,7 @@
                             return $text;
                         }
                     ?>
+                    <div class="ajax_list">
                     @if($listings->first())
                         @foreach($listings as $listing)
                         <a href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}" class="list-agency row">
@@ -665,6 +666,7 @@
                         </a>
                     @endforeach
                     @endif
+                    </div>
                 </div>
             </div>
         </div>
@@ -791,7 +793,9 @@
                     title: '',
                     icon: locations[i][2]
                 });
-                mapMarkers[i] = marker;
+
+
+                mapMarkers.push(marker);
                 var infoBoxContent = document.createElement("div");
                 infoBoxContent.className = "infobox-wrapper";
                 infoBoxContent.innerHTML = "<a class='infobox-main' href='" + locations[i][6] + "'><div class='infobox-image'><img src=" + locations[i][3] + " alt='" + locations[i][4] + "' /></div><div class='infobox-text'>" + locations[i][4] + "</div><div class='infobox-price'>$" + locations[i][5] + "</div></a>";
@@ -816,6 +820,7 @@
                         mapMarkers[i].infobox.open(map, this);
                     }
                 })(marker, i));
+
                 LatLngList[i] = pos;
             }
 
@@ -839,9 +844,6 @@
                 textSize: 16,
                 textColor: '#3798dd'
             }];
-
-
-
         }
 
         google.maps.event.addDomListener(window, 'load', init);
@@ -878,45 +880,66 @@
                         for (i = 0; i < res.length; i++) {
                             var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
                             if (google.maps.geometry.poly.containsLocation(latLng, poly)) {
+                                $('.ajax_list').html('');
                                  newLangLtd.push(res[i]);
                             }
-                          /*  if (google.maps.geometry.poly.containsLocation(latLng, poly)) {
-                                var marker = new google.maps.Marker({
-                                    position: latLng,
-                                    map: map,
-                                    title: '',
-                                    icon: res[i][2]
-                                });
-                                mapMarkers.push(marker);
-                                console.log(mapMarkers)
-                                var infoBoxContent = document.createElement("div");
-                                infoBoxContent.className = "infobox-wrapper";
-                                infoBoxContent.innerHTML = "<a class='infobox-main' href='" + res[i][6] + "'><div class='infobox-image'><img src=" + res[i][3] + " alt='" + res[i][4] + "' /></div><div class='infobox-text'>" + res[i][4] + "</div><div class='infobox-price'>$" + res[i][5] + "</div></a>";
-                                mapMarkers[i].infobox = new InfoBox({
-                                    content: infoBoxContent,
-                                    disableAutoPan: false,
-                                    pixelOffset: new google.maps.Size(30, -150),
-                                    zIndex: null,
-                                    boxStyle: {
-                                    },
-                                    closeBoxMargin: "0px",
-                                    closeBoxURL: "images/infobox-close.png",
-                                    infoBoxClearance: new google.maps.Size(1, 1)
-                                });
-
-                                google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                                    return function() {
-                                        var j = 0;
-                                        for (j = 0; j < mapMarkers.length; j++) {
-                                            mapMarkers[j].infobox.close();
-                                        }
-                                        mapMarkers[i].infobox.open(map, this);
-                                    }
-                                })(marker, i));
-                                mapMarkers[i].setMap(map);
-                            }*/
                         }
+
                         for (i = 0; i < newLangLtd.length; i++) {
+
+                            var newTemplate = document.createElement("a");
+                            newTemplate.className = 'list-agency row';
+                            newTemplate.innerHTML = '<div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">' +
+                                '<div class="full_blue">' +
+                                '<h2>'+newLangLtd[i][7]+'</h2>' +
+                                '</div>'+
+                                '<img src="'+newLangLtd[i][3]+'" alt="" width="100%" height="auto">'+
+                                '<a class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-12" href="' + newLangLtd[i][6] + '" >' +
+                                '<div class="list-agency-text" style="padding-bottom: 0px">'+
+                                '<h4 class="list-agency-title"><i class="fa fa-map-marker"></i>' + newLangLtd[i][4] +'</h4>'+
+                                '<div class="list-agency-separator"></div>'+
+                                '</div>'+
+                                '</a>'+
+                                '<div class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-6 ">'+
+                                '<div class="list-agency-text">'+
+                                '<h4 class="list-agency-title"><i class="fa fa-phone"></i>'+newLangLtd[i][8]+'</h4>'+
+                                '</div>'+
+                                '</div>'+
+                                 '<div class="col-lg-6 col-xs-12">'+
+                                '<div class="list-agency-text">'+
+                                '<h4 class="list-agency-title">' +
+                                '<span  data-toggle="tooltip" data-placement="bottom" title="Last Updated"><i class="fa fa-clock-o"  ></i>' +
+                                ''+newLangLtd[i][9]+' Days</span>' +
+                                '</h4>'+
+                                '</div>'+
+                                '</div>'+
+                                '<div class="clearfix"></div>'+
+                                '<ul class="app_attr_list">'+
+                                '<li class="">'+
+                                '<span class="team-icon-circle">'+
+                                '<i class="fa fa-map-marker" style="line-height: 22px;"></i>'+
+                                '</span>'+
+                                '<span>'+newLangLtd[i][7]+'</span>'+
+                                '</li>'+
+                                '<li class="">'+
+                                '<span class="team-icon-circle">'+
+                                '<i class="fa fa-dollar" style="line-height: 22px;"></i>'+
+                                '</span>'+
+                                '<span>'+newLangLtd[i][5]+'</span>'+
+                                '</li>'+
+                                '<li class="">'+
+                                '<span class="team-icon-circle">'+
+                                '<i class="fa fa-bed fa-sm" style="line-height: 22px;"></i>'+
+                                '</span>'+
+                                '<span><a href="#">'+newLangLtd[i][10]+' Bed</a></span>'+
+                                '</li>'+
+                                '</ul>'+
+                                '<a href="'+ newLangLtd[i][6] + '" class="small-triangle"></a>'+
+                                '<div class="small-triangle2"></div>'+
+                                '<a class="small-icon" href="'+ newLangLtd[i][6] + '"><i class="jfont fa-2x"></i></a>'+
+                                '</div>';
+
+                            $('.ajax_list').append(newTemplate);
                             var latLngs = new google.maps.LatLng(newLangLtd[i][0], newLangLtd[i][1]);
                             var marker = new google.maps.Marker({
                                 position: latLngs,
@@ -939,7 +962,6 @@
                                 closeBoxURL: "images/infobox-close.png",
                                 infoBoxClearance: new google.maps.Size(1, 1)
                             });
-
                             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                                 return function() {
                                     var j = 0;

@@ -302,15 +302,15 @@ class ListingController extends Controller
         foreach ($listings as $listing){
             if($listing->lat != '') {
                 if($listing->listing_type == '2'){
-                    $new = [ $listing->lat , $listing->lng , "images/pin-apartment.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first() , $listing->address , $listing->rent , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title])];
+                    $new = [ $listing->lat , $listing->lng , "images/pin-apartment.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first() , $listing->address , $listing->rent , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title ]) , $listing->name ,  User::where('id' ,$listing->user_id)->pluck('phone')->first() , \Carbon\Carbon::parse($listing->updated_at)->diffInDays() , $listing->beds_count];
                 }elseif($listing->listing_type == '7'){
-                    $new = [ $listing->lat , $listing->lng , "images/pin-house.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title])];
+                    $new = [ $listing->lat , $listing->lng , "images/pin-house.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title ]) , $listing->name ,  User::where('id' ,$listing->user_id)->pluck('phone')->first() , \Carbon\Carbon::parse($listing->updated_at)->diffInDays() , $listing->beds_count];
                 }elseif($listing->listing_type == '5'){
-                    $new = [ $listing->lat  , $listing->lng , "images/pin-commercial.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title])];
+                    $new = [ $listing->lat  , $listing->lng , "images/pin-commercial.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title ]) , $listing->name ,  User::where('id' ,$listing->user_id)->pluck('phone')->first() , \Carbon\Carbon::parse($listing->updated_at)->diffInDays() , $listing->beds_count];
                 }elseif($listing->listing_type == '3'){
-                    $new = [ $listing->lat , $listing->lng ,  "images/pin-land.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title])];
+                    $new = [ $listing->lat , $listing->lng ,  "images/pin-land.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title ]) , $listing->name ,  User::where('id' ,$listing->user_id)->pluck('phone')->first() , \Carbon\Carbon::parse($listing->updated_at)->diffInDays() , $listing->beds_count];
                 }else{
-                    $new = [ $listing->lat , $listing->lng , "images/pin-land.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title])];
+                    $new = [ $listing->lat , $listing->lng , "images/pin-land.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title ]) , $listing->name ,  User::where('id' ,$listing->user_id)->pluck('phone')->first() , \Carbon\Carbon::parse($listing->updated_at)->diffInDays() , $listing->beds_count];
                 }
                 array_push($langLtd, $new);
             }
@@ -383,12 +383,13 @@ class ListingController extends Controller
     public function searchListing(Request $request){
         $request->flash();
         $min = [];
-        $inputs = $request->except('_token');
+        $inputs = $request->except('token');
         $listing = Listing::where('listings.listing_status', 'done')
             ->where('listings.approved', "1")
-            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
+            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
+            ->where('listing_attributes.listing_type', $inputs['listing_type']);
 
-         $listing->where('listings.listing_type' , $inputs['listing_type']);
+
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
             if (isset($inputs['wq-street_address']))
                 $listing->where('wq-street_address', $inputs['wq-street_address']);
@@ -480,8 +481,6 @@ class ListingController extends Controller
 
 
         \Session::put('ids' , $listingsIds);
-
-
 
         $filtered = $listings->filter(function ($value, $key) {
             return $value -> id = $value->listing_id;
