@@ -7,6 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddAcceptableCitiesColToZipCodes' => $baseDir . '/database/migrations/2017_12_08_195225_add_acceptable_cities_col_to_zip_codes.php',
+    'AddAllBillsToListingsTable' => $baseDir . '/database/migrations/2018_03_12_120000_add_all_bills_to_listings_table.php',
+    'AddAllBoxToListingsTable' => $baseDir . '/database/migrations/2018_03_12_115713_add_all_box_to_listings_table.php',
+    'AddAllTownsToListingsTable' => $baseDir . '/database/migrations/2018_03_12_120208_add_all_towns_to_listings_table.php',
     'AddFeatureToListingsTable' => $baseDir . '/database/migrations/2017_10_02_152659_add_feature_to_listings_table.php',
     'AddFeaturedToListingImages' => $baseDir . '/database/migrations/2017_10_24_164955_add_featured_to_listing_images.php',
     'AddIdZipCodes' => $baseDir . '/database/migrations/2017_12_08_203826_add_id_zip_codes.php',
@@ -15,6 +18,7 @@ return array(
     'AddListingStatusToListingsTable' => $baseDir . '/database/migrations/2017_09_16_003527_add_listing_status_to_listings_table.php',
     'AddListingTypeToSavedSearches' => $baseDir . '/database/migrations/2017_09_09_010736_add_listing_type_to_saved_searches.php',
     'AddListingsOptionsToListingsTable' => $baseDir . '/database/migrations/2017_10_12_173604_add_listings_options_to_listings_table.php',
+    'AddLoftBoxToListingsTable' => $baseDir . '/database/migrations/2018_03_12_114401_add_loft_box_to_listings_table.php',
     'AddMisdemeanorYearsToListingTable' => $baseDir . '/database/migrations/2018_01_21_174954_add_misdemeanor_years_to_listing_table.php',
     'AddNameToSavedSearches' => $baseDir . '/database/migrations/2017_09_09_024823_add_name_to_saved_searches.php',
     'AddNewCheckoxesToListings' => $baseDir . '/database/migrations/2017_10_16_161912_add_new_checkoxes_to_listings.php',
@@ -69,6 +73,7 @@ return array(
     'App\\Tag' => $baseDir . '/app/Tag.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\UserNotification' => $baseDir . '/app/UserNotification.php',
+    'App\\zipCode' => $baseDir . '/app/zipCode.php',
     'Barryvdh\\Debugbar\\Console\\ClearCommand' => $vendorDir . '/barryvdh/laravel-debugbar/src/Console/ClearCommand.php',
     'Barryvdh\\Debugbar\\Console\\PublishCommand' => $vendorDir . '/barryvdh/laravel-debugbar/src/Console/PublishCommand.php',
     'Barryvdh\\Debugbar\\Controllers\\AssetController' => $vendorDir . '/barryvdh/laravel-debugbar/src/Controllers/AssetController.php',
@@ -147,7 +152,6 @@ return array(
     'CreateListingImagesTable' => $baseDir . '/database/migrations/2017_08_18_140623_create_listing_images_table.php',
     'CreateLogoTable' => $baseDir . '/database/migrations/2017_10_02_012453_create_logo_table.php',
     'CreateMoreAddressColumnsInListingsTable' => $baseDir . '/database/migrations/2017_12_03_150214_create_more_address_columns_in_listings_table.php',
-    'CreateNewFaluesForListing' => $baseDir . '/database/migrations/2018_02_07_144100_create_new_falues_for_listing.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateReviewsTable' => $baseDir . '/database/migrations/2017_09_28_221610_create_reviews_table.php',
     'CreateSavedSearchsTable' => $baseDir . '/database/migrations/2017_09_06_194205_create_saved_searchs_table.php',

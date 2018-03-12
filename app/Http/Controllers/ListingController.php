@@ -199,7 +199,6 @@ class ListingController extends Controller
      */
     public function getImagesName($files)
     {
-
         $file_names = [];
         if ($files) {
             foreach ($files as $file) {
