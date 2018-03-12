@@ -392,6 +392,7 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
 
     public static $classMap = array (
         'AddAcceptableCitiesColToZipCodes' => __DIR__ . '/../..' . '/database/migrations/2017_12_08_195225_add_acceptable_cities_col_to_zip_codes.php',
+        'AddAllBillsToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_12_120000_add_all_bills_to_listings_table.php',
         'AddAllBoxToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_12_115713_add_all_box_to_listings_table.php',
         'AddFeatureToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_02_152659_add_feature_to_listings_table.php',
         'AddFeaturedToListingImages' => __DIR__ . '/../..' . '/database/migrations/2017_10_24_164955_add_featured_to_listing_images.php',

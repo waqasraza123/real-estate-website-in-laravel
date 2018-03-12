@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddAcceptableCitiesColToZipCodes' => $baseDir . '/database/migrations/2017_12_08_195225_add_acceptable_cities_col_to_zip_codes.php',
+    'AddAllBillsToListingsTable' => $baseDir . '/database/migrations/2018_03_12_120000_add_all_bills_to_listings_table.php',
     'AddAllBoxToListingsTable' => $baseDir . '/database/migrations/2018_03_12_115713_add_all_box_to_listings_table.php',
     'AddFeatureToListingsTable' => $baseDir . '/database/migrations/2017_10_02_152659_add_feature_to_listings_table.php',
     'AddFeaturedToListingImages' => $baseDir . '/database/migrations/2017_10_24_164955_add_featured_to_listing_images.php',
