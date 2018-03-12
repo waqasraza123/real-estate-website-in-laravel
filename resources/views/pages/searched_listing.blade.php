@@ -832,7 +832,7 @@
             }];
 
             markerCluster = new MarkerClusterer(map, mapMarkers, {styles:markerClusterStyle});
-            minClusterZoom = 140;
+            minClusterZoom = 340;
             markerCluster.setMaxZoom(minClusterZoom);
             var oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true, keepSpiderfied: true, legWeight: 2 });
             for (var i = 0; i < mapMarkers.length; i ++) {
