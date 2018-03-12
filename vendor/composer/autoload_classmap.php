@@ -15,6 +15,7 @@ return array(
     'AddListingStatusToListingsTable' => $baseDir . '/database/migrations/2017_09_16_003527_add_listing_status_to_listings_table.php',
     'AddListingTypeToSavedSearches' => $baseDir . '/database/migrations/2017_09_09_010736_add_listing_type_to_saved_searches.php',
     'AddListingsOptionsToListingsTable' => $baseDir . '/database/migrations/2017_10_12_173604_add_listings_options_to_listings_table.php',
+    'AddLoftBoxToListingsTable' => $baseDir . '/database/migrations/2018_03_12_114401_add_loft_box_to_listings_table.php',
     'AddMisdemeanorYearsToListingTable' => $baseDir . '/database/migrations/2018_01_21_174954_add_misdemeanor_years_to_listing_table.php',
     'AddNameToSavedSearches' => $baseDir . '/database/migrations/2017_09_09_024823_add_name_to_saved_searches.php',
     'AddNewCheckoxesToListings' => $baseDir . '/database/migrations/2017_10_16_161912_add_new_checkoxes_to_listings.php',
