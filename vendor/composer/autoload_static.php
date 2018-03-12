@@ -392,6 +392,7 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
 
     public static $classMap = array (
         'AddAcceptableCitiesColToZipCodes' => __DIR__ . '/../..' . '/database/migrations/2017_12_08_195225_add_acceptable_cities_col_to_zip_codes.php',
+        'AddAllBoxToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_12_115713_add_all_box_to_listings_table.php',
         'AddFeatureToListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_02_152659_add_feature_to_listings_table.php',
         'AddFeaturedToListingImages' => __DIR__ . '/../..' . '/database/migrations/2017_10_24_164955_add_featured_to_listing_images.php',
         'AddIdZipCodes' => __DIR__ . '/../..' . '/database/migrations/2017_12_08_203826_add_id_zip_codes.php',
@@ -455,6 +456,7 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
         'App\\Tag' => __DIR__ . '/../..' . '/app/Tag.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\UserNotification' => __DIR__ . '/../..' . '/app/UserNotification.php',
+        'App\\zipCode' => __DIR__ . '/../..' . '/app/zipCode.php',
         'Barryvdh\\Debugbar\\Console\\ClearCommand' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Console/ClearCommand.php',
         'Barryvdh\\Debugbar\\Console\\PublishCommand' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Console/PublishCommand.php',
         'Barryvdh\\Debugbar\\Controllers\\AssetController' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Controllers/AssetController.php',
@@ -533,7 +535,6 @@ class ComposerStaticInit33c50caca165ca51f223f1a9b5e99858
         'CreateListingImagesTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_18_140623_create_listing_images_table.php',
         'CreateLogoTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_02_012453_create_logo_table.php',
         'CreateMoreAddressColumnsInListingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_03_150214_create_more_address_columns_in_listings_table.php',
-        'CreateNewFaluesForListing' => __DIR__ . '/../..' . '/database/migrations/2018_02_07_144100_create_new_falues_for_listing.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateReviewsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_28_221610_create_reviews_table.php',
         'CreateSavedSearchsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_06_194205_create_saved_searchs_table.php',
