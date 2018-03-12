@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\zipCode;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -12,7 +13,6 @@ use App\ListingImage;
 use App\Review;
 use App\Mail\AgentsEamil;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Session;
 
 
 class ListingController extends Controller
@@ -293,57 +293,56 @@ class ListingController extends Controller
 
 
     public function searchListingAjax(Request $request){
-        foreach ($request->all() as $langLtd){
-            foreach(json_decode($langLtd) as $lng){
-               $listings =  $this->listing->where('lat' ,  '<=' , $lng->lat)->where('lng' , '<=' , $lng->lng)->get();
-            }
-        }
-
-
+        $listing = Listing::where('listings.listing_status', 'done')
+            ->where('listings.approved', "1")
+            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
+             $listings = ($listing->get()->unique('listing_id'));
         $langLtd = [];
-        $new = '';
-
         foreach ($listings as $listing){
             if($listing->lat != '') {
                 if($listing->listing_type == '2'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->rent.'" , "'.route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]).'"],';
+                    $new = [ $listing->lat , $listing->lng , "images/pin-apartment.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first() , $listing->address , $listing->rent , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title ]) , $listing->name ,  User::where('id' ,$listing->user_id)->pluck('phone')->first() , \Carbon\Carbon::parse($listing->updated_at)->diffInDays() , $listing->beds_count];
                 }elseif($listing->listing_type == '7'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->rent.'" , "'.route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]).'"],';
+                    $new = [ $listing->lat , $listing->lng , "images/pin-house.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title ]) , $listing->name ,  User::where('id' ,$listing->user_id)->pluck('phone')->first() , \Carbon\Carbon::parse($listing->updated_at)->diffInDays() , $listing->beds_count];
                 }elseif($listing->listing_type == '5'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->rent.'" , "'.route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]).'"],';
+                    $new = [ $listing->lat  , $listing->lng , "images/pin-commercial.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title ]) , $listing->name ,  User::where('id' ,$listing->user_id)->pluck('phone')->first() , \Carbon\Carbon::parse($listing->updated_at)->diffInDays() , $listing->beds_count];
                 }elseif($listing->listing_type == '3'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->rent.'" , "'.route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]).'"],';
+                    $new = [ $listing->lat , $listing->lng ,  "images/pin-land.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title ]) , $listing->name ,  User::where('id' ,$listing->user_id)->pluck('phone')->first() , \Carbon\Carbon::parse($listing->updated_at)->diffInDays() , $listing->beds_count];
                 }else{
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->rent.'" , "'.route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]).'"],';
+                    $new = [ $listing->lat , $listing->lng , "images/pin-land.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title ]) , $listing->name ,  User::where('id' ,$listing->user_id)->pluck('phone')->first() , \Carbon\Carbon::parse($listing->updated_at)->diffInDays() , $listing->beds_count];
                 }
                 array_push($langLtd, $new);
             }
         }
-        return response()->json($langLtd);
+        return $langLtd;
     }
+
 
     public function erease(){
         $langLtd = [];
-        $listings =  $this->listing->get();
+        $listing = Listing::where('listings.listing_status', 'done')
+            ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id');
+        $listings = ($listing->get()->unique('listing_id'));
 
+        $langLtd = [];
         foreach ($listings as $listing){
             if($listing->lat != '') {
                 if($listing->listing_type == '2'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->rent.'" , "'.route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]).'"],';
+                    $new = [ $listing->lat , $listing->lng , "images/pin-apartment.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first() , $listing->address , $listing->rent , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title])];
                 }elseif($listing->listing_type == '7'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->rent.'" , "'.route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]).'"],';
+                    $new = [ $listing->lat , $listing->lng , "images/pin-house.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title])];
                 }elseif($listing->listing_type == '5'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->rent.'" , "'.route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]).'"],';
+                    $new = [ $listing->lat  , $listing->lng , "images/pin-commercial.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title])];
                 }elseif($listing->listing_type == '3'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->rent.'" , "'.route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]).'"],';
+                    $new = [ $listing->lat , $listing->lng ,  "images/pin-land.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title])];
                 }else{
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->rent.'" , "'.route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]).'"],';
+                    $new = [ $listing->lat , $listing->lng , "images/pin-land.png" , "/assets/images/".$this->listingImage->where('listing_id' , $listing->listing_id)->whereNotNull('featured')->pluck('image')->first()  , $listing->address  , $listing->rent  , route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title])];
                 }
                 array_push($langLtd, $new);
             }
         }
+        return $langLtd;
 
-        return response()->json($langLtd);
     }
 
     /**
@@ -388,6 +387,8 @@ class ListingController extends Controller
             ->where('listings.approved', "1")
             ->join('listing_attributes', 'listings.id', '=', 'listing_attributes.listing_id')
             ->where('listing_attributes.listing_type', $inputs['listing_type']);
+
+
         if($inputs['wq-street_address'] || $inputs['wq-street_number'] || $inputs['wq-intersection'] || $inputs['wq-route'] || $inputs['wq-neighborhood']){
             if (isset($inputs['wq-street_address']))
                 $listing->where('wq-street_address', $inputs['wq-street_address']);
@@ -400,7 +401,6 @@ class ListingController extends Controller
             if(isset($inputs['wq-neighborhood']))
                 $listing->where('wq-neighborhood', $inputs['wq-neighborhood']);
         }
-
         elseif ($inputs['wq-sublocality']){
             $zipCodes = DB::table('zip_codes')->where('zip_code_primary_city', $inputs['wq-sublocality'])->orWhere('acceptable_city', $inputs['wq-sublocality'])->pluck('zip_code')->toArray();
             $listing->whereIn('zip_code', $zipCodes);
@@ -487,7 +487,17 @@ class ListingController extends Controller
 
         $filtered->all();
 
-       return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
+        $newList = [];
+        foreach($listings as $list){
+            if($list->listing_type == $inputs['listing_type']){
+                array_push($newList , $list);
+            }
+        }
+
+        $listings = $newList;
+
+
+       return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids' , 'poly'));
     }
 
 
@@ -495,54 +505,51 @@ class ListingController extends Controller
     public function filterListings(Request $request){
         $langLtd = [];
         $new = '';
-
-        $request->flash();
+        $listings = NULL;
         foreach ($request->all() as $key => $filter){
             foreach ($filter as $fil){
-                $listings = $this->listing->whereIn('id' , Session::get('ids'))->whereNotNull($fil)->get();
+                $listings = $this->listing->whereIn('id' , \Session::get('ids'))->whereNotNull($fil)->get();
             }
-
         }
-        if($listings->first()){
-
+        if($listings){
             foreach ($listings as $listing){
                 if($listing->lat != '') {
                     if($listing->listing_type == '2'){
-                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                     }elseif($listing->listing_type == '7'){
-                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png"],';
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                     }elseif($listing->listing_type == '5'){
-                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png"],';
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                     }elseif($listing->listing_type == '3'){
-                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                     }else{
-                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                     }
                     array_push($langLtd, $new);
                 }
             }
-            return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
         }else{
-            $listings = $this->listing->whereIn('id' , Session::get('ids'))->get();
+            $listings = $this->listing->whereIn('id' , \Session::get('ids'))->get();
             foreach ($listings as $listing){
                 if($listing->lat != '') {
                     if($listing->listing_type == '2'){
-                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                     }elseif($listing->listing_type == '7'){
-                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png"],';
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                     }elseif($listing->listing_type == '5'){
-                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png"],';
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                     }elseif($listing->listing_type == '3'){
-                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                     }else{
-                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                        $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                     }
                     array_push($langLtd, $new);
                 }
             }
 
-            return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
         }
+
+        return view('pages.searched_listing' , compact('listings' , 'langLtd'  , 'ids'));
     }
 
 
@@ -551,19 +558,19 @@ class ListingController extends Controller
         $langLtd = [];
         $new = '';
 
-        $listings = $this->listing->whereIn('id' , Session::get('ids'))->get();
+        $listings = $this->listing->whereIn('id' , \Session::get('ids'))->get();
         foreach ($listings as $listing){
             if($listing->lat != '') {
                 if($listing->listing_type == '2'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png"],';
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-apartment.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                 }elseif($listing->listing_type == '7'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png"],';
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-house.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                 }elseif($listing->listing_type == '5'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png"],';
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-commercial.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                 }elseif($listing->listing_type == '3'){
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                 }else{
-                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png"],';
+                    $new = '[' . $listing->lat . ' , ' . $listing->lng . ', "images/pin-land.png" , "/assets/images/'.$this->listingImage->where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first().'" , "'.$listing->address.'" , "'.$listing->ListingAttr()->first()->rent.'" , "'.route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]).'"],';
                 }
                 array_push($langLtd, $new);
             }

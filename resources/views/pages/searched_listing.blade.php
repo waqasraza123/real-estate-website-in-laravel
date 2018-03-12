@@ -59,7 +59,7 @@
                             <input type="hidden" name="listing_type" value="2">
                             <div class="row">
                                 <br>
-                                <div class="col-xs-12 col-sm-6 col-lg-3">
+                                <div class="col-xs-12 col-sm-6 col-lg-2">
                                     <input id="autocomplete" class="input-full main-input"  value="" onFocus="geolocate()" type="text" placeholder="{{ Lang::get('listing.address') }}" name="address">
                                     <table id="address" style="display: none">
                                         <input class="field"  id="street_number" type="hidden">
@@ -79,7 +79,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-xs-12 form-">
+                                <div class="col-lg-2 col-xs-12 form-">
                                     <div class="dropdown btn-group bootstrap-select show-tick  ">
                                         <button id="min-max-price-range" class="btn dropdown-toggle btn-default " href="#" data-toggle="dropdown" style="text-align: left">{!!  Lang::get('pages.r_e') !!}<strong class="caret"></strong>
                                         </button>
@@ -129,7 +129,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-xs-12">
+                                <div class="col-lg-8 col-xs-12">
                                     <div class="row">
                                         <div class="col-lg-3 col-xs-12">
                                             <select name="beds_baths[]" class="selectpicker" multiple="" title="{{ Lang::get('listing.beds') }} X {{ Lang::get('listing.baths') }}">
@@ -221,7 +221,7 @@
         </div>
     </div>
     <div class="row">
-        @if($listings->first())
+        @if($listings)
         <div class="col-lg-7 " style="    padding-right: 0;">
             <div id="offers-map">
 
@@ -232,12 +232,12 @@
             </div>
             <div class="erease">
                 <i class="fa fa-pencil"></i>
-                Erease
+                Erase
             </div>
         </div>
         <div class="col-lg-5 " id="offers-list" style="background: white;  overflow-y: scroll">
             <div class="row"  style="overflow: scroll">
-                <div class="col-xs-12">
+                <div class="col-xs-12 test">
                     <div class="abs_f_h">
                         <form action="{{ route('filterListings') }}" method="get">
                             <div class="desktopView clearfix" id="advancedFilters">
@@ -310,7 +310,7 @@
                                 <div class="col-xs-12 col-md-12 col-lg-6 margin-top-15">
                                     <div class="row">
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1"  id="office" name="foreclosure" class="main-checkbox" >
+                                            <input type="checkbox" value="fitness_center"  id="office" name="filter[]" class="main-checkbox" >
                                             <label for="office"><span></span>{{ Lang::get('pages.office') }} <button  type="button" class="btn btn-primary shome pull-right toltip_button"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
@@ -357,7 +357,7 @@
                                             </ul>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1"  id="crimes" name="foreclosure" class="main-checkbox" >
+                                            <input type="checkbox" value="fitness_center"  id="crimes" name="filter[]" class="main-checkbox" >
                                             <label for="crimes"><span></span>{{ Lang::get('pages.crimes') }} <button  type="button" class="btn btn-primary sprofile pull-right toltip_button"  style="margin-left: 20px;"><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
@@ -430,7 +430,7 @@
                                             </ul>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1"   id="justi" name="foreclosure" class="main-checkbox" >
+                                            <input type="checkbox" value="no_smocking"   id="justi" name="filter[]" class="main-checkbox" >
                                             <label for="justi"><span></span>{{ Lang::get('pages.justi') }} <button  type="button" class="btn btn-primary smessages pull-right toltip_button" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
@@ -471,28 +471,20 @@
                                             </ul>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" id="victim" name="foreclosure" class="main-checkbox" >
+                                            <input type="checkbox" value="no_smocking" id="victim" name="filter[]" class="main-checkbox" >
                                             <label for="victim"><span></span>{{ Lang::get('pages.victim') }} <button  type="button" class="btn btn-primary ssettings pull-right toltip_button" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
                                             <ul class="custom-ul">
                                                 <div class="col-lg-6 col-xs-12">
+
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.apos') }}
                                                     </li>
                                                     <li>
                                                         <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.buge') }}
-                                                    </li>
-
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.gamb') }}
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.incest') }}
                                                     </li>
 
                                                 </div>
@@ -510,22 +502,13 @@
                                                         <span class="custom-ul-bullet"></span>
                                                         {{ Lang::get('pages.exh') }}
                                                     </li>
-                                                    </li>
-                                                    <li>
-                                                        <span class="custom-ul-bullet"></span>
-                                                        {{ Lang::get('pages.suic') }}
-                                                    </li>
                                                 </div>
                                                 <div class="clearfix"></div>
-                                                <li style="margin-left: 14px">
-                                                    <span class="custom-ul-bullet"></span>
-                                                    {{ Lang::get('pages.pros') }}
-                                                </li>
                                             </ul>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" id="victim" name="foreclosure" class="main-checkbox" >
-                                            <label for="victim"><span></span>Minor Offences<button  type="button" class="btn btn-primary ssettings pull-right toltip_button" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
+                                            <input type="checkbox" value="no_smocking" id="minor" name="filter[]" class="main-checkbox" >
+                                            <label for="minor"><span></span>Minor Offences<button  type="button" class="btn btn-primary ssettings pull-right toltip_button" style="margin-left: 20px;" ><i class="fa fa-info"></i></button></label><br>
                                         </div>
                                         <div class="absalutx">
                                             <ul class="custom-ul">
@@ -549,264 +532,13 @@
                                                         <span class="custom-ul-bullet"></span>
                                                         Recreational Drug Use
                                                     </li>
+                                                    <li>
+                                                        <span class="custom-ul-bullet"></span>
+                                                        Minor Drug Charge
+                                                    </li>
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </ul>
-                                        </div>
-                                        <div class="apartment-stacked-tabs">
-                                            <!-- Nav tabs -->
-                                            <div class="tab-content " style="padding: 0px; border:none;">
-                                                <div role="tabpanel" class="tab-pane " id="shome">
-                                                    <ul class="custom-ul">
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.assa') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.assault') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.batt') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.big') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.crim') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.false') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.homes') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.sexual') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.homicide') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.kind') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.mans') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.mayem') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.murder') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.negli') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.public') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.reape') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.robery') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </ul>
-                                                </div>
-                                                <div role="tabpanel" class="tab-pane" id="sprofile">
-                                                    <ul class="custom-ul">
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.arson') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.black') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.bri') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.bulg') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.embez') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.extori') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.falsep') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.fraud') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.larceny') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.payola') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.pick') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.prosse') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.robber') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.tax') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.theft') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </ul>
-                                                </div>
-                                                <div role="tabpanel" class="tab-pane" id="smessages">
-                                                    <ul class="custom-ul">
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.com') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.malf') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.misc') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.misp') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.obst') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.perj') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.perv') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </ul>
-                                                </div>
-                                                <div role="tabpanel" class="tab-pane" id="ssettings">
-                                                    <ul class="custom-ul">
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.adult') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.apos') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.buge') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.provi') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.gamb') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.incest') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.pros') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="col-lg-6 col-xs-12">
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.dueling') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.forn') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.lewd') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.exh') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.crea') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.sodo') }}
-                                                            </li>
-                                                            <li>
-                                                                <span class="custom-ul-bullet"></span>
-                                                                {{ Lang::get('pages.suic') }}
-                                                            </li>
-                                                        </div>
-                                                        <div class="clearfix"></div>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
                                             <input  name="filter[]" id="PetFriendly_1" type="checkbox" value="dogs" class="main-checkbox">
@@ -821,15 +553,15 @@
                                             <label for="c100"><span></span>{{Lang::get('listing.Lofts_box')}}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style="   margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('all_box') == 1)  checked @endif id="Dens_box" name="filter[]" class="main-checkbox" >
+                                            <input type="checkbox" value="all_box" @if(old('all_box') == 1)  checked @endif id="Dens_box" name="filter[]" class="main-checkbox" >
                                             <label for="Dens_box"><span></span>{{Lang::get('listing.Dens_box')}} </label><br>
                                         </div>
                                         <div class="checkboxGroup" style="   margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('all_bills') == 1)  checked @endif id="All_Bills" name="filter[]" class="main-checkbox" >
+                                            <input type="checkbox" value="all_bills" @if(old('all_bills') == 1)  checked @endif id="All_Bills" name="filter[]" class="main-checkbox" >
                                             <label for="All_Bills"><span></span>{{Lang::get('listing.All_Bills')}}</label><br>
                                         </div>
                                         <div class="checkboxGroup" style="   margin-left: 10px;  padding: 10px;">
-                                            <input type="checkbox" value="1" @if(old('all_townl') == 1)  checked @endif id="Townhomes" name="filter[]" class="main-checkbox" >
+                                            <input type="checkbox" value="all_townl" @if(old('all_townl') == 1)  checked @endif id="Townhomes" name="filter[]" class="main-checkbox" >
                                             <label for="Townhomes"><span></span>{{Lang::get('listing.Townhomes')}} </label><br>
                                         </div>
                                         <div class="checkboxGroup" style=" margin-left: 10px;  padding: 10px;">
@@ -879,14 +611,16 @@
                             return $text;
                         }
                     ?>
-                    @foreach($listings as $listing)
-                        <a href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" class="list-agency row">
+                    <div class="ajax_list">
+                    @if($listings)
+                        @foreach($listings as $listing)
+                        <a href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}" class="list-agency row">
                             <div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">
                                 <div class="full_blue">
                                     <h2> {{ $listing->name }}</h2>
                                 </div>
-                                @if($listing->ListingsImages()->where('featured', "1")->first())
-                                    <img src="{{ asset('assets/images').'/'.$listing->ListingsImages()->whereNotNull('featured')->first()->image }}" alt="" width="100%" height="auto">
+                                @if(App\ListingImage::where('listing_id' , $listing->id)->first())
+                                    <img src="{{ asset('assets/images').'/'.App\ListingImage::where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first() }}" alt="" width="100%" height="auto">
                                 @endif
                             </div>
                             <a class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-12" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" >
@@ -917,7 +651,7 @@
                                     <span class="team-icon-circle">
                                         <i class="fa fa-dollar" style="line-height: 22px;"></i>
                                     </span>
-                                    <span>{{ $listing->rent }} </span>
+                                    <span>{{ $listing->ListingAttr()->first()->rent }} </span>
                                 </li>
                                 <li class="">
                                     <span class="team-icon-circle">
@@ -931,6 +665,8 @@
                             <a class="small-icon" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}"><i class="jfont fa-2x"></i></a>
                         </a>
                     @endforeach
+                    @endif
+                    </div>
                 </div>
             </div>
         </div>
@@ -1016,7 +752,9 @@
 
     <script type="text/javascript">
         var mapMarkers = [];
-        var poly = '';
+        var polyline;
+        var map;
+        var markerCluster;
 
         function offersMapInitt(id, locations) {
             var mapOptions = {
@@ -1081,20 +819,8 @@
                         mapMarkers[i].infobox.open(map, this);
                     }
                 })(marker, i));
+
                 LatLngList[i] = pos;
-            }
-
-            var bermudaTriangle = new google.maps.Polygon({
-                paths: polygon
-            });
-
-            if(LatLngList.length > 1){
-               /* bermudaTriangle.setMap(map);*/
-                var bounds = new google.maps.LatLngBounds();
-                for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
-                    bounds.extend(LatLngList[i]);
-                }
-                map.fitBounds(bounds);
             }
 
             var markerClusterStyle = [{
@@ -1105,8 +831,7 @@
                 textColor: '#3798dd'
             }];
 
-
-            var markerCluster = new MarkerClusterer(map, mapMarkers, {styles:markerClusterStyle});
+            markerCluster = new MarkerClusterer(map, mapMarkers, {styles:markerClusterStyle});
             minClusterZoom = 14;
             markerCluster.setMaxZoom(minClusterZoom);
             var oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true, keepSpiderfied: true, legWeight: 2 });
@@ -1129,62 +854,122 @@
 
         function drawFreeHand(){
             //the polygon
-            var poly=new google.maps.Polyline({map:map,clickable:false});
+            window.polyline=new google.maps.Polyline({map:map,clickable:false});
             var move=google.maps.event.addListener(map,'mousemove',function(e){
-                poly.getPath().push(e.latLng);
+                polyline.getPath().push(e.latLng);
             });
             //mouseup-listener
             google.maps.event.addListenerOnce(map,'mouseup',function(e){
                 google.maps.event.removeListener(move);
-                var path=poly.getPath();
-                var sending_data = poly.getPath().getArray();
+                var path=polyline.getPath();
+                var sending_data = polyline.getPath().getArray();
                 sending_data = JSON.stringify(sending_data);
-                poly=new google.maps.Polygon({map:map,path:path});
+                window.poly=new google.maps.Polygon({map:map,path:path});
                 $.ajax({
                     'type' : 'post',
                     'url' : '{{ route('searchListingAjax') }}',
                     'data' : {datas:sending_data},
                     success:function (res) {
+                        markerCluster.clearMarkers();
+                        var newLangLtd = [];
                         for (i = 0; i < res.length; i++) {
                             var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
-                            if(google.maps.geometry.poly.containsLocation(latLng, poly)){
-                                console.log(latLng);
-                                var marker = new google.maps.Marker({
-                                    position: pos,
-                                    map: map,
-                                    title: '',
-                                    icon: locations[i][2]
-                                });
-                                mapMarkers[i] = marker;
-                                var infoBoxContent = document.createElement("div");
-                                infoBoxContent.className = "infobox-wrapper";
-                                infoBoxContent.innerHTML = "<a class='infobox-main' href='" + locations[i][6] + "'><div class='infobox-image'><img src=" + locations[i][3] + " alt='" + locations[i][4] + "' /></div><div class='infobox-text'>" + locations[i][4] + "</div><div class='infobox-price'>$" + locations[i][5] + "</div></a>";
-                                mapMarkers[i].infobox = new InfoBox({
-                                    content: infoBoxContent,
-                                    disableAutoPan: false,
-                                    pixelOffset: new google.maps.Size(30, -150),
-                                    zIndex: null,
-                                    boxStyle: {
-                                    },
-                                    closeBoxMargin: "0px",
-                                    closeBoxURL: "images/infobox-close.png",
-                                    infoBoxClearance: new google.maps.Size(1, 1)
-                                });
-
-                                google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                                    return function() {
-                                        var j = 0;
-                                        for (j = 0; j < mapMarkers.length; j++) {
-                                            mapMarkers[j].infobox.close();
-                                        }
-                                        mapMarkers[i].infobox.open(map, this);
-                                    }
-                                })(marker, i));
-                                LatLngList[i] = pos;
+                            if (google.maps.geometry.poly.containsLocation(latLng, poly)) {
+                                $('.ajax_list').html('');
+                                 newLangLtd.push(res[i]);
                             }
-
                         }
-                        setMapOnAll(map);
+
+                        for (i = 0; i < newLangLtd.length; i++) {
+
+                            var newTemplate = document.createElement("a");
+                            newTemplate.className = 'list-agency row';
+                            newTemplate.innerHTML = '<div class="list-agency-left col-xs-12 col-sm-6 col-md-6 col-lg-12">' +
+                                '<div class="full_blue">' +
+                                '<h2>'+newLangLtd[i][7]+'</h2>' +
+                                '</div>'+
+                                '<img src="'+newLangLtd[i][3]+'" alt="" width="100%" height="auto">'+
+                                '<a class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-12" href="' + newLangLtd[i][6] + '" >' +
+                                '<div class="list-agency-text" style="padding-bottom: 0px">'+
+                                '<h4 class="list-agency-title"><i class="fa fa-map-marker"></i>' + newLangLtd[i][4] +'</h4>'+
+                                '<div class="list-agency-separator"></div>'+
+                                '</div>'+
+                                '</a>'+
+                                '<div class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-6 ">'+
+                                '<div class="list-agency-text">'+
+                                '<h4 class="list-agency-title"><i class="fa fa-phone"></i>'+newLangLtd[i][8]+'</h4>'+
+                                '</div>'+
+                                '</div>'+
+                                 '<div class="col-lg-6 col-xs-12">'+
+                                '<div class="list-agency-text">'+
+                                '<h4 class="list-agency-title">' +
+                                '<span  data-toggle="tooltip" data-placement="bottom" title="Last Updated"><i class="fa fa-clock-o"  ></i>' +
+                                ''+newLangLtd[i][9]+' Days</span>' +
+                                '</h4>'+
+                                '</div>'+
+                                '</div>'+
+                                '<div class="clearfix"></div>'+
+                                '<ul class="app_attr_list">'+
+                                '<li class="">'+
+                                '<span class="team-icon-circle">'+
+                                '<i class="fa fa-map-marker" style="line-height: 22px;"></i>'+
+                                '</span>'+
+                                '<span>'+newLangLtd[i][7]+'</span>'+
+                                '</li>'+
+                                '<li class="">'+
+                                '<span class="team-icon-circle">'+
+                                '<i class="fa fa-dollar" style="line-height: 22px;"></i>'+
+                                '</span>'+
+                                '<span>'+newLangLtd[i][5]+'</span>'+
+                                '</li>'+
+                                '<li class="">'+
+                                '<span class="team-icon-circle">'+
+                                '<i class="fa fa-bed fa-sm" style="line-height: 22px;"></i>'+
+                                '</span>'+
+                                '<span><a href="#">'+newLangLtd[i][10]+' Bed</a></span>'+
+                                '</li>'+
+                                '</ul>'+
+                                '<a href="'+ newLangLtd[i][6] + '" class="small-triangle"></a>'+
+                                '<div class="small-triangle2"></div>'+
+                                '<a class="small-icon" href="'+ newLangLtd[i][6] + '"><i class="jfont fa-2x"></i></a>'+
+                                '</div>';
+
+                            $('.ajax_list').append(newTemplate);
+                            var latLngs = new google.maps.LatLng(newLangLtd[i][0], newLangLtd[i][1]);
+                            var marker = new google.maps.Marker({
+                                position: latLngs,
+                                map: map,
+                                title: '',
+                                icon: newLangLtd[i][2]
+                            });
+                            mapMarkers.push(marker);
+                            var infoBoxContent = document.createElement("div");
+                            infoBoxContent.className = "infobox-wrapper";
+                            infoBoxContent.innerHTML = "<a class='infobox-main' href='" + newLangLtd[i][6] + "'><div class='infobox-image'><img src=" + newLangLtd[i][3] + " alt='" + newLangLtd[i][4] + "' /></div><div class='infobox-text'>" + newLangLtd[i][4] + "</div><div class='infobox-price'>$" + newLangLtd[i][5] + "</div></a>";
+                            mapMarkers[i].infobox = new InfoBox({
+                                content: infoBoxContent,
+                                disableAutoPan: false,
+                                pixelOffset: new google.maps.Size(30, -150),
+                                zIndex: null,
+                                boxStyle: {
+                                },
+                                closeBoxMargin: "0px",
+                                closeBoxURL: "images/infobox-close.png",
+                                infoBoxClearance: new google.maps.Size(1, 1)
+                            });
+                            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                                return function() {
+                                    var j = 0;
+                                    for (j = 0; j < mapMarkers.length; j++) {
+                                        mapMarkers[j].infobox.close();
+                                    }
+                                    mapMarkers[i].infobox.open(map, this);
+                                }
+                            })(marker, i));
+                            mapMarkers[i].setMap(map);
+                        }
+
+
                         $('.erease').show()
                     }
                 });
@@ -1227,11 +1012,16 @@
             for (var i = 0; i < mapMarkers.length; i++) {
                 mapMarkers[i].setMap(map);
             }
+
         }
 
         // Removes the markers from the map, but keeps them in the array.
         function clearMarkers() {
-            setMapOnAll(null);
+            for (var i = 0; i < mapMarkers.length; i++ ) {
+                mapMarkers[i].setMap(null);
+
+            }
+            mapMarkers.length = 0;
         }
 
         // Shows any markers currently in the array.
@@ -1248,36 +1038,38 @@
 
         $('.erease').click(function () {
             clearMarkers();
+            poly.setMap(null);
+            polyline.setMap(null);
             $.ajax({
                 'type': 'post',
                 'url': '{{ route('erease') }}',
                 success: function (res) {
                     for (i = 0; i < res.length; i++) {
                         var latLng = new google.maps.LatLng(res[i][0], res[i][1]);
-                        if (google.maps.geometry.poly.containsLocation(latLng, poly)) {
                             var marker = new google.maps.Marker({
-                                position: pos,
+                                position: latLng,
                                 map: map,
                                 title: '',
-                                icon: locations[i][2]
+                                icon: res[i][2]
                             });
-                            mapMarkers[i] = marker;
-                            var infoBoxContent = document.createElement("div");
-                            infoBoxContent.className = "infobox-wrapper";
-                            infoBoxContent.innerHTML = "<a class='infobox-main' href='" + locations[i][6] + "'><div class='infobox-image'><img src=" + locations[i][3] + " alt='" + locations[i][4] + "' /></div><div class='infobox-text'>" + locations[i][4] + "</div><div class='infobox-price'>$" + locations[i][5] + "</div></a>";
+                        mapMarkers.push(marker);
+                        var infoBoxContent = document.createElement("div");
+                        infoBoxContent.className = "infobox-wrapper";
+                        infoBoxContent.innerHTML = "<a class='infobox-main' href='" + res[i][6] + "'><div class='infobox-image'><img src=" + res[i][3] + " alt='" + res[i][4] + "' /></div><div class='infobox-text'>" + res[i][4] + "</div><div class='infobox-price'>$" + res[i][5] + "</div></a>";
                             mapMarkers[i].infobox = new InfoBox({
                                 content: infoBoxContent,
                                 disableAutoPan: false,
                                 pixelOffset: new google.maps.Size(30, -150),
                                 zIndex: null,
-                                boxStyle: {},
+                                boxStyle: {
+                                },
                                 closeBoxMargin: "0px",
                                 closeBoxURL: "images/infobox-close.png",
                                 infoBoxClearance: new google.maps.Size(1, 1)
                             });
 
-                            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                                return function () {
+                            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                                return function() {
                                     var j = 0;
                                     for (j = 0; j < mapMarkers.length; j++) {
                                         mapMarkers[j].infobox.close();
@@ -1285,12 +1077,9 @@
                                     mapMarkers[i].infobox.open(map, this);
                                 }
                             })(marker, i));
-                            LatLngList[i] = pos;
-                        }
-
+                            mapMarkers[i].setMap(map);
                     }
-                    setMapOnAll(map);
-                    $('.erease').show()
+                    $('.erease').hide()
                 }
             })
         })

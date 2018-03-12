@@ -24,6 +24,7 @@ class Listing extends Model
 
     protected $fillable = [
         'address',
+        'rent',
         'unit',
         'description',
         'dogs',
@@ -77,39 +78,18 @@ class Listing extends Model
         'ba_ye',
         'fo_ye',
         'wq-street_number',
-        'wq-street_address'	,
-
-	'wq-intersection'	,
-
-
-	'wq-administrative_area_level_1'	,
-
-
-	'wq-administrative_area_level_2',
-
-
-	'wq-administrative_area_level_3',
-
-
-	'wq-administrative_area_level_4'	,
-
-
-	'wq-administrative_area_level_5',
-
-
-	'wq-route'		,
-
-
-	'wq-country'	,
-
-
-	'wq-county'		,
-
-
-	'wq-sublocality'	,
-
-
-	'wq-neighborhood'
+        'wq-street_address',
+        'wq-intersection',
+        'wq-administrative_area_level_1',
+        'wq-administrative_area_level_2',
+        'wq-administrative_area_level_3',
+        'wq-administrative_area_level_4',
+        'wq-administrative_area_level_5',
+        'wq-route',
+        'wq-country',
+        'wq-county',
+        'wq-sublocality',
+        'wq-neighborhood'
     ];
 
     public function ListingsImages(){

@@ -184,7 +184,7 @@
                                         <h5 class="labeles">
                                             {{ Lang::get('listing.available') }}
                                         </h5>
-                                        {{Form::select('available_date[]', ['Available Now' => 'Available Now', 'Available Soon' => 'Available Soon', 'Not Available' => 'Not Available'], old('available_date'), ['class' => 'input-full main-input availability'])}}
+                                        {{Form::select('available_date[]', ['Available Now' => 'Available Now', 'Available Soon' => 'Available Soon', 'Not Available' => 'Not Available'], old('available_date'), ['class' => 'input-full main-input  selectpicker '])}}
 
                                     </div>
                                     <div class="col-sm-2 col-xs-12">
@@ -354,6 +354,11 @@
                                                             <span class="custom-ul-bullet"></span>
                                                             DUI
                                                         </li>
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                                Recreational Drug Use
+
+                                                        </li>
                                                     </div>
                                                     <div class="col-lg-6 col-xs-12">
                                                         <li>
@@ -364,6 +369,11 @@
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
                                                             Other
+                                                        </li>
+
+                                                        <li>
+                                                            <span class="custom-ul-bullet"></span>
+                                                            Minor Drug Charge
                                                         </li>
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -485,21 +495,9 @@
                                                         </li>
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.buge') }}
-                                                        </li>
-
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.gamb') }}
                                                         </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.incest') }}
-                                                        </li>
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.pros') }}
-                                                        </li>
+
                                                     </div>
                                                     <div class="col-lg-6 col-xs-12">
                                                         <li>
@@ -514,12 +512,6 @@
                                                         <li>
                                                             <span class="custom-ul-bullet"></span>
                                                             {{ Lang::get('pages.exh') }}
-                                                        </li>
-
-
-                                                        <li>
-                                                            <span class="custom-ul-bullet"></span>
-                                                            {{ Lang::get('pages.suic') }}
                                                         </li>
                                                     </div>
                                                     <div class="clearfix"></div>
@@ -821,13 +813,7 @@
                     clone.find('label').attr('for' , function(i, val) {
                       return val + count;
                     })
-                  clone.find('input[name="available_date[]"]').daterangepicker({
-                                singleDatePicker: true,
-                                showDropdowns: true
-                            },
-                            function(start, end, label) {
-                                var years = moment().diff(start, 'years');
-                            });
+                  clone.find('input[name="available_date[]"]').select2();
                   clone.find('.dropdown-toggle').remove();
                   clone.find('select').attr('id' , function(i, val) {
                       return val + count;
@@ -929,10 +915,7 @@
                                 $('.phone_fails').append(phonefail);
                             }
                         });
-
                     }
-
-
             });
 
 
