@@ -758,7 +758,7 @@
 
         function offersMapInitt(id, locations) {
             var mapOptions = {
-                zoom: 15,
+                zoom: 11,
                 disableDefaultUI: false,
                 mapTypeControl: true,
                 mapTypeControlOptions: {
@@ -832,7 +832,7 @@
             }];
 
             markerCluster = new MarkerClusterer(map, mapMarkers, {styles:markerClusterStyle});
-            minClusterZoom = 20;
+            minClusterZoom = 1;
             markerCluster.setMaxZoom(minClusterZoom);
             var oms = new OverlappingMarkerSpiderfier(map, {markersWontMove: true, markersWontHide: true, keepSpiderfied: true, legWeight: 2 });
             for (var i = 0; i < mapMarkers.length; i ++) {
