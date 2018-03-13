@@ -724,6 +724,16 @@
                                         <span class="bullet">•</span>
                                         {{ Lang::get('pages.d_pa') }}
                                     @endif
+                                    @if($listing->yard == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
+                                    @if($listing->hard_floor == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
                                 </li>
                             </ul>
                             <div class="clearfix"></div>
