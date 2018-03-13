@@ -623,7 +623,7 @@
                                     <img src="{{ asset('assets/images').'/'.App\ListingImage::where('listing_id' , $listing->id)->whereNotNull('featured')->pluck('image')->first() }}" alt="" width="100%" height="auto">
                                 @endif
                             </div>
-                            <a class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-12" href="{{ route('singleListing' , ['id' => $listing->listing_id , 'title' => $listing->title]) }}" >
+                            <a class="list-agency-right-large col-xs-12 col-sm-6 col-md-6 col-lg-12" href="{{ route('singleListing' , ['id' => $listing->id , 'title' => $listing->title]) }}" >
                                 <div class="list-agency-text" style="padding-bottom: 0px">
                                     <h4 class="list-agency-title"><i class="fa fa-map-marker"></i>  {{ $listing->address }}</h4>
                                     <div class="list-agency-separator"></div>
