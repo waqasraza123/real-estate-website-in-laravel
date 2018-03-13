@@ -729,12 +729,8 @@
                                         <span class="bullet">•</span>
                                             {{ Lang::get('pages.yard') }}
                                     @endif
-                                    @if($listing->hard_floor == '1')
-                                        <br>
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('pages.h_f') }}
-                                    @endif
-                                        @if($listing->loft_box == '1')
+
+                                    @if($listing->loft_box == '1')
                                         <br>
                                         <span class="bullet">•</span>
                                             {{Lang::get('listing.Lofts_box')}}
@@ -769,7 +765,7 @@
                                         <span class="bullet">•</span>
                                         {{ Lang::get('pages.w_cl') }}
                                     @endif
-                                   
+
                                 </li>
                             </ul>
                             <div class="clearfix"></div>
