@@ -17,7 +17,7 @@ class VerifyCsrfToken extends BaseVerifier
         'listing_image',
         'edit_listing_image',
         'checking_address',
-        'erease '
+        'erease'
 
     ];
 
