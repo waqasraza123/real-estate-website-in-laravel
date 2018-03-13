@@ -90,7 +90,14 @@ class Listing extends Model
         'wq-county',
         'wq-sublocality',
         'wq-neighborhood',
-        ''
+        'all_bills',
+        'all_box',
+        'loft_box',
+        'all_townl',
+        'hard_floor',
+        'wal_closet',
+        'updated_kitchen',
+        'close_public',
     ];
 
     public function ListingsImages(){

@@ -749,7 +749,27 @@
                                         <span class="bullet">•</span>
                                         {{ Lang::get('pages.d_pa') }}
                                     @endif
-                                        @if($listing->all_bills == '1')
+                                    @if($listing->all_bills == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
+                                    @if($listing->hard_floor == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
+                                    @if($listing->updated_kitchen == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
+                                    @if($listing->wal_closet == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
+                                    @if($listing->close_public == '1')
                                         <br>
                                         <span class="bullet">•</span>
                                         {{ Lang::get('pages.d_pa') }}
