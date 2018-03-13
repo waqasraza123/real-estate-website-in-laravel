@@ -89,7 +89,8 @@ class Listing extends Model
         'wq-country',
         'wq-county',
         'wq-sublocality',
-        'wq-neighborhood'
+        'wq-neighborhood',
+        ''
     ];
 
     public function ListingsImages(){

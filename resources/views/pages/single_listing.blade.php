@@ -734,6 +734,26 @@
                                         <span class="bullet">•</span>
                                         {{ Lang::get('pages.d_pa') }}
                                     @endif
+                                        @if($listing->loft_box == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
+                                        @if($listing->all_box == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
+                                    @if($listing->all_box == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
+                                        @if($listing->all_bills == '1')
+                                        <br>
+                                        <span class="bullet">•</span>
+                                        {{ Lang::get('pages.d_pa') }}
+                                    @endif
                                 </li>
                             </ul>
                             <div class="clearfix"></div>
