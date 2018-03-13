@@ -727,53 +727,49 @@
                                     @if($listing->yard == '1')
                                         <br>
                                         <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
+                                            {{ Lang::get('pages.yard') }}
                                     @endif
                                     @if($listing->hard_floor == '1')
                                         <br>
                                         <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
+                                        {{ Lang::get('pages.h_f') }}
                                     @endif
                                         @if($listing->loft_box == '1')
                                         <br>
                                         <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
+                                            {{Lang::get('listing.Lofts_box')}}
                                     @endif
                                         @if($listing->all_box == '1')
                                         <br>
                                         <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
+                                            {{Lang::get('listing.Dens_box')}}
                                     @endif
-                                    @if($listing->all_box == '1')
+                                    @if($listing->all_townl == '1')
                                         <br>
                                         <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
-                                    @endif
+                                            {{Lang::get('listing.Townhomes')}}
+                                        @endif
                                     @if($listing->all_bills == '1')
                                         <br>
                                         <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
+                                            {{Lang::get('listing.All_Bills')}}
                                     @endif
                                     @if($listing->hard_floor == '1')
                                         <br>
                                         <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
+                                        {{ Lang::get('pages.h_f') }}
                                     @endif
                                     @if($listing->updated_kitchen == '1')
                                         <br>
                                         <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
+                                        {{ Lang::get('pages.upde_kitc') }}
                                     @endif
                                     @if($listing->wal_closet == '1')
                                         <br>
                                         <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
+                                        {{ Lang::get('pages.w_cl') }}
                                     @endif
-                                    @if($listing->close_public == '1')
-                                        <br>
-                                        <span class="bullet">•</span>
-                                        {{ Lang::get('pages.d_pa') }}
-                                    @endif
+                                   
                                 </li>
                             </ul>
                             <div class="clearfix"></div>
